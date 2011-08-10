@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Argon.Windows.Forms
+namespace Argon.Windows.Controls
 {
     /// <summary>
     /// Semplice metodo delegato alla gestione degli eventi.
