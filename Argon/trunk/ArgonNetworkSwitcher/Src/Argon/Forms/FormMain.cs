@@ -8,8 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
+using Argon.Forms;
+using System.Diagnostics;
 
-namespace Argon
+namespace Argon.Forms
 {
     public partial class FormMain : Form
     {
@@ -41,14 +43,24 @@ namespace Argon
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
+            String path=Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)+"\\ArgonNetworkSwitcher";
+            Directory.CreateDirectory(path);
+
+            Debug.WriteLine(path);
+            string configFile = Path.Combine(path, "DockPanel.config");
+            Debug.WriteLine(configFile);
 
            dockPanel.SaveAsXml(configFile);
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\ArgonNetworkSwitcher";
+            Directory.CreateDirectory(path);
+
+            Debug.WriteLine(path);
+            string configFile = Path.Combine(path, "DockPanel.config");
+            Debug.WriteLine(configFile);
 
             FormAdapters formAdapters = new FormAdapters();
             formAdapters.Show(dockPanel);

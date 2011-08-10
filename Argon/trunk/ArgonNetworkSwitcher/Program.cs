@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Argon
+namespace Argon.Forms
 {
     static class Program
     {

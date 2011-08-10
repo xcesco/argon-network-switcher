@@ -1,4 +1,4 @@
-﻿namespace Argon
+﻿namespace Argon.Forms
 {
     partial class FormAdapters
     {

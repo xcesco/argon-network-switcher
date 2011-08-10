@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace Argon
+namespace Argon.Forms
 {
     public partial class FormAdapters : DockContent
     {
