@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdapters));
             this.button1 = new System.Windows.Forms.Button();
-            this.ipTextBox1 = new Argon.Windows.Forms.IpTextBox();
-            this.ipTextBox2 = new Argon.Windows.Forms.IpTextBox();
+            this.ipTextBox1 = new Argon.Windows.Controls.IpTextBox();
+            this.ipTextBox2 = new Argon.Windows.Controls.IpTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -94,7 +94,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private Windows.Forms.IpTextBox ipTextBox1;
-        private Windows.Forms.IpTextBox ipTextBox2;
+        private Windows.Controls.IpTextBox ipTextBox1;
+        private Windows.Controls.IpTextBox ipTextBox2;
     }
 }

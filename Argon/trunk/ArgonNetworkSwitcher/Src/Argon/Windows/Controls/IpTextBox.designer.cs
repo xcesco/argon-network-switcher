@@ -1,4 +1,4 @@
-namespace Argon.Windows.Forms
+namespace Argon.Windows.Controls
 {
 
     /// <summary>
