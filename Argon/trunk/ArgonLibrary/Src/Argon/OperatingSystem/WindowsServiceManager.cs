@@ -28,7 +28,10 @@ namespace Argon.OperatingSystem
 
             foreach (ServiceController item in temp)
             {
-                array.Add(new WindowsService(item, GetServiceDescription(item.ServiceName)));
+                if (item.ServiceType == ServiceType.Win32OwnProcess)
+                {
+                    array.Add(new WindowsService(item, GetServiceDescription(item.ServiceName)));
+                }
             }
 
             return array;
