@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdapters));
             this.button1 = new System.Windows.Forms.Button();
-            this.ipTextBox1 = new Argon.Windows.Controls.IpTextBox();
-            this.ipTextBox2 = new Argon.Windows.Controls.IpTextBox();
+            this.serviceListView1 = new Argon.Windows.Forms.Src.Argon.Windows.Controls.ServiceListView();
             this.SuspendLayout();
             // 
             // button1
@@ -43,43 +42,23 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // ipTextBox1
+            // serviceListView1
             // 
-            this.ipTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.ipTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ipTextBox1.IpAddress = "0.0.0.0";
-            this.ipTextBox1.Location = new System.Drawing.Point(12, 41);
-            this.ipTextBox1.MinimumSize = new System.Drawing.Size(128, 20);
-            this.ipTextBox1.Name = "ipTextBox1";
-            this.ipTextBox1.RangeAValue = 0;
-            this.ipTextBox1.RangeBValue = 0;
-            this.ipTextBox1.RangeCValue = 0;
-            this.ipTextBox1.RangeDValue = 0;
-            this.ipTextBox1.Size = new System.Drawing.Size(128, 20);
-            this.ipTextBox1.TabIndex = 1;
-            // 
-            // ipTextBox2
-            // 
-            this.ipTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.ipTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ipTextBox2.IpAddress = "0.0.0.0";
-            this.ipTextBox2.Location = new System.Drawing.Point(12, 67);
-            this.ipTextBox2.MinimumSize = new System.Drawing.Size(128, 20);
-            this.ipTextBox2.Name = "ipTextBox2";
-            this.ipTextBox2.RangeAValue = 0;
-            this.ipTextBox2.RangeBValue = 0;
-            this.ipTextBox2.RangeCValue = 0;
-            this.ipTextBox2.RangeDValue = 0;
-            this.ipTextBox2.Size = new System.Drawing.Size(128, 20);
-            this.ipTextBox2.TabIndex = 2;
+            this.serviceListView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.serviceListView1.Location = new System.Drawing.Point(12, 51);
+            this.serviceListView1.MinimumSize = new System.Drawing.Size(560, 200);
+            this.serviceListView1.Name = "serviceListView1";
+            this.serviceListView1.Size = new System.Drawing.Size(680, 408);
+            this.serviceListView1.TabIndex = 1;
             // 
             // FormAdapters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.ipTextBox2);
-            this.Controls.Add(this.ipTextBox1);
+            this.ClientSize = new System.Drawing.Size(773, 489);
+            this.Controls.Add(this.serviceListView1);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
@@ -94,7 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private Windows.Controls.IpTextBox ipTextBox1;
-        private Windows.Controls.IpTextBox ipTextBox2;
+        private Src.Argon.Windows.Controls.ServiceListView serviceListView1;
     }
 }
