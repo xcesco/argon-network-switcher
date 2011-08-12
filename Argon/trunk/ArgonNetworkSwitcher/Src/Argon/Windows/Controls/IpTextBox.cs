@@ -8,10 +8,6 @@ using System.Windows.Forms;
 
 namespace Argon.Windows.Controls
 {
-    /// <summary>
-    /// Semplice metodo delegato alla gestione degli eventi.
-    /// </summary>
-    public delegate void SampleEventDelegate();
     
     /// <summary>
     /// 
@@ -507,4 +503,9 @@ namespace Argon.Windows.Controls
 
         
     }
+
+    /// <summary>
+    /// Semplice metodo delegato alla gestione degli eventi.
+    /// </summary>
+    public delegate void SampleEventDelegate();
 }
