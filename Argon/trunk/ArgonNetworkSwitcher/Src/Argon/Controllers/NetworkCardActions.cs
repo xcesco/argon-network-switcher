@@ -56,8 +56,9 @@ namespace Argon.Controllers
             //formApp.Text = "NIC " + nic.ViewId;
 
             Controller.Instance.View.ListViewCardInfo.Add(formApp);
-           // formApp.Show(Controller.Instance.View.ViewMain.dockPanel);
-            formApp.Show();
+            formApp.Show(Controller.Instance.View.ViewMain.dockPanel);
+            formApp.DockState = DockState.Document;
+            //formApp.Show();
 
             formApp.TabText = "NIC " + nic.ViewId;
             Controller.Instance.ActivateFormNetworkCard(formApp);
