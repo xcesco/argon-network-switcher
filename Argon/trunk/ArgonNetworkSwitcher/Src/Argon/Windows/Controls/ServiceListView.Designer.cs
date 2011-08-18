@@ -1,4 +1,4 @@
-﻿namespace Argon.Windows.Forms.Src.Argon.Windows.Controls
+﻿namespace Argon.Windows.Controls
 {
     partial class ServiceListView
     {
