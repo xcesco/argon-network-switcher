@@ -12,7 +12,7 @@ using Argon.OperatingSystem;
 using BrightIdeasSoftware;
 using System.Diagnostics;
 
-namespace Argon.Windows.Forms.Src.Argon.Windows.Controls
+namespace Argon.Windows.Controls
 {
     /// <summary>
     /// User Control for the management of the windows service.

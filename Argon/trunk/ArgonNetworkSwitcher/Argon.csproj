@@ -81,6 +81,7 @@
       <HintPath>..\Lib\ObjectListView.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.ServiceProcess" />
@@ -102,6 +103,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Controllers\BaseActions.cs" />
+    <Compile Include="Src\Argon\Controllers\ConsoleMiniController.cs" />
+    <Compile Include="Src\Argon\Controllers\Controller.cs" />
+    <Compile Include="Src\Argon\Controllers\MiniController.cs" />
+    <Compile Include="Src\Argon\Controllers\NetworkCardActions.cs" />
+    <Compile Include="Src\Argon\Controllers\NetworkProfileActions.cs" />
+    <Compile Include="Src\Argon\Controllers\PersistenceController.cs" />
+    <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
+    <Compile Include="Src\Argon\Controllers\ViewController.cs" />
+    <Compile Include="Src\Argon\Model\NetworkConfiguration.cs" />
+    <Compile Include="Src\Argon\Model\NetworkProfile.cs" />
+    <Compile Include="Src\Argon\Model\NetworkProfileCollection.cs" />
+    <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.designer.cs">
+      <DependentUpon>ApplicationsListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DriveMapListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DriveMapListView.designer.cs">
+      <DependentUpon>DriveMapListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\FormProcessList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\FormProcessList.designer.cs">
+      <DependentUpon>FormProcessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\IpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\IpControl.designer.cs">
+      <DependentUpon>IpControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Controls\ProxyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,17 +151,29 @@
     <Compile Include="Src\Argon\Windows\Controls\ServiceListView.Designer.cs">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.designer.cs">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormAdapters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.Designer.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.designer.cs">
       <DependentUpon>FormAdapters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormMain.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.designer.cs">
+      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormConsole.designer.cs">
+      <DependentUpon>FormConsole.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,9 +183,47 @@
     <Compile Include="Src\Argon\Windows\Controls\IpTextBox.designer.cs">
       <DependentUpon>IpTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormProfile.designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormProfiles.designer.cs">
+      <DependentUpon>FormProfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormSplashScreen.designer.cs">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\ToolStripButtonManager.cs" />
+    <Compile Include="Src\Argon\Windows\Forms\ViewRender.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\ApplicationsListView.resx">
+      <DependentUpon>ApplicationsListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\DriveMapListView.resx">
+      <DependentUpon>DriveMapListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\FormProcessList.resx">
+      <DependentUpon>FormProcessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\IpControl.resx">
+      <DependentUpon>IpControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ProxyControl.resx">
       <DependentUpon>ProxyControl.cs</DependentUpon>
@@ -144,14 +231,32 @@
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ServiceListView.resx">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAboutBox.resx">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAdapters.resx">
       <DependentUpon>FormAdapters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormCardInfo.resx">
+      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormConsole.resx">
+      <DependentUpon>FormConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\IpTextBox.resx">
+      <DependentUpon>IpTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Controls\IpTextBox.resx">
-      <DependentUpon>IpTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfiles.resx">
+      <DependentUpon>FormProfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormSplashScreen.resx">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\app.manifest">
@@ -169,6 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Argon.png" />
     <Content Include="Resources\arrow_down_blue.png" />
     <Content Include="Resources\arrow_down_green.png" />
     <Content Include="Resources\arrow_up_blue.png" />
@@ -177,6 +283,8 @@
     <Content Include="Resources\bullet_square_red.png" />
     <Content Include="Resources\bullet_triangle_blue.png" />
     <Content Include="Resources\bullet_triangle_green.png" />
+    <None Include="Resources\data_up.png" />
+    <None Include="Resources\data_disk.png" />
     <Content Include="Resources\delete2.png" />
     <Content Include="Resources\empty.png" />
     <Content Include="Resources\gears.png" />
@@ -184,7 +292,21 @@
     <Content Include="Resources\gear_ok.png" />
     <Content Include="Resources\gear_run.png" />
     <Content Include="Resources\gear_stop.png" />
+    <Content Include="Resources\media_play_green.png" />
+    <Content Include="Resources\media_play_green1.png" />
+    <None Include="Resources\media_play_green11.png" />
+    <Content Include="Resources\package_add.png" />
+    <None Include="Resources\package_add1.png" />
+    <Content Include="Resources\package_delete.png" />
+    <None Include="Resources\package_delete1.png" />
+    <Content Include="Resources\package_ok.png" />
+    <None Include="Resources\package_ok1.png" />
+    <Content Include="Resources\package_view.png" />
+    <None Include="Resources\package_view1.png" />
+    <None Include="Resources\PCI-card_network1.png" />
+    <None Include="Resources\PCI-card_view.png" />
     <Content Include="Resources\refresh.png" />
+    <None Include="Resources\refresh1.png" />
     <Content Include="Resources\replace2.png" />
     <Content Include="Resources\Running.png" />
     <Content Include="Resources\server_client.png" />
