@@ -106,6 +106,7 @@ namespace Argon.OperatingSystem
             _hardwareName = "";
             _enabled = false;
             
+            
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Argon.OperatingSystem
             get { return _hardwareName; }
             set { _hardwareName = value; }
         }
-       
+              
         /// <summary>
         /// 
         /// </summary>
@@ -152,6 +153,8 @@ namespace Argon.OperatingSystem
         /// 
         /// </summary>
         protected bool _enabled;
+
+
 
         /// <summary>
         /// Gets or sets the name.
@@ -309,6 +312,41 @@ namespace Argon.OperatingSystem
             _hardwareName = "";
             _name = "";
             _pnpDeviceId = "";
+
+            _netConnectionStatus = -1;
+        }
+
+        protected int _netConnectionStatus;
+
+        public int NetConnectionStatus
+        {
+            get { return _netConnectionStatus; }
+            set { _netConnectionStatus = value; }
+        }
+
+        public String Status
+        {
+            get
+            {
+                switch (_netConnectionStatus)
+                {
+                    case 0: return "Disconnected";
+                    case 1: return "Connecting";
+                    case 2: return "Connected";
+                    case 3: return "Disconnecting";
+                    case 4: return "Hardware not present";
+                    case 5: return "Hardware disabled";
+                    case 6: return "Hardware malfunction";
+                    case 7: return "Media disconnected";
+                    case 8: return "Authenticating";
+                    case 9: return "Authentication succeeded";
+                    case 10: return "Authentication failed";
+                    case 11: return "Invalid address";
+                    case 12: return "Credentials required";
+                }
+
+                return "Unknown";
+            }
         }
 
         /// <summary>

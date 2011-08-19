@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\Argon\Hardware\WmiNetworkAdapterConfiguration.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Argon\Hardware\WmiNetworkAdapter.cs">
       <SubType>Component</SubType>
     </Compile>

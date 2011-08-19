@@ -40,32 +40,36 @@ namespace Argon.OperatingSystem
            
             List<WindowsNetworkCard> lista = new List<WindowsNetworkCard>();
 
-            
-            // prepariamo WMI
-            //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration where IPEnabled='TRUE'");
-            // retrieve object
-            ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter where GUID is not null ");            
-            ManagementObjectCollection deviceCollection = queryDevice.Get();          
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter", "GUID is not null");
+            ManagementObjectSearcher search = new ManagementObjectSearcher(query);
 
             // 1 - Create list of cards
             WindowsNetworkCard card;
 
             // create network card objects
-            foreach (ManagementObject item in deviceCollection)
+            foreach (ManagementObject item in search.Get())
             {
+                WmiNetworkAdapter adapter = new WmiNetworkAdapter(item);
+
+                if (adapter.Name.ToUpper().Contains("Microsoft Virtual WiFi Miniport Adapter".ToUpper()))
+                {
+                    continue;
+                };
+
                 card = new WindowsNetworkCard();
-                card.Id = (string)item["GUID"];
+                card.Id = adapter.GUID;
 
-                card.ViewId = fixViewId((string)item["Caption"]);
-                card.Name = (string)item["Name"];
-                card.HardwareName = fixHardwareName((string)item["Caption"]);
-                card.Enabled = (bool)item["NetEnabled"];
+                card.ViewId = fixViewId(adapter.Caption);
+                card.Name = adapter.Name;
+                card.HardwareName = fixHardwareName(adapter.Caption);
+                card.Enabled = adapter.NetEnabled;
+                card.NetConnectionStatus = adapter.NetConnectionStatus;
 
-                card.PnpDeviceId = (string)item["PNPDeviceID"];     
-                
 
-                card.Description = (string)item["NetConnectionId"];
-                card.MacAddress = (string)item["MACAddress"];
+                card.PnpDeviceId = adapter.PNPDeviceID;
+
+                card.Description = adapter.NetConnectionID;
+                card.MacAddress = adapter.MACAddress;
 
                 if (!IsNetworkCardInRegistry(card)) continue;
                 // 2 - get more info from registry
@@ -73,55 +77,27 @@ namespace Argon.OperatingSystem
                 dictionary[card.Id]=card;
             }
 
+            // 2 - Get more info
             String id;
-            ManagementObjectSearcher queryConfig = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration where IPEnabled='TRUE'");// where IPEnabled='TRUE'");
-            ManagementObjectCollection configCollection = queryConfig.Get(); 
-            foreach (ManagementObject item in configCollection)
+            SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration", "IPEnabled='TRUE'");
+            ManagementObjectSearcher search2 = new ManagementObjectSearcher(query2);
+
+            foreach (ManagementObject item in search2.Get())
             {
-                id = (string)item["SettingID"];
+                WmiNetworkAdapterConfiguration adapterConfigurator = new WmiNetworkAdapterConfiguration(item);
+                id = adapterConfigurator.SettingID;
 
                 card = dictionary[id];
 
                 if (card != null)
-                {
-                    MapDataFromWMI(item, card);
+                {                    
+                    card.WinsEnableLMHostsLookup =adapterConfigurator.WINSEnableLMHostsLookup;
+                    card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
+                    card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
+                    card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
                 }
             }
-            //-----------
-            /*
-            // prepariamo .NET library
-            NetworkInterface[] listaNI = NetworkInterface.GetAllNetworkInterfaces();
-
             
-
-            foreach (NetworkInterface item in listaNI)
-            {
-                if (item.Id.Contains("Loopback") || item.Name.Contains("Loopback"))
-                {
-                    continue;
-                }
-
-                // create card and put info from WMI
-                card = new WindowsNetworkCard();                
-                MapDataFromNetwork(item, card);
-
-                // check if we can access to registry for the nic
-                if (!IsNetworkCardInRegistry(card)) continue;                
-                MapDataFromRegistry(card);
-                lista.Add(card);
-
-                foreach (ManagementObject item2 in queryCollection)
-                {
-                    
-                    if (card.Id.Equals((string)item2["SettingID"]))
-                    {
-                       
-                        MapDataFromWMI(item2, card);
-                    }
-
-                }
-
-            }*/
             lista.AddRange(dictionary.Values);
 
             return lista;
@@ -152,11 +128,6 @@ namespace Argon.OperatingSystem
         /// <param name="card">The card.</param>
         internal static void MapDataFromWMI(ManagementObject input, WindowsNetworkCard card)
         {
-            //card.ViewId = fixViewId((string)input["Caption"]);
-            //card.HardwareName=fixHardwareName((string)input["Caption"]);
-            //card.Description = (string)input["Description"];
-            //card.MacAddress = (string)input["MACAddress"];
-            //card.Dhcp = (bool)input["DHCPEnabled"];
            
             card.WinsEnableLMHostsLookup = (bool)input["WINSEnableLMHostsLookup"];
             card.WinsHostLookupFile = (string)input["WINSHostLookupFile"];
