@@ -84,7 +84,7 @@
             this.lstBox.FormattingEnabled = true;
             this.lstBox.Location = new System.Drawing.Point(0, 0);
             this.lstBox.Name = "lstBox";
-            this.lstBox.Size = new System.Drawing.Size(292, 238);
+            this.lstBox.Size = new System.Drawing.Size(292, 243);
             this.lstBox.TabIndex = 0;
             // 
             // FormConsole
@@ -93,6 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 268);
             this.Controls.Add(this.toolStripContainer2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsole";

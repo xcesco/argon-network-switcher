@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.OperatingSystem;
 using System.Diagnostics;
+using System.Management;
 //using NUnit.Framework;
 
 namespace Argon.OperatingSystem
@@ -67,6 +68,29 @@ namespace Argon.OperatingSystem
             Debug.WriteLine("Esecuzione terminata");
         }
 
+        /// <summary>
+        /// Lists result of a WMI query.
+        /// </summary>
+        [TestMethod]
+        public void ListWMIQuery()
+        {
+            // adapters
+            ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter where GUID is not null ");
+            // configurations
+            //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter  WHERE (ConfigManagerErrorCode = 0  OR (ConfigManagerErrorCode = 22 AND NetConnectionStatus = 0))");// where IPEnabled='TRUE'");
+
+            ManagementObjectCollection collection = queryDevice.Get();
+
+            foreach (ManagementObject item in collection)
+            {
+                Debug.WriteLine("-------");
+                foreach (PropertyData item2 in item.Properties)
+                {
+                    Debug.WriteLine(item2.Name + "=" + item2.Value);
+                }                
+            }
+        }
+        
         [TestMethod]
         public void ListAllNetwork()
         {
@@ -78,6 +102,7 @@ namespace Argon.OperatingSystem
                 Debug.WriteLine("Id           : " + item.Id);
                 Debug.WriteLine("ViewId       : " + item.ViewId);
                 Debug.WriteLine("Name         : " + item.Name);
+                Debug.WriteLine("HardwareName : " + item.HardwareName);
                 Debug.WriteLine("Description  : " + item.Description);
                 Debug.WriteLine("MAC          : " + item.MacAddress);
                 Debug.WriteLine("DHCP         : " + item.Dhcp);

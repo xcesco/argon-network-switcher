@@ -63,8 +63,12 @@ namespace Argon.Windows.Forms
 
         public FormMain ViewMain
         {
-            get { return _viewMain; }
-            set { _viewMain = value; }
+            get { 
+                return _viewMain; 
+            }
+            set { 
+                _viewMain = value; 
+            }
         }
 
         public FormProfiles ViewProfiles

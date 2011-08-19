@@ -50,6 +50,8 @@ namespace Argon.Windows.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gradientLine1 = new Ascend.Windows.Forms.GradientLine();
+            this.txtEnabled = new System.Windows.Forms.Label();
+            this.lblEnabled = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +138,7 @@ namespace Argon.Windows.Forms
             // 
             // gradientPanel1
             // 
+            this.gradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gradientPanel1.Controls.Add(this.txtName);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
@@ -156,20 +159,32 @@ namespace Argon.Windows.Forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ErrorImage = null;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
             // gradientLine1
             // 
+            this.gradientLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             resources.ApplyResources(this.gradientLine1, "gradientLine1");
             this.gradientLine1.Name = "gradientLine1";
+            // 
+            // txtEnabled
+            // 
+            resources.ApplyResources(this.txtEnabled, "txtEnabled");
+            this.txtEnabled.Name = "txtEnabled";
+            // 
+            // lblEnabled
+            // 
+            resources.ApplyResources(this.lblEnabled, "lblEnabled");
+            this.lblEnabled.Name = "lblEnabled";
             // 
             // FormCardInfo
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtEnabled);
+            this.Controls.Add(this.lblEnabled);
             this.Controls.Add(this.gradientLine1);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.txtDns2);
@@ -186,10 +201,11 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.HideOnClose = true;
             this.Name = "FormCardInfo";
-            this.Load += new System.EventHandler(this.FormCardInfo_Load);
+            this.TabText = "Info";
             this.Activated += new System.EventHandler(this.FormCardInfo_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCardInfo_FormClosed);
+            this.Load += new System.EventHandler(this.FormCardInfo_Load);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -221,5 +237,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Ascend.Windows.Forms.GradientLine gradientLine1;
+        private System.Windows.Forms.Label txtEnabled;
+        private System.Windows.Forms.Label lblEnabled;
     }
 }

@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace Argon.OperatingSystem
 {
     /// <summary>
-    /// 
+    /// Base class for component defined in library
     /// </summary>    
     public abstract class WindowsComponent
     {

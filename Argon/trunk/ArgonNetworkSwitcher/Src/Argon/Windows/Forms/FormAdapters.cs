@@ -62,6 +62,28 @@ namespace Argon.Windows.Forms
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void mnuEnableDisableNetworkInterfaceCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+
+        private void mnuEnable_Click(object sender, EventArgs e)
+        {
+            NetworkCardActions.EnableNetworkCard();
+        }
+
+        private void mnuDisable_Click(object sender, EventArgs e)
+        {
+            NetworkCardActions.DisableNetworkCard();
         }  
     }
 }

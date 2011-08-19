@@ -19,7 +19,7 @@ namespace Argon.Controllers
             {
                 case DockState.Unknown:
                 case DockState.Hidden:
-                    form.Show(Controller.Instance.View.ViewMain.dockPanel);
+                    form.Show(Controller.Instance.View.ViewMain.Pannello);
                     break;
                 default:
                     form.Hide();

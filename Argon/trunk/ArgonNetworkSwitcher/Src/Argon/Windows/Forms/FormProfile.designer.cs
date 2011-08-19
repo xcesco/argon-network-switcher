@@ -34,49 +34,49 @@ namespace Argon.Windows.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfile));
-            ProxyConfiguration proxyConfiguration1 = new ProxyConfiguration();
+            Argon.Network.ProxyConfiguration proxyConfiguration1 = new Argon.Network.ProxyConfiguration();
             this.imageList48x48 = new System.Windows.Forms.ImageList(this.components);
             this.imageList24x24 = new System.Windows.Forms.ImageList(this.components);
             this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
             this.txtSelectedCard = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.lblSelectedCard = new System.Windows.Forms.Label();
             this.lstNetworkCard = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.gradientLine1 = new Ascend.Windows.Forms.GradientLine();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.panel = new Ascend.Windows.Forms.NavigationPane();
+            this.panelIpConfiguration = new Ascend.Windows.Forms.NavigationPanePage();
+            this.ipControl1 = new Argon.Windows.Controls.IpControl();
             this.panelPrinter = new Ascend.Windows.Forms.NavigationPanePage();
+            this.btnRemovePrinter = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSelectPrinter = new System.Windows.Forms.Button();
             this.lblSelectedPrinter = new System.Windows.Forms.Label();
             this.cbPrinterList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelDriveMap = new Ascend.Windows.Forms.NavigationPanePage();
-            this.driveMappingListView1 = new Argon.Windows.Controls.DriveMapListView();
             this.panelPrograms = new Ascend.Windows.Forms.NavigationPanePage();
             this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
-            this.panelServices = new Ascend.Windows.Forms.NavigationPanePage();
-            this.serviceListView1 = new Argon.Windows.Controls.ServiceListView();
+            this.panelDriveMap = new Ascend.Windows.Forms.NavigationPanePage();
+            this.driveMappingListView1 = new Argon.Windows.Controls.DriveMapListView();
             this.panelProxy = new Ascend.Windows.Forms.NavigationPanePage();
             this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
-            this.panelIpConfiguration = new Ascend.Windows.Forms.NavigationPanePage();
-            this.ipControl1 = new Argon.Windows.Controls.IpControl();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnRemovePrinter = new System.Windows.Forms.Button();
-            this.btnSelectPrinter = new System.Windows.Forms.Button();
-            this.btnSelect = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.panelServices = new Ascend.Windows.Forms.NavigationPanePage();
+            this.serviceListView1 = new Argon.Windows.Controls.ServiceListView();
             this.gradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.panel.SuspendLayout();
-            this.panelPrinter.SuspendLayout();
-            this.panelDriveMap.SuspendLayout();
-            this.panelPrograms.SuspendLayout();
-            this.panelServices.SuspendLayout();
-            this.panelProxy.SuspendLayout();
             this.panelIpConfiguration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.panelPrinter.SuspendLayout();
+            this.panelPrograms.SuspendLayout();
+            this.panelDriveMap.SuspendLayout();
+            this.panelProxy.SuspendLayout();
+            this.panelServices.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList48x48
@@ -100,6 +100,7 @@ namespace Argon.Windows.Forms
             // 
             // gradientPanel1
             // 
+            this.gradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gradientPanel1.Controls.Add(this.txtSelectedCard);
             this.gradientPanel1.Controls.Add(this.btnSelect);
             this.gradientPanel1.Controls.Add(this.lblSelectedCard);
@@ -121,6 +122,19 @@ namespace Argon.Windows.Forms
             this.txtSelectedCard.Name = "txtSelectedCard";
             this.txtSelectedCard.Size = new System.Drawing.Size(0, 13);
             this.txtSelectedCard.TabIndex = 8;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Image = ((System.Drawing.Image)(resources.GetObject("btnSelect.Image")));
+            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelect.Location = new System.Drawing.Point(521, 36);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(83, 23);
+            this.btnSelect.TabIndex = 7;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // lblSelectedCard
             // 
@@ -171,8 +185,18 @@ namespace Argon.Windows.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            // 
             // gradientLine1
             // 
+            this.gradientLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gradientLine1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradientLine1.GradientHighColor = System.Drawing.Color.LightSteelBlue;
             this.gradientLine1.GradientLowColor = System.Drawing.Color.MidnightBlue;
@@ -214,10 +238,10 @@ namespace Argon.Windows.Forms
             this.panel.CaptionGradientHighColor = System.Drawing.Color.Silver;
             this.panel.CaptionGradientLowColor = System.Drawing.Color.Gainsboro;
             this.panel.CaptionImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel.Controls.Add(this.panelIpConfiguration);
             this.panel.Controls.Add(this.panelPrinter);
             this.panel.Controls.Add(this.panelPrograms);
             this.panel.Controls.Add(this.panelDriveMap);
-            this.panel.Controls.Add(this.panelIpConfiguration);
             this.panel.Controls.Add(this.panelProxy);
             this.panel.Controls.Add(this.panelServices);
             this.panel.Cursor = System.Windows.Forms.Cursors.Default;
@@ -242,6 +266,45 @@ namespace Argon.Windows.Forms
             this.panel.Size = new System.Drawing.Size(876, 487);
             this.panel.TabIndex = 11;
             this.panel.VisibleButtonCount = 0;
+            // 
+            // panelIpConfiguration
+            // 
+            this.panelIpConfiguration.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
+            this.panelIpConfiguration.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelIpConfiguration.AutoScroll = true;
+            this.panelIpConfiguration.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.panelIpConfiguration.ButtonForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelIpConfiguration.Controls.Add(this.ipControl1);
+            this.panelIpConfiguration.GradientHighColor = System.Drawing.Color.WhiteSmoke;
+            this.panelIpConfiguration.GradientLowColor = System.Drawing.Color.Gainsboro;
+            this.panelIpConfiguration.HighlightGradientHighColor = System.Drawing.Color.White;
+            this.panelIpConfiguration.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelIpConfiguration.Image = null;
+            this.panelIpConfiguration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelIpConfiguration.ImageFooter = null;
+            this.panelIpConfiguration.ImageIndex = -1;
+            this.panelIpConfiguration.ImageIndexFooter = -1;
+            this.panelIpConfiguration.ImageKey = "";
+            this.panelIpConfiguration.ImageKeyFooter = "";
+            this.panelIpConfiguration.ImageList = this.imageList24x24;
+            this.panelIpConfiguration.ImageListFooter = this.imageList24x24;
+            this.panelIpConfiguration.Key = "panelIpConfiguration";
+            this.panelIpConfiguration.Location = new System.Drawing.Point(1, 27);
+            this.panelIpConfiguration.Name = "panelIpConfiguration";
+            this.panelIpConfiguration.Size = new System.Drawing.Size(874, 422);
+            this.panelIpConfiguration.TabIndex = 1;
+            this.panelIpConfiguration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelIpConfiguration.ToolTipText = null;
+            // 
+            // ipControl1
+            // 
+            this.ipControl1.BackColor = System.Drawing.Color.Transparent;
+            this.ipControl1.Configuration = null;
+            this.ipControl1.Location = new System.Drawing.Point(3, 3);
+            this.ipControl1.MinimumSize = new System.Drawing.Size(584, 240);
+            this.ipControl1.Name = "ipControl1";
+            this.ipControl1.Size = new System.Drawing.Size(584, 240);
+            this.ipControl1.TabIndex = 0;
             // 
             // panelPrinter
             // 
@@ -278,6 +341,41 @@ namespace Argon.Windows.Forms
             this.panelPrinter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.panelPrinter.ToolTipText = null;
             // 
+            // btnRemovePrinter
+            // 
+            this.btnRemovePrinter.Image = global::Argon.Windows.Forms.Properties.Resources.delete2;
+            this.btnRemovePrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemovePrinter.Location = new System.Drawing.Point(520, 43);
+            this.btnRemovePrinter.Name = "btnRemovePrinter";
+            this.btnRemovePrinter.Size = new System.Drawing.Size(83, 23);
+            this.btnRemovePrinter.TabIndex = 10;
+            this.btnRemovePrinter.Text = "Remove";
+            this.btnRemovePrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemovePrinter.UseVisualStyleBackColor = true;
+            this.btnRemovePrinter.Click += new System.EventHandler(this.btnRemovePrinter_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Selected Printer";
+            // 
+            // btnSelectPrinter
+            // 
+            this.btnSelectPrinter.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectPrinter.Image")));
+            this.btnSelectPrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelectPrinter.Location = new System.Drawing.Point(520, 10);
+            this.btnSelectPrinter.Name = "btnSelectPrinter";
+            this.btnSelectPrinter.Size = new System.Drawing.Size(83, 23);
+            this.btnSelectPrinter.TabIndex = 8;
+            this.btnSelectPrinter.Text = "Select";
+            this.btnSelectPrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectPrinter.UseVisualStyleBackColor = true;
+            this.btnSelectPrinter.Click += new System.EventHandler(this.btnSelectPrinter_Click);
+            // 
             // lblSelectedPrinter
             // 
             this.lblSelectedPrinter.AutoSize = true;
@@ -303,44 +401,6 @@ namespace Argon.Windows.Forms
             this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Select the default printer";
-            // 
-            // panelDriveMap
-            // 
-            this.panelDriveMap.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
-            this.panelDriveMap.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelDriveMap.AutoScroll = true;
-            this.panelDriveMap.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.panelDriveMap.ButtonForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelDriveMap.Controls.Add(this.driveMappingListView1);
-            this.panelDriveMap.GradientHighColor = System.Drawing.Color.WhiteSmoke;
-            this.panelDriveMap.GradientLowColor = System.Drawing.Color.Gainsboro;
-            this.panelDriveMap.HighlightGradientHighColor = System.Drawing.Color.White;
-            this.panelDriveMap.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelDriveMap.Image = null;
-            this.panelDriveMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelDriveMap.ImageFooter = null;
-            this.panelDriveMap.ImageIndex = -1;
-            this.panelDriveMap.ImageIndexFooter = -1;
-            this.panelDriveMap.ImageKey = "";
-            this.panelDriveMap.ImageKeyFooter = "";
-            this.panelDriveMap.ImageList = this.imageList24x24;
-            this.panelDriveMap.ImageListFooter = this.imageList24x24;
-            this.panelDriveMap.Key = "panelDriveMap";
-            this.panelDriveMap.Location = new System.Drawing.Point(1, 27);
-            this.panelDriveMap.Name = "panelDriveMap";
-            this.panelDriveMap.Size = new System.Drawing.Size(874, 422);
-            this.panelDriveMap.TabIndex = 5;
-            this.panelDriveMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelDriveMap.ToolTipText = null;
-            // 
-            // driveMappingListView1
-            // 
-            this.driveMappingListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.driveMappingListView1.Location = new System.Drawing.Point(0, 0);
-            this.driveMappingListView1.MinimumSize = new System.Drawing.Size(560, 312);
-            this.driveMappingListView1.Name = "driveMappingListView1";
-            this.driveMappingListView1.Size = new System.Drawing.Size(874, 422);
-            this.driveMappingListView1.TabIndex = 0;
             // 
             // panelPrograms
             // 
@@ -380,44 +440,43 @@ namespace Argon.Windows.Forms
             this.applicationsListView.Size = new System.Drawing.Size(874, 422);
             this.applicationsListView.TabIndex = 0;
             // 
-            // panelServices
+            // panelDriveMap
             // 
-            this.panelServices.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
-            this.panelServices.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelServices.AutoScroll = true;
-            this.panelServices.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.panelServices.ButtonForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelServices.Controls.Add(this.serviceListView1);
-            this.panelServices.GradientHighColor = System.Drawing.Color.WhiteSmoke;
-            this.panelServices.GradientLowColor = System.Drawing.Color.Gainsboro;
-            this.panelServices.HighlightGradientHighColor = System.Drawing.Color.White;
-            this.panelServices.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelServices.Image = null;
-            this.panelServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelServices.ImageFooter = null;
-            this.panelServices.ImageIndex = -1;
-            this.panelServices.ImageIndexFooter = -1;
-            this.panelServices.ImageKey = "";
-            this.panelServices.ImageKeyFooter = "";
-            this.panelServices.ImageList = this.imageList24x24;
-            this.panelServices.ImageListFooter = this.imageList24x24;
-            this.panelServices.Key = "panelServices";
-            this.panelServices.Location = new System.Drawing.Point(1, 27);
-            this.panelServices.Name = "panelServices";
-            this.panelServices.Size = new System.Drawing.Size(874, 422);
-            this.panelServices.TabIndex = 3;
-            this.panelServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelServices.ToolTipText = null;
+            this.panelDriveMap.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
+            this.panelDriveMap.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelDriveMap.AutoScroll = true;
+            this.panelDriveMap.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.panelDriveMap.ButtonForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelDriveMap.Controls.Add(this.driveMappingListView1);
+            this.panelDriveMap.GradientHighColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDriveMap.GradientLowColor = System.Drawing.Color.Gainsboro;
+            this.panelDriveMap.HighlightGradientHighColor = System.Drawing.Color.White;
+            this.panelDriveMap.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelDriveMap.Image = null;
+            this.panelDriveMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelDriveMap.ImageFooter = null;
+            this.panelDriveMap.ImageIndex = -1;
+            this.panelDriveMap.ImageIndexFooter = -1;
+            this.panelDriveMap.ImageKey = "";
+            this.panelDriveMap.ImageKeyFooter = "";
+            this.panelDriveMap.ImageList = this.imageList24x24;
+            this.panelDriveMap.ImageListFooter = this.imageList24x24;
+            this.panelDriveMap.Key = "panelDriveMap";
+            this.panelDriveMap.Location = new System.Drawing.Point(1, 27);
+            this.panelDriveMap.Name = "panelDriveMap";
+            this.panelDriveMap.Size = new System.Drawing.Size(874, 422);
+            this.panelDriveMap.TabIndex = 5;
+            this.panelDriveMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelDriveMap.ToolTipText = null;
             // 
-            // serviceListView1
+            // driveMappingListView1
             // 
-            this.serviceListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceListView1.Items = ((System.Collections.Generic.List<Argon.OperatingSystem.IWindowsServiceInfo>)(resources.GetObject("serviceListView1.Items")));
-            this.serviceListView1.Location = new System.Drawing.Point(0, 0);
-            this.serviceListView1.MinimumSize = new System.Drawing.Size(560, 200);
-            this.serviceListView1.Name = "serviceListView1";
-            this.serviceListView1.Size = new System.Drawing.Size(874, 422);
-            this.serviceListView1.TabIndex = 0;
+            this.driveMappingListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveMappingListView1.Location = new System.Drawing.Point(0, 0);
+            this.driveMappingListView1.MinimumSize = new System.Drawing.Size(560, 312);
+            this.driveMappingListView1.Name = "driveMappingListView1";
+            this.driveMappingListView1.Size = new System.Drawing.Size(874, 422);
+            this.driveMappingListView1.TabIndex = 0;
             // 
             // panelProxy
             // 
@@ -463,101 +522,44 @@ namespace Argon.Windows.Forms
             this.proxyPanel.Size = new System.Drawing.Size(384, 155);
             this.proxyPanel.TabIndex = 0;
             // 
-            // panelIpConfiguration
+            // panelServices
             // 
-            this.panelIpConfiguration.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
-            this.panelIpConfiguration.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelIpConfiguration.AutoScroll = true;
-            this.panelIpConfiguration.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.panelIpConfiguration.ButtonForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelIpConfiguration.Controls.Add(this.ipControl1);
-            this.panelIpConfiguration.GradientHighColor = System.Drawing.Color.WhiteSmoke;
-            this.panelIpConfiguration.GradientLowColor = System.Drawing.Color.Gainsboro;
-            this.panelIpConfiguration.HighlightGradientHighColor = System.Drawing.Color.White;
-            this.panelIpConfiguration.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
-            this.panelIpConfiguration.Image = null;
-            this.panelIpConfiguration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelIpConfiguration.ImageFooter = null;
-            this.panelIpConfiguration.ImageIndex = -1;
-            this.panelIpConfiguration.ImageIndexFooter = -1;
-            this.panelIpConfiguration.ImageKey = "";
-            this.panelIpConfiguration.ImageKeyFooter = "";
-            this.panelIpConfiguration.ImageList = this.imageList24x24;
-            this.panelIpConfiguration.ImageListFooter = this.imageList24x24;
-            this.panelIpConfiguration.Key = "panelIpConfiguration";
-            this.panelIpConfiguration.Location = new System.Drawing.Point(1, 27);
-            this.panelIpConfiguration.Name = "panelIpConfiguration";
-            this.panelIpConfiguration.Size = new System.Drawing.Size(874, 422);
-            this.panelIpConfiguration.TabIndex = 1;
-            this.panelIpConfiguration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.panelIpConfiguration.ToolTipText = null;
+            this.panelServices.ActiveGradientHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(155)))));
+            this.panelServices.ActiveGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelServices.AutoScroll = true;
+            this.panelServices.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.panelServices.ButtonForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelServices.Controls.Add(this.serviceListView1);
+            this.panelServices.GradientHighColor = System.Drawing.Color.WhiteSmoke;
+            this.panelServices.GradientLowColor = System.Drawing.Color.Gainsboro;
+            this.panelServices.HighlightGradientHighColor = System.Drawing.Color.White;
+            this.panelServices.HighlightGradientLowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(78)))));
+            this.panelServices.Image = null;
+            this.panelServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelServices.ImageFooter = null;
+            this.panelServices.ImageIndex = -1;
+            this.panelServices.ImageIndexFooter = -1;
+            this.panelServices.ImageKey = "";
+            this.panelServices.ImageKeyFooter = "";
+            this.panelServices.ImageList = this.imageList24x24;
+            this.panelServices.ImageListFooter = this.imageList24x24;
+            this.panelServices.Key = "panelServices";
+            this.panelServices.Location = new System.Drawing.Point(1, 27);
+            this.panelServices.Name = "panelServices";
+            this.panelServices.Size = new System.Drawing.Size(874, 422);
+            this.panelServices.TabIndex = 3;
+            this.panelServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelServices.ToolTipText = null;
             // 
-            // ipControl1
+            // serviceListView1
             // 
-            this.ipControl1.BackColor = System.Drawing.Color.Transparent;
-            this.ipControl1.Configuration = null;
-            this.ipControl1.Location = new System.Drawing.Point(3, 3);
-            this.ipControl1.MinimumSize = new System.Drawing.Size(584, 240);
-            this.ipControl1.Name = "ipControl1";
-            this.ipControl1.Size = new System.Drawing.Size(584, 240);
-            this.ipControl1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Selected Printer";
-            // 
-            // btnRemovePrinter
-            // 
-            this.btnRemovePrinter.Image = global::Argon.Windows.Forms.Properties.Resources.delete2;
-            this.btnRemovePrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemovePrinter.Location = new System.Drawing.Point(520, 43);
-            this.btnRemovePrinter.Name = "btnRemovePrinter";
-            this.btnRemovePrinter.Size = new System.Drawing.Size(83, 23);
-            this.btnRemovePrinter.TabIndex = 10;
-            this.btnRemovePrinter.Text = "Remove";
-            this.btnRemovePrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemovePrinter.UseVisualStyleBackColor = true;
-            this.btnRemovePrinter.Click += new System.EventHandler(this.btnRemovePrinter_Click);
-            // 
-            // btnSelectPrinter
-            // 
-            this.btnSelectPrinter.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectPrinter.Image")));
-            this.btnSelectPrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelectPrinter.Location = new System.Drawing.Point(520, 10);
-            this.btnSelectPrinter.Name = "btnSelectPrinter";
-            this.btnSelectPrinter.Size = new System.Drawing.Size(83, 23);
-            this.btnSelectPrinter.TabIndex = 8;
-            this.btnSelectPrinter.Text = "Select";
-            this.btnSelectPrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelectPrinter.UseVisualStyleBackColor = true;
-            this.btnSelectPrinter.Click += new System.EventHandler(this.btnSelectPrinter_Click);
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Image = ((System.Drawing.Image)(resources.GetObject("btnSelect.Image")));
-            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(521, 36);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(83, 23);
-            this.btnSelect.TabIndex = 7;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.serviceListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceListView1.Items = ((System.Collections.Generic.List<Argon.OperatingSystem.IWindowsServiceInfo>)(resources.GetObject("serviceListView1.Items")));
+            this.serviceListView1.Location = new System.Drawing.Point(0, 0);
+            this.serviceListView1.MinimumSize = new System.Drawing.Size(560, 200);
+            this.serviceListView1.Name = "serviceListView1";
+            this.serviceListView1.Size = new System.Drawing.Size(874, 422);
+            this.serviceListView1.TabIndex = 0;
             // 
             // FormProfile
             // 
@@ -567,27 +569,28 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.gradientLine1);
             this.Controls.Add(this.gradientPanel1);
-            this.HideOnClose = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfile";
             this.TabText = "Profile";
             this.Text = "Profile";
-            this.Load += new System.EventHandler(this.FormProfile_Load);
             this.Activated += new System.EventHandler(this.FormProfile_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProfile_FormClosed);
+            this.Load += new System.EventHandler(this.FormProfile_Load);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.panel.ResumeLayout(false);
+            this.panelIpConfiguration.ResumeLayout(false);
             this.panelPrinter.ResumeLayout(false);
             this.panelPrinter.PerformLayout();
-            this.panelDriveMap.ResumeLayout(false);
             this.panelPrograms.ResumeLayout(false);
-            this.panelServices.ResumeLayout(false);
+            this.panelDriveMap.ResumeLayout(false);
             this.panelProxy.ResumeLayout(false);
-            this.panelIpConfiguration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panelServices.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

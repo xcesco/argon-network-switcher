@@ -104,6 +104,7 @@ namespace Argon.OperatingSystem
             _subnetMask = "";
             _macAddress = "";            
             _hardwareName = "";
+            _enabled = false;
             
         }
 
@@ -146,6 +147,11 @@ namespace Argon.OperatingSystem
         /// 
         /// </summary>
         protected string _viewId;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected bool _enabled;
 
         /// <summary>
         /// Gets or sets the name.
@@ -302,6 +308,7 @@ namespace Argon.OperatingSystem
             _viewId = "";
             _hardwareName = "";
             _name = "";
+            _pnpDeviceId = "";
         }
 
         /// <summary>
@@ -581,6 +588,23 @@ namespace Argon.OperatingSystem
         protected string _winsSecondaryServer;
 
         /// <summary>
+        /// 
+        /// </summary>
+        private string _pnpDeviceId;
+
+        /// <summary>
+        /// Gets or sets the PNP device id.
+        /// </summary>
+        /// <value>
+        /// The PNP device id.
+        /// </value>
+        public string PnpDeviceId
+        {
+            get { return _pnpDeviceId; }
+            set { _pnpDeviceId = value; }
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether [wins enable LM hosts lookup].
         /// </summary>
         /// <value>
@@ -622,5 +646,13 @@ namespace Argon.OperatingSystem
             set { _winsSecondaryServer = value; }
         }
 
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="WindowsNetworkCard"/> is enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if enabled; otherwise, <c>false</c>.
+        /// </value>
+        public bool Enabled { get; set; }
     }
 }

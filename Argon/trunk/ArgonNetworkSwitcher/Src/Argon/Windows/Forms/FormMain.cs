@@ -36,14 +36,14 @@ namespace Argon.Windows.Forms
                 dockPanel.LoadFromXml(configFile, _DeserializeDockContent);
             }
             else*/
-            {
-                
+            {                
                 Controller.Instance.View.ViewAdapters.Show(dockPanel);
-                Controller.Instance.View.ViewAdapters.DockState = DockState.Document;
+                Controller.Instance.View.ViewAdapters.DockState = DockState.DockBottomAutoHide;
+                //Controller.Instance.View.ViewAdapters.IsHidden = true;
                 Controller.Instance.View.ViewProfiles.Show(dockPanel);
                 Controller.Instance.View.ViewProfiles.DockState = DockState.Document;
                 Controller.Instance.View.ViewConsole.Show(dockPanel);
-                Controller.Instance.View.ViewConsole.DockState = DockState.DockBottom;
+                Controller.Instance.View.ViewConsole.DockState = DockState.DockBottomAutoHide;
 
                 mnuViewNetworkAdapters.Checked = true;
                 mnuViewProfiles.Checked = true;

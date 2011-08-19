@@ -7,6 +7,8 @@ using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
+using Argon.Hardware;
+using Argon.Network;
 
 namespace Argon.Controllers
 {
@@ -36,7 +38,7 @@ namespace Argon.Controllers
 
                         if (!form.Visible)
                         {
-                            form.Show(Controller.Instance.View.ViewMain.dockPanel);
+                            form.Show(Controller.Instance.View.ViewMain.Pannello);
                             Controller.Instance.ActivateFormNetworkCard(form);
                         }
 
@@ -56,8 +58,8 @@ namespace Argon.Controllers
             //formApp.Text = "NIC " + nic.ViewId;
 
             Controller.Instance.View.ListViewCardInfo.Add(formApp);
-            formApp.Show(Controller.Instance.View.ViewMain.dockPanel);
-            formApp.DockState = DockState.Document;
+            formApp.Show(Controller.Instance.View.ViewMain.Pannello);
+            //formApp.DockState = DockState.Document;
             //formApp.Show();
 
             formApp.TabText = "NIC " + nic.ViewId;
@@ -91,7 +93,7 @@ namespace Argon.Controllers
         }
 
         /// <summary>
-        /// Ricarica le schede di rete
+        /// Reload the adapters status in form.
         /// </summary>
         public static void RefreshAll()
         {
@@ -107,5 +109,41 @@ namespace Argon.Controllers
             DisplayForm(Controller.Instance.View.ViewAdapters);
         }
 
+
+        /// <summary>
+        /// Enables the network card.
+        /// </summary>
+        public static void EnableNetworkCard()
+        {
+            SetStatusCard(true);
+        }
+
+        protected static void SetStatusCard(bool enabled)
+        {
+            ObjectListView list = Controller.Instance.View.ViewAdapters.listView;
+            if (list.SelectedItems.Count > 0)
+            {
+                WindowsNetworkCard ni = (WindowsNetworkCard)list.SelectedObject;
+
+                if (ni.HardwareName.Length > 0)
+                {
+                    HardwareLibrary hl = new HardwareLibrary();
+                    String label=enabled?"Enabled":"Disabled";
+
+                    bool status = hl.SetDeviceState(ni.Id, enabled);
+                    Controller.Instance.ConsoleController.Info(label+" NIC " + ni.HardwareName + " (" + status + ")");
+
+                    RefreshAll();                    
+                }
+            }    
+        }
+
+        /// <summary>
+        /// Disables the network card.
+        /// </summary>
+        public static void DisableNetworkCard()
+        {
+            SetStatusCard(false);
+        }
     }
 }
