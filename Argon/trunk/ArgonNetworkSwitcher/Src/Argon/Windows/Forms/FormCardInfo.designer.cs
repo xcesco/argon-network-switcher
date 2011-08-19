@@ -50,8 +50,8 @@ namespace Argon.Windows.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gradientLine1 = new Ascend.Windows.Forms.GradientLine();
-            this.txtEnabled = new System.Windows.Forms.Label();
-            this.lblEnabled = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -169,22 +169,22 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.gradientLine1, "gradientLine1");
             this.gradientLine1.Name = "gradientLine1";
             // 
-            // txtEnabled
+            // txtStatus
             // 
-            resources.ApplyResources(this.txtEnabled, "txtEnabled");
-            this.txtEnabled.Name = "txtEnabled";
+            resources.ApplyResources(this.txtStatus, "txtStatus");
+            this.txtStatus.Name = "txtStatus";
             // 
-            // lblEnabled
+            // lblStatus
             // 
-            resources.ApplyResources(this.lblEnabled, "lblEnabled");
-            this.lblEnabled.Name = "lblEnabled";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            this.lblStatus.Name = "lblStatus";
             // 
             // FormCardInfo
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtEnabled);
-            this.Controls.Add(this.lblEnabled);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.gradientLine1);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.txtDns2);
@@ -237,7 +237,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Ascend.Windows.Forms.GradientLine gradientLine1;
-        private System.Windows.Forms.Label txtEnabled;
-        private System.Windows.Forms.Label lblEnabled;
+        private System.Windows.Forms.Label txtStatus;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

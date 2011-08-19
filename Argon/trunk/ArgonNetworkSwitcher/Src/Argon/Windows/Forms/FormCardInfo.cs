@@ -43,7 +43,7 @@ namespace Argon.Windows.Forms
             txtSubnetMask.Text = NIC.SubnetMask;
             txtDns1.Text = NIC.Dns;
             txtDns2.Text = NIC.Dns2;
-            txtEnabled.Text = NIC.Enabled.ToString();
+            txtStatus.Text = NIC.Status;
         }
 
         private void FormCardInfo_Activated(object sender, EventArgs e)

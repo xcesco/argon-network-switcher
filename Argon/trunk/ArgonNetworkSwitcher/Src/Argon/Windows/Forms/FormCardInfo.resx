@@ -603,66 +603,6 @@
   <data name="&gt;&gt;txtDns2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
-    <value>txtName</value>
-  </data>
-  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
-    <value>gradientPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>gradientPanel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>gradientPanel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gradientPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="gradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 86</value>
-  </data>
-  <data name="gradientPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;gradientPanel1.Name" xml:space="preserve">
-    <value>gradientPanel1</value>
-  </data>
-  <data name="&gt;&gt;gradientPanel1.Type" xml:space="preserve">
-    <value>Ascend.Windows.Forms.GradientPanel, Ascend.Windows.Forms, Version=1.0.0.6, Culture=neutral, PublicKeyToken=ecd86ece2d3eb46d</value>
-  </data>
-  <data name="&gt;&gt;gradientPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gradientPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="txtName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -735,8 +675,8 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK7QAA
-        Cu0BAohJwQAAEFdJREFUaEPNWQdUlNe2PrYEEOnDMMM0OiIivQjSUVFRxIIVUQGjqCgWQBEQUKQXBQQF
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK7AAA
+        CuwB0M+rJQAAEFdJREFUaEPNWQdUlNe2PrYEEOnDMMM0OiIivQjSUVFRxIIVUQGjqCgWQBEQUKQXBQQF
         CyqWiEpsaMSYXFvMulETWyykqeh9agwqSUz83j6/kKe+++4Tb7zLWetb8zP888/+9tnlO/sw9sJrxYoV
         qoyMjGGJiYkLZ86cuXby5MnHRo0a9VVgYOAWJyenBdbW1t50uzqh04vfe2euc3NzP83MzPwjKSkJRAIL
         Fy7E1KlTERAQABcXF7i5uT1TKBRDyWCdd5WEnpWV1Vhvb+/i8PDwU3FxcVi+fDnKysqwbds20IpAW1s7
@@ -833,6 +773,30 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="gradientPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="gradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 86</value>
+  </data>
+  <data name="gradientPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;gradientPanel1.Name" xml:space="preserve">
+    <value>gradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;gradientPanel1.Type" xml:space="preserve">
+    <value>Ascend.Windows.Forms.GradientPanel, Ascend.Windows.Forms, Version=1.0.0.6, Culture=neutral, PublicKeyToken=ecd86ece2d3eb46d</value>
+  </data>
+  <data name="&gt;&gt;gradientPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gradientPanel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="gradientLine1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -857,70 +821,70 @@
   <data name="&gt;&gt;gradientLine1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="txtEnabled.AutoSize" type="System.Boolean, mscorlib">
+  <data name="txtStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtEnabled.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="txtEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="txtStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtEnabled.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 305</value>
   </data>
-  <data name="txtEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 16</value>
+  <data name="txtStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 16</value>
   </data>
-  <data name="txtEnabled.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtStatus.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
-  <data name="txtEnabled.Text" xml:space="preserve">
-    <value>txtEnabled</value>
+  <data name="txtStatus.Text" xml:space="preserve">
+    <value>txtStatus</value>
   </data>
-  <data name="&gt;&gt;txtEnabled.Name" xml:space="preserve">
-    <value>txtEnabled</value>
+  <data name="&gt;&gt;txtStatus.Name" xml:space="preserve">
+    <value>txtStatus</value>
   </data>
-  <data name="&gt;&gt;txtEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtEnabled.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtStatus.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtEnabled.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtStatus.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblEnabled.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblEnabled.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="lblEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 305</value>
   </data>
-  <data name="lblEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 16</value>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
   </data>
-  <data name="lblEnabled.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="lblEnabled.Text" xml:space="preserve">
-    <value>Enabled</value>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
-  <data name="&gt;&gt;lblEnabled.Name" xml:space="preserve">
-    <value>lblEnabled</value>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
   </data>
-  <data name="&gt;&gt;lblEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblEnabled.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblEnabled.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
