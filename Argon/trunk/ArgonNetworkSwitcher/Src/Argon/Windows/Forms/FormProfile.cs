@@ -216,9 +216,13 @@ namespace Argon.Windows.Forms
             else
             {
                 int i1 = work.IndexOf("[");
-                int i2 = work.IndexOf("]", i1);
 
-                work = work.Substring(i1, i2 + 1);
+                if (i1 >= 0)
+                {
+                    int i2 = work.IndexOf("]", i1);
+
+                    work = i2>0 ? work.Substring(i1, i2 + 1): work;
+                }
                 if (work.Length > 0)
                 {
                     List<WindowsNetworkCard> lista = Controller.Instance.Model.GetNetworkAdapters();
@@ -274,6 +278,12 @@ namespace Argon.Windows.Forms
         private void btnRemovePrinter_Click(object sender, EventArgs e)
         {
             lblSelectedPrinter.Text = "";
+        }
+
+        private void FormProfile_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bool ret=Controller.Instance.View.ListViewProfile.Remove(this);
+            Controller.Instance.ConsoleController.Info("Profile form closed " + ret);
         }
 
 

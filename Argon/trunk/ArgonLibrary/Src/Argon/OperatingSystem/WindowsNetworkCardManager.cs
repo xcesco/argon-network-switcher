@@ -8,6 +8,7 @@ using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
 using Argon.Hardware;
+using System.Diagnostics;
 
 namespace Argon.OperatingSystem
 {
@@ -35,16 +36,63 @@ namespace Argon.OperatingSystem
         /// <returns></returns>
         protected static List<WindowsNetworkCard> GetListFromWMI()
         {
+            SortedDictionary<String,WindowsNetworkCard> dictionary=new SortedDictionary<String,WindowsNetworkCard>();            
+           
             List<WindowsNetworkCard> lista = new List<WindowsNetworkCard>();
+
+            
             // prepariamo WMI
             //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration where IPEnabled='TRUE'");
-            ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration where IPEnabled='TRUE'");
-            ManagementObjectCollection queryCollection = query.Get();
+            // retrieve object
+            ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter where GUID is not null ");            
+            ManagementObjectCollection deviceCollection = queryDevice.Get();          
 
+            // 1 - Create list of cards
+            WindowsNetworkCard card;
+
+            // create network card objects
+            foreach (ManagementObject item in deviceCollection)
+            {
+                card = new WindowsNetworkCard();
+                card.Id = (string)item["GUID"];
+
+                card.ViewId = fixViewId((string)item["Caption"]);
+                card.Name = (string)item["Name"];
+                card.HardwareName = fixHardwareName((string)item["Caption"]);
+                card.Enabled = (bool)item["NetEnabled"];
+
+                card.PnpDeviceId = (string)item["PNPDeviceID"];     
+                
+
+                card.Description = (string)item["NetConnectionId"];
+                card.MacAddress = (string)item["MACAddress"];
+
+                if (!IsNetworkCardInRegistry(card)) continue;
+                // 2 - get more info from registry
+                MapDataFromRegistry(card);
+                dictionary[card.Id]=card;
+            }
+
+            String id;
+            ManagementObjectSearcher queryConfig = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration where IPEnabled='TRUE'");// where IPEnabled='TRUE'");
+            ManagementObjectCollection configCollection = queryConfig.Get(); 
+            foreach (ManagementObject item in configCollection)
+            {
+                id = (string)item["SettingID"];
+
+                card = dictionary[id];
+
+                if (card != null)
+                {
+                    MapDataFromWMI(item, card);
+                }
+            }
+            //-----------
+            /*
             // prepariamo .NET library
             NetworkInterface[] listaNI = NetworkInterface.GetAllNetworkInterfaces();
 
-            WindowsNetworkCard card;
+            
 
             foreach (NetworkInterface item in listaNI)
             {
@@ -64,22 +112,17 @@ namespace Argon.OperatingSystem
 
                 foreach (ManagementObject item2 in queryCollection)
                 {
+                    
                     if (card.Id.Equals((string)item2["SettingID"]))
                     {
-                        /*
-                        foreach (PropertyData p in item2.Properties)
-                        {
-                            Console.WriteLine(p.Name + "=" + p.Value);
-                        }
-
-                        Console.WriteLine(@"----------------------------\n\n\n");                        
-                        */
+                       
                         MapDataFromWMI(item2, card);
                     }
 
                 }
 
-            }
+            }*/
+            lista.AddRange(dictionary.Values);
 
             return lista;
         }
@@ -109,28 +152,12 @@ namespace Argon.OperatingSystem
         /// <param name="card">The card.</param>
         internal static void MapDataFromWMI(ManagementObject input, WindowsNetworkCard card)
         {
-            //card.Id = (string)input["SettingID"];
-            card.ViewId = fixViewId((string)input["Caption"]);
-            card.HardwareName=fixHardwareName((string)input["Caption"]);
-            card.Description = (string)input["Description"];
-            card.MacAddress = (string)input["MACAddress"];
-            card.Dhcp = (bool)input["DHCPEnabled"];
-
-            /*
-            string[] tempIpAddress=(string[])input["IPAddress"];
-
-            if (tempIpAddress!=null)
-            {
-                card.CurrentIpAddress = tempIpAddress[0];
-            }
-
-            string[] tempDefaultGatewayAddress = (string[])input["DefaultIpGateway"];
-
-            if (tempDefaultGatewayAddress != null)
-            {
-                card.CurrentDefaultGateway = tempDefaultGatewayAddress[0];
-            }*/
-
+            //card.ViewId = fixViewId((string)input["Caption"]);
+            //card.HardwareName=fixHardwareName((string)input["Caption"]);
+            //card.Description = (string)input["Description"];
+            //card.MacAddress = (string)input["MACAddress"];
+            //card.Dhcp = (bool)input["DHCPEnabled"];
+           
             card.WinsEnableLMHostsLookup = (bool)input["WINSEnableLMHostsLookup"];
             card.WinsHostLookupFile = (string)input["WINSHostLookupFile"];
             card.WinsPrimaryServer = (string)input["WINSPrimaryServer"];
@@ -305,15 +332,16 @@ namespace Argon.OperatingSystem
 
             if (card.HardwareName.Length > 0)
             {
-                string[] hwName={card.HardwareName};
-                hl.SetDeviceState(hwName, false);
+                //string[] hwName={card.HardwareName};
+                hl.SetDeviceState(card.Id, false);
+             //   PnpDeviceId
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
 
             if (card.HardwareName.Length > 0)
             {
-                string[] hwName = { card.HardwareName };
-                hl.SetDeviceState(hwName, true);
+                //string[] hwName = { card.HardwareName };
+                hl.SetDeviceState(card.Id, true);
             }
             
             return ret;

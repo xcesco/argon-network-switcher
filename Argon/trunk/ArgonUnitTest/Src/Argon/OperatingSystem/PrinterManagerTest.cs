@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Argon.OperatingSystem
 {
     [TestClass]
-    class PrinterManagerTest
+    public class PrinterManagerTest
     { 
         [TestMethod]
         public void Test01()

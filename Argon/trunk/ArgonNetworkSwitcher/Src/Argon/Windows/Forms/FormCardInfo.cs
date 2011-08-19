@@ -42,12 +42,19 @@ namespace Argon.Windows.Forms
             txtGateway.Text = NIC.GatewayAddress;
             txtSubnetMask.Text = NIC.SubnetMask;
             txtDns1.Text = NIC.Dns;
-            txtDns2.Text = NIC.Dns2;            
+            txtDns2.Text = NIC.Dns2;
+            txtEnabled.Text = NIC.Enabled.ToString();
         }
 
         private void FormCardInfo_Activated(object sender, EventArgs e)
         {
             Controller.Instance.ActivateFormNetworkCard();
+        }
+
+        private void FormCardInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bool ret = Controller.Instance.View.ListViewCardInfo.Remove(this);
+            Controller.Instance.ConsoleController.Info("NIC form closed " + ret);
         }
 
 

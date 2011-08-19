@@ -11,7 +11,6 @@ using Argon.Model;
 using Argon.Network;
 using System.Collections;
 using BrightIdeasSoftware;
-using Argon.Network;
 
 namespace Argon.Controllers
 {
@@ -40,7 +39,7 @@ namespace Argon.Controllers
                     {
                         if (!itemForm.Visible)
                         {
-                            itemForm.Show(Controller.Instance.View.ViewMain.dockPanel);
+                            itemForm.Show(Controller.Instance.View.ViewMain.Pannello);
                         }
 
                         itemForm.Focus();                        
@@ -57,7 +56,7 @@ namespace Argon.Controllers
             form.LoadProfile(profile);
 
             Controller.Instance.View.ListViewProfile.Add(form);
-            form.Show(controller.View.ViewMain.dockPanel);
+            form.Show(controller.View.ViewMain.Pannello);
             form.DockState = DockState.Document;
 
             Controller.Instance.ActivateFormProfile(form);
