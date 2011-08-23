@@ -28,16 +28,18 @@ namespace Argon.Hardware
 
 
 
-        public bool SetDeviceState(string guid, bool bEnable)
+        public bool SetDeviceState(uint index, bool bEnable)
         {
-            SelectQuery query = new SelectQuery("Win32_NetworkAdapter","GUID='"+guid+"'");
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter","Index="+index+"");
             ManagementObjectSearcher search = new ManagementObjectSearcher(query);
             foreach (ManagementObject result in search.Get())
             {
+                //result.Pu
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(result);
 
-                if (adapter.GUID.Equals(guid))
+                if (adapter.Index.Equals(index))
                 {
+                    Object[] invokerParam={};
                     uint ret = 0;
 
                     if (bEnable)

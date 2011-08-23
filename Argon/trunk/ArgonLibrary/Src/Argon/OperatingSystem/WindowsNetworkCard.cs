@@ -80,6 +80,8 @@ namespace Argon.OperatingSystem
         /// </summary>
         /// <value>The name of the hardware.</value>
         string HardwareName { get; set; }
+
+        uint Index { get; set; }
     }
 
     /// <summary>
@@ -105,7 +107,8 @@ namespace Argon.OperatingSystem
             _macAddress = "";            
             _hardwareName = "";
             _enabled = false;
-            
+
+            _index = 0;
             
         }
 
@@ -153,6 +156,14 @@ namespace Argon.OperatingSystem
         /// 
         /// </summary>
         protected bool _enabled;
+
+        protected uint _index;
+
+        public uint Index
+        {
+            get { return _index; }
+            set { _index = value; }
+        }
 
 
 
@@ -314,6 +325,15 @@ namespace Argon.OperatingSystem
             _pnpDeviceId = "";
 
             _netConnectionStatus = -1;
+            _index = 0;
+        }
+
+        protected uint _index;
+
+        public uint Index
+        {
+            get { return _index; }
+            set { _index = value; }
         }
 
         protected int _netConnectionStatus;
@@ -692,5 +712,6 @@ namespace Argon.OperatingSystem
         ///   <c>true</c> if enabled; otherwise, <c>false</c>.
         /// </value>
         public bool Enabled { get; set; }
+        
     }
 }

@@ -130,7 +130,7 @@ namespace Argon.Controllers
                     HardwareLibrary hl = new HardwareLibrary();
                     String label=enabled?"Enabled":"Disabled";
 
-                    bool status = hl.SetDeviceState(ni.Id, enabled);
+                    bool status = hl.SetDeviceState(ni.Index, enabled);
                     Controller.Instance.ConsoleController.Info(label+" NIC " + ni.HardwareName + " (" + status + ")");
 
                     RefreshAll();                    
