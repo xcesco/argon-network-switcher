@@ -126,11 +126,10 @@ namespace Argon.Controllers
                 WindowsNetworkCard ni = (WindowsNetworkCard)list.SelectedObject;
 
                 if (ni.HardwareName.Length > 0)
-                {
-                    HardwareLibrary hl = new HardwareLibrary();
+                {                    
                     String label=enabled?"Enabled":"Disabled";
 
-                    bool status = hl.SetDeviceState(ni.Index, enabled);
+                    bool status = HardwareHelper.SetDeviceStatus(ni, enabled);
                     Controller.Instance.ConsoleController.Info(label+" NIC " + ni.HardwareName + " (" + status + ")");
 
                     RefreshAll();                    

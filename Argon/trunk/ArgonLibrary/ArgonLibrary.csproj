@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\Argon\Hardware\HardwareHelper.cs" />
+    <Compile Include="Src\Argon\Hardware\WinXPHardwareHelper.cs" />
     <Compile Include="Src\Argon\Hardware\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Argon\Hardware\WmiNetworkAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Src\Argon\OperatingSystem\OSInfo.cs" />
     <Compile Include="Src\Argon\OperatingSystem\PrinterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Src\Argon\Common\CheckForUpdate.cs" />
@@ -57,7 +60,7 @@
     <Compile Include="Src\Argon\FileSystem\FileInspector.cs" />
     <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
     <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
-    <Compile Include="Src\Argon\Hardware\HardwareHelper.cs" />
+    <Compile Include="Src\Argon\Hardware\Win7HardwareHelper.cs" />
     <Compile Include="Src\Argon\Network\FirexfoxProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\Network\IExplorerProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\Network\ProxyConfiguration.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Src\Argon\OperatingSystem\RegistryUtility.cs" />
     <Compile Include="Src\Argon\OperatingSystem\RunningWindowsExecutable.cs" />
     <Compile Include="Src\Argon\OperatingSystem\ServiceForcedStatus.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Windows7\Win7NetworkCardManager.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsComponent.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsExecutable.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsExecutableManager.cs" />
@@ -76,6 +80,7 @@
     <Compile Include="Src\Argon\OperatingSystem\WindowsService.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsServiceInfo.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsServiceManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsXP\WinXPNetworkCardManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

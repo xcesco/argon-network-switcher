@@ -23,21 +23,18 @@ namespace Argon.Hardware
     /// 
     /// </summary>
     public class Win7HardwareLibrary
-    {
-        Version m_Version = new Version(1, 0, 0);
+    {        
 
-
-
-        public bool SetDeviceState(uint index, bool bEnable)
+        public bool SetDeviceState(string guid, bool bEnable)
         {
-            SelectQuery query = new SelectQuery("Win32_NetworkAdapter","Index="+index+"");
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter","GUID='"+guid+"'");
             ManagementObjectSearcher search = new ManagementObjectSearcher(query);
             foreach (ManagementObject result in search.Get())
             {
                 //result.Pu
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(result);
 
-                if (adapter.Index.Equals(index))
+                if (adapter.GUID.Equals(guid))
                 {
                     Object[] invokerParam={};
                     uint ret = 0;
