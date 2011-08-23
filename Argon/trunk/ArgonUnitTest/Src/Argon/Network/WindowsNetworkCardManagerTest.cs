@@ -74,21 +74,48 @@ namespace Argon.OperatingSystem
         [TestMethod]
         public void ListWMIQuery()
         {
-            // adapters
-            ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter where GUID is not null ");
-            // configurations
-            //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter  WHERE (ConfigManagerErrorCode = 0  OR (ConfigManagerErrorCode = 22 AND NetConnectionStatus = 0))");// where IPEnabled='TRUE'");
-
-            ManagementObjectCollection collection = queryDevice.Get();
-
-            foreach (ManagementObject item in collection)
             {
-                Debug.WriteLine("-------");
-                foreach (PropertyData item2 in item.Properties)
+                // adapters
+                ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter ");//where GUID is not null ");
+                //ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration ");//where GUID is not null ");
+                // configurations
+                //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter  WHERE (ConfigManagerErrorCode = 0  OR (ConfigManagerErrorCode = 22 AND NetConnectionStatus = 0))");// where IPEnabled='TRUE'");
+
+                ManagementObjectCollection collection = queryDevice.Get();
+
+                foreach (ManagementObject item in collection)
                 {
-                    Debug.WriteLine(item2.Name + "=" + item2.Value);
-                }                
+                    Debug.WriteLine("-------");
+                    foreach (PropertyData item2 in item.Properties)
+                    {
+                        Debug.WriteLine(item2.Name + "=" + item2.Value);
+                    }
+
+                    
+                }
             }
+
+            Debug.WriteLine("=============================================================");
+            Debug.WriteLine("=============================================================");
+            Debug.WriteLine("=============================================================");
+
+            {
+                ManagementObjectSearcher queryDevice = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration ");//where GUID is not null ");
+                // configurations
+                //ManagementObjectSearcher query = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter  WHERE (ConfigManagerErrorCode = 0  OR (ConfigManagerErrorCode = 22 AND NetConnectionStatus = 0))");// where IPEnabled='TRUE'");
+
+                ManagementObjectCollection collection = queryDevice.Get();
+
+                foreach (ManagementObject item in collection)
+                {
+                    Debug.WriteLine("-------");
+                    foreach (PropertyData item2 in item.Properties)
+                    {
+                        Debug.WriteLine(item2.Name + "=" + item2.Value);
+                    }
+                }
+            }
+
         }
         
         [TestMethod]

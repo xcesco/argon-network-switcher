@@ -36,11 +36,11 @@ namespace Argon.OperatingSystem
         /// <returns></returns>
         protected static List<WindowsNetworkCard> GetListFromWMI()
         {
-            SortedDictionary<String,WindowsNetworkCard> dictionary=new SortedDictionary<String,WindowsNetworkCard>();            
+            SortedDictionary<uint,WindowsNetworkCard> dictionary=new SortedDictionary<uint,WindowsNetworkCard>();            
            
             List<WindowsNetworkCard> lista = new List<WindowsNetworkCard>();
 
-            SelectQuery query = new SelectQuery("Win32_NetworkAdapter", "GUID is not null");
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter");//, "GUID is not null");
             ManagementObjectSearcher search = new ManagementObjectSearcher(query);
 
             // 1 - Create list of cards
@@ -51,20 +51,28 @@ namespace Argon.OperatingSystem
             {
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(item);
 
+                /*if (String.IsNullOrEmpty(adapter.GUID))
+                {
+                    continue;
+                }*/
+
+
                 if (adapter.Name.ToUpper().Contains("Microsoft Virtual WiFi Miniport Adapter".ToUpper()))
                 {
                     continue;
                 };
 
                 card = new WindowsNetworkCard();
-                card.Id = adapter.GUID;
+
+                //GUID is not supported in winxp
+                //card.Id = adapter.GUID;
 
                 card.ViewId = fixViewId(adapter.Caption);
                 card.Name = adapter.Name;
                 card.HardwareName = fixHardwareName(adapter.Caption);
-                card.Enabled = adapter.NetEnabled;
+                //card.Enabled = adapter.NetEnabled;
                 card.NetConnectionStatus = adapter.NetConnectionStatus;
-
+                card.Index = adapter.Index;
 
                 card.PnpDeviceId = adapter.PNPDeviceID;
 
@@ -74,7 +82,7 @@ namespace Argon.OperatingSystem
                 if (!IsNetworkCardInRegistry(card)) continue;
                 // 2 - get more info from registry
                 MapDataFromRegistry(card);
-                dictionary[card.Id]=card;
+                dictionary[card.Index]=card;
             }
 
             // 2 - Get more info
@@ -82,23 +90,34 @@ namespace Argon.OperatingSystem
             SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration", "IPEnabled='TRUE'");
             ManagementObjectSearcher search2 = new ManagementObjectSearcher(query2);
 
+            // find by index
             foreach (ManagementObject item in search2.Get())
             {
                 WmiNetworkAdapterConfiguration adapterConfigurator = new WmiNetworkAdapterConfiguration(item);
                 id = adapterConfigurator.SettingID;
 
-                card = dictionary[id];
+                card = dictionary[adapterConfigurator.Index];
 
                 if (card != null)
-                {                    
+                {
+                    card.Id = adapterConfigurator.SettingID;
                     card.WinsEnableLMHostsLookup =adapterConfigurator.WINSEnableLMHostsLookup;
                     card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
                     card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
                     card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
                 }
             }
+
+            // every item withoud id is not a valid adapter
+            foreach (WindowsNetworkCard item in dictionary.Values)
+            {
+                if (!String.IsNullOrEmpty(item.Id))
+                {
+                    lista.Add(item);
+                }
+            }
             
-            lista.AddRange(dictionary.Values);
+            
 
             return lista;
         }
@@ -109,17 +128,6 @@ namespace Argon.OperatingSystem
             return RegistryUtility.Exists(RegistryKeyType.LocalMachine, sKey);
         }
 
-
-        /// <summary>
-        /// Maps the data from network.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        /// <param name="card">The card.</param>
-        internal static void MapDataFromNetwork(NetworkInterface item, WindowsNetworkCard card)
-        {
-            card.Name = item.Name;
-            card.Id = item.Id;
-        }
 
         /// <summary>
         /// Maps the data from WMI.
@@ -304,7 +312,7 @@ namespace Argon.OperatingSystem
             if (card.HardwareName.Length > 0)
             {
                 //string[] hwName={card.HardwareName};
-                hl.SetDeviceState(card.Id, false);
+                hl.SetDeviceState(card.Index, false);
              //   PnpDeviceId
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
@@ -312,7 +320,7 @@ namespace Argon.OperatingSystem
             if (card.HardwareName.Length > 0)
             {
                 //string[] hwName = { card.HardwareName };
-                hl.SetDeviceState(card.Id, true);
+                hl.SetDeviceState(card.Index, true);
             }
             
             return ret;
