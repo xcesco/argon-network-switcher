@@ -105,6 +105,7 @@ namespace Argon.Windows.Forms
             this.listView.ShowGroups = false;
             this.listView.Size = new System.Drawing.Size(778, 468);
             this.listView.SmallImageList = this.images24x24;
+            this.listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
