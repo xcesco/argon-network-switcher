@@ -78,16 +78,13 @@ namespace Argon.OperatingSystem.WindowsXP
 
                 card.Description = adapter.NetConnectionID;
                 card.MacAddress = adapter.MACAddress;
-
-                if (!IsNetworkCardInRegistry(card)) continue;
-                // 2 - get more info from registry
-                MapDataFromRegistry(card);
+                               
                 dictionary[card.Index]=card;
             }
 
             // 2 - Get more info
             String id;
-            SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration", "IPEnabled='TRUE'");
+            SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration");
             ManagementObjectSearcher search2 = new ManagementObjectSearcher(query2);
 
             // find by index
@@ -95,16 +92,31 @@ namespace Argon.OperatingSystem.WindowsXP
             {
                 WmiNetworkAdapterConfiguration adapterConfigurator = new WmiNetworkAdapterConfiguration(item);
                 id = adapterConfigurator.SettingID;
+                
+                Debug.WriteLine("Config for " + adapterConfigurator.SettingID);
 
                 card = dictionary[adapterConfigurator.Index];
 
                 if (card != null)
                 {
+                    // set the uid
                     card.Id = adapterConfigurator.SettingID;
-                    card.WinsEnableLMHostsLookup =adapterConfigurator.WINSEnableLMHostsLookup;
-                    card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
+                    if (!IsNetworkCardInRegistry(card))
+                    {
+                        // it's not a network card
+                        dictionary.Remove(adapterConfigurator.Index);
+                        Debug.WriteLine("Config for " + adapterConfigurator.Caption + " is not a network card");
+                        continue;
+                    }
+                    
+                    card.WinsEnableLMHostsLookup = adapterConfigurator.WINSEnableLMHostsLookup;
+                    card.WinsHostLookupFile = adapterConfigurator.WINSHostLookupFile;
                     card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
                     card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
+                }
+                else
+                {
+                    Debug.WriteLine("Config for " + adapterConfigurator.Caption + " not found");
                 }
             }
 
@@ -113,6 +125,7 @@ namespace Argon.OperatingSystem.WindowsXP
             {
                 if (!String.IsNullOrEmpty(item.Id))
                 {
+                    MapDataFromRegistry(item);
                     lista.Add(item);
                 }
             }
@@ -124,6 +137,8 @@ namespace Argon.OperatingSystem.WindowsXP
 
         internal static Boolean IsNetworkCardInRegistry(WindowsNetworkCard card)
         {
+            if (String.IsNullOrEmpty(card.Id)) return false;
+
             string sKey = @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\" + card.Id;
             return RegistryUtility.Exists(RegistryKeyType.LocalMachine, sKey);
         }
