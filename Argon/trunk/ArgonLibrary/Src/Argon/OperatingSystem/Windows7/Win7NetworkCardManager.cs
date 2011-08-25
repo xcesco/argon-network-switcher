@@ -7,7 +7,6 @@ using Microsoft.Win32;
 using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
-using Argon.Hardware;
 using System.Diagnostics;
 
 namespace Argon.OperatingSystem.Windows7
@@ -106,6 +105,8 @@ namespace Argon.OperatingSystem.Windows7
                     card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
                 }
             }
+
+            lista.AddRange(dictionary.Values);
                           
             return lista;
         }
@@ -299,7 +300,7 @@ namespace Argon.OperatingSystem.Windows7
             if (card.HardwareName.Length > 0)
             {
 
-                HardwareHelper.SetDeviceStatus(card, false);
+                NetworkAdapterHelper.SetDeviceStatus(card, false);
 
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
@@ -307,7 +308,7 @@ namespace Argon.OperatingSystem.Windows7
             if (card.HardwareName.Length > 0)
             {
 
-                HardwareHelper.SetDeviceStatus(card, true);
+                NetworkAdapterHelper.SetDeviceStatus(card, true);
             }
             
             return ret;

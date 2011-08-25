@@ -15,7 +15,7 @@ using System.Management;
  * LOG:      Who?    When?       What?
  * (v)1.0.0  WJF     11/26/07    Original Implementation
  */
-namespace Argon.Hardware
+namespace Argon.OperatingSystem
 {
     
 

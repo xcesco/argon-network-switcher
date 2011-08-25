@@ -4,7 +4,7 @@ using System.Management;
 using System.Collections;
 using System.Globalization;
 
-namespace Argon.Hardware
+namespace Argon.OperatingSystem
 {
     public class WmiNetworkAdapter: System.ComponentModel.Component {
         

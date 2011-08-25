@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Src\Argon\Hardware\HardwareHelper.cs" />
-    <Compile Include="Src\Argon\Hardware\WinXPHardwareHelper.cs" />
-    <Compile Include="Src\Argon\Hardware\WmiNetworkAdapterConfiguration.cs">
+    <Compile Include="Src\Argon\OperatingSystem\NetworkAdapterHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsXP\WinXPHardwareHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Hardware\WmiNetworkAdapter.cs">
+    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Argon\OperatingSystem\OSInfo.cs" />
@@ -60,7 +60,7 @@
     <Compile Include="Src\Argon\FileSystem\FileInspector.cs" />
     <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
     <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
-    <Compile Include="Src\Argon\Hardware\Win7HardwareHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Windows7\Win7HardwareHelper.cs" />
     <Compile Include="Src\Argon\Network\FirexfoxProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\Network\IExplorerProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\Network\ProxyConfiguration.cs" />

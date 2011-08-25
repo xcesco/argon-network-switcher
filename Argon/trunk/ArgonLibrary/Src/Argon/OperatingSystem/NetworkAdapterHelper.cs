@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Argon.OperatingSystem;
 
-namespace Argon.Hardware
+namespace Argon.OperatingSystem
 {
-    public class HardwareHelper
+    public class NetworkAdapterHelper
     {
         public static bool SetDeviceStatus(IWindowsNetworkCardInfo card, bool status)
         {

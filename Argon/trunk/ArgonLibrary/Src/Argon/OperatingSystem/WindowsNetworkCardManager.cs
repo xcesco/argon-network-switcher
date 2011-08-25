@@ -7,7 +7,6 @@ using Microsoft.Win32;
 using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
-using Argon.Hardware;
 using System.Diagnostics;
 using Argon.OperatingSystem.WindowsXP;
 using Argon.OperatingSystem.Windows7;
