@@ -7,7 +7,6 @@ using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
-using Argon.Hardware;
 using Argon.Network;
 
 namespace Argon.Controllers
@@ -129,7 +128,7 @@ namespace Argon.Controllers
                 {                    
                     String label=enabled?"Enabled":"Disabled";
 
-                    bool status = HardwareHelper.SetDeviceStatus(ni, enabled);
+                    bool status = NetworkAdapterHelper.SetDeviceStatus(ni, enabled);
                     Controller.Instance.ConsoleController.Info(label+" NIC " + ni.HardwareName + " (" + status + ")");
 
                     RefreshAll();                    

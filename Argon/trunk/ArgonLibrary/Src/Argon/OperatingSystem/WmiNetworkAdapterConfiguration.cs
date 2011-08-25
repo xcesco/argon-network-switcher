@@ -4,7 +4,8 @@ using System.Management;
 using System.Collections;
 using System.Globalization;
 
-namespace Argon.Hardware {    
+namespace Argon.OperatingSystem
+{    
     
     // Functions ShouldSerialize<PropertyName> are functions used by VS property browser to check if a particular property has to be serialized. These functions are added for all ValueType properties ( properties of type Int32, BOOL etc.. which cannot be set to null). These functions use Is<PropertyName>Null function. These functions are also used in the TypeConverter implementation for the properties to check for NULL value of property so that an empty value can be shown in Property browser in case of Drag and Drop in Visual studio.
     // Functions Is<PropertyName>Null() are used to check if a property is NULL.
