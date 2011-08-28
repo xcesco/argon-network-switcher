@@ -53,6 +53,7 @@ namespace Argon.Windows.Forms
             this.tpDriveMap = new System.Windows.Forms.TabPage();
             this.driveMapListView = new Argon.Windows.Controls.DriveMapListView();
             this.tp3Printers = new System.Windows.Forms.TabPage();
+            this.lblSelectedPrinter = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRemovePrinter = new System.Windows.Forms.Button();
             this.lblPrinter2 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@ namespace Argon.Windows.Forms
             this.serviceListView = new Argon.Windows.Controls.ServiceListView();
             this.tp6Applications = new System.Windows.Forms.TabPage();
             this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
-            this.lblSelectedPrinter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tp1NIC.SuspendLayout();
@@ -269,6 +269,14 @@ namespace Argon.Windows.Forms
             this.tp3Printers.Text = "Printers";
             this.tp3Printers.UseVisualStyleBackColor = true;
             // 
+            // lblSelectedPrinter
+            // 
+            this.lblSelectedPrinter.AutoSize = true;
+            this.lblSelectedPrinter.Location = new System.Drawing.Point(167, 50);
+            this.lblSelectedPrinter.Name = "lblSelectedPrinter";
+            this.lblSelectedPrinter.Size = new System.Drawing.Size(0, 13);
+            this.lblSelectedPrinter.TabIndex = 27;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -359,14 +367,6 @@ namespace Argon.Windows.Forms
             this.applicationsListView.Name = "applicationsListView";
             this.applicationsListView.Size = new System.Drawing.Size(1169, 498);
             this.applicationsListView.TabIndex = 2;
-            // 
-            // lblSelectedPrinter
-            // 
-            this.lblSelectedPrinter.AutoSize = true;
-            this.lblSelectedPrinter.Location = new System.Drawing.Point(167, 50);
-            this.lblSelectedPrinter.Name = "lblSelectedPrinter";
-            this.lblSelectedPrinter.Size = new System.Drawing.Size(0, 13);
-            this.lblSelectedPrinter.TabIndex = 27;
             // 
             // FormProfile
             // 
