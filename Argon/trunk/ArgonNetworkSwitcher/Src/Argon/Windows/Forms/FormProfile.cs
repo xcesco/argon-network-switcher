@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
-using Ascend.Windows.Forms;
 using System.Drawing.Printing;
 using Argon.OperatingSystem;
 using Argon.Model;
@@ -25,15 +24,7 @@ namespace Argon.Windows.Forms
 
         private void FormProfile_Load(object sender, EventArgs e)
         {
-            string[] panelNames ={ "Ip configuration", "Proxy", "Services", "Programs", "Drive mapping" ,"Printer settings"};
-
-            int i = 0;
-            foreach (NavigationPanePage np in panel.NavigationPages)
-            {
-                np.Text = panelNames[i];
-                np.ImageIndex = i;
-                i++;
-            }
+   
 
         }
 
@@ -118,7 +109,7 @@ namespace Argon.Windows.Forms
                     txtSelectedCard.ForeColor = Color.Red;                    
 
                     nic = new WindowsNetworkCard();
-                    ipControl1.Enabled = false;
+                    ipControl.Enabled = false;
                 }
                 // visualizziamo i dati della configurazione
                 nic.Dhcp = profile.NetworkCardInfo.Dhcp;
@@ -131,16 +122,16 @@ namespace Argon.Windows.Forms
                 nic.HardwareName = profile.NetworkCardInfo.HardwareName;
 
 
-                ipControl1.Configuration = nic;
+                ipControl.Configuration = nic;
             }
 
             proxyPanel.Configuration = profile.ProxyConfig;
 
-            serviceListView1.Items=profile.ServiceList;
+            serviceListView.Items=profile.ServiceList;
 
             applicationsListView.SetItems(profile.ExecList);
 
-            driveMappingListView1.SetItems(profile.DriveMapList);
+            driveMapListView.SetItems(profile.DriveMapList);
 
             lblSelectedPrinter.Text = profile.DefaultPrinter;
 
@@ -167,7 +158,7 @@ namespace Argon.Windows.Forms
 
             if (profile.NetworkCardInfo.Id.Length > 0)
             {
-                ipControl1.Configuration = Controller.Instance.Model.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
+                ipControl.Configuration = Controller.Instance.Model.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
             }
             proxyPanel.Configuration = ProxyConfigurationManager.ReadConfig();
 
@@ -179,19 +170,19 @@ namespace Argon.Windows.Forms
             NetworkProfile profile = (NetworkProfile)Tag;
             profile.Name = txtName.Text;
 
-            if (ipControl1.Configuration == null)
+            if (ipControl.Configuration == null)
             {
                 profile.NetworkCardInfo = new NetworkCardInfoImpl();
             }
             else
             {
-                profile.NetworkCardInfo = ipControl1.Configuration;
+                profile.NetworkCardInfo = ipControl.Configuration;
             }
 
             profile.ProxyConfig = proxyPanel.Configuration;
-            profile.DriveMapList = driveMappingListView1.Items;
+            profile.DriveMapList = driveMapListView.Items;
             profile.ExecList = applicationsListView.Items;
-            profile.ServiceList = serviceListView1.Items;
+            profile.ServiceList = serviceListView.Items;
             profile.DefaultPrinter = cbPrinterList.Text;
 
 
@@ -285,7 +276,6 @@ namespace Argon.Windows.Forms
             bool ret=Controller.Instance.View.ListViewProfile.Remove(this);
             Controller.Instance.ConsoleController.Info("Profile form closed " + ret);
         }
-
 
     }
 }

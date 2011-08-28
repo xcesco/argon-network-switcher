@@ -153,6 +153,7 @@ namespace Argon.Windows.Controls
         /// Gets the items.
         /// </summary>
         /// <value>The items.</value>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<IWindowsServiceInfo> Items
         {
             get
