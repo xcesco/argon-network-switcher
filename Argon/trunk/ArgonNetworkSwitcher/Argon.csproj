@@ -80,6 +80,8 @@
     <Reference Include="ObjectListView">
       <HintPath>..\Lib\ObjectListView.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -97,6 +99,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -139,6 +142,12 @@
     </Compile>
     <Compile Include="Src\Argon\Windows\Controls\IpControl.designer.cs">
       <DependentUpon>IpControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\NetworkCardListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\NetworkCardListView.Designer.cs">
+      <DependentUpon>NetworkCardListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\Argon\Windows\Controls\ProxyControl.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Controls\IpControl.resx">
       <DependentUpon>IpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\NetworkCardListView.resx">
+      <DependentUpon>NetworkCardListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ProxyControl.resx">
       <DependentUpon>ProxyControl.cs</DependentUpon>
