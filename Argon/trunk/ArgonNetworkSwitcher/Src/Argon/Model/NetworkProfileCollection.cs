@@ -64,6 +64,7 @@ namespace Argon.Model
 
         void ICollection<NetworkProfile>.Add(NetworkProfile item)
         {
+            //Add(item);
             throw new Exception("The method or operation is not implemented.");
         }
 

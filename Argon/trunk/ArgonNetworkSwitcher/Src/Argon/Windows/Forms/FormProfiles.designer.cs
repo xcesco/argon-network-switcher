@@ -32,9 +32,9 @@ namespace Argon.Windows.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfiles));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.listView = new ObjectListView();
-            this.colName = new OLVColumn();
-            this.colNetwork = new OLVColumn();
+            this.listView = new BrightIdeasSoftware.ObjectListView();
+            this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colNetwork = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,18 +69,11 @@ namespace Argon.Windows.Forms
             // 
             this.listView.AllColumns.Add(this.colName);
             this.listView.AllColumns.Add(this.colNetwork);
-            this.listView.AlternateRowBackColor = System.Drawing.Color.Empty;
-            this.listView.AlwaysGroupByColumn = null;
-            this.listView.AlwaysGroupBySortOrder = System.Windows.Forms.SortOrder.None;
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colName,
             this.colNetwork});
             this.listView.ContextMenuStrip = this.contextMenu;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.listView.HighlightForegroundColor = System.Drawing.Color.Empty;
-            this.listView.LastSortColumn = null;
-            this.listView.LastSortOrder = System.Windows.Forms.SortOrder.None;
             this.listView.Location = new System.Drawing.Point(0, 0);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
@@ -89,8 +82,8 @@ namespace Argon.Windows.Forms
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
             this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
             // 
             // colName
             // 
@@ -101,7 +94,7 @@ namespace Argon.Windows.Forms
             // colNetwork
             // 
             this.colNetwork.AspectName = "NetworkCardInfo.Name";
-            this.colNetwork.Text = "Network";
+            this.colNetwork.Text = "Network interface card selected";
             this.colNetwork.Width = 260;
             // 
             // contextMenu
@@ -181,11 +174,12 @@ namespace Argon.Windows.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 268);
             this.Controls.Add(this.toolStripContainer1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfiles";
-            this.TabText = "Profiles";
-            this.Text = "Profiles";
+            this.TabText = "Profiles ";
+            this.Text = "Profiles ";
             this.Activated += new System.EventHandler(this.FormProfiles_Activated);
             this.VisibleChanged += new System.EventHandler(this.FormProfiles_VisibleChanged);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

@@ -37,7 +37,6 @@ namespace Argon.Windows.Forms
             this.imageList48x48 = new System.Windows.Forms.ImageList(this.components);
             this.imageList24x24 = new System.Windows.Forms.ImageList(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -64,7 +63,9 @@ namespace Argon.Windows.Forms
             this.tp6Applications = new System.Windows.Forms.TabPage();
             this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
             this.tp7Adapters = new System.Windows.Forms.TabPage();
-            this.networkCardListView1 = new Argon.Windows.Controls.NetworkCardListView();
+            this.networkCardListView = new Argon.Windows.Controls.NetworkCardListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tp1NIC.SuspendLayout();
@@ -98,15 +99,6 @@ namespace Argon.Windows.Forms
             this.label8.TabIndex = 3;
             this.label8.Text = "Network Card";
             // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(10, 12);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(414, 20);
-            this.txtName.TabIndex = 2;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -121,7 +113,7 @@ namespace Argon.Windows.Forms
             // 
             this.btnSelect.Image = global::Argon.Windows.Forms.Properties.Resources.arrow_down_green;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(394, 6);
+            this.btnSelect.Location = new System.Drawing.Point(167, 34);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(83, 23);
             this.btnSelect.TabIndex = 7;
@@ -143,17 +135,19 @@ namespace Argon.Windows.Forms
             // 
             // lstNetworkCard
             // 
+            this.lstNetworkCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstNetworkCard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstNetworkCard.FormattingEnabled = true;
-            this.lstNetworkCard.Location = new System.Drawing.Point(175, 6);
+            this.lstNetworkCard.Location = new System.Drawing.Point(256, 36);
             this.lstNetworkCard.Name = "lstNetworkCard";
-            this.lstNetworkCard.Size = new System.Drawing.Size(213, 21);
+            this.lstNetworkCard.Size = new System.Drawing.Size(914, 21);
             this.lstNetworkCard.TabIndex = 18;
             // 
             // lblSelectedCard
             // 
             this.lblSelectedCard.AutoSize = true;
-            this.lblSelectedCard.Location = new System.Drawing.Point(89, 34);
+            this.lblSelectedCard.Location = new System.Drawing.Point(89, 64);
             this.lblSelectedCard.Name = "lblSelectedCard";
             this.lblSelectedCard.Size = new System.Drawing.Size(74, 13);
             this.lblSelectedCard.TabIndex = 19;
@@ -162,7 +156,7 @@ namespace Argon.Windows.Forms
             // txtSelectedCard
             // 
             this.txtSelectedCard.AutoSize = true;
-            this.txtSelectedCard.Location = new System.Drawing.Point(172, 34);
+            this.txtSelectedCard.Location = new System.Drawing.Point(172, 64);
             this.txtSelectedCard.Name = "txtSelectedCard";
             this.txtSelectedCard.Size = new System.Drawing.Size(63, 13);
             this.txtSelectedCard.TabIndex = 20;
@@ -171,11 +165,11 @@ namespace Argon.Windows.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 9);
+            this.label2.Location = new System.Drawing.Point(89, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Selected Card";
+            this.label2.Text = "Network Card";
             // 
             // tabControl
             // 
@@ -190,10 +184,10 @@ namespace Argon.Windows.Forms
             this.tabControl.Controls.Add(this.tp6Applications);
             this.tabControl.Controls.Add(this.tp7Adapters);
             this.tabControl.ImageList = this.imageList24x24;
-            this.tabControl.Location = new System.Drawing.Point(3, 76);
+            this.tabControl.Location = new System.Drawing.Point(3, 113);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1177, 524);
+            this.tabControl.Size = new System.Drawing.Size(1177, 487);
             this.tabControl.TabIndex = 22;
             // 
             // tp1NIC
@@ -202,7 +196,7 @@ namespace Argon.Windows.Forms
             this.tp1NIC.Location = new System.Drawing.Point(4, 23);
             this.tp1NIC.Name = "tp1NIC";
             this.tp1NIC.Padding = new System.Windows.Forms.Padding(3);
-            this.tp1NIC.Size = new System.Drawing.Size(1169, 497);
+            this.tp1NIC.Size = new System.Drawing.Size(1169, 460);
             this.tp1NIC.TabIndex = 0;
             this.tp1NIC.Text = "Network";
             this.tp1NIC.UseVisualStyleBackColor = true;
@@ -215,7 +209,7 @@ namespace Argon.Windows.Forms
             this.ipControl.Location = new System.Drawing.Point(3, 3);
             this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
             this.ipControl.Name = "ipControl";
-            this.ipControl.Size = new System.Drawing.Size(1163, 491);
+            this.ipControl.Size = new System.Drawing.Size(1163, 454);
             this.ipControl.TabIndex = 2;
             // 
             // tp2Proxy
@@ -224,7 +218,7 @@ namespace Argon.Windows.Forms
             this.tp2Proxy.Location = new System.Drawing.Point(4, 23);
             this.tp2Proxy.Name = "tp2Proxy";
             this.tp2Proxy.Padding = new System.Windows.Forms.Padding(3);
-            this.tp2Proxy.Size = new System.Drawing.Size(1169, 497);
+            this.tp2Proxy.Size = new System.Drawing.Size(1169, 460);
             this.tp2Proxy.TabIndex = 1;
             this.tp2Proxy.Text = "Proxy";
             this.tp2Proxy.UseVisualStyleBackColor = true;
@@ -237,7 +231,7 @@ namespace Argon.Windows.Forms
             this.proxyPanel.Location = new System.Drawing.Point(3, 3);
             this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
             this.proxyPanel.Name = "proxyPanel";
-            this.proxyPanel.Size = new System.Drawing.Size(1163, 491);
+            this.proxyPanel.Size = new System.Drawing.Size(1163, 454);
             this.proxyPanel.TabIndex = 2;
             // 
             // tpDriveMap
@@ -245,7 +239,7 @@ namespace Argon.Windows.Forms
             this.tpDriveMap.Controls.Add(this.driveMapListView);
             this.tpDriveMap.Location = new System.Drawing.Point(4, 23);
             this.tpDriveMap.Name = "tpDriveMap";
-            this.tpDriveMap.Size = new System.Drawing.Size(1169, 497);
+            this.tpDriveMap.Size = new System.Drawing.Size(1169, 460);
             this.tpDriveMap.TabIndex = 2;
             this.tpDriveMap.Text = "Drive Map";
             this.tpDriveMap.UseVisualStyleBackColor = true;
@@ -256,7 +250,7 @@ namespace Argon.Windows.Forms
             this.driveMapListView.Location = new System.Drawing.Point(0, 0);
             this.driveMapListView.MinimumSize = new System.Drawing.Size(560, 312);
             this.driveMapListView.Name = "driveMapListView";
-            this.driveMapListView.Size = new System.Drawing.Size(1169, 497);
+            this.driveMapListView.Size = new System.Drawing.Size(1169, 460);
             this.driveMapListView.TabIndex = 1;
             // 
             // tp3Printers
@@ -269,7 +263,7 @@ namespace Argon.Windows.Forms
             this.tp3Printers.Controls.Add(this.cbPrinterList);
             this.tp3Printers.Location = new System.Drawing.Point(4, 23);
             this.tp3Printers.Name = "tp3Printers";
-            this.tp3Printers.Size = new System.Drawing.Size(1169, 497);
+            this.tp3Printers.Size = new System.Drawing.Size(1169, 460);
             this.tp3Printers.TabIndex = 5;
             this.tp3Printers.Text = "Printers";
             this.tp3Printers.UseVisualStyleBackColor = true;
@@ -340,7 +334,7 @@ namespace Argon.Windows.Forms
             this.tp5Services.Controls.Add(this.serviceListView);
             this.tp5Services.Location = new System.Drawing.Point(4, 23);
             this.tp5Services.Name = "tp5Services";
-            this.tp5Services.Size = new System.Drawing.Size(1169, 497);
+            this.tp5Services.Size = new System.Drawing.Size(1169, 460);
             this.tp5Services.TabIndex = 3;
             this.tp5Services.Text = "Services";
             this.tp5Services.UseVisualStyleBackColor = true;
@@ -351,7 +345,7 @@ namespace Argon.Windows.Forms
             this.serviceListView.Location = new System.Drawing.Point(0, 0);
             this.serviceListView.MinimumSize = new System.Drawing.Size(560, 200);
             this.serviceListView.Name = "serviceListView";
-            this.serviceListView.Size = new System.Drawing.Size(1169, 497);
+            this.serviceListView.Size = new System.Drawing.Size(1169, 460);
             this.serviceListView.TabIndex = 2;
             // 
             // tp6Applications
@@ -359,7 +353,7 @@ namespace Argon.Windows.Forms
             this.tp6Applications.Controls.Add(this.applicationsListView);
             this.tp6Applications.Location = new System.Drawing.Point(4, 23);
             this.tp6Applications.Name = "tp6Applications";
-            this.tp6Applications.Size = new System.Drawing.Size(1169, 497);
+            this.tp6Applications.Size = new System.Drawing.Size(1169, 460);
             this.tp6Applications.TabIndex = 4;
             this.tp6Applications.Text = "Appplications";
             this.tp6Applications.UseVisualStyleBackColor = true;
@@ -370,26 +364,46 @@ namespace Argon.Windows.Forms
             this.applicationsListView.Location = new System.Drawing.Point(0, 0);
             this.applicationsListView.MinimumSize = new System.Drawing.Size(560, 312);
             this.applicationsListView.Name = "applicationsListView";
-            this.applicationsListView.Size = new System.Drawing.Size(1169, 497);
+            this.applicationsListView.Size = new System.Drawing.Size(1169, 460);
             this.applicationsListView.TabIndex = 2;
             // 
             // tp7Adapters
             // 
-            this.tp7Adapters.Controls.Add(this.networkCardListView1);
+            this.tp7Adapters.Controls.Add(this.networkCardListView);
             this.tp7Adapters.Location = new System.Drawing.Point(4, 23);
             this.tp7Adapters.Name = "tp7Adapters";
-            this.tp7Adapters.Size = new System.Drawing.Size(1169, 497);
+            this.tp7Adapters.Size = new System.Drawing.Size(1169, 460);
             this.tp7Adapters.TabIndex = 6;
-            this.tp7Adapters.Text = "Adapters";
+            this.tp7Adapters.Text = "Disabled Adapters";
             this.tp7Adapters.UseVisualStyleBackColor = true;
             // 
-            // networkCardListView1
+            // networkCardListView
             // 
-            this.networkCardListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkCardListView1.Location = new System.Drawing.Point(0, 0);
-            this.networkCardListView1.Name = "networkCardListView1";
-            this.networkCardListView1.Size = new System.Drawing.Size(1169, 497);
-            this.networkCardListView1.TabIndex = 0;
+            this.networkCardListView.CheckBoxes = true;
+            this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkCardListView.Location = new System.Drawing.Point(0, 0);
+            this.networkCardListView.Name = "networkCardListView";
+            this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
+            this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
+            this.networkCardListView.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(89, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Name";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(130, 6);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(414, 20);
+            this.txtName.TabIndex = 25;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // FormProfile
             // 
@@ -397,6 +411,8 @@ namespace Argon.Windows.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 612);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSelectedCard);
@@ -430,7 +446,6 @@ namespace Argon.Windows.Forms
 
         private System.Windows.Forms.ImageList imageList48x48;
         private System.Windows.Forms.ImageList imageList24x24;
-        public System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         
         private System.Windows.Forms.Label label8;       
@@ -459,6 +474,8 @@ namespace Argon.Windows.Forms
         private Controls.ApplicationsListView applicationsListView;
         private System.Windows.Forms.Label lblSelectedPrinter;
         private System.Windows.Forms.TabPage tp7Adapters;
-        private Controls.NetworkCardListView networkCardListView1;
+        private Controls.NetworkCardListView networkCardListView;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtName;
     }
 }

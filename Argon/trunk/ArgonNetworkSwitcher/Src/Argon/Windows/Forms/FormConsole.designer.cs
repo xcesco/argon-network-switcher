@@ -97,8 +97,8 @@
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsole";
-            this.TabText = "Log Console";
-            this.Text = "Log Console";
+            this.TabText = "Log Console ";
+            this.Text = "Log Console ";
             this.Load += new System.EventHandler(this.FormConsole_Load);
             this.VisibleChanged += new System.EventHandler(this.FormConsole_VisibleChanged);
             this.toolStrip1.ResumeLayout(false);

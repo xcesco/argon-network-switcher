@@ -148,6 +148,23 @@ namespace Argon.Controllers
                     writer.WriteEndElement();
                 }
 
+                // disabled nic
+                {
+                    writer.WriteStartElement("forcedNics");
+
+                    IList<IWindowsNetworkCardInfo> listDisabledNics = item.DisabledNetworkCards;
+
+                    foreach (IWindowsNetworkCardInfo itemNIC in listDisabledNics)
+                    {
+                        writer.WriteStartElement("forcedNic");
+                        writer.WriteAttributeString("id", itemNIC.Id);
+                        writer.WriteAttributeString("hardwareName", itemNIC.HardwareName);                        
+                        writer.WriteEndElement();
+                    }
+
+                    writer.WriteEndElement();
+                }
+
                 writer.WriteEndElement();
             }
 
@@ -296,6 +313,16 @@ namespace Argon.Controllers
                                     break;
                                 case "printer":                                    
                                     currentProfile.DefaultPrinter = ReadAttributeIfPresent(reader, "defaultPrinter", "");
+                                    break;
+                                case "forcedNic":                                    
+                                        // disabled nic
+                                        WindowsNetworkCard disabledNIC;
+
+                                        disabledNIC = new WindowsNetworkCard();
+                                        disabledNIC.Id = ReadAttributeIfPresent(reader, "id", "");
+                                        disabledNIC.HardwareName= ReadAttributeIfPresent(reader, "hardwareName", "");    
+
+                                        currentProfile.DisabledNetworkCards.Add(disabledNIC);                                    
                                     break;
                             }
                             break;

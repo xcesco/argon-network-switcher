@@ -150,6 +150,9 @@ namespace Argon.Windows.Forms
                 }
             }
             cbPrinterList.SelectedIndex = indexPrinter;
+
+            // disabled nic
+            networkCardListView.SelectedItems = profile.DisabledNetworkCards;
         }
 
         private bool LoadConfiguration()
@@ -184,6 +187,9 @@ namespace Argon.Windows.Forms
             profile.ExecList = applicationsListView.Items;
             profile.ServiceList = serviceListView.Items;
             profile.DefaultPrinter = cbPrinterList.Text;
+
+            // disabled nic
+            profile.DisabledNetworkCards = networkCardListView.SelectedItems;
 
 
             return true;

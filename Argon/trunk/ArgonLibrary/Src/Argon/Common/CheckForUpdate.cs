@@ -65,7 +65,7 @@ namespace Argon.Common
                 // ask the user if he would like
                 // to download the new version                
                 if (DialogResult.Yes ==
-                 MessageBox.Show(question+ "\n\nNew version "+newVersion.AvaiableVersion+"\nDate "+newVersion.Since, title,
+                 MessageBox.Show(question + "\n\nNew version " + newVersion.AvaiableVersion + "\nDate " + newVersion.Since, title,
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question))
                 {
@@ -75,6 +75,12 @@ namespace Argon.Common
                     // comes from the xml content)
                     System.Diagnostics.Process.Start(newVersion.Url);
                 }
+            }
+            else
+            {
+                MessageBox.Show("The software is updated!","Updated",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
             }
         }
 
