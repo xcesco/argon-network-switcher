@@ -113,7 +113,7 @@ namespace Argon.Windows.Forms
             // 
             this.btnSelect.Image = global::Argon.Windows.Forms.Properties.Resources.arrow_down_green;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(167, 34);
+            this.btnSelect.Location = new System.Drawing.Point(156, 39);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(83, 23);
             this.btnSelect.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace Argon.Windows.Forms
             this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
-            this.pictureBox.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox.Location = new System.Drawing.Point(12, 9);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(48, 48);
             this.pictureBox.TabIndex = 17;
@@ -139,24 +139,25 @@ namespace Argon.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstNetworkCard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstNetworkCard.FormattingEnabled = true;
-            this.lstNetworkCard.Location = new System.Drawing.Point(256, 36);
+            this.lstNetworkCard.Location = new System.Drawing.Point(255, 41);
             this.lstNetworkCard.Name = "lstNetworkCard";
-            this.lstNetworkCard.Size = new System.Drawing.Size(914, 21);
+            this.lstNetworkCard.Size = new System.Drawing.Size(892, 21);
             this.lstNetworkCard.TabIndex = 18;
             // 
             // lblSelectedCard
             // 
             this.lblSelectedCard.AutoSize = true;
-            this.lblSelectedCard.Location = new System.Drawing.Point(89, 64);
+            this.lblSelectedCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedCard.Location = new System.Drawing.Point(66, 69);
             this.lblSelectedCard.Name = "lblSelectedCard";
-            this.lblSelectedCard.Size = new System.Drawing.Size(74, 13);
+            this.lblSelectedCard.Size = new System.Drawing.Size(87, 13);
             this.lblSelectedCard.TabIndex = 19;
             this.lblSelectedCard.Text = "Selected Card";
             // 
             // txtSelectedCard
             // 
             this.txtSelectedCard.AutoSize = true;
-            this.txtSelectedCard.Location = new System.Drawing.Point(172, 64);
+            this.txtSelectedCard.Location = new System.Drawing.Point(153, 69);
             this.txtSelectedCard.Name = "txtSelectedCard";
             this.txtSelectedCard.Size = new System.Drawing.Size(63, 13);
             this.txtSelectedCard.TabIndex = 20;
@@ -165,9 +166,10 @@ namespace Argon.Windows.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 39);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(66, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "Network Card";
             // 
@@ -390,16 +392,17 @@ namespace Argon.Windows.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(89, 9);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Name";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(130, 6);
+            this.txtName.Location = new System.Drawing.Point(107, 6);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(414, 20);
             this.txtName.TabIndex = 25;
@@ -421,6 +424,7 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnSelect);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfile";
             this.TabText = "Profile";
             this.Text = "Profile";

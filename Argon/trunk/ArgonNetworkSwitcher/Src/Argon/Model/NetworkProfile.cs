@@ -105,7 +105,7 @@ namespace Argon.Model
             profile.Id = 0;
             profile.Name = origin.Name;
 
-            profile.NetworkCardInfo = NetworkCardInfoImpl.Copy((NetworkCardInfoImpl)origin.NetworkCardInfo);
+            profile.NetworkCardInfo = NetworkCardInfoImpl.Copy(origin.NetworkCardInfo);
             profile.ProxyConfig = ProxyConfiguration.Copy(origin.ProxyConfig);
 
             profile.ServiceList = new List<IWindowsServiceInfo>();
@@ -129,9 +129,9 @@ namespace Argon.Model
 
             profile.DefaultPrinter = origin.DefaultPrinter;
 
-            foreach (IWindowsNetworkCardInfo item in origin.DisabledNetworkCards)
+            foreach (WindowsNetworkCard item in origin.DisabledNetworkCards)
             {
-                profile.DisabledNetworkCards.Add(NetworkCardInfoImpl.Copy((NetworkCardInfoImpl)item));
+                profile.DisabledNetworkCards.Add(WindowsNetworkCard.Copy(item));
             }
 
             return profile;

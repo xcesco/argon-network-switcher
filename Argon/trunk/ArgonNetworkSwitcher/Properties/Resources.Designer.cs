@@ -137,6 +137,20 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap data_disk1 {
+            get {
+                object obj = ResourceManager.GetObject("data_disk1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap data_out {
+            get {
+                object obj = ResourceManager.GetObject("data_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap data_up {
             get {
                 object obj = ResourceManager.GetObject("data_up", resourceCulture);
@@ -172,6 +186,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap gear_run1 {
+            get {
+                object obj = ResourceManager.GetObject("gear_run1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap gear_stop {
             get {
                 object obj = ResourceManager.GetObject("gear_stop", resourceCulture);
@@ -182,6 +203,34 @@ namespace Argon.Windows.Forms.Properties {
         internal static System.Drawing.Bitmap gears {
             get {
                 object obj = ResourceManager.GetObject("gears", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap index_add {
+            get {
+                object obj = ResourceManager.GetObject("index_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap index_delete {
+            get {
+                object obj = ResourceManager.GetObject("index_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap index_preferences {
+            get {
+                object obj = ResourceManager.GetObject("index_preferences", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap index_view {
+            get {
+                object obj = ResourceManager.GetObject("index_view", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -200,9 +249,23 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap package_add1 {
+            get {
+                object obj = ResourceManager.GetObject("package_add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap package_delete {
             get {
                 object obj = ResourceManager.GetObject("package_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap package_delete1 {
+            get {
+                object obj = ResourceManager.GetObject("package_delete1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -214,6 +277,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap package_ok1 {
+            get {
+                object obj = ResourceManager.GetObject("package_ok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap package_view {
             get {
                 object obj = ResourceManager.GetObject("package_view", resourceCulture);
@@ -221,9 +291,23 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap package_view1 {
+            get {
+                object obj = ResourceManager.GetObject("package_view1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap paypal_donations {
             get {
                 object obj = ResourceManager.GetObject("paypal_donations", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PCI_card_network {
+            get {
+                object obj = ResourceManager.GetObject("PCI-card_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -242,6 +326,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap PCI_card_view1 {
+            get {
+                object obj = ResourceManager.GetObject("PCI-card_view1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
@@ -252,6 +343,13 @@ namespace Argon.Windows.Forms.Properties {
         internal static System.Drawing.Bitmap refresh1 {
             get {
                 object obj = ResourceManager.GetObject("refresh1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap refresh2 {
+            get {
+                object obj = ResourceManager.GetObject("refresh2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
