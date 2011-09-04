@@ -31,21 +31,21 @@ namespace Argon.Windows.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,6 +62,8 @@ namespace Argon.Windows.Forms
             this.mnuCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDonate = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeADonationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.trayMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -71,23 +73,21 @@ namespace Argon.Windows.Forms
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.btnProfileNew = new System.Windows.Forms.ToolStripButton();
             this.btnProfileView = new System.Windows.Forms.ToolStripButton();
             this.btnProfileDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnProfileSave = new System.Windows.Forms.ToolStripButton();
             this.btnProfileRun = new System.Windows.Forms.ToolStripButton();
             this.btnProfileRefresh = new System.Windows.Forms.ToolStripButton();
-            this.btnProfileSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProfilesLoad = new System.Windows.Forms.ToolStripButton();
             this.btnProfilesSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCardsRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnCardView = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
-            this.mnuDonate = new System.Windows.Forms.ToolStripMenuItem();
-            this.makeADonationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.trayMenuStrip.SuspendLayout();
@@ -211,6 +211,21 @@ namespace Argon.Windows.Forms
             this.mnuHelpAbout.Text = "About";
             this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
             // 
+            // mnuDonate
+            // 
+            this.mnuDonate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.makeADonationToolStripMenuItem});
+            this.mnuDonate.Name = "mnuDonate";
+            this.mnuDonate.Size = new System.Drawing.Size(54, 20);
+            this.mnuDonate.Text = "Donate";
+            // 
+            // makeADonationToolStripMenuItem
+            // 
+            this.makeADonationToolStripMenuItem.Name = "makeADonationToolStripMenuItem";
+            this.makeADonationToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.makeADonationToolStripMenuItem.Text = "Make a donation";
+            this.makeADonationToolStripMenuItem.Click += new System.EventHandler(this.makeADonationToolStripMenuItem_Click);
+            // 
             // dockPanel
             // 
             this.dockPanel.ActiveAutoHideContent = null;
@@ -219,50 +234,50 @@ namespace Argon.Windows.Forms
             this.dockPanel.Location = new System.Drawing.Point(0, 0);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.Size = new System.Drawing.Size(1016, 608);
-            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
-            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin2.TabGradient = tabGradient8;
-            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
-            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
-            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
-            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
-            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
-            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
-            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
-            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
-            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
-            tabGradient14.EndColor = System.Drawing.Color.Transparent;
-            tabGradient14.StartColor = System.Drawing.Color.Transparent;
-            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
-            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
-            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
-            this.dockPanel.Skin = dockPanelSkin2;
+            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
+            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin1.TabGradient = tabGradient1;
+            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
+            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
+            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
+            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
+            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
+            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
+            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
+            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
+            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
+            tabGradient7.EndColor = System.Drawing.Color.Transparent;
+            tabGradient7.StartColor = System.Drawing.Color.Transparent;
+            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
+            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
+            this.dockPanel.Skin = dockPanelSkin1;
             this.dockPanel.TabIndex = 6;
             // 
             // notifyIcon
@@ -283,29 +298,29 @@ namespace Argon.Windows.Forms
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.trayMenuStrip.Name = "trayMenuStrip";
-            this.trayMenuStrip.Size = new System.Drawing.Size(149, 60);
+            this.trayMenuStrip.Size = new System.Drawing.Size(151, 60);
             // 
             // applyToolStripMenuItem
             // 
             this.applyToolStripMenuItem.Name = "applyToolStripMenuItem";
-            this.applyToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.applyToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.applyToolStripMenuItem.Text = "Open window";
             this.applyToolStripMenuItem.Click += new System.EventHandler(this.applyToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(147, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -318,14 +333,15 @@ namespace Argon.Windows.Forms
             // 
             // toolStrip
             // 
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnProfileNew,
             this.btnProfileView,
             this.btnProfileDelete,
+            this.btnProfileSave,
             this.toolStripSeparator3,
             this.btnProfileRun,
             this.btnProfileRefresh,
-            this.btnProfileSave,
             this.toolStripSeparator6,
             this.btnProfilesLoad,
             this.btnProfilesSave,
@@ -335,129 +351,29 @@ namespace Argon.Windows.Forms
             this.toolStripSeparator5});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1016, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1016, 55);
             this.toolStrip.TabIndex = 9;
             this.toolStrip.Text = "Command menù";
-            // 
-            // btnProfileNew
-            // 
-            this.btnProfileNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileNew.Image = global::Argon.Windows.Forms.Properties.Resources.package_add;
-            this.btnProfileNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileNew.Name = "btnProfileNew";
-            this.btnProfileNew.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileNew.Text = "New profile";
-            this.btnProfileNew.Click += new System.EventHandler(this.btnProfileNew_Click);
-            // 
-            // btnProfileView
-            // 
-            this.btnProfileView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileView.Image = global::Argon.Windows.Forms.Properties.Resources.package_view;
-            this.btnProfileView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileView.Name = "btnProfileView";
-            this.btnProfileView.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileView.Text = "View profile";
-            this.btnProfileView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // btnProfileDelete
-            // 
-            this.btnProfileDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileDelete.Image = global::Argon.Windows.Forms.Properties.Resources.package_delete;
-            this.btnProfileDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileDelete.Name = "btnProfileDelete";
-            this.btnProfileDelete.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileDelete.Text = "Delete profile";
-            this.btnProfileDelete.Click += new System.EventHandler(this.btnProfileDelete_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnProfileRun
-            // 
-            this.btnProfileRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileRun.Image = global::Argon.Windows.Forms.Properties.Resources.media_play_green1;
-            this.btnProfileRun.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileRun.Name = "btnProfileRun";
-            this.btnProfileRun.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileRun.Text = "Run profile";
-            this.btnProfileRun.Click += new System.EventHandler(this.btnProfileRun_Click);
-            // 
-            // btnProfileRefresh
-            // 
-            this.btnProfileRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.refresh;
-            this.btnProfileRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileRefresh.Name = "btnProfileRefresh";
-            this.btnProfileRefresh.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileRefresh.Text = "Refresh network card";
-            this.btnProfileRefresh.Click += new System.EventHandler(this.btnProfileRefresh_Click);
-            // 
-            // btnProfileSave
-            // 
-            this.btnProfileSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfileSave.Image = global::Argon.Windows.Forms.Properties.Resources.package_ok;
-            this.btnProfileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfileSave.Name = "btnProfileSave";
-            this.btnProfileSave.Size = new System.Drawing.Size(23, 22);
-            this.btnProfileSave.Text = "Save Profile";
-            this.btnProfileSave.Click += new System.EventHandler(this.btnProfileSave_Click_1);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 55);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnProfilesLoad
-            // 
-            this.btnProfilesLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfilesLoad.Image = global::Argon.Windows.Forms.Properties.Resources.data_up;
-            this.btnProfilesLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfilesLoad.Name = "btnProfilesLoad";
-            this.btnProfilesLoad.Size = new System.Drawing.Size(23, 22);
-            this.btnProfilesLoad.Text = "Load profiles";
-            this.btnProfilesLoad.Click += new System.EventHandler(this.btnAllProfileLoad_Click);
-            // 
-            // btnProfilesSave
-            // 
-            this.btnProfilesSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProfilesSave.Image = global::Argon.Windows.Forms.Properties.Resources.data_disk;
-            this.btnProfilesSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProfilesSave.Name = "btnProfilesSave";
-            this.btnProfilesSave.Size = new System.Drawing.Size(23, 22);
-            this.btnProfilesSave.Text = "Save profiles";
-            this.btnProfilesSave.Click += new System.EventHandler(this.btnProfileSave_Click);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 55);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnCardsRefresh
-            // 
-            this.btnCardsRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.PCI_card_network1;
-            this.btnCardsRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCardsRefresh.Name = "btnCardsRefresh";
-            this.btnCardsRefresh.Size = new System.Drawing.Size(23, 22);
-            this.btnCardsRefresh.Text = "Refresh network cards";
-            this.btnCardsRefresh.Click += new System.EventHandler(this.btnAllCardsRefresh_Click);
-            // 
-            // btnCardView
-            // 
-            this.btnCardView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.PCI_card_view;
-            this.btnCardView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCardView.Name = "btnCardView";
-            this.btnCardView.Size = new System.Drawing.Size(23, 22);
-            this.btnCardView.Text = "Network card view";
-            this.btnCardView.Click += new System.EventHandler(this.btnCardView_Click);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 55);
             // 
             // imageList16x16
             // 
@@ -467,21 +383,107 @@ namespace Argon.Windows.Forms
             this.imageList16x16.Images.SetKeyName(1, "package_add.png");
             this.imageList16x16.Images.SetKeyName(2, "data_up.png");
             this.imageList16x16.Images.SetKeyName(3, "data_down.png");
+            this.imageList16x16.Images.SetKeyName(4, "Graphite-Smooth-Folder-Applications-icon.png");
             // 
-            // mnuDonate
+            // btnProfileNew
             // 
-            this.mnuDonate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.makeADonationToolStripMenuItem});
-            this.mnuDonate.Name = "mnuDonate";
-            this.mnuDonate.Size = new System.Drawing.Size(54, 20);
-            this.mnuDonate.Text = "Donate";
+            this.btnProfileNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileNew.Image = global::Argon.Windows.Forms.Properties.Resources.index_add;
+            this.btnProfileNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileNew.Name = "btnProfileNew";
+            this.btnProfileNew.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileNew.Text = "New profile";
+            this.btnProfileNew.Click += new System.EventHandler(this.btnProfileNew_Click);
             // 
-            // makeADonationToolStripMenuItem
+            // btnProfileView
             // 
-            this.makeADonationToolStripMenuItem.Name = "makeADonationToolStripMenuItem";
-            this.makeADonationToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.makeADonationToolStripMenuItem.Text = "Make a donation";
-            this.makeADonationToolStripMenuItem.Click += new System.EventHandler(this.makeADonationToolStripMenuItem_Click);
+            this.btnProfileView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileView.Image = global::Argon.Windows.Forms.Properties.Resources.index_view;
+            this.btnProfileView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileView.Name = "btnProfileView";
+            this.btnProfileView.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileView.Text = "View profile";
+            this.btnProfileView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnProfileDelete
+            // 
+            this.btnProfileDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileDelete.Image = global::Argon.Windows.Forms.Properties.Resources.index_delete;
+            this.btnProfileDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileDelete.Name = "btnProfileDelete";
+            this.btnProfileDelete.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileDelete.Text = "Delete profile";
+            this.btnProfileDelete.Click += new System.EventHandler(this.btnProfileDelete_Click);
+            // 
+            // btnProfileSave
+            // 
+            this.btnProfileSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileSave.Image = global::Argon.Windows.Forms.Properties.Resources.index_preferences;
+            this.btnProfileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileSave.Name = "btnProfileSave";
+            this.btnProfileSave.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileSave.Text = "Save Profile";
+            this.btnProfileSave.Click += new System.EventHandler(this.btnProfileSave_Click_1);
+            // 
+            // btnProfileRun
+            // 
+            this.btnProfileRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileRun.Image = global::Argon.Windows.Forms.Properties.Resources.gear_run1;
+            this.btnProfileRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileRun.Name = "btnProfileRun";
+            this.btnProfileRun.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileRun.Text = "Run profile";
+            this.btnProfileRun.Click += new System.EventHandler(this.btnProfileRun_Click);
+            // 
+            // btnProfileRefresh
+            // 
+            this.btnProfileRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfileRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.refresh2;
+            this.btnProfileRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfileRefresh.Name = "btnProfileRefresh";
+            this.btnProfileRefresh.Size = new System.Drawing.Size(52, 52);
+            this.btnProfileRefresh.Text = "Refresh network card";
+            this.btnProfileRefresh.Click += new System.EventHandler(this.btnProfileRefresh_Click);
+            // 
+            // btnProfilesLoad
+            // 
+            this.btnProfilesLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfilesLoad.Image = global::Argon.Windows.Forms.Properties.Resources.data_out;
+            this.btnProfilesLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfilesLoad.Name = "btnProfilesLoad";
+            this.btnProfilesLoad.Size = new System.Drawing.Size(52, 52);
+            this.btnProfilesLoad.Text = "Load profiles";
+            this.btnProfilesLoad.Click += new System.EventHandler(this.btnAllProfileLoad_Click);
+            // 
+            // btnProfilesSave
+            // 
+            this.btnProfilesSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnProfilesSave.Image = global::Argon.Windows.Forms.Properties.Resources.data_disk1;
+            this.btnProfilesSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProfilesSave.Name = "btnProfilesSave";
+            this.btnProfilesSave.Size = new System.Drawing.Size(52, 52);
+            this.btnProfilesSave.Text = "Save profiles";
+            this.btnProfilesSave.Click += new System.EventHandler(this.btnProfileSave_Click);
+            // 
+            // btnCardsRefresh
+            // 
+            this.btnCardsRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.PCI_card_network;
+            this.btnCardsRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCardsRefresh.Name = "btnCardsRefresh";
+            this.btnCardsRefresh.Size = new System.Drawing.Size(52, 52);
+            this.btnCardsRefresh.Text = "Refresh network cards";
+            this.btnCardsRefresh.Click += new System.EventHandler(this.btnAllCardsRefresh_Click);
+            // 
+            // btnCardView
+            // 
+            this.btnCardView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.PCI_card_view1;
+            this.btnCardView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCardView.Name = "btnCardView";
+            this.btnCardView.Size = new System.Drawing.Size(52, 52);
+            this.btnCardView.Text = "Network card view";
+            this.btnCardView.Click += new System.EventHandler(this.btnCardView_Click);
             // 
             // FormMain
             // 

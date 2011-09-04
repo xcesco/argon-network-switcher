@@ -31,7 +31,7 @@ namespace Argon.Windows.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdapters));
-            this.images48x48 = new System.Windows.Forms.ImageList(this.components);
+            this.images32x32 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEnable = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,11 +45,11 @@ namespace Argon.Windows.Forms
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
             // 
-            // images48x48
+            // images32x32
             // 
-            this.images48x48.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images48x48.ImageStream")));
-            this.images48x48.TransparentColor = System.Drawing.Color.Transparent;
-            this.images48x48.Images.SetKeyName(0, "PCI-card_network.png");
+            this.images32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images32x32.ImageStream")));
+            this.images32x32.TransparentColor = System.Drawing.Color.Transparent;
+            this.images32x32.Images.SetKeyName(0, "PCI-card_network.png");
             // 
             // contextMenuStrip1
             // 
@@ -58,28 +58,28 @@ namespace Argon.Windows.Forms
             this.mnuEnable,
             this.mnuDisable});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 70);
             this.contextMenuStrip1.Text = "View";
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem1.Text = "Show info";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.actionDisplayCardInfo_Click);
             // 
             // mnuEnable
             // 
             this.mnuEnable.Name = "mnuEnable";
-            this.mnuEnable.Size = new System.Drawing.Size(127, 22);
+            this.mnuEnable.Size = new System.Drawing.Size(132, 22);
             this.mnuEnable.Text = "Enable";
             this.mnuEnable.Click += new System.EventHandler(this.mnuEnable_Click);
             // 
             // mnuDisable
             // 
             this.mnuDisable.Name = "mnuDisable";
-            this.mnuDisable.Size = new System.Drawing.Size(127, 22);
+            this.mnuDisable.Size = new System.Drawing.Size(132, 22);
             this.mnuDisable.Text = "Disable";
             this.mnuDisable.Click += new System.EventHandler(this.mnuDisable_Click);
             // 
@@ -100,11 +100,12 @@ namespace Argon.Windows.Forms
             this.colStatus});
             this.listView.ContextMenuStrip = this.contextMenuStrip1;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.FullRowSelect = true;
             this.listView.Location = new System.Drawing.Point(0, 0);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
             this.listView.Size = new System.Drawing.Size(778, 468);
-            this.listView.SmallImageList = this.images24x24;
+            this.listView.SmallImageList = this.images32x32;
             this.listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
@@ -153,7 +154,7 @@ namespace Argon.Windows.Forms
 
         #endregion
 
-        private System.Windows.Forms.ImageList images48x48;
+        private System.Windows.Forms.ImageList images32x32;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ImageList images24x24;

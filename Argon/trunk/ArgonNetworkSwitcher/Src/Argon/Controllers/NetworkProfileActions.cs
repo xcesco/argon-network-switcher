@@ -11,6 +11,7 @@ using Argon.Model;
 using Argon.Network;
 using System.Collections;
 using BrightIdeasSoftware;
+using System.Windows;
 
 namespace Argon.Controllers
 {
@@ -187,9 +188,14 @@ namespace Argon.Controllers
                 Controller.Instance.Model.CurrentProfile = null;
 
                 NetworkProfile profile = (NetworkProfile)list.SelectedObject;
-                Controller.Instance.ConsoleController.Info("Remove profile [" + profile.Name + "]");
-                Controller.Instance.Model.Profiles.Remove(profile);
-                Controller.Instance.ActionRefreshProfiles();
+
+                MessageBoxResult res=System.Windows.MessageBox.Show("Do you want to delete profile "+profile.Name+"?","Delete confirmation",MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (res==MessageBoxResult.Yes)
+                {
+                    Controller.Instance.ConsoleController.Info("Remove profile [" + profile.Name + "]");
+                    Controller.Instance.Model.Profiles.Remove(profile);
+                    Controller.Instance.ActionRefreshProfiles();
+                }
              
             }
         }

@@ -59,6 +59,7 @@ namespace Argon.Windows.Forms
         {
             if (listView.SelectedObjects.Count > 0)
             {
+
                 Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
                 Controller.Instance.ActivateFormProfile();
             }
@@ -110,6 +111,11 @@ namespace Argon.Windows.Forms
                 Controller.Instance.ActionRefreshProfiles();
             }
             
+        }
+
+        private void FormProfiles_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

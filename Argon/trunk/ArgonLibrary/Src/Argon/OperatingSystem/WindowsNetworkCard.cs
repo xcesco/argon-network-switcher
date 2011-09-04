@@ -114,15 +114,7 @@ namespace Argon.OperatingSystem
         }
 
 
-        /// <summary>
-        /// Copies the specified car.
-        /// </summary>
-        /// <param name="car">The car.</param>
-        /// <returns></returns>
-        public static NetworkCardInfoImpl Copy(NetworkCardInfoImpl obj)
-        {
-            return (NetworkCardInfoImpl)obj.MemberwiseClone();
-        }
+
         
         /// <summary>
         /// 
@@ -294,6 +286,12 @@ namespace Argon.OperatingSystem
         }
 
         #endregion
+
+
+        public static IWindowsNetworkCardInfo Copy(IWindowsNetworkCardInfo iWindowsNetworkCardInfo)
+        {
+            return (NetworkCardInfoImpl)(((NetworkCardInfoImpl)iWindowsNetworkCardInfo).MemberwiseClone());  
+        }
     }
 
     /// <summary>
@@ -714,6 +712,12 @@ namespace Argon.OperatingSystem
         ///   <c>true</c> if enabled; otherwise, <c>false</c>.
         /// </value>
         public bool Enabled { get; set; }
-        
+
+
+        public static WindowsNetworkCard Copy(WindowsNetworkCard item)
+        {
+
+            return (WindowsNetworkCard)item.MemberwiseClone();       
+        }
     }
 }
