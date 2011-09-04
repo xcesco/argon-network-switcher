@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ArgonNetworkSwitcher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A tool to manage the network card configurations")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Francesco Benincasa")]
 [assembly: AssemblyProduct("ArgonNetworkSwitcher")]

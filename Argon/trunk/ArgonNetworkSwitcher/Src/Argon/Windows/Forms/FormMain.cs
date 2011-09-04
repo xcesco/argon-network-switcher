@@ -329,10 +329,15 @@ namespace Argon.Windows.Forms
 
         private void mnuCheckForUpdates_Click(object sender, EventArgs e)
         {
-            
-
-            string url = ConfigurationManager.AppSettings.Get("updateUrl");            
+            string url = "http://argon-network-switcher.googlecode.com/files/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
             CheckForUpdate.Verify(url);
+        }
+
+   
+        private void makeADonationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDonate form = new FormDonate();
+            form.ShowDialog(this);  
         }        
     }
 }

@@ -108,6 +108,13 @@ namespace Argon.Controllers
             Controller.Instance.ConsoleController.Info("Start applying profile "+profile.Name);
             if (worker != null) worker.ReportProgress(0);
 
+            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
+            {
+                Controller.Instance.ConsoleController.Info("Disable network card "+nic.HardwareName);
+                NetworkAdapterHelper.SetDeviceStatus(nic, false);
+            }
+            
+
             Controller.Instance.ConsoleController.Info("Change netword card configuration");
             WindowsNetworkCardManager.Apply(profile.NetworkCardInfo);
 
@@ -190,7 +197,12 @@ namespace Argon.Controllers
         public static void RefrehProfiles()
         {
             Controller.Instance.View.ViewProfiles.listView.ClearObjects();
-            Controller.Instance.View.ViewProfiles.listView.AddObjects((ICollection)Controller.Instance.Model.Profiles);
+
+            foreach (NetworkProfile item in Controller.Instance.Model.Profiles)
+            {
+                Controller.Instance.View.ViewProfiles.listView.AddObject(item);
+            }
+            
         }
     }
 }

@@ -193,6 +193,12 @@
     <Compile Include="Src\Argon\Windows\Controls\IpTextBox.designer.cs">
       <DependentUpon>IpTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormDonate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\FormDonate.Designer.cs">
+      <DependentUpon>FormDonate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="Src\Argon\Windows\Controls\IpTextBox.resx">
       <DependentUpon>IpTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormDonate.resx">
+      <DependentUpon>FormDonate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,16 +297,19 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <None Include="Resources\Argon.png" />
+    <Content Include="Resources\about.ico" />
     <Content Include="Resources\arrow_down_blue.png" />
     <Content Include="Resources\arrow_down_green.png" />
     <Content Include="Resources\arrow_up_blue.png" />
     <Content Include="Resources\arrow_up_green.png" />
+    <None Include="Resources\btn_donateCC_LG.gif" />
     <Content Include="Resources\bullet_square_blue.png" />
     <Content Include="Resources\bullet_square_red.png" />
     <Content Include="Resources\bullet_triangle_blue.png" />
     <Content Include="Resources\bullet_triangle_green.png" />
     <None Include="Resources\data_up.png" />
     <None Include="Resources\data_disk.png" />
+    <Content Include="Resources\checkLastVersion.xml" />
     <Content Include="Resources\delete2.png" />
     <Content Include="Resources\empty.png" />
     <Content Include="Resources\gears.png" />
@@ -318,6 +330,7 @@
     <None Include="Resources\package_view1.png" />
     <None Include="Resources\PCI-card_network1.png" />
     <None Include="Resources\PCI-card_view.png" />
+    <Content Include="Resources\paypal_donations.jpg" />
     <Content Include="Resources\refresh.png" />
     <None Include="Resources\refresh1.png" />
     <Content Include="Resources\replace2.png" />

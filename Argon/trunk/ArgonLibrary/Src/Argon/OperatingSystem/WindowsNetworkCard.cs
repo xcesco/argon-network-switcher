@@ -82,6 +82,7 @@ namespace Argon.OperatingSystem
         string HardwareName { get; set; }
 
         uint Index { get; set; }
+        
     }
 
     /// <summary>
@@ -111,6 +112,7 @@ namespace Argon.OperatingSystem
             _index = 0;
             
         }
+
 
         /// <summary>
         /// Copies the specified car.

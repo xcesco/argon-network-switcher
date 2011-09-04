@@ -39,6 +39,14 @@ namespace Argon.Model
             set { _networkCardInfo = value; }
         }
 
+        private IList<IWindowsNetworkCardInfo> disabledNetworkCards;
+
+        public IList<IWindowsNetworkCardInfo> DisabledNetworkCards
+        {
+            get { return disabledNetworkCards; }
+            set { disabledNetworkCards = value; }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -87,6 +95,8 @@ namespace Argon.Model
             _driveMapList = new List<DriveMap>();
 
             _defaultPrinter = "";
+
+            disabledNetworkCards = new List<IWindowsNetworkCardInfo>();
         }
 
         public static NetworkProfile Copy(NetworkProfile origin)
@@ -118,6 +128,11 @@ namespace Argon.Model
             }
 
             profile.DefaultPrinter = origin.DefaultPrinter;
+
+            foreach (IWindowsNetworkCardInfo item in origin.DisabledNetworkCards)
+            {
+                profile.DisabledNetworkCards.Add(NetworkCardInfoImpl.Copy((NetworkCardInfoImpl)item));
+            }
 
             return profile;
         }

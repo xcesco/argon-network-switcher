@@ -140,8 +140,8 @@ namespace Argon.Windows.Forms
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdapters";
-            this.TabText = "Network Adapters";
-            this.Text = "Network Adapters";
+            this.TabText = "Network Adapters ";
+            this.Text = "Network Adapters ";
             this.Activated += new System.EventHandler(this.FormAdapters_Activated);
             this.Load += new System.EventHandler(this.FormAdapters_Load);
             this.VisibleChanged += new System.EventHandler(this.FormAdapters_VisibleChanged);
