@@ -220,7 +220,11 @@ namespace Argon.Windows.Forms
         {
             //this.ShowInTaskbar = true;
             this.Visible = true;
+            
             this.WindowState = FormWindowState.Normal;
+            this.Width = 400;
+            this.Height = 400;
+
             
         }
 
