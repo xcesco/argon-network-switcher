@@ -56,7 +56,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.btnProfileNew, main.btnProfileRun, main.btnProfileRefresh, main.btnProfileSave, main.btnProfileDelete);            
+            _view.ToolStripButtonManager.EnableButtons(main.btnProfilesLoad, main.btnProfilesSave, main.btnProfileNew, main.btnProfileRun, main.btnProfileRefresh, main.btnProfileSave, main.btnProfileDelete);            
 
             // form selezionati
             View.CurrentFormProfile = currentFormProfile;
@@ -67,7 +67,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.btnProfileNew, main.btnProfilesLoad, main.btnProfilesSave);                       
+            _view.ToolStripButtonManager.EnableButtons(main.btnProfilesLoad, main.btnProfilesSave, main.btnProfileNew, main.btnProfilesLoad, main.btnProfilesSave);                       
 
             // form selezionati
             View.CurrentFormProfile = null;
