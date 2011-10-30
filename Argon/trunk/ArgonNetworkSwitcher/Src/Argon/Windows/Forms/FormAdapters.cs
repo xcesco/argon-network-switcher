@@ -24,7 +24,7 @@ namespace Argon.Windows.Forms
             {
                 return 0;
             };
-            colName.Renderer=new BaseRenderer();
+            colName.Renderer = new ImageRenderer();
         }
 
         private void FormAdapters_Load(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace Argon.Windows.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
+          //  this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
             this.cbOperation = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@ namespace Argon.Windows.Controls
             // 
             // gradientPanel1
             // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+           /* this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gradientPanel1.Controls.Add(this.cbOperation);
             this.gradientPanel1.Controls.Add(this.label7);
@@ -101,7 +101,7 @@ namespace Argon.Windows.Controls
             this.gradientPanel1.Location = new System.Drawing.Point(3, 147);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(643, 160);
-            this.gradientPanel1.TabIndex = 19;
+            this.gradientPanel1.TabIndex = 19;*/
             // 
             // cbOperation
             // 
@@ -513,13 +513,13 @@ namespace Argon.Windows.Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listView);
-            this.Controls.Add(this.gradientPanel1);
+           // this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.toolStrip1);
             this.MinimumSize = new System.Drawing.Size(560, 312);
             this.Name = "DriveMapListView";
             this.Size = new System.Drawing.Size(649, 312);
-            this.gradientPanel1.ResumeLayout(false);
-            this.gradientPanel1.PerformLayout();
+         //   this.gradientPanel1.ResumeLayout(false);
+          //  this.gradientPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).EndInit();
@@ -530,7 +530,7 @@ namespace Argon.Windows.Controls
 
         #endregion
 
-        private Ascend.Windows.Forms.GradientPanel gradientPanel1;
+       // private Ascend.Windows.Forms.GradientPanel gradientPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUsername;

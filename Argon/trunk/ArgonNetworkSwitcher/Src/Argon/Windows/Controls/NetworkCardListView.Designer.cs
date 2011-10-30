@@ -34,8 +34,8 @@
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.images24x24 = new System.Windows.Forms.ImageList(this.components);
             this.imageList32x32 = new System.Windows.Forms.ImageList(this.components);
+            this.images24x24 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,17 +78,17 @@
             this.colStatus.Text = "Status";
             this.colStatus.Width = 120;
             // 
+            // imageList32x32
+            // 
+            this.imageList32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList32x32.ImageStream")));
+            this.imageList32x32.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList32x32.Images.SetKeyName(0, "PCI-card.png");
+            // 
             // images24x24
             // 
             this.images24x24.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images24x24.ImageStream")));
             this.images24x24.TransparentColor = System.Drawing.Color.Transparent;
             this.images24x24.Images.SetKeyName(0, "PCI-card_network.png");
-            // 
-            // imageList32x32
-            // 
-            this.imageList32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList32x32.ImageStream")));
-            this.imageList32x32.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList32x32.Images.SetKeyName(0, "PCI-card_network.png");
             // 
             // NetworkCardListView
             // 

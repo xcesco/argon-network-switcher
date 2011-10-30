@@ -22,14 +22,14 @@ namespace Argon.Windows.Forms
         /// Initializes a new instance of the <see cref="FormProfiles"/> class.
         /// </summary>
         public FormProfiles()
-        {
+        {            
             InitializeComponent();
 
-            colName.ImageGetter=delegate(object rowObject)
+            colName.ImageGetter = delegate(object rowObject)
             {
                 return 0;
             };
-            colName.Renderer = new BaseRenderer();
+            colName.Renderer = new ImageRenderer();
         }
 
 

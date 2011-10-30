@@ -37,7 +37,7 @@ namespace Argon.Windows.Controls
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDelete = new System.Windows.Forms.ToolStripButton();
             this.mnuSelect = new System.Windows.Forms.ToolStripButton();
-            this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
+           // this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
             this.cbKill = new System.Windows.Forms.CheckBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.cbWaitForExit = new System.Windows.Forms.CheckBox();
@@ -64,7 +64,7 @@ namespace Argon.Windows.Controls
             this.colWaitForExit = new OLVColumn();
             this.colKill = new OLVColumn();
             this.toolStrip1.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
+           // this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +146,7 @@ namespace Argon.Windows.Controls
             // 
             // gradientPanel1
             // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+           /* this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gradientPanel1.Controls.Add(this.cbKill);
             this.gradientPanel1.Controls.Add(this.btnSelect);
@@ -168,7 +168,7 @@ namespace Argon.Windows.Controls
             this.gradientPanel1.Location = new System.Drawing.Point(3, 130);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(589, 231);
-            this.gradientPanel1.TabIndex = 16;
+            this.gradientPanel1.TabIndex = 16;*/
             // 
             // cbKill
             // 
@@ -406,7 +406,7 @@ namespace Argon.Windows.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gradientPanel1);
+//            this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.listView);
             this.MinimumSize = new System.Drawing.Size(560, 312);
@@ -414,8 +414,8 @@ namespace Argon.Windows.Controls
             this.Size = new System.Drawing.Size(595, 364);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.gradientPanel1.ResumeLayout(false);
-            this.gradientPanel1.PerformLayout();
+           // this.gradientPanel1.ResumeLayout(false);
+           // this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -428,7 +428,7 @@ namespace Argon.Windows.Controls
         private ObjectListView listView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton mnuNew;
-        private Ascend.Windows.Forms.GradientPanel gradientPanel1;
+        //private Ascend.Windows.Forms.GradientPanel gradientPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
