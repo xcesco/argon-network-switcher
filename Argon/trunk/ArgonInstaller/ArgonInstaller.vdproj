@@ -15,55 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_018619D89A13DA56E3BBEDDC685A301E"
-        "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_018619D89A13DA56E3BBEDDC685A301E"
-        "OwnerKey" = "8:_60B220F6DD1F3B9F51204D43F6A2CE33"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_07247B6C1F33422B8FC47236F8A43A40"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2C66222BC4D898C9E8C4B2848651250A"
-        "OwnerKey" = "8:_018619D89A13DA56E3BBEDDC685A301E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2C66222BC4D898C9E8C4B2848651250A"
-        "OwnerKey" = "8:_60B220F6DD1F3B9F51204D43F6A2CE33"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2C66222BC4D898C9E8C4B2848651250A"
+        "MsmKey" = "8:_3A78184CBDB77B7A382B0F992156593E"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_36E9C856252501B52E9CD45A312EFE7B"
+        "MsmKey" = "8:_622ACC9A7669845703ABB799684AEFAF"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_60B220F6DD1F3B9F51204D43F6A2CE33"
-        "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_646078D5066F9F5920CFC9E7C6FF260D"
+        "MsmKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D44AE61A239BB8DA71430D5BFE94F81C"
-        "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,37 +52,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_36E9C856252501B52E9CD45A312EFE7B"
+        "OwnerKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D44AE61A239BB8DA71430D5BFE94F81C"
+        "OwnerKey" = "8:_3A78184CBDB77B7A382B0F992156593E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_646078D5066F9F5920CFC9E7C6FF260D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_60B220F6DD1F3B9F51204D43F6A2CE33"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_018619D89A13DA56E3BBEDDC685A301E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2C66222BC4D898C9E8C4B2848651250A"
+        "OwnerKey" = "8:_622ACC9A7669845703ABB799684AEFAF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -226,37 +172,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_018619D89A13DA56E3BBEDDC685A301E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Ascend, Version=1.0.0.6, Culture=neutral, PublicKeyToken=25c7a393ba3f37cd, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_018619D89A13DA56E3BBEDDC685A301E"
-                    {
-                    "Name" = "8:Ascend.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Ascend.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_07247B6C1F33422B8FC47236F8A43A40"
             {
             "SourcePath" = "8:..\\ArgonNetworkSwitcher\\icon.ico"
@@ -277,20 +192,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2C66222BC4D898C9E8C4B2848651250A"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A78184CBDB77B7A382B0F992156593E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Ascend.Resources, Version=1.0.0.6, Culture=neutral, PublicKeyToken=9c9aecb37b1e03b6, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ObjectListView, Version=2.5.0.16265, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2C66222BC4D898C9E8C4B2848651250A"
+                    "_3A78184CBDB77B7A382B0F992156593E"
                     {
-                    "Name" = "8:Ascend.Resources.dll"
+                    "Name" = "8:ObjectListView.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Ascend.Resources.dll"
+            "SourcePath" = "8:ObjectListView.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -308,76 +223,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_36E9C856252501B52E9CD45A312EFE7B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_36E9C856252501B52E9CD45A312EFE7B"
-                    {
-                    "Name" = "8:WeifenLuo.WinFormsUI.Docking.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:WeifenLuo.WinFormsUI.Docking.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_60B220F6DD1F3B9F51204D43F6A2CE33"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Ascend.Windows.Forms, Version=1.0.0.6, Culture=neutral, PublicKeyToken=ecd86ece2d3eb46d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_60B220F6DD1F3B9F51204D43F6A2CE33"
-                    {
-                    "Name" = "8:Ascend.Windows.Forms.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Ascend.Windows.Forms.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_646078D5066F9F5920CFC9E7C6FF260D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_622ACC9A7669845703ABB799684AEFAF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_646078D5066F9F5920CFC9E7C6FF260D"
+                    "_622ACC9A7669845703ABB799684AEFAF"
                     {
                     "Name" = "8:ArgonLibrary.dll"
                     "Attributes" = "3:512"
@@ -401,20 +254,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D44AE61A239BB8DA71430D5BFE94F81C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B582EE904C9E07D576392763CDEB3C0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ObjectListView, Version=2.5.0.16265, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D44AE61A239BB8DA71430D5BFE94F81C"
+                    "_7B582EE904C9E07D576392763CDEB3C0"
                     {
-                    "Name" = "8:ObjectListView.dll"
+                    "Name" = "8:WeifenLuo.WinFormsUI.Docking.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ObjectListView.dll"
+            "SourcePath" = "8:WeifenLuo.WinFormsUI.Docking.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -500,7 +353,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
         "ProductCode" = "8:{1D6B2CA9-EA31-4E97-A740-AFD248C6D57F}"
-        "PackageCode" = "8:{F85878D7-F124-406C-B51F-1AB826F6C3D5}"
+        "PackageCode" = "8:{6D6B8C79-C400-41ED-B250-8C6CF65DAFA2}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

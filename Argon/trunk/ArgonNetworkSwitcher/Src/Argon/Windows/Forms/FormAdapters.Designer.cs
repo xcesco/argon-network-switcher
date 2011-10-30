@@ -49,7 +49,7 @@ namespace Argon.Windows.Forms
             // 
             this.images32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images32x32.ImageStream")));
             this.images32x32.TransparentColor = System.Drawing.Color.Transparent;
-            this.images32x32.Images.SetKeyName(0, "PCI-card_network.png");
+            this.images32x32.Images.SetKeyName(0, "PCI-card.png");
             // 
             // contextMenuStrip1
             // 
@@ -58,28 +58,28 @@ namespace Argon.Windows.Forms
             this.mnuEnable,
             this.mnuDisable});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 70);
             this.contextMenuStrip1.Text = "View";
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.toolStripMenuItem1.Text = "Show info";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.actionDisplayCardInfo_Click);
             // 
             // mnuEnable
             // 
             this.mnuEnable.Name = "mnuEnable";
-            this.mnuEnable.Size = new System.Drawing.Size(132, 22);
+            this.mnuEnable.Size = new System.Drawing.Size(127, 22);
             this.mnuEnable.Text = "Enable";
             this.mnuEnable.Click += new System.EventHandler(this.mnuEnable_Click);
             // 
             // mnuDisable
             // 
             this.mnuDisable.Name = "mnuDisable";
-            this.mnuDisable.Size = new System.Drawing.Size(132, 22);
+            this.mnuDisable.Size = new System.Drawing.Size(127, 22);
             this.mnuDisable.Text = "Disable";
             this.mnuDisable.Click += new System.EventHandler(this.mnuDisable_Click);
             // 
