@@ -719,5 +719,7 @@ namespace Argon.OperatingSystem
 
             return (WindowsNetworkCard)item.MemberwiseClone();       
         }
+
+        public string AdapterType { get; set; }
     }
 }

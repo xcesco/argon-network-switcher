@@ -218,14 +218,13 @@ namespace Argon.Windows.Forms
 
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
         {
-            //this.ShowInTaskbar = true;
+            this.ShowInTaskbar = true;
             this.Visible = true;
+           // this.WindowState = FormWindowState.Normal;
             
             this.WindowState = FormWindowState.Normal;
             this.Width = 400;
-            this.Height = 400;
-
-            
+            this.Height = 400;           
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -295,8 +294,14 @@ namespace Argon.Windows.Forms
         }
 
         private void applyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {           
+            this.ShowInTaskbar = true;            
+            // this.WindowState = FormWindowState.Normal;
+
             this.WindowState = FormWindowState.Normal;
+            this.Width = 400;
+            this.Height = 400;  
+
             this.Visible = true;
         }
 
@@ -342,6 +347,16 @@ namespace Argon.Windows.Forms
         {
             FormDonate form = new FormDonate();
             form.ShowDialog(this);  
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }        
     }
 }

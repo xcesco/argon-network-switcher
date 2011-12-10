@@ -127,6 +127,7 @@ namespace Argon.OperatingSystem
             {
                 Debug.WriteLine("-------------------------------------------");
                 Debug.WriteLine("Id           : " + item.Id);
+                Debug.WriteLine("Adapter Type : " + item.AdapterType);
                 Debug.WriteLine("ViewId       : " + item.ViewId);
                 Debug.WriteLine("Name         : " + item.Name);
                 Debug.WriteLine("HardwareName : " + item.HardwareName);

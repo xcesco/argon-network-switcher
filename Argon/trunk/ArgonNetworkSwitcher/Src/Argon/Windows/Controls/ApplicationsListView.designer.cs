@@ -145,30 +145,7 @@ namespace Argon.Windows.Controls
             this.mnuSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // gradientPanel1
-            // 
-           /* this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel1.Controls.Add(this.cbKill);
-            this.gradientPanel1.Controls.Add(this.btnSelect);
-            this.gradientPanel1.Controls.Add(this.cbWaitForExit);
-            this.gradientPanel1.Controls.Add(this.btnDelete);
-            this.gradientPanel1.Controls.Add(this.btnSave);
-            this.gradientPanel1.Controls.Add(this.btnNew);
-            this.gradientPanel1.Controls.Add(this.label5);
-            this.gradientPanel1.Controls.Add(this.label4);
-            this.gradientPanel1.Controls.Add(this.txtArguments);
-            this.gradientPanel1.Controls.Add(this.txtDescription);
-            this.gradientPanel1.Controls.Add(this.label3);
-            this.gradientPanel1.Controls.Add(this.label2);
-            this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Controls.Add(this.txtDirectory);
-            this.gradientPanel1.Controls.Add(this.txtFile);
-            this.gradientPanel1.Controls.Add(this.txtName);
-            this.gradientPanel1.Controls.Add(this.btnBrowser);
-            this.gradientPanel1.Location = new System.Drawing.Point(3, 130);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(589, 231);
-            this.gradientPanel1.TabIndex = 16;*/
+            //           
             // 
             // cbKill
             // 

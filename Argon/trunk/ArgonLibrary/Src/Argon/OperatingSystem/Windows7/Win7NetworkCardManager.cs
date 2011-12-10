@@ -77,6 +77,25 @@ namespace Argon.OperatingSystem.Windows7
 
                 card.Description = adapter.NetConnectionID;
                 card.MacAddress = adapter.MACAddress;
+                //http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
+                /*
+                 * "Ethernet 802.3"
+"Token Ring 802.5"
+"Fiber Distributed Data Interface (FDDI)"
+"Wide Area Network (WAN)"
+"LocalTalk"
+"Ethernet using DIX header format"
+"ARCNET"
+"ARCNET (878.2)"
+"ATM"
+"Wireless"
+"Infrared Wireless"
+"Bpc"
+"CoWan"
+"1394"
+                 * */
+
+                card.AdapterType = adapter.AdapterType;
 
                 if (!IsNetworkCardInRegistry(card)) continue;
                 // 2 - get more info from registry
