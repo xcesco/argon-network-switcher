@@ -30,16 +30,16 @@ namespace Argon.Network
             return buffer.ToUpper();
         }
 
-        public static Boolean SetWifiProfile(string MacAddress, string profileName)
+        public static Boolean SetWifiProfile(string guid, string profileName)
         {
             WlanClient client = new WlanClient();
-            string mac;
+            string localGuid;
 
             foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
             {
-                mac=GetStringForMAC(wlanIface.NetworkInterface.GetPhysicalAddress().ToString());
+                localGuid = "{" + wlanIface.InterfaceGuid.ToString().ToUpper() + "}";
 
-                if (mac.Equals(MacAddress))
+                if (localGuid.Equals(guid))
                 {
                     foreach (Wlan.WlanProfileInfo profileInfo in wlanIface.GetProfiles())
                     {
@@ -56,7 +56,7 @@ namespace Argon.Network
             return false;
         }
 
-        public static List<WifiProfile> GetWifiProfileList(string MacAddress)
+        public static List<WifiProfile> GetWifiProfileList(string guid)
         {
             WlanClient client = new WlanClient();
             List<WifiProfile> list = new List<WifiProfile>();
@@ -72,12 +72,12 @@ namespace Argon.Network
                     profile = new WifiProfile();
 
                     profile.InterfaceName = wlanIface.InterfaceName;
-                    profile.InterfaceGuid = wlanIface.InterfaceGuid;
+                    profile.InterfaceGuid = "{"+wlanIface.InterfaceGuid.ToString().ToUpper()+"}";
                     profile.InterfaceDescription = wlanIface.InterfaceDescription;
 
                     profile.InterfaceMAC = GetStringForMAC(wlanIface.NetworkInterface.GetPhysicalAddress().ToString());
 
-                    if (MacAddress != null && !profile.InterfaceMAC.Equals(MacAddress)) break; 
+                    if (guid != null && !profile.InterfaceGuid.Equals(guid)) break; 
                     
                     string name = profileInfo.profileName; // this is typically the network's SSID
                     string xml = wlanIface.GetProfileXml(profileInfo.profileName);
@@ -107,7 +107,7 @@ namespace Argon.Network
                     config = new WifiConfiguration();
 
                     config.InterfaceName = wlanIface.InterfaceName;
-                    config.InterfaceGuid = wlanIface.InterfaceGuid;
+                    config.InterfaceGuid = "{" + wlanIface.InterfaceGuid.ToString().ToUpper() + "}";
                     config.InterfaceDescription = wlanIface.InterfaceDescription;
 
                     config.InterfaceMAC=GetStringForMAC(wlanIface.NetworkInterface.GetPhysicalAddress().ToString());

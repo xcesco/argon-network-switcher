@@ -164,7 +164,7 @@ namespace Argon.Windows.Forms
                 ipControl.Configuration = Controller.Instance.Model.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
             }
             proxyPanel.Configuration = ProxyConfigurationManager.ReadConfig();
-
+                    
             return true;
         }
 
@@ -236,6 +236,10 @@ namespace Argon.Windows.Forms
                             }
                         }
                     }
+
+                    List<WifiProfile> list = WifiConfigurationManager.GetWifiProfileList(profile.NetworkCardInfo.Id);
+                    olvWirelessProfiles.ClearObjects();
+                    olvWirelessProfiles.AddObjects(list);
                 }
                 else
                 {
