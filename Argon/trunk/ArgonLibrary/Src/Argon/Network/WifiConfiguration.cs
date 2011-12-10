@@ -11,7 +11,7 @@ namespace Argon.Network
 
         public string InterfaceName { get; set; }
 
-        public Guid InterfaceGuid { get; set; }
+        public string InterfaceGuid { get; set; }
 
         public NativeWifi.Wlan.Dot11Ssid NetworkSSID { get; set; }
 
