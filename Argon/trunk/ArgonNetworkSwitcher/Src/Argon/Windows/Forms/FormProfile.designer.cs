@@ -46,8 +46,11 @@ namespace Argon.Windows.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tp1NIC = new System.Windows.Forms.TabPage();
+            this.ipControl = new Argon.Windows.Controls.IpControl();
             this.tp2Proxy = new System.Windows.Forms.TabPage();
+            this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
             this.tpDriveMap = new System.Windows.Forms.TabPage();
+            this.driveMapListView = new Argon.Windows.Controls.DriveMapListView();
             this.tp3Printers = new System.Windows.Forms.TabPage();
             this.lblSelectedPrinter = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,20 +59,17 @@ namespace Argon.Windows.Forms
             this.btnSelectPrinter = new System.Windows.Forms.Button();
             this.cbPrinterList = new System.Windows.Forms.ComboBox();
             this.tp5Services = new System.Windows.Forms.TabPage();
+            this.serviceListView = new Argon.Windows.Controls.ServiceListView();
             this.tp6Applications = new System.Windows.Forms.TabPage();
+            this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
             this.tp7Adapters = new System.Windows.Forms.TabPage();
+            this.networkCardListView = new Argon.Windows.Controls.NetworkCardListView();
             this.tpWireless = new System.Windows.Forms.TabPage();
             this.olvWirelessProfiles = new BrightIdeasSoftware.ObjectListView();
             this.olvName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvXml = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.ipControl = new Argon.Windows.Controls.IpControl();
-            this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
-            this.driveMapListView = new Argon.Windows.Controls.DriveMapListView();
-            this.serviceListView = new Argon.Windows.Controls.ServiceListView();
-            this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
-            this.networkCardListView = new Argon.Windows.Controls.NetworkCardListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tp1NIC.SuspendLayout();
@@ -91,9 +91,16 @@ namespace Argon.Windows.Forms
             // 
             // imageList24x24
             // 
-            this.imageList24x24.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList24x24.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList24x24.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList24x24.ImageStream")));
             this.imageList24x24.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList24x24.Images.SetKeyName(0, "PCI-card_preferences.png");
+            this.imageList24x24.Images.SetKeyName(1, "server_earth.png");
+            this.imageList24x24.Images.SetKeyName(2, "harddisk_network.png");
+            this.imageList24x24.Images.SetKeyName(3, "printer_network.png");
+            this.imageList24x24.Images.SetKeyName(4, "gears.png");
+            this.imageList24x24.Images.SetKeyName(5, "application.png");
+            this.imageList24x24.Images.SetKeyName(6, "PCI-card_network.png");
+            this.imageList24x24.Images.SetKeyName(7, "environment_network.png");
             // 
             // label8
             // 
@@ -202,6 +209,7 @@ namespace Argon.Windows.Forms
             // tp1NIC
             // 
             this.tp1NIC.Controls.Add(this.ipControl);
+            this.tp1NIC.ImageIndex = 0;
             this.tp1NIC.Location = new System.Drawing.Point(4, 23);
             this.tp1NIC.Name = "tp1NIC";
             this.tp1NIC.Padding = new System.Windows.Forms.Padding(3);
@@ -210,9 +218,21 @@ namespace Argon.Windows.Forms
             this.tp1NIC.Text = "Network";
             this.tp1NIC.UseVisualStyleBackColor = true;
             // 
+            // ipControl
+            // 
+            this.ipControl.BackColor = System.Drawing.Color.Transparent;
+            this.ipControl.Configuration = null;
+            this.ipControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ipControl.Location = new System.Drawing.Point(3, 3);
+            this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
+            this.ipControl.Name = "ipControl";
+            this.ipControl.Size = new System.Drawing.Size(1163, 454);
+            this.ipControl.TabIndex = 2;
+            // 
             // tp2Proxy
             // 
             this.tp2Proxy.Controls.Add(this.proxyPanel);
+            this.tp2Proxy.ImageIndex = 1;
             this.tp2Proxy.Location = new System.Drawing.Point(4, 23);
             this.tp2Proxy.Name = "tp2Proxy";
             this.tp2Proxy.Padding = new System.Windows.Forms.Padding(3);
@@ -221,15 +241,36 @@ namespace Argon.Windows.Forms
             this.tp2Proxy.Text = "Proxy";
             this.tp2Proxy.UseVisualStyleBackColor = true;
             // 
+            // proxyPanel
+            // 
+            this.proxyPanel.BackColor = System.Drawing.Color.Transparent;
+            this.proxyPanel.Configuration = null;
+            this.proxyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.proxyPanel.Location = new System.Drawing.Point(3, 3);
+            this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
+            this.proxyPanel.Name = "proxyPanel";
+            this.proxyPanel.Size = new System.Drawing.Size(1163, 454);
+            this.proxyPanel.TabIndex = 2;
+            // 
             // tpDriveMap
             // 
             this.tpDriveMap.Controls.Add(this.driveMapListView);
+            this.tpDriveMap.ImageIndex = 2;
             this.tpDriveMap.Location = new System.Drawing.Point(4, 23);
             this.tpDriveMap.Name = "tpDriveMap";
             this.tpDriveMap.Size = new System.Drawing.Size(1169, 460);
             this.tpDriveMap.TabIndex = 2;
             this.tpDriveMap.Text = "Drive Map";
             this.tpDriveMap.UseVisualStyleBackColor = true;
+            // 
+            // driveMapListView
+            // 
+            this.driveMapListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveMapListView.Location = new System.Drawing.Point(0, 0);
+            this.driveMapListView.MinimumSize = new System.Drawing.Size(560, 312);
+            this.driveMapListView.Name = "driveMapListView";
+            this.driveMapListView.Size = new System.Drawing.Size(1169, 460);
+            this.driveMapListView.TabIndex = 1;
             // 
             // tp3Printers
             // 
@@ -239,6 +280,7 @@ namespace Argon.Windows.Forms
             this.tp3Printers.Controls.Add(this.lblPrinter2);
             this.tp3Printers.Controls.Add(this.btnSelectPrinter);
             this.tp3Printers.Controls.Add(this.cbPrinterList);
+            this.tp3Printers.ImageIndex = 3;
             this.tp3Printers.Location = new System.Drawing.Point(4, 23);
             this.tp3Printers.Name = "tp3Printers";
             this.tp3Printers.Size = new System.Drawing.Size(1169, 460);
@@ -310,6 +352,7 @@ namespace Argon.Windows.Forms
             // tp5Services
             // 
             this.tp5Services.Controls.Add(this.serviceListView);
+            this.tp5Services.ImageIndex = 4;
             this.tp5Services.Location = new System.Drawing.Point(4, 23);
             this.tp5Services.Name = "tp5Services";
             this.tp5Services.Size = new System.Drawing.Size(1169, 460);
@@ -317,9 +360,19 @@ namespace Argon.Windows.Forms
             this.tp5Services.Text = "Services";
             this.tp5Services.UseVisualStyleBackColor = true;
             // 
+            // serviceListView
+            // 
+            this.serviceListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceListView.Location = new System.Drawing.Point(0, 0);
+            this.serviceListView.MinimumSize = new System.Drawing.Size(560, 200);
+            this.serviceListView.Name = "serviceListView";
+            this.serviceListView.Size = new System.Drawing.Size(1169, 460);
+            this.serviceListView.TabIndex = 2;
+            // 
             // tp6Applications
             // 
             this.tp6Applications.Controls.Add(this.applicationsListView);
+            this.tp6Applications.ImageIndex = 5;
             this.tp6Applications.Location = new System.Drawing.Point(4, 23);
             this.tp6Applications.Name = "tp6Applications";
             this.tp6Applications.Size = new System.Drawing.Size(1169, 460);
@@ -327,9 +380,19 @@ namespace Argon.Windows.Forms
             this.tp6Applications.Text = "Appplications";
             this.tp6Applications.UseVisualStyleBackColor = true;
             // 
+            // applicationsListView
+            // 
+            this.applicationsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.applicationsListView.Location = new System.Drawing.Point(0, 0);
+            this.applicationsListView.MinimumSize = new System.Drawing.Size(560, 312);
+            this.applicationsListView.Name = "applicationsListView";
+            this.applicationsListView.Size = new System.Drawing.Size(1169, 460);
+            this.applicationsListView.TabIndex = 2;
+            // 
             // tp7Adapters
             // 
             this.tp7Adapters.Controls.Add(this.networkCardListView);
+            this.tp7Adapters.ImageIndex = 7;
             this.tp7Adapters.Location = new System.Drawing.Point(4, 23);
             this.tp7Adapters.Name = "tp7Adapters";
             this.tp7Adapters.Size = new System.Drawing.Size(1169, 460);
@@ -337,9 +400,20 @@ namespace Argon.Windows.Forms
             this.tp7Adapters.Text = "Disabled Adapters";
             this.tp7Adapters.UseVisualStyleBackColor = true;
             // 
+            // networkCardListView
+            // 
+            this.networkCardListView.CheckBoxes = true;
+            this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkCardListView.Location = new System.Drawing.Point(0, 0);
+            this.networkCardListView.Name = "networkCardListView";
+            this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
+            this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
+            this.networkCardListView.TabIndex = 0;
+            // 
             // tpWireless
             // 
             this.tpWireless.Controls.Add(this.olvWirelessProfiles);
+            this.tpWireless.ImageIndex = 7;
             this.tpWireless.Location = new System.Drawing.Point(4, 23);
             this.tpWireless.Name = "tpWireless";
             this.tpWireless.Padding = new System.Windows.Forms.Padding(3);
@@ -398,65 +472,6 @@ namespace Argon.Windows.Forms
             this.txtName.Size = new System.Drawing.Size(414, 20);
             this.txtName.TabIndex = 25;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
-            // ipControl
-            // 
-            this.ipControl.BackColor = System.Drawing.Color.Transparent;
-            this.ipControl.Configuration = null;
-            this.ipControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ipControl.Location = new System.Drawing.Point(3, 3);
-            this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
-            this.ipControl.Name = "ipControl";
-            this.ipControl.Size = new System.Drawing.Size(1163, 454);
-            this.ipControl.TabIndex = 2;
-            // 
-            // proxyPanel
-            // 
-            this.proxyPanel.BackColor = System.Drawing.Color.Transparent;
-            this.proxyPanel.Configuration = null;
-            this.proxyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.proxyPanel.Location = new System.Drawing.Point(3, 3);
-            this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
-            this.proxyPanel.Name = "proxyPanel";
-            this.proxyPanel.Size = new System.Drawing.Size(1163, 454);
-            this.proxyPanel.TabIndex = 2;
-            // 
-            // driveMapListView
-            // 
-            this.driveMapListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.driveMapListView.Location = new System.Drawing.Point(0, 0);
-            this.driveMapListView.MinimumSize = new System.Drawing.Size(560, 312);
-            this.driveMapListView.Name = "driveMapListView";
-            this.driveMapListView.Size = new System.Drawing.Size(1169, 460);
-            this.driveMapListView.TabIndex = 1;
-            // 
-            // serviceListView
-            // 
-            this.serviceListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceListView.Location = new System.Drawing.Point(0, 0);
-            this.serviceListView.MinimumSize = new System.Drawing.Size(560, 200);
-            this.serviceListView.Name = "serviceListView";
-            this.serviceListView.Size = new System.Drawing.Size(1169, 460);
-            this.serviceListView.TabIndex = 2;
-            // 
-            // applicationsListView
-            // 
-            this.applicationsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.applicationsListView.Location = new System.Drawing.Point(0, 0);
-            this.applicationsListView.MinimumSize = new System.Drawing.Size(560, 312);
-            this.applicationsListView.Name = "applicationsListView";
-            this.applicationsListView.Size = new System.Drawing.Size(1169, 460);
-            this.applicationsListView.TabIndex = 2;
-            // 
-            // networkCardListView
-            // 
-            this.networkCardListView.CheckBoxes = true;
-            this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkCardListView.Location = new System.Drawing.Point(0, 0);
-            this.networkCardListView.Name = "networkCardListView";
-            this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
-            this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
-            this.networkCardListView.TabIndex = 0;
             // 
             // FormProfile
             // 
