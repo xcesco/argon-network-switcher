@@ -196,7 +196,9 @@ namespace Argon.Windows.Controls
                 listView.AddObject(form.SelectedWindowsExecutable);
              
             }            
-        }        
+        }
+
+      
 
     }
 }

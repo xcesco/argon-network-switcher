@@ -247,5 +247,10 @@ namespace Argon.Windows.Controls
                 MessageBox.Show(this, errorMsg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
