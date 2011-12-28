@@ -61,7 +61,7 @@ namespace Argon.OperatingSystem
         /// Gets a value indicating whether [dynamic DNS].
         /// </summary>
         /// <value><c>true</c> if [dynamic DNS]; otherwise, <c>false</c>.</value>
-        bool DynamicDNS { get; }
+        bool DynamicDNS { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="IWindowsNetworkCardInfo"/> is DHCP.
@@ -203,6 +203,7 @@ namespace Argon.OperatingSystem
             get { return _dhcp; }
             set { _dhcp = value; }
         }
+
         private string _ipAddress;
 
         /// <summary>
@@ -265,14 +266,15 @@ namespace Argon.OperatingSystem
 
         #region WindowsNetworkCardInfo Members
 
-
+        private bool _dynamicDNS;
         /// <summary>
         /// Gets a value indicating whether [enabled dynamic DNS].
         /// </summary>
         /// <value><c>true</c> if [enabled dynamic DNS]; otherwise, <c>false</c>.</value>
         public bool DynamicDNS
         {
-            get { if (_dns2 == null || _dns.Length == 0 || _dns.Equals("0.0.0.0")) return true; else return false; }
+            get { return _dynamicDNS; }
+            set { _dynamicDNS = value; }
         }
 
         /// <summary>
@@ -512,21 +514,16 @@ namespace Argon.OperatingSystem
         /// </summary>
         protected string _currentDns2;
 
+        protected bool _dynamicDNS;
+
         /// <summary>
         /// Gets a value indicating whether [enabled dynamic DNS].
         /// </summary>
         /// <value><c>true</c> if [enabled dynamic DNS]; otherwise, <c>false</c>.</value>
         public bool DynamicDNS
         {
-            get
-            {
-                if ((_dhcp) && (_dns == null || _dns.Trim().Length == 0 || _dns.Equals("0.0.0.0")))
-                {                    
-                    return true;
-                }
-                return false;
-
-            }
+            get { return _dynamicDNS; }
+            set { _dynamicDNS = value; }
         }
 
         /// <summary>

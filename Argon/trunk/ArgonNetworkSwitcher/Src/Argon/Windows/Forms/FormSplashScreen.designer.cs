@@ -54,7 +54,7 @@ namespace Argon.Windows.Forms
             this.pictureBox1.Image = global::Argon.Windows.Forms.Properties.Resources.Argon;
             this.pictureBox1.Location = new System.Drawing.Point(2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(564, 168);
+            this.pictureBox1.Size = new System.Drawing.Size(559, 168);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -63,7 +63,7 @@ namespace Argon.Windows.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(570, 199);
+            this.ClientSize = new System.Drawing.Size(564, 199);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -88,6 +88,7 @@ namespace Argon.Windows.Controls
             _configuration.IpAddress = txtIP.IpAddress;
             _configuration.SubnetMask = txtSubnetMask.IpAddress;
             _configuration.GatewayAddress = txtDefaultGateway.IpAddress;
+            _configuration.DynamicDNS = cbDynamicDNS.Checked;
             _configuration.Dns = txtPrimaryDNS.IpAddress;
             _configuration.Dns2 = txtAlternativeDNS.IpAddress;
         }

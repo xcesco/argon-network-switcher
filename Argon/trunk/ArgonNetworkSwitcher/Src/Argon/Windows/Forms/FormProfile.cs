@@ -116,6 +116,7 @@ namespace Argon.Windows.Forms
                 nic.IpAddress = profile.NetworkCardInfo.IpAddress;
                 nic.SubnetMask = profile.NetworkCardInfo.SubnetMask;
                 nic.GatewayAddress = profile.NetworkCardInfo.GatewayAddress;
+                nic.DynamicDNS = profile.NetworkCardInfo.DynamicDNS;
                 nic.Dns = profile.NetworkCardInfo.Dns;
                 nic.Dns2 = profile.NetworkCardInfo.Dns2;
                 nic.MacAddress = profile.NetworkCardInfo.MacAddress;                
