@@ -63,6 +63,7 @@ namespace Argon.Controllers
                         WriteAttributeIfPresent(writer, "subnetMask", nic.SubnetMask);
                         WriteAttributeIfPresent(writer, "defaultGateway", nic.GatewayAddress);
                         WriteAttributeIfPresent(writer, "macAddress", nic.MacAddress);
+                        WriteAttributeIfPresent(writer, "dynamicDns", nic.DynamicDNS.ToString());
                         WriteAttributeIfPresent(writer, "dns", nic.Dns);
                         WriteAttributeIfPresent(writer, "dns2", nic.Dns2);
                     }
@@ -242,6 +243,7 @@ namespace Argon.Controllers
                                     currentProfile.NetworkCardInfo.GatewayAddress = ReadAttributeIfPresent(reader, "defaultGateway", "");
 
                                     currentProfile.NetworkCardInfo.MacAddress = ReadAttributeIfPresent(reader, "macAddress", "");
+                                    currentProfile.NetworkCardInfo.DynamicDNS = Boolean.Parse(ReadAttributeIfPresent(reader, "dynamicDns", Boolean.FalseString));
                                     currentProfile.NetworkCardInfo.Dns = ReadAttributeIfPresent(reader, "dns", "");
                                     currentProfile.NetworkCardInfo.Dns2 = ReadAttributeIfPresent(reader, "dns2", "");
                                     
