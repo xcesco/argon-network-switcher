@@ -12,11 +12,18 @@ namespace Argon.Controllers
 {
     public class PersistenceController : MiniController
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersistenceController"/> class.
+        /// </summary>
+        /// <param name="controller">The controller.</param>
         public PersistenceController(Controller controller)
             : base(controller)
         {
         }
 
+        /// <summary>
+        /// Loads this instance.
+        /// </summary>
         public void Load()
         {
             _controller.ConsoleController.Info("Loaded Profiles.xml");
@@ -26,12 +33,20 @@ namespace Argon.Controllers
             }
         }
 
+        /// <summary>
+        /// Saves this instance.
+        /// </summary>
         public void Save()
         {
             _controller.ConsoleController.Info("Saved Profiles.xml");
             Save("Profiles.xml", _controller.Model);
         }
 
+        /// <summary>
+        /// Saves the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="document">The document.</param>
         protected void Save(string filename, NetworkConfiguration document)
         {
             NetworkProfileCollection profiles = document.Profiles;
@@ -206,6 +221,11 @@ namespace Argon.Controllers
 
         }
 
+        /// <summary>
+        /// Loads the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="document">The document.</param>
         protected void Load(string filename, NetworkConfiguration document)
         {
             NetworkProfileCollection profiles = document.Profiles;
