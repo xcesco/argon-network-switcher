@@ -53,7 +53,7 @@
     <StartupObject>Argon.Windows.Forms.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>network.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -288,7 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Argon.png" />
-    <Content Include="network.ico" />
+    <Content Include="icon.ico" />
     <Content Include="Resources\about.ico" />
     <Content Include="Resources\arrow_down_blue.png" />
     <Content Include="Resources\arrow_down_green.png" />
