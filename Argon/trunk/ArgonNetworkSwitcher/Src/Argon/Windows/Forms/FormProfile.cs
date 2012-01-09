@@ -238,9 +238,9 @@ namespace Argon.Windows.Forms
                         }
                     }
 
-                    List<WifiProfile> list = WifiConfigurationManager.GetWifiProfileList(profile.NetworkCardInfo.Id);
+                   /* List<WifiProfile> list = WifiConfigurationManager.GetWifiProfileList(profile.NetworkCardInfo.Id);
                     olvWirelessProfiles.ClearObjects();
-                    olvWirelessProfiles.AddObjects(list);
+                    olvWirelessProfiles.AddObjects(list);*/
                 }
                 else
                 {

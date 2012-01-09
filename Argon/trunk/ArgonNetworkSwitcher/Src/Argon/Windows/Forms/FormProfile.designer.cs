@@ -64,10 +64,6 @@ namespace Argon.Windows.Forms
             this.applicationsListView = new Argon.Windows.Controls.ApplicationsListView();
             this.tp7Adapters = new System.Windows.Forms.TabPage();
             this.networkCardListView = new Argon.Windows.Controls.NetworkCardListView();
-            this.tpWireless = new System.Windows.Forms.TabPage();
-            this.olvWirelessProfiles = new BrightIdeasSoftware.ObjectListView();
-            this.olvName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvXml = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -79,8 +75,6 @@ namespace Argon.Windows.Forms
             this.tp5Services.SuspendLayout();
             this.tp6Applications.SuspendLayout();
             this.tp7Adapters.SuspendLayout();
-            this.tpWireless.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.olvWirelessProfiles)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList48x48
@@ -198,7 +192,6 @@ namespace Argon.Windows.Forms
             this.tabControl.Controls.Add(this.tp5Services);
             this.tabControl.Controls.Add(this.tp6Applications);
             this.tabControl.Controls.Add(this.tp7Adapters);
-            this.tabControl.Controls.Add(this.tpWireless);
             this.tabControl.ImageList = this.imageList24x24;
             this.tabControl.Location = new System.Drawing.Point(3, 113);
             this.tabControl.Name = "tabControl";
@@ -410,50 +403,6 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
             this.networkCardListView.TabIndex = 0;
             // 
-            // tpWireless
-            // 
-            this.tpWireless.Controls.Add(this.olvWirelessProfiles);
-            this.tpWireless.ImageIndex = 7;
-            this.tpWireless.Location = new System.Drawing.Point(4, 23);
-            this.tpWireless.Name = "tpWireless";
-            this.tpWireless.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWireless.Size = new System.Drawing.Size(1169, 460);
-            this.tpWireless.TabIndex = 7;
-            this.tpWireless.Text = "Wireless profiles";
-            this.tpWireless.UseVisualStyleBackColor = true;
-            // 
-            // olvWirelessProfiles
-            // 
-            this.olvWirelessProfiles.AllColumns.Add(this.olvName);
-            this.olvWirelessProfiles.AllColumns.Add(this.olvXml);
-            this.olvWirelessProfiles.CheckBoxes = true;
-            this.olvWirelessProfiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvName,
-            this.olvXml});
-            this.olvWirelessProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.olvWirelessProfiles.EmptyListMsg = "No wireless profile found";
-            this.olvWirelessProfiles.FullRowSelect = true;
-            this.olvWirelessProfiles.Location = new System.Drawing.Point(3, 3);
-            this.olvWirelessProfiles.MultiSelect = false;
-            this.olvWirelessProfiles.Name = "olvWirelessProfiles";
-            this.olvWirelessProfiles.ShowGroups = false;
-            this.olvWirelessProfiles.Size = new System.Drawing.Size(1163, 454);
-            this.olvWirelessProfiles.TabIndex = 0;
-            this.olvWirelessProfiles.UseCompatibleStateImageBehavior = false;
-            this.olvWirelessProfiles.View = System.Windows.Forms.View.Details;
-            // 
-            // olvName
-            // 
-            this.olvName.AspectName = "Name";
-            this.olvName.Text = "Name";
-            this.olvName.Width = 120;
-            // 
-            // olvXml
-            // 
-            this.olvXml.AspectName = "Xml";
-            this.olvXml.Text = "Xml";
-            this.olvXml.Width = 240;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -506,8 +455,6 @@ namespace Argon.Windows.Forms
             this.tp5Services.ResumeLayout(false);
             this.tp6Applications.ResumeLayout(false);
             this.tp7Adapters.ResumeLayout(false);
-            this.tpWireless.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.olvWirelessProfiles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,9 +495,5 @@ namespace Argon.Windows.Forms
         private Controls.NetworkCardListView networkCardListView;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TabPage tpWireless;
-        private BrightIdeasSoftware.ObjectListView olvWirelessProfiles;
-        private BrightIdeasSoftware.OLVColumn olvName;
-        private BrightIdeasSoftware.OLVColumn olvXml;
     }
 }

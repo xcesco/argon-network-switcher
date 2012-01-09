@@ -49,7 +49,6 @@ namespace Argon.Windows.Forms
                 mnuViewProfiles.Checked = true;
             }
 
-
             
             Controller.Instance.Init();
             Controller.Instance.ConsoleController.Info("Startup program");
@@ -69,11 +68,24 @@ namespace Argon.Windows.Forms
             
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the FormMain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
 
             dockPanel.SaveAsXml(configFile);
+
+            DialogResult ret = MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (ret == DialogResult.Yes)
+            {
+                Controller.Instance.PersistenceController.Save();
+                return;
+            }
             /*
             if (!Visible)
                 return;
@@ -231,15 +243,6 @@ namespace Argon.Windows.Forms
         {
             this.Close();
             this.Dispose();
-        }
-
-        private void FormMain_Resize(object sender, EventArgs e)
-        {         
-            if (WindowState == FormWindowState.Minimized)
-            {
-                Visible = false;
-               // ShowInTaskbar = false;
-            }
         }
 
         private void btnProfileNew_Click(object sender, EventArgs e)

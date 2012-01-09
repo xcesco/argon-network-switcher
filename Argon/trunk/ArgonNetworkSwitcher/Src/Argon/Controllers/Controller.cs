@@ -273,38 +273,7 @@ namespace Argon.Controllers
             {
                 View.ViewProfiles.listView.AddObject(item);
             }
-
-            // Lista dei profili nel menu nella tray area
-            List<ToolStripItem> listaDaRimuovere = new List<ToolStripItem>();
-
-            foreach (ToolStripItem item in View.ViewMain.trayMenuStrip.Items)
-            {
-                if (item.Tag is NetworkProfile)
-                {
-                    listaDaRimuovere.Add(item);
-                }
-
-            }
-
-            foreach (ToolStripItem a in listaDaRimuovere)
-            {
-                View.ViewMain.trayMenuStrip.Items.Remove(a);
-            }
-
-            int i = 2;
-
-            foreach (NetworkProfile item in _model.Profiles)
-            {
-
-                ToolStripMenuItem New = new ToolStripMenuItem(item.Name);
-                New.Tag = item;
-                New.Click += new EventHandler(Profile_Click);
-
-                View.ViewMain.trayMenuStrip.Items.Insert(i++, New);
-                //viewMain.trayMenuStrip.Items.Add(New);
-            }
-
-
+           
         }
 
         /// <summary>
