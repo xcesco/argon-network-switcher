@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4396E3DA-AF9D-4240-93F9-8667D3DE05AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Argon</RootNamespace>
+    <AssemblyName>ArgonLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\Argon\Network\NativeWifiInterop.cs" />
+    <Compile Include="Src\Argon\Network\NativeWifi.cs" />
+    <Compile Include="Src\Argon\Network\WifiConfigurationManager.cs" />
+    <Compile Include="Src\Argon\Network\WifiConfiguration.cs" />
+    <Compile Include="Src\Argon\Network\WifiProfile.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\NetworkAdapterHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsXP\WinXPHardwareHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapterConfiguration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\OperatingSystem\OSInfo.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\PrinterManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\Argon\Common\CheckForUpdate.cs" />
+    <Compile Include="Src\Argon\Common\PerformanceUtility.cs" />
+    <Compile Include="Src\Argon\FileSystem\FileFinder.cs" />
+    <Compile Include="Src\Argon\FileSystem\FileInspector.cs" />
+    <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
+    <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Windows7\Win7HardwareHelper.cs" />
+    <Compile Include="Src\Argon\Network\FirexfoxProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\Network\IExplorerProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\Network\ProxyConfiguration.cs" />
+    <Compile Include="Src\Argon\Network\ProxyConfigurationManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\DriveMapper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\DriveMapping.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\RegistryUtility.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\RunningWindowsExecutable.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\ServiceForcedStatus.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Windows7\Win7NetworkCardManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsComponent.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsExecutable.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsExecutableManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsExecutor.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsNetworkCard.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsNetworkCardManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsService.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsServiceInfo.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsServiceManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\WindowsXP\WinXPNetworkCardManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
