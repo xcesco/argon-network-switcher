@@ -33,10 +33,10 @@ namespace Argon.Windows.Controls
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.listView = new ObjectListView();
-            this.colName = new OLVColumn();
-            this.colCommandLine = new OLVColumn();
-            this.colDirectory = new OLVColumn();
+            this.listView = new BrightIdeasSoftware.ObjectListView();
+            this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colCommandLine = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colDirectory = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,21 +80,14 @@ namespace Argon.Windows.Controls
             this.listView.AllColumns.Add(this.colCommandLine);
             this.listView.AllColumns.Add(this.colDirectory);
             this.listView.AllowColumnReorder = true;
-            this.listView.AlternateRowBackColor = System.Drawing.Color.Empty;
-            this.listView.AlwaysGroupByColumn = null;
-            this.listView.AlwaysGroupBySortOrder = System.Windows.Forms.SortOrder.None;
-            this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colName,
             this.colCommandLine,
             this.colDirectory});
             this.listView.FullRowSelect = true;
-            this.listView.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.listView.HighlightForegroundColor = System.Drawing.Color.Empty;
-            this.listView.LastSortColumn = null;
-            this.listView.LastSortOrder = System.Windows.Forms.SortOrder.None;
             this.listView.Location = new System.Drawing.Point(12, 41);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
@@ -135,6 +128,7 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.listView);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProcessList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

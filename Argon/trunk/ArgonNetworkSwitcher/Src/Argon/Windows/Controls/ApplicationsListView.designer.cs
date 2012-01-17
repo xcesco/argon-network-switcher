@@ -409,6 +409,7 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.listView);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(560, 312);
             this.Name = "ApplicationsListView";
             this.Size = new System.Drawing.Size(658, 392);

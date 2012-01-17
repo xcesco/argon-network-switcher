@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Src\Argon\Network\WifiConfigManagerTest.cs" />
     <Compile Include="Src\Argon\Network\WifiConfigurationTest.cs" />
+    <Compile Include="Src\Argon\Network\WifiTest.cs" />
     <Compile Include="Src\Argon\OperatingSystem\DriverMapperTest.cs" />
     <Compile Include="Src\Argon\FileSystem\FileSearcherTest.cs" />
     <Compile Include="Src\Argon\OperatingSystem\OSInfoTest.cs" />

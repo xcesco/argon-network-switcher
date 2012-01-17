@@ -49,6 +49,20 @@ namespace Argon.Windows.Controls
             this.colPassword = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colOperation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbDrive = new System.Windows.Forms.ComboBox();
+            this.cbOperation = new System.Windows.Forms.ComboBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtRealPath = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnMount = new System.Windows.Forms.Button();
@@ -65,20 +79,6 @@ namespace Argon.Windows.Controls
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbDrive = new System.Windows.Forms.ComboBox();
-            this.cbOperation = new System.Windows.Forms.ComboBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtRealPath = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -290,6 +290,159 @@ namespace Argon.Windows.Controls
             this.groupBox1.Text = "Drive map details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Drive";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Real path";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Username";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(256, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Description";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(449, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Operation";
+            // 
+            // cbDrive
+            // 
+            this.cbDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDrive.FormattingEnabled = true;
+            this.cbDrive.Items.AddRange(new object[] {
+            "",
+            "A:",
+            "B:",
+            "C:",
+            "D:",
+            "E:",
+            "F:",
+            "G:",
+            "H:",
+            "J:",
+            "K:",
+            "I:",
+            "L:",
+            "M:",
+            "N:",
+            "O:",
+            "P:",
+            "Q:",
+            "R:",
+            "S:",
+            "T:",
+            "U:",
+            "V:",
+            "W:",
+            "Y:",
+            "Z:"});
+            this.cbDrive.Location = new System.Drawing.Point(88, 101);
+            this.cbDrive.Name = "cbDrive";
+            this.cbDrive.Size = new System.Drawing.Size(50, 21);
+            this.cbDrive.TabIndex = 58;
+            // 
+            // cbOperation
+            // 
+            this.cbOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOperation.FormattingEnabled = true;
+            this.cbOperation.Items.AddRange(new object[] {
+            "Mount",
+            "Unmount"});
+            this.cbOperation.Location = new System.Drawing.Point(516, 127);
+            this.cbOperation.Name = "cbOperation";
+            this.cbOperation.Size = new System.Drawing.Size(119, 21);
+            this.cbOperation.TabIndex = 62;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(87, 75);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(552, 20);
+            this.txtDescription.TabIndex = 49;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(86, 49);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(552, 20);
+            this.txtName.TabIndex = 36;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(318, 128);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(128, 20);
+            this.txtPassword.TabIndex = 54;
+            // 
+            // txtRealPath
+            // 
+            this.txtRealPath.Location = new System.Drawing.Point(212, 101);
+            this.txtRealPath.Name = "txtRealPath";
+            this.txtRealPath.Size = new System.Drawing.Size(425, 20);
+            this.txtRealPath.TabIndex = 38;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(86, 129);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(170, 20);
+            this.txtUsername.TabIndex = 45;
+            // 
             // btnTest
             // 
             this.btnTest.Image = global::Argon.Windows.Forms.Properties.Resources.server_unknown;
@@ -462,159 +615,6 @@ namespace Argon.Windows.Controls
             this.toolStripButton6.Text = "Unmount disk";
             this.toolStripButton6.Click += new System.EventHandler(this.mnu_Destroy);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Drive";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "Real path";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Username";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(256, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Password";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "Description";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(449, 131);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Operation";
-            // 
-            // cbDrive
-            // 
-            this.cbDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDrive.FormattingEnabled = true;
-            this.cbDrive.Items.AddRange(new object[] {
-            "",
-            "A:",
-            "B:",
-            "C:",
-            "D:",
-            "E:",
-            "F:",
-            "G:",
-            "H:",
-            "J:",
-            "K:",
-            "I:",
-            "L:",
-            "M:",
-            "N:",
-            "O:",
-            "P:",
-            "Q:",
-            "R:",
-            "S:",
-            "T:",
-            "U:",
-            "V:",
-            "W:",
-            "Y:",
-            "Z:"});
-            this.cbDrive.Location = new System.Drawing.Point(88, 101);
-            this.cbDrive.Name = "cbDrive";
-            this.cbDrive.Size = new System.Drawing.Size(50, 21);
-            this.cbDrive.TabIndex = 58;
-            // 
-            // cbOperation
-            // 
-            this.cbOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOperation.FormattingEnabled = true;
-            this.cbOperation.Items.AddRange(new object[] {
-            "Mount",
-            "Unmount"});
-            this.cbOperation.Location = new System.Drawing.Point(516, 127);
-            this.cbOperation.Name = "cbOperation";
-            this.cbOperation.Size = new System.Drawing.Size(119, 21);
-            this.cbOperation.TabIndex = 62;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(87, 75);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(552, 20);
-            this.txtDescription.TabIndex = 49;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(86, 49);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(552, 20);
-            this.txtName.TabIndex = 36;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(318, 128);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(128, 20);
-            this.txtPassword.TabIndex = 54;
-            // 
-            // txtRealPath
-            // 
-            this.txtRealPath.Location = new System.Drawing.Point(212, 101);
-            this.txtRealPath.Name = "txtRealPath";
-            this.txtRealPath.Size = new System.Drawing.Size(425, 20);
-            this.txtRealPath.TabIndex = 38;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(86, 129);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(170, 20);
-            this.txtUsername.TabIndex = 45;
-            // 
             // DriveMapListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,6 +623,7 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.listView);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(560, 312);
             this.Name = "DriveMapListView";
             this.Size = new System.Drawing.Size(656, 394);

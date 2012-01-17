@@ -45,14 +45,11 @@ namespace Argon.Windows.Forms
             this.txtGateway = new System.Windows.Forms.Label();
             this.txtDns1 = new System.Windows.Forms.Label();
             this.txtDns2 = new System.Windows.Forms.Label();
-           // this.gradientPanel1 = new Ascend.Windows.Forms.GradientPanel();
             this.txtName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-           // this.gradientLine1 = new Ascend.Windows.Forms.GradientLine();
             this.txtStatus = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-          //  this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,17 +133,6 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.txtDns2, "txtDns2");
             this.txtDns2.Name = "txtDns2";
             // 
-            // gradientPanel1
-            // 
-            //this.gradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            //this.gradientPanel1.Controls.Add(this.txtName);
-            //this.gradientPanel1.Controls.Add(this.label1);
-            //this.gradientPanel1.Controls.Add(this.pictureBox1);
-            //this.gradientPanel1.Controls.Add(this.label2);
-            //this.gradientPanel1.Controls.Add(this.txtDescription);
-           // resources.ApplyResources(this.gradientPanel1, "gradientPanel1");
-            //this.gradientPanel1.Name = "gradientPanel1";
-            // 
             // txtName
             // 
             resources.ApplyResources(this.txtName, "txtName");
@@ -162,12 +148,6 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // gradientLine1
-            // 
-           // this.gradientLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-           // resources.ApplyResources(this.gradientLine1, "gradientLine1");
-           // this.gradientLine1.Name = "gradientLine1";
             // 
             // txtStatus
             // 
@@ -185,8 +165,6 @@ namespace Argon.Windows.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.lblStatus);
-            //this.Controls.Add(this.gradientLine1);
-           // this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.txtDns2);
             this.Controls.Add(this.txtDns1);
             this.Controls.Add(this.txtGateway);
@@ -201,13 +179,12 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.DoubleBuffered = true;
             this.Name = "FormCardInfo";
             this.TabText = "Info";
             this.Activated += new System.EventHandler(this.FormCardInfo_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCardInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormCardInfo_Load);
-           // this.gradientPanel1.ResumeLayout(false);
-           // this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

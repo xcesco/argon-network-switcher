@@ -66,6 +66,7 @@ namespace Argon.Windows.Forms
             this.ClientSize = new System.Drawing.Size(564, 199);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSplashScreen";
             this.ShowInTaskbar = false;

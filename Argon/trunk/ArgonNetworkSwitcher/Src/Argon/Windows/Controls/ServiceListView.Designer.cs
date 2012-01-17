@@ -40,7 +40,6 @@
             this.colStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colForcedStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuForceRun = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuForceStop = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.mnuStopService = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
@@ -153,15 +153,6 @@
             this.colDescription.Text = "Description";
             this.colDescription.Width = 144;
             // 
-            // imageList16x16
-            // 
-            this.imageList16x16.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList16x16.ImageStream")));
-            this.imageList16x16.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList16x16.Images.SetKeyName(0, "gear_run.png");
-            this.imageList16x16.Images.SetKeyName(1, "gear_stop.png");
-            this.imageList16x16.Images.SetKeyName(2, "gear_ok.png");
-            this.imageList16x16.Images.SetKeyName(3, "gear_forbidden.png");
-            // 
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -234,12 +225,22 @@
             this.mnuRefresh.Text = "Refresh";
             this.mnuRefresh.Click += new System.EventHandler(this.mnuRefresh_Click);
             // 
+            // imageList16x16
+            // 
+            this.imageList16x16.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList16x16.ImageStream")));
+            this.imageList16x16.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList16x16.Images.SetKeyName(0, "gear_run.png");
+            this.imageList16x16.Images.SetKeyName(1, "gear_stop.png");
+            this.imageList16x16.Images.SetKeyName(2, "gear_ok.png");
+            this.imageList16x16.Images.SetKeyName(3, "gear_forbidden.png");
+            // 
             // ServiceListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listView);
             this.Controls.Add(this.toolStrip);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(560, 200);
             this.Name = "ServiceListView";
             this.Size = new System.Drawing.Size(560, 306);

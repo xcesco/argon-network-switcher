@@ -153,14 +153,15 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.txtRC);
             this.Controls.Add(this.txtRB);
             this.Controls.Add(this.txtBackground);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(128, 20);
             this.Name = "IpTextBox";
             this.Size = new System.Drawing.Size(128, 20);
             this.Load += new System.EventHandler(this.IpTextBox_Load);
             this.BackColorChanged += new System.EventHandler(this.IpTextBox_BackColorChanged);
             this.FontChanged += new System.EventHandler(this.IpTextBox_FontChanged);
-            this.Resize += new System.EventHandler(this.IpTextBox_Resize);
             this.ForeColorChanged += new System.EventHandler(this.IpTextBox_ForeColorChanged);
+            this.Resize += new System.EventHandler(this.IpTextBox_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
