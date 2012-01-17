@@ -124,6 +124,7 @@ namespace Argon.Windows.Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(384, 148);
             this.Name = "ProxyControl";
             this.Size = new System.Drawing.Size(384, 148);

@@ -31,17 +31,17 @@ namespace Argon.Windows.Controls
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbDynamicDNS = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtAlternativeDNS = new Argon.Windows.Controls.IpTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtPrimaryDNS = new Argon.Windows.Controls.IpTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbDHCPEnabled = new System.Windows.Forms.CheckBox();
+            this.txtDefaultGateway = new Argon.Windows.Controls.IpTextBox();
+            this.txtSubnetMask = new Argon.Windows.Controls.IpTextBox();
+            this.txtIP = new Argon.Windows.Controls.IpTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAlternativeDNS = new IpTextBox();
-            this.txtPrimaryDNS = new IpTextBox();
-            this.txtDefaultGateway = new IpTextBox();
-            this.txtSubnetMask = new IpTextBox();
-            this.txtIP = new IpTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMacAddress = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
@@ -83,6 +83,21 @@ namespace Argon.Windows.Controls
             this.label5.TabIndex = 16;
             this.label5.Text = "Primary DNS Server";
             // 
+            // txtAlternativeDNS
+            // 
+            this.txtAlternativeDNS.BackColor = System.Drawing.Color.Transparent;
+            this.txtAlternativeDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtAlternativeDNS.IpAddress = "0.0.0.0";
+            this.txtAlternativeDNS.Location = new System.Drawing.Point(135, 79);
+            this.txtAlternativeDNS.MinimumSize = new System.Drawing.Size(128, 20);
+            this.txtAlternativeDNS.Name = "txtAlternativeDNS";
+            this.txtAlternativeDNS.RangeAValue = 0;
+            this.txtAlternativeDNS.RangeBValue = 0;
+            this.txtAlternativeDNS.RangeCValue = 0;
+            this.txtAlternativeDNS.RangeDValue = 0;
+            this.txtAlternativeDNS.Size = new System.Drawing.Size(128, 20);
+            this.txtAlternativeDNS.TabIndex = 19;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -91,6 +106,21 @@ namespace Argon.Windows.Controls
             this.label6.Size = new System.Drawing.Size(117, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "Alternative DNS Server";
+            // 
+            // txtPrimaryDNS
+            // 
+            this.txtPrimaryDNS.BackColor = System.Drawing.Color.Transparent;
+            this.txtPrimaryDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtPrimaryDNS.IpAddress = "0.0.0.0";
+            this.txtPrimaryDNS.Location = new System.Drawing.Point(135, 53);
+            this.txtPrimaryDNS.MinimumSize = new System.Drawing.Size(128, 20);
+            this.txtPrimaryDNS.Name = "txtPrimaryDNS";
+            this.txtPrimaryDNS.RangeAValue = 0;
+            this.txtPrimaryDNS.RangeBValue = 0;
+            this.txtPrimaryDNS.RangeCValue = 0;
+            this.txtPrimaryDNS.RangeDValue = 0;
+            this.txtPrimaryDNS.Size = new System.Drawing.Size(128, 20);
+            this.txtPrimaryDNS.TabIndex = 18;
             // 
             // groupBox2
             // 
@@ -118,63 +148,6 @@ namespace Argon.Windows.Controls
             this.cbDHCPEnabled.Text = "Enable DHCP";
             this.cbDHCPEnabled.UseVisualStyleBackColor = true;
             this.cbDHCPEnabled.CheckedChanged += new System.EventHandler(this.cbDHCPEnabled_CheckedChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Default gateway";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Subnet mask";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "IP";
-            // 
-            // txtAlternativeDNS
-            // 
-            this.txtAlternativeDNS.BackColor = System.Drawing.Color.Transparent;
-            this.txtAlternativeDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtAlternativeDNS.IpAddress = "0.0.0.0";
-            this.txtAlternativeDNS.Location = new System.Drawing.Point(135, 79);
-            this.txtAlternativeDNS.MinimumSize = new System.Drawing.Size(128, 20);
-            this.txtAlternativeDNS.Name = "txtAlternativeDNS";
-            this.txtAlternativeDNS.RangeAValue = 0;
-            this.txtAlternativeDNS.RangeBValue = 0;
-            this.txtAlternativeDNS.RangeCValue = 0;
-            this.txtAlternativeDNS.RangeDValue = 0;
-            this.txtAlternativeDNS.Size = new System.Drawing.Size(128, 20);
-            this.txtAlternativeDNS.TabIndex = 19;
-            // 
-            // txtPrimaryDNS
-            // 
-            this.txtPrimaryDNS.BackColor = System.Drawing.Color.Transparent;
-            this.txtPrimaryDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtPrimaryDNS.IpAddress = "0.0.0.0";
-            this.txtPrimaryDNS.Location = new System.Drawing.Point(135, 53);
-            this.txtPrimaryDNS.MinimumSize = new System.Drawing.Size(128, 20);
-            this.txtPrimaryDNS.Name = "txtPrimaryDNS";
-            this.txtPrimaryDNS.RangeAValue = 0;
-            this.txtPrimaryDNS.RangeBValue = 0;
-            this.txtPrimaryDNS.RangeCValue = 0;
-            this.txtPrimaryDNS.RangeDValue = 0;
-            this.txtPrimaryDNS.Size = new System.Drawing.Size(128, 20);
-            this.txtPrimaryDNS.TabIndex = 18;
             // 
             // txtDefaultGateway
             // 
@@ -221,6 +194,33 @@ namespace Argon.Windows.Controls
             this.txtIP.Size = new System.Drawing.Size(128, 20);
             this.txtIP.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Default gateway";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Subnet mask";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "IP";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtMacAddress);
@@ -247,6 +247,7 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
+            this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(584, 240);
             this.Name = "IpControl";
             this.Size = new System.Drawing.Size(584, 240);

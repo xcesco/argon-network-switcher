@@ -23,6 +23,9 @@ namespace Argon.Network
         public void TestMethod()
         {         
             WlanClient client = new WlanClient();
+
+            
+            
             foreach ( WlanClient.WlanInterface wlanIface in client.Interfaces )
             {
                 // Lists all networks with WEP security
