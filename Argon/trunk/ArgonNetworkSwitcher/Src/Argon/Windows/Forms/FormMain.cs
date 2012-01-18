@@ -85,6 +85,9 @@ namespace Argon.Windows.Forms
             {
                 Controller.Instance.PersistenceController.Save();
                 return;
+            } else {
+                // bug fix: if user says no the windows does not close
+                e.Cancel = true;
             }
             /*
             if (!Visible)
