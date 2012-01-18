@@ -52,12 +52,13 @@ namespace Argon.Common
         /// <param name="question">The question.</param>
         public static void Verify(string url, string title, string question)
         {
-            // get the running version
-            Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            // get the running version of executable
+            Version curVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;                
 
             NewVersion newVersion = GetLastPublishedVersion(url);
 
             if (newVersion == null) return;
+                        
 
             // compare the versions
             if (curVersion.CompareTo(newVersion.AvaiableVersion) < 0)
@@ -65,7 +66,7 @@ namespace Argon.Common
                 // ask the user if he would like
                 // to download the new version                
                 if (DialogResult.Yes ==
-                 MessageBox.Show(question + "\n\nNew version " + newVersion.AvaiableVersion + "\nDate " + newVersion.Since, title,
+                 MessageBox.Show("Current version "+curVersion+"\n\n"+question + "\n\nNew version " + newVersion.AvaiableVersion + "\nDate " + newVersion.Since, title,
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question))
                 {
@@ -147,7 +148,7 @@ namespace Argon.Common
                                         // the Version class does the
                                         // parsing for us
                                         newVersion = new NewVersion();
-                                        newVersion.AvaiableVersion=new Version(reader.Value);
+                                        newVersion.AvaiableVersion = new Version(reader.Value + ".0");                                        
                                         break;
                                     case "url":                                        
                                         url = reader.Value;
