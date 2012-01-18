@@ -360,6 +360,24 @@ namespace Argon.Windows.Forms
         private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+
+        /// <summary>
+        /// 
+        /// See https://sourceforge.net/projects/dockpanelsuite/forums/forum/402316/topic/4482610
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dockPanel_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.Handle != null)
+            {
+                this.BeginInvoke((MethodInvoker)delegate
+                {
+                    base.OnSizeChanged(e);
+                });
+            }
         }        
     }
 }

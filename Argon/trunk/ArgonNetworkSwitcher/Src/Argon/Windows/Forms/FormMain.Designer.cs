@@ -101,7 +101,7 @@ namespace Argon.Windows.Forms
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(39, 17);
+            this.lblStatus.Size = new System.Drawing.Size(38, 17);
             this.lblStatus.Text = "Ready";
             // 
             // progressBar
@@ -129,19 +129,19 @@ namespace Argon.Windows.Forms
             this.loadToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(35, 20);
             this.toolStripMenuItem1.Text = "&File";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.loadToolStripMenuItem.Text = "Load";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -152,27 +152,27 @@ namespace Argon.Windows.Forms
             this.mnuViewProfiles,
             this.mnuViewConsole});
             this.mnuView.Name = "mnuView";
-            this.mnuView.Size = new System.Drawing.Size(44, 20);
+            this.mnuView.Size = new System.Drawing.Size(41, 20);
             this.mnuView.Text = "&View";
             // 
             // mnuViewNetworkAdapters
             // 
             this.mnuViewNetworkAdapters.Name = "mnuViewNetworkAdapters";
-            this.mnuViewNetworkAdapters.Size = new System.Drawing.Size(167, 22);
+            this.mnuViewNetworkAdapters.Size = new System.Drawing.Size(171, 22);
             this.mnuViewNetworkAdapters.Text = "Network adapters";
             this.mnuViewNetworkAdapters.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
             // 
             // mnuViewProfiles
             // 
             this.mnuViewProfiles.Name = "mnuViewProfiles";
-            this.mnuViewProfiles.Size = new System.Drawing.Size(167, 22);
+            this.mnuViewProfiles.Size = new System.Drawing.Size(171, 22);
             this.mnuViewProfiles.Text = "Profiles";
             this.mnuViewProfiles.Click += new System.EventHandler(this.profilesToolStripMenuItem_Click);
             // 
             // mnuViewConsole
             // 
             this.mnuViewConsole.Name = "mnuViewConsole";
-            this.mnuViewConsole.Size = new System.Drawing.Size(167, 22);
+            this.mnuViewConsole.Size = new System.Drawing.Size(171, 22);
             this.mnuViewConsole.Text = "Console";
             this.mnuViewConsole.Click += new System.EventHandler(this.mnuViewConsole_Click);
             // 
@@ -183,25 +183,25 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem2,
             this.mnuHelpAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // mnuCheckForUpdates
             // 
             this.mnuCheckForUpdates.Name = "mnuCheckForUpdates";
-            this.mnuCheckForUpdates.Size = new System.Drawing.Size(173, 22);
+            this.mnuCheckForUpdates.Size = new System.Drawing.Size(176, 22);
             this.mnuCheckForUpdates.Text = "Check For Updates";
             this.mnuCheckForUpdates.Click += new System.EventHandler(this.mnuCheckForUpdates_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(170, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(173, 6);
             // 
             // mnuHelpAbout
             // 
             this.mnuHelpAbout.Name = "mnuHelpAbout";
-            this.mnuHelpAbout.Size = new System.Drawing.Size(173, 22);
+            this.mnuHelpAbout.Size = new System.Drawing.Size(176, 22);
             this.mnuHelpAbout.Text = "About";
             this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
             // 
@@ -210,13 +210,13 @@ namespace Argon.Windows.Forms
             this.mnuDonate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.makeADonationToolStripMenuItem});
             this.mnuDonate.Name = "mnuDonate";
-            this.mnuDonate.Size = new System.Drawing.Size(57, 20);
+            this.mnuDonate.Size = new System.Drawing.Size(54, 20);
             this.mnuDonate.Text = "Donate";
             // 
             // makeADonationToolStripMenuItem
             // 
             this.makeADonationToolStripMenuItem.Name = "makeADonationToolStripMenuItem";
-            this.makeADonationToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.makeADonationToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.makeADonationToolStripMenuItem.Text = "Make a donation";
             this.makeADonationToolStripMenuItem.Click += new System.EventHandler(this.makeADonationToolStripMenuItem_Click);
             // 
@@ -273,6 +273,7 @@ namespace Argon.Windows.Forms
             dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
             this.dockPanel.Skin = dockPanelSkin1;
             this.dockPanel.TabIndex = 6;
+            this.dockPanel.SizeChanged += new System.EventHandler(this.dockPanel_SizeChanged);
             // 
             // backgroundWorker
             // 
