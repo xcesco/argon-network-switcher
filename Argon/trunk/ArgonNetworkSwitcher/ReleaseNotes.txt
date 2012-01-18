@@ -5,3 +5,4 @@ Version 1.0.2
 -------------
 - BUG FIX: the version check doesn't get the exe version in
 - BUG FIX: in windows 7 there was a flicker problem
+- BUG FIX: if user says no the windows does not close
