@@ -357,6 +357,10 @@
       <Project>{4396E3DA-AF9D-4240-93F9-8667D3DE05AE}</Project>
       <Name>ArgonLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj">
+      <Project>{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}</Project>
+      <Name>System.Windows.Forms.Ribbon</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
