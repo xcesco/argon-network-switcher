@@ -381,6 +381,11 @@ namespace Argon.Windows.Forms
                     base.OnSizeChanged(e);
                 });
             }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }        
     }
 }
