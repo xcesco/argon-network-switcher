@@ -287,6 +287,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\wifi-icon.jpg" />
+    <None Include="Resources\wifi64x641.png" />
+    <None Include="Resources\wifi-icon1.jpg" />
+    <Content Include="Resources\wifi16x16.png" />
+    <None Include="Resources\wifi16x161.png" />
+    <Content Include="Resources\wifi32x32.png" />
+    <None Include="Resources\wifi32x321.png" />
+    <Content Include="Resources\wifi64x64.png" />
     <None Include="Resources\Argon.png" />
     <Content Include="icon.ico" />
     <Content Include="References.txt" />
