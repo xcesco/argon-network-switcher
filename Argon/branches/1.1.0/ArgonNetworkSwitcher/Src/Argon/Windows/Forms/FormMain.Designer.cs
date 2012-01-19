@@ -64,9 +64,10 @@ namespace Argon.Windows.Forms
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.rtViews = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.rtOptions = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,7 +179,7 @@ namespace Argon.Windows.Forms
             this.ribbon.OrbDropDown.Name = "";
             this.ribbon.OrbDropDown.Size = new System.Drawing.Size(527, 72);
             this.ribbon.OrbDropDown.TabIndex = 0;
-            this.ribbon.OrbImage = null;
+            this.ribbon.OrbImage = global::Argon.Windows.Forms.Properties.Resources.PCI_card_view;
             // 
             // 
             // 
@@ -196,6 +197,7 @@ namespace Argon.Windows.Forms
             this.ribbon.Tabs.Add(this.rtProfiles);
             this.ribbon.Tabs.Add(this.rtViews);
             this.ribbon.Tabs.Add(this.rtOptions);
+            this.ribbon.Tabs.Add(this.ribbonTab1);
             this.ribbon.TabSpacing = 6;
             this.ribbon.Text = "ribbon";
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -304,17 +306,6 @@ namespace Argon.Windows.Forms
             this.ribbonPanel2.Tag = null;
             this.ribbonPanel2.Text = "views";
             // 
-            // rtOptions
-            // 
-            this.rtOptions.Panels.Add(this.ribbonPanel1);
-            this.rtOptions.Tag = null;
-            this.rtOptions.Text = "Options";
-            // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.Tag = null;
-            this.ribbonPanel1.Text = "options";
-            // 
             // ribbonButton1
             // 
             this.ribbonButton1.AltKey = null;
@@ -328,6 +319,22 @@ namespace Argon.Windows.Forms
             this.ribbonButton1.ToolTip = null;
             this.ribbonButton1.ToolTipImage = null;
             this.ribbonButton1.ToolTipTitle = null;
+            // 
+            // rtOptions
+            // 
+            this.rtOptions.Panels.Add(this.ribbonPanel1);
+            this.rtOptions.Tag = null;
+            this.rtOptions.Text = "Options";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Tag = null;
+            this.ribbonPanel1.Text = "options";
+            // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Tag = null;
+            this.ribbonTab1.Text = "ribbonTab1";
             // 
             // FormMain
             // 
@@ -374,6 +381,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnProfilesLoad;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
         private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
 
         public DockPanel Pannello
         {
