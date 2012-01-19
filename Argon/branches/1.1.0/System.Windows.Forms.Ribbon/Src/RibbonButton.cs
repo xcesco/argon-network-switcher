@@ -648,6 +648,7 @@ namespace System.Windows.Forms
         public override Size MeasureSize(object sender, RibbonElementMeasureSizeEventArgs e)
         {
             RibbonElementSizeMode theSize = GetNearestSize(e.SizeMode);
+            
             int widthSum = Owner.ItemMargin.Horizontal;
             int heightSum = Owner.ItemMargin.Vertical;
             int largeHeight = OwnerPanel == null ? 0 : OwnerPanel.ContentBounds.Height - Owner.ItemPadding.Vertical;// -Owner.ItemMargin.Vertical; //58;

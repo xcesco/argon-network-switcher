@@ -56,7 +56,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.btnProfilesLoad, main.btnProfilesSave, main.btnProfileNew, main.btnProfileRun, main.btnProfileRefresh, main.btnProfileSave, main.btnProfileDelete);            
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileRefresh, main.rbtnProfileSave, main.rbtnProfileDelete);            
 
             // form selezionati
             View.CurrentFormProfile = currentFormProfile;
@@ -67,7 +67,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.btnProfilesLoad, main.btnProfilesSave, main.btnProfileNew, main.btnProfilesLoad, main.btnProfilesSave);                       
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfilesLoad, main.rbtnProfilesSave);                       
 
             // form selezionati
             View.CurrentFormProfile = null;
@@ -78,7 +78,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.btnCardsRefresh, main.btnCardView);
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnCardsRefresh, main.rbtnCardView);
          
             // form selezionati
             View.CurrentFormProfile = null;
@@ -92,12 +92,12 @@ namespace Argon.Controllers
             //ActionRefreshNetworkAdapters();
             if (View.ViewAdapters.VisibleState != DockState.Hidden && View.ViewAdapters.VisibleState != DockState.Unknown)
             {
-                View.ViewMain.mnuViewNetworkAdapters.Checked = true;
+                View.ViewMain.rbtnViewNICs.Checked = true;
             }
 
             if (View.ViewProfiles.VisibleState != DockState.Hidden && View.ViewProfiles.VisibleState != DockState.Unknown)
             {
-                View.ViewMain.mnuViewProfiles.Checked = true;
+                View.ViewMain.rbtnViewProfiles.Checked = true;
             }
         }
 

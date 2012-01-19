@@ -85,7 +85,7 @@ namespace Argon.Controllers
 
         public static void ShowAll()
         {
-            Controller.Instance.View.ViewMain.mnuViewProfiles.Checked = true;
+            Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = true;
 
             DisplayForm(Controller.Instance.View.ViewProfiles);
 
@@ -94,7 +94,7 @@ namespace Argon.Controllers
 
         public static void HideAll()
         {
-            Controller.Instance.View.ViewMain.mnuViewProfiles.Checked = false;
+            Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = false;
             DisplayForm(Controller.Instance.View.ViewProfiles);
         }
 

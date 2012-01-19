@@ -166,22 +166,7 @@ namespace Argon.Windows.Forms
             }
         }
 
-        /// <summary>
-        /// Handles the Click event of the profilesToolStripMenuItem control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        public void profilesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!rbtnViewProfiles.Checked)
-            {
-                Controller.Instance.View.ViewProfiles.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewProfiles.Hide();
-            }
-        }
+ 
 
         /// <summary>
         /// Handles the Click event of the saveToolStripMenuItem control.
@@ -383,9 +368,37 @@ namespace Argon.Windows.Forms
             }
         }
 
-        private void ribbon_Click(object sender, EventArgs e)
-        {
 
+        private void rbtnViewProfiles_Click(object sender, EventArgs e)
+        {
+            if (!rbtnViewProfiles.Checked)
+            {
+                //rbtnViewProfiles.Checked = true;
+                Controller.Instance.View.ViewProfiles.Show();
+            }
+            else
+            {
+                //rbtnViewProfiles.Checked = false;
+                Controller.Instance.View.ViewProfiles.Hide();
+            }
+
+            rbtnViewProfiles.Checked = !rbtnViewProfiles.Checked;
+        }
+
+        private void rbtnViewProfiles1_Click(object sender, EventArgs e)
+        {
+            if (!rbtnViewProfiles1.Checked)
+            {
+                //rbtnViewProfiles.Checked = true;
+                Controller.Instance.View.ViewProfiles.Show();
+            }
+            else
+            {
+                //rbtnViewProfiles.Checked = false;
+                Controller.Instance.View.ViewProfiles.Hide();
+            }
+
+            
         }        
     }
 }

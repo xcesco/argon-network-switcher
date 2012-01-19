@@ -85,7 +85,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void ShowAll()
         {
-            Controller.Instance.View.ViewMain.mnuViewNetworkAdapters.CheckState = CheckState.Checked;
+            Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = true;
             DisplayForm(Controller.Instance.View.ViewAdapters);
 
             Controller.Instance.View.ViewAdapters.Focus();
@@ -104,7 +104,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void HideAll()
         {
-            Controller.Instance.View.ViewMain.mnuViewNetworkAdapters.CheckState = CheckState.Unchecked;
+            Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = false;
             DisplayForm(Controller.Instance.View.ViewAdapters);
         }
 
