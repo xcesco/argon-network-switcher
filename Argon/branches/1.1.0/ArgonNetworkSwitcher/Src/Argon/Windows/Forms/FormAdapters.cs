@@ -41,11 +41,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.mnuViewNetworkAdapters.Checked = false;
+                Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.mnuViewNetworkAdapters.Checked = true;
+                Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = true;
             }
         }
 

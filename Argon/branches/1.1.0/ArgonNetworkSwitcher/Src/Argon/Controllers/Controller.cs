@@ -26,22 +26,22 @@ namespace Argon.Controllers
         public void ActivateFormNetworkCard(FormCardInfo currentFormNetworkCard)
         {
             // profili
-            View.ViewMain.btnProfileNew.Enabled = false;
-            View.ViewMain.btnProfileView.Enabled = false;
-            View.ViewMain.btnProfileDelete.Enabled = false;
+            View.ViewMain.rbtnProfileNew.Enabled = false;
+            View.ViewMain.rbtnProfileView.Enabled = false;
+            View.ViewMain.rbtnProfileDelete.Enabled = false;
 
             // profilo
-            View.ViewMain.btnProfileRun.Enabled = false;
-            View.ViewMain.btnProfileRefresh.Enabled = false;
-            View.ViewMain.btnProfileSave.Enabled = false;
+            View.ViewMain.rbtnProfileRun.Enabled = false;
+            View.ViewMain.rbtnProfileRefresh.Enabled = false;
+            View.ViewMain.rbtnProfileSave.Enabled = false;
 
             // documento
-            View.ViewMain.btnProfilesSave.Enabled = false;
-            View.ViewMain.btnProfilesLoad.Enabled = false;
+            View.ViewMain.rbtnProfilesSave.Enabled = false;
+            View.ViewMain.rbtnProfilesLoad.Enabled = false;
 
             // networkcard
-            View.ViewMain.btnCardsRefresh.Enabled = false;
-            View.ViewMain.btnCardView.Enabled = false;
+            View.ViewMain.rbtnCardsRefresh.Enabled = false;
+            View.ViewMain.rbtnCardView.Enabled = false;
 
             // form selezionati            
             View.CurrentFormCardInfo = currentFormNetworkCard;
