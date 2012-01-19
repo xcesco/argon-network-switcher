@@ -430,5 +430,33 @@ namespace Argon.Windows.Forms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap wifi_icon {
+            get {
+                object obj = ResourceManager.GetObject("wifi-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wifi16x16 {
+            get {
+                object obj = ResourceManager.GetObject("wifi16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wifi32x32 {
+            get {
+                object obj = ResourceManager.GetObject("wifi32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wifi64x64 {
+            get {
+                object obj = ResourceManager.GetObject("wifi64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
