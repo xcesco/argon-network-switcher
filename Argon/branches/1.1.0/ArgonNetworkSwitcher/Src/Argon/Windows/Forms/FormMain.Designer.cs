@@ -54,17 +54,19 @@ namespace Argon.Windows.Forms
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.ribbon = new System.Windows.Forms.Ribbon();
-            this.rtProfiles = new System.Windows.Forms.RibbonTab();
-            this.rpOperations = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
-            this.rtViews = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.rbtnProfilesSave = new System.Windows.Forms.RibbonButton();
             this.rbtnProfilesLoad = new System.Windows.Forms.RibbonButton();
+            this.rtProfiles = new System.Windows.Forms.RibbonTab();
+            this.rpOperations = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfilesAdd = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileView = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileDelete = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.rtViews = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.rtOptions = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,46 +195,10 @@ namespace Argon.Windows.Forms
             this.ribbon.TabIndex = 12;
             this.ribbon.Tabs.Add(this.rtProfiles);
             this.ribbon.Tabs.Add(this.rtViews);
-            this.ribbon.Tabs.Add(this.ribbonTab1);
+            this.ribbon.Tabs.Add(this.rtOptions);
             this.ribbon.TabSpacing = 6;
             this.ribbon.Text = "ribbon";
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
-            // 
-            // rtProfiles
-            // 
-            this.rtProfiles.Panels.Add(this.rpOperations);
-            this.rtProfiles.Panels.Add(this.ribbonPanel3);
-            this.rtProfiles.Tag = null;
-            this.rtProfiles.Text = "Profiles";
-            // 
-            // rpOperations
-            // 
-            this.rpOperations.Items.Add(this.rbtnProfilesAdd);
-            this.rpOperations.Items.Add(this.rbtnProfileView);
-            this.rpOperations.Items.Add(this.rbtnProfileDelete);
-            this.rpOperations.Tag = null;
-            this.rpOperations.Text = "Operations";
-            // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.Tag = null;
-            this.ribbonPanel3.Text = "Profiles";
-            // 
-            // rtViews
-            // 
-            this.rtViews.Panels.Add(this.ribbonPanel2);
-            this.rtViews.Tag = null;
-            this.rtViews.Text = "Views";
-            // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.Tag = null;
-            this.ribbonPanel2.Text = "views";
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Tag = null;
-            this.ribbonTab1.Text = "ribbonTab1";
             // 
             // rbtnProfilesSave
             // 
@@ -263,6 +229,21 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesLoad.ToolTip = null;
             this.rbtnProfilesLoad.ToolTipImage = null;
             this.rbtnProfilesLoad.ToolTipTitle = "Load profiles";
+            // 
+            // rtProfiles
+            // 
+            this.rtProfiles.Panels.Add(this.rpOperations);
+            this.rtProfiles.Panels.Add(this.ribbonPanel3);
+            this.rtProfiles.Tag = null;
+            this.rtProfiles.Text = "Profiles";
+            // 
+            // rpOperations
+            // 
+            this.rpOperations.Items.Add(this.rbtnProfilesAdd);
+            this.rpOperations.Items.Add(this.rbtnProfileView);
+            this.rpOperations.Items.Add(this.rbtnProfileDelete);
+            this.rpOperations.Tag = null;
+            this.rpOperations.Text = "Operations";
             // 
             // rbtnProfilesAdd
             // 
@@ -306,6 +287,48 @@ namespace Argon.Windows.Forms
             this.rbtnProfileDelete.ToolTipImage = null;
             this.rbtnProfileDelete.ToolTipTitle = null;
             // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Tag = null;
+            this.ribbonPanel3.Text = "Profiles";
+            // 
+            // rtViews
+            // 
+            this.rtViews.Panels.Add(this.ribbonPanel2);
+            this.rtViews.Tag = null;
+            this.rtViews.Text = "Views";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Items.Add(this.ribbonButton1);
+            this.ribbonPanel2.Tag = null;
+            this.ribbonPanel2.Text = "views";
+            // 
+            // rtOptions
+            // 
+            this.rtOptions.Panels.Add(this.ribbonPanel1);
+            this.rtOptions.Tag = null;
+            this.rtOptions.Text = "Options";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Tag = null;
+            this.ribbonPanel1.Text = "options";
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.AltKey = null;
+            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton1.Image = global::Argon.Windows.Forms.Properties.Resources.wifi64x64;
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.ribbonButton1.Tag = null;
+            this.ribbonButton1.Text = null;
+            this.ribbonButton1.ToolTip = null;
+            this.ribbonButton1.ToolTipImage = null;
+            this.ribbonButton1.ToolTipTitle = null;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,11 +367,13 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonTab rtViews;
         private System.Windows.Forms.RibbonPanel ribbonPanel2;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonTab rtOptions;
         private System.Windows.Forms.RibbonButton rbtnProfilesAdd;
         private System.Windows.Forms.RibbonButton rbtnProfileView;
         private System.Windows.Forms.RibbonButton rbtnProfileDelete;
         private System.Windows.Forms.RibbonButton rbtnProfilesLoad;
+        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
 
         public DockPanel Pannello
         {
