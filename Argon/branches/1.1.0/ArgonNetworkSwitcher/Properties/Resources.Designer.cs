@@ -165,6 +165,20 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap disk_blue {
+            get {
+                object obj = ResourceManager.GetObject("disk_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap document {
+            get {
+                object obj = ResourceManager.GetObject("document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap gear_forbidden {
             get {
                 object obj = ResourceManager.GetObject("gear_forbidden", resourceCulture);
