@@ -307,6 +307,8 @@
     <None Include="Resources\data_disk1.png" />
     <None Include="Resources\data_out.png" />
     <Content Include="Resources\delete2.png" />
+    <None Include="Resources\disk_blue.png" />
+    <None Include="Resources\document.png" />
     <Content Include="Resources\empty.png" />
     <Content Include="Resources\gears.png" />
     <Content Include="Resources\gear_forbidden.png" />
