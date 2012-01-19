@@ -527,23 +527,23 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonPanel rpViews;
         private System.Windows.Forms.RibbonPanel rpProfilesCollection;
         private System.Windows.Forms.RibbonTab rtOptions;
-        private System.Windows.Forms.RibbonButton rbtnProfilesAdd;
-        private System.Windows.Forms.RibbonButton rbtnProfileView;
-        private System.Windows.Forms.RibbonButton rbtnProfileDelete;
         private System.Windows.Forms.RibbonButton rbtnProfilesLoad;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonButton rbtnViewConsole;
         private System.Windows.Forms.RibbonTab rtHelp;
-        private System.Windows.Forms.RibbonButton rbtnProfileSave;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator;
-        private System.Windows.Forms.RibbonButton rbtnProfileRun;
-        private System.Windows.Forms.RibbonButton rbtnProfileRefresh;
-        private System.Windows.Forms.RibbonButton rbtnViewProfiles;
-        private System.Windows.Forms.RibbonButton rbtnViewNICs;
         private System.Windows.Forms.RibbonPanel rpHelp;
         private System.Windows.Forms.RibbonButton rbtnCheckUpdate;
         private System.Windows.Forms.RibbonButton rbtnHelpAbout;
         private System.Windows.Forms.RibbonButton rbtnHelpDonate;
+        public System.Windows.Forms.RibbonButton rbtnProfilesAdd;
+        public System.Windows.Forms.RibbonButton rbtnProfileView;
+        public System.Windows.Forms.RibbonButton rbtnProfileDelete;
+        public System.Windows.Forms.RibbonButton rbtnViewConsole;
+        public System.Windows.Forms.RibbonButton rbtnProfileSave;
+        public System.Windows.Forms.RibbonButton rbtnProfileRun;
+        public System.Windows.Forms.RibbonButton rbtnProfileRefresh;
+        public System.Windows.Forms.RibbonButton rbtnViewProfiles;
+        public System.Windows.Forms.RibbonButton rbtnViewNICs;
 
         public DockPanel Pannello
         {
