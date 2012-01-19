@@ -26,11 +26,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.mnuViewConsole.Checked = false;
+                Controller.Instance.View.ViewMain.rbtnViewConsole.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.mnuViewConsole.Checked = true;
+                Controller.Instance.View.ViewMain.rbtnViewConsole.Checked = true;
             }
         }
 

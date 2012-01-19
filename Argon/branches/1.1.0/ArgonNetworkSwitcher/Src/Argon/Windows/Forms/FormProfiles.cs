@@ -42,11 +42,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.mnuViewProfiles.Checked = false;
+                Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.mnuViewProfiles.Checked = true;
+                Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = true;
             }
         }
       

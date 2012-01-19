@@ -45,8 +45,8 @@ namespace Argon.Windows.Forms
                 Controller.Instance.View.ViewConsole.Show(dockPanel);
                 Controller.Instance.View.ViewConsole.DockState = DockState.DockBottomAutoHide;
 
-                mnuViewNetworkAdapters.Checked = true;
-                mnuViewProfiles.Checked = true;
+                rbtnViewNICs.Checked = true;
+                rbtnViewConsole.Checked = true;                
             }
 
             
@@ -156,7 +156,7 @@ namespace Argon.Windows.Forms
 
         private void mnuViewNetworkAdapters_Click(object sender, EventArgs e)
         {            
-            if (!mnuViewNetworkAdapters.Checked)
+            if (!rbtnViewNICs.Checked)
             {
                 Controller.Instance.View.ViewAdapters.Show();
             }
@@ -173,7 +173,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         public void profilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!mnuViewProfiles.Checked)
+            if (!rbtnViewProfiles.Checked)
             {
                 Controller.Instance.View.ViewProfiles.Show();
             }
@@ -332,7 +332,7 @@ namespace Argon.Windows.Forms
 
         private void mnuViewConsole_Click(object sender, EventArgs e)
         {
-            if (!mnuViewConsole.Checked)
+            if (!rbtnViewConsole.Checked)
             {
                 Controller.Instance.View.ViewConsole.Show();
             }

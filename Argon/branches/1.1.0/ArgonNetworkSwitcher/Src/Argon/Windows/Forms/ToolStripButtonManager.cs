@@ -7,11 +7,11 @@ namespace Argon.Windows.Forms
 {
     public class ToolStripButtonManager
     {
-        protected ToolStrip _toolStrip;
+        //protected ToolStrip _toolStrip;
 
         public ToolStripButtonManager(FormMain formMain)
         {
-            _toolStrip = formMain.toolStrip;
+            //_toolStrip = formMain.toolStrip;
         }
 
         public void EnableButtons(params ToolStripButton[] buttons)
@@ -26,6 +26,7 @@ namespace Argon.Windows.Forms
 
         internal void SetValue(bool foundValue, params ToolStripButton[] buttons)
         {
+            /*
             bool notFoundValue = !foundValue;
             bool found;
             ToolStripButton item;
@@ -54,7 +55,7 @@ namespace Argon.Windows.Forms
                 {
                     item.Enabled = notFoundValue;
                 }
-            }
+            }*/
         }       
 
     }
