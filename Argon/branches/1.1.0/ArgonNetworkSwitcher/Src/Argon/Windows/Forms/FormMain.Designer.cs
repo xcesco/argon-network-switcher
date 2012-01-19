@@ -58,7 +58,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesLoad = new System.Windows.Forms.RibbonButton();
             this.rtProfiles = new System.Windows.Forms.RibbonTab();
             this.rpOperations = new System.Windows.Forms.RibbonPanel();
-            this.rbtnProfilesAdd = new System.Windows.Forms.RibbonButton();
+            this.rbtnProfilesNew = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileView = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileDelete = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileSave = new System.Windows.Forms.RibbonButton();
@@ -255,7 +255,7 @@ namespace Argon.Windows.Forms
             // 
             this.rpOperations.ButtonMoreEnabled = false;
             this.rpOperations.ButtonMoreVisible = false;
-            this.rpOperations.Items.Add(this.rbtnProfilesAdd);
+            this.rpOperations.Items.Add(this.rbtnProfilesNew);
             this.rpOperations.Items.Add(this.rbtnProfileView);
             this.rpOperations.Items.Add(this.rbtnProfileDelete);
             this.rpOperations.Items.Add(this.rbtnProfileSave);
@@ -265,19 +265,19 @@ namespace Argon.Windows.Forms
             this.rpOperations.Tag = null;
             this.rpOperations.Text = "Operations";
             // 
-            // rbtnProfilesAdd
+            // rbtnProfilesNew
             // 
-            this.rbtnProfilesAdd.AltKey = null;
-            this.rbtnProfilesAdd.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnProfilesAdd.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnProfilesAdd.Image = global::Argon.Windows.Forms.Properties.Resources.index_add;
-            this.rbtnProfilesAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfilesAdd.SmallImage")));
-            this.rbtnProfilesAdd.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnProfilesAdd.Tag = null;
-            this.rbtnProfilesAdd.Text = "Add";
-            this.rbtnProfilesAdd.ToolTip = "Add profile";
-            this.rbtnProfilesAdd.ToolTipImage = null;
-            this.rbtnProfilesAdd.ToolTipTitle = null;
+            this.rbtnProfilesNew.AltKey = null;
+            this.rbtnProfilesNew.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnProfilesNew.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnProfilesNew.Image = global::Argon.Windows.Forms.Properties.Resources.index_add;
+            this.rbtnProfilesNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfilesNew.SmallImage")));
+            this.rbtnProfilesNew.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnProfilesNew.Tag = null;
+            this.rbtnProfilesNew.Text = "New";
+            this.rbtnProfilesNew.ToolTip = "New profile";
+            this.rbtnProfilesNew.ToolTipImage = null;
+            this.rbtnProfilesNew.ToolTipTitle = null;
             // 
             // rbtnProfileView
             // 
@@ -535,7 +535,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnCheckUpdate;
         private System.Windows.Forms.RibbonButton rbtnHelpAbout;
         private System.Windows.Forms.RibbonButton rbtnHelpDonate;
-        public System.Windows.Forms.RibbonButton rbtnProfilesAdd;
+        public System.Windows.Forms.RibbonButton rbtnProfilesNew;
         public System.Windows.Forms.RibbonButton rbtnProfileView;
         public System.Windows.Forms.RibbonButton rbtnProfileDelete;
         public System.Windows.Forms.RibbonButton rbtnViewConsole;
