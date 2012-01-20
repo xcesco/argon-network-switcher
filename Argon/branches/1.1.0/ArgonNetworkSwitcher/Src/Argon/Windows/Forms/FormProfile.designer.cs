@@ -49,9 +49,9 @@ namespace Argon.Windows.Forms
             this.ipControl = new Argon.Windows.Controls.IpControl();
             this.tp2Proxy = new System.Windows.Forms.TabPage();
             this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
-            this.tpDriveMap = new System.Windows.Forms.TabPage();
+            this.tp3DriveMap = new System.Windows.Forms.TabPage();
             this.driveMapListView = new Argon.Windows.Controls.DriveMapListView();
-            this.tp3Printers = new System.Windows.Forms.TabPage();
+            this.tp4Printers = new System.Windows.Forms.TabPage();
             this.lblSelectedPrinter = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRemovePrinter = new System.Windows.Forms.Button();
@@ -70,8 +70,8 @@ namespace Argon.Windows.Forms
             this.tabControl.SuspendLayout();
             this.tp1NIC.SuspendLayout();
             this.tp2Proxy.SuspendLayout();
-            this.tpDriveMap.SuspendLayout();
-            this.tp3Printers.SuspendLayout();
+            this.tp3DriveMap.SuspendLayout();
+            this.tp4Printers.SuspendLayout();
             this.tp5Services.SuspendLayout();
             this.tp6Applications.SuspendLayout();
             this.tp7Adapters.SuspendLayout();
@@ -187,8 +187,8 @@ namespace Argon.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tp1NIC);
             this.tabControl.Controls.Add(this.tp2Proxy);
-            this.tabControl.Controls.Add(this.tpDriveMap);
-            this.tabControl.Controls.Add(this.tp3Printers);
+            this.tabControl.Controls.Add(this.tp3DriveMap);
+            this.tabControl.Controls.Add(this.tp4Printers);
             this.tabControl.Controls.Add(this.tp5Services);
             this.tabControl.Controls.Add(this.tp6Applications);
             this.tabControl.Controls.Add(this.tp7Adapters);
@@ -245,16 +245,16 @@ namespace Argon.Windows.Forms
             this.proxyPanel.Size = new System.Drawing.Size(1163, 454);
             this.proxyPanel.TabIndex = 2;
             // 
-            // tpDriveMap
+            // tp3DriveMap
             // 
-            this.tpDriveMap.Controls.Add(this.driveMapListView);
-            this.tpDriveMap.ImageIndex = 2;
-            this.tpDriveMap.Location = new System.Drawing.Point(4, 23);
-            this.tpDriveMap.Name = "tpDriveMap";
-            this.tpDriveMap.Size = new System.Drawing.Size(1169, 460);
-            this.tpDriveMap.TabIndex = 2;
-            this.tpDriveMap.Text = "Drive Map";
-            this.tpDriveMap.UseVisualStyleBackColor = true;
+            this.tp3DriveMap.Controls.Add(this.driveMapListView);
+            this.tp3DriveMap.ImageIndex = 2;
+            this.tp3DriveMap.Location = new System.Drawing.Point(4, 23);
+            this.tp3DriveMap.Name = "tp3DriveMap";
+            this.tp3DriveMap.Size = new System.Drawing.Size(1169, 460);
+            this.tp3DriveMap.TabIndex = 2;
+            this.tp3DriveMap.Text = "Drive Map";
+            this.tp3DriveMap.UseVisualStyleBackColor = true;
             // 
             // driveMapListView
             // 
@@ -265,21 +265,21 @@ namespace Argon.Windows.Forms
             this.driveMapListView.Size = new System.Drawing.Size(1169, 460);
             this.driveMapListView.TabIndex = 1;
             // 
-            // tp3Printers
+            // tp4Printers
             // 
-            this.tp3Printers.Controls.Add(this.lblSelectedPrinter);
-            this.tp3Printers.Controls.Add(this.label5);
-            this.tp3Printers.Controls.Add(this.btnRemovePrinter);
-            this.tp3Printers.Controls.Add(this.lblPrinter2);
-            this.tp3Printers.Controls.Add(this.btnSelectPrinter);
-            this.tp3Printers.Controls.Add(this.cbPrinterList);
-            this.tp3Printers.ImageIndex = 3;
-            this.tp3Printers.Location = new System.Drawing.Point(4, 23);
-            this.tp3Printers.Name = "tp3Printers";
-            this.tp3Printers.Size = new System.Drawing.Size(1169, 460);
-            this.tp3Printers.TabIndex = 5;
-            this.tp3Printers.Text = "Printers";
-            this.tp3Printers.UseVisualStyleBackColor = true;
+            this.tp4Printers.Controls.Add(this.lblSelectedPrinter);
+            this.tp4Printers.Controls.Add(this.label5);
+            this.tp4Printers.Controls.Add(this.btnRemovePrinter);
+            this.tp4Printers.Controls.Add(this.lblPrinter2);
+            this.tp4Printers.Controls.Add(this.btnSelectPrinter);
+            this.tp4Printers.Controls.Add(this.cbPrinterList);
+            this.tp4Printers.ImageIndex = 3;
+            this.tp4Printers.Location = new System.Drawing.Point(4, 23);
+            this.tp4Printers.Name = "tp4Printers";
+            this.tp4Printers.Size = new System.Drawing.Size(1169, 460);
+            this.tp4Printers.TabIndex = 5;
+            this.tp4Printers.Text = "Printers";
+            this.tp4Printers.UseVisualStyleBackColor = true;
             // 
             // lblSelectedPrinter
             // 
@@ -450,9 +450,9 @@ namespace Argon.Windows.Forms
             this.tabControl.ResumeLayout(false);
             this.tp1NIC.ResumeLayout(false);
             this.tp2Proxy.ResumeLayout(false);
-            this.tpDriveMap.ResumeLayout(false);
-            this.tp3Printers.ResumeLayout(false);
-            this.tp3Printers.PerformLayout();
+            this.tp3DriveMap.ResumeLayout(false);
+            this.tp4Printers.ResumeLayout(false);
+            this.tp4Printers.PerformLayout();
             this.tp5Services.ResumeLayout(false);
             this.tp6Applications.ResumeLayout(false);
             this.tp7Adapters.ResumeLayout(false);
@@ -474,27 +474,27 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label lblSelectedCard;
         private System.Windows.Forms.Label txtSelectedCard;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tp1NIC;
         private Controls.IpControl ipControl;
-        private System.Windows.Forms.TabPage tp2Proxy;
         private Controls.ProxyControl proxyPanel;
-        private System.Windows.Forms.TabPage tpDriveMap;
         private Controls.DriveMapListView driveMapListView;
-        private System.Windows.Forms.TabPage tp3Printers;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRemovePrinter;
         private System.Windows.Forms.Label lblPrinter2;
         private System.Windows.Forms.Button btnSelectPrinter;
         private System.Windows.Forms.ComboBox cbPrinterList;
-        private System.Windows.Forms.TabPage tp5Services;
         private Controls.ServiceListView serviceListView;
-        private System.Windows.Forms.TabPage tp6Applications;
         private Controls.ApplicationsListView applicationsListView;
         private System.Windows.Forms.Label lblSelectedPrinter;
-        private System.Windows.Forms.TabPage tp7Adapters;
         private Controls.NetworkCardListView networkCardListView;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TabPage tp1NIC;
+        public System.Windows.Forms.TabPage tp2Proxy;
+        public System.Windows.Forms.TabPage tp3DriveMap;
+        public System.Windows.Forms.TabPage tp4Printers;
+        public System.Windows.Forms.TabPage tp5Services;
+        public System.Windows.Forms.TabPage tp6Applications;
+        public System.Windows.Forms.TabPage tp7Adapters;
+        public System.Windows.Forms.TabControl tabControl;
     }
 }

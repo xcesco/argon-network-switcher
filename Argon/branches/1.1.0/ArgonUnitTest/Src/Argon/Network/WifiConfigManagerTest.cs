@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Argon.Network
+namespace Argon.Network.Wifi.Windows7
 {
     [TestClass]
     public class WifiConfigManagerTest
@@ -18,6 +18,8 @@ namespace Argon.Network
             {
                 Console.WriteLine("Name {0} Guid {1} Description {2} MAC {3}", item.InterfaceName, item.InterfaceGuid, item.InterfaceDescription, item.InterfaceMAC);
                 Console.WriteLine("Algorithm [{0}] ID [{1}] SSID [{2}]", item.NetworkAuthAlgorithm, item.NetworkID, item.NetworkSSID);
+               
+
                 Console.WriteLine("Signal Quality {0}", item.SignalQuality);
             }
         }
@@ -29,9 +31,11 @@ namespace Argon.Network
 
             foreach (WifiProfile item in items)
             {
-                Console.WriteLine("Name {0} Guid {1} Description {2} MAC {3}", item.InterfaceName, item.InterfaceGuid, item.InterfaceDescription, item.InterfaceMAC);
-                Console.WriteLine("Name [{0}]", item.Name);
-                Console.WriteLine("Xml [{0}]", item.Xml);
+                Console.WriteLine("Profile name '{0}'", item.Name);
+                Console.WriteLine("\tName '{0}' Guid '{1}' \tDescription '{2}' \tMAC '{3}'", item.InterfaceName, item.InterfaceGuid, item.InterfaceDescription, item.InterfaceMAC);
+                Console.WriteLine("\tConnected {0}", item.Connected);
+                //Console.WriteLine("Name [{0}]", item.Name);
+               // Console.WriteLine("Xml [{0}]", item.Xml);
             }
         }
     }

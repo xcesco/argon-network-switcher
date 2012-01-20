@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
  * LOG:      Who?    When?       What?
  * (v)1.0.0  WJF     11/26/07    Original Implementation
  */
-namespace Argon.OperatingSystem
+namespace Argon.OperatingSystem.WindowsXP
 {
     #region Unmanaged
 

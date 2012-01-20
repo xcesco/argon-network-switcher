@@ -151,6 +151,9 @@
     <Compile Include="Src\Argon\Windows\Controls\ServiceListView.Designer.cs">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\ArgonDockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +293,7 @@
   <ItemGroup>
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
+    <Content Include="todolist.txt" />
     <None Include="Resources\wifi16x161.png" />
     <Content Include="Resources\wifi32x32.png" />
     <Content Include="Resources\wifi64x64.png" />

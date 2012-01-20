@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Management;
-/*
- * HardwareHelperLib
- * ===========================================================
- * Windows XP SP2, VS2005 C#.NET, DotNet 2.0
- * HH Lib is a hardware helper for library for C#.
- * It can be used for notifications of hardware add/remove
- * events, retrieving a list of hardware currently connected,
- * and enabling or disabling devices.
- * ===========================================================
- * LOG:      Who?    When?       What?
- * (v)1.0.0  WJF     11/26/07    Original Implementation
- */
-namespace Argon.OperatingSystem
+
+
+namespace Argon.OperatingSystem.Windows7
 {
-    
 
     /// <summary>
-    /// 
+    /// Hardware library for windows seven
     /// </summary>
     public class Win7HardwareLibrary
-    {        
+    {
 
+        /// <summary>
+        /// Sets the state of the device.
+        /// </summary>
+        /// <param name="guid">The GUID.</param>
+        /// <param name="bEnable">if set to <c>true</c> [b enable].</param>
+        /// <returns></returns>
         public bool SetDeviceState(string guid, bool bEnable)
         {
             SelectQuery query = new SelectQuery("Win32_NetworkAdapter","GUID='"+guid+"'");

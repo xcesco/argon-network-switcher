@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using NativeWifi;
 
-namespace Argon.Network
+namespace Argon.Network.Wifi.Windows7
 {
     public abstract class WifiConfigurationManager
     {
@@ -62,28 +60,38 @@ namespace Argon.Network
             List<WifiProfile> list = new List<WifiProfile>();
 
             WifiProfile profile;
-            foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
+            WlanClient.WlanInterface[] interfaces=client.Interfaces;
+            foreach (WlanClient.WlanInterface card in interfaces)
             {
+                string currentProfile = "";
+                currentProfile=card.CurrentConnection.profileName;
+                
                 // Retrieves XML configurations of existing profiles.
                 // This can assist you in constructing your own XML configuration
                 // (that is, it will give you an example to follow).
-                foreach (Wlan.WlanProfileInfo profileInfo in wlanIface.GetProfiles())
+                Wlan.WlanProfileInfo[] profiles = card.GetProfiles();
+                foreach (Wlan.WlanProfileInfo profileInfo in profiles)
                 {
-                    profile = new WifiProfile();
+                    profile = new WifiProfile();                  
 
-                    profile.InterfaceName = wlanIface.InterfaceName;
-                    profile.InterfaceGuid = "{"+wlanIface.InterfaceGuid.ToString().ToUpper()+"}";
-                    profile.InterfaceDescription = wlanIface.InterfaceDescription;
+                    profile.InterfaceName = card.InterfaceName;
+                    profile.InterfaceGuid = "{" + card.InterfaceGuid.ToString().ToUpper() + "}";
+                    profile.InterfaceDescription = card.InterfaceDescription;
 
-                    profile.InterfaceMAC = GetStringForMAC(wlanIface.NetworkInterface.GetPhysicalAddress().ToString());
+                    profile.InterfaceMAC = GetStringForMAC(card.NetworkInterface.GetPhysicalAddress().ToString());
 
                     if (guid != null && !profile.InterfaceGuid.Equals(guid)) break; 
                     
                     string name = profileInfo.profileName; // this is typically the network's SSID
-                    string xml = wlanIface.GetProfileXml(profileInfo.profileName);
+                    //string xml = card.GetProfileXml(profileInfo.profileName);
 
                     profile.Name = name;
-                    profile.Xml = xml;
+                   // profile.Xml = xml;
+
+                    if (profile.Name.Equals(currentProfile))
+                    {
+                        profile.Connected = true;
+                    }
 
                     list.Add(profile);
                 }                
@@ -99,7 +107,7 @@ namespace Argon.Network
             WifiConfiguration config;
             // foreach wifiinterface
             foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
-            {
+            {              
                 // Lists all networks with WEP security
                 Wlan.WlanAvailableNetwork[] networks = wlanIface.GetAvailableNetworkList(0);
                 foreach (Wlan.WlanAvailableNetwork network in networks)
