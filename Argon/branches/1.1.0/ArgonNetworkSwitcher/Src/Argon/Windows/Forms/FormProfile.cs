@@ -14,7 +14,7 @@ using Argon.Network;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormProfile : DockContent
+    public partial class FormProfile : ArgonDockContent
     {
         public FormProfile()
         {
@@ -26,6 +26,42 @@ namespace Argon.Windows.Forms
         {
    
 
+        }
+
+        public void ShowTab(TabPage tabPage)
+        {
+            TabPage[] array = { tp1NIC, tp2Proxy, tp3DriveMap, tp4Printers, tp5Services, tp6Applications, tp7Adapters };
+
+            tabControl.SuspendLayout();
+            tabControl.TabPages.Clear();
+
+            foreach (TabPage item in array)
+            {
+               // if (item != tabPage)
+                //{
+                    tabControl.TabPages.Add(item);
+                //}
+            }
+
+            tabControl.ResumeLayout();
+        }
+
+        public void HideTab(TabPage tabPage)
+        {
+            TabPage[] array = { tp1NIC, tp2Proxy, tp3DriveMap, tp4Printers, tp5Services, tp6Applications, tp7Adapters }; 
+
+            tabControl.SuspendLayout();
+            tabControl.TabPages.Clear();
+
+            foreach (TabPage item in array)
+            {
+                if (item != tabPage)
+                {
+                    tabControl.TabPages.Add(item);
+                }
+            }           
+            
+            tabControl.ResumeLayout();
         }
 
         protected List<WindowsNetworkCard> networkList;

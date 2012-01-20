@@ -12,7 +12,7 @@ using Argon.Controllers;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormCardInfo : DockContent
+    public partial class FormCardInfo : ArgonDockContent
     {
         public WindowsNetworkCard NIC
         {

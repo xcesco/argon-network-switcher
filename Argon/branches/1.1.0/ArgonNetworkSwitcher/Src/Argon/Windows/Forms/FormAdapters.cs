@@ -14,7 +14,7 @@ using BrightIdeasSoftware;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormAdapters : DockContent
+    public partial class FormAdapters : ArgonDockContent
     {
         public FormAdapters()
         {

@@ -8,8 +8,8 @@ using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
-using Argon.OperatingSystem.WindowsXP;
-using Argon.OperatingSystem.Windows7;
+using Argon.Network.WindowsXP;
+using Argon.Network.Windows7;
 
 namespace Argon.OperatingSystem
 {
@@ -25,19 +25,35 @@ namespace Argon.OperatingSystem
         public static List<WindowsNetworkCard> GetWindowsNetworkCardList()
         {
             List<WindowsNetworkCard> array;
-            if (OSInfo.Name == "Windows XP")
+
+            switch (OSInfo.OperatingSystem)
             {
-                array=WinXPNetworkCardManager.GetWindowsNetworkCardList();
+                case OperatingSystemType.WINDOWS_XP:
+                    {
+                        array = WinXPNetworkCardManager.GetWindowsNetworkCardList();
+                        break;
+                    }
+
+                case OperatingSystemType.WINDOWS_7:
+                    {
+                        array = Win7NetworkCardManager.GetWindowsNetworkCardList();
+                        break;
+                    }
+                default:
+                    throw (new Exception("Operating system not supported"));
+
+
             }
-            else
-            {
-                array = Win7NetworkCardManager.GetWindowsNetworkCardList();
-            }
-                        
+
+
             return array;
         }
 
 
+        /// <summary>
+        /// Writes the data into registry.
+        /// </summary>
+        /// <param name="card">The card.</param>
         public static void WriteDataIntoRegistry(IWindowsNetworkCardInfo card)
         {
             if (OSInfo.Name == "Windows XP")
@@ -50,7 +66,10 @@ namespace Argon.OperatingSystem
             }
         }
 
-
+        /// <summary>
+        /// Applies the specified card.
+        /// </summary>
+        /// <param name="card">The card.</param>
         public static void Apply(IWindowsNetworkCardInfo card)
         {
             if (OSInfo.Name == "Windows XP")

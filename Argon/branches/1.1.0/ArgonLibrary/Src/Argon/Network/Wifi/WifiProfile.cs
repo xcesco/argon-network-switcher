@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Argon.Network
+namespace Argon.Network.Wifi
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WifiProfile
     {
         public string Name { get; set; }
-
-        public string Xml { get; set; }
-
+        
         public string InterfaceName { get; set; }
 
         public string InterfaceGuid { get; set; }
@@ -18,5 +19,7 @@ namespace Argon.Network
         public string InterfaceDescription { get; set; }
 
         public string InterfaceMAC { get; set; }
+
+        public Boolean Connected { get; set; }
     }
 }

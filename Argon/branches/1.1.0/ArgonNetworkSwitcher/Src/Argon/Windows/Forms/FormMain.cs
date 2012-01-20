@@ -340,15 +340,6 @@ namespace Argon.Windows.Forms
             form.ShowDialog(this);  
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
 
         /// <summary>
@@ -373,32 +364,44 @@ namespace Argon.Windows.Forms
         {
             if (!rbtnViewProfiles.Checked)
             {
-                //rbtnViewProfiles.Checked = true;
+                if (Controller.Instance.View.ViewProfiles.OldDockState != DockState.Unknown)
+                {
+                    Controller.Instance.View.ViewProfiles.DockState = Controller.Instance.View.ViewProfiles.OldDockState;
+                }
                 Controller.Instance.View.ViewProfiles.Show();
             }
             else
             {
-                //rbtnViewProfiles.Checked = false;
-                Controller.Instance.View.ViewProfiles.Hide();
+                Controller.Instance.View.ViewProfiles.OldDockState = Controller.Instance.View.ViewProfiles.DockState;
+                Controller.Instance.View.ViewProfiles.DockState = DockState.DockBottom;
+                Controller.Instance.View.ViewProfiles.Hide();                
             }
 
-            rbtnViewProfiles.Checked = !rbtnViewProfiles.Checked;
+            //rbtnViewProfiles.Checked = !rbtnViewProfiles.Checked;
         }
 
-        private void rbtnViewProfiles1_Click(object sender, EventArgs e)
+        private void rbtnViewProfileNetwork_Click(object sender, EventArgs e)
         {
-            if (!rbtnViewProfiles1.Checked)
+            List<FormProfile> list = Controller.Instance.View.ListViewProfile;
+            if (rbtnViewProfileNetwork.Checked)
             {
-                //rbtnViewProfiles.Checked = true;
-                Controller.Instance.View.ViewProfiles.Show();
+                foreach (FormProfile item in list)
+                {
+                    //item.tabControl
+                    item.HideTab(item.tp1NIC);
+                }
             }
             else
             {
-                //rbtnViewProfiles.Checked = false;
-                Controller.Instance.View.ViewProfiles.Hide();
+                foreach (FormProfile item in list)
+                {
+                    //item.tabControl
+                    item.ShowTab(item.tp1NIC);
+                }
             }
 
-            
-        }        
+            rbtnViewProfileNetwork.Checked = !rbtnViewProfileNetwork.Checked;
+        }
+      
     }
 }

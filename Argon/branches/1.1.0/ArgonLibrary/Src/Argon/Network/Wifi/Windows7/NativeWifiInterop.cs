@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.ComponentModel;
 
-namespace NativeWifi
+namespace Argon.Network.Wifi.Windows7
 {
     // TODO: Separate the functions and the structs/enums. Many of the structs/enums should remain public
     // (since they're reused in the OOP interfaces) -- the rest (including all P/Invoke function mappings)

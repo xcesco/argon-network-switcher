@@ -1,0 +1,7 @@
+﻿- Fix UI with ribbon
+- Discover network
+
+- change svn config (toirtouse e svn visual studio)
+- change maven config
+
+- change wallpaper

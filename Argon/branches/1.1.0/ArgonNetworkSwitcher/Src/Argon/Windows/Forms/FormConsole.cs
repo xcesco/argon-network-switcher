@@ -10,7 +10,7 @@ using Argon.Controllers;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormConsole : DockContent
+    public partial class FormConsole : ArgonDockContent
     {
         // This delegate enables asynchronous calls for setting
         // the text property on a TextBox control.

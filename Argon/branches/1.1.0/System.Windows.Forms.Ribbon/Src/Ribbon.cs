@@ -68,9 +68,7 @@ namespace System.Windows.Forms
         private RibbonCaptionButton _CloseButton;
         private RibbonCaptionButton _MaximizeRestoreButton;
         private RibbonCaptionButton _MinimizeButton;
-        private bool _CaptionButtonsVisible;
-        private GlobalHook _mouseHook;
-        private GlobalHook _keyboardHook;
+        private bool _CaptionButtonsVisible;       
         #endregion
 
         #region Events
@@ -156,10 +154,7 @@ namespace System.Windows.Forms
 
         ~Ribbon()
         {
-            if (_mouseHook != null)
-            {
-                _mouseHook.Dispose();
-            }
+           
         }
 
         #endregion
@@ -811,12 +806,7 @@ namespace System.Windows.Forms
         {
             if (!(Site != null && Site.DesignMode))
             {
-                _mouseHook = new GlobalHook(GlobalHook.HookTypes.Mouse);
-                _mouseHook.MouseWheel += new MouseEventHandler(_mouseHook_MouseWheel);
-                _mouseHook.MouseDown += new MouseEventHandler(_mouseHook_MouseDown);
-
-                _keyboardHook = new GlobalHook(GlobalHook.HookTypes.Keyboard);
-                _keyboardHook.KeyDown += new KeyEventHandler(_keyboardHook_KeyDown);
+               
             }
         }
 
@@ -835,15 +825,7 @@ namespace System.Windows.Forms
         /// <param name="e"></param>
         private void Ribbon_Disposed(object sender, EventArgs e)
         {
-            if (_mouseHook != null)
-            {
-                _mouseHook.Dispose();
-            }
-
-            if (_keyboardHook != null)
-            {
-                _keyboardHook.Dispose();
-            }
+          
         }
 
         /// <summary>

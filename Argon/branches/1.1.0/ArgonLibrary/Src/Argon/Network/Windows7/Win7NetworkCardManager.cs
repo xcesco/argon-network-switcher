@@ -8,13 +8,14 @@ using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Argon.OperatingSystem;
 
-namespace Argon.OperatingSystem.WindowsXP
+namespace Argon.Network.Windows7
 {
     /// <summary>
     /// Manager for the Network Card Interfaces
     /// </summary>
-    public abstract class WinXPNetworkCardManager
+    public abstract class Win7NetworkCardManager
     {
         /// <summary>
         /// Gets the windows services list.
@@ -35,11 +36,11 @@ namespace Argon.OperatingSystem.WindowsXP
         /// <returns></returns>
         protected static List<WindowsNetworkCard> GetListFromWMI()
         {
-            SortedDictionary<uint,WindowsNetworkCard> dictionary=new SortedDictionary<uint,WindowsNetworkCard>();            
+            SortedDictionary<string,WindowsNetworkCard> dictionary=new SortedDictionary<string,WindowsNetworkCard>();            
            
             List<WindowsNetworkCard> lista = new List<WindowsNetworkCard>();
 
-            SelectQuery query = new SelectQuery("Win32_NetworkAdapter");//, "GUID is not null");
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter","GUID is not null");
             ManagementObjectSearcher search = new ManagementObjectSearcher(query);
 
             // 1 - Create list of cards
@@ -63,18 +64,20 @@ namespace Argon.OperatingSystem.WindowsXP
 
                 card = new WindowsNetworkCard();
 
-                //GUID is not supported in winxp
-                //card.Id = adapter.GUID;
+                //GUID is supported in win7
+                card.Id = adapter.GUID;
 
                 card.ViewId = fixViewId(adapter.Caption);
                 card.Name = adapter.Name;
                 card.HardwareName = fixHardwareName(adapter.Caption);
-                //card.Enabled = adapter.NetEnabled;
+                card.Enabled = adapter.NetEnabled;
                 card.NetConnectionStatus = adapter.NetConnectionStatus;
                 card.Index = adapter.Index;
 
                 card.PnpDeviceId = adapter.PNPDeviceID;
 
+                card.Description = adapter.NetConnectionID;
+                card.MacAddress = adapter.MACAddress;
                 //http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
                 /*
                  * "Ethernet 802.3"
@@ -92,17 +95,18 @@ namespace Argon.OperatingSystem.WindowsXP
 "CoWan"
 "1394"
                  * */
-                card.AdapterType=adapter.AdapterType;
 
-                card.Description = adapter.NetConnectionID;
-                card.MacAddress = adapter.MACAddress;
-                               
-                dictionary[card.Index]=card;
+                card.AdapterType = adapter.AdapterType;
+
+                if (!IsNetworkCardInRegistry(card)) continue;
+                // 2 - get more info from registry
+                MapDataFromRegistry(card);
+                dictionary[card.Id]=card;
             }
 
             // 2 - Get more info
             String id;
-            SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration");
+            SelectQuery query2 = new SelectQuery("Win32_NetworkAdapterConfiguration", "IPEnabled='TRUE'");
             ManagementObjectSearcher search2 = new ManagementObjectSearcher(query2);
 
             // find by index
@@ -110,53 +114,25 @@ namespace Argon.OperatingSystem.WindowsXP
             {
                 WmiNetworkAdapterConfiguration adapterConfigurator = new WmiNetworkAdapterConfiguration(item);
                 id = adapterConfigurator.SettingID;
-                
-                Debug.WriteLine("Config for " + adapterConfigurator.SettingID);
 
-                card = dictionary[adapterConfigurator.Index];
+                card = dictionary[id];
 
                 if (card != null)
-                {
-                    // set the uid
-                    card.Id = adapterConfigurator.SettingID;
-                    if (!IsNetworkCardInRegistry(card))
-                    {
-                        // it's not a network card
-                        dictionary.Remove(adapterConfigurator.Index);
-                        Debug.WriteLine("Config for " + adapterConfigurator.Caption + " is not a network card");
-                        continue;
-                    }
-                    
-                    card.WinsEnableLMHostsLookup = adapterConfigurator.WINSEnableLMHostsLookup;
-                    card.WinsHostLookupFile = adapterConfigurator.WINSHostLookupFile;
+                {                    
+                    card.WinsEnableLMHostsLookup =adapterConfigurator.WINSEnableLMHostsLookup;
+                    card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
                     card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
                     card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
                 }
-                else
-                {
-                    Debug.WriteLine("Config for " + adapterConfigurator.Caption + " not found");
-                }
             }
 
-            // every item withoud id is not a valid adapter
-            foreach (WindowsNetworkCard item in dictionary.Values)
-            {
-                if (!String.IsNullOrEmpty(item.Id))
-                {
-                    MapDataFromRegistry(item);
-                    lista.Add(item);
-                }
-            }
-            
-            
-
+            lista.AddRange(dictionary.Values);
+                          
             return lista;
         }
 
         internal static Boolean IsNetworkCardInRegistry(WindowsNetworkCard card)
         {
-            if (String.IsNullOrEmpty(card.Id)) return false;
-
             string sKey = @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\" + card.Id;
             return RegistryUtility.Exists(RegistryKeyType.LocalMachine, sKey);
         }

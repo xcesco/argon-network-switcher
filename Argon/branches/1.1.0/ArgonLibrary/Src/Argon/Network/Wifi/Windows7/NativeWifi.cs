@@ -7,7 +7,7 @@ using System.Threading;
 using System.Text;
 using Argon.Network;
 
-namespace NativeWifi
+namespace Argon.Network.Wifi.Windows7
 {
     /// <summary>
     /// Represents a client to the Zeroconf (Native Wifi) service.

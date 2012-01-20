@@ -13,6 +13,7 @@ namespace Argon.OperatingSystem
         public void TestInfo()
         {
             Console.WriteLine(OSInfo.Name);
+            Console.WriteLine(OSInfo.OperatingSystem);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Argon.Windows.Forms
     /// <summary>
     /// Manage the list of profiles defined.
     /// </summary>
-    public partial class FormProfiles : DockContent
+    public partial class FormProfiles : ArgonDockContent
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FormProfiles"/> class.
