@@ -299,7 +299,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileView.AltKey = null;
             this.rbtnProfileView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnProfileView.Image = global::Argon.Windows.Forms.Properties.Resources.index_view;
+            this.rbtnProfileView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnProfileView.Image")));
             this.rbtnProfileView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileView.SmallImage")));
             this.rbtnProfileView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileView.Tag = null;
@@ -704,7 +704,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonPanel rpOperations;
         private System.Windows.Forms.RibbonTab rtViews;
         private System.Windows.Forms.RibbonPanel rpViews;
-        private System.Windows.Forms.RibbonPanel rpProfilesCollection;
         private System.Windows.Forms.RibbonTab rtOptions;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
         private System.Windows.Forms.RibbonTab rtHelp;
@@ -736,6 +735,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnViewProfileServices;
         private System.Windows.Forms.RibbonButton rbtnViewProfileApplications;
         private System.Windows.Forms.RibbonButton rbtnViewProfileDisabledAdapters;
+        public System.Windows.Forms.RibbonPanel rpProfilesCollection;
 
         public DockPanel Pannello
         {
