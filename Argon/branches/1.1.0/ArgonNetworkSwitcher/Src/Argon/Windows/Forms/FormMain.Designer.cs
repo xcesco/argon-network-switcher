@@ -56,6 +56,7 @@ namespace Argon.Windows.Forms
             this.ribbon = new System.Windows.Forms.Ribbon();
             this.rbtnProfilesSave = new System.Windows.Forms.RibbonButton();
             this.rbtnProfilesLoad = new System.Windows.Forms.RibbonButton();
+            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.rtProfiles = new System.Windows.Forms.RibbonTab();
             this.rpOperations = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
@@ -90,7 +91,6 @@ namespace Argon.Windows.Forms
             this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpDonate = new System.Windows.Forms.RibbonButton();
             this.pnlRibbonContainer = new System.Windows.Forms.Panel();
-            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -259,6 +259,22 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesLoad.ToolTipImage = null;
             this.rbtnProfilesLoad.ToolTipTitle = "Load profiles";
             this.rbtnProfilesLoad.Click += new System.EventHandler(this.btnAllProfileLoad_Click);
+            // 
+            // rbtnSmartView
+            // 
+            this.rbtnSmartView.AltKey = null;
+            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
+            this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
+            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSmartView.Tag = null;
+            this.rbtnSmartView.Text = "ribbonButton1";
+            this.rbtnSmartView.ToolTip = null;
+            this.rbtnSmartView.ToolTipImage = null;
+            this.rbtnSmartView.ToolTipTitle = null;
+            this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
             // 
             // rtProfiles
             // 
@@ -668,20 +684,6 @@ namespace Argon.Windows.Forms
             this.pnlRibbonContainer.Name = "pnlRibbonContainer";
             this.pnlRibbonContainer.Size = new System.Drawing.Size(1016, 140);
             this.pnlRibbonContainer.TabIndex = 15;
-            // 
-            // rbtnSmartView
-            // 
-            this.rbtnSmartView.AltKey = null;
-            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
-            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
-            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnSmartView.Tag = null;
-            this.rbtnSmartView.Text = "ribbonButton1";
-            this.rbtnSmartView.ToolTip = null;
-            this.rbtnSmartView.ToolTipImage = null;
-            this.rbtnSmartView.ToolTipTitle = null;
             // 
             // FormMain
             // 

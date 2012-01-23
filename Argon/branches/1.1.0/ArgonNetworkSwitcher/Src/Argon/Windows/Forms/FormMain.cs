@@ -406,6 +406,31 @@ namespace Argon.Windows.Forms
         public void btnRunProfile_Click(object sender, EventArgs e)
         {
         }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnSmartView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnSmartView_Click(object sender, EventArgs e)
+        {
+            if (rbtnSmartView.Checked)
+            {
+                Size = OldSize;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                OldSize = Size;
+                this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                Height = pnlRibbonContainer.Height + SystemInformation.CaptionHeight+4;
+                
+            }
+
+            rbtnSmartView.Checked = !rbtnSmartView.Checked;
+        }
+
+        private Size OldSize { get; set; }
         
     }
 }
