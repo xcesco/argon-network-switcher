@@ -267,7 +267,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
             this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
+            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
             this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSmartView.Tag = null;
             this.rbtnSmartView.Text = "ribbonButton1";
