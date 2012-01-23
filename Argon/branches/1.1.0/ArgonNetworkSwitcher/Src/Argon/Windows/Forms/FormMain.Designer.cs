@@ -90,6 +90,7 @@ namespace Argon.Windows.Forms
             this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpDonate = new System.Windows.Forms.RibbonButton();
             this.pnlRibbonContainer = new System.Windows.Forms.Panel();
+            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -212,6 +213,7 @@ namespace Argon.Windows.Forms
             this.ribbon.QuickAcessToolbar.Image = null;
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnProfilesSave);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnProfilesLoad);
+            this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnSmartView);
             this.ribbon.QuickAcessToolbar.Tag = null;
             this.ribbon.QuickAcessToolbar.Text = null;
             this.ribbon.QuickAcessToolbar.ToolTip = null;
@@ -667,6 +669,20 @@ namespace Argon.Windows.Forms
             this.pnlRibbonContainer.Size = new System.Drawing.Size(1016, 140);
             this.pnlRibbonContainer.TabIndex = 15;
             // 
+            // rbtnSmartView
+            // 
+            this.rbtnSmartView.AltKey = null;
+            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
+            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
+            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSmartView.Tag = null;
+            this.rbtnSmartView.Text = "ribbonButton1";
+            this.rbtnSmartView.ToolTip = null;
+            this.rbtnSmartView.ToolTipImage = null;
+            this.rbtnSmartView.ToolTipTitle = null;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -736,6 +752,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnViewProfileApplications;
         private System.Windows.Forms.RibbonButton rbtnViewProfileDisabledAdapters;
         public System.Windows.Forms.RibbonPanel rpProfilesCollection;
+        private System.Windows.Forms.RibbonButton rbtnSmartView;
 
         public DockPanel Pannello
         {
