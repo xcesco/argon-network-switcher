@@ -418,12 +418,14 @@ namespace Argon.Windows.Forms
             {
                 Size = OldSize;
                 this.FormBorderStyle = FormBorderStyle.Sizable;
+                rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
             }
             else
             {
                 OldSize = Size;
                 this.FormBorderStyle = FormBorderStyle.FixedDialog;
                 Height = pnlRibbonContainer.Height + SystemInformation.CaptionHeight+4;
+                rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
                 
             }
 
