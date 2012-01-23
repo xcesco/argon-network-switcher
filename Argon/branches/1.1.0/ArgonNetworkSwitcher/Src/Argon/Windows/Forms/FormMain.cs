@@ -402,6 +402,10 @@ namespace Argon.Windows.Forms
 
             rbtnViewProfileNetwork.Checked = !rbtnViewProfileNetwork.Checked;
         }
-      
+
+        public void btnRunProfile_Click(object sender, EventArgs e)
+        {
+        }
+        
     }
 }
