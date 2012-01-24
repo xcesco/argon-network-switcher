@@ -17,9 +17,7 @@ namespace Argon.Controllers
             newProfile.Id=Controller.Instance.CreateNewProfileId();
             newProfile.Name = "Copy of " + newProfile.Name;
 
-            _controller.Model.AddProfile(newProfile);
-
-            
+            _controller.Model.AddProfile(newProfile);            
         }
     }
 }

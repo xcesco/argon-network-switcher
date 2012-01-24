@@ -96,7 +96,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void RefreshAll()
         {
-            Controller.Instance.ActionRefreshNetworkAdapters(Controller.Instance.View.ViewAdapters.listView);
+            Controller.Instance.ActionRefreshNetworkAdapters();
         }
 
         /// <summary>

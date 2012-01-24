@@ -29,7 +29,7 @@ namespace Argon.Windows.Forms
 
         private void FormAdapters_Load(object sender, EventArgs e)
         {
-            Controller.Instance.ActionRefreshNetworkAdapters(listView);
+            Controller.Instance.ActionRefreshNetworkAdapters();
         }
 
         private void actionDisplayCardInfo_Click(object sender, EventArgs e)

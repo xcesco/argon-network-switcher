@@ -150,8 +150,14 @@ namespace Argon.Controllers
 
         public static void ApplyProfile()
         {
-            NetworkProfile profile=Controller.Instance.Model.CurrentProfile;
+            NetworkProfile profile = Controller.Instance.Model.CurrentProfile;
 
+            ApplyProfile(profile);
+        }
+
+        public static void ApplyProfile(NetworkProfile profile)
+        {
+            
             if (profile != null)
             {
                 //form.btnSave_Click(null,null);

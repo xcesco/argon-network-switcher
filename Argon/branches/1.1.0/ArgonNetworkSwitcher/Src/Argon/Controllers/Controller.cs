@@ -199,8 +199,9 @@ namespace Argon.Controllers
         /// <summary>
         /// Aggiorna la lista dei NIC presenti sulla macchina
         /// </summary>
-        public void ActionRefreshNetworkAdapters(ObjectListView listView)
+        public void ActionRefreshNetworkAdapters()
         {
+            ObjectListView listView=Controller.Instance.View.ViewAdapters.listView;
             List<WindowsNetworkCard> lista = _model.GetNetworkAdapters();
             listView.ClearObjects();
             listView.AddObjects(lista);
@@ -257,22 +258,33 @@ namespace Argon.Controllers
         }
 
         /// <summary>
-        /// Aggiorna la lista dei NIC presenti sulla macchina
+        /// Refresh profiles
         /// </summary>
         public void ActionRefreshProfiles()
         {
+            RibbonPanel rp = _view.ViewMain.rpProfilesCollection;
+            RibbonItemCollection rpc = rp.Items;
+            RibbonButton rButton=null;
+
+            rpc.Clear();
             // Lista dei profili nell'apposita finestra
             View.ViewProfiles.listView.ClearObjects();
-
-            /*
-            ColumnHeader column = _viewProfiles.listView.Columns.Add("Name");
-            column.Width = 200;
-            ListViewItem app;
-*/
+           
             foreach (NetworkProfile item in _model.Profiles)
             {
                 View.ViewProfiles.listView.AddObject(item);
+                
+                rButton=new RibbonButton();
+
+                rButton.Text=item.Name;
+                rButton.Tag=item;
+                rButton.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+                rButton.Click += new System.EventHandler(Controller.Instance.View.ViewMain.btnRunProfile_Click);
+                    // create in ribbon panel
+                rpc.Add(rButton);
             }
+
+            
            
         }
 

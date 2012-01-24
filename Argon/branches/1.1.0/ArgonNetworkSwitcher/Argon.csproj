@@ -219,7 +219,7 @@
     <Compile Include="Src\Argon\Windows\Forms\ToolStripButtonManager.cs" />
     <Compile Include="Src\Argon\Windows\Forms\ViewRender.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -291,6 +291,49 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\place_house24x24.png" />
+    <None Include="Resources\place_office.png" />
+    <None Include="Resources\place_work24x24.png" />
+    <None Include="Resources\profile_add24x24.png" />
+    <None Include="Resources\profile_delete24x24.png" />
+    <None Include="Resources\profile_down24x24.png" />
+    <None Include="Resources\profile_new24x24.png" />
+    <None Include="Resources\profile_preferences24x24.png" />
+    <None Include="Resources\profile_refresh24x24.png" />
+    <None Include="Resources\profile_replace24x24.png" />
+    <None Include="Resources\profile_up24x24.png" />
+    <None Include="Resources\profile_view24x24.png" />
+    <None Include="Resources\profile24x24.png" />
+    <None Include="Resources\document_check24x24.png" />
+    <None Include="Resources\document_check32x32.png" />
+    <None Include="Resources\document_connection32x32.png" />
+    <None Include="Resources\document_delete24x24.png" />
+    <None Include="Resources\document_delete32x32.png" />
+    <None Include="Resources\document_edit24x24.png" />
+    <None Include="Resources\document_edit32x32.png" />
+    <None Include="Resources\document_gear24x24.png" />
+    <None Include="Resources\document_gear32x32.png" />
+    <None Include="Resources\document_new24x24.png" />
+    <None Include="Resources\document_new32x32.png" />
+    <None Include="Resources\document_refresh24x24.png" />
+    <None Include="Resources\document_refresh32x32.png" />
+    <None Include="Resources\document_view24x24.png" />
+    <None Include="Resources\document_view32x32.png" />
+    <None Include="Resources\document24x24.png" />
+    <None Include="Resources\document32x32.png" />
+    <None Include="Resources\lightbulb_on_16x16.png" />
+    <None Include="Resources\lightbulb_16x16.png" />
+    <None Include="Resources\document_add48x48.png" />
+    <None Include="Resources\document_check48x48.png" />
+    <None Include="Resources\document_connection48x48.png" />
+    <None Include="Resources\document_delete48x48.png" />
+    <None Include="Resources\document_edit48x48.png" />
+    <None Include="Resources\document_gear48x48.png" />
+    <None Include="Resources\document_new48x48.png" />
+    <None Include="Resources\document_ok48x48.png" />
+    <None Include="Resources\document_plain_new48x48.png" />
+    <None Include="Resources\document_refresh48x48.png" />
+    <None Include="Resources\document_view48x48.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <Content Include="todolist.txt" />
@@ -327,7 +370,6 @@
     <None Include="Resources\gear_run1.png" />
     <Content Include="Resources\gear_stop.png" />
     <None Include="Resources\index_add.png" />
-    <None Include="Resources\index_view.png" />
     <None Include="Resources\index_delete.png" />
     <None Include="Resources\index_preferences.png" />
     <Content Include="Resources\media_play_green.png" />
