@@ -380,28 +380,7 @@ namespace Argon.Windows.Forms
             //rbtnViewProfiles.Checked = !rbtnViewProfiles.Checked;
         }
 
-        private void rbtnViewProfileNetwork_Click(object sender, EventArgs e)
-        {
-            List<FormProfile> list = Controller.Instance.View.ListViewProfile;
-            if (rbtnViewProfileNetwork.Checked)
-            {
-                foreach (FormProfile item in list)
-                {
-                    //item.tabControl
-                    item.HideTab(item.tp1NIC);
-                }
-            }
-            else
-            {
-                foreach (FormProfile item in list)
-                {
-                    //item.tabControl
-                    item.ShowTab(item.tp1NIC);
-                }
-            }
-
-            rbtnViewProfileNetwork.Checked = !rbtnViewProfileNetwork.Checked;
-        }
+       
 
         public void btnRunProfile_Click(object sender, EventArgs e)
         {
