@@ -346,6 +346,9 @@ namespace Argon.OperatingSystem
             set { _netConnectionStatus = value; }
         }
 
+        /// <summary>
+        /// Gets the status.
+        /// </summary>
         public String Status
         {
             get
@@ -368,6 +371,21 @@ namespace Argon.OperatingSystem
                 }
 
                 return "Unknown";
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="WindowsNetworkCard"/> is connected.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if connected; otherwise, <c>false</c>.
+        /// </value>
+        public bool Connected
+        {
+            get
+            {
+                if (_netConnectionStatus == 2) return true;
+                return false;
             }
         }
 

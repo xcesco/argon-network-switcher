@@ -10,7 +10,7 @@ using Argon.OperatingSystem;
 using System.IO;
 using System.ComponentModel;
 using Argon.Windows.Forms;
-using Argon.Model;
+using Argon.Network.Profile;
 using BrightIdeasSoftware;
 
 namespace Argon.Controllers

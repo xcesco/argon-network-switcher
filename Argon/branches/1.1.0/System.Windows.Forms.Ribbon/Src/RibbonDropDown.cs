@@ -443,6 +443,9 @@ namespace System.Windows.Forms
             {
                 item.SetSelected(false);
             }
+
+            // Cesco: closed, otherwise it remains opened
+            this.Close();
         }
 
         #endregion

@@ -5,7 +5,7 @@ using Argon.OperatingSystem;
 using Argon.OperatingSystem.WindowsXP;
 using Argon.OperatingSystem.Windows7;
 
-namespace Argon.OperatingSystem
+namespace Argon.Network
 {
     /// <summary>
     /// Helper for network adapters

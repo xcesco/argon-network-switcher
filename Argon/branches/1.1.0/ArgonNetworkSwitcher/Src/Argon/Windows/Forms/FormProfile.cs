@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Drawing.Printing;
 using Argon.OperatingSystem;
-using Argon.Model;
+using Argon.Network.Profile;
 using Argon.Controllers;
 using Argon.Network;
 

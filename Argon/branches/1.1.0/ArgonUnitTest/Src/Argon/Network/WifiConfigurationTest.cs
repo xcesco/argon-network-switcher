@@ -21,9 +21,7 @@ namespace Argon.Network.Wifi.Windows7
         [TestMethod]
         public void TestMethod()
         {         
-            WlanClient client = new WlanClient();
-
-            
+            WlanClient client = new WlanClient();            
             
             foreach ( WlanClient.WlanInterface wlanIface in client.Interfaces )
             {

@@ -6,7 +6,7 @@ using Argon.OperatingSystem;
 using Argon.FileSystem;
 using System.Windows.Forms;
 
-namespace Argon.Model
+namespace Argon.Network.Profile
 {
     // declare a delegate for the bookpricechanged event
     public delegate void SelectProfileHandler(NetworkProfile objectsender, EventArgs e);
