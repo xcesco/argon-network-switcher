@@ -7,7 +7,7 @@ using System.ComponentModel;
 using Argon.Windows.Forms;
 using System.Drawing.Printing;
 using Argon.Controllers;
-using Argon.Model;
+using Argon.Network.Profile;
 using Argon.Network;
 using System.Collections;
 using BrightIdeasSoftware;

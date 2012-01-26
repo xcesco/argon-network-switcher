@@ -1,4 +1,5 @@
-﻿using Argon.Model;
+﻿using Argon.Network.Profile;
+
 namespace Argon.Controllers
 {
 

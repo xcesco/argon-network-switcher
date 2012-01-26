@@ -4,7 +4,7 @@ using System.Text;
 using Argon.OperatingSystem;
 using Argon.Network;
 
-namespace Argon.Model
+namespace Argon.Network.Profile
 {
 
     // declare a delegate for the bookpricechanged event

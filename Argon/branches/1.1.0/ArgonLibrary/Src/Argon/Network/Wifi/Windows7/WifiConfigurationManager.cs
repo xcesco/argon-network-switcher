@@ -28,6 +28,12 @@ namespace Argon.Network.Wifi.Windows7
             return buffer.ToUpper();
         }
 
+        /// <summary>
+        /// Sets the wifi profile.
+        /// </summary>
+        /// <param name="guid">The GUID.</param>
+        /// <param name="profileName">Name of the profile.</param>
+        /// <returns></returns>
         public static Boolean SetWifiProfile(string guid, string profileName)
         {
             WlanClient client = new WlanClient();
@@ -54,6 +60,52 @@ namespace Argon.Network.Wifi.Windows7
             return false;
         }
 
+        /// <summary>
+        /// Gets the active wifi profile.
+        /// </summary>
+        /// <returns></returns>
+        public static WifiProfile GetActiveWifiProfile()
+        {
+            WlanClient client = new WlanClient();
+            WlanClient.WlanInterface[] interfaces = client.Interfaces;           
+
+            WifiProfile profile=null;
+            String currentProfile = null;
+
+            foreach (WlanClient.WlanInterface card in interfaces)
+            {
+                try
+                {
+                    currentProfile = null;
+                    currentProfile = card.CurrentConnection.profileName;
+                    if (String.IsNullOrEmpty(currentProfile)) continue;
+                } catch(Exception)
+                {
+                    continue;
+                }
+                
+                profile = new WifiProfile();
+
+                profile.Name = currentProfile;
+
+                profile.InterfaceName = card.InterfaceName;
+                profile.InterfaceGuid = "{" + card.InterfaceGuid.ToString().ToUpper() + "}";
+                profile.InterfaceDescription = card.InterfaceDescription;
+
+                profile.InterfaceMAC = GetStringForMAC(card.NetworkInterface.GetPhysicalAddress().ToString());
+                
+                profile.Connected = true;
+                break;
+            }
+
+            return profile;
+        }
+
+        /// <summary>
+        /// Gets the wifi profile list.
+        /// </summary>
+        /// <param name="guid">The GUID.</param>
+        /// <returns></returns>
         public static List<WifiProfile> GetWifiProfileList(string guid)
         {
             WlanClient client = new WlanClient();
@@ -83,11 +135,9 @@ namespace Argon.Network.Wifi.Windows7
                     if (guid != null && !profile.InterfaceGuid.Equals(guid)) break; 
                     
                     string name = profileInfo.profileName; // this is typically the network's SSID
-                    //string xml = card.GetProfileXml(profileInfo.profileName);
-
+                  
                     profile.Name = name;
-                   // profile.Xml = xml;
-
+                  
                     if (profile.Name.Equals(currentProfile))
                     {
                         profile.Connected = true;

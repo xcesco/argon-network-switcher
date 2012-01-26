@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using Argon.OperatingSystem;
 using System.Diagnostics;
-using Argon.Model;
+using Argon.Network.Profile;
 using Argon.Network;
 using System.IO;
 

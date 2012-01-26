@@ -106,9 +106,6 @@
     <Compile Include="Src\Argon\Controllers\PersistenceController.cs" />
     <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
     <Compile Include="Src\Argon\Controllers\ViewController.cs" />
-    <Compile Include="Src\Argon\Model\NetworkConfiguration.cs" />
-    <Compile Include="Src\Argon\Model\NetworkProfile.cs" />
-    <Compile Include="Src\Argon\Model\NetworkProfileCollection.cs" />
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.cs">
       <SubType>UserControl</SubType>
     </Compile>

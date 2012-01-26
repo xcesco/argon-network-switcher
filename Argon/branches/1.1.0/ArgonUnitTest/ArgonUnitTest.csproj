@@ -48,6 +48,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\Argon\Network\AutoDetectTest.cs" />
     <Compile Include="Src\Argon\Network\WifiConfigManagerTest.cs" />
     <Compile Include="Src\Argon\Network\WifiConfigurationTest.cs" />
     <Compile Include="Src\Argon\Network\WifiTest.cs" />

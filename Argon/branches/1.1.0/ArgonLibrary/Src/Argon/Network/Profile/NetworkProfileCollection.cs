@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Argon.Model
+namespace Argon.Network.Profile
 {
     public class NetworkProfileCollection : ICollection<NetworkProfile>
     {
