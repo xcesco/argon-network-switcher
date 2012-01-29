@@ -31,7 +31,7 @@ namespace Argon.Network.Wifi.Windows7
 
             if (item != null)
             {
-                Console.WriteLine("Profile name '{0}'", item.Name);
+                Console.WriteLine("Profile name '{0}'", item.SSID);
                 Console.WriteLine("\tName '{0}' Guid '{1}' \tDescription '{2}' \tMAC '{3}'", item.InterfaceName, item.InterfaceGuid, item.InterfaceDescription, item.InterfaceMAC);
                 Console.WriteLine("\tConnected {0}", item.Connected);
                 //Console.WriteLine("Name [{0}]", item.Name);
@@ -52,7 +52,7 @@ namespace Argon.Network.Wifi.Windows7
 
             foreach (WifiProfile item in items)
             {
-                Console.WriteLine("Profile name '{0}'", item.Name);
+                Console.WriteLine("Profile name '{0}'", item.SSID);
                 Console.WriteLine("\tName '{0}' Guid '{1}' \tDescription '{2}' \tMAC '{3}'", item.InterfaceName, item.InterfaceGuid, item.InterfaceDescription, item.InterfaceMAC);
                 Console.WriteLine("\tConnected {0}", item.Connected);
                 //Console.WriteLine("Name [{0}]", item.Name);

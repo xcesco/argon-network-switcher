@@ -10,7 +10,7 @@ namespace Argon.Network.Wifi
     /// </summary>
     public class WifiProfile
     {
-        public string Name { get; set; }
+        public string SSID { get; set; }
         
         public string InterfaceName { get; set; }
 

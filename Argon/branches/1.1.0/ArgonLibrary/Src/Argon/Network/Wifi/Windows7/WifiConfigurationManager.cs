@@ -86,7 +86,7 @@ namespace Argon.Network.Wifi.Windows7
                 
                 profile = new WifiProfile();
 
-                profile.Name = currentProfile;
+                profile.SSID = currentProfile;
 
                 profile.InterfaceName = card.InterfaceName;
                 profile.InterfaceGuid = "{" + card.InterfaceGuid.ToString().ToUpper() + "}";
@@ -136,9 +136,9 @@ namespace Argon.Network.Wifi.Windows7
                     
                     string name = profileInfo.profileName; // this is typically the network's SSID
                   
-                    profile.Name = name;
+                    profile.SSID = name;
                   
-                    if (profile.Name.Equals(currentProfile))
+                    if (profile.SSID.Equals(currentProfile))
                     {
                         profile.Connected = true;
                     }
