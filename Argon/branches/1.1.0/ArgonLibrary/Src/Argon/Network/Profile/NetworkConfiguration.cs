@@ -44,12 +44,10 @@ namespace Argon.Network.Profile
                 return null;
             }
         }
-
-        protected NetworkProfileCollection _profiles;
-
+       
         public NetworkConfiguration()
         {
-            _profiles = new NetworkProfileCollection();
+           Profiles = new List<NetworkProfile>();
         }
 
         /// <summary>
@@ -97,13 +95,10 @@ namespace Argon.Network.Profile
 
         public void AddProfile(NetworkProfile profile)
         {
-            _profiles.Add(profile);
+            Profiles.Add(profile);
         }
 
-        public NetworkProfileCollection Profiles
-        {
-            get { return _profiles; }
-        }
+        public List<NetworkProfile> Profiles { get; set; }
 
         // declare the bookpricechanged event using the bookpricechangeddelegate
         public event SelectProfileHandler SelectProfileEvent;

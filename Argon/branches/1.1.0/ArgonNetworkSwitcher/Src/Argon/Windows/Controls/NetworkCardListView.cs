@@ -35,11 +35,11 @@ namespace Argon.Windows.Controls
             set { listView.CheckBoxes = value; }
         }
 
-        public IList<IWindowsNetworkCardInfo> SelectedItems
+        public List<IWindowsNetworkCardInfo> SelectedItems
         {
             get
             {
-                IList<IWindowsNetworkCardInfo> list = new List<IWindowsNetworkCardInfo>();
+                List<IWindowsNetworkCardInfo> list = new List<IWindowsNetworkCardInfo>();
 
                 foreach (OLVListItem item1 in listView.Items)
                 {

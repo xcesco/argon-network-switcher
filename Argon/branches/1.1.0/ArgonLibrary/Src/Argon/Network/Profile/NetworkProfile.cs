@@ -15,14 +15,9 @@ namespace Argon.Network.Profile
     /// 
     /// </summary>
     public class NetworkProfile
-    {
-        protected int _id;
+    {        
+        public int Id { get; set; }
 
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
         private string _name;
 
         public string Name
@@ -31,52 +26,25 @@ namespace Argon.Network.Profile
             set { _name = value; FireNameChangeEvent(new EventArgs()); }
         }
 
-        private IWindowsNetworkCardInfo _networkCardInfo;
-
         public IWindowsNetworkCardInfo NetworkCardInfo
         {
-            get { return _networkCardInfo; }
-            set { _networkCardInfo = value; }
+            get;
+            set;
         }
-
-        private IList<IWindowsNetworkCardInfo> disabledNetworkCards;
-
-        public IList<IWindowsNetworkCardInfo> DisabledNetworkCards
-        {
-            get { return disabledNetworkCards; }
-            set { disabledNetworkCards = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected ProxyConfiguration _proxyConfig;
-
+        
+        public List<IWindowsNetworkCardInfo> DisabledNetworkCards { get; set; }
 
         /// <summary>
         /// Gets or sets the proxy config.
         /// </summary>
         /// <value>The proxy config.</value>
-        public ProxyConfiguration ProxyConfig
-        {
-            get { return _proxyConfig; }
-            set { _proxyConfig = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected String _defaultPrinter;
+        public ProxyConfiguration ProxyConfig { get; set; }
 
         /// <summary>
         /// Gets or sets the default printer.
         /// </summary>
         /// <value>The default printer.</value>
-        public String DefaultPrinter
-        {
-            get { return _defaultPrinter; }
-            set { _defaultPrinter = value; }
-        }
+        public String DefaultPrinter { get; set; }
 
         protected bool _isNew;
 
@@ -85,20 +53,25 @@ namespace Argon.Network.Profile
         /// </summary>
         public NetworkProfile()
         {
-            _id = 0;
-            _name = "";
+            Id = 0;
+            Name = "";
 
-            _networkCardInfo = new NetworkCardInfoImpl();
-            _proxyConfig = new ProxyConfiguration();
-            _serviceList = new List<IWindowsServiceInfo>();
-            _execList = new List<WindowsExecutable>();
-            _driveMapList = new List<DriveMap>();
+            NetworkCardInfo = new NetworkCardInfoImpl();
+            ProxyConfig = new ProxyConfiguration();
+            ServiceList = new List<IWindowsServiceInfo>();
+            ExecList = new List<WindowsExecutable>();
+            DriveMapList = new List<DriveMap>();
 
-            _defaultPrinter = "";
+            DefaultPrinter = "";
 
-            disabledNetworkCards = new List<IWindowsNetworkCardInfo>();
+            DisabledNetworkCards = new List<IWindowsNetworkCardInfo>();
         }
 
+        /// <summary>
+        /// Copies the specified origin.
+        /// </summary>
+        /// <param name="origin">The origin.</param>
+        /// <returns></returns>
         public static NetworkProfile Copy(NetworkProfile origin)
         {
             NetworkProfile profile = new NetworkProfile();
@@ -137,36 +110,41 @@ namespace Argon.Network.Profile
             return profile;
         }
 
-
-
+        /// <summary>
+        /// Gets a value indicating whether this instance is new.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is new; otherwise, <c>false</c>.
+        /// </value>
         public bool IsNew
         {
-            get { return _id == 0? true :false; }            
+            get { return Id == 0? true :false; }            
         }
 
-        protected List<DriveMap> _driveMapList;
 
-        public List<DriveMap> DriveMapList
-        {
-            get { return _driveMapList; }
-            set { _driveMapList = value; }
-        }
+        /// <summary>
+        /// Gets or sets the drive map list.
+        /// </summary>
+        /// <value>
+        /// The drive map list.
+        /// </value>
+        public List<DriveMap> DriveMapList { get; set; }
 
-        protected List<IWindowsServiceInfo> _serviceList;
+        /// <summary>
+        /// Gets or sets the service list.
+        /// </summary>
+        /// <value>
+        /// The service list.
+        /// </value>
+        public List<IWindowsServiceInfo> ServiceList { get; set; }
 
-        public List<IWindowsServiceInfo> ServiceList
-        {
-            get { return _serviceList; }
-            set { _serviceList = value; }
-        }
-
-        protected List<WindowsExecutable> _execList;
-
-        public List<WindowsExecutable> ExecList
-        {
-            get { return _execList; }
-            set { _execList = value; }
-        }        
+        /// <summary>
+        /// Gets or sets the exec list.
+        /// </summary>
+        /// <value>
+        /// The exec list.
+        /// </value>
+        public List<WindowsExecutable> ExecList { get; set; }
         
         // declare the bookpricechanged event using the bookpricechangeddelegate
         public event NameChangedHandler NameChangeEvent;
@@ -181,7 +159,15 @@ namespace Argon.Network.Profile
             {
                 NameChangeEvent(this, e);
             }
-        } 
+        }
+
+        /// <summary>
+        /// Gets or sets the associated wifi profile.
+        /// </summary>
+        /// <value>
+        /// The associated wifi profile.
+        /// </value>
+        public string AssociatedWifiSSID { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿DONE
 ----
-Introduced Smart View: ability to reduce window size and view only run functionality (run).
+- Introduced Smart View: ability to reduce window size and view only run functionality (run).
+- Introduced first auto detect algorithm for networks. Now it works only for wifi.
 
 TODO
 ----

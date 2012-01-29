@@ -46,7 +46,8 @@
     <Compile Include="Src\Argon\Common\FormsUtility.cs" />
     <Compile Include="Src\Argon\Network\Profile\NetworkConfiguration.cs" />
     <Compile Include="Src\Argon\Network\Profile\NetworkProfile.cs" />
-    <Compile Include="Src\Argon\Network\Profile\NetworkProfileCollection.cs" />
+    <Compile Include="Src\Argon\Network\Profile\NetworkProfileHelper.cs" />
+    <Compile Include="Src\Argon\Network\Wifi\WifiProfileHelper.cs" />
     <Compile Include="Src\Argon\Network\Wifi\Windows7\NativeWifiInterop.cs" />
     <Compile Include="Src\Argon\Network\Wifi\Windows7\NativeWifi.cs" />
     <Compile Include="Src\Argon\Network\Wifi\Windows7\WifiConfigurationManager.cs" />

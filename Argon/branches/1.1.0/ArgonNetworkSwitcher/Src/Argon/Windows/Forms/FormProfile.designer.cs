@@ -399,7 +399,7 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
-            this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
+            //this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
             this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
             this.networkCardListView.TabIndex = 0;
             // 
