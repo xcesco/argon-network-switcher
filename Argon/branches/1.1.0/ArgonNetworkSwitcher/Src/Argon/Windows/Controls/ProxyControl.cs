@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using Argon.OperatingSystem;
-using Argon.Network;
+using Argon.OperatingSystem.Network;
 
 namespace Argon.Windows.Controls
 {

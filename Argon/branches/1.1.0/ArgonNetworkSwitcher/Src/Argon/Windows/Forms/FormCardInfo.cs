@@ -9,6 +9,8 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.Net.NetworkInformation;
 using Argon.OperatingSystem;
 using Argon.Controllers;
+using Argon.OperatingSystem.Network;
+
 
 namespace Argon.Windows.Forms
 {

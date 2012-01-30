@@ -5,10 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.OperatingSystem;
 using System.IO;
-using Argon.Network.Wifi;
-using Argon.Network.Wifi.Windows7;
-using Argon.Network.Profile;
 using System.Net.NetworkInformation;
+using Argon.OperatingSystem.Network.Profile;
 
 namespace Argon.Network
 {

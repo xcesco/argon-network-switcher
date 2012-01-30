@@ -59,28 +59,28 @@ namespace Argon.Windows.Forms
             this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.rtProfiles = new System.Windows.Forms.RibbonTab();
             this.rpProfilesCollection = new System.Windows.Forms.RibbonPanel();
-            this.rtEdit = new System.Windows.Forms.RibbonTab();
-            this.rpOperations = new System.Windows.Forms.RibbonPanel();
+            this.rtOperations = new System.Windows.Forms.RibbonTab();
+            this.rpProfile = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileView = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileDelete = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileSave = new System.Windows.Forms.RibbonButton();
             this.rsProfileSeparator = new System.Windows.Forms.RibbonSeparator();
             this.rbtnProfileRun = new System.Windows.Forms.RibbonButton();
-            this.rbtnProfileRefresh = new System.Windows.Forms.RibbonButton();
+            this.rpCards = new System.Windows.Forms.RibbonPanel();
+            this.rbtnCardsRefresh = new System.Windows.Forms.RibbonButton();
+            this.rbtnCardView = new System.Windows.Forms.RibbonButton();
+            this.rpNetworkCard = new System.Windows.Forms.RibbonPanel();
+            this.rpConsole = new System.Windows.Forms.RibbonPanel();
+            this.rtViews = new System.Windows.Forms.RibbonTab();
             this.rpViews = new System.Windows.Forms.RibbonPanel();
             this.rbtnViewConsole = new System.Windows.Forms.RibbonButton();
             this.rbtnViewProfiles = new System.Windows.Forms.RibbonButton();
             this.rbtnViewNICs = new System.Windows.Forms.RibbonButton();
-            this.rpCards = new System.Windows.Forms.RibbonPanel();
-            this.rbtnCardsRefresh = new System.Windows.Forms.RibbonButton();
-            this.rbtnCardView = new System.Windows.Forms.RibbonButton();
-            this.rtOptions = new System.Windows.Forms.RibbonTab();
-            this.rtHelp = new System.Windows.Forms.RibbonTab();
             this.rpHelp = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnCheckUpdate = new System.Windows.Forms.RibbonButton();
-            this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
-            this.rbtnHelpDonate = new System.Windows.Forms.RibbonButton();
+            this.rbtnDonate = new System.Windows.Forms.RibbonButton();
             this.pnlRibbonContainer = new System.Windows.Forms.Panel();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
@@ -213,9 +213,8 @@ namespace Argon.Windows.Forms
             this.ribbon.Size = new System.Drawing.Size(1016, 138);
             this.ribbon.TabIndex = 12;
             this.ribbon.Tabs.Add(this.rtProfiles);
-            this.ribbon.Tabs.Add(this.rtEdit);
-            this.ribbon.Tabs.Add(this.rtOptions);
-            this.ribbon.Tabs.Add(this.rtHelp);
+            this.ribbon.Tabs.Add(this.rtOperations);
+            this.ribbon.Tabs.Add(this.rtViews);
             this.ribbon.TabSpacing = 6;
             this.ribbon.Text = "ribbon";
             // 
@@ -276,28 +275,29 @@ namespace Argon.Windows.Forms
             // rpProfilesCollection
             // 
             this.rpProfilesCollection.Tag = null;
-            this.rpProfilesCollection.Text = "Profiles";
+            this.rpProfilesCollection.Text = "Run";
             // 
-            // rtEdit
+            // rtOperations
             // 
-            this.rtEdit.Panels.Add(this.rpOperations);            
-            this.rtEdit.Panels.Add(this.rpCards);
-            this.rtEdit.Tag = null;
-            this.rtEdit.Text = "Edit";
+            this.rtOperations.Panels.Add(this.rpProfile);
+            this.rtOperations.Panels.Add(this.rpCards);
+            this.rtOperations.Panels.Add(this.rpNetworkCard);
+            this.rtOperations.Panels.Add(this.rpConsole);
+            this.rtOperations.Tag = null;
+            this.rtOperations.Text = "Operations";
             // 
-            // rpOperations
+            // rpProfile
             // 
-            this.rpOperations.ButtonMoreEnabled = false;
-            this.rpOperations.ButtonMoreVisible = false;
-            this.rpOperations.Items.Add(this.rbtnProfileNew);
-            this.rpOperations.Items.Add(this.rbtnProfileView);
-            this.rpOperations.Items.Add(this.rbtnProfileDelete);
-            this.rpOperations.Items.Add(this.rbtnProfileSave);
-            this.rpOperations.Items.Add(this.rsProfileSeparator);
-            this.rpOperations.Items.Add(this.rbtnProfileRun);
-            this.rpOperations.Items.Add(this.rbtnProfileRefresh);
-            this.rpOperations.Tag = null;
-            this.rpOperations.Text = "Operations";
+            this.rpProfile.ButtonMoreEnabled = false;
+            this.rpProfile.ButtonMoreVisible = false;
+            this.rpProfile.Items.Add(this.rbtnProfileNew);
+            this.rpProfile.Items.Add(this.rbtnProfileView);
+            this.rpProfile.Items.Add(this.rbtnProfileDelete);
+            this.rpProfile.Items.Add(this.rbtnProfileSave);
+            this.rpProfile.Items.Add(this.rsProfileSeparator);
+            this.rpProfile.Items.Add(this.rbtnProfileRun);
+            this.rpProfile.Tag = null;
+            this.rpProfile.Text = "profile";
             // 
             // rbtnProfileNew
             // 
@@ -382,22 +382,58 @@ namespace Argon.Windows.Forms
             this.rbtnProfileRun.ToolTip = null;
             this.rbtnProfileRun.ToolTipImage = null;
             this.rbtnProfileRun.ToolTipTitle = null;
-            this.rbtnProfileRun.Click += new System.EventHandler(this.btnProfileRun_Click);
             // 
-            // rbtnProfileRefresh
+            // rpCards
             // 
-            this.rbtnProfileRefresh.AltKey = null;
-            this.rbtnProfileRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnProfileRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnProfileRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.document_refresh48x48;
-            this.rbtnProfileRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileRefresh.SmallImage")));
-            this.rbtnProfileRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnProfileRefresh.Tag = null;
-            this.rbtnProfileRefresh.Text = "Refresh";
-            this.rbtnProfileRefresh.ToolTip = null;
-            this.rbtnProfileRefresh.ToolTipImage = null;
-            this.rbtnProfileRefresh.ToolTipTitle = null;
-            this.rbtnProfileRefresh.Click += new System.EventHandler(this.btnProfileRefresh_Click);
+            this.rpCards.Items.Add(this.rbtnCardsRefresh);
+            this.rpCards.Items.Add(this.rbtnCardView);
+            this.rpCards.Tag = null;
+            this.rpCards.Text = "network cards";
+            // 
+            // rbtnCardsRefresh
+            // 
+            this.rbtnCardsRefresh.AltKey = null;
+            this.rbtnCardsRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnCardsRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnCardsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardsRefresh.SmallImage")));
+            this.rbtnCardsRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnCardsRefresh.Tag = null;
+            this.rbtnCardsRefresh.Text = "Refresh";
+            this.rbtnCardsRefresh.ToolTip = null;
+            this.rbtnCardsRefresh.ToolTipImage = null;
+            this.rbtnCardsRefresh.ToolTipTitle = null;
+            // 
+            // rbtnCardView
+            // 
+            this.rbtnCardView.AltKey = null;
+            this.rbtnCardView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnCardView.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnCardView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardView.SmallImage")));
+            this.rbtnCardView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnCardView.Tag = null;
+            this.rbtnCardView.Text = "View";
+            this.rbtnCardView.ToolTip = null;
+            this.rbtnCardView.ToolTipImage = null;
+            this.rbtnCardView.ToolTipTitle = null;
+            // 
+            // rpNetworkCard
+            // 
+            this.rpNetworkCard.Tag = null;
+            this.rpNetworkCard.Text = "network card";
+            // 
+            // rpConsole
+            // 
+            this.rpConsole.Tag = null;
+            this.rpConsole.Text = "console";
+            // 
+            // rtViews
+            // 
+            this.rtViews.Panels.Add(this.rpViews);
+            this.rtViews.Panels.Add(this.rpHelp);
+            this.rtViews.Tag = null;
+            this.rtViews.Text = "Views";
             // 
             // rpViews
             // 
@@ -452,61 +488,27 @@ namespace Argon.Windows.Forms
             this.rbtnViewNICs.ToolTipTitle = null;
             this.rbtnViewNICs.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
             // 
-            // rpCards
-            // 
-            this.rpCards.Items.Add(this.rbtnCardsRefresh);
-            this.rpCards.Items.Add(this.rbtnCardView);
-            this.rpCards.Tag = null;
-            this.rpCards.Text = "network cards";
-            // 
-            // rbtnCardsRefresh
-            // 
-            this.rbtnCardsRefresh.AltKey = null;
-            this.rbtnCardsRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnCardsRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-            this.rbtnCardsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardsRefresh.SmallImage")));
-            this.rbtnCardsRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnCardsRefresh.Tag = null;
-            this.rbtnCardsRefresh.Text = "Refresh";
-            this.rbtnCardsRefresh.ToolTip = null;
-            this.rbtnCardsRefresh.ToolTipImage = null;
-            this.rbtnCardsRefresh.ToolTipTitle = null;
-            // 
-            // rbtnCardView
-            // 
-            this.rbtnCardView.AltKey = null;
-            this.rbtnCardView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnCardView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-            this.rbtnCardView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardView.SmallImage")));
-            this.rbtnCardView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnCardView.Tag = null;
-            this.rbtnCardView.Text = "View";
-            this.rbtnCardView.ToolTip = null;
-            this.rbtnCardView.ToolTipImage = null;
-            this.rbtnCardView.ToolTipTitle = null;
-            // 
-            // rtOptions
-            // 
-            this.rtOptions.Tag = null;
-            this.rtOptions.Text = "Options";
-
-            this.rtOptions.Panels.Add(this.rpViews);
-            // 
-            // rtHelp
-            // 
-            this.rtHelp.Panels.Add(this.rpHelp);
-            this.rtHelp.Tag = null;
-            this.rtHelp.Text = "Help";
-            // 
             // rpHelp
             // 
+            this.rpHelp.Items.Add(this.rbtnAbout);
             this.rpHelp.Items.Add(this.rbtnCheckUpdate);
-            this.rpHelp.Items.Add(this.rbtnHelpAbout);
-            this.rpHelp.Items.Add(this.rbtnHelpDonate);
+            this.rpHelp.Items.Add(this.rbtnDonate);
             this.rpHelp.Tag = null;
-            this.rpHelp.Text = "Info";
+            this.rpHelp.Text = "help";
+            // 
+            // rbtnAbout
+            // 
+            this.rbtnAbout.AltKey = null;
+            this.rbtnAbout.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnAbout.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnAbout.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnAbout.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAbout.SmallImage")));
+            this.rbtnAbout.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnAbout.Tag = null;
+            this.rbtnAbout.Text = "About";
+            this.rbtnAbout.ToolTip = null;
+            this.rbtnAbout.ToolTipImage = null;
+            this.rbtnAbout.ToolTipTitle = null;
             // 
             // rbtnCheckUpdate
             // 
@@ -517,38 +519,24 @@ namespace Argon.Windows.Forms
             this.rbtnCheckUpdate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCheckUpdate.SmallImage")));
             this.rbtnCheckUpdate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCheckUpdate.Tag = null;
-            this.rbtnCheckUpdate.Text = "Check update";
+            this.rbtnCheckUpdate.Text = "Update";
             this.rbtnCheckUpdate.ToolTip = null;
             this.rbtnCheckUpdate.ToolTipImage = null;
-            this.rbtnCheckUpdate.ToolTipTitle = "Check for update";
+            this.rbtnCheckUpdate.ToolTipTitle = null;
             // 
-            // rbtnHelpAbout
+            // rbtnDonate
             // 
-            this.rbtnHelpAbout.AltKey = null;
-            this.rbtnHelpAbout.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnHelpAbout.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnHelpAbout.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-            this.rbtnHelpAbout.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpAbout.SmallImage")));
-            this.rbtnHelpAbout.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnHelpAbout.Tag = null;
-            this.rbtnHelpAbout.Text = "About";
-            this.rbtnHelpAbout.ToolTip = null;
-            this.rbtnHelpAbout.ToolTipImage = null;
-            this.rbtnHelpAbout.ToolTipTitle = null;
-            // 
-            // rbtnHelpDonate
-            // 
-            this.rbtnHelpDonate.AltKey = null;
-            this.rbtnHelpDonate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnHelpDonate.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnHelpDonate.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-            this.rbtnHelpDonate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpDonate.SmallImage")));
-            this.rbtnHelpDonate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnHelpDonate.Tag = null;
-            this.rbtnHelpDonate.Text = "Donate";
-            this.rbtnHelpDonate.ToolTip = null;
-            this.rbtnHelpDonate.ToolTipImage = null;
-            this.rbtnHelpDonate.ToolTipTitle = "Donate";
+            this.rbtnDonate.AltKey = null;
+            this.rbtnDonate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnDonate.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnDonate.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnDonate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDonate.SmallImage")));
+            this.rbtnDonate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnDonate.Tag = null;
+            this.rbtnDonate.Text = "Donate";
+            this.rbtnDonate.ToolTip = null;
+            this.rbtnDonate.ToolTipImage = null;
+            this.rbtnDonate.ToolTipTitle = null;
             // 
             // pnlRibbonContainer
             // 
@@ -593,23 +581,16 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ImageList imageList16x16;
         private System.Windows.Forms.Ribbon ribbon;
         private System.Windows.Forms.RibbonTab rtProfiles;
-        private System.Windows.Forms.RibbonPanel rpOperations;
-        private System.Windows.Forms.RibbonTab rtEdit;
+        private System.Windows.Forms.RibbonPanel rpProfile;
+        private System.Windows.Forms.RibbonTab rtOperations;
         private System.Windows.Forms.RibbonPanel rpViews;
-        private System.Windows.Forms.RibbonTab rtOptions;
-        private System.Windows.Forms.RibbonTab rtHelp;
+        private System.Windows.Forms.RibbonTab rtViews;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator;
-        private System.Windows.Forms.RibbonPanel rpHelp;
-        private System.Windows.Forms.RibbonButton rbtnCheckUpdate;
-        private System.Windows.Forms.RibbonButton rbtnHelpAbout;
-        private System.Windows.Forms.RibbonButton rbtnHelpDonate;
         public System.Windows.Forms.RibbonButton rbtnProfileNew;
         public System.Windows.Forms.RibbonButton rbtnProfileView;
         public System.Windows.Forms.RibbonButton rbtnProfileDelete;
         public System.Windows.Forms.RibbonButton rbtnViewConsole;
         public System.Windows.Forms.RibbonButton rbtnProfileSave;
-        public System.Windows.Forms.RibbonButton rbtnProfileRun;
-        public System.Windows.Forms.RibbonButton rbtnProfileRefresh;
         public System.Windows.Forms.RibbonButton rbtnViewProfiles;
         public System.Windows.Forms.RibbonButton rbtnViewNICs;
         public System.Windows.Forms.RibbonButton rbtnProfilesSave;
@@ -620,7 +601,14 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Panel pnlRibbonContainer;
         public System.Windows.Forms.RibbonPanel rpProfilesCollection;
         private System.Windows.Forms.RibbonButton rbtnSmartView;
-
+        private System.Windows.Forms.RibbonPanel rpNetworkCard;
+        private System.Windows.Forms.RibbonPanel rpConsole;
+        private System.Windows.Forms.RibbonPanel rpHelp;
+        private System.Windows.Forms.RibbonButton rbtnAbout;
+        private System.Windows.Forms.RibbonButton rbtnCheckUpdate;
+        private System.Windows.Forms.RibbonButton rbtnDonate;
+        public System.Windows.Forms.RibbonButton rbtnProfileRun;
+        
         public DockPanel Pannello
         {
             get

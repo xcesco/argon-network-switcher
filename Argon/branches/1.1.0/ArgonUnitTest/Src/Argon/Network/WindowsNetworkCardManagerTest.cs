@@ -5,6 +5,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.OperatingSystem;
 using System.Diagnostics;
 using System.Management;
+using Argon.Network;
+using Argon.OperatingSystem.Network;
 //using NUnit.Framework;
 
 namespace Argon.OperatingSystem

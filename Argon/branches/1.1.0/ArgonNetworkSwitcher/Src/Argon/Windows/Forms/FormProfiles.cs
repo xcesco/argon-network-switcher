@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
 using Argon.Controllers;
-using Argon.Network.Profile;
+using Argon.OperatingSystem.Network.Profile;
 using BrightIdeasSoftware;
 
 namespace Argon.Windows.Forms

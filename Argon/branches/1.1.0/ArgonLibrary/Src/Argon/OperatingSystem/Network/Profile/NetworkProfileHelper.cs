@@ -5,52 +5,33 @@ using System.Xml;
 using Argon.OperatingSystem;
 using System.Diagnostics;
 using Argon.OperatingSystem.Network.Profile;
-using Argon.OperatingSystem.Network;
+
 using System.IO;
+using Argon.OperatingSystem.Network.Wifi;
+using Argon.Windows7.Network.Wifi;
 
 
-namespace Argon.Controllers
+namespace Argon.OperatingSystem.Network.Profile
 {
-    public class PersistenceController : MiniController
+    public abstract class NetworkProfileHelper
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersistenceController"/> class.
-        /// </summary>
-        /// <param name="controller">The controller.</param>
-        public PersistenceController(Controller controller)
-            : base(controller)
-        {
-        }
-
-        /// <summary>
-        /// Loads this instance.
-        /// </summary>
-        public void Load()
-        {
-            _controller.ConsoleController.Info("Loaded Profiles.xml");
-            if (File.Exists("Profiles.xml"))
-            {
-                Load("Profiles.xml", _controller.Model.Profiles);
-            }
-        }
 
         /// <summary>
         /// Saves this instance.
         /// </summary>
-        public void Save()
-        {
-            _controller.ConsoleController.Info("Saved Profiles.xml");
-            Save("Profiles.xml", _controller.Model.Profiles);
+        public static bool Save(List<NetworkProfile> profiles, string fileName = "Profiles.xml")
+        {            
+            return Save(profiles, fileName);
         }
+
 
         /// <summary>
         /// Saves the specified filename.
         /// </summary>
         /// <param name="filename">The filename.</param>
         /// <param name="document">The document.</param>
-        protected void Save(string filename, List<NetworkProfile> profiles)
+        protected static void Save(string filename, List<NetworkProfile> profiles)
         {           
-
             XmlTextWriter writer = new XmlTextWriter(filename, null);
             writer.WriteStartDocument();
 
@@ -181,6 +162,13 @@ namespace Argon.Controllers
                     writer.WriteEndElement();
                 }
 
+                // wifi
+                {
+                    writer.WriteStartElement("wifi");
+                    writer.WriteAttributeString("associatedSSID", item.AssociatedWifiSSID);                    
+                    writer.WriteEndElement();
+                }
+
                 writer.WriteEndElement();
             }
 
@@ -225,15 +213,21 @@ namespace Argon.Controllers
         /// Loads the specified filename.
         /// </summary>
         /// <param name="filename">The filename.</param>
-        /// <param name="document">The document.</param>
-        protected void Load(string filename, List<NetworkProfile> profiles)
-        {           
+        /// <returns></returns>
+        public static List<NetworkProfile> Load(string fileName)
+        {
+            List<NetworkProfile> profiles = new List<NetworkProfile>();
+
+            if (!File.Exists(fileName))
+            {
+                return profiles;
+            }
 
             profiles.Clear();
             XmlTextReader reader = null;
             try
             {
-                reader = new XmlTextReader(filename);
+                reader = new XmlTextReader(fileName);
                 NetworkProfile currentProfile = null;
 
                 while (reader.Read())
@@ -345,6 +339,12 @@ namespace Argon.Controllers
 
                                         currentProfile.DisabledNetworkCards.Add(disabledNIC);                                    
                                     break;
+                                case "wifi":
+                                    // wifi
+                                   string associatedSSID=ReadAttributeIfPresent(reader, "associatedSSID", "");
+
+                                   currentProfile.AssociatedWifiSSID = associatedSSID;                                       
+                                   break;
                             }
                             break;
                         case XmlNodeType.Text: //Display the text in each element.
@@ -366,6 +366,65 @@ namespace Argon.Controllers
             {
                 if (reader != null) reader.Close();
             }
+
+            return profiles;
+        }
+
+
+        /// <summary>
+        /// Autodetects the network profile. For the moment it works only for wifi connections!
+        /// If no connections found, it return null.
+        /// </summary>
+        /// 
+        /// <param name="profiles">The profiles.</param>
+        /// <returns></returns>
+        public static NetworkProfile AutodetectNetworkProfile(List<NetworkProfile> profiles)
+        {            
+            List<WindowsNetworkCard> enabledCardList = new List<WindowsNetworkCard>();
+
+            // get nic enabled
+            List<WindowsNetworkCard> listCard = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+
+            foreach (WindowsNetworkCard nic in listCard)
+            {
+                Console.WriteLine(nic.Description + " = " + nic.Enabled + " " + nic.Status);
+                Console.WriteLine(nic.Connected);
+
+                if (nic.Connected)
+                {
+                    enabledCardList.Add(nic);
+                }
+            }
+
+            // if there's no enabled card, it's a problem!
+            if (enabledCardList.Count == 0) { Console.WriteLine("No nic found"); return null; }
+
+            // get wifi connected 
+            WifiProfile currentWifiProfile = WifiConfigurationManager.GetActiveWifiProfile();            
+
+            // if there's a wifi connection
+            if (currentWifiProfile != null)
+            {
+                // check there is a profile for that ssid and nic
+                foreach (NetworkProfile profile in profiles)
+                {
+                    if (currentWifiProfile.SSID.Equals(profile.AssociatedWifiSSID) && currentWifiProfile.InterfaceMAC.Equals(profile.NetworkCardInfo.MacAddress))
+                    {
+                        // found profile associated wifi ssid
+                        Console.WriteLine("Found profile " + profile.Name + " for ssid " + profile.AssociatedWifiSSID);
+                        return profile;
+                    }
+                }
+
+                // there's no appropriated profile for wifi!                                     
+            }
+            else
+            {
+                // no wifi avaiable
+                
+            }
+
+            return null;
         }
     }
 }
