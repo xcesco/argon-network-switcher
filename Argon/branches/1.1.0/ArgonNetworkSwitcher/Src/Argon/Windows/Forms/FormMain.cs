@@ -9,7 +9,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
 using System.Threading;
 using Argon.Controllers;
-using Argon.Network.Profile;
+using Argon.OperatingSystem.Network.Profile;
 using Argon.Common;
 using System.Configuration;
 

@@ -10,8 +10,10 @@ using Argon.OperatingSystem;
 using System.IO;
 using System.ComponentModel;
 using Argon.Windows.Forms;
-using Argon.Network.Profile;
+using Argon.OperatingSystem.Network.Profile;
 using BrightIdeasSoftware;
+using Argon.OperatingSystem.Network;
+
 
 namespace Argon.Controllers
 {
@@ -31,8 +33,7 @@ namespace Argon.Controllers
             View.ViewMain.rbtnProfileDelete.Enabled = false;
 
             // profilo
-            View.ViewMain.rbtnProfileRun.Enabled = false;
-            View.ViewMain.rbtnProfileRefresh.Enabled = false;
+            View.ViewMain.rbtnProfileRun.Enabled = false;           
             View.ViewMain.rbtnProfileSave.Enabled = false;
 
             // documento
@@ -56,7 +57,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileRefresh, main.rbtnProfileSave, main.rbtnProfileDelete);            
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileSave, main.rbtnProfileDelete);            
 
             // form selezionati
             View.CurrentFormProfile = currentFormProfile;

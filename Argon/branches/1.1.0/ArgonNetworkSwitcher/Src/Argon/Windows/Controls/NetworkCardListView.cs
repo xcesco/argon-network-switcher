@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Argon.OperatingSystem;
 using BrightIdeasSoftware;
+using Argon.OperatingSystem.Network;
+
 
 namespace Argon.Windows.Controls
 {

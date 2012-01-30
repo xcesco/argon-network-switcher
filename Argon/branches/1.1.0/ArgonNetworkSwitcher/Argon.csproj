@@ -106,6 +106,9 @@
     <Compile Include="Src\Argon\Controllers\PersistenceController.cs" />
     <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
     <Compile Include="Src\Argon\Controllers\ViewController.cs" />
+    <Compile Include="Src\Argon\Models\DataModel.cs" />
+    <Compile Include="Src\Argon\Models\ViewModel.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseLoadApplication.cs" />
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -435,9 +438,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Argon\UseCase\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

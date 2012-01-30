@@ -1,4 +1,4 @@
-﻿using Argon.Network.Profile;
+﻿using Argon.OperatingSystem.Network.Profile;
 
 namespace Argon.Controllers
 {

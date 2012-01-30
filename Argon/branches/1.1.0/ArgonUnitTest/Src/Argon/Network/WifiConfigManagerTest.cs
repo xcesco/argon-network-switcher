@@ -3,8 +3,10 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Argon.Windows7.Network.Wifi;
+using Argon.OperatingSystem.Network.Wifi;
 
-namespace Argon.Network.Wifi.Windows7
+namespace Argon.Windows7.Network.Wifi
 {
     [TestClass]
     public class WifiConfigManagerTest

@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace Argon.Network.Wifi.Windows7
+namespace Argon.Windows7.Network.Wifi
 {
     [TestClass]
     public class WifiConfigurationTest

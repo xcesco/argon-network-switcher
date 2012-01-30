@@ -44,21 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Argon\Common\FormsUtility.cs" />
-    <Compile Include="Src\Argon\Network\Profile\NetworkConfiguration.cs" />
-    <Compile Include="Src\Argon\Network\Profile\NetworkProfile.cs" />
-    <Compile Include="Src\Argon\Network\Profile\NetworkProfileHelper.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\WifiProfileHelper.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\Windows7\NativeWifiInterop.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\Windows7\NativeWifi.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\Windows7\WifiConfigurationManager.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\Windows7\WifiConfiguration.cs" />
-    <Compile Include="Src\Argon\Network\Wifi\WifiProfile.cs" />
-    <Compile Include="Src\Argon\Network\NetworkAdapterHelper.cs" />
-    <Compile Include="Src\Argon\OperatingSystem\WindowsXP\WinXPHardwareHelper.cs" />
-    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapterConfiguration.cs">
+    <Compile Include="Src\Argon\OperatingSystem\Network\Profile\NetworkConfiguration.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\Profile\NetworkProfile.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\Profile\NetworkProfileHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\Wifi\WifiProfileHelper.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Wifi\NativeWifiInterop.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Wifi\NativeWifi.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfigurationManager.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfiguration.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\Wifi\WifiProfile.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\NetworkAdapterHelper.cs" />
+    <Compile Include="Src\Argon\WindowsXP\WinXPHardwareHelper.cs" />
+    <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Src\Argon\OperatingSystem\WmiNetworkAdapter.cs">
+    <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Argon\OperatingSystem\OSInfo.cs" />
@@ -70,30 +70,30 @@
     <Compile Include="Src\Argon\FileSystem\FileInspector.cs" />
     <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
     <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
-    <Compile Include="Src\Argon\OperatingSystem\Windows7\Win7HardwareHelper.cs" />
-    <Compile Include="Src\Argon\Network\FirexfoxProxyConfigurationAdapter.cs" />
-    <Compile Include="Src\Argon\Network\IExplorerProxyConfigurationAdapter.cs" />
-    <Compile Include="Src\Argon\Network\ProxyConfiguration.cs" />
-    <Compile Include="Src\Argon\Network\ProxyConfigurationManager.cs" />
+    <Compile Include="Src\Argon\Windows7\Win7HardwareHelper.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\FirexfoxProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\IExplorerProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\ProxyConfiguration.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\ProxyConfigurationManager.cs" />
     <Compile Include="Src\Argon\OperatingSystem\DriveMapper.cs" />
     <Compile Include="Src\Argon\OperatingSystem\DriveMapping.cs" />
     <Compile Include="Src\Argon\OperatingSystem\RegistryUtility.cs" />
     <Compile Include="Src\Argon\OperatingSystem\RunningWindowsExecutable.cs" />
     <Compile Include="Src\Argon\OperatingSystem\ServiceForcedStatus.cs" />
-    <Compile Include="Src\Argon\Network\Windows7\Win7NetworkCardManager.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Win7NetworkCardManager.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsComponent.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsExecutable.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsExecutableManager.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsExecutor.cs" />
-    <Compile Include="Src\Argon\OperatingSystem\WindowsNetworkCard.cs" />
-    <Compile Include="Src\Argon\OperatingSystem\WindowsNetworkCardManager.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\WindowsNetworkCard.cs" />
+    <Compile Include="Src\Argon\OperatingSystem\Network\WindowsNetworkCardManager.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsService.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsServiceInfo.cs" />
     <Compile Include="Src\Argon\OperatingSystem\WindowsServiceManager.cs" />
-    <Compile Include="Src\Argon\Network\WindowsXP\WinXPNetworkCardManager.cs" />
+    <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Src\Argon\Network\Wifi\WindowsXP\" />
+    <Folder Include="Src\Argon\WindowsXP\Network\Wifi\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

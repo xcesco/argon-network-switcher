@@ -7,11 +7,11 @@ using System.ComponentModel;
 using Argon.Windows.Forms;
 using System.Drawing.Printing;
 using Argon.Controllers;
-using Argon.Network.Profile;
-using Argon.Network;
+using Argon.OperatingSystem.Network.Profile;
 using System.Collections;
 using BrightIdeasSoftware;
 using System.Windows;
+using Argon.OperatingSystem.Network;
 
 namespace Argon.Controllers
 {

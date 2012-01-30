@@ -7,7 +7,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
-using Argon.Network;
+using Argon.OperatingSystem.Network;
 
 namespace Argon.Controllers
 {

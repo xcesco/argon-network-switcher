@@ -4,6 +4,7 @@ using System.Text;
 using Argon.OperatingSystem;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.Network;
+using Argon.OperatingSystem.Network;
 //using NUnit.Framework;
 
 namespace Argon.OperatingSystem
