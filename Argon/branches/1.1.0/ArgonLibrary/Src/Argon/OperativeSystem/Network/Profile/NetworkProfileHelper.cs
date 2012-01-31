@@ -17,20 +17,11 @@ namespace Argon.OperatingSystem.Network.Profile
     {
 
         /// <summary>
-        /// Saves this instance.
-        /// </summary>
-        public static bool Save(List<NetworkProfile> profiles, string fileName = "Profiles.xml")
-        {            
-            return Save(profiles, fileName);
-        }
-
-
-        /// <summary>
         /// Saves the specified filename.
         /// </summary>
         /// <param name="filename">The filename.</param>
         /// <param name="document">The document.</param>
-        protected static void Save(string filename, List<NetworkProfile> profiles)
+        public static bool Save(List<NetworkProfile> profiles, string filename = "Profiles.xml")
         {           
             XmlTextWriter writer = new XmlTextWriter(filename, null);
             writer.WriteStartDocument();
@@ -176,6 +167,8 @@ namespace Argon.OperatingSystem.Network.Profile
 
             writer.WriteEndDocument();
             writer.Close();
+
+            return true;
         }
 
         /// <summary>
@@ -213,14 +206,14 @@ namespace Argon.OperatingSystem.Network.Profile
         /// Loads the specified filename.
         /// </summary>
         /// <param name="filename">The filename.</param>
-        /// <returns></returns>
+        /// <returns>list of profile or null</returns>
         public static List<NetworkProfile> Load(string fileName)
         {
             List<NetworkProfile> profiles = new List<NetworkProfile>();
 
             if (!File.Exists(fileName))
             {
-                return profiles;
+                return null;
             }
 
             profiles.Clear();
