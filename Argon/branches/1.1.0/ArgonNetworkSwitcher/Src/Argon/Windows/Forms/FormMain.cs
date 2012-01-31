@@ -12,6 +12,7 @@ using Argon.Controllers;
 using Argon.OperatingSystem.Network.Profile;
 using Argon.Common;
 using System.Configuration;
+using Argon.UseCase;
 
 namespace Argon.Windows.Forms
 {
@@ -27,16 +28,7 @@ namespace Argon.Windows.Forms
         private DeserializeDockContent _DeserializeDockContent;
 
         private void FormMain_Load(object sender, EventArgs e)
-        {
-            string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
-
-            /*
-            if (File.Exists(configFile))
-            {
-                dockPanel.LoadFromXml(configFile, _DeserializeDockContent);
-            }
-            else*/
-            {                
+        {                      
                 Controller.Instance.View.ViewAdapters.Show(dockPanel);
                 Controller.Instance.View.ViewAdapters.DockState = DockState.DockBottomAutoHide;
                 //Controller.Instance.View.ViewAdapters.IsHidden = true;
@@ -47,24 +39,14 @@ namespace Argon.Windows.Forms
 
                 rbtnViewNICs.Checked = true;
                 rbtnViewConsole.Checked = true;                
-            }
-
             
             Controller.Instance.Init();
             Controller.Instance.ConsoleController.Info("Startup program");
-            /*
-            if (Controller.Instance.ViewAdapters.DockState != DockState.Hidden && Controller.Instance.ViewAdapters.DockState != DockState.Unknown)
-            {
-                mnuViewNetworkAdapters.Checked = true;
-            }
 
-            if (Controller.Instance.ViewProfiles.DockState != DockState.Hidden && Controller.Instance.ViewProfiles.DockState != DockState.Unknown)
-            {
-                mnuViewProfiles.Checked = true;
-            }*/
-
-            Controller.Instance.PersistenceController.Load();
+            Controller.Instance.Model.Profiles=NetworkProfileHelper.Load("Profiles.xml");            
             Controller.Instance.ActionRefreshProfiles();
+            
+            UseCaseApplication.Load(this);
             
         }
 
@@ -83,28 +65,12 @@ namespace Argon.Windows.Forms
 
             if (ret == DialogResult.Yes)
             {
-                Controller.Instance.PersistenceController.Save();
+                NetworkProfileHelper.Save(Controller.Instance.Model.Profiles,"Profiles.xml");                
                 return;
             } else {
                 // bug fix: if user says no the windows does not close
                 e.Cancel = true;
-            }
-            /*
-            if (!Visible)
-                return;
-
-            DialogResult ret=MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (ret == DialogResult.Yes)
-                return;                
-
-            
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true;
-                this.Hide();
-            }*/
-           
+            }                      
         }
 
 
@@ -175,7 +141,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Save();
+            //Controller.Instance.PersistenceController.Save();
         }
 
         /// <summary>
@@ -240,7 +206,7 @@ namespace Argon.Windows.Forms
 
         private void btnProfileSave_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Save();
+            //Controller.Instance.PersistenceController.Save();
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -250,7 +216,7 @@ namespace Argon.Windows.Forms
 
         private void btnAllProfileLoad_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Load();
+            //Controller.Instance.PersistenceController.Load();
             Controller.Instance.ActionRefreshProfiles();
         }
 
@@ -393,25 +359,44 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnSmartView_Click(object sender, EventArgs e)
         {
-            if (rbtnSmartView.Checked)
-            {
-                Size = OldSize;
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
-            }
-            else
-            {
-                OldSize = Size;
-                this.FormBorderStyle = FormBorderStyle.FixedDialog;
-                Height = pnlRibbonContainer.Height + SystemInformation.CaptionHeight+4;
-                rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
-                
-            }
-
-            rbtnSmartView.Checked = !rbtnSmartView.Checked;
+            UseCaseSmartView.ExecuteToggleSmartView();
         }
 
-        private Size OldSize { get; set; }
+        /// <summary>
+        /// Gets or sets the old size.
+        /// </summary>
+        /// <value>
+        /// The old size.
+        /// </value>
+        public Size OldSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [smart view].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [smart view]; otherwise, <c>false</c>.
+        /// </value>
+        public bool SmartView { get; set; }
+
+        /// <summary>
+        /// Handles the Click event of the btnConfigLoad control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void btnConfigLoad_Click(object sender, EventArgs e)
+        {
+            UseCaseConfig.Load(showDialog: true);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnConfigSave control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnConfigSave_Click(object sender, EventArgs e)
+        {
+            UseCaseConfig.Save(showDialog: true);
+        }
         
     }
 }

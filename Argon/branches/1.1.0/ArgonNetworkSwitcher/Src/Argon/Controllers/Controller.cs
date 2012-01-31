@@ -37,8 +37,8 @@ namespace Argon.Controllers
             View.ViewMain.rbtnProfileSave.Enabled = false;
 
             // documento
-            View.ViewMain.rbtnProfilesSave.Enabled = false;
-            View.ViewMain.rbtnProfilesLoad.Enabled = false;
+            View.ViewMain.rbtnConfigSave.Enabled = false;
+            View.ViewMain.rbtnConfigLoad.Enabled = false;
 
             // networkcard
             View.ViewMain.rbtnCardsRefresh.Enabled = false;
@@ -57,7 +57,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileSave, main.rbtnProfileDelete);            
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnConfigLoad, main.rbtnConfigSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileSave, main.rbtnProfileDelete);            
 
             // form selezionati
             View.CurrentFormProfile = currentFormProfile;
@@ -68,7 +68,7 @@ namespace Argon.Controllers
         {
             FormMain main = _view.ViewMain;
 
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnProfilesLoad, main.rbtnProfilesSave, main.rbtnProfileNew, main.rbtnProfilesLoad, main.rbtnProfilesSave);                       
+            _view.ToolStripButtonManager.EnableButtons(main.rbtnConfigLoad, main.rbtnConfigSave, main.rbtnProfileNew, main.rbtnConfigLoad, main.rbtnConfigSave);                       
 
             // form selezionati
             View.CurrentFormProfile = null;
@@ -109,9 +109,7 @@ namespace Argon.Controllers
 
             // Initialize the controllers
             _consoleController = new ConsoleMiniController(this);
-
-            _persistenceController = new PersistenceController(this);
-
+            
             _profileController = new ProfileMiniController(this);
 
             _model = new NetworkConfiguration();
@@ -142,14 +140,6 @@ namespace Argon.Controllers
         {
             get { return _consoleController; }
             set { _consoleController = value; }
-        }
-
-        private PersistenceController _persistenceController;
-
-        public PersistenceController PersistenceController
-        {
-            get { return _persistenceController; }
-            set { _persistenceController = value; }
         }
 
         private ViewRender _view;
