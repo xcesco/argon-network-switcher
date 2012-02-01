@@ -5,6 +5,7 @@ using System.Text;
 using Argon.OperatingSystem.Network.Profile;
 using System.Windows.Forms;
 using Argon.Models;
+using System.IO;
 
 namespace Argon.UseCase
 {
@@ -19,7 +20,7 @@ namespace Argon.UseCase
         /// <param name="fileName">Name of the file.</param>
         /// <param name="showDialog">if set to <c>true</c> [show dialog].</param>
         /// <returns></returns>
-        public static bool Load(string fileName = DEFAULT_FILENAME, bool showDialog = false)
+        public static void Load(string fileName = DEFAULT_FILENAME, bool showDialog = false)
         {
             if (showDialog)
             {
@@ -29,7 +30,7 @@ namespace Argon.UseCase
                 switch (result)
                 {
                     case DialogResult.Cancel:
-                        return false;
+                        return;
                     case DialogResult.No:
                         OpenFileDialog dialog = new OpenFileDialog();
 
@@ -45,26 +46,34 @@ namespace Argon.UseCase
                         }
                         else
                         {
-                            return false;
+                            return;
                         }
                         break;
                     case DialogResult.Yes:
                         break;
                 };
-
-
             }
 
             // execute config default
             List<NetworkProfile> list = NetworkProfileHelper.Load(fileName);
 
-            if (list == null)
-            {
-                DataModel.NetworkProfileList = list;
-                return true;
-            }
+            UseCaseLogger.ShowInfo("Load file '" + Path.GetFullPath(fileName) + "'");
 
-            return false;
+            if (!File.Exists(Path.GetFullPath(fileName)))
+            {
+                UseCaseLogger.ShowError("Ehi! No file '" + Path.GetFullPath(fileName) + "' found!");
+            } else if (list.Count==0)
+            {
+                UseCaseLogger.ShowError("Ehi! 0 profiles found!");
+            } else{
+                DataModel.NetworkProfileList = list;
+                UseCaseProfile.Refresh();
+                
+            }
+        
+
+            //Controller.Instance.ActionRefreshProfiles();
+            
         }
 
 
