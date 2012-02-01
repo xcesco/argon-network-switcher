@@ -69,10 +69,7 @@ namespace Argon.UseCase
                 DataModel.NetworkProfileList = list;
                 UseCaseProfile.Refresh();
                 
-            }
-        
-
-            //Controller.Instance.ActionRefreshProfiles();
+            }        
             
         }
 
@@ -118,6 +115,8 @@ namespace Argon.UseCase
             }
 
             bool ret = NetworkProfileHelper.Save(DataModel.NetworkProfileList, fileName);
+
+            UseCaseLogger.ShowInfo("Saved file '" + Path.GetFullPath(fileName) + "'");
 
             return ret;
 
