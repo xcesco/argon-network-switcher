@@ -13,6 +13,7 @@ using Argon.OperatingSystem.Network.Profile;
 using Argon.Common;
 using System.Configuration;
 using Argon.UseCase;
+using Argon.Models;
 
 namespace Argon.Windows.Forms
 {
@@ -29,22 +30,11 @@ namespace Argon.Windows.Forms
 
         private void FormMain_Load(object sender, EventArgs e)
         {                      
-                Controller.Instance.View.ViewAdapters.Show(dockPanel);
-                Controller.Instance.View.ViewAdapters.DockState = DockState.DockBottomAutoHide;
-                //Controller.Instance.View.ViewAdapters.IsHidden = true;
-                Controller.Instance.View.ViewProfiles.Show(dockPanel);
-                Controller.Instance.View.ViewProfiles.DockState = DockState.Document;
-                Controller.Instance.View.ViewConsole.Show(dockPanel);
-                Controller.Instance.View.ViewConsole.DockState = DockState.DockBottomAutoHide;
-
-                rbtnViewNICs.Checked = true;
-                rbtnViewConsole.Checked = true;                
             
-            Controller.Instance.Init();
-            Controller.Instance.ConsoleController.Info("Startup program");
+            //Controller.Instance.ConsoleController.Info("Startup program");
 
-            Controller.Instance.Model.Profiles=NetworkProfileHelper.Load("Profiles.xml");            
-            Controller.Instance.ActionRefreshProfiles();
+            //Controller.Instance.Model.Profiles=NetworkProfileHelper.Load("Profiles.xml");            
+            //Controller.Instance.ActionRefreshProfiles();
             
             UseCaseApplication.Load(this);
             
@@ -76,7 +66,7 @@ namespace Argon.Windows.Forms
 
         private IDockContent GetContentFromPersistString(string persistString)
         {
-            if (persistString == typeof(FormAdapters).ToString())
+            if (persistString == typeof(FormNetworkCards).ToString())
             {
                 Controller.Instance.View.ViewAdapters.Show(dockPanel);
                 return Controller.Instance.View.ViewAdapters;
@@ -122,14 +112,7 @@ namespace Argon.Windows.Forms
 
         private void mnuViewNetworkAdapters_Click(object sender, EventArgs e)
         {            
-            if (!rbtnViewNICs.Checked)
-            {
-                Controller.Instance.View.ViewAdapters.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewAdapters.Hide();
-            }
+            UseCaseView.Display(ViewModel.NetworkCardsView);
         }
 
  
@@ -283,14 +266,7 @@ namespace Argon.Windows.Forms
 
         private void mnuViewConsole_Click(object sender, EventArgs e)
         {
-            if (!rbtnViewConsole.Checked)
-            {
-                Controller.Instance.View.ViewConsole.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewConsole.Hide();
-            }
+            UseCaseView.Display(ViewModel.ConsoleView);
         }
 
         private void mnuCheckForUpdates_Click(object sender, EventArgs e)
@@ -328,22 +304,7 @@ namespace Argon.Windows.Forms
 
         private void rbtnViewProfiles_Click(object sender, EventArgs e)
         {
-            if (!rbtnViewProfiles.Checked)
-            {
-                if (Controller.Instance.View.ViewProfiles.OldDockState != DockState.Unknown)
-                {
-                    Controller.Instance.View.ViewProfiles.DockState = Controller.Instance.View.ViewProfiles.OldDockState;
-                }
-                Controller.Instance.View.ViewProfiles.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewProfiles.OldDockState = Controller.Instance.View.ViewProfiles.DockState;
-                Controller.Instance.View.ViewProfiles.DockState = DockState.DockBottom;
-                Controller.Instance.View.ViewProfiles.Hide();                
-            }
-
-            //rbtnViewProfiles.Checked = !rbtnViewProfiles.Checked;
+            UseCaseView.ToggleDisplay(ViewModel.ProfilesView);            
         }
 
        

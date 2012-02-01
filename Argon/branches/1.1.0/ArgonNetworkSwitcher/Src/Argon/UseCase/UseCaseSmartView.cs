@@ -15,7 +15,8 @@ namespace Argon.UseCase
         /// </summary>
         public static void ExecuteDisplaySmartView()
         {
-            FormMain form = ViewModel.Main;
+            FormMain form = ViewModel.MainView;
+
             if (!form.SmartView)
             {
                 form.OldSize = form.Size;
@@ -33,7 +34,7 @@ namespace Argon.UseCase
         /// </summary>
         public static void ExecuteHideSmartView()
         {
-            FormMain form = ViewModel.Main;
+            FormMain form = ViewModel.MainView;
             if (form.SmartView)
             {
                 form.Size = form.OldSize;
@@ -50,7 +51,7 @@ namespace Argon.UseCase
         /// </summary>
         public static void ExecuteToggleSmartView()
         {
-            FormMain form = ViewModel.Main;
+            FormMain form = ViewModel.MainView;
 
             if (!form.SmartView)
             {

@@ -109,7 +109,9 @@
     <Compile Include="Src\Argon\Models\ViewModel.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseApplication.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseConfig.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseLogger.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseSmartView.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseView.cs" />
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,17 +163,17 @@
     <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.designer.cs">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCards.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.designer.cs">
-      <DependentUpon>FormAdapters.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCards.designer.cs">
+      <DependentUpon>FormNetworkCards.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.designer.cs">
-      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCard.designer.cs">
+      <DependentUpon>FormNetworkCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormConsole.cs">
       <SubType>Form</SubType>
@@ -248,11 +250,11 @@
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAboutBox.resx">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAdapters.resx">
-      <DependentUpon>FormAdapters.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormNetworkCards.resx">
+      <DependentUpon>FormNetworkCards.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormCardInfo.resx">
-      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormNetworkCard.resx">
+      <DependentUpon>FormNetworkCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormConsole.resx">
       <DependentUpon>FormConsole.cs</DependentUpon>

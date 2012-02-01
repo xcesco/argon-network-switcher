@@ -1,7 +1,7 @@
 using BrightIdeasSoftware;
 namespace Argon.Windows.Forms
 {
-    partial class FormAdapters
+    partial class FormNetworkCards
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Argon.Windows.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdapters));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNetworkCards));
             this.images32x32 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();

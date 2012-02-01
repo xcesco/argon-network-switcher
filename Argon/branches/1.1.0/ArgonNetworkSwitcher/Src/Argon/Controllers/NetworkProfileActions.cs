@@ -12,6 +12,7 @@ using System.Collections;
 using BrightIdeasSoftware;
 using System.Windows;
 using Argon.OperatingSystem.Network;
+using Argon.UseCase;
 
 namespace Argon.Controllers
 {
@@ -106,46 +107,46 @@ namespace Argon.Controllers
         public static void Apply(NetworkProfile profile, BackgroundWorker worker)
         {
 
-            Controller.Instance.ConsoleController.Info("Start applying profile "+profile.Name);
+            UseCaseLogger.ShowInfo("Start applying profile "+profile.Name);
             if (worker != null) worker.ReportProgress(0);
 
             foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
             {
-                Controller.Instance.ConsoleController.Info("Disable network card "+nic.HardwareName);
+                UseCaseLogger.ShowInfo("Disable network card " + nic.HardwareName);
                 NetworkAdapterHelper.SetDeviceStatus(nic, false);
             }
-            
 
-            Controller.Instance.ConsoleController.Info("Change netword card configuration");
+
+            UseCaseLogger.ShowInfo("Change netword card configuration");
             WindowsNetworkCardManager.Apply(profile.NetworkCardInfo);
 
             if (worker != null) worker.ReportProgress(20);
 
-            Controller.Instance.ConsoleController.Info("Change proxy configuration");
+            UseCaseLogger.ShowInfo("Change proxy configuration");
             ProxyConfigurationManager.Apply(profile.ProxyConfig);
 
             if (worker != null) worker.ReportProgress(40);
 
-            Controller.Instance.ConsoleController.Info("Change network drive configuration");
+            UseCaseLogger.ShowInfo("Change network drive configuration");
             DriveMapManager.Apply(profile.DriveMapList);
 
             if (worker != null) worker.ReportProgress(60);
 
-            Controller.Instance.ConsoleController.Info("Change windows service configuration");
+            UseCaseLogger.ShowInfo("Change windows service configuration");
             WindowsServiceManager.Apply(profile.ServiceList);
 
             if (worker != null) worker.ReportProgress(80);
 
-            Controller.Instance.ConsoleController.Info("Executing programs");
+            UseCaseLogger.ShowInfo("Executing programs");
             WindowsExecutableManager.Apply(profile.ExecList);
 
             if (worker != null) worker.ReportProgress(90);
 
-            Controller.Instance.ConsoleController.Info("Change default printer configuration");
+            UseCaseLogger.ShowInfo("Change default printer configuration");
             PrinterManager.SetDefaultPrinter(profile.DefaultPrinter);
 
             if (worker != null) worker.ReportProgress(100);
-            Controller.Instance.ConsoleController.Info("End profile " + profile.Name);
+            UseCaseLogger.ShowInfo("End profile " + profile.Name);
         }
 
         public static void ApplyProfile()
@@ -198,7 +199,7 @@ namespace Argon.Controllers
                 MessageBoxResult res=System.Windows.MessageBox.Show("Do you want to delete profile "+profile.Name+"?","Delete confirmation",MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (res==MessageBoxResult.Yes)
                 {
-                    Controller.Instance.ConsoleController.Info("Remove profile [" + profile.Name + "]");
+                    UseCaseLogger.ShowInfo("Remove profile [" + profile.Name + "]");
                     Controller.Instance.Model.Profiles.Remove(profile);
                     Controller.Instance.ActionRefreshProfiles();
                 }

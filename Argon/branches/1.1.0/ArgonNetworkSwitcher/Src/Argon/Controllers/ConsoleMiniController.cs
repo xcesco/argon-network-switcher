@@ -24,25 +24,6 @@ namespace Argon.Controllers
         }
 
 
-        /// <summary>
-        /// Infoes the specified MSG.
-        /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public void Info(string msg)
-        {
-            string temp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + " - INFO - " + msg;
-            _viewConsole.AddText(temp);
-            
-        }
-
-        /// <summary>
-        /// Errors the specified MSG.
-        /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public void Error(string msg)
-        {
-            string temp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + " - ERR  - " + msg;
-            _viewConsole.AddText(temp);          
-        }
+        
     }
 }

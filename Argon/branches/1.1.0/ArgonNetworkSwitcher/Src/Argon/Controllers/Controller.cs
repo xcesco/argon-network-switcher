@@ -13,6 +13,7 @@ using Argon.Windows.Forms;
 using Argon.OperatingSystem.Network.Profile;
 using BrightIdeasSoftware;
 using Argon.OperatingSystem.Network;
+using Argon.UseCase;
 
 
 namespace Argon.Controllers
@@ -25,7 +26,7 @@ namespace Argon.Controllers
             ActivateFormNetworkCard(View.CurrentFormCardInfo);
         }
 
-        public void ActivateFormNetworkCard(FormCardInfo currentFormNetworkCard)
+        public void ActivateFormNetworkCard(FormNetworkCard currentFormNetworkCard)
         {
             // profili
             View.ViewMain.rbtnProfileNew.Enabled = false;
@@ -88,19 +89,6 @@ namespace Argon.Controllers
 
         public static string NO_NIC_NAME = "NONE";
 
-        public void Init()
-        {
-            //ActionRefreshNetworkAdapters();
-            if (View.ViewAdapters.VisibleState != DockState.Hidden && View.ViewAdapters.VisibleState != DockState.Unknown)
-            {
-                View.ViewMain.rbtnViewNICs.Checked = true;
-            }
-
-            if (View.ViewProfiles.VisibleState != DockState.Hidden && View.ViewProfiles.VisibleState != DockState.Unknown)
-            {
-                View.ViewMain.rbtnViewProfiles.Checked = true;
-            }
-        }
 
         protected Controller()
         {
@@ -341,7 +329,7 @@ namespace Argon.Controllers
         {
             if (objectsender != null)
             {
-                _consoleController.Info("Selected profile [" + objectsender.Name + "]");                
+                UseCaseLogger.ShowInfo("Selected profile [" + objectsender.Name + "]");                
             }
         }
 
