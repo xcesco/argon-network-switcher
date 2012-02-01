@@ -58,7 +58,9 @@
     <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapter.cs" />
+    <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Argon\OperativeSystem\OSInfo.cs" />
     <Compile Include="Src\Argon\OperativeSystem\PrinterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
