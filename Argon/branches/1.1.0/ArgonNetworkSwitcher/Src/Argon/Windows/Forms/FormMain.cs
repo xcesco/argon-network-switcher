@@ -112,7 +112,7 @@ namespace Argon.Windows.Forms
 
         private void mnuViewNetworkAdapters_Click(object sender, EventArgs e)
         {            
-            UseCaseView.Display(ViewModel.NetworkCardsView);
+            UseCaseView.ToggleDisplay(ViewModel.NetworkCardsView);
         }
 
  
@@ -247,42 +247,14 @@ namespace Argon.Windows.Forms
 
         private void mnuHelpAbout_Click(object sender, EventArgs e)
         {        
-            FormAboutBox ab = new FormAboutBox();
-            /*ab.AppTitle = txtTitle.Text;
-            ab.AppDescription = txtDescription.Text;
-            ab.AppVersion = txtVersion.Text;
-            ab.AppCopyright = txtCopyright.Text;
-            ab.AppMoreInfo = txtMoreInfo.Text;
-            ab.AppDetailsButton = chkDetails.Checked;*/
-
-            string app="";
-            app+="Visit http://argonswitcher.sourceforge.net for updates!"+Environment.NewLine;
             
-            ab.AppMoreInfo = app;
-
-            ab.ShowDialog(this);       
         }
 
 
         private void mnuViewConsole_Click(object sender, EventArgs e)
         {
-            UseCaseView.Display(ViewModel.ConsoleView);
+            UseCaseView.ToggleDisplay(ViewModel.ConsoleView);
         }
-
-        private void mnuCheckForUpdates_Click(object sender, EventArgs e)
-        {
-            string url = "http://argon-network-switcher.googlecode.com/files/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
-            CheckForUpdate.Verify(url);
-        }
-
-   
-        private void makeADonationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormDonate form = new FormDonate();
-            form.ShowDialog(this);  
-        }
-
-
 
         /// <summary>
         /// 
@@ -357,6 +329,51 @@ namespace Argon.Windows.Forms
         private void rbtnConfigSave_Click(object sender, EventArgs e)
         {
             UseCaseConfig.Save(showDialog: true);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpDonate control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpDonate_Click(object sender, EventArgs e)
+        {
+            FormDonate form = new FormDonate();
+            form.ShowDialog(this);  
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpUpdate control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpUpdate_Click(object sender, EventArgs e)
+        {
+            string url = "http://argon-network-switcher.googlecode.com/files/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
+            CheckForUpdate.Verify(url);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpAbout control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpAbout_Click(object sender, EventArgs e)
+        {
+            FormAboutBox ab = new FormAboutBox();
+            /*ab.AppTitle = txtTitle.Text;
+            ab.AppDescription = txtDescription.Text;
+            ab.AppVersion = txtVersion.Text;
+            ab.AppCopyright = txtCopyright.Text;
+            ab.AppMoreInfo = txtMoreInfo.Text;
+            ab.AppDetailsButton = chkDetails.Checked;*/
+
+            string app = "";
+            app += "Visit http://argonswitcher.sourceforge.net for updates!" + Environment.NewLine;
+
+            ab.AppMoreInfo = app;
+
+            ab.ShowDialog(this);       
         }
         
     }
