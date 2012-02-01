@@ -28,16 +28,14 @@ namespace Argon.Windows.Forms
 
         private DeserializeDockContent _DeserializeDockContent;
 
+        /// <summary>
+        /// Handles the Load event of the FormMain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormMain_Load(object sender, EventArgs e)
-        {                      
-            
-            //Controller.Instance.ConsoleController.Info("Startup program");
-
-            //Controller.Instance.Model.Profiles=NetworkProfileHelper.Load("Profiles.xml");            
-            //Controller.Instance.ActionRefreshProfiles();
-            
-            UseCaseApplication.Load(this);
-            
+        {                                  
+            UseCaseApplication.Load(this);            
         }
 
         /// <summary>

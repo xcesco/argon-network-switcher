@@ -21,7 +21,7 @@ namespace Argon.UseCase
         /// </summary>
         /// <param name="formMain">The form main.</param>
         public static void Load(FormMain formMain)
-        {            
+        {
             // create other forms
             CreateForms(formMain);
 
@@ -30,8 +30,9 @@ namespace Argon.UseCase
 
             UseCaseLogger.ShowInfo("Startup program");
 
+
             // load the profiles
-            bool load=UseCaseConfig.Load();
+            UseCaseConfig.Load();
         }
 
         /// <summary>

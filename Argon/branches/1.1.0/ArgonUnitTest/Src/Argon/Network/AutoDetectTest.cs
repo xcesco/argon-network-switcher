@@ -102,8 +102,7 @@ namespace Argon.Network
                 }
                 Console.WriteLine("  DNS suffix .............................. : {0}",
                     properties.DnsSuffix);
-
-                string label;
+                
                 if (adapter.Supports(NetworkInterfaceComponent.IPv4))
                 {
                     IPv4InterfaceProperties ipv4 = properties.GetIPv4Properties();
@@ -114,6 +113,7 @@ namespace Argon.Network
                         IPAddressCollection winsServers = properties.WinsServersAddresses;
                         if (winsServers.Count > 0)
                         {
+                            string label;
                             label = "  WINS Servers ............................ :";
                             // ShowIPAddresses(label, winsServers);
                         }

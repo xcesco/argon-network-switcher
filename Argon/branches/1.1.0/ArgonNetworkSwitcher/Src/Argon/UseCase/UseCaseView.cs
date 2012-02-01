@@ -11,6 +11,10 @@ namespace Argon.UseCase
 {
     public abstract class UseCaseView
     {
+        /// <summary>
+        /// Toggles the display.
+        /// </summary>
+        /// <param name="dockContent">Content of the dock.</param>
         public static void ToggleDisplay(ArgonDockContent dockContent)
         {
             if (dockContent.Visible)
