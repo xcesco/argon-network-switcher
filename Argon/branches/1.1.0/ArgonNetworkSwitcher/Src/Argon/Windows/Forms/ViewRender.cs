@@ -16,11 +16,11 @@ namespace Argon.Windows.Forms
         public ViewRender()
         {            
             _viewMain = new FormMain();
-            _viewAdapters = new FormAdapters();
+            _viewAdapters = new FormNetworkCards();
             _viewProfiles = new FormProfiles();
             _viewConsole = new FormConsole();
 
-            _listViewCardInfo = new List<FormCardInfo>();
+            _listViewCardInfo = new List<FormNetworkCard>();
             _listViewProfile = new List<FormProfile>();
 
             _toolStripButtonManager = new ToolStripButtonManager(_viewMain);
@@ -30,12 +30,12 @@ namespace Argon.Windows.Forms
         #region Attributes
         protected FormConsole _viewConsole;
         protected FormProfile _currentFormProfile;
-        protected FormCardInfo _currentFormNetworkCard;
+        protected FormNetworkCard _currentFormNetworkCard;
         protected FormMain _viewMain;
-        protected FormAdapters _viewAdapters;
+        protected FormNetworkCards _viewAdapters;
         protected FormProfiles _viewProfiles;
         protected List<FormProfile> _listViewProfile;
-        protected List<FormCardInfo> _listViewCardInfo;
+        protected List<FormNetworkCard> _listViewCardInfo;
 
         private ToolStripButtonManager _toolStripButtonManager;
 
@@ -49,7 +49,7 @@ namespace Argon.Windows.Forms
             set { _currentFormProfile = value; }
         }
 
-        public FormCardInfo CurrentFormCardInfo
+        public FormNetworkCard CurrentFormCardInfo
         {
             get { return _currentFormNetworkCard; }
             set { _currentFormNetworkCard = value; }
@@ -77,7 +77,7 @@ namespace Argon.Windows.Forms
             set { _viewProfiles = value; }
         }
 
-        public FormAdapters ViewAdapters
+        public FormNetworkCards ViewAdapters
         {
             get { return _viewAdapters; }
             set { _viewAdapters = value; }
@@ -89,7 +89,7 @@ namespace Argon.Windows.Forms
             get { return _listViewProfile; }
         }
 
-        public List<FormCardInfo> ListViewCardInfo
+        public List<FormNetworkCard> ListViewCardInfo
         {
             get { return _listViewCardInfo; }
         }

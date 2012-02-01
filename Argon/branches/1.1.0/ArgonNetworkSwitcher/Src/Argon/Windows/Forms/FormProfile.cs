@@ -11,6 +11,7 @@ using Argon.OperatingSystem;
 using Argon.OperatingSystem.Network.Profile;
 using Argon.Controllers;
 using Argon.OperatingSystem.Network;
+using Argon.UseCase;
 
 namespace Argon.Windows.Forms
 {
@@ -321,7 +322,7 @@ namespace Argon.Windows.Forms
         private void FormProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
             bool ret=Controller.Instance.View.ListViewProfile.Remove(this);
-            Controller.Instance.ConsoleController.Info("Profile form closed " + ret);
+            UseCaseLogger.ShowInfo("Profile form closed " + ret);
         }
 
     }

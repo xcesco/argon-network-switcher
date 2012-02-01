@@ -8,6 +8,7 @@ using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
 using Argon.OperatingSystem.Network;
+using Argon.UseCase;
 
 namespace Argon.Controllers
 {
@@ -24,7 +25,7 @@ namespace Argon.Controllers
             if (nic == null) return;
             WindowsNetworkCard temp;
 
-            foreach (FormCardInfo form in Controller.Instance.View.ListViewCardInfo)
+            foreach (FormNetworkCard form in Controller.Instance.View.ListViewCardInfo)
             {
                 if ((form.Tag is WindowsNetworkCard))
                 {
@@ -47,7 +48,7 @@ namespace Argon.Controllers
                 }
             }
 
-            FormCardInfo formApp = new FormCardInfo();
+            FormNetworkCard formApp = new FormNetworkCard();
 
             // Visualizziamo le informazioni relative alla card            
 
@@ -85,7 +86,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void ShowAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = true;
+            Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = true;
             DisplayForm(Controller.Instance.View.ViewAdapters);
 
             Controller.Instance.View.ViewAdapters.Focus();
@@ -104,7 +105,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void HideAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = false;
+            Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = false;
             DisplayForm(Controller.Instance.View.ViewAdapters);
         }
 
@@ -129,7 +130,7 @@ namespace Argon.Controllers
                     String label=enabled?"Enabled":"Disabled";
 
                     bool status = NetworkAdapterHelper.SetDeviceStatus(ni, enabled);
-                    Controller.Instance.ConsoleController.Info(label+" NIC " + ni.HardwareName + " (" + status + ")");
+                    UseCaseLogger.ShowInfo(label + " NIC " + ni.HardwareName + " (" + status + ")");
 
                     RefreshAll();                    
                 }

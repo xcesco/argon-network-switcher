@@ -14,9 +14,9 @@ using BrightIdeasSoftware;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormAdapters : ArgonDockContent
+    public partial class FormNetworkCards : ArgonDockContent
     {
-        public FormAdapters()
+        public FormNetworkCards()
         {
             InitializeComponent();
 
@@ -41,11 +41,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = false;
+                Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.rbtnViewNICs.Checked = true;
+                Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = true;
             }
         }
 

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Argon.OperatingSystem.Network.Profile;
-using Argon.Windows.Forms;
 using Argon.Models;
+using System.Windows.Controls;
+using Argon.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Argon.UseCase
 {
@@ -19,12 +21,51 @@ namespace Argon.UseCase
         /// </summary>
         /// <param name="formMain">The form main.</param>
         public static void Load(FormMain formMain)
-        {
-            // set the main window
-            ViewModel.Main = formMain;            
+        {            
+            // create other forms
+            CreateForms(formMain);
+
+            // set 
+            DisplayFormsInDefaultPosition();
+
+            UseCaseLogger.ShowInfo("Startup program");
 
             // load the profiles
             bool load=UseCaseConfig.Load();
+        }
+
+        /// <summary>
+        /// Creates the forms.
+        /// </summary>
+        internal static void CreateForms(FormMain formMain)
+        {
+            // set the main window
+            ViewModel.MainView = formMain;
+
+            ViewModel.ConsoleView = new FormConsole();
+
+            ViewModel.ProfilesView = new FormProfiles();
+            ViewModel.ProfileViewList = new List<FormProfile>();
+
+            ViewModel.NetworkCardsView = new FormNetworkCards();
+            ViewModel.NetworkCardViewList = new List<FormNetworkCard>();            
+        }
+
+        /// <summary>
+        /// Displays the forms in default position.
+        /// </summary>
+        internal static void DisplayFormsInDefaultPosition()
+        {
+            WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel = ViewModel.MainView.dockPanel;
+
+            // default position for nics form, profiles form and console form
+            ViewModel.NetworkCardsView.Show(dockPanel);
+            ViewModel.ProfilesView.Show(dockPanel);
+            ViewModel.ConsoleView.Show(dockPanel);
+
+            UseCaseView.Display(ViewModel.NetworkCardsView, DockState.DockBottomAutoHide);
+            UseCaseView.Display(ViewModel.ProfilesView, DockState.Document);
+            UseCaseView.Display(ViewModel.ConsoleView, DockState.DockBottomAutoHide);                           
         }
 
     }
