@@ -37,7 +37,7 @@ namespace Argon.UseCase
 
             if (dockState == DockState.Unknown && dockContent.OldDockState != DockState.Unknown)
             {
-                dockContent.DockState = dockContent.OldDockState;
+                dockContent.DockState = dockContent.OldDockState;                
             }
             
             dockContent.Show();
