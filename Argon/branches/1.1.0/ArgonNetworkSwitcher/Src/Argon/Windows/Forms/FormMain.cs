@@ -49,11 +49,11 @@ namespace Argon.Windows.Forms
 
             dockPanel.SaveAsXml(configFile);
 
-            DialogResult ret = MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult ret = MessageBox.Show(this, "Do you want to exit and save configuration?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (ret == DialogResult.Yes)
             {
-                NetworkProfileHelper.Save(Controller.Instance.Model.Profiles,"Profiles.xml");                
+                UseCaseConfig.Save();                
                 return;
             } else {
                 // bug fix: if user says no the windows does not close
