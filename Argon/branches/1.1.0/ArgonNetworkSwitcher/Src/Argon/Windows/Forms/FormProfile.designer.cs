@@ -148,14 +148,13 @@ namespace Argon.Windows.Forms
             // 
             // pictureBox
             // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.ContextMenuStrip = this.contextMenuStrip;
             this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
             this.pictureBox.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
             this.pictureBox.Location = new System.Drawing.Point(12, 9);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox.Size = new System.Drawing.Size(48, 48);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox.TabIndex = 17;
             this.pictureBox.TabStop = false;

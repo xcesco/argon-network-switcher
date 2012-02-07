@@ -31,21 +31,21 @@ namespace Argon.Windows.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -58,39 +58,38 @@ namespace Argon.Windows.Forms
             this.rpProfilesCollection = new System.Windows.Forms.RibbonPanel();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
             this.rpProfile = new System.Windows.Forms.RibbonPanel();
-            this.rsProfileSeparator = new System.Windows.Forms.RibbonSeparator();
-            this.rpCards = new System.Windows.Forms.RibbonPanel();
-            this.rpNetworkCard = new System.Windows.Forms.RibbonPanel();
-            this.rpConsole = new System.Windows.Forms.RibbonPanel();
-            this.rtViews = new System.Windows.Forms.RibbonTab();
-            this.rpViews = new System.Windows.Forms.RibbonPanel();
-            this.rpHelp = new System.Windows.Forms.RibbonPanel();
-            this.pnlRibbonContainer = new System.Windows.Forms.Panel();
-            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
-            this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
-            this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileView = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileDelete = new System.Windows.Forms.RibbonButton();
             this.rbtnProfileSave = new System.Windows.Forms.RibbonButton();
+            this.rsProfileSeparator = new System.Windows.Forms.RibbonSeparator();
             this.rbtnProfileRun = new System.Windows.Forms.RibbonButton();
+            this.rpCards = new System.Windows.Forms.RibbonPanel();
             this.rbtnCardsRefresh = new System.Windows.Forms.RibbonButton();
             this.rbtnCardView = new System.Windows.Forms.RibbonButton();
+            this.rpNetworkCard = new System.Windows.Forms.RibbonPanel();
+            this.rpConsole = new System.Windows.Forms.RibbonPanel();
+            this.rtViews = new System.Windows.Forms.RibbonTab();
+            this.rpViews = new System.Windows.Forms.RibbonPanel();
             this.rbtnViewConsole = new System.Windows.Forms.RibbonButton();
             this.rbtnViewProfiles = new System.Windows.Forms.RibbonButton();
             this.rbtnViewNetworkCards = new System.Windows.Forms.RibbonButton();
+            this.rpHelp = new System.Windows.Forms.RibbonPanel();
             this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpUpdate = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpDonate = new System.Windows.Forms.RibbonButton();
-            this.statusStrip.SuspendLayout();
+            this.pnlRibbonContainer = new System.Windows.Forms.Panel();
+            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
+            this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
+            this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
+            this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
+            this.rbtnLoad = new System.Windows.Forms.RibbonButton();
+            this.rbtnSave = new System.Windows.Forms.RibbonButton();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus,
-            this.progressBar});
             this.statusStrip.Location = new System.Drawing.Point(0, 586);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1016, 22);
@@ -116,50 +115,50 @@ namespace Argon.Windows.Forms
             this.dockPanel.Location = new System.Drawing.Point(0, 140);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.Size = new System.Drawing.Size(1016, 446);
-            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
-            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin1.TabGradient = tabGradient1;
-            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
-            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
-            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
-            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
-            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
-            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
-            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
-            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
-            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
-            tabGradient7.EndColor = System.Drawing.Color.Transparent;
-            tabGradient7.StartColor = System.Drawing.Color.Transparent;
-            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
-            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel.Skin = dockPanelSkin1;
+            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
+            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin2.TabGradient = tabGradient8;
+            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
+            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
+            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
+            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
+            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
+            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
+            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
+            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
+            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
+            tabGradient14.EndColor = System.Drawing.Color.Transparent;
+            tabGradient14.StartColor = System.Drawing.Color.Transparent;
+            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
+            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
+            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
+            this.dockPanel.Skin = dockPanelSkin2;
             this.dockPanel.TabIndex = 6;
             this.dockPanel.SizeChanged += new System.EventHandler(this.dockPanel_SizeChanged);
             // 
@@ -202,9 +201,6 @@ namespace Argon.Windows.Forms
             // 
             this.ribbon.QuickAcessToolbar.AltKey = null;
             this.ribbon.QuickAcessToolbar.Image = null;
-            this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnSmartView);
-            this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigLoad);
-            this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigSave);
             this.ribbon.QuickAcessToolbar.Tag = null;
             this.ribbon.QuickAcessToolbar.Text = null;
             this.ribbon.QuickAcessToolbar.ToolTip = null;
@@ -250,113 +246,6 @@ namespace Argon.Windows.Forms
             this.rpProfile.Items.Add(this.rbtnProfileRun);
             this.rpProfile.Tag = null;
             this.rpProfile.Text = "profile";
-            // 
-            // rsProfileSeparator
-            // 
-            this.rsProfileSeparator.AltKey = null;
-            this.rsProfileSeparator.Image = null;
-            this.rsProfileSeparator.Tag = null;
-            this.rsProfileSeparator.Text = null;
-            this.rsProfileSeparator.ToolTip = null;
-            this.rsProfileSeparator.ToolTipImage = null;
-            this.rsProfileSeparator.ToolTipTitle = null;
-            // 
-            // rpCards
-            // 
-            this.rpCards.Items.Add(this.rbtnCardsRefresh);
-            this.rpCards.Items.Add(this.rbtnCardView);
-            this.rpCards.Tag = null;
-            this.rpCards.Text = "network cards";
-            // 
-            // rpNetworkCard
-            // 
-            this.rpNetworkCard.Tag = null;
-            this.rpNetworkCard.Text = "network card";
-            // 
-            // rpConsole
-            // 
-            this.rpConsole.Tag = null;
-            this.rpConsole.Text = "console";
-            // 
-            // rtViews
-            // 
-            this.rtViews.Panels.Add(this.rpViews);
-            this.rtViews.Panels.Add(this.rpHelp);
-            this.rtViews.Tag = null;
-            this.rtViews.Text = "Views";
-            // 
-            // rpViews
-            // 
-            this.rpViews.Items.Add(this.rbtnViewConsole);
-            this.rpViews.Items.Add(this.rbtnViewProfiles);
-            this.rpViews.Items.Add(this.rbtnViewNetworkCards);
-            this.rpViews.Tag = null;
-            this.rpViews.Text = "views";
-            // 
-            // rpHelp
-            // 
-            this.rpHelp.Items.Add(this.rbtnHelpAbout);
-            this.rpHelp.Items.Add(this.rbtnHelpUpdate);
-            this.rpHelp.Items.Add(this.rbtnHelpDonate);
-            this.rpHelp.Tag = null;
-            this.rpHelp.Text = "help";
-            // 
-            // pnlRibbonContainer
-            // 
-            this.pnlRibbonContainer.Controls.Add(this.ribbon);
-            this.pnlRibbonContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRibbonContainer.Location = new System.Drawing.Point(0, 0);
-            this.pnlRibbonContainer.Name = "pnlRibbonContainer";
-            this.pnlRibbonContainer.Size = new System.Drawing.Size(1016, 140);
-            this.pnlRibbonContainer.TabIndex = 15;
-            // 
-            // rbtnSmartView
-            // 
-            this.rbtnSmartView.AltKey = null;
-            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
-            this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
-            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnSmartView.Tag = null;
-            this.rbtnSmartView.Text = "Smart view";
-            this.rbtnSmartView.ToolTip = null;
-            this.rbtnSmartView.ToolTipImage = null;
-            this.rbtnSmartView.ToolTipTitle = null;
-            this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
-            // 
-            // rbtnConfigLoad
-            // 
-            this.rbtnConfigLoad.AltKey = null;
-            this.rbtnConfigLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnConfigLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnConfigLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.Image")));
-            this.rbtnConfigLoad.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnConfigLoad.SmallImage = global::Argon.Windows.Forms.Properties.Resources.document;
-            this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnConfigLoad.Tag = null;
-            this.rbtnConfigLoad.Text = "Load config";
-            this.rbtnConfigLoad.ToolTip = null;
-            this.rbtnConfigLoad.ToolTipImage = null;
-            this.rbtnConfigLoad.ToolTipTitle = "Load config";
-            this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
-            // 
-            // rbtnConfigSave
-            // 
-            this.rbtnConfigSave.AltKey = null;
-            this.rbtnConfigSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnConfigSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnConfigSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.Image")));
-            this.rbtnConfigSave.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnConfigSave.SmallImage = global::Argon.Windows.Forms.Properties.Resources.disk_blue;
-            this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnConfigSave.Tag = null;
-            this.rbtnConfigSave.Text = "Save";
-            this.rbtnConfigSave.ToolTip = null;
-            this.rbtnConfigSave.ToolTipImage = null;
-            this.rbtnConfigSave.ToolTipTitle = "Save config";
-            this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
             // 
             // rbtnProfileNew
             // 
@@ -418,6 +307,16 @@ namespace Argon.Windows.Forms
             this.rbtnProfileSave.ToolTipTitle = null;
             this.rbtnProfileSave.Click += new System.EventHandler(this.btnProfileSave_Click_1);
             // 
+            // rsProfileSeparator
+            // 
+            this.rsProfileSeparator.AltKey = null;
+            this.rsProfileSeparator.Image = null;
+            this.rsProfileSeparator.Tag = null;
+            this.rsProfileSeparator.Text = null;
+            this.rsProfileSeparator.ToolTip = null;
+            this.rsProfileSeparator.ToolTipImage = null;
+            this.rsProfileSeparator.ToolTipTitle = null;
+            // 
             // rbtnProfileRun
             // 
             this.rbtnProfileRun.AltKey = null;
@@ -431,6 +330,13 @@ namespace Argon.Windows.Forms
             this.rbtnProfileRun.ToolTip = null;
             this.rbtnProfileRun.ToolTipImage = null;
             this.rbtnProfileRun.ToolTipTitle = null;
+            // 
+            // rpCards
+            // 
+            this.rpCards.Items.Add(this.rbtnCardsRefresh);
+            this.rpCards.Items.Add(this.rbtnCardView);
+            this.rpCards.Tag = null;
+            this.rpCards.Text = "network cards";
             // 
             // rbtnCardsRefresh
             // 
@@ -459,6 +365,31 @@ namespace Argon.Windows.Forms
             this.rbtnCardView.ToolTip = null;
             this.rbtnCardView.ToolTipImage = null;
             this.rbtnCardView.ToolTipTitle = null;
+            // 
+            // rpNetworkCard
+            // 
+            this.rpNetworkCard.Tag = null;
+            this.rpNetworkCard.Text = "network card";
+            // 
+            // rpConsole
+            // 
+            this.rpConsole.Tag = null;
+            this.rpConsole.Text = "console";
+            // 
+            // rtViews
+            // 
+            this.rtViews.Panels.Add(this.rpViews);
+            this.rtViews.Panels.Add(this.rpHelp);
+            this.rtViews.Tag = null;
+            this.rtViews.Text = "Views";
+            // 
+            // rpViews
+            // 
+            this.rpViews.Items.Add(this.rbtnViewConsole);
+            this.rpViews.Items.Add(this.rbtnViewProfiles);
+            this.rpViews.Items.Add(this.rbtnViewNetworkCards);
+            this.rpViews.Tag = null;
+            this.rpViews.Text = "views";
             // 
             // rbtnViewConsole
             // 
@@ -505,6 +436,14 @@ namespace Argon.Windows.Forms
             this.rbtnViewNetworkCards.ToolTipTitle = null;
             this.rbtnViewNetworkCards.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
             // 
+            // rpHelp
+            // 
+            this.rpHelp.Items.Add(this.rbtnHelpAbout);
+            this.rpHelp.Items.Add(this.rbtnHelpUpdate);
+            this.rpHelp.Items.Add(this.rbtnHelpDonate);
+            this.rpHelp.Tag = null;
+            this.rpHelp.Text = "help";
+            // 
             // rbtnHelpAbout
             // 
             this.rbtnHelpAbout.AltKey = null;
@@ -550,6 +489,109 @@ namespace Argon.Windows.Forms
             this.rbtnHelpDonate.ToolTipTitle = null;
             this.rbtnHelpDonate.Click += new System.EventHandler(this.rbtnHelpDonate_Click);
             // 
+            // pnlRibbonContainer
+            // 
+            this.pnlRibbonContainer.Controls.Add(this.ribbon);
+            this.pnlRibbonContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRibbonContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlRibbonContainer.Name = "pnlRibbonContainer";
+            this.pnlRibbonContainer.Size = new System.Drawing.Size(1016, 140);
+            this.pnlRibbonContainer.TabIndex = 15;
+            // 
+            // rbtnSmartView
+            // 
+            this.rbtnSmartView.AltKey = null;
+            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
+            this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
+            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSmartView.Tag = null;
+            this.rbtnSmartView.Text = "Smart view";
+            this.rbtnSmartView.ToolTip = null;
+            this.rbtnSmartView.ToolTipImage = null;
+            this.rbtnSmartView.ToolTipTitle = null;
+            this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
+            ribbon.QuickAcessToolbar.Items.Add(rbtnSmartView);
+            ribbon.QuickAcessToolbar.Items.Add(rbtnConfigLoad);
+            ribbon.QuickAcessToolbar.Items.Add(rbtnConfigSave);
+
+            // 
+            // rbtnConfigLoad
+            // 
+            this.rbtnConfigLoad.AltKey = null;
+            this.rbtnConfigLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnConfigLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnConfigLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.Image")));
+            this.rbtnConfigLoad.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigLoad.SmallImage = global::Argon.Windows.Forms.Properties.Resources.document;
+            this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnConfigLoad.Tag = null;
+            this.rbtnConfigLoad.Text = "Load config";
+            this.rbtnConfigLoad.ToolTip = null;
+            this.rbtnConfigLoad.ToolTipImage = null;
+            this.rbtnConfigLoad.ToolTipTitle = "Load config";
+            this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
+            // 
+            // rbtnConfigSave
+            // 
+            this.rbtnConfigSave.AltKey = null;
+            this.rbtnConfigSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnConfigSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnConfigSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.Image")));
+            this.rbtnConfigSave.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigSave.SmallImage = global::Argon.Windows.Forms.Properties.Resources.disk_blue;
+            this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnConfigSave.Tag = null;
+            this.rbtnConfigSave.Text = "Save";
+            this.rbtnConfigSave.ToolTip = null;
+            this.rbtnConfigSave.ToolTipImage = null;
+            this.rbtnConfigSave.ToolTipTitle = "Save config";
+            this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
+            // 
+            // rbtnSmartLoad
+            // 
+            this.rbtnSmartLoad.AltKey = null;
+            this.rbtnSmartLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSmartLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSmartLoad.Image = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
+            this.rbtnSmartLoad.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSmartLoad.SmallImage")));
+            this.rbtnSmartLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSmartLoad.Tag = null;
+            this.rbtnSmartLoad.Text = null;
+            this.rbtnSmartLoad.ToolTip = null;
+            this.rbtnSmartLoad.ToolTipImage = null;
+            this.rbtnSmartLoad.ToolTipTitle = null;
+            // 
+            // rbtnLoad
+            // 
+            this.rbtnLoad.AltKey = null;
+            this.rbtnLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnLoad.Image = global::Argon.Windows.Forms.Properties.Resources.document;
+            this.rbtnLoad.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLoad.SmallImage")));
+            this.rbtnLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnLoad.Tag = null;
+            this.rbtnLoad.Text = null;
+            this.rbtnLoad.ToolTip = null;
+            this.rbtnLoad.ToolTipImage = null;
+            this.rbtnLoad.ToolTipTitle = null;
+            // 
+            // rbtnSave
+            // 
+            this.rbtnSave.AltKey = null;
+            this.rbtnSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSave.Image = global::Argon.Windows.Forms.Properties.Resources.disk_blue;
+            this.rbtnSave.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSave.SmallImage")));
+            this.rbtnSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSave.Tag = null;
+            this.rbtnSave.Text = null;
+            this.rbtnSave.ToolTip = null;
+            this.rbtnSave.ToolTipImage = null;
+            this.rbtnSave.ToolTipTitle = null;          
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,8 +608,6 @@ namespace Argon.Windows.Forms
             this.Text = "Argon - Network Switcher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.pnlRibbonContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -582,10 +622,7 @@ namespace Argon.Windows.Forms
         public System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
         private System.Windows.Forms.ImageList imageList16x16;
-        private System.Windows.Forms.Ribbon ribbon;
         private System.Windows.Forms.RibbonTab rtProfiles;
-        private System.Windows.Forms.RibbonPanel rpProfile;
-        private System.Windows.Forms.RibbonTab rtOperations;
         private System.Windows.Forms.RibbonPanel rpViews;
         private System.Windows.Forms.RibbonTab rtViews;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator;
@@ -611,6 +648,12 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonButton rbtnProfileRun;
         public System.Windows.Forms.RibbonButton rbtnSmartView;
         public System.Windows.Forms.Panel pnlRibbonContainer;
+        public System.Windows.Forms.RibbonPanel rpProfile;
+        public System.Windows.Forms.RibbonTab rtOperations;
+        public System.Windows.Forms.Ribbon ribbon;
+        private System.Windows.Forms.RibbonButton rbtnSmartLoad;
+        public System.Windows.Forms.RibbonButton rbtnLoad;
+        public System.Windows.Forms.RibbonButton rbtnSave;
         
         public DockPanel Pannello
         {

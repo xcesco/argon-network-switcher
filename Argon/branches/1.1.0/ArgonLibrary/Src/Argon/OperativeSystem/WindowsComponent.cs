@@ -7,7 +7,8 @@ namespace Argon.OperatingSystem
 {
     /// <summary>
     /// Base class for component defined in library
-    /// </summary>    
+    /// </summary>
+    [Serializable]
     public abstract class WindowsComponent
     {
         /// <summary>

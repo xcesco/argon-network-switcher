@@ -5,6 +5,7 @@ using System.IO;
 
 namespace Argon.OperatingSystem
 {
+    [Serializable]
     public class RunningWindowsExecutable : WindowsExecutable
     {
         protected int _id;

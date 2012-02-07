@@ -12,6 +12,7 @@ namespace Argon.OperatingSystem.Network.Profile
     // declare a delegate for the bookpricechanged event
     public delegate void SelectProfileHandler(NetworkProfile objectsender, EventArgs e);
 
+    [Serializable]
     public class NetworkConfiguration
     {
         protected NetworkProfile _currentProfile;

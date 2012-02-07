@@ -7,7 +7,7 @@ namespace Argon.OperatingSystem.Network
 {
     /// <summary>
     /// 
-    /// </summary>
+    /// </summary>    
     public interface IWindowsNetworkCardInfo
     {
         /// <summary>
@@ -89,6 +89,7 @@ namespace Argon.OperatingSystem.Network
     /// <summary>
     /// Informazioni inerenti la scheda di rete utilizzata
     /// </summary>
+    [Serializable] 
     public class NetworkCardInfoImpl : IWindowsNetworkCardInfo
     {
         /// <summary>

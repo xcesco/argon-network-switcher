@@ -28,5 +28,7 @@ namespace Argon.Models
         /// The network profile list.
         /// </value>
         public static List<NetworkProfile> NetworkProfileList { get; set; }
+
+        public static NetworkProfile SelectedNetworkProfile { get; set; }
     }
 }
