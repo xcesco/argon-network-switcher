@@ -295,9 +295,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\place_house24x24.png" />
-    <None Include="Resources\place_office.png" />
-    <None Include="Resources\place_work24x24.png" />
     <None Include="Resources\profile_add24x24.png" />
     <None Include="Resources\profile_delete24x24.png" />
     <None Include="Resources\profile_down24x24.png" />
@@ -338,8 +335,18 @@
     <None Include="Resources\document_plain_new48x48.png" />
     <None Include="Resources\document_refresh48x48.png" />
     <None Include="Resources\document_view48x48.png" />
+    <None Include="Resources\profile_0_48x48.png" />
+    <None Include="Resources\profile_1_48x48.png" />
+    <None Include="Resources\profile_2_48x48.png" />
+    <None Include="Resources\profile_3_48x48.png" />
+    <None Include="Resources\profile_4_48x48.png" />
+    <None Include="Resources\profile_5_48x48.png" />
+    <None Include="Resources\profile_6_48x48.png" />
+    <None Include="Resources\profile_7_48x48.png" />
+    <None Include="Resources\profile_8_48x48.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
+    <None Include="Resources\wifi32x321.png" />
     <Content Include="todolist.txt" />
     <None Include="Resources\wifi16x161.png" />
     <Content Include="Resources\wifi32x32.png" />
