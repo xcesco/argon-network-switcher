@@ -22,6 +22,7 @@ namespace Argon.OperatingSystem
     /// <summary>
     /// 
     /// </summary>
+    [Serializable]  
     public class DriveMap : WindowsComponent
     {
         /// <summary>

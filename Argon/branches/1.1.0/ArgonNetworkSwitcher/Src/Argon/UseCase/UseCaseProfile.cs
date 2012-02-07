@@ -42,8 +42,22 @@ namespace Argon.UseCase
 
             // bug on ribbon: if i don't do it, buttons are not display untill change tab
             ViewModel.MainView.Width +=1;
-            ViewModel.MainView.Width -= -1;
-            
+            ViewModel.MainView.Width -= -1;            
+        }
+
+        /// <summary>
+        /// Shows the specified profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void Show(NetworkProfile profile)
+        {
+            // set the selected profile in model
+            DataModel.SelectedNetworkProfile = profile;
+
+            // selected the current ribbonù
+            //ViewModel.MainView.ribbon.T  = ViewModel.MainView.rtOperations;
+            //ViewModel.MainView.rtOperations.
+            //ViewModel.MainView.rpProfile.Selected = true;
         }
     }
 }

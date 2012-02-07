@@ -7,6 +7,7 @@ namespace Argon.OperatingSystem
     /// <summary>
     /// 
     /// </summary>
+    [Serializable]
     public class WindowsExecutable : WindowsComponent
     {
 

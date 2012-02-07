@@ -14,6 +14,7 @@ namespace Argon.OperatingSystem.Network.Profile
     /// <summary>
     /// 
     /// </summary>
+    [Serializable]
     public class NetworkProfile
     {        
         public int Id { get; set; }

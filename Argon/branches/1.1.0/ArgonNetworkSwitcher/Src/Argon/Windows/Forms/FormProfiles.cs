@@ -10,6 +10,7 @@ using Argon.Windows.Forms;
 using Argon.Controllers;
 using Argon.OperatingSystem.Network.Profile;
 using BrightIdeasSoftware;
+using Argon.UseCase;
 
 namespace Argon.Windows.Forms
 {
@@ -62,6 +63,7 @@ namespace Argon.Windows.Forms
 
                 Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
                 Controller.Instance.ActivateFormProfile();
+                
             }
         }
 
@@ -71,6 +73,8 @@ namespace Argon.Windows.Forms
             {
                 Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
                 NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
+
+                UseCaseProfile.Show((NetworkProfile)listView.SelectedObject);
             }
         }
 

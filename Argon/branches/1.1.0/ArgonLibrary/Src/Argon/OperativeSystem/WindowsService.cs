@@ -1,4 +1,5 @@
 using System.ServiceProcess;
+using System;
 
 namespace Argon.OperatingSystem
 {
@@ -8,6 +9,7 @@ namespace Argon.OperatingSystem
     /// e' associato ad un service allora è mounted.
     /// Se non di tipo mounted, allora le uniche proprietà valide sono:
     /// </summary>
+    [Serializable]
     public class WindowsService : WindowsComponent, IWindowsServiceInfo
     {
         /// <summary>

@@ -7,6 +7,7 @@ namespace Argon.OperatingSystem.Network
     /// <summary>
     /// 
     /// </summary>
+    [Serializable]    
     public class ProxyConfiguration
     {
         /// <summary>
