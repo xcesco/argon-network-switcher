@@ -140,7 +140,7 @@ namespace Argon.OperatingSystem.Network.Profile
                 {
                     writer.WriteStartElement("forcedNics");
 
-                    IList<IWindowsNetworkCardInfo> listDisabledNics = item.DisabledNetworkCards;
+                    IList<WindowsNetworkCard> listDisabledNics = item.DisabledNetworkCards;
 
                     foreach (IWindowsNetworkCardInfo itemNIC in listDisabledNics)
                     {
@@ -382,7 +382,7 @@ namespace Argon.OperatingSystem.Network.Profile
             {
                 Console.WriteLine(nic.Description + " = " + nic.Enabled + " " + nic.Status);
                 Console.WriteLine(nic.Connected);
-
+                // if nic is connected we insert it in enabled card list
                 if (nic.Connected)
                 {
                     enabledCardList.Add(nic);

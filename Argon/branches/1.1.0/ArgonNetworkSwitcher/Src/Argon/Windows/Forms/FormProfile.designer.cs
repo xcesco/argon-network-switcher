@@ -39,6 +39,16 @@ namespace Argon.Windows.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.lstNetworkCard = new System.Windows.Forms.ComboBox();
             this.lblSelectedCard = new System.Windows.Forms.Label();
             this.txtSelectedCard = new System.Windows.Forms.Label();
@@ -66,6 +76,7 @@ namespace Argon.Windows.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.contextMenuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tp1NIC.SuspendLayout();
             this.tp2Proxy.SuspendLayout();
@@ -138,6 +149,7 @@ namespace Argon.Windows.Forms
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.ContextMenuStrip = this.contextMenuStrip;
             this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
             this.pictureBox.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
@@ -147,6 +159,94 @@ namespace Argon.Windows.Forms
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox.TabIndex = 17;
             this.pictureBox.TabStop = false;
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem9});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(218, 490);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem1.Text = "Default profile image";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = global::Argon.Windows.Forms.Properties.Resources.profile_1_48x48;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem2.Text = "Profile image 1";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Image = global::Argon.Windows.Forms.Properties.Resources.profile_2_48x48;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem3.Text = "Profile image 2";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = global::Argon.Windows.Forms.Properties.Resources.profile_3_48x48;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem4.Text = "Profile image 3";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Image = global::Argon.Windows.Forms.Properties.Resources.profile_4_48x48;
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem5.Text = "Profile image 4";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Image = global::Argon.Windows.Forms.Properties.Resources.profile_5_48x48;
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem6.Text = "Profile image 5";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Image = global::Argon.Windows.Forms.Properties.Resources.profile_6_48x48;
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem7.Text = "Profile image 6";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Image = global::Argon.Windows.Forms.Properties.Resources.profile_7_48x48;
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem8.Text = "Profile image 7";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Image = global::Argon.Windows.Forms.Properties.Resources.profile_8_48x48;
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem9.Text = "Profile image 8";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
             // lstNetworkCard
             // 
@@ -454,6 +554,7 @@ namespace Argon.Windows.Forms
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProfile_FormClosed);
             this.Load += new System.EventHandler(this.FormProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.contextMenuStrip.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tp1NIC.ResumeLayout(false);
             this.tp2Proxy.ResumeLayout(false);
@@ -503,5 +604,15 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.TabPage tp6Applications;
         public System.Windows.Forms.TabPage tp7Adapters;
         public System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
     }
 }

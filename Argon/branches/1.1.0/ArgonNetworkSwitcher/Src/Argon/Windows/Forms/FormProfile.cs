@@ -325,5 +325,10 @@ namespace Argon.Windows.Forms
             UseCaseLogger.ShowInfo("Profile form closed " + ret);
         }
 
+        private void toolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox.Image=((ToolStripMenuItem)sender).Image;
+        }
+
     }
 }

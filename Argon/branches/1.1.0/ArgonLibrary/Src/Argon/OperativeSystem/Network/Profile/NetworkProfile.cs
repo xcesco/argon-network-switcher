@@ -32,7 +32,7 @@ namespace Argon.OperatingSystem.Network.Profile
             set;
         }
         
-        public List<IWindowsNetworkCardInfo> DisabledNetworkCards { get; set; }
+        public List<WindowsNetworkCard> DisabledNetworkCards { get; set; }
 
         /// <summary>
         /// Gets or sets the proxy config.
@@ -64,7 +64,7 @@ namespace Argon.OperatingSystem.Network.Profile
 
             DefaultPrinter = "";
 
-            DisabledNetworkCards = new List<IWindowsNetworkCardInfo>();
+            DisabledNetworkCards = new List<WindowsNetworkCard>();
         }
 
         /// <summary>

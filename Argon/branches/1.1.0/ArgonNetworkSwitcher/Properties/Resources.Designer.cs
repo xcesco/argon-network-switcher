@@ -550,23 +550,65 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap place_house24x24 {
+        public static System.Drawing.Bitmap profile_0_48x48 {
             get {
-                object obj = ResourceManager.GetObject("place_house24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("profile_0_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap place_office {
+        public static System.Drawing.Bitmap profile_1_48x48 {
             get {
-                object obj = ResourceManager.GetObject("place_office", resourceCulture);
+                object obj = ResourceManager.GetObject("profile_1_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap place_work24x24 {
+        public static System.Drawing.Bitmap profile_2_48x48 {
             get {
-                object obj = ResourceManager.GetObject("place_work24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("profile_2_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_3_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_3_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_4_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_4_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_5_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_5_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_6_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_6_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_7_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_7_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_8_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_8_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -742,6 +784,13 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap wifi32x32 {
             get {
                 object obj = ResourceManager.GetObject("wifi32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap wifi32x321 {
+            get {
+                object obj = ResourceManager.GetObject("wifi32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
