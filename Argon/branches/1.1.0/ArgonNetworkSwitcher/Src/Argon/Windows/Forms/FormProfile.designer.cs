@@ -94,6 +94,13 @@ namespace Argon.Windows.Forms
             this.imageList24x24.Images.SetKeyName(5, "application.png");
             this.imageList24x24.Images.SetKeyName(6, "PCI-card_network.png");
             this.imageList24x24.Images.SetKeyName(7, "environment_network.png");
+            this.imageList24x24.Images.SetKeyName(8, "");
+            this.imageList24x24.Images.SetKeyName(9, "");
+            this.imageList24x24.Images.SetKeyName(10, "");
+            this.imageList24x24.Images.SetKeyName(11, "");
+            this.imageList24x24.Images.SetKeyName(12, "");
+            this.imageList24x24.Images.SetKeyName(13, "");
+            this.imageList24x24.Images.SetKeyName(14, "");
             // 
             // label8
             // 
@@ -130,12 +137,14 @@ namespace Argon.Windows.Forms
             // 
             // pictureBox
             // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
             this.pictureBox.Location = new System.Drawing.Point(12, 9);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox.TabIndex = 17;
             this.pictureBox.TabStop = false;
             // 
@@ -398,7 +407,6 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
-            //this.networkCardListView.SelectedItems = ((System.Collections.Generic.IList<Argon.OperatingSystem.IWindowsNetworkCardInfo>)(resources.GetObject("networkCardListView.SelectedItems")));
             this.networkCardListView.Size = new System.Drawing.Size(1169, 460);
             this.networkCardListView.TabIndex = 0;
             // 
