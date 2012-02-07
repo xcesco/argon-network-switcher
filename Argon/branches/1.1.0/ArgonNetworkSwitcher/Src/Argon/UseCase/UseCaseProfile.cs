@@ -55,9 +55,8 @@ namespace Argon.UseCase
             DataModel.SelectedNetworkProfile = profile;
 
             // selected the current ribbonù
-            //ViewModel.MainView.ribbon.T  = ViewModel.MainView.rtOperations;
-            //ViewModel.MainView.rtOperations.
-            //ViewModel.MainView.rpProfile.Selected = true;
+            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;            
+            ViewModel.MainView.rpProfile.Selected = true;
         }
     }
 }
