@@ -6,7 +6,6 @@ using Argon.OperatingSystem;
 
 namespace Argon.OperatingSystem.Network.Profile
 {
-
     // declare a delegate for the bookpricechanged event
     public delegate void NameChangedHandler(Object objectsender, EventArgs e);
         
@@ -16,15 +15,40 @@ namespace Argon.OperatingSystem.Network.Profile
     /// </summary>
     [Serializable]
     public class NetworkProfile
-    {        
+    {
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
         public int Id { get; set; }
 
         private string _name;
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name
         {
             get { return _name; }
             set { _name = value; FireNameChangeEvent(new EventArgs()); }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the name of the image.
+        /// </summary>
+        /// <value>
+        /// The name of the image.
+        /// </value>
+        public String ImageName
+        {
+            get;
+            set;
         }
 
         public IWindowsNetworkCardInfo NetworkCardInfo

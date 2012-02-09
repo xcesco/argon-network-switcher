@@ -216,9 +216,14 @@ namespace Argon.Windows.Forms
             NetworkProfileActions.ApplyProfile();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnProfileRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileRefresh_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.RefrehProfiles();
+            UseCaseProfile.Refresh();
         }
 
         private void btnProfileSave_Click_1(object sender, EventArgs e)

@@ -152,7 +152,11 @@ namespace Argon.OperatingSystem
                 Debug.WriteLine("WinsEnableLMHostsLookup: " + item.WinsEnableLMHostsLookup);
                 Debug.WriteLine("WinsHostLookupFile     : " + item.WinsHostLookupFile);
                 Debug.WriteLine("WinsPrimaryServer      : " + item.WinsPrimaryServer);
-                Debug.WriteLine("WinsSecondaryServer    : " + item.WinsSecondaryServer);                
+                Debug.WriteLine("WinsSecondaryServer    : " + item.WinsSecondaryServer);
+
+                Debug.WriteLine("Status    : " + item.Status);
+                Debug.WriteLine("NetConnectionStatus    : " + item.NetConnectionStatus);           
+               
                 // Gateway
                 // DDNS
                 // DNS1

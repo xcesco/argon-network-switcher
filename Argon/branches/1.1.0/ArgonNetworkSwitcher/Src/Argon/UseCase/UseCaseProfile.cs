@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using Argon.Models;
 using Argon.OperatingSystem.Network.Profile;
+using System.Drawing;
 
 namespace Argon.UseCase
 {
@@ -15,26 +16,32 @@ namespace Argon.UseCase
     {
         /// <summary>
         /// Refreshes this instance.
+        /// <list type="">
+        ///     <item>refresh the list in profileView</item>
+        ///     <item>refresh the ribbon in mainView</item>
+        /// </list>
         /// </summary>
         public static void Refresh()
-        {
-            RibbonPanel rp =  ViewModel.MainView.rpProfilesCollection;
+        {                        
+            
+            RibbonPanel rp = ViewModel.MainView.rpProfilesCollection;
             RibbonItemCollection rpc = rp.Items;
-            RibbonButton rButton=null;
-
+            RibbonButton rButton = null;
             rpc.Clear();
-            // Lista dei profili nell'apposita finestra
-            ViewModel.ProfilesView.listView.ClearObjects();
-           
+
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
+                // 1 - refresh the profileView                
                 ViewModel.ProfilesView.listView.AddObject(item);
-                
+
+                // 2 - refresh the ribbonPanel in mainView            
                 rButton=new RibbonButton();
 
                 rButton.Text=item.Name;
                 rButton.Tag=item;
-                rButton.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+                //rButton.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
+                rButton.Image = UseCaseApplication.GetImage(item.ImageName);
+                //rButton.SmallImage = UseCaseApplication.GetImage(item.ImageName);
                 rButton.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
                 // create in ribbon panel
                 rpc.Add(rButton);

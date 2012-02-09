@@ -13,6 +13,9 @@ using Argon.Windows7.Network.Wifi;
 
 namespace Argon.OperatingSystem.Network.Profile
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class NetworkProfileHelper
     {
 
@@ -33,6 +36,7 @@ namespace Argon.OperatingSystem.Network.Profile
                 writer.WriteStartElement("profile");
                 writer.WriteAttributeString("name", item.Name);
                 writer.WriteAttributeString("id", item.Id.ToString());
+                writer.WriteAttributeString("imageName", item.ImageName);
 
                 {
                     IWindowsNetworkCardInfo nic = item.NetworkCardInfo;
@@ -202,12 +206,14 @@ namespace Argon.OperatingSystem.Network.Profile
 
         }
 
+
         /// <summary>
-        /// Loads the specified filename.
+        /// Loads the specified file name.
         /// </summary>
-        /// <param name="filename">The filename.</param>
-        /// <returns>list of profile or null</returns>
-        public static List<NetworkProfile> Load(string fileName)
+        /// <param name="fileName">Name of the file.</param>
+        /// <param name="imageName">Name of the image.</param>
+        /// <returns></returns>
+        public static List<NetworkProfile> Load(string fileName, string imageName)
         {
             List<NetworkProfile> profiles = new List<NetworkProfile>();
 
@@ -234,6 +240,7 @@ namespace Argon.OperatingSystem.Network.Profile
                                     currentProfile = new NetworkProfile();
                                     currentProfile.Id = Int32.Parse(reader.GetAttribute("id"));
                                     currentProfile.Name = reader.GetAttribute("name");
+                                    currentProfile.ImageName = ReadAttributeIfPresent(reader, "imageName", imageName);
                                     profiles.Add(currentProfile);
                                     break;
                                 case "networkcard":

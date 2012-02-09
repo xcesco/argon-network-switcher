@@ -15,6 +15,7 @@ namespace Argon.OperatingSystem.Network.Profile
     [Serializable]
     public class NetworkConfiguration
     {
+
         protected NetworkProfile _currentProfile;
 
         public NetworkProfile CurrentProfile

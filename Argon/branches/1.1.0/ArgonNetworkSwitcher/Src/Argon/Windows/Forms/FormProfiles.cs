@@ -11,6 +11,7 @@ using Argon.Controllers;
 using Argon.OperatingSystem.Network.Profile;
 using BrightIdeasSoftware;
 using Argon.UseCase;
+using Argon.Models;
 
 namespace Argon.Windows.Forms
 {
@@ -28,7 +29,19 @@ namespace Argon.Windows.Forms
 
             colName.ImageGetter = delegate(object rowObject)
             {
-                return 0;
+                NetworkProfile profile = (NetworkProfile)rowObject;
+
+                return profile.ImageName;
+                /*File theFile = (File)row;
+                String extension = this.GetFileExtension(theFile);
+                if (!this.listView.LargeImageList.Images.ContainsKey(extension)) {
+                    Image smallImage = this.GetSmallIconForFileType(extension);
+                    Image largeImage = this.GetLargeIconForFileType(extension);
+                    this.listView.SmallImageList.Images.Add(extension, smallImage);
+                    this.listView.LargeImageList.Images.Add(extension, largeImage);*/
+                // return key;
+                // };
+                //return 0;
             };
             colName.Renderer = new ImageRenderer();
         }
@@ -119,7 +132,15 @@ namespace Argon.Windows.Forms
 
         private void FormProfiles_Load(object sender, EventArgs e)
         {
+            String[] imageNameList = ViewModel.ImageNames;
 
+            ImageList imageList = ViewModel.ProfilesView.imageList48x48;
+
+            // fill imageList in formProfiles
+            foreach (String item in imageNameList)
+            {
+                imageList.Images.Add(item, UseCaseApplication.GetImage(item));
+            }
         }
 
     }

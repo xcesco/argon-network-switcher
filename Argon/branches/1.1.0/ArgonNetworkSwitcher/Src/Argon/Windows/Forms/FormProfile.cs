@@ -12,6 +12,7 @@ using Argon.OperatingSystem.Network.Profile;
 using Argon.Controllers;
 using Argon.OperatingSystem.Network;
 using Argon.UseCase;
+using Argon.Models;
 
 namespace Argon.Windows.Forms
 {
@@ -23,9 +24,34 @@ namespace Argon.Windows.Forms
             currentNetworkCardIndex = -1;
         }
 
+        /// <summary>
+        /// Handles the Load event of the FormProfile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormProfile_Load(object sender, EventArgs e)
         {
-   
+            String[] imageNameList = ViewModel.ImageNames;
+
+            ContextMenuStrip menuStrip = this.contextMenuStrip;
+            
+            menuStrip.Items.Clear();
+
+            ToolStripMenuItem menuItem;
+            int counter=0;
+
+            // fill imageList in formProfiles
+            foreach (String item in imageNameList)
+            {
+                menuItem = new ToolStripMenuItem();
+                menuItem.Image = UseCaseApplication.GetImage(item);                
+                menuItem.Tag = item;
+                menuItem.Text = "Profile image "+counter;
+                menuItem.Click += new System.EventHandler(this.toolStripMenuItem_Click);
+                
+                menuStrip.Items.Add(menuItem);
+                counter++;
+            }
 
         }
 
@@ -116,6 +142,9 @@ namespace Argon.Windows.Forms
             networkList = Controller.Instance.ActionRefreshNetworkAdapters(lstNetworkCard);
             txtName.Text = profile.Name;
             TabText = "Profile: " + profile.Name;
+
+            // load the image profile
+            this.pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);
 
             // abbiamo una scheda di rete
             if (profile.NetworkCardInfo.Id.Length > 0)
@@ -328,6 +357,10 @@ namespace Argon.Windows.Forms
         private void toolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox.Image=((ToolStripMenuItem)sender).Image;
+
+            // set the image
+            NetworkProfile profile = (NetworkProfile)Tag;
+            profile.ImageName = (string)((ToolStripMenuItem)sender).Tag;
         }
 
     }
