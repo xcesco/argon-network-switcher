@@ -44,7 +44,7 @@ namespace Argon.Windows.Forms
             this.mnuDuplicateProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList32x32 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList48x48 = new System.Windows.Forms.ImageList(this.components);
             this.imageList24x24 = new System.Windows.Forms.ImageList(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -76,11 +76,12 @@ namespace Argon.Windows.Forms
             this.listView.ContextMenuStrip = this.contextMenu;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView.FullRowSelect = true;
+            this.listView.LargeImageList = this.imageList48x48;
             this.listView.Location = new System.Drawing.Point(0, 0);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
             this.listView.Size = new System.Drawing.Size(521, 243);
-            this.listView.SmallImageList = this.imageList32x32;
+            this.listView.SmallImageList = this.imageList48x48;
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -90,6 +91,7 @@ namespace Argon.Windows.Forms
             // colName
             // 
             this.colName.AspectName = "Name";
+            this.colName.ImageAspectName = "";
             this.colName.Text = "Name";
             this.colName.Width = 160;
             // 
@@ -163,11 +165,11 @@ namespace Argon.Windows.Forms
             this.mnuDelete.Text = "Remove profile";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
-            // imageList32x32
+            // imageList48x48
             // 
-            this.imageList32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList32x32.ImageStream")));
-            this.imageList32x32.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList32x32.Images.SetKeyName(0, "index.png");
+            this.imageList48x48.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList48x48.ImageSize = new System.Drawing.Size(48, 46);
+            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // imageList24x24
             // 
@@ -205,7 +207,6 @@ namespace Argon.Windows.Forms
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ImageList imageList24x24;
-        private OLVColumn colName;
         private OLVColumn colNetwork;
         public ObjectListView listView;
         private System.Windows.Forms.ContextMenuStrip contextMenu;
@@ -217,6 +218,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuDuplicateProfile;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ImageList imageList32x32;
+        public System.Windows.Forms.ImageList imageList48x48;
+        public OLVColumn colName;
     }
 }

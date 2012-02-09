@@ -14,6 +14,10 @@ namespace Argon.Network
     public class AutoDetectTest
     {
 
+        /// <summary>
+        /// Setups the profiles.
+        /// </summary>
+        /// <returns></returns>
         public List<NetworkProfile> SetupProfiles()
         {
             List<NetworkProfile> list = new List<NetworkProfile>();
@@ -23,7 +27,7 @@ namespace Argon.Network
             Console.WriteLine(file);
             Assert.IsTrue(File.Exists(file));
 
-            list = NetworkProfileHelper.Load(file);
+            list = NetworkProfileHelper.Load(file,"");
 
 
             // string relPath = System.IO.Path.Combine(Application.StartupPath, "TestProfiles.xml"); 
@@ -32,6 +36,9 @@ namespace Argon.Network
             return list;
         }
 
+        /// <summary>
+        /// Tests the auto detect.
+        /// </summary>
         [TestMethod]
         public void TestAutoDetect()
         {

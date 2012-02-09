@@ -10,7 +10,13 @@ namespace Argon.Models
     /// Rapresent view model of program.
     /// </summary>
     public static class ViewModel
-    {        
+    {
+
+        public static String[] ImageNames = { "profile_0_48x48", "profile_1_48x48", 
+                                                "profile_2_48x48", "profile_3_48x48", 
+                                                "profile_4_48x48", "profile_5_48x48", 
+                                                "profile_6_48x48", "profile_7_48x48", 
+                                                "profile_8_48x48" };
 
         /// <summary>
         /// Gets or sets the main.
@@ -58,6 +64,6 @@ namespace Argon.Models
         /// <value>
         /// The adapter view list.
         /// </value>
-        public static List<FormNetworkCard> NetworkCardViewList { get; set; }        
+        public static List<FormNetworkCard> NetworkCardViewList { get; set; }
     }
 }

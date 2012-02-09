@@ -7,6 +7,7 @@ using Argon.Models;
 using System.Windows.Controls;
 using Argon.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
+using System.Windows.Forms;
 
 namespace Argon.UseCase
 {
@@ -29,7 +30,6 @@ namespace Argon.UseCase
             DisplayFormsInDefaultPosition();
 
             UseCaseLogger.ShowInfo("Startup program");
-
 
             // load the profiles
             UseCaseConfig.Load();
@@ -67,6 +67,16 @@ namespace Argon.UseCase
             UseCaseView.Display(ViewModel.NetworkCardsView, DockState.DockBottomAutoHide);
             UseCaseView.Display(ViewModel.ProfilesView, DockState.Document);
             UseCaseView.Display(ViewModel.ConsoleView, DockState.DockBottomAutoHide);                           
+        }
+
+        /// <summary>
+        /// Gets the image.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public static System.Drawing.Image GetImage(string name)
+        {
+            return (System.Drawing.Image)Argon.Windows.Forms.Properties.Resources.ResourceManager.GetObject(name);  
         }
 
     }

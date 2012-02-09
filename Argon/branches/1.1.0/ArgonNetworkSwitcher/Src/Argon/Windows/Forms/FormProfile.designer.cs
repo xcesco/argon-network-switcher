@@ -91,27 +91,7 @@ namespace Argon.Windows.Forms
             // 
             this.imageList48x48.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList48x48.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList24x24
-            // 
-            this.imageList24x24.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList24x24.ImageStream")));
-            this.imageList24x24.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList24x24.Images.SetKeyName(0, "PCI-card_preferences.png");
-            this.imageList24x24.Images.SetKeyName(1, "server_earth.png");
-            this.imageList24x24.Images.SetKeyName(2, "harddisk_network.png");
-            this.imageList24x24.Images.SetKeyName(3, "printer_network.png");
-            this.imageList24x24.Images.SetKeyName(4, "gears.png");
-            this.imageList24x24.Images.SetKeyName(5, "application.png");
-            this.imageList24x24.Images.SetKeyName(6, "PCI-card_network.png");
-            this.imageList24x24.Images.SetKeyName(7, "environment_network.png");
-            this.imageList24x24.Images.SetKeyName(8, "");
-            this.imageList24x24.Images.SetKeyName(9, "");
-            this.imageList24x24.Images.SetKeyName(10, "");
-            this.imageList24x24.Images.SetKeyName(11, "");
-            this.imageList24x24.Images.SetKeyName(12, "");
-            this.imageList24x24.Images.SetKeyName(13, "");
-            this.imageList24x24.Images.SetKeyName(14, "");
+            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;           
             // 
             // label8
             // 
@@ -173,13 +153,14 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem8,
             this.toolStripMenuItem9});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(218, 490);
+            this.contextMenuStrip.Size = new System.Drawing.Size(218, 512);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem1.Tag = "profile_0_48x48";
             this.toolStripMenuItem1.Text = "Default profile image";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -188,6 +169,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem2.Image = global::Argon.Windows.Forms.Properties.Resources.profile_1_48x48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem2.Tag = "profile_1_48x48";
             this.toolStripMenuItem2.Text = "Profile image 1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -196,6 +178,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem3.Image = global::Argon.Windows.Forms.Properties.Resources.profile_2_48x48;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem3.Tag = "profile_2_48x48";
             this.toolStripMenuItem3.Text = "Profile image 2";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -204,6 +187,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem4.Image = global::Argon.Windows.Forms.Properties.Resources.profile_3_48x48;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem4.Tag = "profile_3_48x48";
             this.toolStripMenuItem4.Text = "Profile image 3";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -212,6 +196,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem5.Image = global::Argon.Windows.Forms.Properties.Resources.profile_4_48x48;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem5.Tag = "profile_4_48x48";
             this.toolStripMenuItem5.Text = "Profile image 4";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -220,6 +205,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem6.Image = global::Argon.Windows.Forms.Properties.Resources.profile_5_48x48;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem6.Tag = "profile_5_48x48";
             this.toolStripMenuItem6.Text = "Profile image 5";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -228,6 +214,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem7.Image = global::Argon.Windows.Forms.Properties.Resources.profile_6_48x48;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem7.Tag = "profile_6_48x48";
             this.toolStripMenuItem7.Text = "Profile image 6";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -236,6 +223,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem8.Image = global::Argon.Windows.Forms.Properties.Resources.profile_7_48x48;
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem8.Tag = "profile_7_48x48";
             this.toolStripMenuItem8.Text = "Profile image 7";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
@@ -244,6 +232,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem9.Image = global::Argon.Windows.Forms.Properties.Resources.profile_8_48x48;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.Size = new System.Drawing.Size(217, 54);
+            this.toolStripMenuItem9.Tag = "profile_8_48x48";
             this.toolStripMenuItem9.Text = "Profile image 8";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 

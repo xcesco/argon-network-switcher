@@ -207,15 +207,5 @@ namespace Argon.Controllers
             }
         }
 
-        public static void RefrehProfiles()
-        {
-            Controller.Instance.View.ViewProfiles.listView.ClearObjects();
-
-            foreach (NetworkProfile item in Controller.Instance.Model.Profiles)
-            {
-                Controller.Instance.View.ViewProfiles.listView.AddObject(item);
-            }
-            
-        }
     }
 }
