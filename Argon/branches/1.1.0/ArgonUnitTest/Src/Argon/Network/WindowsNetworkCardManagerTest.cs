@@ -28,7 +28,7 @@ namespace Argon.OperatingSystem
 
             bool dhcp = false;
 
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
 
             foreach (WindowsNetworkCard item in lista)
             {
@@ -55,7 +55,7 @@ namespace Argon.OperatingSystem
 
             bool dhcp = true;
 
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
 
             foreach (WindowsNetworkCard item in lista)
             {
@@ -123,7 +123,7 @@ namespace Argon.OperatingSystem
         [TestMethod]
         public void ListAllNetwork()
         {
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
 
             foreach (WindowsNetworkCard item in lista)
             {
@@ -155,7 +155,9 @@ namespace Argon.OperatingSystem
                 Debug.WriteLine("WinsSecondaryServer    : " + item.WinsSecondaryServer);
 
                 Debug.WriteLine("Status    : " + item.Status);
-                Debug.WriteLine("NetConnectionStatus    : " + item.NetConnectionStatus);           
+                Debug.WriteLine("NetConnectionStatus    : " + item.NetConnectionStatus);
+
+                Debug.WriteLine("MaxSpeed    : " + item.MaxSpeed); 
                
                 // Gateway
                 // DDNS

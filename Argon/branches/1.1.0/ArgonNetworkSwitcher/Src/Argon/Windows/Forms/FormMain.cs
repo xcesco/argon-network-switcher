@@ -132,7 +132,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.ComponentModel.DoWorkEventArgs"/> instance containing the event data.</param>
         public void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {           
-            NetworkProfileActions.Apply((NetworkProfile)e.Argument, backgroundWorker);
+            UseCaseProfile.Run((NetworkProfile)e.Argument, backgroundWorker);
 
             e.Result = e.Argument;
             

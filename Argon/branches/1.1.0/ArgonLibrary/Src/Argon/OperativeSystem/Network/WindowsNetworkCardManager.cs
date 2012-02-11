@@ -14,16 +14,79 @@ using Argon.Windows7.Network;
 
 namespace Argon.OperatingSystem.Network
 {
+   
+
     /// <summary>
     /// Manager for the Network Card Interfaces
     /// </summary>
     public abstract class WindowsNetworkCardManager
     {
+
+        /// <summary>
+        /// Refreshes status.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        public static WindowsNetworkCard RefreshStatus(string id)
+        {
+            List<WindowsNetworkCard> networkCardList = WindowsNetworkCardList;
+
+            foreach (WindowsNetworkCard item in networkCardList)
+            {
+                if (item.Id.Equals(id))
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the enabled windows network cards list.
+        /// Every card in this list has the MaxSpeed and AdapterType valorized.
+        /// </summary>
+        public static List<WindowsNetworkCard> EnabledWindowsNetworkCardList
+        {
+            get
+            {
+                List<WindowsNetworkCard> enabledCardList = new List<WindowsNetworkCard>();
+                // get nic enabled
+                List<WindowsNetworkCard> listCard = GetWindowsNetworkCardList();
+
+                foreach (WindowsNetworkCard nic in listCard)
+                {
+                    Console.WriteLine(nic.Description + " = " + nic.Enabled + " " + nic.Status);
+                    Console.WriteLine(nic.Connected);
+                    // if nic is connected we insert it in enabled card list
+                    if (nic.Connected)
+                    {
+                        enabledCardList.Add(nic);
+                    }
+                }
+
+                return enabledCardList;
+            }
+        }
+
+        /// <summary>
+        /// Gets the windows network cards list.
+        /// The disabled cards in this list has the MaxSpeed and AdapterType set to null.
+        /// </summary>
+        public static List<WindowsNetworkCard> WindowsNetworkCardList
+        {
+            get
+            {
+                return GetWindowsNetworkCardList();
+            }
+        }
+
         /// <summary>
         /// Gets the windows services list.
+        /// The disabled cards in this list has the MaxSpeed and AdapterType set to null.
         /// </summary>
         /// <returns></returns>
-        public static List<WindowsNetworkCard> GetWindowsNetworkCardList()
+        internal static List<WindowsNetworkCard> GetWindowsNetworkCardList()
         {
             List<WindowsNetworkCard> array;
 
@@ -42,8 +105,6 @@ namespace Argon.OperatingSystem.Network
                     }
                 default:
                     throw (new Exception("Operating system not supported"));
-
-
             }
 
 

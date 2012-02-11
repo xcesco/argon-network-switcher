@@ -8,14 +8,18 @@ namespace Argon.OperatingSystem.Network.Profile
 {
     // declare a delegate for the bookpricechanged event
     public delegate void NameChangedHandler(Object objectsender, EventArgs e);
-        
-
+    
     /// <summary>
     /// 
     /// </summary>
     [Serializable]
     public class NetworkProfile
     {
+        public const string DEFAULT_PROFILE_IMAGE_NAME = "profile_0_48x48";
+
+        public const string DEFAULT_PROFILE_NAME = "NO_NAME";
+
+
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
@@ -79,7 +83,7 @@ namespace Argon.OperatingSystem.Network.Profile
         public NetworkProfile()
         {
             Id = 0;
-            Name = "";
+            Name = DEFAULT_PROFILE_NAME;
 
             NetworkCardInfo = new NetworkCardInfoImpl();
             ProxyConfig = new ProxyConfiguration();
@@ -88,6 +92,8 @@ namespace Argon.OperatingSystem.Network.Profile
             DriveMapList = new List<DriveMap>();
 
             DefaultPrinter = "";
+
+            ImageName = DEFAULT_PROFILE_IMAGE_NAME;
 
             DisabledNetworkCards = new List<WindowsNetworkCard>();
         }

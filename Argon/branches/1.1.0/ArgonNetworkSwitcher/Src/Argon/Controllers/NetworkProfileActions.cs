@@ -13,6 +13,7 @@ using BrightIdeasSoftware;
 using System.Windows;
 using Argon.OperatingSystem.Network;
 using Argon.UseCase;
+using Argon.Models;
 
 namespace Argon.Controllers
 {
@@ -79,7 +80,7 @@ namespace Argon.Controllers
         public static void ShowNew()
         {
             NetworkProfile profile = new NetworkProfile();
-            profile.Name = Controller.NO_NIC_NAME;
+            profile.Name = Controller.NO_NIC_NAME;            
 
             Show(profile);
         }
@@ -99,55 +100,7 @@ namespace Argon.Controllers
             DisplayForm(Controller.Instance.View.ViewProfiles);
         }
 
-        /// <summary>
-        /// Applies the specified profile.
-        /// </summary>
-        /// <param name="profile">The profile.</param>
-        /// <param name="worker">The worker.</param>
-        public static void Apply(NetworkProfile profile, BackgroundWorker worker)
-        {
 
-            UseCaseLogger.ShowInfo("Start applying profile "+profile.Name);
-            if (worker != null) worker.ReportProgress(0);
-
-            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
-            {
-                UseCaseLogger.ShowInfo("Disable network card " + nic.HardwareName);
-                NetworkAdapterHelper.SetDeviceStatus(nic, false);
-            }
-
-
-            UseCaseLogger.ShowInfo("Change netword card configuration");
-            WindowsNetworkCardManager.Apply(profile.NetworkCardInfo);
-
-            if (worker != null) worker.ReportProgress(20);
-
-            UseCaseLogger.ShowInfo("Change proxy configuration");
-            ProxyConfigurationManager.Apply(profile.ProxyConfig);
-
-            if (worker != null) worker.ReportProgress(40);
-
-            UseCaseLogger.ShowInfo("Change network drive configuration");
-            DriveMapManager.Apply(profile.DriveMapList);
-
-            if (worker != null) worker.ReportProgress(60);
-
-            UseCaseLogger.ShowInfo("Change windows service configuration");
-            WindowsServiceManager.Apply(profile.ServiceList);
-
-            if (worker != null) worker.ReportProgress(80);
-
-            UseCaseLogger.ShowInfo("Executing programs");
-            WindowsExecutableManager.Apply(profile.ExecList);
-
-            if (worker != null) worker.ReportProgress(90);
-
-            UseCaseLogger.ShowInfo("Change default printer configuration");
-            PrinterManager.SetDefaultPrinter(profile.DefaultPrinter);
-
-            if (worker != null) worker.ReportProgress(100);
-            UseCaseLogger.ShowInfo("End profile " + profile.Name);
-        }
 
         public static void ApplyProfile()
         {

@@ -307,8 +307,7 @@ namespace Argon.OperatingSystem.Network
         /// Initializes a new instance of the <see cref="WindowsNetworkCard"/> class.
         /// </summary>
         public WindowsNetworkCard()
-        {
-            _currentDefaultGateway = "";
+        {            
             _currentDns = "";
             _currentDns2 = "";
             _currentGatewayAddress = "";
@@ -509,21 +508,7 @@ namespace Argon.OperatingSystem.Network
             set { _currentSubnetMask = value; }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentDefaultGateway;
-
-        /// <summary>
-        /// Gets or sets the current default gateway.
-        /// </summary>
-        /// <value>The current default gateway.</value>
-        public string CurrentDefaultGateway
-        {
-            get { return _currentDefaultGateway; }
-            set { _currentDefaultGateway = value; }
-        }
-
+ 
         /// <summary>
         /// 
         /// </summary>
@@ -731,12 +716,31 @@ namespace Argon.OperatingSystem.Network
         public bool Enabled { get; set; }
 
 
+        /// <summary>
+        /// Copies the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         public static WindowsNetworkCard Copy(WindowsNetworkCard item)
         {
 
             return (WindowsNetworkCard)item.MemberwiseClone();       
         }
 
+        /// <summary>
+        /// Gets or sets the type of the adapter.
+        /// </summary>
+        /// <value>
+        /// The type of the adapter.
+        /// </value>
         public string AdapterType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the max speed.
+        /// </summary>
+        /// <value>
+        /// The max speed.
+        /// </value>
+        public ulong MaxSpeed { get; set; }
     }
 }

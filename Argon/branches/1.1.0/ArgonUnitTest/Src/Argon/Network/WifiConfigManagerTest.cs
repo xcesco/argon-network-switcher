@@ -29,7 +29,7 @@ namespace Argon.Windows7.Network.Wifi
          [TestMethod]
         public void TestGetActiveWifiProfile()
         {
-            WifiProfile item = WifiConfigurationManager.GetActiveWifiProfile();
+            WifiProfile item = WifiConfigurationManager.ActiveWifiProfile;
 
             if (item != null)
             {

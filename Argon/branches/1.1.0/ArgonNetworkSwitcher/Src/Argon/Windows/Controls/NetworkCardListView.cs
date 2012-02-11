@@ -25,7 +25,7 @@ namespace Argon.Windows.Controls
             };
             colName.Renderer = new ImageRenderer();
 
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
             listView.ClearObjects();
             listView.AddObjects(lista);
 

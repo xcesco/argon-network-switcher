@@ -78,6 +78,9 @@ namespace Argon.Windows7.Network
                 card.NetConnectionStatus = adapter.NetConnectionStatus;
                 card.Index = adapter.Index;
 
+                card.MaxSpeed=adapter.Speed;
+                
+
                 card.PnpDeviceId = adapter.PNPDeviceID;
 
                 card.Description = adapter.NetConnectionID;
@@ -127,6 +130,7 @@ namespace Argon.Windows7.Network
                     card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
                     card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
                     card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
+                    
                 }
             }
 
@@ -323,16 +327,16 @@ namespace Argon.Windows7.Network
             
             if (card.HardwareName.Length > 0)
             {
-
-                NetworkAdapterHelper.SetDeviceStatus(card, false);
+                // stop card
+                WindowsNetworkCardHelper.SetDeviceStatus(card, false);
 
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
 
             if (card.HardwareName.Length > 0)
             {
-
-                NetworkAdapterHelper.SetDeviceStatus(card, true);
+                // start card
+                WindowsNetworkCardHelper.SetDeviceStatus(card, true);
             }
             
             return ret;

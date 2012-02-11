@@ -6,6 +6,9 @@ using System.Windows.Forms;
 using Argon.Models;
 using Argon.OperatingSystem.Network.Profile;
 using System.Drawing;
+using System.ComponentModel;
+using Argon.OperatingSystem.Network;
+using Argon.OperatingSystem;
 
 namespace Argon.UseCase
 {
@@ -64,6 +67,57 @@ namespace Argon.UseCase
             // selected the current ribbonù
             ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;            
             ViewModel.MainView.rpProfile.Selected = true;
+        }
+
+        /// <summary>
+        /// Applies the specified profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        /// <param name="worker">The worker.</param>
+        /// <param name="runOnlyDeviceConfig">if set to <c>true</c> [run only device config].</param>
+        public static void Run(NetworkProfile profile, BackgroundWorker worker=null, bool runOnlyDeviceConfig=false)
+        {
+
+            UseCaseLogger.ShowInfo("Start applying profile " + profile.Name);
+            if (worker != null) worker.ReportProgress(0);
+
+            // disable cards
+            NetworkProfileHelper.RunDisableNetworkCardsSetup(profile);
+            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
+            {
+                UseCaseLogger.ShowInfo("Disable network card " + nic.HardwareName);                
+            }
+            if (worker != null) worker.ReportProgress(15);
+
+            UseCaseLogger.ShowInfo("Change netword card configuration");
+            NetworkProfileHelper.RunNetworkCardSetup(profile);            
+            if (worker != null) worker.ReportProgress(30);
+
+            // exit if runOnlyDeviceConfig
+            if (runOnlyDeviceConfig) return;
+
+            UseCaseLogger.ShowInfo("Change proxy configuration");
+            NetworkProfileHelper.RunProxySetup(profile);             
+            if (worker != null) worker.ReportProgress(40);
+
+            UseCaseLogger.ShowInfo("Change network drive configuration");
+            NetworkProfileHelper.RunDriveMapping(profile);                
+            if (worker != null) worker.ReportProgress(50);
+
+            UseCaseLogger.ShowInfo("Change windows service configuration");
+            NetworkProfileHelper.RunServicesSetup(profile);            
+            if (worker != null) worker.ReportProgress(60);
+
+            UseCaseLogger.ShowInfo("Executing programs");
+            NetworkProfileHelper.RunProgramsSetup(profile);            
+            if (worker != null) worker.ReportProgress(70);
+
+            UseCaseLogger.ShowInfo("Change default printer configuration");
+            NetworkProfileHelper.RunPrinterSetup(profile);           
+            if (worker != null) worker.ReportProgress(80);
+            
+            UseCaseLogger.ShowInfo("End profile " + profile.Name);
+            if (worker != null) worker.ReportProgress(100);
         }
     }
 }
