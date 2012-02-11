@@ -4,13 +4,15 @@ using System.Text;
 using Argon.OperatingSystem;
 using Argon.WindowsXP;
 using Argon.Windows7;
+using Argon.WindowsXP.Network;
+using Argon.Windows7.Network;
 
 namespace Argon.OperatingSystem.Network
 {
     /// <summary>
     /// Helper for network adapters
     /// </summary>
-    public class NetworkAdapterHelper
+    public class WindowsNetworkCardHelper
     {
         /// <summary>
         /// Sets the device status.
@@ -25,14 +27,14 @@ namespace Argon.OperatingSystem.Network
             {
                 case OperatingSystemType.WINDOWS_XP:
                     {
-                        WinXPHardwareLibrary hl = new WinXPHardwareLibrary();
+                        WinXPNetworkCardHelper hl = new WinXPNetworkCardHelper();
                         string[] oparams = { card.HardwareName };
                         ret = hl.SetDeviceState(oparams, status);
                     }
                     break;
                 case OperatingSystemType.WINDOWS_7:
                     {
-                        Win7HardwareLibrary hl = new Win7HardwareLibrary();
+                        Win7NetworkCardHelper hl = new Win7NetworkCardHelper();
                         ret = hl.SetDeviceState(card.Id, status);
                     }
                     break;

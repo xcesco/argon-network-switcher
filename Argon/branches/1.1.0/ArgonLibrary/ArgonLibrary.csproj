@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Argon\Common\FormsUtility.cs" />
+    <Compile Include="Src\Argon\OperativeSystem\Network\PingHelper.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkConfiguration.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkProfile.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkProfileHelper.cs" />
@@ -53,8 +54,8 @@
     <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfigurationManager.cs" />
     <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfiguration.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\Wifi\WifiProfile.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\NetworkAdapterHelper.cs" />
-    <Compile Include="Src\Argon\WindowsXP\WinXPHardwareHelper.cs" />
+    <Compile Include="Src\Argon\OperativeSystem\Network\WindowsNetworkCardHelper.cs" />
+    <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardHelper.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -70,7 +71,7 @@
     <Compile Include="Src\Argon\FileSystem\FileInspector.cs" />
     <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
     <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
-    <Compile Include="Src\Argon\Windows7\Win7HardwareHelper.cs" />
+    <Compile Include="Src\Argon\Windows7\Network\Win7NetworkCardHelper.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\FirexfoxProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\IExplorerProxyConfigurationAdapter.cs" />
     <Compile Include="Src\Argon\OperativeSystem\Network\ProxyConfiguration.cs" />

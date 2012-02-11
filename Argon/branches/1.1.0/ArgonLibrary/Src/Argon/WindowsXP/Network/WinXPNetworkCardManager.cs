@@ -75,6 +75,8 @@ namespace Argon.WindowsXP.Network
                 card.NetConnectionStatus = adapter.NetConnectionStatus;
                 card.Index = adapter.Index;
 
+                card.MaxSpeed = adapter.MaxSpeed;
+
                 card.PnpDeviceId = adapter.PNPDeviceID;
 
                 //http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
@@ -346,7 +348,7 @@ namespace Argon.WindowsXP.Network
             if (card.HardwareName.Length > 0)
             {
 
-                NetworkAdapterHelper.SetDeviceStatus(card, false);
+                WindowsNetworkCardHelper.SetDeviceStatus(card, false);
 
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
@@ -354,7 +356,7 @@ namespace Argon.WindowsXP.Network
             if (card.HardwareName.Length > 0)
             {
 
-                NetworkAdapterHelper.SetDeviceStatus(card, true);
+                WindowsNetworkCardHelper.SetDeviceStatus(card, true);
             }
             
             return ret;

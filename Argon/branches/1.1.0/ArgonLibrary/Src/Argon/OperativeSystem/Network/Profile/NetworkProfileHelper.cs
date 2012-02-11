@@ -9,6 +9,7 @@ using Argon.OperatingSystem.Network.Profile;
 using System.IO;
 using Argon.OperatingSystem.Network.Wifi;
 using Argon.Windows7.Network.Wifi;
+using Argon.OperativeSystem.Network;
 
 
 namespace Argon.OperatingSystem.Network.Profile
@@ -25,7 +26,7 @@ namespace Argon.OperatingSystem.Network.Profile
         /// <param name="filename">The filename.</param>
         /// <param name="document">The document.</param>
         public static bool Save(List<NetworkProfile> profiles, string filename = "Profiles.xml")
-        {           
+        {
             XmlTextWriter writer = new XmlTextWriter(filename, null);
             writer.WriteStartDocument();
 
@@ -46,9 +47,9 @@ namespace Argon.OperatingSystem.Network.Profile
                     if (nic.Id.Length > 0)
                     {
                         WriteAttributeIfPresent(writer, "id", nic.Id);
-                        WriteAttributeIfPresent(writer, "viewId", nic.ViewId);                        
+                        WriteAttributeIfPresent(writer, "viewId", nic.ViewId);
                         WriteAttributeIfPresent(writer, "hardwareName", nic.HardwareName);
-                        WriteAttributeIfPresent(writer, "name", nic.Name);                        
+                        WriteAttributeIfPresent(writer, "name", nic.Name);
                         WriteAttributeIfPresent(writer, "dhcp", nic.Dhcp.ToString());
                         WriteAttributeIfPresent(writer, "ipAddress", nic.IpAddress);
                         WriteAttributeIfPresent(writer, "subnetMask", nic.SubnetMask);
@@ -150,7 +151,7 @@ namespace Argon.OperatingSystem.Network.Profile
                     {
                         writer.WriteStartElement("forcedNic");
                         writer.WriteAttributeString("id", itemNIC.Id);
-                        writer.WriteAttributeString("hardwareName", itemNIC.HardwareName);                        
+                        writer.WriteAttributeString("hardwareName", itemNIC.HardwareName);
                         writer.WriteEndElement();
                     }
 
@@ -160,7 +161,7 @@ namespace Argon.OperatingSystem.Network.Profile
                 // wifi
                 {
                     writer.WriteStartElement("wifi");
-                    writer.WriteAttributeString("associatedSSID", item.AssociatedWifiSSID);                    
+                    writer.WriteAttributeString("associatedSSID", item.AssociatedWifiSSID);
                     writer.WriteEndElement();
                 }
 
@@ -211,9 +212,9 @@ namespace Argon.OperatingSystem.Network.Profile
         /// Loads the specified file name.
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
-        /// <param name="imageName">Name of the image.</param>
+        /// <param name="imageName">default name of the image.</param>
         /// <returns></returns>
-        public static List<NetworkProfile> Load(string fileName, string imageName)
+        public static List<NetworkProfile> Load(string fileName, string imageName = NetworkProfile.DEFAULT_PROFILE_IMAGE_NAME)
         {
             List<NetworkProfile> profiles = new List<NetworkProfile>();
 
@@ -250,7 +251,7 @@ namespace Argon.OperatingSystem.Network.Profile
                                     currentProfile.NetworkCardInfo.ViewId = ReadAttributeIfPresent(reader, "viewId", "");
                                     currentProfile.NetworkCardInfo.Name = ReadAttributeIfPresent(reader, "name", "");
 
-                                    currentProfile.NetworkCardInfo.Dhcp = Boolean.Parse(ReadAttributeIfPresent(reader, "dhcp",Boolean.FalseString));
+                                    currentProfile.NetworkCardInfo.Dhcp = Boolean.Parse(ReadAttributeIfPresent(reader, "dhcp", Boolean.FalseString));
                                     currentProfile.NetworkCardInfo.IpAddress = ReadAttributeIfPresent(reader, "ipAddress", "");
                                     currentProfile.NetworkCardInfo.SubnetMask = ReadAttributeIfPresent(reader, "subnetMask", "");
                                     currentProfile.NetworkCardInfo.GatewayAddress = ReadAttributeIfPresent(reader, "defaultGateway", "");
@@ -259,17 +260,17 @@ namespace Argon.OperatingSystem.Network.Profile
                                     currentProfile.NetworkCardInfo.DynamicDNS = Boolean.Parse(ReadAttributeIfPresent(reader, "dynamicDns", Boolean.FalseString));
                                     currentProfile.NetworkCardInfo.Dns = ReadAttributeIfPresent(reader, "dns", "");
                                     currentProfile.NetworkCardInfo.Dns2 = ReadAttributeIfPresent(reader, "dns2", "");
-                                    
+
                                     currentProfile.NetworkCardInfo.HardwareName = ReadAttributeIfPresent(reader, "hardwareName", "");
-                                    
+
                                     break;
                                 case "proxy":
                                     currentProfile.ProxyConfig = new ProxyConfiguration();
-                                    currentProfile.ProxyConfig.Enabled = Boolean.Parse(ReadAttributeIfPresent(reader,"enabled", Boolean.FalseString));
+                                    currentProfile.ProxyConfig.Enabled = Boolean.Parse(ReadAttributeIfPresent(reader, "enabled", Boolean.FalseString));
                                     currentProfile.ProxyConfig.ServerAddress = ReadAttributeIfPresent(reader, "serverAddress", "");
                                     currentProfile.ProxyConfig.Port = Int32.Parse(ReadAttributeIfPresent(reader, "port", "80"));
                                     currentProfile.ProxyConfig.ProxyOverrideEnabled = Boolean.Parse(ReadAttributeIfPresent(reader, "overrideEnabled", Boolean.FalseString));
-                                    currentProfile.ProxyConfig.ProxyOverride = ReadAttributeIfPresent(reader, "proxyOverride", "");                    
+                                    currentProfile.ProxyConfig.ProxyOverride = ReadAttributeIfPresent(reader, "proxyOverride", "");
                                     break;
 
                                 case "application":
@@ -314,37 +315,38 @@ namespace Argon.OperatingSystem.Network.Profile
                                     drive.Username = ReadAttributeIfPresent(reader, "username", "");
                                     drive.Password = ReadAttributeIfPresent(reader, "password", "");
                                     drive.RealPath = ReadAttributeIfPresent(reader, "realPath", "");
-                                    string temp1 = ReadAttributeIfPresent(reader, "type",DriveMapType.MOUNT.ToString());
+                                    string temp1 = ReadAttributeIfPresent(reader, "type", DriveMapType.MOUNT.ToString());
 
                                     if (temp1.Equals(DriveMapType.MOUNT.ToString()))
                                     {
-                                        drive.Type=DriveMapType.MOUNT;
-                                    } else 
+                                        drive.Type = DriveMapType.MOUNT;
+                                    }
+                                    else
                                     {
-                                        drive.Type=DriveMapType.UNMOUNT;
+                                        drive.Type = DriveMapType.UNMOUNT;
                                     }
 
                                     currentProfile.DriveMapList.Add(drive);
                                     break;
-                                case "printer":                                    
+                                case "printer":
                                     currentProfile.DefaultPrinter = ReadAttributeIfPresent(reader, "defaultPrinter", "");
                                     break;
-                                case "forcedNic":                                    
-                                        // disabled nic
-                                        WindowsNetworkCard disabledNIC;
+                                case "forcedNic":
+                                    // disabled nic
+                                    WindowsNetworkCard disabledNIC;
 
-                                        disabledNIC = new WindowsNetworkCard();
-                                        disabledNIC.Id = ReadAttributeIfPresent(reader, "id", "");
-                                        disabledNIC.HardwareName= ReadAttributeIfPresent(reader, "hardwareName", "");    
+                                    disabledNIC = new WindowsNetworkCard();
+                                    disabledNIC.Id = ReadAttributeIfPresent(reader, "id", "");
+                                    disabledNIC.HardwareName = ReadAttributeIfPresent(reader, "hardwareName", "");
 
-                                        currentProfile.DisabledNetworkCards.Add(disabledNIC);                                    
+                                    currentProfile.DisabledNetworkCards.Add(disabledNIC);
                                     break;
                                 case "wifi":
                                     // wifi
-                                   string associatedSSID=ReadAttributeIfPresent(reader, "associatedSSID", "");
+                                    string associatedSSID = ReadAttributeIfPresent(reader, "associatedSSID", "");
 
-                                   currentProfile.AssociatedWifiSSID = associatedSSID;                                       
-                                   break;
+                                    currentProfile.AssociatedWifiSSID = associatedSSID;
+                                    break;
                             }
                             break;
                         case XmlNodeType.Text: //Display the text in each element.
@@ -370,6 +372,108 @@ namespace Argon.OperatingSystem.Network.Profile
             return profiles;
         }
 
+        internal const int TIME_WAIT = 5000;
+
+        /// <summary>
+        /// Setups the network card for autodetect. Gets the nic associated to profiles and
+        /// try to enable it. Then, disable every nic that not have a profile associated.
+        /// Then wait for a while
+        /// </summary>
+        /// <param name="profiles">The profiles.</param>
+        internal static void SetupNetworkCardForAutodetect(List<NetworkProfile> profiles)
+        {
+            // Get every card and try to enable it
+            List<WindowsNetworkCard> allCardList = WindowsNetworkCardManager.WindowsNetworkCardList;
+            HashSet<WindowsNetworkCard> validCardSet = new HashSet<WindowsNetworkCard>();
+
+            // take only the card with a profile associated
+            foreach (WindowsNetworkCard item in allCardList)
+            {
+                foreach (NetworkProfile itemProfile in profiles)
+                {
+                    if (item.Id.Equals(itemProfile.NetworkCardInfo.Id) && !validCardSet.Contains(item))
+                    {
+                        validCardSet.Add(item);
+                        Debug.WriteLine("Add card " + item.Name+" to enabled card set");
+                        break;
+                    }
+                }
+            }
+
+            Debug.WriteLine("Found "+validCardSet.Count+" valid card!");
+            Debug.WriteLine("Now disable every card not in valid set and enable all the card in valid set are disabled");
+
+            // if a nic is used in a profile, we enable it,
+            // otherwise disable it
+            foreach (WindowsNetworkCard item in allCardList)
+            {
+                if (item.Enabled && !validCardSet.Contains(item))
+                {
+                    Debug.WriteLine("Disable card " + item.Name, ", it's not in valid set");
+                    WindowsNetworkCardHelper.SetDeviceStatus(item, false);
+                }
+                else if (!item.Enabled && validCardSet.Contains(item))
+                {
+                    Debug.WriteLine("Enable card " + item.Name+" it's in valid set but disabled");
+                    WindowsNetworkCardHelper.SetDeviceStatus(item, true);
+                }
+            }
+            // wait for a while
+            Debug.WriteLine("Wait " + (TIME_WAIT * 2) + " ms.");
+            System.Threading.Thread.Sleep(TIME_WAIT * 2);
+        }
+
+        /// <summary>
+        /// Finds the valid network profiles. Filter the profile with enabled card. If a profile has an SSI associated
+        /// this SSID must be the current SSID
+        /// </summary>
+        /// <param name="profiles">The profiles.</param>
+        /// <param name="enabledCardList">The enabled card list.</param>
+        /// <param name="currentWifiProfile">The current wifi profile.</param>
+        /// <returns></returns>
+        internal static List<NetworkProfile> FindValidNetworkProfiles(List<NetworkProfile> profiles, List<WindowsNetworkCard> enabledCardList, WifiProfile currentWifiProfile)
+        {
+            List<NetworkProfile> enabledProfileList = new List<NetworkProfile>();
+            foreach (NetworkProfile itemProfile in profiles)
+            {
+                foreach (WindowsNetworkCard itemCard in enabledCardList)
+                {
+                    // check if card is right
+                    if (itemCard.Id.Equals(itemProfile.NetworkCardInfo.Id))
+                    {
+                        // check if is a wifi connection
+                        if (currentWifiProfile != null)
+                        {
+                            // check if card has an associated ssid
+                            if (itemProfile.AssociatedWifiSSID != null)
+                            {
+                                // check if profile ssid and current ssid are equal
+                                if (currentWifiProfile.SSID.Equals(itemProfile.AssociatedWifiSSID))
+                                {
+                                    enabledProfileList.Add(itemProfile);
+                                }
+                                else
+                                {
+                                    // wrogin SSID, ignore it
+                                }
+                            }
+                            else
+                            {
+                                // no SSID associated, every SSID is ok
+                                enabledProfileList.Add(itemProfile);
+                            }
+                        }
+                        else
+                        {
+                            // there's no current wifi network connected
+                            // card is enabled, profile is associated this profile
+                            enabledProfileList.Add(itemProfile);
+                        }
+                    }
+                }
+            }
+            return enabledProfileList;
+        }
 
         /// <summary>
         /// Autodetects the network profile. For the moment it works only for wifi connections!
@@ -379,52 +483,156 @@ namespace Argon.OperatingSystem.Network.Profile
         /// <param name="profiles">The profiles.</param>
         /// <returns></returns>
         public static NetworkProfile AutodetectNetworkProfile(List<NetworkProfile> profiles)
-        {            
-            List<WindowsNetworkCard> enabledCardList = new List<WindowsNetworkCard>();
+        {
+            // initial setup for cards
+            SetupNetworkCardForAutodetect(profiles);
 
-            // get nic enabled
-            List<WindowsNetworkCard> listCard = WindowsNetworkCardManager.GetWindowsNetworkCardList();
+            NetworkProfile selectedProfile = null;
 
-            foreach (WindowsNetworkCard nic in listCard)
-            {
-                Console.WriteLine(nic.Description + " = " + nic.Enabled + " " + nic.Status);
-                Console.WriteLine(nic.Connected);
-                // if nic is connected we insert it in enabled card list
-                if (nic.Connected)
-                {
-                    enabledCardList.Add(nic);
-                }
-            }
+            // enable card
+            List<WindowsNetworkCard> enabledCardList = WindowsNetworkCardManager.EnabledWindowsNetworkCardList;             
+            // wifi connected 
+            WifiProfile currentWifiProfile = WifiConfigurationManager.ActiveWifiProfile;
+
+            // order list by maxSpeed
+            enabledCardList.Sort((x, y) => -x.MaxSpeed.CompareTo(y.MaxSpeed));
 
             // if there's no enabled card, it's a problem!
-            if (enabledCardList.Count == 0) { Console.WriteLine("No nic found"); return null; }
+            if (enabledCardList.Count == 0) { Debug.WriteLine("No card enabled, found"); return null; }
 
-            // get wifi connected 
-            WifiProfile currentWifiProfile = WifiConfigurationManager.GetActiveWifiProfile();            
+            List<NetworkProfile> enabledProfileList=FindValidNetworkProfiles(profiles,enabledCardList, currentWifiProfile);
 
-            // if there's a wifi connection
-            if (currentWifiProfile != null)
+            // assert: enabledProfile contains the right profiles. Now we have to test it. 
+            // the first with ping ok it's ok!
+            bool pingOk;
+            foreach (NetworkProfile item in enabledProfileList)
             {
-                // check there is a profile for that ssid and nic
-                foreach (NetworkProfile profile in profiles)
+                Debug.WriteLine("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
+                WindowsNetworkCard card = null;
+                card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
+
+                if (currentWifiProfile != null && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) && card.NetConnectionStatus == 2)
                 {
-                    if (currentWifiProfile.SSID.Equals(profile.AssociatedWifiSSID) && currentWifiProfile.InterfaceMAC.Equals(profile.NetworkCardInfo.MacAddress))
+                    // ok, we found it!!!
+                    selectedProfile = item;
+                    Debug.WriteLine("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+                    Debug.WriteLine("Selected profile " + item.Name + " without do anything else!!");
+                    break;
+                }
+                else
+                {
+                    pingOk = false;
+                    RunDisableNetworkCardsSetup(item);
+                    RunNetworkCardSetup(item);
+
+                    card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
+
+                    int i = 0;
+                    while (i < 5 && card.NetConnectionStatus != 2)
                     {
-                        // found profile associated wifi ssid
-                        Console.WriteLine("Found profile " + profile.Name + " for ssid " + profile.AssociatedWifiSSID);
-                        return profile;
+                        Debug.WriteLine("Wait " + TIME_WAIT + " ms.");
+                        System.Threading.Thread.Sleep(TIME_WAIT);
+                        card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
+                        Debug.WriteLine("The card "+ card.Name+" are in status "+card.NetConnectionStatus+" (attempt "+i+")");
+                        i++;
+                    }
+
+                    // test both static config or dynamic config
+                    pingOk = PingHelper.RunPing(card.GatewayAddress);
+                    pingOk = pingOk || PingHelper.RunPing(card.CurrentGatewayAddress);
+
+                    Debug.WriteLine("For card "+card.Name+" and profile "+ item.Name+ ", ping to gateway are "+pingOk);
+
+                    if (pingOk)
+                    {
+                        selectedProfile = item;
+                        Debug.WriteLine("Selected profile " + item.Name + "!!");
+                        break;
                     }
                 }
 
-                // there's no appropriated profile for wifi!                                     
-            }
-            else
-            {
-                // no wifi avaiable
-                
+                Debug.WriteLine("Stop analizing profile " + item.Name+", go to next profile");
             }
 
-            return null;
+            // restore initial enabled card
+            if (selectedProfile == null)
+            {
+                Debug.WriteLine("No profile found, so restore status card");
+                foreach (WindowsNetworkCard item in enabledCardList)
+                {
+                    Debug.WriteLine("Enable card " + item.Name);
+                    WindowsNetworkCardHelper.SetDeviceStatus(item, true);
+                }
+            }
+
+            return selectedProfile;
+        }
+
+
+        /// <summary>
+        /// Runs the disable network cards setup.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunDisableNetworkCardsSetup(NetworkProfile profile)
+        {
+            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
+            {
+                WindowsNetworkCardHelper.SetDeviceStatus(nic, false);
+            }
+        }
+
+        /// <summary>
+        /// Runs the network card setup.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunNetworkCardSetup(NetworkProfile profile)
+        {
+            WindowsNetworkCardManager.Apply(profile.NetworkCardInfo);
+        }
+
+        /// <summary>
+        /// Runs the setup proxy.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunProxySetup(NetworkProfile profile)
+        {
+            ProxyConfigurationManager.Apply(profile.ProxyConfig);
+        }
+
+        /// <summary>
+        /// Runs the drive mapping.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunDriveMapping(NetworkProfile profile)
+        {
+            DriveMapManager.Apply(profile.DriveMapList);
+        }
+
+        /// <summary>
+        /// Runs the services setup.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunServicesSetup(NetworkProfile profile)
+        {
+            WindowsServiceManager.Apply(profile.ServiceList);
+        }
+
+        /// <summary>
+        /// Runs the programs setup.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunProgramsSetup(NetworkProfile profile)
+        {
+            WindowsExecutableManager.Apply(profile.ExecList);
+        }
+
+        /// <summary>
+        /// Runs the printer setup.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void RunPrinterSetup(NetworkProfile profile)
+        {
+            PrinterManager.SetDefaultPrinter(profile.DefaultPrinter);
         }
     }
 }

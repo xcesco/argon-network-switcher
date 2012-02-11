@@ -12,7 +12,7 @@ namespace Argon.UseCase
     public abstract class UseCaseConfig
     {
         protected const string DEFAULT_FILENAME = "Profiles.xml";
-        public const string DEFAULT_PROFILE_IMAGE = "profile_0_48x48";
+
 
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Argon.UseCase
             }
 
             // execute config default
-            List<NetworkProfile> list = NetworkProfileHelper.Load(fileName, DEFAULT_PROFILE_IMAGE);
+            List<NetworkProfile> list = NetworkProfileHelper.Load(fileName);
 
             UseCaseLogger.ShowInfo("Load file '" + Path.GetFullPath(fileName) + "'");
 

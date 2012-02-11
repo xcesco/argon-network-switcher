@@ -16,7 +16,7 @@ namespace Argon.OperatingSystem.Network.Wifi
                 case OperatingSystemType.WINDOWS_XP:
                     throw(new Exception("Not supported for now"));                    
                 case OperatingSystemType.WINDOWS_7:
-                    return WifiConfigurationManager.GetActiveWifiProfile();                    
+                    return WifiConfigurationManager.ActiveWifiProfile;                    
                 default:
                     throw (new Exception("Operating system not supported!"));                    
             }

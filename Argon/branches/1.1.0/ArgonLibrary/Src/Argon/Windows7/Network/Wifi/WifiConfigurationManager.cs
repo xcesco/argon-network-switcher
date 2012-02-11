@@ -10,12 +10,12 @@ namespace Argon.Windows7.Network.Wifi
         /// <summary>
         /// Converts a 802.11 SSID to a string.
         /// </summary>
-        static string GetStringForSSID(Wlan.Dot11Ssid ssid)
+        internal static string GetStringForSSID(Wlan.Dot11Ssid ssid)
         {
             return Encoding.ASCII.GetString(ssid.SSID, 0, (int)ssid.SSIDLength);
         }
 
-        static string GetStringForMAC(String mac)
+        internal static string GetStringForMAC(String mac)
         {
             string buffer="";
             string sep="";
@@ -64,42 +64,45 @@ namespace Argon.Windows7.Network.Wifi
         /// <summary>
         /// Gets the active wifi profile.
         /// </summary>
-        /// <returns></returns>
-        public static WifiProfile GetActiveWifiProfile()
+        public static WifiProfile ActiveWifiProfile
         {
-            WlanClient client = new WlanClient();
-            WlanClient.WlanInterface[] interfaces = client.Interfaces;           
-
-            WifiProfile profile=null;
-            String currentProfile = null;
-
-            foreach (WlanClient.WlanInterface card in interfaces)
+            get
             {
-                try
+                WlanClient client = new WlanClient();
+                WlanClient.WlanInterface[] interfaces = client.Interfaces;
+
+                WifiProfile profile = null;
+                String currentProfile = null;
+
+                foreach (WlanClient.WlanInterface card in interfaces)
                 {
-                    currentProfile = null;
-                    currentProfile = card.CurrentConnection.profileName;
-                    if (String.IsNullOrEmpty(currentProfile)) continue;
-                } catch(Exception)
-                {
-                    continue;
+                    try
+                    {
+                        currentProfile = null;
+                        currentProfile = card.CurrentConnection.profileName;
+                        if (String.IsNullOrEmpty(currentProfile)) continue;
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+
+                    profile = new WifiProfile();
+
+                    profile.SSID = currentProfile;
+
+                    profile.InterfaceName = card.InterfaceName;
+                    profile.InterfaceGuid = "{" + card.InterfaceGuid.ToString().ToUpper() + "}";
+                    profile.InterfaceDescription = card.InterfaceDescription;
+
+                    profile.InterfaceMAC = GetStringForMAC(card.NetworkInterface.GetPhysicalAddress().ToString());
+
+                    profile.Connected = true;
+                    break;
                 }
-                
-                profile = new WifiProfile();
 
-                profile.SSID = currentProfile;
-
-                profile.InterfaceName = card.InterfaceName;
-                profile.InterfaceGuid = "{" + card.InterfaceGuid.ToString().ToUpper() + "}";
-                profile.InterfaceDescription = card.InterfaceDescription;
-
-                profile.InterfaceMAC = GetStringForMAC(card.NetworkInterface.GetPhysicalAddress().ToString());
-                
-                profile.Connected = true;
-                break;
+                return profile;
             }
-
-            return profile;
         }
 
         /// <summary>

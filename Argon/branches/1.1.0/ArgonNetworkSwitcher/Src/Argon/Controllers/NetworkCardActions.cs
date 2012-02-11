@@ -129,7 +129,7 @@ namespace Argon.Controllers
                 {                    
                     String label=enabled?"Enabled":"Disabled";
 
-                    bool status = NetworkAdapterHelper.SetDeviceStatus(ni, enabled);
+                    bool status = WindowsNetworkCardHelper.SetDeviceStatus(ni, enabled);
                     UseCaseLogger.ShowInfo(label + " NIC " + ni.HardwareName + " (" + status + ")");
 
                     RefreshAll();                    

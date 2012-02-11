@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
  * LOG:      Who?    When?       What?
  * (v)1.0.0  WJF     11/26/07    Original Implementation
  */
-namespace Argon.WindowsXP
+namespace Argon.WindowsXP.Network
 {
     #region Unmanaged
 
@@ -208,7 +208,7 @@ namespace Argon.WindowsXP
     /// <summary>
     /// 
     /// </summary>
-    public class WinXPHardwareLibrary
+    public class WinXPNetworkCardHelper
     {
         Version m_Version = new Version(1, 0, 0);
 

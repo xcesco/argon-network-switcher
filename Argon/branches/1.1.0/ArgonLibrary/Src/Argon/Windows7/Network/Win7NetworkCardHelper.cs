@@ -6,13 +6,13 @@ using System.Management;
 using Argon.WindowsXP.Network;
 
 
-namespace Argon.Windows7
+namespace Argon.Windows7.Network
 {
 
     /// <summary>
     /// Hardware library for windows seven
     /// </summary>
-    public class Win7HardwareLibrary
+    public class Win7NetworkCardHelper
     {
 
         /// <summary>
