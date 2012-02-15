@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Argon.Models;
+using Argon.Common;
 
 namespace Argon.UseCase
 {
@@ -39,6 +40,18 @@ namespace Argon.UseCase
         {
             string temp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + " - "+type.ToUpper()+"  - " + msg;
             ViewModel.ConsoleView.AddText(temp);
+        }
+
+        /// <summary>
+        /// Called when [run status changed handler].
+        /// </summary>
+        /// <param name="profileSender">The profile sender.</param>
+        /// <param name="e">The <see cref="Argon.Common.NotifyEventArgs"/> instance containing the event data.</param>
+        public static void OnNotifyHandler(Object sender, NotifyEventArgs e)
+        {
+            if (e.
+            UseCaseLogger.ShowInfo(e.Description);
+            ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);
         }
 
 

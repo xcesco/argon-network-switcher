@@ -19,7 +19,6 @@ namespace Argon.Windows.Network.Wifi
         public string InterfaceDescription { get; set; }
 
         public string InterfaceMAC { get; set; }
-
-        public Boolean Connected { get; set; }
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 using System.IO;
 using Argon.Windows.Network.Wifi;
+using Argon.Common;
 
 
 namespace Argon.Windows.Network.Profile
@@ -13,8 +14,22 @@ namespace Argon.Windows.Network.Profile
     /// <summary>
     /// 
     /// </summary>
-    public abstract class NetworkProfileHelper
+    [Serializable]
+    public static class NetworkProfileHelper
     {
+        #region Event
+        // declare the run status change event
+        public static event NotifyHandler NotifyEvent;
+
+        public static void FireNotifyEvent(string description)
+        {
+            NotifyEventArgs e = new NotifyEventArgs(description);
+            if (NotifyEvent != null)
+            {
+                NotifyEvent("NetworkProfileHelper", e);
+            }
+        }
+        #endregion
 
         /// <summary>
         /// Saves the specified filename.
@@ -25,11 +40,14 @@ namespace Argon.Windows.Network.Profile
         {
             XmlTextWriter writer = new XmlTextWriter(filename, null);
             writer.WriteStartDocument();
+            writer.Indentation = 1;
+            writer.IndentChar = '\t';
 
             writer.WriteStartElement("profiles");
 
             foreach (NetworkProfile item in profiles)
             {
+                
                 writer.WriteStartElement("profile");
                 writer.WriteAttributeString("name", item.Name);
                 writer.WriteAttributeString("id", item.Id.ToString());
@@ -485,9 +503,11 @@ namespace Argon.Windows.Network.Profile
         /// <returns></returns>
         public static NetworkProfile AutodetectNetworkProfile(List<NetworkProfile> profiles)
         {
+            FireNotifyEvent("Start autodetect");
             if (profiles == null || profiles.Count == 0)
             {
-                Debug.WriteLine("There're no profiles!!!");
+                FireNotifyEvent("There's no profiles");
+                FireNotifyEvent("End autodetect");                
                 return null;
             }
             // initial setup for cards
@@ -504,7 +524,7 @@ namespace Argon.Windows.Network.Profile
             enabledCardList.Sort(CompareCardBySpeed);
 
             // if there's no enabled card, it's a problem!
-            if (enabledCardList.Count == 0) { Debug.WriteLine("No card enabled, found"); return null; }
+            if (enabledCardList.Count == 0) { FireNotifyEvent("No card enabled, found"); return null; }
 
             List<NetworkProfile> enabledProfileList = FindValidNetworkProfiles(profiles, enabledCardList, currentWifiProfile);
 
@@ -513,7 +533,7 @@ namespace Argon.Windows.Network.Profile
             bool pingOk;
             foreach (NetworkProfile item in enabledProfileList)
             {
-                Debug.WriteLine("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
+                FireNotifyEvent("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
 
                 WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, false);
 
@@ -524,7 +544,7 @@ namespace Argon.Windows.Network.Profile
                 //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, true);
 
                 // wait for a while
-                Debug.WriteLine("Wait " + (TIME_WAIT * 4) + " ms.");
+                FireNotifyEvent("Wait " + (TIME_WAIT * 4) + " ms.");
                 System.Threading.Thread.Sleep(TIME_WAIT * 4);
 
                 WindowsNetworkCard card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
@@ -536,44 +556,45 @@ namespace Argon.Windows.Network.Profile
                 {
                     // ok, we found it!!!
                     selectedProfile = item;
-                    Debug.WriteLine("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
-                    Debug.WriteLine("Selected profile " + item.Name + " without do anything else!!");
+                    FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+                    FireNotifyEvent("Selected profile " + item.Name + " without do anything else!!");
                     break;
                 }
                 else
                 {
                     pingOk = false;
 
-                    Debug.WriteLine("The card " + card.Name + " are in status " + card.NetConnectionStatus);
+                    FireNotifyEvent("The card " + card.Name + " are in status " + card.NetConnectionStatus);
 
                     // test both static config or dynamic config
                     pingOk = PingHelper.RunPing(card.GatewayAddress);
                     pingOk = pingOk || PingHelper.RunPing(card.CurrentGatewayAddress);
 
-                    Debug.WriteLine("For card " + card.Name + " and profile " + item.Name + ", ping to gateway are " + pingOk);
+                    FireNotifyEvent("For card " + card.Name + " and profile " + item.Name + ", ping to gateway are " + pingOk);
 
                     if (pingOk)
                     {
                         selectedProfile = item;
-                        Debug.WriteLine("Selected profile " + item.Name + "!!");
+                        FireNotifyEvent("Selected profile " + item.Name + "!!");
                         break;
                     }
                 }
 
-                Debug.WriteLine("Stop analizing profile " + item.Name + ", go to next profile");
+                FireNotifyEvent("Stop analizing profile " + item.Name + ", go to next profile");
             }
 
             // restore initial enabled card
             if (selectedProfile == null)
             {
-                Debug.WriteLine("No profile found, so restore status card");
+                FireNotifyEvent("No profile found, so restore status card");
                 foreach (WindowsNetworkCard item in enabledCardList)
                 {
-                    Debug.WriteLine("Enable card " + item.Name);
+                    FireNotifyEvent("Enable card " + item.Name);
                     WindowsNetworkCardHelper.SetDeviceStatus(item, true);
                 }
             }
 
+            FireNotifyEvent("End autodetect");  
             return selectedProfile;
         }
 

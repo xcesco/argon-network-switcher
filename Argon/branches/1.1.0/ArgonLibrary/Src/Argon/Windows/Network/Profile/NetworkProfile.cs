@@ -2,13 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Argon.Windows;
+using Argon.Common;
 
 
 namespace Argon.Windows.Network.Profile
 {
-    // declare a delegate for the bookpricechanged event
+    #region event definitions
     public delegate void NameChangedHandler(Object objectsender, EventArgs e);
+
+    public delegate void NotifyHandler(Object sender, NotifyEventArgs e);
+
+    #endregion
     
+
+
     /// <summary>
     /// 
     /// </summary>
@@ -108,6 +115,7 @@ namespace Argon.Windows.Network.Profile
             NetworkProfile profile = new NetworkProfile();
             profile.Id = 0;
             profile.Name = origin.Name;
+            profile.ImageName = origin.ImageName;
 
             profile.NetworkCardInfo = NetworkCardInfoImpl.Copy(origin.NetworkCardInfo);
             profile.ProxyConfig = ProxyConfiguration.Copy(origin.ProxyConfig);
@@ -180,6 +188,9 @@ namespace Argon.Windows.Network.Profile
         // declare the bookpricechanged event using the bookpricechangeddelegate
         public event NameChangedHandler NameChangeEvent;
 
+        // declare the run status change event
+        public event NotifyHandler RunStatusChangeEvent;
+
         /// <summary>
         /// Fires the name change event.
         /// </summary>
@@ -193,12 +204,71 @@ namespace Argon.Windows.Network.Profile
         }
 
         /// <summary>
+        /// Fires the run status change event.
+        /// </summary>
+        /// <param name="description">The description.</param>
+        /// <param name="percentage">The percentage.</param>
+        public void FireRunStatusChangeEvent(string description, int percentage)
+        {
+            NotifyEventArgs e = new NotifyEventArgs(description, percentage);
+            if (RunStatusChangeEvent != null)
+            {
+                RunStatusChangeEvent(this, e);
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the associated wifi profile.
         /// </summary>
         /// <value>
         /// The associated wifi profile.
         /// </value>
         public string AssociatedWifiSSID { get; set; }
+
+        /// <summary>
+        /// Runs the profile.
+        /// </summary>
+        /// <param name="runDeviceConfig">if set to <c>true</c> [run device config].</param>
+        /// <returns></returns>
+        public bool Run(bool runDeviceConfig=true)
+        {                             
+            FireRunStatusChangeEvent("Start run profile "+Name,0);            
+
+            // disable cards
+            if (runDeviceConfig)
+            {
+                NetworkProfileHelper.RunDisableNetworkCardsSetup(this);
+                foreach (IWindowsNetworkCardInfo nic in DisabledNetworkCards)
+                {
+                    FireRunStatusChangeEvent("Disable network card " + nic.HardwareName + Name, 10);                     
+                }
+
+                FireRunStatusChangeEvent("Change netword card configuration" + this.NetworkCardInfo.HardwareName + Name, 20);
+                NetworkProfileHelper.RunNetworkCardSetup(this);
+
+                FireRunStatusChangeEvent("Wait for " + NetworkProfileHelper.TIME_WAIT * 4 + " ms", 30);
+                System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 4);
+            }
+
+            FireRunStatusChangeEvent("Change proxy configuration", 40);
+            NetworkProfileHelper.RunProxySetup(this);            
+
+            FireRunStatusChangeEvent("Change network drive configuration", 50);
+            NetworkProfileHelper.RunDriveMapping(this);            
+
+            FireRunStatusChangeEvent("Change windows service configuration", 60);
+            NetworkProfileHelper.RunServicesSetup(this);            
+
+            FireRunStatusChangeEvent("Executing programs", 70);
+            NetworkProfileHelper.RunProgramsSetup(this);            
+
+            FireRunStatusChangeEvent("Change default printer configuration",80);
+            NetworkProfileHelper.RunPrinterSetup(this);            
+
+            FireRunStatusChangeEvent("End profile " + Name,100);
+
+            return true;
+        }
 
     }
 }
