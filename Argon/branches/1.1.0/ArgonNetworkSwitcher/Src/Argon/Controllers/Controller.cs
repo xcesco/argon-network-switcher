@@ -6,13 +6,13 @@ using System.Net.NetworkInformation;
 using System.Drawing;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Xml;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using System.IO;
 using System.ComponentModel;
 using Argon.Windows.Forms;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network.Profile;
 using BrightIdeasSoftware;
-using Argon.OperatingSystem.Network;
+using Argon.Windows.Network;
 using Argon.UseCase;
 
 

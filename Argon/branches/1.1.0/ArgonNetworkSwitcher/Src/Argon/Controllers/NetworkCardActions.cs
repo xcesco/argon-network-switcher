@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
-using Argon.OperatingSystem.Network;
+using Argon.Windows.Network;
 using Argon.UseCase;
 
 namespace Argon.Controllers

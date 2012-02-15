@@ -6,9 +6,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.OperatingSystem;
 using System.IO;
 using System.Net.NetworkInformation;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network.Profile;
 
-namespace Argon.Network
+namespace Argon.Windows.Network
 {
     [TestClass]
     public class AutoDetectTest

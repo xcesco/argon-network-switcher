@@ -6,9 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using BrightIdeasSoftware;
-using Argon.OperatingSystem.Network;
+using Argon.Windows.Network;
 
 
 namespace Argon.Windows.Controls

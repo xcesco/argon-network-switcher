@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network.Profile;
 using Argon.Models;
 using System.Windows.Controls;
 using Argon.Windows.Forms;

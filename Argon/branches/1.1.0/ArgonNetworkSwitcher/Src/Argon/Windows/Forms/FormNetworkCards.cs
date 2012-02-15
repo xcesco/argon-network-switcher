@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Net.NetworkInformation;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;

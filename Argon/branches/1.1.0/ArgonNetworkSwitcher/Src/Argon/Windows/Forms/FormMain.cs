@@ -9,7 +9,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
 using System.Threading;
 using Argon.Controllers;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network.Profile;
 using Argon.Common;
 using System.Configuration;
 using Argon.UseCase;
@@ -131,11 +131,22 @@ namespace Argon.Windows.Forms
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.ComponentModel.DoWorkEventArgs"/> instance containing the event data.</param>
         public void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
-        {           
-            UseCaseProfile.Run((NetworkProfile)e.Argument, backgroundWorker);
+        {
+            bool runDeviceConfig = true;
+            NetworkProfile profile=(NetworkProfile)e.Argument;
+            if (profile == null)
+            {
+                // autodetect
+                profile = NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
+                runDeviceConfig = false;
+            }
 
-            e.Result = e.Argument;
-            
+            if (profile!=null)            
+            {
+                UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);                
+            }
+
+            e.Result = profile;
         }
 
         /// <summary>
@@ -147,7 +158,14 @@ namespace Argon.Windows.Forms
         {
             NetworkProfile profile = (NetworkProfile)e.Result;
             lblStatus.Text = "Completed";
-            MessageBox.Show("Applied profile " + profile.Name,"Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (profile != null)
+            {
+                MessageBox.Show("Applied profile " + profile.Name, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No profile applyed!!! ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             lblStatus.Text = "Ready";
             progressBar.Value = 0;            
         }
@@ -377,6 +395,22 @@ namespace Argon.Windows.Forms
             ab.AppMoreInfo = app;
 
             ab.ShowDialog(this);       
+        }
+
+        private void rbtnProfileRun_Click(object sender, EventArgs e)
+        {
+            backgroundWorker.RunWorkerAsync(null);
+            /*
+            NetworkProfile current = NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
+
+
+            if (current != null) { Console.WriteLine("Profile name: {0}, Wifi SSID: {1} ", current.Name, current.AssociatedWifiSSID); }
+            else
+            {
+                Console.WriteLine("No profile found");
+            }
+
+            Console.WriteLine("Finished!");*/
         }
         
     }

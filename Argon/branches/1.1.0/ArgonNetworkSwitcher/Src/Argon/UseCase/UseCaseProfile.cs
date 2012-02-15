@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Argon.Models;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network.Profile;
 using System.Drawing;
 using System.ComponentModel;
-using Argon.OperatingSystem.Network;
-using Argon.OperatingSystem;
+using Argon.Windows.Network;
+using Argon.Windows;
 
 namespace Argon.UseCase
 {
@@ -75,14 +75,14 @@ namespace Argon.UseCase
         /// <param name="profile">The profile.</param>
         /// <param name="worker">The worker.</param>
         /// <param name="runOnlyDeviceConfig">if set to <c>true</c> [run only device config].</param>
-        public static void Run(NetworkProfile profile, BackgroundWorker worker=null, bool runOnlyDeviceConfig=false)
+        public static void Run(NetworkProfile profile, BackgroundWorker worker=null, bool runDeviceConfig=true)
         {
 
             UseCaseLogger.ShowInfo("Start applying profile " + profile.Name);
             if (worker != null) worker.ReportProgress(0);
 
             // disable cards
-            NetworkProfileHelper.RunDisableNetworkCardsSetup(profile);
+            if (runDeviceConfig) NetworkProfileHelper.RunDisableNetworkCardsSetup(profile);
             foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
             {
                 UseCaseLogger.ShowInfo("Disable network card " + nic.HardwareName);                
@@ -90,12 +90,15 @@ namespace Argon.UseCase
             if (worker != null) worker.ReportProgress(15);
 
             UseCaseLogger.ShowInfo("Change netword card configuration");
-            NetworkProfileHelper.RunNetworkCardSetup(profile);            
+            if (runDeviceConfig) NetworkProfileHelper.RunNetworkCardSetup(profile);            
             if (worker != null) worker.ReportProgress(30);
 
-            // exit if runOnlyDeviceConfig
-            if (runOnlyDeviceConfig) return;
-
+            if (runDeviceConfig)
+            {
+                UseCaseLogger.ShowInfo("Wait for "+NetworkProfileHelper.TIME_WAIT * 4+" ms");
+                System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 4);
+            }
+           
             UseCaseLogger.ShowInfo("Change proxy configuration");
             NetworkProfileHelper.RunProxySetup(profile);             
             if (worker != null) worker.ReportProgress(40);

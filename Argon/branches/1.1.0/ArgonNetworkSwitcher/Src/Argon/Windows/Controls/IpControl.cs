@@ -5,8 +5,8 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using Argon.OperatingSystem;
-using Argon.OperatingSystem.Network;
+using Argon.Windows;
+using Argon.Windows.Network;
 
 namespace Argon.Windows.Controls
 {
