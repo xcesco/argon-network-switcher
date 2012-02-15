@@ -49,11 +49,16 @@ namespace Argon.UseCase
         /// <param name="e">The <see cref="Argon.Common.NotifyEventArgs"/> instance containing the event data.</param>
         public static void OnNotifyHandler(Object sender, NotifyEventArgs e)
         {
-            if (e.
-            UseCaseLogger.ShowInfo(e.Description);
-            ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);
-        }
+            if (!e.Error)
+            {
+                UseCaseLogger.ShowInfo(e.Description);
+            }
+            else
+            {
+                UseCaseLogger.ShowError(e.Description);
 
+            }
+        }
 
     }
 }
