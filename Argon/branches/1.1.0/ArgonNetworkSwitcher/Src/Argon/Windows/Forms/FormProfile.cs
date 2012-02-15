@@ -7,10 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Drawing.Printing;
-using Argon.OperatingSystem;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows;
+using Argon.Windows.Network.Profile;
 using Argon.Controllers;
-using Argon.OperatingSystem.Network;
+using Argon.Windows.Network;
 using Argon.UseCase;
 using Argon.Models;
 

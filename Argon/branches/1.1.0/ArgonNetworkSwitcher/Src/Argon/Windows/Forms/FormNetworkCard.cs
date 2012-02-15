@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Net.NetworkInformation;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using Argon.Controllers;
-using Argon.OperatingSystem.Network;
+using Argon.Windows.Network;
 using Argon.UseCase;
 
 

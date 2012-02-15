@@ -8,8 +8,8 @@ using Argon.FileSystem;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
-using Argon.OperatingSystem;
-using Argon.OperatingSystem.Network;
+using Argon.Windows;
+using Argon.Windows.Network;
 
 namespace Argon.WindowsXP.Network
 {

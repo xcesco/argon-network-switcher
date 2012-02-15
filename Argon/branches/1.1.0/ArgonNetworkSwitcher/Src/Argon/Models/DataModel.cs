@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Argon.OperatingSystem.Network;
-using Argon.OperatingSystem.Network.Profile;
+using Argon.Windows.Network;
+using Argon.Windows.Network.Profile;
 
 namespace Argon.Models
 {

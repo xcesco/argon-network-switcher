@@ -44,17 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Argon\Common\FormsUtility.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\PingHelper.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkConfiguration.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkProfile.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\Profile\NetworkProfileHelper.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\Wifi\WifiProfileHelper.cs" />
-    <Compile Include="Src\Argon\Windows7\Network\Wifi\NativeWifiInterop.cs" />
-    <Compile Include="Src\Argon\Windows7\Network\Wifi\NativeWifi.cs" />
-    <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfigurationManager.cs" />
-    <Compile Include="Src\Argon\Windows7\Network\Wifi\WifiConfiguration.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\Wifi\WifiProfile.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\WindowsNetworkCardHelper.cs" />
+    <Compile Include="Src\Argon\Windows\Network\PingHelper.cs" />
+    <Compile Include="Src\Argon\Windows\Network\Profile\NetworkConfiguration.cs" />
+    <Compile Include="Src\Argon\Windows\Network\Profile\NetworkProfile.cs" />
+    <Compile Include="Src\Argon\Windows\Network\Profile\NetworkProfileHelper.cs" />
+    <Compile Include="Src\Argon\Windows\Network\Wifi\WifiProfileManager.cs" />
+    <Compile Include="Src\Argon\Windows\Network\Wifi\WifiProfile.cs" />
+    <Compile Include="Src\Argon\Windows\Network\WindowsNetworkCardHelper.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardHelper.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapterConfiguration.cs">
       <SubType>Component</SubType>
@@ -62,8 +58,8 @@
     <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Src\Argon\OperativeSystem\OSInfo.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\PrinterManager.cs" />
+    <Compile Include="Src\Argon\Windows\OSInfo.cs" />
+    <Compile Include="Src\Argon\Windows\PrinterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Src\Argon\Common\CheckForUpdate.cs" />
     <Compile Include="Src\Argon\Common\PerformanceUtility.cs" />
@@ -72,25 +68,25 @@
     <Compile Include="Src\Argon\FileSystem\FileUtility.cs" />
     <Compile Include="Src\Argon\FileSystem\IniFile.cs" />
     <Compile Include="Src\Argon\Windows7\Network\Win7NetworkCardHelper.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\FirexfoxProxyConfigurationAdapter.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\IExplorerProxyConfigurationAdapter.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\ProxyConfiguration.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\ProxyConfigurationManager.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\DriveMapper.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\DriveMapping.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\RegistryUtility.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\RunningWindowsExecutable.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\ServiceForcedStatus.cs" />
+    <Compile Include="Src\Argon\Windows\Network\FirexfoxProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\Windows\Network\IExplorerProxyConfigurationAdapter.cs" />
+    <Compile Include="Src\Argon\Windows\Network\ProxyConfiguration.cs" />
+    <Compile Include="Src\Argon\Windows\Network\ProxyConfigurationManager.cs" />
+    <Compile Include="Src\Argon\Windows\DriveMapper.cs" />
+    <Compile Include="Src\Argon\Windows\DriveMapping.cs" />
+    <Compile Include="Src\Argon\Windows\RegistryUtility.cs" />
+    <Compile Include="Src\Argon\Windows\RunningWindowsExecutable.cs" />
+    <Compile Include="Src\Argon\Windows\ServiceForcedStatus.cs" />
     <Compile Include="Src\Argon\Windows7\Network\Win7NetworkCardManager.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsComponent.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsExecutable.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsExecutableManager.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsExecutor.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\WindowsNetworkCard.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\Network\WindowsNetworkCardManager.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsService.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsServiceInfo.cs" />
-    <Compile Include="Src\Argon\OperativeSystem\WindowsServiceManager.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsComponent.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsExecutable.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsExecutableManager.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsExecutor.cs" />
+    <Compile Include="Src\Argon\Windows\Network\WindowsNetworkCard.cs" />
+    <Compile Include="Src\Argon\Windows\Network\WindowsNetworkCardManager.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsService.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsServiceInfo.cs" />
+    <Compile Include="Src\Argon\Windows\WindowsServiceManager.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardManager.cs" />
   </ItemGroup>
   <ItemGroup>
