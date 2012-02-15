@@ -9,6 +9,7 @@ using Argon.Controllers;
 using BrightIdeasSoftware;
 using Argon.Windows.Network;
 using Argon.UseCase;
+using Argon.Models;
 
 namespace Argon.Controllers
 {
@@ -25,7 +26,7 @@ namespace Argon.Controllers
             if (nic == null) return;
             WindowsNetworkCard temp;
 
-            foreach (FormNetworkCard form in Controller.Instance.View.ListViewCardInfo)
+            foreach (FormNetworkCard form in ViewModel.NetworkCardViewList)
             {
                 if ((form.Tag is WindowsNetworkCard))
                 {
@@ -38,7 +39,7 @@ namespace Argon.Controllers
 
                         if (!form.Visible)
                         {
-                            form.Show(Controller.Instance.View.ViewMain.Pannello);
+                            form.Show(ViewModel.MainView.Pannello);
                             Controller.Instance.ActivateFormNetworkCard(form);
                         }
 
@@ -57,8 +58,8 @@ namespace Argon.Controllers
             //formApp.TabText = "NIC " + nic.ViewId;
             //formApp.Text = "NIC " + nic.ViewId;
 
-            Controller.Instance.View.ListViewCardInfo.Add(formApp);
-            formApp.Show(Controller.Instance.View.ViewMain.Pannello);
+            ViewModel.NetworkCardViewList.Add(formApp);
+            formApp.Show(ViewModel.MainView.Pannello);
             //formApp.DockState = DockState.Document;
             //formApp.Show();
 
@@ -71,7 +72,7 @@ namespace Argon.Controllers
         /// </summary>
         public static void ShowNetworkCard()
         {
-            ObjectListView list = Controller.Instance.View.ViewAdapters.listView;
+            ObjectListView list = ViewModel.NetworkCardsView.listView;
             if (list.SelectedItems.Count > 0)
             {
                 WindowsNetworkCard ni = (WindowsNetworkCard)list.SelectedObject;
@@ -86,10 +87,10 @@ namespace Argon.Controllers
         /// </summary>
         public static void ShowAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = true;
-            DisplayForm(Controller.Instance.View.ViewAdapters);
+            ViewModel.MainView.rbtnViewNetworkCards.Checked = true;
+            DisplayForm(ViewModel.NetworkCardsView);
 
-            Controller.Instance.View.ViewAdapters.Focus();
+            ViewModel.NetworkCardsView.Focus();
         }
 
         /// <summary>
@@ -105,8 +106,8 @@ namespace Argon.Controllers
         /// </summary>
         public static void HideAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = false;
-            DisplayForm(Controller.Instance.View.ViewAdapters);
+            ViewModel.MainView.rbtnViewNetworkCards.Checked = false;
+            DisplayForm(ViewModel.NetworkCardsView);
         }
 
 
@@ -120,7 +121,7 @@ namespace Argon.Controllers
 
         protected static void SetStatusCard(bool enabled)
         {
-            ObjectListView list = Controller.Instance.View.ViewAdapters.listView;
+            ObjectListView list = ViewModel.ProfilesView.listView;
             if (list.SelectedItems.Count > 0)
             {
                 WindowsNetworkCard ni = (WindowsNetworkCard)list.SelectedObject;

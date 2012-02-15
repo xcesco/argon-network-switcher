@@ -32,7 +32,7 @@ namespace Argon.Controllers
 
             NetworkProfile item;
 
-            foreach (FormProfile itemForm in Controller.Instance.View.ListViewProfile)
+            foreach (FormProfile itemForm in ViewModel.ProfileViewList)
             {
                 if ((itemForm.Tag is NetworkProfile))
                 {
@@ -42,7 +42,7 @@ namespace Argon.Controllers
                     {
                         if (!itemForm.Visible)
                         {
-                            itemForm.Show(Controller.Instance.View.ViewMain.Pannello);
+                            itemForm.Show(ViewModel.MainView.Pannello);
                         }
 
                         itemForm.Focus();                        
@@ -58,20 +58,11 @@ namespace Argon.Controllers
             form.txtName.Text = profile.Name;
             form.LoadProfile(profile);
 
-            Controller.Instance.View.ListViewProfile.Add(form);
-            form.Show(controller.View.ViewMain.Pannello);
+            ViewModel.ProfileViewList.Add(form);
+            form.Show(ViewModel.MainView.Pannello);
             form.DockState = DockState.Document;
 
             Controller.Instance.ActivateFormProfile(form);
-        }
-
-        public static void ShowProfile()
-        {
-            ObjectListView list = Controller.Instance.View.ViewProfiles.listView;
-            if (list.SelectedObjects.Count > 0)
-            {
-                NetworkProfileActions.Show((NetworkProfile)list.SelectedObject);
-            }
         }
 
         /// <summary>
@@ -87,17 +78,17 @@ namespace Argon.Controllers
 
         public static void ShowAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = true;
+            ViewModel.MainView.rbtnViewProfiles.Checked = true;
 
-            DisplayForm(Controller.Instance.View.ViewProfiles);
+            DisplayForm(ViewModel.ProfilesView);
 
-            Controller.Instance.View.ViewProfiles.Focus();
+            ViewModel.ProfilesView.Focus();
         }
 
         public static void HideAll()
         {
-            Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = false;
-            DisplayForm(Controller.Instance.View.ViewProfiles);
+            ViewModel.MainView.rbtnViewProfiles.Checked = false;
+            DisplayForm(ViewModel.ProfilesView);
         }
 
 
@@ -120,7 +111,7 @@ namespace Argon.Controllers
 
         public static void SaveProfile()
         {
-            FormProfile form = Controller.Instance.View.CurrentFormProfile;
+            FormProfile form = ViewModel.SelectedView as FormProfile;
 
             if (form != null)
             {
@@ -130,17 +121,18 @@ namespace Argon.Controllers
 
         public static void RefrehProfile()
         {
-            FormProfile form = Controller.Instance.View.CurrentFormProfile;
 
-            if (form != null)
-            {
+            FormProfile form=ViewModel.SelectedView as FormProfile;
+
+            if (form!=null)
+            {                
                 form.RefreshView();
             }
         }
 
         public static void DeleteCurrentProfile()
         {
-            ObjectListView list = Controller.Instance.View.ViewProfiles.listView;
+            ObjectListView list = ViewModel.NetworkCardsView.listView;
             if (list.SelectedObjects.Count > 0)
             {
                 

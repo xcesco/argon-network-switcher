@@ -56,27 +56,24 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = false;
+                ViewModel.MainView.rbtnViewProfiles.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.rbtnViewProfiles.Checked = true;
+                ViewModel.MainView.rbtnViewProfiles.Checked = true;
             }
         }
       
         private void FormProfiles_Activated(object sender, EventArgs e)
         {
-            Controller.Instance.ActivateFormProfiles();
+            //Controller.Instance.ActivateFormProfiles();
         }
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView.SelectedObjects.Count > 0)
-            {
-
-                Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
-                Controller.Instance.ActivateFormProfile();
-                
+            {                                
+                UseCaseView.Display((NetworkProfile)listView.SelectedObject);                            
             }
         }
 

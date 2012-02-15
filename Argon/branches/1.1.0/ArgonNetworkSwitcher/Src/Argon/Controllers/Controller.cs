@@ -14,86 +14,69 @@ using Argon.Windows.Network.Profile;
 using BrightIdeasSoftware;
 using Argon.Windows.Network;
 using Argon.UseCase;
+using Argon.Models;
 
 
 namespace Argon.Controllers
 {
     public class Controller
     {
-
-        public void ActivateFormNetworkCard()
-        {
-            ActivateFormNetworkCard(View.CurrentFormCardInfo);
-        }
-
-        public void ActivateFormNetworkCard(FormNetworkCard currentFormNetworkCard)
+        
+        public void ActivateFormNetworkCard(FormNetworkCard selectedNetworkCardForm)
         {
             // profili
-            View.ViewMain.rbtnProfileNew.Enabled = false;
-            View.ViewMain.rbtnProfileView.Enabled = false;
-            View.ViewMain.rbtnProfileDelete.Enabled = false;
+            ViewModel.MainView.rbtnProfileNew.Enabled = false;
+            ViewModel.MainView.rbtnProfileView.Enabled = false;
+            ViewModel.MainView.rbtnProfileDelete.Enabled = false;
 
             // profilo
-            View.ViewMain.rbtnProfileRun.Enabled = false;           
-            View.ViewMain.rbtnProfileSave.Enabled = false;
+            ViewModel.MainView.rbtnProfileRun.Enabled = false;
+            ViewModel.MainView.rbtnProfileSave.Enabled = false;
 
             // documento
-            View.ViewMain.rbtnConfigSave.Enabled = false;
-            View.ViewMain.rbtnConfigLoad.Enabled = false;
+            ViewModel.MainView.rbtnConfigSave.Enabled = false;
+            ViewModel.MainView.rbtnConfigLoad.Enabled = false;
 
             // networkcard
-            View.ViewMain.rbtnCardsRefresh.Enabled = false;
-            View.ViewMain.rbtnCardView.Enabled = false;
+            ViewModel.MainView.rbtnCardsRefresh.Enabled = false;
+            ViewModel.MainView.rbtnCardView.Enabled = false;
 
             // form selezionati            
-            View.CurrentFormCardInfo = currentFormNetworkCard;
+            ViewModel.SelectedView = selectedNetworkCardForm;
         }
-
-        public void ActivateFormProfile()
-        {
-            ActivateFormProfile(View.CurrentFormProfile);
-        }
-
+        
         public void ActivateFormProfile(FormProfile currentFormProfile)
-        {
-            FormMain main = _view.ViewMain;
-
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnConfigLoad, main.rbtnConfigSave, main.rbtnProfileNew, main.rbtnProfileRun, main.rbtnProfileSave, main.rbtnProfileDelete);            
+        {            
+            UseCaseView.Display(currentFormProfile);            
 
             // form selezionati
-            View.CurrentFormProfile = currentFormProfile;
-            View.CurrentFormCardInfo = null;
+            ViewModel.SelectedView = currentFormProfile;            
         }
 
         public void ActivateFormProfiles()
         {
-            FormMain main = _view.ViewMain;
+            FormMain main = ViewModel.MainView;
 
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnConfigLoad, main.rbtnConfigSave, main.rbtnProfileNew, main.rbtnConfigLoad, main.rbtnConfigSave);                       
+            UseCaseView.Display(ViewModel.ProfilesView);
 
             // form selezionati
-            View.CurrentFormProfile = null;
-            View.CurrentFormCardInfo = null;
+            ViewModel.SelectedView = ViewModel.ProfilesView;            
         }
 
         public void ActivateFormCards()
         {
-            FormMain main = _view.ViewMain;
-
-            _view.ToolStripButtonManager.EnableButtons(main.rbtnCardsRefresh, main.rbtnCardView);
+            FormMain main = ViewModel.MainView;
+            
          
             // form selezionati
-            View.CurrentFormProfile = null;
-            View.CurrentFormCardInfo = null;
+            ViewModel.SelectedView = ViewModel.NetworkCardsView;            
         }
 
         public static string NO_NIC_NAME = "NONE";
 
 
         protected Controller()
-        {
-            // Initialize the views
-            _view = new ViewRender();
+        {            
 
             // Initialize the controllers
             _consoleController = new ConsoleMiniController(this);
@@ -129,14 +112,7 @@ namespace Argon.Controllers
             get { return _consoleController; }
             set { _consoleController = value; }
         }
-
-        private ViewRender _view;
-
-        public ViewRender View
-        {
-            get { return _view; }
-            set { _view = value; }
-        }
+   
 
         protected static Controller _instance;
 
@@ -180,7 +156,7 @@ namespace Argon.Controllers
         /// </summary>
         public void ActionRefreshNetworkAdapters()
         {
-            ObjectListView listView=Controller.Instance.View.ViewAdapters.listView;
+            ObjectListView listView=ViewModel.NetworkCardsView.listView;
             List<WindowsNetworkCard> lista = _model.GetNetworkAdapters();
             listView.ClearObjects();
             listView.AddObjects(lista);
@@ -241,24 +217,24 @@ namespace Argon.Controllers
         /// </summary>
         public void ActionRefreshProfiles()
         {
-            RibbonPanel rp = _view.ViewMain.rpProfilesCollection;
+            RibbonPanel rp = ViewModel.MainView.rpProfilesCollection;
             RibbonItemCollection rpc = rp.Items;
             RibbonButton rButton=null;
 
             rpc.Clear();
             // Lista dei profili nell'apposita finestra
-            View.ViewProfiles.listView.ClearObjects();
+            ViewModel.ProfilesView.listView.ClearObjects();
            
             foreach (NetworkProfile item in _model.Profiles)
             {
-                View.ViewProfiles.listView.AddObject(item);
+                ViewModel.ProfilesView.listView.AddObject(item);
                 
                 rButton=new RibbonButton();
 
                 rButton.Text=item.Name;
                 rButton.Tag=item;
                 rButton.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-                rButton.Click += new System.EventHandler(Controller.Instance.View.ViewMain.btnRunProfile_Click);
+                rButton.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
                     // create in ribbon panel
                 rpc.Add(rButton);
             }
@@ -293,27 +269,27 @@ namespace Argon.Controllers
 
                 if (profile == null)
                 {
-                    MessageBox.Show(View.ViewMain, "Problem during the profile invocation (No tag found)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(ViewModel.MainView, "Problem during the profile invocation (No tag found)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show(View.ViewMain, "Problem during the profile invocation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ViewModel.MainView, "Problem during the profile invocation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return;
             }
 
-            if (View.ViewMain.backgroundWorker.IsBusy)
+            if (ViewModel.MainView.backgroundWorker.IsBusy)
             {
-                MessageBox.Show(View.ViewMain, "Please wait, the program is already applying a profile", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ViewModel.MainView, "Please wait, the program is already applying a profile", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return;
             }
 
-            DialogResult res = MessageBox.Show(View.ViewMain, "Do you want to apply profile " + profile.Name + "?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            DialogResult res = MessageBox.Show(ViewModel.MainView, "Do you want to apply profile " + profile.Name + "?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
             if (res == DialogResult.Yes)
             {
-                View.ViewMain.backgroundWorker.RunWorkerAsync(profile);
+                ViewModel.MainView.backgroundWorker.RunWorkerAsync(profile);
             }
 
         }

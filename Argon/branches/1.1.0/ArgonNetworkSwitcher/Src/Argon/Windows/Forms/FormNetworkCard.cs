@@ -11,6 +11,7 @@ using Argon.Windows;
 using Argon.Controllers;
 using Argon.Windows.Network;
 using Argon.UseCase;
+using Argon.Models;
 
 
 namespace Argon.Windows.Forms
@@ -51,12 +52,12 @@ namespace Argon.Windows.Forms
 
         private void FormCardInfo_Activated(object sender, EventArgs e)
         {
-            Controller.Instance.ActivateFormNetworkCard();
+            Controller.Instance.ActivateFormNetworkCard(this);
         }
 
         private void FormCardInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bool ret = Controller.Instance.View.ListViewCardInfo.Remove(this);
+            bool ret = ViewModel.NetworkCardViewList.Remove(this);
             UseCaseLogger.ShowInfo("NIC form closed " + ret);
         }
 

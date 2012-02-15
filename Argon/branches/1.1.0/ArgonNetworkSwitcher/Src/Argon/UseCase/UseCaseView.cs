@@ -6,6 +6,7 @@ using Argon.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Models;
 using System.Windows.Forms;
+using Argon.Windows.Network.Profile;
 
 namespace Argon.UseCase
 {
@@ -43,8 +44,8 @@ namespace Argon.UseCase
             {
                 dockContent.DockState = dockContent.OldDockState;                
             }
-            
-            dockContent.Show();
+
+            dockContent.Show();            
 
             // check ribbon button
             if (dockContent == ViewModel.ProfilesView)
@@ -110,5 +111,13 @@ namespace Argon.UseCase
             }
         }
 
+
+        public static void Display(NetworkProfile networkProfile)
+        {
+            // set the profile as current selected
+            DataModel.SelectedNetworkProfile = networkProfile;
+
+            UseCaseProfile.Show(networkProfile);
+        }
     }
 }

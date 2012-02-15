@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using Argon.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
+using Argon.Windows.Network;
 
 namespace Argon.UseCase
 {
@@ -16,13 +17,14 @@ namespace Argon.UseCase
     /// </summary>
     public static class UseCaseApplication
     {
-
+  
         /// <summary>
         /// Loads the specified form main.
         /// </summary>
         /// <param name="formMain">The form main.</param>
         public static void Load(FormMain formMain)
         {
+
             // create other forms
             CreateForms(formMain);
 
@@ -33,6 +35,10 @@ namespace Argon.UseCase
 
             // set the event handler
             NetworkProfileHelper.NotifyEvent += UseCaseLogger.OnNotifyHandler;
+
+            // default value
+            DataModel.NetworkCardList = new List<WindowsNetworkCard>();
+            DataModel.NetworkProfileList = new List<NetworkProfile>();
 
             // load the profiles
             UseCaseConfig.Load();

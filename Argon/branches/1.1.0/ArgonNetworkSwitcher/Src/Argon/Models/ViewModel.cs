@@ -56,7 +56,7 @@ namespace Argon.Models
         /// <value>
         /// The network cards view.
         /// </value>
-        public static FormNetworkCards NetworkCardsView { get; set; }
+        public static FormNetworkCards NetworkCardsView { get; set; }        
 
         /// <summary>
         /// Gets or sets the adapter view list.
@@ -65,5 +65,7 @@ namespace Argon.Models
         /// The adapter view list.
         /// </value>
         public static List<FormNetworkCard> NetworkCardViewList { get; set; }
+
+        public static ArgonDockContent SelectedView { get; set; }
     }
 }

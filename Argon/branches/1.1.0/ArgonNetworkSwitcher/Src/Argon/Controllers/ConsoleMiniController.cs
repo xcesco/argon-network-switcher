@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Argon.Windows.Forms;
 using System.Runtime.InteropServices;
+using Argon.Models;
 
 namespace Argon.Controllers
 {        
@@ -19,8 +20,8 @@ namespace Argon.Controllers
         /// </summary>
         /// <param name="controller">The controller.</param>
         internal ConsoleMiniController(Controller controller) : base(controller)
-        {                        
-            _viewConsole = controller.View.ViewConsole;            
+        {
+            _viewConsole = ViewModel.ConsoleView;            
         }
 
 

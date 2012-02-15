@@ -10,6 +10,7 @@ using System.ComponentModel;
 using Argon.Windows.Network;
 using Argon.Windows;
 using Argon.Common;
+using Argon.Controllers;
 
 namespace Argon.UseCase
 {
@@ -65,9 +66,12 @@ namespace Argon.UseCase
             // set the selected profile in model
             DataModel.SelectedNetworkProfile = profile;
 
-            // selected the current ribbonù
+            // selected the current ribbon
             ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;            
             ViewModel.MainView.rpProfile.Selected = true;
+
+            // show
+            NetworkProfileActions.Show(profile);            
         }
 
         /// <summary>
@@ -112,6 +116,12 @@ namespace Argon.UseCase
             {
                 profile.RunStatusChangeEvent -= OnRunStatusChangedHandler;
             }
+        }
+
+        public static void ShowCurrent()
+        {
+            NetworkProfile current = DataModel.SelectedNetworkProfile;
+            Show(current);
         }
     }
 }
