@@ -28,13 +28,11 @@ namespace Argon.UseCase
 
             // set 
             DisplayFormsInDefaultPosition();
-
-            // set the event handler
-            NetworkProfileHelper.NotifyEvent+=UseCaseLogger.
-
+            
             UseCaseLogger.ShowInfo("Startup program");
 
-
+            // set the event handler
+            NetworkProfileHelper.NotifyEvent += UseCaseLogger.OnNotifyHandler;
 
             // load the profiles
             UseCaseConfig.Load();
