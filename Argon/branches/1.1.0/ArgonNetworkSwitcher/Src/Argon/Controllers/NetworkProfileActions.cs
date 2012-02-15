@@ -114,7 +114,6 @@ namespace Argon.Controllers
             
             if (profile != null)
             {
-                //form.btnSave_Click(null,null);
                 Controller.Instance.Profile_Click(profile, null);                
             }
         }

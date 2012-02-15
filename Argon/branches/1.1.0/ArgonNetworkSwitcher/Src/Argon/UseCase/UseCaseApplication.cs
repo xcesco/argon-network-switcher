@@ -14,7 +14,7 @@ namespace Argon.UseCase
     /// <summary>
     /// 
     /// </summary>
-    public abstract class UseCaseApplication
+    public static class UseCaseApplication
     {
 
         /// <summary>
@@ -29,7 +29,12 @@ namespace Argon.UseCase
             // set 
             DisplayFormsInDefaultPosition();
 
+            // set the event handler
+            NetworkProfileHelper.NotifyEvent+=UseCaseLogger.
+
             UseCaseLogger.ShowInfo("Startup program");
+
+
 
             // load the profiles
             UseCaseConfig.Load();

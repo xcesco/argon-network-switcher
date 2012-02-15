@@ -137,7 +137,7 @@ namespace Argon.Windows.Forms
             if (profile == null)
             {
                 // autodetect
-                profile = NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
+                profile = UseCaseProfile.RunAutodetect();
                 runDeviceConfig = false;
             }
 
@@ -399,18 +399,7 @@ namespace Argon.Windows.Forms
 
         private void rbtnProfileRun_Click(object sender, EventArgs e)
         {
-            backgroundWorker.RunWorkerAsync(null);
-            /*
-            NetworkProfile current = NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
-
-
-            if (current != null) { Console.WriteLine("Profile name: {0}, Wifi SSID: {1} ", current.Name, current.AssociatedWifiSSID); }
-            else
-            {
-                Console.WriteLine("No profile found");
-            }
-
-            Console.WriteLine("Finished!");*/
+            backgroundWorker.RunWorkerAsync(null);           
         }
         
     }

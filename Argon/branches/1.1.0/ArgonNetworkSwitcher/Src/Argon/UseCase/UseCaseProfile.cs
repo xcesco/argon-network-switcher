@@ -9,6 +9,7 @@ using System.Drawing;
 using System.ComponentModel;
 using Argon.Windows.Network;
 using Argon.Windows;
+using Argon.Common;
 
 namespace Argon.UseCase
 {
@@ -70,6 +71,27 @@ namespace Argon.UseCase
         }
 
         /// <summary>
+        /// Called when [run status changed handler].
+        /// </summary>
+        /// <param name="profileSender">The profile sender.</param>
+        /// <param name="e">The <see cref="Argon.Common.NotifyEventArgs"/> instance containing the event data.</param>
+        public static void OnRunStatusChangedHandler(Object profileSender, NotifyEventArgs e)
+        {
+            UseCaseLogger.ShowInfo(e.Description);
+            ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);            
+        }
+
+
+        /// <summary>
+        /// Runs the autodetect.
+        /// </summary>
+        /// <returns></returns>
+        public static NetworkProfile RunAutodetect()
+        {
+            return NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);                       
+        }
+
+        /// <summary>
         /// Applies the specified profile.
         /// </summary>
         /// <param name="profile">The profile.</param>
@@ -78,49 +100,18 @@ namespace Argon.UseCase
         public static void Run(NetworkProfile profile, BackgroundWorker worker=null, bool runDeviceConfig=true)
         {
 
-            UseCaseLogger.ShowInfo("Start applying profile " + profile.Name);
-            if (worker != null) worker.ReportProgress(0);
+            if (profile == null) return;
 
-            // disable cards
-            if (runDeviceConfig) NetworkProfileHelper.RunDisableNetworkCardsSetup(profile);
-            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
+            profile.RunStatusChangeEvent += OnRunStatusChangedHandler;
+
+            try
             {
-                UseCaseLogger.ShowInfo("Disable network card " + nic.HardwareName);                
+                profile.Run(runDeviceConfig);
             }
-            if (worker != null) worker.ReportProgress(15);
-
-            UseCaseLogger.ShowInfo("Change netword card configuration");
-            if (runDeviceConfig) NetworkProfileHelper.RunNetworkCardSetup(profile);            
-            if (worker != null) worker.ReportProgress(30);
-
-            if (runDeviceConfig)
+            finally
             {
-                UseCaseLogger.ShowInfo("Wait for "+NetworkProfileHelper.TIME_WAIT * 4+" ms");
-                System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 4);
+                profile.RunStatusChangeEvent -= OnRunStatusChangedHandler;
             }
-           
-            UseCaseLogger.ShowInfo("Change proxy configuration");
-            NetworkProfileHelper.RunProxySetup(profile);             
-            if (worker != null) worker.ReportProgress(40);
-
-            UseCaseLogger.ShowInfo("Change network drive configuration");
-            NetworkProfileHelper.RunDriveMapping(profile);                
-            if (worker != null) worker.ReportProgress(50);
-
-            UseCaseLogger.ShowInfo("Change windows service configuration");
-            NetworkProfileHelper.RunServicesSetup(profile);            
-            if (worker != null) worker.ReportProgress(60);
-
-            UseCaseLogger.ShowInfo("Executing programs");
-            NetworkProfileHelper.RunProgramsSetup(profile);            
-            if (worker != null) worker.ReportProgress(70);
-
-            UseCaseLogger.ShowInfo("Change default printer configuration");
-            NetworkProfileHelper.RunPrinterSetup(profile);           
-            if (worker != null) worker.ReportProgress(80);
-            
-            UseCaseLogger.ShowInfo("End profile " + profile.Name);
-            if (worker != null) worker.ReportProgress(100);
         }
     }
 }
