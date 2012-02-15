@@ -66,14 +66,14 @@ namespace Argon.Windows.Forms
         {
             if (persistString == typeof(FormNetworkCards).ToString())
             {
-                Controller.Instance.View.ViewAdapters.Show(dockPanel);
-                return Controller.Instance.View.ViewAdapters;
+                ViewModel.NetworkCardsView.Show(dockPanel);
+                return ViewModel.NetworkCardsView;
             }
 
             if (persistString == typeof(FormProfiles).ToString())
             {
-                Controller.Instance.View.ViewProfiles.Show(dockPanel);
-                return Controller.Instance.View.ViewProfiles;
+                ViewModel.ProfilesView.Show(dockPanel);
+                return ViewModel.ProfilesView;
             }
             /*
             if (persistString == typeof(FormActionBean).ToString())
@@ -209,8 +209,8 @@ namespace Argon.Windows.Forms
         }
 
         private void btnView_Click(object sender, EventArgs e)
-        {
-            NetworkProfileActions.ShowProfile();
+        {            
+            UseCaseProfile.ShowCurrent();            
         }
 
         private void btnAllProfileLoad_Click(object sender, EventArgs e)

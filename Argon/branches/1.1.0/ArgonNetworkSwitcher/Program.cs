@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Argon.Controllers;
+using Argon.Models;
+using Argon.UseCase;
 
 namespace Argon.Windows.Forms
 {
@@ -19,8 +21,8 @@ namespace Argon.Windows.Forms
 
             FormSplashScreen form = new FormSplashScreen();
             form.Show();
-
-            Application.Run(Controller.Instance.View.ViewMain);
+            
+            Application.Run(new FormMain());
         }
     }
 }

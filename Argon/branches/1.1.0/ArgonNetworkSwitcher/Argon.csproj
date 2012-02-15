@@ -104,7 +104,6 @@
     <Compile Include="Src\Argon\Controllers\NetworkCardActions.cs" />
     <Compile Include="Src\Argon\Controllers\NetworkProfileActions.cs" />
     <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\ViewController.cs" />
     <Compile Include="Src\Argon\Models\DataModel.cs" />
     <Compile Include="Src\Argon\Models\ViewModel.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseApplication.cs" />
@@ -220,8 +219,6 @@
     <Compile Include="Src\Argon\Windows\Forms\FormSplashScreen.designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\ToolStripButtonManager.cs" />
-    <Compile Include="Src\Argon\Windows\Forms\ViewRender.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

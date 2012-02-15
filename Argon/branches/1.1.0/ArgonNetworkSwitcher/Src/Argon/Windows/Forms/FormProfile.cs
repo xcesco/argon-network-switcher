@@ -335,7 +335,7 @@ namespace Argon.Windows.Forms
 
         private void FormProfile_Activated(object sender, EventArgs e)
         {
-            Controller.Instance.ActivateFormProfile();
+            ViewModel.SelectedView = this;
         }
 
         private void btnSelectPrinter_Click(object sender, EventArgs e)
@@ -350,7 +350,7 @@ namespace Argon.Windows.Forms
 
         private void FormProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bool ret=Controller.Instance.View.ListViewProfile.Remove(this);
+            bool ret = ViewModel.ProfileViewList.Remove(this);
             UseCaseLogger.ShowInfo("Profile form closed " + ret);
         }
 

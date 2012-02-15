@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Controllers;
+using Argon.Models;
 
 namespace Argon.Controllers
 {
@@ -19,7 +20,7 @@ namespace Argon.Controllers
             {
                 case DockState.Unknown:
                 case DockState.Hidden:
-                    form.Show(Controller.Instance.View.ViewMain.Pannello);
+                    form.Show(ViewModel.MainView.Pannello);
                     break;
                 default:
                     form.Hide();

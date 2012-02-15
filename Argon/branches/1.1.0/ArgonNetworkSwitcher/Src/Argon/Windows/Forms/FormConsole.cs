@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Controllers;
+using Argon.Models;
 
 namespace Argon.Windows.Forms
 {
@@ -26,11 +27,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.rbtnViewConsole.Checked = false;
+                ViewModel.MainView.rbtnViewConsole.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.rbtnViewConsole.Checked = true;
+                ViewModel.MainView.rbtnViewConsole.Checked = true;
             }
         }
 

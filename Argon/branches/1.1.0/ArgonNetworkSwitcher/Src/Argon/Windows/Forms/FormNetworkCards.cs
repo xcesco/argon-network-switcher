@@ -11,6 +11,7 @@ using Argon.Windows;
 using Argon.Windows.Forms;
 using Argon.Controllers;
 using BrightIdeasSoftware;
+using Argon.Models;
 
 namespace Argon.Windows.Forms
 {
@@ -41,11 +42,11 @@ namespace Argon.Windows.Forms
         {
             if (!this.Visible)
             {
-                Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = false;
+                ViewModel.MainView.rbtnViewNetworkCards.Checked = false;
             }
             else
             {
-                Controller.Instance.View.ViewMain.rbtnViewNetworkCards.Checked = true;
+                ViewModel.MainView.rbtnViewNetworkCards.Checked = true;
             }
         }
 

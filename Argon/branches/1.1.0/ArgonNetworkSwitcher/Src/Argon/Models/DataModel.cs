@@ -10,7 +10,7 @@ namespace Argon.Models
     /// <summary>
     /// 
     /// </summary>
-    public abstract class DataModel
+    public static class DataModel
     {
 
         /// <summary>
