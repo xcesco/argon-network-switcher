@@ -95,7 +95,7 @@ namespace Argon.Controllers
 
         public static void ApplyProfile()
         {
-            NetworkProfile profile = Controller.Instance.Model.CurrentProfile;
+            NetworkProfile profile = DataModel.SelectedNetworkProfile;
 
             ApplyProfile(profile);
         }
@@ -135,8 +135,8 @@ namespace Argon.Controllers
             ObjectListView list = ViewModel.NetworkCardsView.listView;
             if (list.SelectedObjects.Count > 0)
             {
-                
-                Controller.Instance.Model.CurrentProfile = null;
+
+                DataModel.SelectedNetworkProfile = null;
 
                 NetworkProfile profile = (NetworkProfile)list.SelectedObject;
 
@@ -144,7 +144,7 @@ namespace Argon.Controllers
                 if (res==MessageBoxResult.Yes)
                 {
                     UseCaseLogger.ShowInfo("Remove profile [" + profile.Name + "]");
-                    Controller.Instance.Model.Profiles.Remove(profile);
+                    DataModel.NetworkProfileList.Remove(profile);
                     Controller.Instance.ActionRefreshProfiles();
                 }
              

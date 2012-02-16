@@ -1,4 +1,5 @@
 ﻿using Argon.Windows.Network.Profile;
+using Argon.Models;
 
 namespace Argon.Controllers
 {
@@ -18,7 +19,7 @@ namespace Argon.Controllers
             newProfile.Id=Controller.Instance.CreateNewProfileId();
             newProfile.Name = "Copy of " + newProfile.Name;
 
-            _controller.Model.AddProfile(newProfile);            
+            DataModel.NetworkProfileList.Add(newProfile);
         }
     }
 }

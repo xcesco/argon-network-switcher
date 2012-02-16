@@ -228,7 +228,7 @@ namespace Argon.Windows.Forms
 
             if (profile.NetworkCardInfo.Id.Length > 0)
             {
-                ipControl.Configuration = Controller.Instance.Model.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
+                ipControl.Configuration = WindowsNetworkCardManager.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
             }
             proxyPanel.Configuration = ProxyConfigurationManager.ReadConfig();
                     
@@ -289,7 +289,7 @@ namespace Argon.Windows.Forms
                 }
                 if (work.Length > 0)
                 {
-                    List<WindowsNetworkCard> lista = Controller.Instance.Model.GetNetworkAdapters();
+                    List<WindowsNetworkCard> lista = WindowsNetworkCardManager.EnabledWindowsNetworkCardList;
 
                     // lo facciamo solo se la card è diversa
                     if (profile.NetworkCardInfo == null || !profile.NetworkCardInfo.ViewId.Equals(work))

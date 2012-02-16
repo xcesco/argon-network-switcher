@@ -544,8 +544,8 @@ namespace Argon.Windows.Network.Profile
                 //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, true);
 
                 // wait for a while
-                FireNotifyEvent("Wait " + (TIME_WAIT * 4) + " ms.");
-                System.Threading.Thread.Sleep(TIME_WAIT * 4);
+                FireNotifyEvent("Wait " + (TIME_WAIT * 3) + " ms.");
+                System.Threading.Thread.Sleep(TIME_WAIT * 3);
 
                 WindowsNetworkCard card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
 
@@ -565,7 +565,6 @@ namespace Argon.Windows.Network.Profile
                     pingOk = false;
 
                     FireNotifyEvent("The card " + card.Name + " are in status " + card.NetConnectionStatus);
-
                     // test both static config or dynamic config
                     pingOk = PingHelper.RunPing(card.GatewayAddress);
                     pingOk = pingOk || PingHelper.RunPing(card.CurrentGatewayAddress);

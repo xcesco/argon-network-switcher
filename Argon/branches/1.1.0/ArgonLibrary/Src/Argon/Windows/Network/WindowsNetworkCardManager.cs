@@ -14,7 +14,7 @@ using Argon.Windows;
 
 namespace Argon.Windows.Network
 {
-   
+
 
     /// <summary>
     /// Manager for the Network Card Interfaces
@@ -40,6 +40,39 @@ namespace Argon.Windows.Network
             }
 
             return null;
+        }
+
+        public static Dictionary<string, WindowsNetworkCard> WindowsNetworkCardTable
+        {
+            get
+            {
+                List<WindowsNetworkCard> list = GetWindowsNetworkCardList();
+
+                return ConvertListToTable(list);                
+            }
+        }
+
+
+        public static Dictionary<string, WindowsNetworkCard> EnabledWindowsNetworkCardTable
+        {
+            get
+            {
+                List<WindowsNetworkCard> list = EnabledWindowsNetworkCardList;
+
+                return ConvertListToTable(list);                
+            }
+        }
+
+        internal static Dictionary<string, WindowsNetworkCard> ConvertListToTable(List<WindowsNetworkCard> list)
+        {
+            Dictionary<string, WindowsNetworkCard> table = new Dictionary<string, WindowsNetworkCard>();
+
+            foreach (WindowsNetworkCard item in list)
+            {
+                table.Add(item.Id, item);
+            }
+
+            return table;
         }
 
         /// <summary>
