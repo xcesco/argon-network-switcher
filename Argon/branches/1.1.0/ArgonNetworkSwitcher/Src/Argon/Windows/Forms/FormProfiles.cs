@@ -72,8 +72,8 @@ namespace Argon.Windows.Forms
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView.SelectedObjects.Count > 0)
-            {                                
-                UseCaseView.Display((NetworkProfile)listView.SelectedObject);                            
+            {
+                UseCaseProfile.SelectProfile( (NetworkProfile)listView.SelectedObject);                
             }
         }
 
@@ -83,7 +83,7 @@ namespace Argon.Windows.Forms
             {
                 Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
                 NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
-
+                
                 UseCaseProfile.Show((NetworkProfile)listView.SelectedObject);
             }
         }

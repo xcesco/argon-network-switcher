@@ -110,14 +110,5 @@ namespace Argon.UseCase
                 button.Checked = false;
             }
         }
-
-
-        public static void Display(NetworkProfile networkProfile)
-        {
-            // set the profile as current selected
-            DataModel.SelectedNetworkProfile = networkProfile;
-
-            UseCaseProfile.Show(networkProfile);
-        }
     }
 }
