@@ -81,7 +81,7 @@ namespace Argon.Windows.Forms
         {
             if (listView.SelectedObjects.Count > 0)
             {
-                Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
+                DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;                
                 NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
                 
                 UseCaseProfile.Show((NetworkProfile)listView.SelectedObject);
@@ -92,7 +92,7 @@ namespace Argon.Windows.Forms
         {
             if (listView.SelectedObjects.Count > 0)
             {
-                Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
+                DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;                
                 NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
             }
         }
@@ -101,8 +101,8 @@ namespace Argon.Windows.Forms
         {
             if (listView.SelectedObjects.Count > 0)
             {
-                Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;
-                Controller.Instance.Profile_Click(Controller.Instance.Model.CurrentProfile, null);
+                DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;
+                Controller.Instance.Profile_Click(DataModel.SelectedNetworkProfile, null);
             }
         }
 
@@ -120,8 +120,8 @@ namespace Argon.Windows.Forms
         {
             if (listView.SelectedObjects.Count > 0)
             {
-                Controller.Instance.Model.CurrentProfile = (NetworkProfile)listView.SelectedObject;                
-                Controller.Instance.ProfileController.DuplicateProfile(Controller.Instance.Model.CurrentProfile);
+                DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;
+                Controller.Instance.ProfileController.DuplicateProfile(DataModel.SelectedNetworkProfile);
                 Controller.Instance.ActionRefreshProfiles();
             }
             

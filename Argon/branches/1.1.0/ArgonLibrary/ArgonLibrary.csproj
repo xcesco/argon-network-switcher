@@ -46,7 +46,6 @@
     <Compile Include="Src\Argon\Common\FormsUtility.cs" />
     <Compile Include="Src\Argon\Common\NotifyEventArgs.cs" />
     <Compile Include="Src\Argon\Windows\Network\PingHelper.cs" />
-    <Compile Include="Src\Argon\Windows\Network\Profile\NetworkConfiguration.cs" />
     <Compile Include="Src\Argon\Windows\Network\Profile\NetworkProfile.cs" />
     <Compile Include="Src\Argon\Windows\Network\Profile\NetworkProfileHelper.cs" />
     <Compile Include="Src\Argon\Windows\Network\Wifi\WifiProfileManager.cs" />

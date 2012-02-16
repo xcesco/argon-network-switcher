@@ -82,18 +82,7 @@ namespace Argon.Controllers
             _consoleController = new ConsoleMiniController(this);
             
             _profileController = new ProfileMiniController(this);
-
-            _model = new NetworkConfiguration();
-
-            _model.SelectProfileEvent += Controller_SelectProfile;
-        }
-
-        private NetworkConfiguration _model;
-
-        public NetworkConfiguration Model
-        {
-            get { return _model; }
-            set { _model = value; }
+            
         }
 
         private ProfileMiniController _profileController;
@@ -134,7 +123,7 @@ namespace Argon.Controllers
         /// </summary>
         public List<WindowsNetworkCard> ActionRefreshNetworkAdapters(ComboBox comboBox)
         {
-            List<WindowsNetworkCard> lista = Controller.Instance.Model.GetNetworkAdapters();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
 
             comboBox.Items.Clear();
             comboBox.Items.Add("NONE");
@@ -157,7 +146,7 @@ namespace Argon.Controllers
         public void ActionRefreshNetworkAdapters()
         {
             ObjectListView listView=ViewModel.NetworkCardsView.listView;
-            List<WindowsNetworkCard> lista = _model.GetNetworkAdapters();
+            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
             listView.ClearObjects();
             listView.AddObjects(lista);
         }
@@ -170,7 +159,7 @@ namespace Argon.Controllers
         public int CreateNewProfileId()
         {
             int max = 0;
-            foreach (NetworkProfile item in _model.Profiles)
+            foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
                 if (item.Id > max)
                 {
@@ -183,17 +172,6 @@ namespace Argon.Controllers
             return max;
         }
 
-        /// <summary>
-        /// Existses the specified profile.
-        /// </summary>
-        /// <param name="profile">The profile.</param>
-        /// <returns></returns>
-        public bool Exists(NetworkProfile profile)
-        {
-            NetworkProfile net = _model.Profiles[profile.Id];
-            if (net == null) return false;
-            return true;
-        }
 
         /// <summary>
         /// Actions the save profile.
@@ -202,11 +180,11 @@ namespace Argon.Controllers
         public void ActionSaveProfile(FormProfile viewProfile)
         {
             NetworkProfile profile = (NetworkProfile)viewProfile.Tag;
-            if (profile.IsNew && !Exists(profile))
+            if (profile.IsNew && !UseCaseProfile.Exists(profile))
             {
                 profile.Id = CreateNewProfileId();
                 // dobbiamo aggiungerlo, ma solo se non esiste
-                _model.AddProfile(profile);
+                DataModel.NetworkProfileList.Add(profile);
             }
             // Facciamo il refresh dell'elenco dei profili
             ActionRefreshProfiles();
@@ -224,8 +202,8 @@ namespace Argon.Controllers
             rpc.Clear();
             // Lista dei profili nell'apposita finestra
             ViewModel.ProfilesView.listView.ClearObjects();
-           
-            foreach (NetworkProfile item in _model.Profiles)
+
+            foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
                 ViewModel.ProfilesView.listView.AddObject(item);
                 

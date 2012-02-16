@@ -18,8 +18,27 @@ namespace Argon.UseCase
     /// <summary>
     /// 
     /// </summary>
-    public abstract class UseCaseProfile
+    public static class UseCaseProfile
     {
+
+        public static void AddProfile(NetworkProfile profile)
+        {
+            DataModel.NetworkProfileList.Add(profile);
+        }
+
+        /// <summary>
+        /// Existses the specified profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        /// <returns></returns>
+        public static bool Exists(NetworkProfile profile)
+        {
+            if (profile.Id >= DataModel.NetworkProfileList.Count) return false;
+            NetworkProfile net = DataModel.NetworkProfileList[profile.Id];
+            if (net == null) return false;
+            return true;
+        }
+
         /// <summary>
         /// Refreshes this instance.
         /// <list type="">
