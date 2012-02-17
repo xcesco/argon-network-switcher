@@ -73,9 +73,9 @@ namespace Argon.UseCase
             ViewModel.ProfilesView.Show(dockPanel);
             ViewModel.ConsoleView.Show(dockPanel);
 
-            UseCaseView.Display(ViewModel.NetworkCardsView, DockState.DockBottomAutoHide);
-            UseCaseView.Display(ViewModel.ProfilesView, DockState.Document);
-            UseCaseView.Display(ViewModel.ConsoleView, DockState.DockBottomAutoHide);                           
+            UseCaseView.Display(ViewModel.NetworkCardsView, true, DockState.DockBottomAutoHide);            
+            UseCaseView.Display(ViewModel.ConsoleView, true, DockState.DockBottomAutoHide);
+            UseCaseView.Display(ViewModel.ProfilesView, true, DockState.DockLeft);          
         }
 
         /// <summary>

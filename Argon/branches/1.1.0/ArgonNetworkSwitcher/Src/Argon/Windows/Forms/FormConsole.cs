@@ -64,7 +64,7 @@ namespace Argon.Windows.Forms
             else
             {
                 lstBox.Items.Add(text);
-                lstBox.SelectedIndex = lstBox.Items.Count - 1;
+                lstBox.SelectedIndex = lstBox.Items.Count - 1;                
             }
         }
 

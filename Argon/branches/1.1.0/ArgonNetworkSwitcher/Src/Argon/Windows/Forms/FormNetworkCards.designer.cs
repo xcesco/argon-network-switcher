@@ -41,6 +41,7 @@ namespace Argon.Windows.Forms
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
@@ -93,10 +94,12 @@ namespace Argon.Windows.Forms
             this.listView.AllColumns.Add(this.colName);
             this.listView.AllColumns.Add(this.colDescription);
             this.listView.AllColumns.Add(this.colStatus);
+            this.listView.AllColumns.Add(this.colType);
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colName,
             this.colDescription,
-            this.colStatus});
+            this.colStatus,
+            this.colType});
             this.listView.ContextMenuStrip = this.contextMenuStrip;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView.FullRowSelect = true;
@@ -129,6 +132,12 @@ namespace Argon.Windows.Forms
             this.colStatus.AspectName = "Status";
             this.colStatus.Text = "Status";
             this.colStatus.Width = 120;
+            // 
+            // colType
+            // 
+            this.colType.AspectName = "CardType";
+            this.colType.Text = "Type";
+            this.colType.Width = 80;
             // 
             // FormNetworkCards
             // 
@@ -164,5 +173,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripMenuItem mnuEnable;
         private System.Windows.Forms.ToolStripMenuItem mnuDisable;
         private OLVColumn colStatus;
+        private OLVColumn colType;
     }
 }

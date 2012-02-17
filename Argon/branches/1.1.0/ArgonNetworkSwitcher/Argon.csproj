@@ -348,6 +348,11 @@
     <None Include="Resources\profile_edit_48x48.png" />
     <None Include="Resources\profile_new_48x481.png" />
     <None Include="Resources\profile_save_48x48.png" />
+    <None Include="Resources\type_ethernet_300x400.png" />
+    <None Include="Resources\type_bluetooth_300x400.png" />
+    <None Include="Resources\type_wifi_300x400.png" />
+    <None Include="Resources\type_virtual_300x400.png" />
+    <None Include="Resources\proxy_300x100.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />

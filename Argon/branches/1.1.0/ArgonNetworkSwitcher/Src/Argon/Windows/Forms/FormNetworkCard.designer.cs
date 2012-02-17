@@ -37,7 +37,6 @@ namespace Argon.Windows.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.Label();
             this.txtMAC = new System.Windows.Forms.Label();
             this.txtIP = new System.Windows.Forms.Label();
             this.txtDHCP = new System.Windows.Forms.Label();
@@ -45,12 +44,19 @@ namespace Argon.Windows.Forms
             this.txtGateway = new System.Windows.Forms.Label();
             this.txtDns1 = new System.Windows.Forms.Label();
             this.txtDns2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtStatus = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.Type = new System.Windows.Forms.Label();
+            this.txtCardType = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -93,11 +99,6 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
             // 
-            // txtDescription
-            // 
-            resources.ApplyResources(this.txtDescription, "txtDescription");
-            this.txtDescription.Name = "txtDescription";
-            // 
             // txtMAC
             // 
             resources.ApplyResources(this.txtMAC, "txtMAC");
@@ -133,11 +134,6 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.txtDns2, "txtDns2");
             this.txtDns2.Name = "txtDns2";
             // 
-            // txtName
-            // 
-            resources.ApplyResources(this.txtName, "txtName");
-            this.txtName.Name = "txtName";
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -159,10 +155,55 @@ namespace Argon.Windows.Forms
             resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.Name = "lblStatus";
             // 
-            // FormCardInfo
+            // pictureBox
+            // 
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.BackColor = System.Drawing.Color.White;
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.TabStop = false;
+            // 
+            // Type
+            // 
+            resources.ApplyResources(this.Type, "Type");
+            this.Type.Name = "Type";
+            // 
+            // txtCardType
+            // 
+            resources.ApplyResources(this.txtCardType, "txtCardType");
+            this.txtCardType.Name = "txtCardType";
+            // 
+            // lblName
+            // 
+            resources.ApplyResources(this.lblName, "lblName");
+            this.lblName.Name = "lblName";
+            // 
+            // txtName
+            // 
+            resources.ApplyResources(this.txtName, "txtName");
+            this.txtName.Name = "txtName";
+            // 
+            // lblDescription
+            // 
+            resources.ApplyResources(this.lblDescription, "lblDescription");
+            this.lblDescription.Name = "lblDescription";
+            // 
+            // txtDescription
+            // 
+            resources.ApplyResources(this.txtDescription, "txtDescription");
+            this.txtDescription.Name = "txtDescription";
+            // 
+            // FormNetworkCard
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtCardType);
+            this.Controls.Add(this.Type);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtDns2);
@@ -180,12 +221,13 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.DoubleBuffered = true;
-            this.Name = "FormCardInfo";
+            this.Name = "FormNetworkCard";
             this.TabText = "Info";
             this.Activated += new System.EventHandler(this.FormCardInfo_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCardInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormCardInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,21 +242,24 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label txtDescription;
+        private System.Windows.Forms.Label label11;        
         private System.Windows.Forms.Label txtMAC;
         private System.Windows.Forms.Label txtIP;
         private System.Windows.Forms.Label txtDHCP;
         private System.Windows.Forms.Label txtSubnetMask;
         private System.Windows.Forms.Label txtGateway;
         private System.Windows.Forms.Label txtDns1;
-        private System.Windows.Forms.Label txtDns2;
-      //  private Ascend.Windows.Forms.GradientPanel gradientPanel1;
-        private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Label txtDns2;      
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-      //  private Ascend.Windows.Forms.GradientLine gradientLine1;
+        private System.Windows.Forms.PictureBox pictureBox1;      
         private System.Windows.Forms.Label txtStatus;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label Type;
+        private System.Windows.Forms.Label txtCardType;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label txtDescription;
     }
 }

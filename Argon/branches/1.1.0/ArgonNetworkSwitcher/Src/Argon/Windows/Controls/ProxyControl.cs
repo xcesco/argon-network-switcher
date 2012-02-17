@@ -53,6 +53,12 @@ namespace Argon.Windows.Controls
             }
         }
 
+        public Image LogoImage
+        {
+            get { return pictureBox.Image; }
+            set { pictureBox.Image = value; }
+        }
+
         /// <summary>
         /// Saves the configuration.
         /// </summary>
