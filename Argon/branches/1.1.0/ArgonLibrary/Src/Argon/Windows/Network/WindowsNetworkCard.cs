@@ -28,6 +28,10 @@ namespace Argon.Windows.Network
         /// </summary>
         BLUETOOTH,
         /// <summary>
+        /// Firewire
+        /// </summary>
+        FIREWIRE,
+        /// <summary>
         /// Unspecified card
         /// </summary>
         UNKNOWN
