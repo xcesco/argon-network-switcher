@@ -711,6 +711,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap proxy_300x100 {
+            get {
+                object obj = ResourceManager.GetObject("proxy_300x100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
@@ -791,6 +798,34 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap table_sql_select {
             get {
                 object obj = ResourceManager.GetObject("table_sql_select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap type_bluetooth_300x400 {
+            get {
+                object obj = ResourceManager.GetObject("type_bluetooth_300x400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap type_ethernet_300x400 {
+            get {
+                object obj = ResourceManager.GetObject("type_ethernet_300x400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap type_virtual_300x400 {
+            get {
+                object obj = ResourceManager.GetObject("type_virtual_300x400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap type_wifi_300x400 {
+            get {
+                object obj = ResourceManager.GetObject("type_wifi_300x400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

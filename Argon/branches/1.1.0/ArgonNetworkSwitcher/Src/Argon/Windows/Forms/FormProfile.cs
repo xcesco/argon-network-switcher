@@ -25,6 +25,18 @@ namespace Argon.Windows.Forms
         }
 
         /// <summary>
+        /// Gets or sets the profile.
+        /// </summary>
+        /// <value>
+        /// The profile.
+        /// </value>
+        public NetworkProfile Profile
+        {
+            get { return (NetworkProfile)Tag; }
+            set { Tag = value; }
+        }
+
+        /// <summary>
         /// Handles the Load event of the FormProfile control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -336,6 +348,7 @@ namespace Argon.Windows.Forms
         private void FormProfile_Activated(object sender, EventArgs e)
         {
             ViewModel.SelectedView = this;
+            UseCaseView.ActivateFormProfile(this);
         }
 
         private void btnSelectPrinter_Click(object sender, EventArgs e)
@@ -350,10 +363,14 @@ namespace Argon.Windows.Forms
 
         private void FormProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bool ret = ViewModel.ProfileViewList.Remove(this);
-            UseCaseLogger.ShowInfo("Profile form closed " + ret);
+            bool ret = ViewModel.ProfileViewList.Remove(this);            
         }
 
+        /// <summary>
+        /// Handles the Click event of the toolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void toolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox.Image=((ToolStripMenuItem)sender).Image;

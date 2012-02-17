@@ -91,7 +91,13 @@ namespace Argon.Windows.Forms
             // 
             this.imageList48x48.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList48x48.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;           
+            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList24x24
+            // 
+            this.imageList24x24.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList24x24.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList24x24.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // label8
             // 
@@ -153,7 +159,7 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem8,
             this.toolStripMenuItem9});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(218, 512);
+            this.contextMenuStrip.Size = new System.Drawing.Size(218, 490);
             // 
             // toolStripMenuItem1
             // 
@@ -288,7 +294,6 @@ namespace Argon.Windows.Forms
             this.tabControl.Controls.Add(this.tp5Services);
             this.tabControl.Controls.Add(this.tp6Applications);
             this.tabControl.Controls.Add(this.tp7Adapters);
-            this.tabControl.ImageList = this.imageList24x24;
             this.tabControl.Location = new System.Drawing.Point(3, 113);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -299,10 +304,10 @@ namespace Argon.Windows.Forms
             // 
             this.tp1NIC.Controls.Add(this.ipControl);
             this.tp1NIC.ImageIndex = 0;
-            this.tp1NIC.Location = new System.Drawing.Point(4, 23);
+            this.tp1NIC.Location = new System.Drawing.Point(4, 22);
             this.tp1NIC.Name = "tp1NIC";
             this.tp1NIC.Padding = new System.Windows.Forms.Padding(3);
-            this.tp1NIC.Size = new System.Drawing.Size(1169, 460);
+            this.tp1NIC.Size = new System.Drawing.Size(1169, 461);
             this.tp1NIC.TabIndex = 0;
             this.tp1NIC.Text = "Network";
             this.tp1NIC.UseVisualStyleBackColor = true;
@@ -315,17 +320,17 @@ namespace Argon.Windows.Forms
             this.ipControl.Location = new System.Drawing.Point(3, 3);
             this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
             this.ipControl.Name = "ipControl";
-            this.ipControl.Size = new System.Drawing.Size(1163, 454);
+            this.ipControl.Size = new System.Drawing.Size(1163, 455);
             this.ipControl.TabIndex = 2;
             // 
             // tp2Proxy
             // 
             this.tp2Proxy.Controls.Add(this.proxyPanel);
             this.tp2Proxy.ImageIndex = 1;
-            this.tp2Proxy.Location = new System.Drawing.Point(4, 23);
+            this.tp2Proxy.Location = new System.Drawing.Point(4, 22);
             this.tp2Proxy.Name = "tp2Proxy";
             this.tp2Proxy.Padding = new System.Windows.Forms.Padding(3);
-            this.tp2Proxy.Size = new System.Drawing.Size(1169, 460);
+            this.tp2Proxy.Size = new System.Drawing.Size(1169, 461);
             this.tp2Proxy.TabIndex = 1;
             this.tp2Proxy.Text = "Proxy";
             this.tp2Proxy.UseVisualStyleBackColor = true;
@@ -336,18 +341,19 @@ namespace Argon.Windows.Forms
             this.proxyPanel.Configuration = null;
             this.proxyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.proxyPanel.Location = new System.Drawing.Point(3, 3);
+            this.proxyPanel.LogoImage = global::Argon.Windows.Forms.Properties.Resources.proxy_300x100;
             this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
             this.proxyPanel.Name = "proxyPanel";
-            this.proxyPanel.Size = new System.Drawing.Size(1163, 454);
+            this.proxyPanel.Size = new System.Drawing.Size(1163, 455);
             this.proxyPanel.TabIndex = 2;
             // 
             // tp3DriveMap
             // 
             this.tp3DriveMap.Controls.Add(this.driveMapListView);
             this.tp3DriveMap.ImageIndex = 2;
-            this.tp3DriveMap.Location = new System.Drawing.Point(4, 23);
+            this.tp3DriveMap.Location = new System.Drawing.Point(4, 22);
             this.tp3DriveMap.Name = "tp3DriveMap";
-            this.tp3DriveMap.Size = new System.Drawing.Size(1169, 460);
+            this.tp3DriveMap.Size = new System.Drawing.Size(1169, 461);
             this.tp3DriveMap.TabIndex = 2;
             this.tp3DriveMap.Text = "Drive Map";
             this.tp3DriveMap.UseVisualStyleBackColor = true;
@@ -370,9 +376,9 @@ namespace Argon.Windows.Forms
             this.tp4Printers.Controls.Add(this.btnSelectPrinter);
             this.tp4Printers.Controls.Add(this.cbPrinterList);
             this.tp4Printers.ImageIndex = 3;
-            this.tp4Printers.Location = new System.Drawing.Point(4, 23);
+            this.tp4Printers.Location = new System.Drawing.Point(4, 22);
             this.tp4Printers.Name = "tp4Printers";
-            this.tp4Printers.Size = new System.Drawing.Size(1169, 460);
+            this.tp4Printers.Size = new System.Drawing.Size(1169, 461);
             this.tp4Printers.TabIndex = 5;
             this.tp4Printers.Text = "Printers";
             this.tp4Printers.UseVisualStyleBackColor = true;
@@ -442,9 +448,9 @@ namespace Argon.Windows.Forms
             // 
             this.tp5Services.Controls.Add(this.serviceListView);
             this.tp5Services.ImageIndex = 4;
-            this.tp5Services.Location = new System.Drawing.Point(4, 23);
+            this.tp5Services.Location = new System.Drawing.Point(4, 22);
             this.tp5Services.Name = "tp5Services";
-            this.tp5Services.Size = new System.Drawing.Size(1169, 460);
+            this.tp5Services.Size = new System.Drawing.Size(1169, 461);
             this.tp5Services.TabIndex = 3;
             this.tp5Services.Text = "Services";
             this.tp5Services.UseVisualStyleBackColor = true;
@@ -462,9 +468,9 @@ namespace Argon.Windows.Forms
             // 
             this.tp6Applications.Controls.Add(this.applicationsListView);
             this.tp6Applications.ImageIndex = 5;
-            this.tp6Applications.Location = new System.Drawing.Point(4, 23);
+            this.tp6Applications.Location = new System.Drawing.Point(4, 22);
             this.tp6Applications.Name = "tp6Applications";
-            this.tp6Applications.Size = new System.Drawing.Size(1169, 460);
+            this.tp6Applications.Size = new System.Drawing.Size(1169, 461);
             this.tp6Applications.TabIndex = 4;
             this.tp6Applications.Text = "Appplications";
             this.tp6Applications.UseVisualStyleBackColor = true;
@@ -482,9 +488,9 @@ namespace Argon.Windows.Forms
             // 
             this.tp7Adapters.Controls.Add(this.networkCardListView);
             this.tp7Adapters.ImageIndex = 7;
-            this.tp7Adapters.Location = new System.Drawing.Point(4, 23);
+            this.tp7Adapters.Location = new System.Drawing.Point(4, 22);
             this.tp7Adapters.Name = "tp7Adapters";
-            this.tp7Adapters.Size = new System.Drawing.Size(1169, 460);
+            this.tp7Adapters.Size = new System.Drawing.Size(1169, 461);
             this.tp7Adapters.TabIndex = 6;
             this.tp7Adapters.Text = "Disabled Adapters";
             this.tp7Adapters.UseVisualStyleBackColor = true;
@@ -583,7 +589,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label lblSelectedPrinter;
         private Controls.NetworkCardListView networkCardListView;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtName;        
         public System.Windows.Forms.TabPage tp1NIC;
         public System.Windows.Forms.TabPage tp2Proxy;
         public System.Windows.Forms.TabPage tp3DriveMap;

@@ -26,7 +26,7 @@ namespace Argon.UseCase
             else
             {
                 // display content
-                Display(dockContent, dockContent.OldDockState);
+                Display(dockContent, true, dockContent.OldDockState);
             }
         }
 
@@ -36,16 +36,19 @@ namespace Argon.UseCase
         /// <param name="dockContent">Content of the dock.</param>
         /// <param name="dockState">State of the dock.</param>
         /// <returns></returns>
-        public static bool Display(ArgonDockContent dockContent, DockState dockState=DockState.Unknown)
-        {            
-            dockContent.DockState = dockState;
-
-            if (dockState == DockState.Unknown && dockContent.OldDockState != DockState.Unknown)
+        public static bool Display(ArgonDockContent dockContent, bool forceShow=false,DockState dockState=DockState.Unknown)
+        {
+            if (forceShow)
             {
-                dockContent.DockState = dockContent.OldDockState;                
-            }
+                dockContent.DockState = dockState;
 
-            dockContent.Show();            
+                if (dockState == DockState.Unknown && dockContent.OldDockState != DockState.Unknown)
+                {
+                    dockContent.DockState = dockContent.OldDockState;
+                }
+
+                dockContent.Show();
+            }
 
             // check ribbon button
             if (dockContent == ViewModel.ProfilesView)
@@ -111,30 +114,6 @@ namespace Argon.UseCase
             }
         }
 
-        /// <summary>
-        /// Activates the form profile.
-        /// </summary>
-        /// <param name="currentFormProfile">The current form profile.</param>
-        public static void ActivateFormProfile(FormProfile currentFormProfile)
-        {
-            UseCaseView.Display(currentFormProfile);
-
-            // form selezionati
-            ViewModel.SelectedView = currentFormProfile;
-        }
-
-        /// <summary>
-        /// Activates the form profiles.
-        /// </summary>
-        public static void ActivateFormProfiles()
-        {
-            FormMain main = ViewModel.MainView;
-
-            UseCaseView.Display(ViewModel.ProfilesView);
-
-            // form selezionati
-            ViewModel.SelectedView = ViewModel.ProfilesView;
-        }
 
         /// <summary>
         /// Activates the form cards.
@@ -152,7 +131,7 @@ namespace Argon.UseCase
         /// </summary>
         /// <param name="selectedNetworkCardForm">The selected network card form.</param>
         public static void ActivateFormNetworkCard(FormNetworkCard selectedNetworkCardForm)
-        {
+        {/*
             // profili
             ViewModel.MainView.rbtnProfileNew.Enabled = false;
             ViewModel.MainView.rbtnProfileView.Enabled = false;
@@ -168,10 +147,42 @@ namespace Argon.UseCase
 
             // networkcard
             ViewModel.MainView.rbtnCardsRefresh.Enabled = false;
-            ViewModel.MainView.rbtnCardView.Enabled = false;
+            ViewModel.MainView.rbtnCardView.Enabled = false;*/
+
+            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;
 
             // form selezionati            
             ViewModel.SelectedView = selectedNetworkCardForm;
+        }
+
+        /// <summary>
+        /// Activates the form network card.
+        /// </summary>
+        /// <param name="selectedNetworkCardForm">The selected network card form.</param>
+        public static void ActivateFormProfile(FormProfile selectedProfileForm)
+        {
+            /*
+            // profili
+            ViewModel.MainView.rbtnProfileNew.Enabled = true;
+            ViewModel.MainView.rbtnProfileView.Enabled = true;
+            ViewModel.MainView.rbtnProfileDelete.Enabled = true;
+
+            // profilo
+            ViewModel.MainView.rbtnProfileRun.Enabled = true;
+            ViewModel.MainView.rbtnProfileSave.Enabled = true;
+
+            // documento
+            ViewModel.MainView.rbtnConfigSave.Enabled = true;
+            ViewModel.MainView.rbtnConfigLoad.Enabled = true;
+
+            // networkcard
+            ViewModel.MainView.rbtnCardsRefresh.Enabled = false;
+            ViewModel.MainView.rbtnCardView.Enabled = false;*/
+
+            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;
+
+            // form selezionati            
+            ViewModel.SelectedView = selectedProfileForm;
         }
 
         /// <summary>
@@ -198,7 +209,7 @@ namespace Argon.UseCase
                         }
 
                         itemForm.Focus();
-                        UseCaseView.ActivateFormProfile(itemForm);
+                        //UseCaseView.ActivateFormProfile(itemForm);
                         return;
                     }
                 }
@@ -211,9 +222,7 @@ namespace Argon.UseCase
 
             ViewModel.ProfileViewList.Add(form);
             form.Show(ViewModel.MainView.Pannello);
-            form.DockState = DockState.Document;
-
-            UseCaseView.ActivateFormProfile(form);
+            form.DockState = DockState.Document;            
         }
 
 
