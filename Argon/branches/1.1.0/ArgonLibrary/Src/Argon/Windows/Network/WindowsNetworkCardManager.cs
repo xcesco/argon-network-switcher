@@ -147,6 +147,8 @@ namespace Argon.Windows.Network
                 if (CheckIfWirelessCard(item)) item.CardType = WindowsNetworkCardType.WIRELESS;
                 if (CheckIfVirtualCard(item)) item.CardType = WindowsNetworkCardType.VIRTUAL;
                 if (CheckIfBluetoothCard(item)) item.CardType = WindowsNetworkCardType.BLUETOOTH;
+                if (CheckIfFireWireCard(item)) item.CardType = WindowsNetworkCardType.FIREWIRE;
+                item.CardType = WindowsNetworkCardType.ETHERNET;
             }
 
 
@@ -154,45 +156,13 @@ namespace Argon.Windows.Network
         }
 
         /// <summary>
-        /// Checks if wireless card.
+        /// Checks the name of if present in hardware.
         /// </summary>
         /// <param name="card">The card.</param>
+        /// <param name="checkValues">The check values.</param>
         /// <returns></returns>
-        internal static bool CheckIfWirelessCard(WindowsNetworkCard card)
+        internal static bool CheckIfPresentInHardwareName(WindowsNetworkCard card, params string[] checkValues)
         {
-            string[] checkValues={"Wireless","WLAN","Wi-Fi","802.11a", "802.11b", "802.11g", "802.11n"};
-            string value = card.HardwareName.ToLower();
-
-            foreach(string item in checkValues)
-            {
-                if (value.Contains(item.ToLower()))
-                {
-                    return true;
-                } 
-            }
-
-            return false;
-        }
-
-        internal static bool CheckIfVirtualCard(WindowsNetworkCard card)
-        {
-            string[] checkValues={"VMWare"};
-            string value = card.HardwareName.ToLower();
-
-            foreach(string item in checkValues)
-            {
-                if (value.Contains(item.ToLower()))
-                {
-                    return true;
-                } 
-            }
-
-            return false;
-        }
-
-        internal static bool CheckIfBluetoothCard(WindowsNetworkCard card)
-        {
-            string[] checkValues = { "Bluetooth" };
             string value = card.HardwareName.ToLower();
 
             foreach (string item in checkValues)
@@ -204,7 +174,43 @@ namespace Argon.Windows.Network
             }
 
             return false;
-        }    
+        }
+
+        /// <summary>
+        /// Checks if wireless card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
+        internal static bool CheckIfWirelessCard(WindowsNetworkCard card)
+        {
+            return CheckIfPresentInHardwareName(card,"Wireless","WLAN","Wi-Fi","802.11a", "802.11b", "802.11g", "802.11n");            
+        }
+
+        /// <summary>
+        /// Checks if virtual card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
+        internal static bool CheckIfVirtualCard(WindowsNetworkCard card)
+        {
+            return CheckIfPresentInHardwareName(card,"VMWare", "VirtualBox");            
+        }
+
+        /// <summary>
+        /// Checks if bluetooth card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
+        internal static bool CheckIfBluetoothCard(WindowsNetworkCard card)
+        {
+            return CheckIfPresentInHardwareName(card,"Bluetooth");            
+        } 
+
+        internal static bool CheckIfFireWireCard(WindowsNetworkCard card)
+        {
+            return CheckIfPresentInHardwareName(card,"1394","Firewire" );            
+        }  
+         
 
 
         /// <summary>
