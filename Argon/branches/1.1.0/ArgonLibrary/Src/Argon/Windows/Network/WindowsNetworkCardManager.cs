@@ -148,7 +148,7 @@ namespace Argon.Windows.Network
                 if (CheckIfVirtualCard(item)) item.CardType = WindowsNetworkCardType.VIRTUAL;
                 if (CheckIfBluetoothCard(item)) item.CardType = WindowsNetworkCardType.BLUETOOTH;
                 if (CheckIfFireWireCard(item)) item.CardType = WindowsNetworkCardType.FIREWIRE;
-                item.CardType = WindowsNetworkCardType.ETHERNET;
+                if (item.CardType==WindowsNetworkCardType.UNKNOWN) item.CardType = WindowsNetworkCardType.ETHERNET;
             }
 
 
