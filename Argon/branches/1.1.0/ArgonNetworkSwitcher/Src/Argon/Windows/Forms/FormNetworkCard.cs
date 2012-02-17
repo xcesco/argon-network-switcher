@@ -18,7 +18,13 @@ namespace Argon.Windows.Forms
 {
     public partial class FormNetworkCard : ArgonDockContent
     {
-        public WindowsNetworkCard NIC
+        /// <summary>
+        /// Gets or sets the NIC.
+        /// </summary>
+        /// <value>
+        /// The NIC.
+        /// </value>
+        public WindowsNetworkCard NetworkCard
         {
             get { return (WindowsNetworkCard)Tag; }
             set { Tag = value; }
@@ -37,22 +43,21 @@ namespace Argon.Windows.Forms
 
         private void FormCardInfo_Load(object sender, EventArgs e)
         {
-         
-            txtDescription.Text = NIC.Description;
-            txtName.Text = NIC.Name;
-            txtMAC.Text = NIC.MacAddress;
-            txtDHCP.Text = NIC.Dhcp.ToString();
-            txtIP.Text = NIC.IpAddress;
-            txtGateway.Text = NIC.GatewayAddress;
-            txtSubnetMask.Text = NIC.SubnetMask;
-            txtDns1.Text = NIC.Dns;
-            txtDns2.Text = NIC.Dns2;
-            txtStatus.Text = NIC.Status;
+            txtDescription.Text = NetworkCard.Description;
+            txtName.Text = NetworkCard.Name;
+            txtMAC.Text = NetworkCard.MacAddress;
+            txtDHCP.Text = NetworkCard.Dhcp.ToString();
+            txtIP.Text = NetworkCard.IpAddress;
+            txtGateway.Text = NetworkCard.GatewayAddress;
+            txtSubnetMask.Text = NetworkCard.SubnetMask;
+            txtDns1.Text = NetworkCard.Dns;
+            txtDns2.Text = NetworkCard.Dns2;
+            txtStatus.Text = NetworkCard.Status;
         }
 
         private void FormCardInfo_Activated(object sender, EventArgs e)
         {
-            Controller.Instance.ActivateFormNetworkCard(this);
+            UseCaseView.ActivateFormNetworkCard(this);
         }
 
         private void FormCardInfo_FormClosed(object sender, FormClosedEventArgs e)

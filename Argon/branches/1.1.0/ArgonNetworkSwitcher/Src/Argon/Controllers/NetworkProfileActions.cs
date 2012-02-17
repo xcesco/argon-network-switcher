@@ -22,59 +22,7 @@ namespace Argon.Controllers
     /// </summary>
     public abstract class NetworkProfileActions : BaseActions
     {
-        /// <summary>
-        /// Shows the specified profile.
-        /// </summary>
-        /// <param name="profile">The profile.</param>
-        public static void Show(NetworkProfile profile)
-        {
-            if (profile == null) return;
-
-            NetworkProfile item;
-
-            foreach (FormProfile itemForm in ViewModel.ProfileViewList)
-            {
-                if ((itemForm.Tag is NetworkProfile))
-                {
-                    item = (NetworkProfile)itemForm.Tag;
-
-                    if (item.Id.Equals(profile.Id))
-                    {
-                        if (!itemForm.Visible)
-                        {
-                            itemForm.Show(ViewModel.MainView.Pannello);
-                        }
-
-                        itemForm.Focus();                        
-                        Controller.Instance.ActivateFormProfile(itemForm);
-                        return;
-                    }
-                }
-            }
-            Controller controller = Controller.Instance;
-
-            FormProfile form = new FormProfile();
-            form.Tag = profile;
-            form.txtName.Text = profile.Name;
-            form.LoadProfile(profile);
-
-            ViewModel.ProfileViewList.Add(form);
-            form.Show(ViewModel.MainView.Pannello);
-            form.DockState = DockState.Document;
-
-            Controller.Instance.ActivateFormProfile(form);
-        }
-
-        /// <summary>
-        /// Shows the new.
-        /// </summary>
-        public static void ShowNew()
-        {
-            NetworkProfile profile = new NetworkProfile();
-            profile.Name = Controller.NO_NIC_NAME;            
-
-            Show(profile);
-        }
+        
 
         public static void ShowAll()
         {

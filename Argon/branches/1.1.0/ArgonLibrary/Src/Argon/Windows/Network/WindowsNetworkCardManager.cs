@@ -19,7 +19,7 @@ namespace Argon.Windows.Network
     /// <summary>
     /// Manager for the Network Card Interfaces
     /// </summary>
-    public abstract class WindowsNetworkCardManager
+    public static class WindowsNetworkCardManager
     {
 
         /// <summary>
@@ -140,9 +140,71 @@ namespace Argon.Windows.Network
                     throw (new Exception("Operating system not supported"));
             }
 
+            foreach(WindowsNetworkCard item in array)
+            {
+                // try to determine the card type
+                // wifi
+                if (CheckIfWirelessCard(item)) item.CardType = WindowsNetworkCardType.WIRELESS;
+                if (CheckIfVirtualCard(item)) item.CardType = WindowsNetworkCardType.VIRTUAL;
+                if (CheckIfBluetoothCard(item)) item.CardType = WindowsNetworkCardType.BLUETOOTH;
+            }
+
 
             return array;
         }
+
+        /// <summary>
+        /// Checks if wireless card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
+        internal static bool CheckIfWirelessCard(WindowsNetworkCard card)
+        {
+            string[] checkValues={"Wireless","WLAN","Wi-Fi","802.11a", "802.11b", "802.11g", "802.11n"};
+            string value = card.HardwareName.ToLower();
+
+            foreach(string item in checkValues)
+            {
+                if (value.Contains(item.ToLower()))
+                {
+                    return true;
+                } 
+            }
+
+            return false;
+        }
+
+        internal static bool CheckIfVirtualCard(WindowsNetworkCard card)
+        {
+            string[] checkValues={"VMWare"};
+            string value = card.HardwareName.ToLower();
+
+            foreach(string item in checkValues)
+            {
+                if (value.Contains(item.ToLower()))
+                {
+                    return true;
+                } 
+            }
+
+            return false;
+        }
+
+        internal static bool CheckIfBluetoothCard(WindowsNetworkCard card)
+        {
+            string[] checkValues = { "Bluetooth" };
+            string value = card.HardwareName.ToLower();
+
+            foreach (string item in checkValues)
+            {
+                if (value.Contains(item.ToLower()))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }    
 
 
         /// <summary>

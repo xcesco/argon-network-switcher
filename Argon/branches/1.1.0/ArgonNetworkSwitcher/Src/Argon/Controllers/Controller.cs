@@ -20,60 +20,7 @@ using Argon.Models;
 namespace Argon.Controllers
 {
     public class Controller
-    {
-        
-        public void ActivateFormNetworkCard(FormNetworkCard selectedNetworkCardForm)
-        {
-            // profili
-            ViewModel.MainView.rbtnProfileNew.Enabled = false;
-            ViewModel.MainView.rbtnProfileView.Enabled = false;
-            ViewModel.MainView.rbtnProfileDelete.Enabled = false;
-
-            // profilo
-            ViewModel.MainView.rbtnProfileRun.Enabled = false;
-            ViewModel.MainView.rbtnProfileSave.Enabled = false;
-
-            // documento
-            ViewModel.MainView.rbtnConfigSave.Enabled = false;
-            ViewModel.MainView.rbtnConfigLoad.Enabled = false;
-
-            // networkcard
-            ViewModel.MainView.rbtnCardsRefresh.Enabled = false;
-            ViewModel.MainView.rbtnCardView.Enabled = false;
-
-            // form selezionati            
-            ViewModel.SelectedView = selectedNetworkCardForm;
-        }
-        
-        public void ActivateFormProfile(FormProfile currentFormProfile)
-        {            
-            UseCaseView.Display(currentFormProfile);            
-
-            // form selezionati
-            ViewModel.SelectedView = currentFormProfile;            
-        }
-
-        public void ActivateFormProfiles()
-        {
-            FormMain main = ViewModel.MainView;
-
-            UseCaseView.Display(ViewModel.ProfilesView);
-
-            // form selezionati
-            ViewModel.SelectedView = ViewModel.ProfilesView;            
-        }
-
-        public void ActivateFormCards()
-        {
-            FormMain main = ViewModel.MainView;
-            
-         
-            // form selezionati
-            ViewModel.SelectedView = ViewModel.NetworkCardsView;            
-        }
-
-        public static string NO_NIC_NAME = "NONE";
-
+    {                             
 
         protected Controller()
         {            
@@ -140,16 +87,7 @@ namespace Argon.Controllers
             return lista;
         }
 
-        /// <summary>
-        /// Aggiorna la lista dei NIC presenti sulla macchina
-        /// </summary>
-        public void ActionRefreshNetworkAdapters()
-        {
-            ObjectListView listView=ViewModel.NetworkCardsView.listView;
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
-            listView.ClearObjects();
-            listView.AddObjects(lista);
-        }
+        
 
 
         /// <summary>
@@ -271,23 +209,6 @@ namespace Argon.Controllers
             }
 
         }
-
-        #region Events
-
-        /// <summary>
-        /// Controller_s the select profile.
-        /// </summary>
-        /// <param name="objectsender">The objectsender.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        public void Controller_SelectProfile(NetworkProfile objectsender, EventArgs e)
-        {
-            if (objectsender != null)
-            {
-                UseCaseLogger.ShowInfo("Selected profile [" + objectsender.Name + "]");                
-            }
-        }
-
-        #endregion
 
     }
 }

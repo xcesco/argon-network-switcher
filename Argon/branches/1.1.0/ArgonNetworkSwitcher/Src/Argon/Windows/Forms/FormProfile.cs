@@ -274,7 +274,7 @@ namespace Argon.Windows.Forms
             string work = lstNetworkCard.Text;
             currentNetworkCardIndex = lstNetworkCard.SelectedIndex;
 
-            if (work.Equals(Controller.NO_NIC_NAME))
+            if (work.Equals(UseCaseProfile.NEW_NIC_NAME))
             {
             }
             else
