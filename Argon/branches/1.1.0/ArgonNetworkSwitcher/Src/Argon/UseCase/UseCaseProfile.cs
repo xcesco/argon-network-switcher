@@ -20,7 +20,8 @@ namespace Argon.UseCase
     /// </summary>
     public static class UseCaseProfile
     {
-
+        public static string NEW_NIC_NAME="NONE";
+        
         public static void AddProfile(NetworkProfile profile)
         {
             DataModel.NetworkProfileList.Add(profile);
@@ -92,7 +93,7 @@ namespace Argon.UseCase
 
             // show
             Debug.WriteLine("Show profile " + profile.Name);
-            NetworkProfileActions.Show(profile);            
+            UseCaseView.ShowProfile(profile);            
         }
 
         /// <summary>

@@ -5,6 +5,34 @@ using Argon.Windows;
 
 namespace Argon.Windows.Network
 {
+
+    /// <summary>
+    /// type of network card
+    /// </summary>
+    public enum WindowsNetworkCardType
+    {
+        /// <summary>
+        /// Wireless card
+        /// </summary>
+        WIRELESS,
+        /// <summary>
+        /// Wired card
+        /// </summary>
+        ETHERNET,
+        /// <summary>
+        /// virtual type (VMWare)
+        /// </summary>
+        VIRTUAL,
+        /// <summary>
+        /// Bluetooth card
+        /// </summary>
+        BLUETOOTH,
+        /// <summary>
+        /// Unspecified card
+        /// </summary>
+        UNKNOWN
+    }
+
     /// <summary>
     /// 
     /// </summary>    
@@ -110,7 +138,7 @@ namespace Argon.Windows.Network
             _macAddress = "";            
             _hardwareName = "";
             _enabled = false;
-
+            
             _index = 0;
             
         }
@@ -329,7 +357,17 @@ namespace Argon.Windows.Network
 
             _netConnectionStatus = -1;
             _index = 0;
+
+            CardType = WindowsNetworkCardType.UNKNOWN;
         }
+
+        /// <summary>
+        /// Gets or sets the type of the card.
+        /// </summary>
+        /// <value>
+        /// The type of the card.
+        /// </value>
+        public WindowsNetworkCardType CardType { get; set; }
 
         protected uint _index;
 

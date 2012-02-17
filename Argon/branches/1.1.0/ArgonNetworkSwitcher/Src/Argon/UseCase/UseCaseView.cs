@@ -110,5 +110,123 @@ namespace Argon.UseCase
                 button.Checked = false;
             }
         }
+
+        /// <summary>
+        /// Activates the form profile.
+        /// </summary>
+        /// <param name="currentFormProfile">The current form profile.</param>
+        public static void ActivateFormProfile(FormProfile currentFormProfile)
+        {
+            UseCaseView.Display(currentFormProfile);
+
+            // form selezionati
+            ViewModel.SelectedView = currentFormProfile;
+        }
+
+        /// <summary>
+        /// Activates the form profiles.
+        /// </summary>
+        public static void ActivateFormProfiles()
+        {
+            FormMain main = ViewModel.MainView;
+
+            UseCaseView.Display(ViewModel.ProfilesView);
+
+            // form selezionati
+            ViewModel.SelectedView = ViewModel.ProfilesView;
+        }
+
+        /// <summary>
+        /// Activates the form cards.
+        /// </summary>
+        public static void ActivateFormCards()
+        {
+            FormMain main = ViewModel.MainView;
+
+            // form selezionati
+            ViewModel.SelectedView = ViewModel.NetworkCardsView;
+        }
+
+        /// <summary>
+        /// Activates the form network card.
+        /// </summary>
+        /// <param name="selectedNetworkCardForm">The selected network card form.</param>
+        public static void ActivateFormNetworkCard(FormNetworkCard selectedNetworkCardForm)
+        {
+            // profili
+            ViewModel.MainView.rbtnProfileNew.Enabled = false;
+            ViewModel.MainView.rbtnProfileView.Enabled = false;
+            ViewModel.MainView.rbtnProfileDelete.Enabled = false;
+
+            // profilo
+            ViewModel.MainView.rbtnProfileRun.Enabled = false;
+            ViewModel.MainView.rbtnProfileSave.Enabled = false;
+
+            // documento
+            ViewModel.MainView.rbtnConfigSave.Enabled = false;
+            ViewModel.MainView.rbtnConfigLoad.Enabled = false;
+
+            // networkcard
+            ViewModel.MainView.rbtnCardsRefresh.Enabled = false;
+            ViewModel.MainView.rbtnCardView.Enabled = false;
+
+            // form selezionati            
+            ViewModel.SelectedView = selectedNetworkCardForm;
+        }
+
+        /// <summary>
+        /// Shows the specified profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void ShowProfile(NetworkProfile profile)
+        {
+            if (profile == null) return;
+
+            NetworkProfile item;
+
+            foreach (FormProfile itemForm in ViewModel.ProfileViewList)
+            {
+                if ((itemForm.Tag is NetworkProfile))
+                {
+                    item = (NetworkProfile)itemForm.Tag;
+
+                    if (item.Id.Equals(profile.Id))
+                    {
+                        if (!itemForm.Visible)
+                        {
+                            itemForm.Show(ViewModel.MainView.Pannello);
+                        }
+
+                        itemForm.Focus();
+                        UseCaseView.ActivateFormProfile(itemForm);
+                        return;
+                    }
+                }
+            }            
+
+            FormProfile form = new FormProfile();
+            form.Tag = profile;
+            form.txtName.Text = profile.Name;
+            form.LoadProfile(profile);
+
+            ViewModel.ProfileViewList.Add(form);
+            form.Show(ViewModel.MainView.Pannello);
+            form.DockState = DockState.Document;
+
+            UseCaseView.ActivateFormProfile(form);
+        }
+
+
+
+        /// <summary>
+        /// Shows the new profile.
+        /// </summary>
+        public static void ShowNewProfile()
+        {
+            NetworkProfile profile = new NetworkProfile();
+            profile.Name = UseCaseProfile.NEW_NIC_NAME;
+
+            ShowProfile(profile);
+        }
     }
 }

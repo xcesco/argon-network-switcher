@@ -32,8 +32,8 @@ namespace Argon.Windows.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNetworkCards));
             this.images32x32 = new System.Windows.Forms.ImageList(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEnable = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDisable = new System.Windows.Forms.ToolStripMenuItem();
             this.images24x24 = new System.Windows.Forms.ImageList(this.components);
@@ -41,7 +41,7 @@ namespace Argon.Windows.Forms
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,35 +51,34 @@ namespace Argon.Windows.Forms
             this.images32x32.TransparentColor = System.Drawing.Color.Transparent;
             this.images32x32.Images.SetKeyName(0, "PCI-card.png");
             // 
-            // contextMenuStrip1
+            // contextMenuStrip
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuShowInfo,
             this.mnuEnable,
             this.mnuDisable});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 70);
-            this.contextMenuStrip1.Text = "View";
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip.Name = "contextMenuStrip1";
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip.Text = "View";
             // 
-            // toolStripMenuItem1
+            // mnuShowInfo
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItem1.Text = "Show info";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.actionDisplayCardInfo_Click);
+            this.mnuShowInfo.Name = "mnuShowInfo";
+            this.mnuShowInfo.Size = new System.Drawing.Size(152, 22);
+            this.mnuShowInfo.Text = "Show info";
+            this.mnuShowInfo.Click += new System.EventHandler(this.mnuShowInfo_Click);
             // 
             // mnuEnable
             // 
             this.mnuEnable.Name = "mnuEnable";
-            this.mnuEnable.Size = new System.Drawing.Size(127, 22);
+            this.mnuEnable.Size = new System.Drawing.Size(152, 22);
             this.mnuEnable.Text = "Enable";
             this.mnuEnable.Click += new System.EventHandler(this.mnuEnable_Click);
             // 
             // mnuDisable
             // 
             this.mnuDisable.Name = "mnuDisable";
-            this.mnuDisable.Size = new System.Drawing.Size(127, 22);
+            this.mnuDisable.Size = new System.Drawing.Size(152, 22);
             this.mnuDisable.Text = "Disable";
             this.mnuDisable.Click += new System.EventHandler(this.mnuDisable_Click);
             // 
@@ -98,7 +97,7 @@ namespace Argon.Windows.Forms
             this.colName,
             this.colDescription,
             this.colStatus});
-            this.listView.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView.ContextMenuStrip = this.contextMenuStrip;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView.FullRowSelect = true;
             this.listView.Location = new System.Drawing.Point(0, 0);
@@ -131,7 +130,7 @@ namespace Argon.Windows.Forms
             this.colStatus.Text = "Status";
             this.colStatus.Width = 120;
             // 
-            // FormAdapters
+            // FormNetworkCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,13 +140,13 @@ namespace Argon.Windows.Forms
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormAdapters";
+            this.Name = "FormNetworkCards";
             this.TabText = "Network Adapters ";
             this.Text = "Network Adapters ";
             this.Activated += new System.EventHandler(this.FormAdapters_Activated);
             this.Load += new System.EventHandler(this.FormAdapters_Load);
             this.VisibleChanged += new System.EventHandler(this.FormAdapters_VisibleChanged);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listView)).EndInit();
             this.ResumeLayout(false);
 
@@ -156,8 +155,8 @@ namespace Argon.Windows.Forms
         #endregion
 
         private System.Windows.Forms.ImageList images32x32;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem mnuShowInfo;
         private System.Windows.Forms.ImageList images24x24;
         private OLVColumn colName;
         private OLVColumn colDescription;

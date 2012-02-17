@@ -54,6 +54,9 @@ namespace Argon.Windows.Forms
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.ribbon = new System.Windows.Forms.Ribbon();
+            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
+            this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
+            this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
             this.rtProfiles = new System.Windows.Forms.RibbonTab();
             this.rpProfilesCollection = new System.Windows.Forms.RibbonPanel();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
@@ -78,9 +81,6 @@ namespace Argon.Windows.Forms
             this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpUpdate = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpDonate = new System.Windows.Forms.RibbonButton();
-            this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
-            this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
-            this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
             this.pnlRibbonContainer = new System.Windows.Forms.Panel();
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
@@ -216,6 +216,54 @@ namespace Argon.Windows.Forms
             this.ribbon.Tabs.Add(this.rtViews);
             this.ribbon.TabSpacing = 6;
             this.ribbon.Text = "ribbon";
+            // 
+            // rbtnSmartView
+            // 
+            this.rbtnSmartView.AltKey = null;
+            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
+            this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
+            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnSmartView.Tag = null;
+            this.rbtnSmartView.Text = "Smart view";
+            this.rbtnSmartView.ToolTip = null;
+            this.rbtnSmartView.ToolTipImage = null;
+            this.rbtnSmartView.ToolTipTitle = null;
+            this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
+            // 
+            // rbtnConfigLoad
+            // 
+            this.rbtnConfigLoad.AltKey = null;
+            this.rbtnConfigLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnConfigLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnConfigLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.Image")));
+            this.rbtnConfigLoad.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigLoad.SmallImage = global::Argon.Windows.Forms.Properties.Resources.document;
+            this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnConfigLoad.Tag = null;
+            this.rbtnConfigLoad.Text = "Load config";
+            this.rbtnConfigLoad.ToolTip = null;
+            this.rbtnConfigLoad.ToolTipImage = null;
+            this.rbtnConfigLoad.ToolTipTitle = "Load config";
+            this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
+            // 
+            // rbtnConfigSave
+            // 
+            this.rbtnConfigSave.AltKey = null;
+            this.rbtnConfigSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnConfigSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnConfigSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.Image")));
+            this.rbtnConfigSave.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigSave.SmallImage = global::Argon.Windows.Forms.Properties.Resources.disk_blue;
+            this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnConfigSave.Tag = null;
+            this.rbtnConfigSave.Text = "Save";
+            this.rbtnConfigSave.ToolTip = null;
+            this.rbtnConfigSave.ToolTipImage = null;
+            this.rbtnConfigSave.ToolTipTitle = "Save config";
+            this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
             // 
             // rtProfiles
             // 
@@ -355,6 +403,7 @@ namespace Argon.Windows.Forms
             this.rbtnCardsRefresh.ToolTip = null;
             this.rbtnCardsRefresh.ToolTipImage = null;
             this.rbtnCardsRefresh.ToolTipTitle = null;
+            this.rbtnCardsRefresh.Click += new System.EventHandler(this.rbtnCardsRefresh_Click);
             // 
             // rbtnCardView
             // 
@@ -369,6 +418,7 @@ namespace Argon.Windows.Forms
             this.rbtnCardView.ToolTip = null;
             this.rbtnCardView.ToolTipImage = null;
             this.rbtnCardView.ToolTipTitle = null;
+            this.rbtnCardView.Click += new System.EventHandler(this.rbtnCardView_Click);
             // 
             // rpNetworkCard
             // 
@@ -492,54 +542,6 @@ namespace Argon.Windows.Forms
             this.rbtnHelpDonate.ToolTipImage = null;
             this.rbtnHelpDonate.ToolTipTitle = null;
             this.rbtnHelpDonate.Click += new System.EventHandler(this.rbtnHelpDonate_Click);
-            // 
-            // rbtnSmartView
-            // 
-            this.rbtnSmartView.AltKey = null;
-            this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
-            this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
-            this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnSmartView.Tag = null;
-            this.rbtnSmartView.Text = "Smart view";
-            this.rbtnSmartView.ToolTip = null;
-            this.rbtnSmartView.ToolTipImage = null;
-            this.rbtnSmartView.ToolTipTitle = null;
-            this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
-            // 
-            // rbtnConfigLoad
-            // 
-            this.rbtnConfigLoad.AltKey = null;
-            this.rbtnConfigLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnConfigLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnConfigLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.Image")));
-            this.rbtnConfigLoad.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnConfigLoad.SmallImage = global::Argon.Windows.Forms.Properties.Resources.document;
-            this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnConfigLoad.Tag = null;
-            this.rbtnConfigLoad.Text = "Load config";
-            this.rbtnConfigLoad.ToolTip = null;
-            this.rbtnConfigLoad.ToolTipImage = null;
-            this.rbtnConfigLoad.ToolTipTitle = "Load config";
-            this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
-            // 
-            // rbtnConfigSave
-            // 
-            this.rbtnConfigSave.AltKey = null;
-            this.rbtnConfigSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnConfigSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnConfigSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.Image")));
-            this.rbtnConfigSave.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.rbtnConfigSave.SmallImage = global::Argon.Windows.Forms.Properties.Resources.disk_blue;
-            this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnConfigSave.Tag = null;
-            this.rbtnConfigSave.Text = "Save";
-            this.rbtnConfigSave.ToolTip = null;
-            this.rbtnConfigSave.ToolTipImage = null;
-            this.rbtnConfigSave.ToolTipTitle = "Save config";
-            this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
             // 
             // pnlRibbonContainer
             // 

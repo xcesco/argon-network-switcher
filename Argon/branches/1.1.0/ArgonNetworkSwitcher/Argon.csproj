@@ -109,6 +109,7 @@
     <Compile Include="Src\Argon\UseCase\UseCaseApplication.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseConfig.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseLogger.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseNetworkCard.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseProfile.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseSmartView.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseView.cs" />

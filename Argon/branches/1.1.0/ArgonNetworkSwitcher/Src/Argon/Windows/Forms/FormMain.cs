@@ -200,7 +200,7 @@ namespace Argon.Windows.Forms
 
         private void btnProfileNew_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.ShowNew(); 
+            UseCaseView.ShowNewProfile(); 
         }
 
         private void btnProfileSave_Click(object sender, EventArgs e)
@@ -224,9 +224,14 @@ namespace Argon.Windows.Forms
             NetworkCardActions.RefreshAll();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnCardView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnCardView_Click(object sender, EventArgs e)
         {
-            NetworkCardActions.ShowNetworkCard();
+            UseCaseNetworkCard.ShowSelectedNetworkCard();
         }
 
         private void btnProfileRun_Click(object sender, EventArgs e)
@@ -400,6 +405,26 @@ namespace Argon.Windows.Forms
         private void rbtnProfileRun_Click(object sender, EventArgs e)
         {
             backgroundWorker.RunWorkerAsync(null);           
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnCardsRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnCardsRefresh_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.RefreshNetworkCardListStatus();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnCardView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnCardView_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.ShowSelectedNetworkCard();
         }
         
     }

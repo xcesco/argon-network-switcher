@@ -82,7 +82,7 @@ namespace Argon.Windows.Forms
             if (listView.SelectedObjects.Count > 0)
             {
                 DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;                
-                NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
+                UseCaseView.ShowProfile((NetworkProfile)listView.SelectedObject);
                 
                 UseCaseProfile.Show((NetworkProfile)listView.SelectedObject);
             }
@@ -93,7 +93,7 @@ namespace Argon.Windows.Forms
             if (listView.SelectedObjects.Count > 0)
             {
                 DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;                
-                NetworkProfileActions.Show((NetworkProfile)listView.SelectedObject);
+                UseCaseView.ShowProfile((NetworkProfile)listView.SelectedObject);
             }
         }
 
@@ -113,7 +113,7 @@ namespace Argon.Windows.Forms
 
         private void mnuNew_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.ShowNew(); 
+            UseCaseView.ShowNewProfile(); 
         }
 
         private void mnuDuplicateProfile_Click(object sender, EventArgs e)
