@@ -33,6 +33,10 @@ namespace Argon.Windows.Forms
         public FormNetworkCard()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
+
         }
 
         private string formatIpString(string input)
@@ -43,17 +47,8 @@ namespace Argon.Windows.Forms
 
         private void FormCardInfo_Load(object sender, EventArgs e)
         {
+            this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
             FromDataToView();
-        }
-
-        /// <summary>
-        /// Handles the Activated event of the FormCardInfo control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void FormCardInfo_Activated(object sender, EventArgs e)
-        {
-            UseCaseView.ActivateFormNetworkCard(this);
         }
 
         private void FormCardInfo_FormClosed(object sender, FormClosedEventArgs e)
@@ -95,6 +90,22 @@ namespace Argon.Windows.Forms
 
             }
             
+        }
+
+        /// <summary>
+        /// Stores the form on data.
+        /// </summary>
+        public override void StoreFormOnData()
+        {
+            //TODO: to implements
+        }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm()
+        {
+            //TODO: to implements
         }
 
 

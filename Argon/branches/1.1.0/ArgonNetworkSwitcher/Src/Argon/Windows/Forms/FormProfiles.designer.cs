@@ -190,8 +190,7 @@ namespace Argon.Windows.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfiles";
             this.TabText = "Profiles ";
-            this.Text = "Profiles ";
-            this.Activated += new System.EventHandler(this.FormProfiles_Activated);
+            this.Text = "Profiles ";            
             this.Load += new System.EventHandler(this.FormProfiles_Load);
             this.VisibleChanged += new System.EventHandler(this.FormProfiles_VisibleChanged);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

@@ -22,6 +22,13 @@ namespace Argon.Windows.Forms
         {
             InitializeComponent();
             currentNetworkCardIndex = -1;
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
+
+
         }
 
         /// <summary>
@@ -43,6 +50,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormProfile_Load(object sender, EventArgs e)
         {
+            this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
             String[] imageNameList = ViewModel.ImageNames;
 
             ContextMenuStrip menuStrip = this.contextMenuStrip;
@@ -345,11 +353,6 @@ namespace Argon.Windows.Forms
             Controller.Instance.Profile_Click(this, e);
         }
 
-        private void FormProfile_Activated(object sender, EventArgs e)
-        {
-            ViewModel.SelectedView = this;
-            UseCaseView.ActivateFormProfile(this);
-        }
 
         private void btnSelectPrinter_Click(object sender, EventArgs e)
         {
@@ -378,6 +381,22 @@ namespace Argon.Windows.Forms
             // set the image
             NetworkProfile profile = (NetworkProfile)Tag;
             profile.ImageName = (string)((ToolStripMenuItem)sender).Tag;
+        }
+
+        /// <summary>
+        /// Stores the form on data.
+        /// </summary>
+        public override void StoreFormOnData()
+        {
+            //TODO: to implements
+        }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm()
+        {
+            //TODO: to implements
         }
 
     }

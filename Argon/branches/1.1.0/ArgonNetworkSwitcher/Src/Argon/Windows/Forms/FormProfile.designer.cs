@@ -543,8 +543,7 @@ namespace Argon.Windows.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfile";
             this.TabText = "Profile";
-            this.Text = "Profile";
-            this.Activated += new System.EventHandler(this.FormProfile_Activated);
+            this.Text = "Profile";            
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProfile_FormClosed);
             this.Load += new System.EventHandler(this.FormProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

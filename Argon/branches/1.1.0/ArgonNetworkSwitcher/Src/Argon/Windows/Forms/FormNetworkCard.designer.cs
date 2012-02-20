@@ -222,8 +222,7 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.label4);
             this.DoubleBuffered = true;
             this.Name = "FormNetworkCard";
-            this.TabText = "Info";
-            this.Activated += new System.EventHandler(this.FormCardInfo_Activated);
+            this.TabText = "Info";            
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCardInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormCardInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

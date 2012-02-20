@@ -26,6 +26,12 @@ namespace Argon.Windows.Forms
         public FormProfiles()
         {            
             InitializeComponent();
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
+
 
             colName.ImageGetter = delegate(object rowObject)
             {
@@ -62,11 +68,6 @@ namespace Argon.Windows.Forms
             {
                 ViewModel.MainView.rbtnViewProfiles.Checked = true;
             }
-        }
-      
-        private void FormProfiles_Activated(object sender, EventArgs e)
-        {
-            //Controller.Instance.ActivateFormProfiles();
         }
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,6 +130,7 @@ namespace Argon.Windows.Forms
 
         private void FormProfiles_Load(object sender, EventArgs e)
         {
+            this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
             String[] imageNameList = ViewModel.ImageNames;
 
             ImageList imageList = ViewModel.ProfilesView.imageList48x48;
@@ -138,6 +140,22 @@ namespace Argon.Windows.Forms
             {
                 imageList.Images.Add(item, UseCaseApplication.GetImage(item));
             }
+        }
+
+        /// <summary>
+        /// Stores the form on data.
+        /// </summary>
+        public override void StoreFormOnData()
+        {
+            //TODO: to implements
+        }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm()
+        {
+            //TODO: to implements
         }
 
     }
