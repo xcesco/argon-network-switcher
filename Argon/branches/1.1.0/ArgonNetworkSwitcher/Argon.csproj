@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ServiceListView.resx">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\ArgonDockContent.resx">
+      <DependentUpon>ArgonDockContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAboutBox.resx">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </EmbeddedResource>

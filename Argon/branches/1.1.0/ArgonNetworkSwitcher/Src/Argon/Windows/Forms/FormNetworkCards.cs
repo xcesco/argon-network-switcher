@@ -22,6 +22,12 @@ namespace Argon.Windows.Forms
         public FormNetworkCards()
         {
             InitializeComponent();
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
+
 
             colName.ImageGetter = delegate(Object row)
             {
@@ -32,6 +38,7 @@ namespace Argon.Windows.Forms
 
         private void FormAdapters_Load(object sender, EventArgs e)
         {
+            this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
             UseCaseNetworkCard.RefreshNetworkCardListStatus();
         }
 
@@ -47,16 +54,6 @@ namespace Argon.Windows.Forms
             {
                 ViewModel.MainView.rbtnViewNetworkCards.Checked = true;
             }
-        }
-
-        /// <summary>
-        /// Handles the Activated event of the FormAdapters control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void FormAdapters_Activated(object sender, EventArgs e)
-        {
-            UseCaseView.ActivateFormCards();
         }
 
         /// <summary>
@@ -81,7 +78,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ObjectListView list =listView;
+            ObjectListView list = listView;
             if (list.SelectedItems.Count > 0)
             {
                 UseCaseNetworkCard.SelectNetworkCard((WindowsNetworkCard)list.SelectedObject);
@@ -116,6 +113,22 @@ namespace Argon.Windows.Forms
         private void mnuShowInfo_Click(object sender, EventArgs e)
         {
             UseCaseNetworkCard.ShowSelectedNetworkCard();
-        }  
+        }
+
+        /// <summary>
+        /// Stores the form on data.
+        /// </summary>
+        public override void StoreFormOnData()
+        {
+            //TODO: to implements
+        }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm()
+        {
+            //TODO: to implements
+        }
     }
 }

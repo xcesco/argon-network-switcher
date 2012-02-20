@@ -21,6 +21,12 @@ namespace Argon.Windows.Forms
         public FormConsole()
         {
             InitializeComponent();
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
+
         }
 
         private void FormConsole_VisibleChanged(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace Argon.Windows.Forms
 
         private void FormConsole_Load(object sender, EventArgs e)
         {
-
+            this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
         }
 
         // This method demonstrates a pattern for making thread-safe
@@ -73,5 +79,15 @@ namespace Argon.Windows.Forms
         {
             lstBox.Items.Clear();
         }
+
+        /// <summary>
+        /// Stores the form on data.
+        /// </summary>
+        public override void StoreFormOnData() { }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm() { }
     }
 }

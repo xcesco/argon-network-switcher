@@ -145,8 +145,8 @@ namespace Argon.Windows.Network
                         IPAddressCollection winsServers = properties.WinsServersAddresses;
                         if (winsServers.Count > 0)
                         {
-                            string label;
-                            label = "  WINS Servers ............................ :";
+                           // string label;
+                            //label = "  WINS Servers ............................ :";
                             // ShowIPAddresses(label, winsServers);
                         }
                     }
