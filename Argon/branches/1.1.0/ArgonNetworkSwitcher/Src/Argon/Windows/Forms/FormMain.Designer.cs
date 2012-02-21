@@ -356,7 +356,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileSave.ToolTip = null;
             this.rbtnProfileSave.ToolTipImage = null;
             this.rbtnProfileSave.ToolTipTitle = null;
-            this.rbtnProfileSave.Click += new System.EventHandler(this.btnProfileSave_Click_1);
+            this.rbtnProfileSave.Click += new System.EventHandler(this.rbtnProfileSave_Click);
             // 
             // rsProfileSeparator
             // 

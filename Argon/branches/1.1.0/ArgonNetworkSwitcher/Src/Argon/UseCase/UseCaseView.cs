@@ -216,9 +216,8 @@ namespace Argon.UseCase
             }            
 
             FormProfile form = new FormProfile();
-            form.Tag = profile;
-            form.txtName.Text = profile.Name;
-            form.LoadProfile(profile);
+            form.Profile = profile;
+            form.ViewDataOnForm();
 
             ViewModel.ProfileViewList.Add(form);
             form.Show(ViewModel.MainView.Pannello);
@@ -236,6 +235,26 @@ namespace Argon.UseCase
             profile.Name = UseCaseProfile.NEW_NIC_NAME;
 
             ShowProfile(profile);
+        }
+
+        /// <summary>
+        /// Finds the and close profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static bool FindAndCloseProfile(NetworkProfile profile)
+        {
+            foreach (FormProfile form in ViewModel.ProfileViewList)
+            {
+                if (form.Profile.Id.Equals(profile.Id))
+                {
+                    form.Close();
+                    ViewModel.ProfileViewList.Remove(form);
+                    return true;
+                }
+
+            }
+
+            return false;
         }
     }
 }

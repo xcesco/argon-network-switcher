@@ -216,7 +216,8 @@ namespace Argon.Windows.Forms
         private void btnAllProfileLoad_Click(object sender, EventArgs e)
         {
             //Controller.Instance.PersistenceController.Load();
-            Controller.Instance.ActionRefreshProfiles();
+            
+            UseCaseProfile.Refresh();
         }
 
         private void btnAllCardsRefresh_Click(object sender, EventArgs e)
@@ -249,14 +250,14 @@ namespace Argon.Windows.Forms
             UseCaseProfile.Refresh();
         }
 
-        private void btnProfileSave_Click_1(object sender, EventArgs e)
-        {
-            NetworkProfileActions.SaveProfile();
-        }
-
+        /// <summary>
+        /// Handles the Click event of the btnProfileDelete control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileDelete_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.DeleteCurrentProfile();
+            UseCaseProfile.DeleteProfile();            
         }
 
         private void applyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -425,6 +426,11 @@ namespace Argon.Windows.Forms
         private void rbtnCardView_Click(object sender, EventArgs e)
         {
             UseCaseNetworkCard.ShowSelectedNetworkCard();
+        }
+
+        private void rbtnProfileSave_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.SaveProfile();
         }
         
     }

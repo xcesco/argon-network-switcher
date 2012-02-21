@@ -50,7 +50,7 @@ namespace Argon.Windows.Forms
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        protected void ArgonDockContent_Activated(object sender, EventArgs e)
+        protected virtual void ArgonDockContent_Activated(object sender, EventArgs e)
         {            
             ViewModel.SelectedView = this;
             Debug.WriteLine("Activated window " + this.Name + " typeof " + this.GetType().ToString());

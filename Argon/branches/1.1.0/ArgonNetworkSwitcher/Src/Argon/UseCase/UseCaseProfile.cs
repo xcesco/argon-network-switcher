@@ -12,6 +12,10 @@ using Argon.Windows;
 using Argon.Common;
 using Argon.Controllers;
 using System.Diagnostics;
+using Argon.Windows.Forms;
+using BrightIdeasSoftware;
+using System.Windows;
+using Argon.Windows.Controls;
 
 namespace Argon.UseCase
 {
@@ -20,8 +24,8 @@ namespace Argon.UseCase
     /// </summary>
     public static class UseCaseProfile
     {
-        public static string NEW_NIC_NAME="NONE";
-        
+        public static string NEW_NIC_NAME = "NONE";
+
         public static void AddProfile(NetworkProfile profile)
         {
             DataModel.NetworkProfileList.Add(profile);
@@ -48,23 +52,26 @@ namespace Argon.UseCase
         /// </list>
         /// </summary>
         public static void Refresh()
-        {                        
-            
+        {
+
             RibbonPanel rp = ViewModel.MainView.rpProfilesCollection;
             RibbonItemCollection rpc = rp.Items;
             RibbonButton rButton = null;
             rpc.Clear();
 
+            ObjectListView listView = ViewModel.ProfilesView.listView;
+            listView.ClearObjects();
+
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
                 // 1 - refresh the profileView                
-                ViewModel.ProfilesView.listView.AddObject(item);
+                listView.AddObject(item);
 
                 // 2 - refresh the ribbonPanel in mainView            
-                rButton=new RibbonButton();
+                rButton = new RibbonButton();
 
-                rButton.Text=item.Name;
-                rButton.Tag=item;
+                rButton.Text = item.Name;
+                rButton.Tag = item;
                 //rButton.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
                 rButton.Image = UseCaseApplication.GetImage(item.ImageName);
                 //rButton.SmallImage = UseCaseApplication.GetImage(item.ImageName);
@@ -74,8 +81,57 @@ namespace Argon.UseCase
             }
 
             // bug on ribbon: if i don't do it, buttons are not display untill change tab
-            ViewModel.MainView.Width +=1;
-            ViewModel.MainView.Width -= -1;            
+            ViewModel.MainView.Width += 1;
+            ViewModel.MainView.Width -= -1;
+        }
+
+        /// <summary>
+        /// Saves the current profile.
+        /// </summary>
+        public static void SaveProfile(NetworkProfile profile = null)
+        {
+            if (profile == null)
+            {
+                FormProfile viewProfile = ViewModel.SelectedView as FormProfile;
+
+                if (viewProfile == null)
+                {
+                    MyMessageBox.ShowMessage("No profile selected!");
+                    return;
+                }
+
+                viewProfile.StoreFormOnData();
+                profile = viewProfile.Profile;
+            }
+            if (profile.IsNew)
+            {
+                profile.Id = CreateNewProfileId();
+                // if not exist add it
+                DataModel.NetworkProfileList.Add(profile);
+            }
+            // list refresh
+            Refresh();
+        }
+
+
+        /// <summary>
+        /// Creates the new profile id.
+        /// </summary>
+        /// <returns></returns>
+        internal static int CreateNewProfileId()
+        {
+            int max = 0;
+            foreach (NetworkProfile item in DataModel.NetworkProfileList)
+            {
+                if (item.Id > max)
+                {
+                    max = item.Id;
+                }
+            }
+
+            max++;
+
+            return max;
         }
 
         /// <summary>
@@ -88,12 +144,12 @@ namespace Argon.UseCase
             SelectProfile(profile);
 
             // selected the current ribbon
-            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;            
+            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;
             ViewModel.MainView.rpProfile.Selected = true;
 
             // show
             Debug.WriteLine("Show profile " + profile.Name);
-            UseCaseView.ShowProfile(profile);            
+            UseCaseView.ShowProfile(profile);
         }
 
         /// <summary>
@@ -104,7 +160,7 @@ namespace Argon.UseCase
         public static void OnRunStatusChangedHandler(Object profileSender, NotifyEventArgs e)
         {
             UseCaseLogger.ShowInfo(e.Description);
-            ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);            
+            ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);
         }
 
 
@@ -114,7 +170,7 @@ namespace Argon.UseCase
         /// <returns></returns>
         public static NetworkProfile RunAutodetect()
         {
-            return NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);                       
+            return NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
         }
 
         /// <summary>
@@ -123,7 +179,7 @@ namespace Argon.UseCase
         /// <param name="profile">The profile.</param>
         /// <param name="worker">The worker.</param>
         /// <param name="runOnlyDeviceConfig">if set to <c>true</c> [run only device config].</param>
-        public static void Run(NetworkProfile profile, BackgroundWorker worker=null, bool runDeviceConfig=true)
+        public static void Run(NetworkProfile profile, BackgroundWorker worker = null, bool runDeviceConfig = true)
         {
 
             if (profile == null) return;
@@ -152,8 +208,50 @@ namespace Argon.UseCase
         /// <param name="networkProfile">The network profile.</param>
         public static void SelectProfile(NetworkProfile networkProfile)
         {
-            DataModel.SelectedNetworkProfile =networkProfile;
+            if (networkProfile == null)
+            {
+                MyMessageBox.ShowMessage("No profile selected!");
+                return;
+            }
+            DataModel.SelectedNetworkProfile = networkProfile;
             Debug.WriteLine("Selected profile " + networkProfile.Name);
+        }
+
+        /// <summary>
+        /// Deletes the profile.
+        /// </summary>
+        public static void DeleteProfile(NetworkProfile profile = null)
+        {
+            if (profile == null)
+            {
+                profile = DataModel.SelectedNetworkProfile;
+
+                if (profile == null)
+                {
+                    MyMessageBox.ShowMessage("No profile selected!");
+                    return;
+                }
+                
+            }
+            MessageBoxResult res = System.Windows.MessageBox.Show("Do you want to delete profile " + profile.Name + "?", "Delete confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (res == MessageBoxResult.Yes)
+            {
+                UseCaseLogger.ShowInfo("Remove profile [" + profile.Name + "]");
+                DataModel.NetworkProfileList.Remove(profile);
+                DataModel.SelectedNetworkProfile = null;
+                UseCaseView.FindAndCloseProfile(profile);
+                UseCaseProfile.Refresh();
+            }
+        }
+
+        /// <summary>
+        /// Closes the form.
+        /// </summary>
+        /// <param name="formProfile">The form profile.</param>
+        public static void Hide(FormProfile formProfile)
+        {
+            DataModel.SelectedNetworkProfile = null;
+            ViewModel.ProfileViewList.Remove(formProfile);
         }
     }
 }

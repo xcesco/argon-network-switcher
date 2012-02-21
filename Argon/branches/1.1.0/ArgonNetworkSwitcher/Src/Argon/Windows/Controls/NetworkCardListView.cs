@@ -19,6 +19,12 @@ namespace Argon.Windows.Controls
         {
             InitializeComponent();
 
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                       ControlStyles.UserPaint |
+                       ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor, true);
+            // impostiamo il modo trasparente prima di inizializzare
+            BackColor = Color.Transparent;
+
             colName.ImageGetter = delegate(Object row)
             {
                 return 0;
@@ -76,6 +82,11 @@ namespace Argon.Windows.Controls
                     }
                 }
             }
+        }
+
+        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

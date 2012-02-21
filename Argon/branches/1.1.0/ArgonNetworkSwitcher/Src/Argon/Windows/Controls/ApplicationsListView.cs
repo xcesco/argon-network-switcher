@@ -37,6 +37,12 @@ namespace Argon.Windows.Controls
             InitializeComponent();
 
             status = SelectionType.NONE;
+
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
         }
 
         private WindowsExecutable currentItem;
@@ -196,6 +202,11 @@ namespace Argon.Windows.Controls
                 listView.AddObject(form.SelectedWindowsExecutable);
              
             }            
+        }
+
+        private void ApplicationsListView_Load(object sender, EventArgs e)
+        {
+
         }
 
       

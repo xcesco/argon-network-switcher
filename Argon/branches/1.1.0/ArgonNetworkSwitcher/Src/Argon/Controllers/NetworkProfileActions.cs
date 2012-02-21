@@ -57,16 +57,6 @@ namespace Argon.Controllers
             }
         }
 
-        public static void SaveProfile()
-        {
-            FormProfile form = ViewModel.SelectedView as FormProfile;
-
-            if (form != null)
-            {
-                form.btnSave_Click(null, null);                
-            }
-        }
-
         public static void RefrehProfile()
         {
 
@@ -78,26 +68,6 @@ namespace Argon.Controllers
             }
         }
 
-        public static void DeleteCurrentProfile()
-        {
-            ObjectListView list = ViewModel.NetworkCardsView.listView;
-            if (list.SelectedObjects.Count > 0)
-            {
-
-                DataModel.SelectedNetworkProfile = null;
-
-                NetworkProfile profile = (NetworkProfile)list.SelectedObject;
-
-                MessageBoxResult res=System.Windows.MessageBox.Show("Do you want to delete profile "+profile.Name+"?","Delete confirmation",MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (res==MessageBoxResult.Yes)
-                {
-                    UseCaseLogger.ShowInfo("Remove profile [" + profile.Name + "]");
-                    DataModel.NetworkProfileList.Remove(profile);
-                    Controller.Instance.ActionRefreshProfiles();
-                }
-             
-            }
-        }
 
     }
 }

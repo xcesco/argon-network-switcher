@@ -28,10 +28,16 @@ namespace Argon.Windows.Controls
         public ProxyControl()
         {
             // impostiamo il modo trasparente prima di inizializzare
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            BackColor = Color.Transparent;
+            //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //BackColor = Color.Transparent;
 
             InitializeComponent();
+
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                       ControlStyles.UserPaint |
+                       ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor, true);
+            // impostiamo il modo trasparente prima di inizializzare
+            BackColor = Color.Transparent;
             
             DisplayConfiguration();
         }

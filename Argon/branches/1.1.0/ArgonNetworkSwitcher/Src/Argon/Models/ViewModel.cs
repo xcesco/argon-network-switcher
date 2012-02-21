@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Argon.Windows.Forms;
+using Argon.Windows.Network.Profile;
 
 namespace Argon.Models
 {
@@ -67,5 +68,7 @@ namespace Argon.Models
         public static List<FormNetworkCard> NetworkCardViewList { get; set; }
 
         public static ArgonDockContent SelectedView { get; set; }
+
+ 
     }
 }
