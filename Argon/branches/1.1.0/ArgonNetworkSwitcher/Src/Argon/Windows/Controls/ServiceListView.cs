@@ -25,6 +25,12 @@ namespace Argon.Windows.Controls
         {
             InitializeComponent();
 
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                       ControlStyles.UserPaint |
+                       ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor, true);
+            // impostiamo il modo trasparente prima di inizializzare
+            BackColor = Color.Transparent;
+
              colStatus.ImageGetter = delegate(object rowObject)
             {
                 WindowsService service = (WindowsService)rowObject;

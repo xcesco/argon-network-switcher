@@ -29,6 +29,7 @@ namespace Argon.Windows.Controls
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.cbProxyOverrideEnabled = new System.Windows.Forms.CheckBox();
             this.txtProxyOverride = new System.Windows.Forms.TextBox();
             this.txtProxyPort = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@ namespace Argon.Windows.Controls
             this.cbEnabledProxy = new System.Windows.Forms.CheckBox();
             this.txtProxyAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -61,10 +61,18 @@ namespace Argon.Windows.Controls
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Proxy settings";
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(12, 21);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(300, 100);
+            this.pictureBox.TabIndex = 15;
+            this.pictureBox.TabStop = false;
+            // 
             // cbProxyOverrideEnabled
             // 
             this.cbProxyOverrideEnabled.AutoSize = true;
-            this.cbProxyOverrideEnabled.Location = new System.Drawing.Point(12, 85);
+            this.cbProxyOverrideEnabled.Location = new System.Drawing.Point(12, 189);
             this.cbProxyOverrideEnabled.Name = "cbProxyOverrideEnabled";
             this.cbProxyOverrideEnabled.Size = new System.Drawing.Size(95, 17);
             this.cbProxyOverrideEnabled.TabIndex = 14;
@@ -74,7 +82,7 @@ namespace Argon.Windows.Controls
             // 
             // txtProxyOverride
             // 
-            this.txtProxyOverride.Location = new System.Drawing.Point(12, 105);
+            this.txtProxyOverride.Location = new System.Drawing.Point(12, 209);
             this.txtProxyOverride.Multiline = true;
             this.txtProxyOverride.Name = "txtProxyOverride";
             this.txtProxyOverride.Size = new System.Drawing.Size(355, 83);
@@ -82,7 +90,7 @@ namespace Argon.Windows.Controls
             // 
             // txtProxyPort
             // 
-            this.txtProxyPort.Location = new System.Drawing.Point(257, 50);
+            this.txtProxyPort.Location = new System.Drawing.Point(257, 154);
             this.txtProxyPort.Name = "txtProxyPort";
             this.txtProxyPort.Size = new System.Drawing.Size(55, 20);
             this.txtProxyPort.TabIndex = 11;
@@ -90,7 +98,7 @@ namespace Argon.Windows.Controls
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(225, 53);
+            this.label9.Location = new System.Drawing.Point(225, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 13);
             this.label9.TabIndex = 10;
@@ -99,7 +107,7 @@ namespace Argon.Windows.Controls
             // cbEnabledProxy
             // 
             this.cbEnabledProxy.AutoSize = true;
-            this.cbEnabledProxy.Location = new System.Drawing.Point(12, 27);
+            this.cbEnabledProxy.Location = new System.Drawing.Point(12, 131);
             this.cbEnabledProxy.Name = "cbEnabledProxy";
             this.cbEnabledProxy.Size = new System.Drawing.Size(93, 17);
             this.cbEnabledProxy.TabIndex = 9;
@@ -109,7 +117,7 @@ namespace Argon.Windows.Controls
             // 
             // txtProxyAddress
             // 
-            this.txtProxyAddress.Location = new System.Drawing.Point(43, 50);
+            this.txtProxyAddress.Location = new System.Drawing.Point(43, 154);
             this.txtProxyAddress.Name = "txtProxyAddress";
             this.txtProxyAddress.Size = new System.Drawing.Size(172, 20);
             this.txtProxyAddress.TabIndex = 8;
@@ -117,19 +125,11 @@ namespace Argon.Windows.Controls
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 53);
+            this.label7.Location = new System.Drawing.Point(9, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 7;
             this.label7.Text = "Proxy";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 194);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(300, 100);
-            this.pictureBox.TabIndex = 15;
-            this.pictureBox.TabStop = false;
             // 
             // ProxyControl
             // 

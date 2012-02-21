@@ -12,19 +12,25 @@ namespace Argon.Windows.Forms
     {
         public FormSplashScreen()
         {
-            InitializeComponent();
-            
+            InitializeComponent();                       
         }
+
 
         private void FormSplashScreen_Load(object sender, EventArgs e)
         {
             timer.Start();
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Argon.Windows.Network.Profile;
 using Argon.Models;
+using Argon.UseCase;
 
 namespace Argon.Controllers
 {
@@ -16,7 +17,7 @@ namespace Argon.Controllers
             NetworkProfile newProfile = new NetworkProfile();
             newProfile=NetworkProfile.Copy(profile);
 
-            newProfile.Id=Controller.Instance.CreateNewProfileId();
+            newProfile.Id=UseCaseProfile.CreateNewProfileId();
             newProfile.Name = "Copy of " + newProfile.Name;
 
             DataModel.NetworkProfileList.Add(newProfile);

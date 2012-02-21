@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetworkCardListView));
-            this.listView = new BrightIdeasSoftware.ObjectListView();
+            this.listView = new DoubleBufferObjectListView();
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -59,6 +59,7 @@
             this.listView.TabIndex = 2;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
             // 
             // colName
             // 
@@ -105,7 +106,7 @@
 
         #endregion
 
-        public BrightIdeasSoftware.ObjectListView listView;
+        public DoubleBufferObjectListView listView;
         private BrightIdeasSoftware.OLVColumn colName;
         private BrightIdeasSoftware.OLVColumn colDescription;
         private BrightIdeasSoftware.OLVColumn colStatus;

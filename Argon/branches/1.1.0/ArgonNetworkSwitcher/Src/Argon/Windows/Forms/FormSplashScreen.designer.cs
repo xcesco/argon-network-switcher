@@ -57,12 +57,13 @@ namespace Argon.Windows.Forms
             this.pictureBox1.Size = new System.Drawing.Size(559, 168);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(564, 199);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

@@ -107,9 +107,14 @@ namespace Argon.Windows.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the mnuDelete control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void mnuDelete_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.DeleteCurrentProfile();
+            UseCaseProfile.DeleteProfile();
         }
 
         private void mnuNew_Click(object sender, EventArgs e)
@@ -123,7 +128,7 @@ namespace Argon.Windows.Forms
             {
                 DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;
                 Controller.Instance.ProfileController.DuplicateProfile(DataModel.SelectedNetworkProfile);
-                Controller.Instance.ActionRefreshProfiles();
+                UseCaseProfile.Refresh();
             }
             
         }

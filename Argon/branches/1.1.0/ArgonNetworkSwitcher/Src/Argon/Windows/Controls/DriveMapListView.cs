@@ -35,6 +35,12 @@ namespace Argon.Windows.Controls
 
             status = SelectionType.NONE;
             cbOperation.SelectedIndex = 0;
+
+            // to avoid flicker problem
+            // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                        ControlStyles.UserPaint |
+                        ControlStyles.AllPaintingInWmPaint, true);
         }
 
         /// <summary>

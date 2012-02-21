@@ -9,6 +9,7 @@ namespace Argon.Windows.Network
     /// <summary>
     /// type of network card
     /// </summary>
+    [Serializable] 
     public enum WindowsNetworkCardType
     {
         /// <summary>
@@ -333,6 +334,7 @@ namespace Argon.Windows.Network
     /// <summary>
     /// 
     /// </summary>
+    [Serializable] 
     public class WindowsNetworkCard : WindowsComponent, IWindowsNetworkCardInfo
     {
         /// <summary>

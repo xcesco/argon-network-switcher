@@ -40,7 +40,7 @@ namespace Argon.Windows.Controls
             this.mnuTest = new System.Windows.Forms.ToolStripButton();
             this.mnuUnmount = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.listView = new BrightIdeasSoftware.ObjectListView();
+            this.listView = new DoubleBufferObjectListView();
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDrive = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -653,7 +653,7 @@ namespace Argon.Windows.Controls
         private System.Windows.Forms.ToolStripButton mnuUnmount;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton mnuTest;
-        private ObjectListView listView;
+        private DoubleBufferObjectListView listView;
         private OLVColumn colName;
         private OLVColumn colDescription;
         private OLVColumn colDrive;

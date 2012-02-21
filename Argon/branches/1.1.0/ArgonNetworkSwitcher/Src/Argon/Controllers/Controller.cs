@@ -90,74 +90,7 @@ namespace Argon.Controllers
         
 
 
-        /// <summary>
-        /// Creates the new profile id.
-        /// </summary>
-        /// <returns></returns>
-        public int CreateNewProfileId()
-        {
-            int max = 0;
-            foreach (NetworkProfile item in DataModel.NetworkProfileList)
-            {
-                if (item.Id > max)
-                {
-                    max = item.Id;
-                }
-            }
 
-            max++;
-
-            return max;
-        }
-
-
-        /// <summary>
-        /// Actions the save profile.
-        /// </summary>
-        /// <param name="viewProfile">The view profile.</param>
-        public void ActionSaveProfile(FormProfile viewProfile)
-        {
-            NetworkProfile profile = (NetworkProfile)viewProfile.Tag;
-            if (profile.IsNew && !UseCaseProfile.Exists(profile))
-            {
-                profile.Id = CreateNewProfileId();
-                // dobbiamo aggiungerlo, ma solo se non esiste
-                DataModel.NetworkProfileList.Add(profile);
-            }
-            // Facciamo il refresh dell'elenco dei profili
-            ActionRefreshProfiles();
-        }
-
-        /// <summary>
-        /// Refresh profiles
-        /// </summary>
-        public void ActionRefreshProfiles()
-        {
-            RibbonPanel rp = ViewModel.MainView.rpProfilesCollection;
-            RibbonItemCollection rpc = rp.Items;
-            RibbonButton rButton=null;
-
-            rpc.Clear();
-            // Lista dei profili nell'apposita finestra
-            ViewModel.ProfilesView.listView.ClearObjects();
-
-            foreach (NetworkProfile item in DataModel.NetworkProfileList)
-            {
-                ViewModel.ProfilesView.listView.AddObject(item);
-                
-                rButton=new RibbonButton();
-
-                rButton.Text=item.Name;
-                rButton.Tag=item;
-                rButton.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
-                rButton.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
-                    // create in ribbon panel
-                rpc.Add(rButton);
-            }
-
-            
-           
-        }
 
         /// <summary>
         /// Handles the Click event of the Profile control.

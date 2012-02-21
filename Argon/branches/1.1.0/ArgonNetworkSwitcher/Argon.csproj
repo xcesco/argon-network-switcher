@@ -119,6 +119,12 @@
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.designer.cs">
       <DependentUpon>ApplicationsListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DoubleBufferObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DoubleBufferTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Controls\DriveMapListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,7 @@
     <Compile Include="Src\Argon\Windows\Controls\IpControl.designer.cs">
       <DependentUpon>IpControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\MyMessageBox.cs" />
     <Compile Include="Src\Argon\Windows\Controls\NetworkCardListView.cs">
       <SubType>UserControl</SubType>
     </Compile>

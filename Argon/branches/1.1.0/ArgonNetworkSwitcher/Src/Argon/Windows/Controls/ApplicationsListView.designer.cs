@@ -37,7 +37,7 @@ namespace Argon.Windows.Controls
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDelete = new System.Windows.Forms.ToolStripButton();
             this.mnuSelect = new System.Windows.Forms.ToolStripButton();
-            this.listView = new BrightIdeasSoftware.ObjectListView();
+            this.listView = new DoubleBufferObjectListView();
             this.colName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colFile = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -413,6 +413,7 @@ namespace Argon.Windows.Controls
             this.MinimumSize = new System.Drawing.Size(560, 312);
             this.Name = "ApplicationsListView";
             this.Size = new System.Drawing.Size(658, 392);
+            this.Load += new System.EventHandler(this.ApplicationsListView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).EndInit();
@@ -426,7 +427,7 @@ namespace Argon.Windows.Controls
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private ObjectListView listView;
+        private DoubleBufferObjectListView listView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton mnuNew;
         //private Ascend.Windows.Forms.GradientPanel gradientPanel1;
