@@ -12,13 +12,14 @@ namespace Argon.Windows.Controls
         public DoubleBufferObjectListView()
         {
             //Activate double buffering
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);            
 
             //Enable the OnNotifyMessage event so we get a chance to filter out 
             // Windows messages before they get to the form's WndProc
-            this.SetStyle(ControlStyles.EnableNotifyMessage, true);
+            //this.SetStyle(ControlStyles.EnableNotifyMessage, true);
         }
 
+        /*
         protected override void OnNotifyMessage(Message m)
         {
             //Filter out the WM_ERASEBKGND message
@@ -26,7 +27,7 @@ namespace Argon.Windows.Controls
             {
                 base.OnNotifyMessage(m);
             }
-        }
+        }*/
 
     }
 }

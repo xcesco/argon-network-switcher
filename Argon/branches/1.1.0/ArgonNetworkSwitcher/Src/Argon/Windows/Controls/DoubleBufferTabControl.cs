@@ -8,13 +8,25 @@ using System.Windows.Forms;
 namespace Argon.Windows.Controls
 {
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class DoubleBufferedTabControl : System.Windows.Forms.TabControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DoubleBufferedTabControl"/> class.
+        /// </summary>
         public DoubleBufferedTabControl()
         {
-            this.SetStyle(ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            //this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
         }
 
+        /*
+        /// <summary>
+        /// Raises the <see cref="E:Paint"/> event.
+        /// </summary>
+        /// <param name="pevent">The <see cref="System.Windows.Forms.PaintEventArgs"/> instance containing the event data.</param>
         protected override void OnPaint(PaintEventArgs pevent)
         {
             this.SetStyle(ControlStyles.UserPaint, false);
@@ -34,7 +46,7 @@ namespace Argon.Windows.Controls
             base.OnResize(e);
             buffer = new System.Drawing.Bitmap(Width, Height);
         }
-        private System.Drawing.Bitmap buffer;
+        private System.Drawing.Bitmap buffer;*/
     }
 
     public class DoubleBufferedTabPage : System.Windows.Forms.TabPage
