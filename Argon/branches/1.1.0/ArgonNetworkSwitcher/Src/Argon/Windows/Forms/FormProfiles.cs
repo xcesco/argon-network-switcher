@@ -127,8 +127,7 @@ namespace Argon.Windows.Forms
             if (listView.SelectedObjects.Count > 0)
             {
                 DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;
-                Controller.Instance.ProfileController.DuplicateProfile(DataModel.SelectedNetworkProfile);
-                UseCaseProfile.Refresh();
+                UseCaseProfile.DuplicateProfile(DataModel.SelectedNetworkProfile);                
             }
             
         }

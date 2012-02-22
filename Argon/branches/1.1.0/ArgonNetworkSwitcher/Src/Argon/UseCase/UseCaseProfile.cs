@@ -255,5 +255,22 @@ namespace Argon.UseCase
             DataModel.SelectedNetworkProfile = null;
             ViewModel.ProfileViewList.Remove(formProfile);
         }
+
+        /// <summary>
+        /// Duplicates the profile.
+        /// </summary>
+        /// <param name="profile">The profile.</param>
+        public static void DuplicateProfile(NetworkProfile profile)
+        {
+            NetworkProfile newProfile = new NetworkProfile();
+            newProfile = NetworkProfile.Copy(profile);
+
+            newProfile.Id = UseCaseProfile.CreateNewProfileId();
+            newProfile.Name = "Copy of " + newProfile.Name;
+
+            DataModel.NetworkProfileList.Add(newProfile);
+
+            Refresh();
+        }
     }
 }

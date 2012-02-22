@@ -487,6 +487,20 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap networkcard_disable_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("networkcard_disable_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap networkcard_enable_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("networkcard_enable_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap networkcard_refresh_48x48 {
             get {
                 object obj = ResourceManager.GetObject("networkcard_refresh_48x48", resourceCulture);
