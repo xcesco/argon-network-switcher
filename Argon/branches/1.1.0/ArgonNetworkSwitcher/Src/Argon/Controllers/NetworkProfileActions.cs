@@ -56,18 +56,5 @@ namespace Argon.Controllers
                 Controller.Instance.Profile_Click(profile, null);                
             }
         }
-
-        public static void RefrehProfile()
-        {
-
-            FormProfile form=ViewModel.SelectedView as FormProfile;
-
-            if (form!=null)
-            {                
-                form.RefreshView();
-            }
-        }
-
-
     }
 }

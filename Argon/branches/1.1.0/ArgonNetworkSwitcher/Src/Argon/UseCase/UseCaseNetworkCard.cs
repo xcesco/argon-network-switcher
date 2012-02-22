@@ -6,9 +6,13 @@ using Argon.Models;
 using Argon.Windows.Network;
 using BrightIdeasSoftware;
 using Argon.Windows.Forms;
+using Argon.UseCase;
 
 namespace Argon.UseCase
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class UseCaseNetworkCard
     {
         /// <summary>
@@ -29,6 +33,10 @@ namespace Argon.UseCase
             SetStatusCard(true);
         }
 
+        /// <summary>
+        /// Sets the status card.
+        /// </summary>
+        /// <param name="enabled">if set to <c>true</c> [enabled].</param>
         private static void SetStatusCard(bool enabled)
         {            
                 WindowsNetworkCard ni = DataModel.SelectedNetworkCard;
@@ -52,7 +60,6 @@ namespace Argon.UseCase
             SetStatusCard(false);
         }
 
-
         /// <summary>
         /// Refreshes all network card status.
         /// </summary>
@@ -66,6 +73,12 @@ namespace Argon.UseCase
             ObjectListView listView = ViewModel.NetworkCardsView.listView;            
             listView.ClearObjects();
             listView.AddObjects(DataModel.NetworkCardList);
+
+            // refresh list in every window profile form
+            foreach(FormProfile item in ViewModel.ProfileViewList)
+            {
+                item.RefreshNetworkAdapter();
+            }
         }
 
         /// <summary>

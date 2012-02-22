@@ -69,6 +69,8 @@ namespace System.Windows.Forms
 
             panelAdorner = new Adorner();
 
+            //Add by Cesco
+            if (RibbonDesigner.Current == null) return;
             BehaviorService bs = RibbonDesigner.Current.GetBehaviorService();
 
             if (bs == null) return;

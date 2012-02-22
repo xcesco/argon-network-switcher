@@ -28,14 +28,6 @@ namespace Argon.Controllers
         }
 
         /// <summary>
-        /// Reload the adapters status in form.
-        /// </summary>
-        public static void RefreshAll()
-        {
-            UseCaseNetworkCard.RefreshNetworkCardListStatus();
-        }
-
-        /// <summary>
         /// Hides all.
         /// </summary>
         public static void HideAll()

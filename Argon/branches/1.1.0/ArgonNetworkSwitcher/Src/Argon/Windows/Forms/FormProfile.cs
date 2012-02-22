@@ -21,8 +21,7 @@ namespace Argon.Windows.Forms
     {
         public FormProfile()
         {
-            InitializeComponent();
-            currentNetworkCardIndex = -1;
+            InitializeComponent();            
             // to avoid flicker problem
             // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
@@ -45,12 +44,21 @@ namespace Argon.Windows.Forms
         }
 
         /// <summary>
+        /// Gets or sets the network card.
+        /// </summary>
+        /// <value>
+        /// The network card.
+        /// </value>
+        internal IWindowsNetworkCardInfo SelectedNetworkCard { get; set; }
+
+        /// <summary>
         /// Handles the Load event of the FormProfile control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormProfile_Load(object sender, EventArgs e)
         {
+            // add
             this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
             String[] imageNameList = ViewModel.ImageNames;
 
@@ -111,64 +119,54 @@ namespace Argon.Windows.Forms
 
             tabControl.ResumeLayout();
         }
-
-        protected List<WindowsNetworkCard> networkList;
-
-
-        private void DisplayCurrentNIC()
-        {
-            NetworkProfile profile = (NetworkProfile)Tag;
+        
+        private void DisplaySelectedNetworkCard(bool found)
+        {            
             string temp;
-            if (profile.NetworkCardInfo != null)
+            if (SelectedNetworkCard != null)
             {
-                temp = profile.NetworkCardInfo.ViewId + " " + profile.NetworkCardInfo.Name;
+                if (!found)
+                    txtSelectedCard.ForeColor = Color.Red;                
+                else txtSelectedCard.ForeColor = Color.Black;
+                temp = SelectedNetworkCard.ViewId + " " + SelectedNetworkCard.Name;
+
+                WindowsNetworkCard nic = new WindowsNetworkCard();
+                // visualizziamo i dati della configurazione
+                nic.Dhcp = SelectedNetworkCard.Dhcp;
+                nic.IpAddress = SelectedNetworkCard.IpAddress;
+                nic.SubnetMask = SelectedNetworkCard.SubnetMask;
+                nic.GatewayAddress = SelectedNetworkCard.GatewayAddress;
+                nic.DynamicDNS = SelectedNetworkCard.DynamicDNS;
+                nic.Dns = SelectedNetworkCard.Dns;
+                nic.Dns2 = SelectedNetworkCard.Dns2;
+                nic.MacAddress = SelectedNetworkCard.MacAddress;
+                nic.HardwareName = SelectedNetworkCard.HardwareName;
+
+                ipControl.Configuration = nic;                
             }
             else
             {
                 temp = "";
             }
             txtSelectedCard.Text = temp;
-
-            RefreshView();
         }
 
-
-        private void btnCurrentConfig_Click(object sender, EventArgs e)
-        {
-            RefreshView();
-        }
-
-        public void RefreshView()
-        {
-            LoadConfiguration();
-
-        }
-
-
-        private bool LoadConfiguration()
-        {
-            NetworkProfile profile = (NetworkProfile)Tag;
-
-            if (profile.NetworkCardInfo.Id.Length > 0)
-            {
-                ipControl.Configuration = WindowsNetworkCardManager.WindowsNetworkCardTable[profile.NetworkCardInfo.Id];
-            }
-            proxyPanel.Configuration = ProxyConfigurationManager.ReadConfig();
-
-            return true;
-        }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             this.TabText = "Profile: " + txtName.Text;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnSelect control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnSelect_Click(object sender, EventArgs e)
         {
             NetworkProfile profile = Profile;
             // cerchiamo viewId
-            string work = lstNetworkCard.Text;
-            currentNetworkCardIndex = lstNetworkCard.SelectedIndex;
+            string work = lstNetworkCard.Text;            
 
             if (work.Equals(UseCaseProfile.NEW_NIC_NAME))
             {
@@ -184,8 +182,8 @@ namespace Argon.Windows.Forms
                     work = i2 > 0 ? work.Substring(i1, i2 + 1) : work;
                 }
                 if (work.Length > 0)
-                {
-                    List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
+                {                    
+                    List<WindowsNetworkCard> lista = DataModel.NetworkCardList;                    
 
                     // lo facciamo solo se la card è diversa
                     if (profile.NetworkCardInfo == null || !profile.NetworkCardInfo.ViewId.Equals(work))
@@ -194,34 +192,21 @@ namespace Argon.Windows.Forms
                         {
                             if (item.ViewId.Equals(work))
                             {
-                                profile.NetworkCardInfo = item;
+                                SelectedNetworkCard = item;                                
                                 break;
                             }
                         }
                     }
-
-                    /* List<WifiProfile> list = WifiConfigurationManager.GetWifiProfileList(profile.NetworkCardInfo.Id);
-                     olvWirelessProfiles.ClearObjects();
-                     olvWirelessProfiles.AddObjects(list);*/
+                   
                 }
                 else
                 {
-                    profile.NetworkCardInfo = null;
+                    SelectedNetworkCard = null;
                 }
             }
-            DisplayCurrentNIC();
+            DisplaySelectedNetworkCard(true);
         }
-
-        protected int currentNetworkCardIndex;
-
-        private void btnCurrentConfig_Click_1(object sender, EventArgs e)
-        {
-            if (currentNetworkCardIndex != -1)
-            {
-                lstNetworkCard.SelectedIndex = currentNetworkCardIndex;
-                btnSelect_Click(sender, e);
-            }
-        }
+        
 
         public void btnRun_Click(object sender, EventArgs e)
         {
@@ -292,65 +277,74 @@ namespace Argon.Windows.Forms
 
         }
 
+
         /// <summary>
-        /// Views the data on form.
+        /// Refreshes the network adapter info:
+        /// - fill the combobox
+        /// - select the current nic
+        /// - display current nic info
         /// </summary>
-        public override void ViewDataOnForm()
+        public void RefreshNetworkAdapter()
         {
-            NetworkProfile profile = Profile;
+            ComboBox comboBox = lstNetworkCard;
+            List<WindowsNetworkCard> lista = DataModel.NetworkCardList;
 
-            networkList = Controller.Instance.ActionRefreshNetworkAdapters(lstNetworkCard);
-            txtName.Text = profile.Name;
-            TabText = "Profile: " + profile.Name;
+            // set combobox
+            comboBox.Items.Clear();
+            comboBox.Items.Add("NONE");
 
-            // load the image profile
-            this.pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);
+            foreach (WindowsNetworkCard item in lista)
+            {
+                string tempName = item.ViewId + " " + item.Name;
+
+                comboBox.Items.Add(tempName);
+            }
+
+            comboBox.SelectedIndex = 0;
 
             // abbiamo una scheda di rete
-            if (profile.NetworkCardInfo.Id.Length > 0)
+            if (SelectedNetworkCard!=null && SelectedNetworkCard.Id.Length > 0)
             {
-                WindowsNetworkCard nic = null;
+                
                 bool bTrovata = false;
                 // selezioniamo dalla lista
                 int i = 1;
-                foreach (WindowsNetworkCard item in networkList)
+                foreach (WindowsNetworkCard item in lista)
                 {
-                    if (item.Id.Equals(profile.NetworkCardInfo.Id))
+                    if (item.Id.Equals(SelectedNetworkCard.Id))
                     {
                         // l'abbiamo trovata
-                        bTrovata = true;
-                        nic = item;
+                        bTrovata = true;                        
                         txtSelectedCard.Text = item.ViewId + " " + item.Name;
-                        currentNetworkCardIndex = i;
+                        int currentNetworkCardIndex = i;
                         lstNetworkCard.SelectedIndex = i;
                         break;
                     }
                     i++;
                 }
 
-                if (!bTrovata)
-                {
-                    // se non l'abbiamo trovata, mettiamo il nome della scheda in rosso                
-                    txtSelectedCard.Text = profile.NetworkCardInfo.ViewId + " " + profile.NetworkCardInfo.Name;
-                    txtSelectedCard.ForeColor = Color.Red;
+                DisplaySelectedNetworkCard(bTrovata);
 
-                    nic = new WindowsNetworkCard();
-                    ipControl.Enabled = false;
-                }
-                // visualizziamo i dati della configurazione
-                nic.Dhcp = profile.NetworkCardInfo.Dhcp;
-                nic.IpAddress = profile.NetworkCardInfo.IpAddress;
-                nic.SubnetMask = profile.NetworkCardInfo.SubnetMask;
-                nic.GatewayAddress = profile.NetworkCardInfo.GatewayAddress;
-                nic.DynamicDNS = profile.NetworkCardInfo.DynamicDNS;
-                nic.Dns = profile.NetworkCardInfo.Dns;
-                nic.Dns2 = profile.NetworkCardInfo.Dns2;
-                nic.MacAddress = profile.NetworkCardInfo.MacAddress;
-                nic.HardwareName = profile.NetworkCardInfo.HardwareName;
-
-
-                ipControl.Configuration = nic;
+                
             }
+
+        }
+
+        /// <summary>
+        /// Views the data on form.
+        /// </summary>
+        public override void ViewDataOnForm()
+        {
+            NetworkProfile profile = Profile;
+            SelectedNetworkCard = profile.NetworkCardInfo;
+
+            RefreshNetworkAdapter();
+            
+            txtName.Text = profile.Name;
+            TabText = "Profile: " + profile.Name;
+
+            // load the image profile
+            this.pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);            
 
             proxyPanel.Configuration = profile.ProxyConfig;
 

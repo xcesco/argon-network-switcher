@@ -363,6 +363,13 @@
     <None Include="Resources\type_wifi_300x400.png" />
     <None Include="Resources\type_virtual_300x400.png" />
     <None Include="Resources\proxy_300x100.png" />
+    <None Include="Resources\profile_9_48x48.png" />
+    <None Include="Resources\networkcard_refresh_48x48.png" />
+    <None Include="Resources\networkcard_view_48x48.png" />
+    <None Include="Resources\console_clear_48x48.png" />
+    <None Include="Resources\console_48x48.png" />
+    <None Include="Resources\donate_48x48.png" />
+    <None Include="Resources\check_update_48x48.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />

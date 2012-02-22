@@ -463,4 +463,25 @@
   <data name="proxy_300x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proxy_300x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="profile_9_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_9_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="networkcard_refresh_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkcard_refresh_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="networkcard_view_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkcard_view_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="console_clear_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\console_clear_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_update_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_update_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="console_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\console_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="donate_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\donate_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -20,9 +20,9 @@ namespace Argon.Windows.Forms
     public partial class FormMain : Form
     {
         public FormMain()
-        {            
+        {
             InitializeComponent();
-            
+
             _DeserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
         }
 
@@ -34,8 +34,8 @@ namespace Argon.Windows.Forms
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormMain_Load(object sender, EventArgs e)
-        {                                  
-            UseCaseApplication.Load(this);            
+        {
+            UseCaseApplication.Load(this);
         }
 
         /// <summary>
@@ -49,16 +49,18 @@ namespace Argon.Windows.Forms
 
             dockPanel.SaveAsXml(configFile);
 
-            DialogResult ret = MessageBox.Show(this, "Do you want to exit and save configuration?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult ret = MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (ret == DialogResult.Yes)
             {
-                UseCaseConfig.Save();                
+                UseCaseConfig.Save();
                 return;
-            } else {
+            }
+            else
+            {
                 // bug fix: if user says no the windows does not close
                 e.Cancel = true;
-            }                      
+            }
         }
 
 
@@ -109,11 +111,11 @@ namespace Argon.Windows.Forms
         }
 
         private void mnuViewNetworkAdapters_Click(object sender, EventArgs e)
-        {            
+        {
             UseCaseView.ToggleDisplay(ViewModel.NetworkCardsView);
         }
 
- 
+
 
         /// <summary>
         /// Handles the Click event of the saveToolStripMenuItem control.
@@ -133,7 +135,7 @@ namespace Argon.Windows.Forms
         public void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             bool runDeviceConfig = true;
-            NetworkProfile profile=(NetworkProfile)e.Argument;
+            NetworkProfile profile = (NetworkProfile)e.Argument;
             if (profile == null)
             {
                 // autodetect
@@ -141,9 +143,9 @@ namespace Argon.Windows.Forms
                 runDeviceConfig = false;
             }
 
-            if (profile!=null)            
+            if (profile != null)
             {
-                UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);                
+                UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);
             }
 
             e.Result = profile;
@@ -167,7 +169,7 @@ namespace Argon.Windows.Forms
                 MessageBox.Show("No profile applyed!!! ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             lblStatus.Text = "Ready";
-            progressBar.Value = 0;            
+            progressBar.Value = 0;
         }
 
         /// <summary>
@@ -185,11 +187,11 @@ namespace Argon.Windows.Forms
         {
             this.ShowInTaskbar = true;
             this.Visible = true;
-           // this.WindowState = FormWindowState.Normal;
-            
+            // this.WindowState = FormWindowState.Normal;
+
             this.WindowState = FormWindowState.Normal;
             this.Width = 400;
-            this.Height = 400;           
+            this.Height = 400;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,7 +202,7 @@ namespace Argon.Windows.Forms
 
         private void btnProfileNew_Click(object sender, EventArgs e)
         {
-            UseCaseView.ShowNewProfile(); 
+            UseCaseView.ShowNewProfile();
         }
 
         private void btnProfileSave_Click(object sender, EventArgs e)
@@ -209,20 +211,25 @@ namespace Argon.Windows.Forms
         }
 
         private void btnView_Click(object sender, EventArgs e)
-        {            
-            UseCaseProfile.ShowCurrent();            
+        {
+            UseCaseProfile.ShowCurrent();
         }
 
         private void btnAllProfileLoad_Click(object sender, EventArgs e)
         {
             //Controller.Instance.PersistenceController.Load();
-            
+
             UseCaseProfile.Refresh();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnAllCardsRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnAllCardsRefresh_Click(object sender, EventArgs e)
         {
-            NetworkCardActions.RefreshAll();
+            UseCaseNetworkCard.RefreshNetworkCardListStatus();
         }
 
         /// <summary>
@@ -257,24 +264,24 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileDelete_Click(object sender, EventArgs e)
         {
-            UseCaseProfile.DeleteProfile();            
+            UseCaseProfile.DeleteProfile();
         }
 
         private void applyToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
-            this.ShowInTaskbar = true;            
+        {
+            this.ShowInTaskbar = true;
             // this.WindowState = FormWindowState.Normal;
 
             this.WindowState = FormWindowState.Normal;
             this.Width = 400;
-            this.Height = 400;  
+            this.Height = 400;
 
             this.Visible = true;
         }
 
         private void mnuHelpAbout_Click(object sender, EventArgs e)
-        {        
-            
+        {
+
         }
 
 
@@ -303,10 +310,10 @@ namespace Argon.Windows.Forms
 
         private void rbtnViewProfiles_Click(object sender, EventArgs e)
         {
-            UseCaseView.ToggleDisplay(ViewModel.ProfilesView);            
+            UseCaseView.ToggleDisplay(ViewModel.ProfilesView);
         }
 
-       
+
 
         public void btnRunProfile_Click(object sender, EventArgs e)
         {
@@ -366,7 +373,7 @@ namespace Argon.Windows.Forms
         private void rbtnHelpDonate_Click(object sender, EventArgs e)
         {
             FormDonate form = new FormDonate();
-            form.ShowDialog(this);  
+            form.ShowDialog(this);
         }
 
         /// <summary>
@@ -400,12 +407,12 @@ namespace Argon.Windows.Forms
 
             ab.AppMoreInfo = app;
 
-            ab.ShowDialog(this);       
+            ab.ShowDialog(this);
         }
 
         private void rbtnProfileRun_Click(object sender, EventArgs e)
         {
-            backgroundWorker.RunWorkerAsync(null);           
+            backgroundWorker.RunWorkerAsync(null);
         }
 
         /// <summary>
@@ -432,6 +439,16 @@ namespace Argon.Windows.Forms
         {
             UseCaseProfile.SaveProfile();
         }
-        
+
+        /// <summary>
+        /// Handles the Click event of the rbtnConsoleRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnConsoleRefresh_Click(object sender, EventArgs e)
+        {
+            UseCaseView.ClearConsole();
+        }
+
     }
 }

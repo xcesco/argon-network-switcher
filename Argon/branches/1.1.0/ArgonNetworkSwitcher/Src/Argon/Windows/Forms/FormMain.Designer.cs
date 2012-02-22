@@ -395,7 +395,7 @@ namespace Argon.Windows.Forms
             this.rbtnCardsRefresh.AltKey = null;
             this.rbtnCardsRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardsRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnCardsRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.networkcard_refresh_48x48;
             this.rbtnCardsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardsRefresh.SmallImage")));
             this.rbtnCardsRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardsRefresh.Tag = null;
@@ -410,7 +410,7 @@ namespace Argon.Windows.Forms
             this.rbtnCardView.AltKey = null;
             this.rbtnCardView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardView.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnCardView.Image = global::Argon.Windows.Forms.Properties.Resources.networkcard_view_48x48;
             this.rbtnCardView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardView.SmallImage")));
             this.rbtnCardView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardView.Tag = null;
@@ -450,7 +450,7 @@ namespace Argon.Windows.Forms
             this.rbtnViewConsole.AltKey = null;
             this.rbtnViewConsole.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewConsole.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnViewConsole.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnViewConsole.Image = global::Argon.Windows.Forms.Properties.Resources.console_48x48;
             this.rbtnViewConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewConsole.SmallImage")));
             this.rbtnViewConsole.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewConsole.Tag = null;
@@ -518,7 +518,7 @@ namespace Argon.Windows.Forms
             this.rbtnHelpUpdate.AltKey = null;
             this.rbtnHelpUpdate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnHelpUpdate.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnHelpUpdate.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnHelpUpdate.Image = global::Argon.Windows.Forms.Properties.Resources.check_update_48x48;
             this.rbtnHelpUpdate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpUpdate.SmallImage")));
             this.rbtnHelpUpdate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpUpdate.Tag = null;
@@ -533,7 +533,7 @@ namespace Argon.Windows.Forms
             this.rbtnHelpDonate.AltKey = null;
             this.rbtnHelpDonate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnHelpDonate.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnHelpDonate.Image = global::Argon.Windows.Forms.Properties.Resources.package_view1;
+            this.rbtnHelpDonate.Image = global::Argon.Windows.Forms.Properties.Resources.donate_48x48;
             this.rbtnHelpDonate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpDonate.SmallImage")));
             this.rbtnHelpDonate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpDonate.Tag = null;

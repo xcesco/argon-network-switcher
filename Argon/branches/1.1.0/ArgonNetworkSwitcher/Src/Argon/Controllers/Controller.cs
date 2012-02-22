@@ -63,34 +63,8 @@ namespace Argon.Controllers
                 return _instance;
             }
         }
-
-
-        /// <summary>
-        /// Aggiorna la lista dei NIC presenti sulla macchina
-        /// </summary>
-        public List<WindowsNetworkCard> ActionRefreshNetworkAdapters(ComboBox comboBox)
-        {
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
-
-            comboBox.Items.Clear();
-            comboBox.Items.Add("NONE");
-
-            foreach (WindowsNetworkCard item in lista)
-            {
-                string tempName = item.ViewId + " " + item.Name;
-
-                comboBox.Items.Add(tempName);
-            }
-
-            comboBox.SelectedIndex = 0;
-
-            return lista;
-        }
-
-        
-
-
-
+     
+       
 
         /// <summary>
         /// Handles the Click event of the Profile control.
