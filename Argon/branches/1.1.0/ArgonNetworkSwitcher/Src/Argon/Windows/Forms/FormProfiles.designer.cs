@@ -113,55 +113,55 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem2,
             this.mnuDelete});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(163, 132);
+            this.contextMenu.Size = new System.Drawing.Size(162, 154);
             // 
             // mnuNew
             // 
             this.mnuNew.Name = "mnuNew";
-            this.mnuNew.Size = new System.Drawing.Size(162, 22);
+            this.mnuNew.Size = new System.Drawing.Size(161, 22);
             this.mnuNew.Text = "New profile";
             this.mnuNew.Click += new System.EventHandler(this.mnuNew_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuOpen
             // 
             this.mnuOpen.Name = "mnuOpen";
-            this.mnuOpen.Size = new System.Drawing.Size(162, 22);
+            this.mnuOpen.Size = new System.Drawing.Size(161, 22);
             this.mnuOpen.Text = "Open profile";
             this.mnuOpen.Click += new System.EventHandler(this.mnuOpen_Click);
             // 
             // mnuApply
             // 
             this.mnuApply.Name = "mnuApply";
-            this.mnuApply.Size = new System.Drawing.Size(162, 22);
-            this.mnuApply.Text = "Apply profile";
-            this.mnuApply.Click += new System.EventHandler(this.mnuApply_Click);
+            this.mnuApply.Size = new System.Drawing.Size(161, 22);
+            this.mnuApply.Text = "Run profile";
+            this.mnuApply.Click += new System.EventHandler(this.mnuRun_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuDuplicateProfile
             // 
             this.mnuDuplicateProfile.Name = "mnuDuplicateProfile";
-            this.mnuDuplicateProfile.Size = new System.Drawing.Size(162, 22);
+            this.mnuDuplicateProfile.Size = new System.Drawing.Size(161, 22);
             this.mnuDuplicateProfile.Text = "Duplicate profile";
             this.mnuDuplicateProfile.Click += new System.EventHandler(this.mnuDuplicateProfile_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(159, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuDelete
             // 
             this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(162, 22);
+            this.mnuDelete.Size = new System.Drawing.Size(161, 22);
             this.mnuDelete.Text = "Remove profile";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
@@ -190,7 +190,7 @@ namespace Argon.Windows.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfiles";
             this.TabText = "Profiles ";
-            this.Text = "Profiles ";            
+            this.Text = "Profiles ";
             this.Load += new System.EventHandler(this.FormProfiles_Load);
             this.VisibleChanged += new System.EventHandler(this.FormProfiles_VisibleChanged);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

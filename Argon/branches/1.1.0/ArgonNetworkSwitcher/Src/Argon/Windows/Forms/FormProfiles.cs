@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Windows.Forms;
-using Argon.Controllers;
 using Argon.Windows.Network.Profile;
 using BrightIdeasSoftware;
 using Argon.UseCase;
@@ -98,15 +97,6 @@ namespace Argon.Windows.Forms
             }
         }
 
-        private void mnuApply_Click(object sender, EventArgs e)
-        {
-            if (listView.SelectedObjects.Count > 0)
-            {
-                DataModel.SelectedNetworkProfile = (NetworkProfile)listView.SelectedObject;
-                Controller.Instance.Profile_Click(DataModel.SelectedNetworkProfile, null);
-            }
-        }
-
         /// <summary>
         /// Handles the Click event of the mnuDelete control.
         /// </summary>
@@ -160,6 +150,17 @@ namespace Argon.Windows.Forms
         public override void ViewDataOnForm()
         {
             //TODO: to implements
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the mnuRun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void mnuRun_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.Run();
         }
 
     }
