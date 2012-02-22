@@ -67,10 +67,9 @@ namespace Argon.Windows.Forms
             this.rbtnProfileSave = new System.Windows.Forms.RibbonButton();
             this.rsProfileSeparator = new System.Windows.Forms.RibbonSeparator();
             this.rbtnProfileRun = new System.Windows.Forms.RibbonButton();
-            this.rpCards = new System.Windows.Forms.RibbonPanel();
+            this.rpNetworkCard = new System.Windows.Forms.RibbonPanel();
             this.rbtnCardsRefresh = new System.Windows.Forms.RibbonButton();
             this.rbtnCardView = new System.Windows.Forms.RibbonButton();
-            this.rpNetworkCard = new System.Windows.Forms.RibbonPanel();
             this.rpConsole = new System.Windows.Forms.RibbonPanel();
             this.rtViews = new System.Windows.Forms.RibbonTab();
             this.rpViews = new System.Windows.Forms.RibbonPanel();
@@ -279,7 +278,6 @@ namespace Argon.Windows.Forms
             // rtOperations
             // 
             this.rtOperations.Panels.Add(this.rpProfile);
-            this.rtOperations.Panels.Add(this.rpCards);
             this.rtOperations.Panels.Add(this.rpNetworkCard);
             this.rtOperations.Panels.Add(this.rpConsole);
             this.rtOperations.Tag = null;
@@ -383,12 +381,12 @@ namespace Argon.Windows.Forms
             this.rbtnProfileRun.ToolTipTitle = null;
             this.rbtnProfileRun.Click += new System.EventHandler(this.rbtnProfileRun_Click);
             // 
-            // rpCards
+            // rpNetworkCard
             // 
-            this.rpCards.Items.Add(this.rbtnCardsRefresh);
-            this.rpCards.Items.Add(this.rbtnCardView);
-            this.rpCards.Tag = null;
-            this.rpCards.Text = "network cards";
+            this.rpNetworkCard.Items.Add(this.rbtnCardsRefresh);
+            this.rpNetworkCard.Items.Add(this.rbtnCardView);
+            this.rpNetworkCard.Tag = null;
+            this.rpNetworkCard.Text = "network cards";
             // 
             // rbtnCardsRefresh
             // 
@@ -419,11 +417,6 @@ namespace Argon.Windows.Forms
             this.rbtnCardView.ToolTipImage = null;
             this.rbtnCardView.ToolTipTitle = null;
             this.rbtnCardView.Click += new System.EventHandler(this.rbtnCardView_Click);
-            // 
-            // rpNetworkCard
-            // 
-            this.rpNetworkCard.Tag = null;
-            this.rpNetworkCard.Text = "network card";
             // 
             // rpConsole
             // 
@@ -637,11 +630,10 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonButton rbtnViewNetworkCards;
         public System.Windows.Forms.RibbonButton rbtnConfigSave;
         public System.Windows.Forms.RibbonButton rbtnConfigLoad;
-        private System.Windows.Forms.RibbonPanel rpCards;
+        private System.Windows.Forms.RibbonPanel rpNetworkCard;
         public System.Windows.Forms.RibbonButton rbtnCardsRefresh;
         public System.Windows.Forms.RibbonButton rbtnCardView;
         public System.Windows.Forms.RibbonPanel rpProfilesCollection;
-        private System.Windows.Forms.RibbonPanel rpNetworkCard;
         private System.Windows.Forms.RibbonPanel rpConsole;
         private System.Windows.Forms.RibbonPanel rpHelp;
         private System.Windows.Forms.RibbonButton rbtnHelpAbout;
