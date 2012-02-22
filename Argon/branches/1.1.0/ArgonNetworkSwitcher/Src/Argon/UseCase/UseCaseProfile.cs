@@ -10,7 +10,6 @@ using System.ComponentModel;
 using Argon.Windows.Network;
 using Argon.Windows;
 using Argon.Common;
-using Argon.Controllers;
 using System.Diagnostics;
 using Argon.Windows.Forms;
 using BrightIdeasSoftware;
@@ -271,6 +270,28 @@ namespace Argon.UseCase
             DataModel.NetworkProfileList.Add(newProfile);
 
             Refresh();
+        }
+
+        /// <summary>
+        /// Runs current profile.
+        /// </summary>
+        public static void Run()
+        {
+            if (MyMessageBox.Ask("Do you want to run the profile " + DataModel.SelectedNetworkProfile.Name + "?"))
+            {
+                ViewModel.MainView.backgroundWorker.RunWorkerAsync(DataModel.SelectedNetworkProfile);
+            }
+        }
+
+        /// <summary>
+        /// Runs autodiscovery algorithm for profile detect.
+        /// </summary>
+        public static void Autorun()
+        {
+            if (MyMessageBox.Ask("Run profile automatic detect?"))
+            {
+                ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
+            }
         }
     }
 }

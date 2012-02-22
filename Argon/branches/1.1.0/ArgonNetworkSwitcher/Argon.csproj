@@ -97,13 +97,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Src\Argon\Controllers\BaseActions.cs" />
-    <Compile Include="Src\Argon\Controllers\ConsoleMiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\Controller.cs" />
-    <Compile Include="Src\Argon\Controllers\MiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\NetworkCardActions.cs" />
-    <Compile Include="Src\Argon\Controllers\NetworkProfileActions.cs" />
-    <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
     <Compile Include="Src\Argon\Models\DataModel.cs" />
     <Compile Include="Src\Argon\Models\ViewModel.cs" />
     <Compile Include="Src\Argon\UseCase\UseCaseApplication.cs" />
@@ -372,6 +365,9 @@
     <None Include="Resources\check_update_48x48.png" />
     <None Include="Resources\networkcard_disable_48x48.png" />
     <None Include="Resources\networkcard_enable_48x48.png" />
+    <None Include="Resources\help_48x48.png" />
+    <None Include="Resources\profile_autorun_48x48.png" />
+    <None Include="Resources\profile_run_48x48.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />
