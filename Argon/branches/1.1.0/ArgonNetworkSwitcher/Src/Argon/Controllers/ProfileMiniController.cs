@@ -12,15 +12,6 @@ namespace Argon.Controllers
         {
         }
 
-        public void DuplicateProfile(NetworkProfile profile)
-        {
-            NetworkProfile newProfile = new NetworkProfile();
-            newProfile=NetworkProfile.Copy(profile);
 
-            newProfile.Id=UseCaseProfile.CreateNewProfileId();
-            newProfile.Name = "Copy of " + newProfile.Name;
-
-            DataModel.NetworkProfileList.Add(newProfile);
-        }
     }
 }

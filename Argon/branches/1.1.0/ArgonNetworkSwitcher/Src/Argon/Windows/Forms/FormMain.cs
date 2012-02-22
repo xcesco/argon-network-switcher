@@ -450,6 +450,16 @@ namespace Argon.Windows.Forms
             UseCaseView.ClearConsole();
         }
 
+        private void rbtnCardEnable_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.EnableNetworkCard();
+        }
+
+        private void rbtnCardDisable_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.DisableNetworkCard();
+        }
+
 
     }
 }
