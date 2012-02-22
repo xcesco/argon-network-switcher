@@ -71,6 +71,7 @@ namespace Argon.Windows.Forms
             this.rbtnCardsRefresh = new System.Windows.Forms.RibbonButton();
             this.rbtnCardView = new System.Windows.Forms.RibbonButton();
             this.rpConsole = new System.Windows.Forms.RibbonPanel();
+            this.rbtnConsoleRefresh = new System.Windows.Forms.RibbonButton();
             this.rtViews = new System.Windows.Forms.RibbonTab();
             this.rpViews = new System.Windows.Forms.RibbonPanel();
             this.rbtnViewConsole = new System.Windows.Forms.RibbonButton();
@@ -420,8 +421,24 @@ namespace Argon.Windows.Forms
             // 
             // rpConsole
             // 
+            this.rpConsole.Items.Add(this.rbtnConsoleRefresh);
             this.rpConsole.Tag = null;
             this.rpConsole.Text = "console";
+            // 
+            // rbtnConsoleRefresh
+            // 
+            this.rbtnConsoleRefresh.AltKey = null;
+            this.rbtnConsoleRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnConsoleRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnConsoleRefresh.Image = global::Argon.Windows.Forms.Properties.Resources.console_clear_48x48;
+            this.rbtnConsoleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConsoleRefresh.SmallImage")));
+            this.rbtnConsoleRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnConsoleRefresh.Tag = null;
+            this.rbtnConsoleRefresh.Text = "Refresh";
+            this.rbtnConsoleRefresh.ToolTip = null;
+            this.rbtnConsoleRefresh.ToolTipImage = null;
+            this.rbtnConsoleRefresh.ToolTipTitle = null;
+            this.rbtnConsoleRefresh.Click += new System.EventHandler(this.rbtnConsoleRefresh_Click);
             // 
             // rtViews
             // 
@@ -648,6 +665,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnSmartLoad;
         public System.Windows.Forms.RibbonButton rbtnLoad;
         public System.Windows.Forms.RibbonButton rbtnSave;
+        private System.Windows.Forms.RibbonButton rbtnConsoleRefresh;
         
         public DockPanel Pannello
         {

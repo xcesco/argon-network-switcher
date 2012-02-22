@@ -450,5 +450,6 @@ namespace Argon.Windows.Forms
             UseCaseView.ClearConsole();
         }
 
+
     }
 }
