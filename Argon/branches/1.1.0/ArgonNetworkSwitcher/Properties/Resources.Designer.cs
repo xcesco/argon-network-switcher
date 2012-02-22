@@ -445,6 +445,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap help_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("help_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap index_add {
             get {
                 object obj = ResourceManager.GetObject("index_add", resourceCulture);
@@ -683,6 +690,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap profile_autorun_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_autorun_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap profile_delete_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_delete_48x48", resourceCulture);
@@ -742,6 +756,13 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap profile_replace24x24 {
             get {
                 object obj = ResourceManager.GetObject("profile_replace24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_run_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_run_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

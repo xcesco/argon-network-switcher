@@ -9,7 +9,6 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.Drawing.Printing;
 using Argon.Windows;
 using Argon.Windows.Network.Profile;
-using Argon.Controllers;
 using Argon.Windows.Network;
 using Argon.UseCase;
 using Argon.Models;
@@ -206,12 +205,17 @@ namespace Argon.Windows.Forms
             }
             DisplaySelectedNetworkCard(true);
         }
-        
 
+
+        /// <summary>
+        /// Handles the Click event of the btnRun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         public void btnRun_Click(object sender, EventArgs e)
         {
             UseCaseProfile.SaveProfile();
-            Controller.Instance.Profile_Click(this, e);
+            UseCaseProfile.Run(DataModel.SelectedNetworkProfile);
         }
 
 
