@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
 using System.Threading;
-using Argon.Controllers;
 using Argon.Windows.Network.Profile;
 using Argon.Common;
 using System.Configuration;
@@ -242,10 +241,6 @@ namespace Argon.Windows.Forms
             UseCaseNetworkCard.ShowSelectedNetworkCard();
         }
 
-        private void btnProfileRun_Click(object sender, EventArgs e)
-        {
-            NetworkProfileActions.ApplyProfile();
-        }
 
         /// <summary>
         /// Handles the Click event of the btnProfileRefresh control.
@@ -410,9 +405,14 @@ namespace Argon.Windows.Forms
             ab.ShowDialog(this);
         }
 
+        /// <summary>
+        /// Handles the Click event of the rbtnProfileRun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnProfileRun_Click(object sender, EventArgs e)
-        {
-            backgroundWorker.RunWorkerAsync(null);
+        {            
+            UseCaseProfile.Run();
         }
 
         /// <summary>
@@ -455,9 +455,24 @@ namespace Argon.Windows.Forms
             UseCaseNetworkCard.EnableNetworkCard();
         }
 
+        /// <summary>
+        /// Handles the Click event of the rbtnCardDisable control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnCardDisable_Click(object sender, EventArgs e)
         {
             UseCaseNetworkCard.DisableNetworkCard();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnProfileAutorun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnProfileAutorun_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.RunAutodetect();               
         }
 
 
