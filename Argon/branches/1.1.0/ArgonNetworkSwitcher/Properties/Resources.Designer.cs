@@ -130,6 +130,27 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap check_update_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("check_update_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap console_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("console_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap console_clear_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("console_clear_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap data_disk {
             get {
                 object obj = ResourceManager.GetObject("data_disk", resourceCulture);
@@ -375,6 +396,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap donate_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("donate_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap gear_forbidden {
             get {
                 object obj = ResourceManager.GetObject("gear_forbidden", resourceCulture);
@@ -455,6 +483,20 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap media_play_green1 {
             get {
                 object obj = ResourceManager.GetObject("media_play_green1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap networkcard_refresh_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("networkcard_refresh_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap networkcard_view_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("networkcard_view_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -609,6 +651,13 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap profile_8_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_8_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap profile_9_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profile_9_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

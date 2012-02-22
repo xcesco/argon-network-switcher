@@ -24,21 +24,20 @@ namespace Argon.UseCase
         /// <param name="formMain">The form main.</param>
         public static void Load(FormMain formMain)
         {
+            // default value
+            DataModel.NetworkCardList = new List<WindowsNetworkCard>();
+            DataModel.NetworkProfileList = new List<NetworkProfile>();
 
             // create other forms
             CreateForms(formMain);
 
-            // set 
+            // display form
             DisplayFormsInDefaultPosition();
             
             UseCaseLogger.ShowInfo("Startup program");
 
             // set the event handler
-            NetworkProfileHelper.NotifyEvent += UseCaseLogger.OnNotifyHandler;
-
-            // default value
-            DataModel.NetworkCardList = new List<WindowsNetworkCard>();
-            DataModel.NetworkProfileList = new List<NetworkProfile>();
+            NetworkProfileHelper.NotifyEvent += UseCaseLogger.OnNotifyHandler;            
 
             // load the profiles
             UseCaseConfig.Load();

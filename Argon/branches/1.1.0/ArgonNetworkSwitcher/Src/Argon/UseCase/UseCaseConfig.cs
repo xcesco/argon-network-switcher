@@ -9,11 +9,15 @@ using System.IO;
 
 namespace Argon.UseCase
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class UseCaseConfig
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected const string DEFAULT_FILENAME = "Profiles.xml";
-
-
 
         /// <summary>
         /// Loads the specified file name. If operation is ok, DataModel.NetworkProfileList is filled.
@@ -68,8 +72,7 @@ namespace Argon.UseCase
                 UseCaseLogger.ShowError("Ehi! 0 profiles found!");
             } else{
                 DataModel.NetworkProfileList = list;
-                UseCaseProfile.Refresh();
-                
+                UseCaseProfile.Refresh();                
             }        
             
         }

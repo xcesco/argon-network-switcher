@@ -17,7 +17,7 @@ namespace Argon.Models
                                                 "profile_2_48x48", "profile_3_48x48", 
                                                 "profile_4_48x48", "profile_5_48x48", 
                                                 "profile_6_48x48", "profile_7_48x48", 
-                                                "profile_8_48x48" };
+                                                "profile_8_48x48","profile_9_48x48" };
 
         /// <summary>
         /// Gets or sets the main.

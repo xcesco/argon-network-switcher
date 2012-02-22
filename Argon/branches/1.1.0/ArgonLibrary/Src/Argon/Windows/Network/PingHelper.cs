@@ -20,7 +20,7 @@ namespace Argon.Windows.Network
         {
             bool ret = false;
 
-            if (ip == null || ip.Trim().Length == 0) return false;
+            if (ip == null || ip.Trim().Length == 0 || "0.0.0.0".Equals(ip)) return false;
             Ping pingSender = new Ping();
             PingOptions options = new PingOptions();
 

@@ -256,5 +256,13 @@ namespace Argon.UseCase
 
             return false;
         }
+
+        /// <summary>
+        /// Clears the console.
+        /// </summary>
+        public static void ClearConsole()
+        {
+            ViewModel.ConsoleView.lstBox.Items.Clear();
+        }
     }
 }

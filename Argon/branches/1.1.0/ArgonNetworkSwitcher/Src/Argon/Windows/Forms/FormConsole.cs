@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using Argon.Controllers;
 using Argon.Models;
+using Argon.UseCase;
 
 namespace Argon.Windows.Forms
 {
@@ -75,9 +76,14 @@ namespace Argon.Windows.Forms
         }
 
 
+        /// <summary>
+        /// Handles the Click event of the btnClear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnClear_Click(object sender, EventArgs e)
         {
-            lstBox.Items.Clear();
+            UseCaseView.ClearConsole();           
         }
 
         /// <summary>
