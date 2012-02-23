@@ -176,5 +176,26 @@ namespace Argon.Windows.Network.Wifi
 
             return null;
         }
+
+        /// <summary>
+        /// Gets the wifi profiles for card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
+        public static List<WifiProfile> GetWifiProfilesForCard(WindowsNetworkCard card)
+        {
+            List<WifiProfile> listProfiles = WifiProfiles;
+            List<WifiProfile> ret = new List<WifiProfile>();
+
+            foreach (WifiProfile item in listProfiles)
+            {
+                if (item.InterfaceName.Equals(card.Name))
+                {
+                    ret.Add(item);
+                }
+            }
+
+            return ret;
+        }
     }
 }

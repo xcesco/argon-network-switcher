@@ -7,6 +7,7 @@ using Argon.Windows.Network;
 using BrightIdeasSoftware;
 using Argon.Windows.Forms;
 using Argon.UseCase;
+using Argon.Windows.Controls;
 
 namespace Argon.UseCase
 {
@@ -30,7 +31,14 @@ namespace Argon.UseCase
         /// </summary>
         public static void EnableNetworkCard()
         {
-            SetStatusCard(true);
+            if (DataModel.SelectedNetworkCard == null){
+                MyMessageBox.ShowMessage("No network card selected!");
+                return;
+            }
+            if (MyMessageBox.Ask("Do you want to enable network card " + DataModel.SelectedNetworkCard.Name + "?"))
+            {
+                SetStatusCard(true);
+            }
         }
 
         /// <summary>
@@ -57,7 +65,15 @@ namespace Argon.UseCase
         /// </summary>
         public static void DisableNetworkCard()
         {
-            SetStatusCard(false);
+            if (DataModel.SelectedNetworkCard == null)
+            {
+                MyMessageBox.ShowMessage("No network card selected!");
+                return;
+            }
+            if (MyMessageBox.Ask("Do you want to enable network card " + DataModel.SelectedNetworkCard.Name + "?"))
+            {
+                SetStatusCard(false);
+            }
         }
 
         /// <summary>
@@ -86,6 +102,11 @@ namespace Argon.UseCase
         /// </summary>
         public static void ShowSelectedNetworkCard()
         {
+            if (DataModel.SelectedNetworkCard == null)
+            {
+                MyMessageBox.ShowMessage("No network card selected!");
+                return;
+            }
             Show(DataModel.SelectedNetworkCard);
         }
 

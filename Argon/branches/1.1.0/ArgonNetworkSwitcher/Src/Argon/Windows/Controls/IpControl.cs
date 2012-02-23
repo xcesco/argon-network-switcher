@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Argon.Windows;
 using Argon.Windows.Network;
+using Argon.Windows.Network.Wifi;
 
 namespace Argon.Windows.Controls
 {
@@ -61,6 +62,30 @@ namespace Argon.Windows.Controls
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether [wifi profile selected].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [wifi profile selected]; otherwise, <c>false</c>.
+        /// </value>
+        public bool WifiProfileSelected
+        {
+            get { return this.cbWifi.Checked; }
+            set { this.cbWifi.Checked = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the wifi profile SSID.
+        /// </summary>
+        /// <value>
+        /// The wifi profile SSID.
+        /// </value>
+        public String WifiProfileSSID
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Displays the configuration.
         /// </summary>
         protected void DisplayConfiguration()
@@ -71,7 +96,7 @@ namespace Argon.Windows.Controls
                 cbDynamicDNS.Checked = true;
                 return;
             }
-
+            
             cbDHCPEnabled.Checked = _configuration.Dhcp;
             txtIP.IpAddress = _configuration.IpAddress;
             txtSubnetMask.IpAddress = _configuration.SubnetMask;
@@ -82,6 +107,29 @@ namespace Argon.Windows.Controls
             txtAlternativeDNS.IpAddress = _configuration.Dns2;
 
             txtMacAddress.Text = _configuration.MacAddress;
+
+            // for wifi card
+            if (_configuration.CardType == WindowsNetworkCardType.WIRELESS)
+            {                
+                WifiProfile currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(_configuration);
+
+                List<WifiProfile> listWifiProfile=WifiProfileManager.GetWifiProfilesForCard(_configuration);
+
+                cbWifiProfile.Items.Clear();
+                cbWifiProfile.Items.Add("");
+                foreach (WifiProfile item in listWifiProfile)
+                {
+                    cbWifiProfile.Items.Add(item.SSID);
+                }
+
+                cbWifi.Checked = WifiProfileSelected;
+                cbWifiProfile.Text = WifiProfileSSID;
+            }
+            else
+            {
+                cbWifi.Checked = false;
+                cbWifiProfile.Text = "";
+            }
         }
 
         /// <summary>
@@ -98,6 +146,8 @@ namespace Argon.Windows.Controls
             _configuration.DynamicDNS = cbDynamicDNS.Checked;
             _configuration.Dns = txtPrimaryDNS.IpAddress;
             _configuration.Dns2 = txtAlternativeDNS.IpAddress;
+
+            WifiProfileSSID = cbWifiProfile.Text;
         }
 
         private void cbDHCPEnabled_CheckedChanged(object sender, EventArgs e)
@@ -133,6 +183,16 @@ namespace Argon.Windows.Controls
                 txtPrimaryDNS.Enabled = true;
                 txtAlternativeDNS.Enabled = true;
             }
+        }
+
+        /// <summary>
+        /// Handles the CheckedChanged event of the cbWifi control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void cbWifi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cbWifi.Checked) cbWifiProfile.Text = "";
         }
     }
 }
