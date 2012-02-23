@@ -13,6 +13,7 @@ using Argon.Windows.Network;
 using Argon.UseCase;
 using Argon.Models;
 using System.Diagnostics;
+using Argon.Windows.Network.Wifi;
 
 namespace Argon.Windows.Forms
 {
@@ -48,7 +49,7 @@ namespace Argon.Windows.Forms
         /// <value>
         /// The network card.
         /// </value>
-        internal IWindowsNetworkCardInfo SelectedNetworkCard { get; set; }
+        internal WindowsNetworkCard SelectedNetworkCard { get; set; }
 
         /// <summary>
         /// Handles the Load event of the FormProfile control.
@@ -130,6 +131,7 @@ namespace Argon.Windows.Forms
                 temp = SelectedNetworkCard.ViewId + " " + SelectedNetworkCard.Name;
 
                 WindowsNetworkCard nic = new WindowsNetworkCard();
+
                 // visualizziamo i dati della configurazione
                 nic.Dhcp = SelectedNetworkCard.Dhcp;
                 nic.IpAddress = SelectedNetworkCard.IpAddress;
@@ -140,8 +142,22 @@ namespace Argon.Windows.Forms
                 nic.Dns2 = SelectedNetworkCard.Dns2;
                 nic.MacAddress = SelectedNetworkCard.MacAddress;
                 nic.HardwareName = SelectedNetworkCard.HardwareName;
+                nic.Name = SelectedNetworkCard.Name;
+                nic.Id = SelectedNetworkCard.Id;
+                nic.CardType = SelectedNetworkCard.CardType;
 
-                ipControl.Configuration = nic;                
+                // assign wifi before config
+                ipControl.WifiProfileSelected = false;
+                ipControl.WifiProfileSSID = "";
+                if (Profile.AssociatedWifiSSID != null && Profile.AssociatedWifiSSID.Length > 0)
+                {
+                    ipControl.WifiProfileSelected = true;
+                    ipControl.WifiProfileSSID = Profile.AssociatedWifiSSID;
+                }
+
+                ipControl.Configuration = nic;
+
+                
             }
             else
             {
@@ -191,7 +207,18 @@ namespace Argon.Windows.Forms
                         {
                             if (item.ViewId.Equals(work))
                             {
-                                SelectedNetworkCard = item;                                
+                                SelectedNetworkCard = item;
+
+                                if (item.CardType == WindowsNetworkCardType.WIRELESS)
+                                {
+                                    // if present get the active profile
+                                    WifiProfile wifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(item);                                                                        
+                                    if (wifiProfile!=null)                                  
+                                    {
+                                        ipControl.WifiProfileSelected = true;
+                                        Profile.AssociatedWifiSSID = wifiProfile.SSID;
+                                    }
+                                }
                                 break;
                             }
                         }
@@ -270,6 +297,10 @@ namespace Argon.Windows.Forms
                 profile.NetworkCardInfo = ipControl.Configuration;
             }
 
+            profile.AssociatedWifiSSID = "";
+            if (ipControl.WifiProfileSelected)
+                profile.AssociatedWifiSSID = ipControl.WifiProfileSSID;
+
             profile.ProxyConfig = proxyPanel.Configuration;
             profile.DriveMapList = driveMapListView.Items;
             profile.ExecList = applicationsListView.Items;
@@ -307,17 +338,17 @@ namespace Argon.Windows.Forms
             comboBox.SelectedIndex = 0;
 
             // abbiamo una scheda di rete
-            if (SelectedNetworkCard!=null && SelectedNetworkCard.Id.Length > 0)
-            {
-                
+            if (Profile.NetworkCardInfo != null && Profile.NetworkCardInfo.Id.Length > 0)
+            {                
                 bool bTrovata = false;
                 // selezioniamo dalla lista
                 int i = 1;
                 foreach (WindowsNetworkCard item in lista)
                 {
-                    if (item.Id.Equals(SelectedNetworkCard.Id))
+                    if (item.Id.Equals(Profile.NetworkCardInfo.Id))
                     {
                         // l'abbiamo trovata
+                        SelectedNetworkCard = item;
                         bTrovata = true;                        
                         txtSelectedCard.Text = item.ViewId + " " + item.Name;
                         int currentNetworkCardIndex = i;
@@ -327,9 +358,7 @@ namespace Argon.Windows.Forms
                     i++;
                 }
 
-                DisplaySelectedNetworkCard(bTrovata);
-
-                
+                DisplaySelectedNetworkCard(bTrovata);                
             }
 
         }
@@ -339,9 +368,7 @@ namespace Argon.Windows.Forms
         /// </summary>
         public override void ViewDataOnForm()
         {
-            NetworkProfile profile = Profile;
-            SelectedNetworkCard = profile.NetworkCardInfo;
-
+            NetworkProfile profile = Profile;           
             RefreshNetworkAdapter();
             
             txtName.Text = profile.Name;
