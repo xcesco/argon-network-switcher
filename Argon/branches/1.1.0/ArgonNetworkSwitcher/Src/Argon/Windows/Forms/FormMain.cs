@@ -310,8 +310,15 @@ namespace Argon.Windows.Forms
 
 
 
+        /// <summary>
+        /// Handles the Click event of the btnRunProfile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         public void btnRunProfile_Click(object sender, EventArgs e)
         {
+            DataModel.SelectedNetworkProfile = (NetworkProfile)(((RibbonButton)sender)).Tag;
+            UseCaseProfile.Run();
         }
 
         /// <summary>
