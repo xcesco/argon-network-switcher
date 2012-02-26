@@ -368,6 +368,7 @@
     <None Include="Resources\help_48x48.png" />
     <None Include="Resources\profile_autorun_48x48.png" />
     <None Include="Resources\profile_run_48x48.png" />
+    <None Include="Resources\proxy_124x40.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />

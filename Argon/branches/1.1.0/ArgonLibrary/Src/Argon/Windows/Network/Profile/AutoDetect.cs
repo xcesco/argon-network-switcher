@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using Argon.Windows.Network;
 using Argon.Windows.Network.Wifi;
-using Argon.Windows.Network.Profile;
 using System.Diagnostics;
 
-namespace Windows.Network.Profile
+namespace Argon.Windows.Network.Profile
 {
     /// <summary>
     /// 

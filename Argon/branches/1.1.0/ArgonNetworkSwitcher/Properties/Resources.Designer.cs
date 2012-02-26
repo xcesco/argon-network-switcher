@@ -795,9 +795,9 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap proxy_300x100 {
+        public static System.Drawing.Bitmap proxy_124x40 {
             get {
-                object obj = ResourceManager.GetObject("proxy_300x100", resourceCulture);
+                object obj = ResourceManager.GetObject("proxy_124x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -323,6 +323,8 @@ namespace Argon.Windows.Forms
             this.ipControl.Name = "ipControl";
             this.ipControl.Size = new System.Drawing.Size(1163, 455);
             this.ipControl.TabIndex = 2;
+            this.ipControl.WifiProfileSelected = false;
+            this.ipControl.WifiProfileSSID = null;
             // 
             // tp2Proxy
             // 
@@ -342,10 +344,10 @@ namespace Argon.Windows.Forms
             this.proxyPanel.Configuration = null;
             this.proxyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.proxyPanel.Location = new System.Drawing.Point(3, 3);
-            this.proxyPanel.LogoImage = global::Argon.Windows.Forms.Properties.Resources.proxy_300x100;
+            this.proxyPanel.LogoImage = global::Argon.Windows.Forms.Properties.Resources.proxy_124x40;
             this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
             this.proxyPanel.Name = "proxyPanel";
-            this.proxyPanel.Size = new System.Drawing.Size(1163, 452);
+            this.proxyPanel.Size = new System.Drawing.Size(1163, 455);
             this.proxyPanel.TabIndex = 2;
             // 
             // tp3DriveMap
@@ -365,7 +367,7 @@ namespace Argon.Windows.Forms
             this.driveMapListView.Location = new System.Drawing.Point(0, 0);
             this.driveMapListView.MinimumSize = new System.Drawing.Size(560, 312);
             this.driveMapListView.Name = "driveMapListView";
-            this.driveMapListView.Size = new System.Drawing.Size(1169, 458);
+            this.driveMapListView.Size = new System.Drawing.Size(1169, 461);
             this.driveMapListView.TabIndex = 1;
             // 
             // tp4Printers
@@ -504,6 +506,7 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
+            //this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
             this.networkCardListView.Size = new System.Drawing.Size(1169, 458);
             this.networkCardListView.TabIndex = 0;
             // 
