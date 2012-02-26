@@ -69,8 +69,11 @@ namespace Argon.UseCase
                 // 2 - refresh the ribbonPanel in mainView            
                 rButton = new RibbonButton();
 
-                rButton.Text = "";
+                
+                rButton.Text = item.Name;
+                rButton.ToolTip = item.Name;
                 rButton.ToolTipTitle = item.Name;
+              
                 rButton.SmallImage = UseCaseApplication.GetImage(item.ImageName);
                 rButton.Tag = item;
                 //rButton.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
