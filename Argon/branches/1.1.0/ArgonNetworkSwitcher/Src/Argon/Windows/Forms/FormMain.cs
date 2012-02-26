@@ -138,7 +138,7 @@ namespace Argon.Windows.Forms
             if (profile == null)
             {
                 // autodetect
-                profile = UseCaseProfile.RunAutodetect();
+                profile = NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
                 runDeviceConfig = false;
             }
 
@@ -472,7 +472,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnProfileAutorun_Click(object sender, EventArgs e)
         {
-            UseCaseProfile.RunAutodetect();               
+            UseCaseProfile.RunAutoDetect();               
         }
 
 

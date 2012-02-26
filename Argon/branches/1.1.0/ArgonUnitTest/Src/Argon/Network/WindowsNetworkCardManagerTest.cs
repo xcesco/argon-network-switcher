@@ -6,6 +6,8 @@ using Argon.OperatingSystem;
 using System.Diagnostics;
 using System.Management;
 using Argon.Windows.Network;
+using Argon.Common;
+using Argon.Windows.Network.Wifi;
 
 namespace Argon.Windows.Network
 {
@@ -169,5 +171,41 @@ namespace Argon.Windows.Network
             }
             Debug.WriteLine("Esecuzione terminata");
         }
+
+        [TestMethod]
+        public void TestPerformance1()
+        {
+            PerformanceUtility pu = new PerformanceUtility();
+            pu.StartTimer();
+            List<WindowsNetworkCard> items=WindowsNetworkCardManager.EnabledWindowsNetworkCardList;
+            long time=pu.GetEnlapsedTime();
+
+            Debug.WriteLine("Executed EnabledWindowsNetworkCardList in "+time+" ms");
+        }
+
+        [TestMethod]
+        public void TestPerformance2()
+        {
+            PerformanceUtility pu = new PerformanceUtility();
+            pu.StartTimer();
+            List<WindowsNetworkCard> items = WindowsNetworkCardManager.WindowsNetworkCardList;
+            long time = pu.GetEnlapsedTime();
+
+            Debug.WriteLine("Executed WindowsNetworkCardList in " + time + " ms");
+        }
+
+        [TestMethod]
+        public void TestPerformance3()
+        {
+            PerformanceUtility pu = new PerformanceUtility();
+            pu.StartTimer();
+            WifiProfile items = WifiProfileManager.ActiveWifiProfile;
+            long time = pu.GetEnlapsedTime();
+
+            Debug.WriteLine("Executed WifiProfileManager.ActiveWifiProfile in " + time + " ms");
+        }
+
+        
+
     }
 }

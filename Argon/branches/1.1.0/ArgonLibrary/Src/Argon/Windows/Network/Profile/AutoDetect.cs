@@ -13,14 +13,18 @@ namespace Argon.Windows.Network.Profile
     /// </summary>
     internal static class AutoDetect
     {
-        
+        internal const int WAIT_AFTER_SETUP = NetworkProfileHelper.TIME_WAIT;
+        internal const int WAIT_BEFORE_PING = NetworkProfileHelper.TIME_WAIT * 2;
 
         /// <summary>
         /// Autodetects the network profile. For the moment it works only for wifi connections!
         /// If no connections found, it return null.
+        /// Use
+        ///     WindowsNetworkCardManager.EnabledWindowsNetworkCardList
+        ///     WifiProfileManager.ActiveWifiProfile;
         /// </summary>
         /// 
-        /// <param name="profiles">The profiles.</param>
+        /// <param name="profiles">profiles.</param>
         /// <returns></returns>
         public static NetworkProfile AutodetectNetworkProfile(List<NetworkProfile> profiles)
         {
@@ -38,8 +42,9 @@ namespace Argon.Windows.Network.Profile
 
             // enable card
             List<WindowsNetworkCard> enabledCardList = WindowsNetworkCardManager.EnabledWindowsNetworkCardList;
-            // wifi connected 
-            WifiProfile currentWifiProfile = WifiProfileManager.ActiveWifiProfile;
+            
+            // wifi connected, initially dont use it
+            WifiProfile currentWifiProfile = null;
 
             // order list by maxSpeed
             enabledCardList.Sort(CompareCardBySpeed);
@@ -55,34 +60,34 @@ namespace Argon.Windows.Network.Profile
             foreach (NetworkProfile item in enabledProfileList)
             {
                 NetworkProfileHelper.FireNotifyEvent("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
-
-                WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, false);
-
+                //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, false);
                 NetworkProfileHelper.RunDisableNetworkCardsSetup(item);
-
                 NetworkProfileHelper.RunNetworkCardSetup(item);
-
-                //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, true);
+                
 
                 // wait for a while
-                NetworkProfileHelper.FireNotifyEvent("Wait " + (NetworkProfileHelper.TIME_WAIT * 3) + " ms.");
-                System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 3);
+                NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
+                System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
 
                 WindowsNetworkCard card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
-
-                // refresh current WifiProfile
-                currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(card);
-
-                if (currentWifiProfile != null && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) && card.NetConnectionStatus == 2)
+                
+                if (card.CardType == WindowsNetworkCardType.WIRELESS)
                 {
-                    // ok, we found it!!!
-                    selectedProfile = item;
-                    NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
-                    NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + " without do anything else!!");
-                    break;
+                    
+                    // get current wifi profile only for wifi card                    
+                    currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(card);
+
+                    if (currentWifiProfile != null && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) && card.NetConnectionStatus == 2)
+                    {
+                        // ok, we found it!!!
+                        selectedProfile = item;
+                        NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+                        NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + " without do anything else!!");
+                        break;
+                    }
                 }
                 else
-                {
+                {                   
                     pingOk = false;
 
                     NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are in status " + card.NetConnectionStatus);
@@ -98,7 +103,7 @@ namespace Argon.Windows.Network.Profile
                         NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + "!!");
                         break;
                     }
-                }
+                }              
 
                 NetworkProfileHelper.FireNotifyEvent("Stop analizing profile " + item.Name + ", go to next profile");
             }
@@ -118,10 +123,11 @@ namespace Argon.Windows.Network.Profile
             return selectedProfile;
         }
 
+
         /// <summary>
         /// Setups the network card for autodetect. Gets the nic associated to profiles and
         /// try to enable it. Then, disable every nic that not have a profile associated.
-        /// Then wait for a while
+        /// Use WindowsNetworkCardManager.WindowsNetworkCardList
         /// </summary>
         /// <param name="profiles">The profiles.</param>
         internal static void SetupNetworkCardForAutodetect(List<NetworkProfile> profiles)
@@ -163,9 +169,10 @@ namespace Argon.Windows.Network.Profile
                 }
             }
             // wait for a while
-            Debug.WriteLine("Wait " + (NetworkProfileHelper.TIME_WAIT * 2) + " ms.");
-            System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 2);
+            Debug.WriteLine("Wait " + WAIT_AFTER_SETUP + " ms.");
+            System.Threading.Thread.Sleep(WAIT_AFTER_SETUP);
         }
+
 
         /// <summary>
         /// Finds the valid network profiles. Filter the profile with enabled card. If a profile has an SSI associated
@@ -219,6 +226,12 @@ namespace Argon.Windows.Network.Profile
             return enabledProfileList;
         }
 
+        /// <summary>
+        /// Compares the card by speed.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <returns></returns>
         private static int CompareCardBySpeed(WindowsNetworkCard x, WindowsNetworkCard y)
         {
             return x.MaxSpeed.CompareTo(y.MaxSpeed);
