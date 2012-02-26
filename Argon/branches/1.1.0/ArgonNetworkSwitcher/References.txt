@@ -38,3 +38,7 @@ http://thejoyofcode.com/Show_and_Hide_tab_pages_in_Windows_Forms.aspx
 ImageListPopup
 --------------
 http://www.codeproject.com/Articles/3705/ImageListPopup-a-C-class-which-pops-up-a-window-to
+
+Splash Screen
+-------------
+http://www.vcskicks.com/splash-screen.php
