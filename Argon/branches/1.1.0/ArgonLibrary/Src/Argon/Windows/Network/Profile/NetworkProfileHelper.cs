@@ -7,7 +7,6 @@ using System.Diagnostics;
 using System.IO;
 using Argon.Windows.Network.Wifi;
 using Argon.Common;
-using Windows.Network.Profile;
 
 
 namespace Argon.Windows.Network.Profile
