@@ -169,9 +169,12 @@ namespace Argon.UseCase
         /// Runs the autodetect.
         /// </summary>
         /// <returns></returns>
-        public static NetworkProfile RunAutodetect()
+        public static void RunAutoDetect()
         {
-            return NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
+            if (MyMessageBox.Ask("Run profile automatic detect?"))
+            {
+                ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
+            }            
         }
 
         /// <summary>
@@ -277,21 +280,16 @@ namespace Argon.UseCase
         /// </summary>
         public static void Run()
         {
+            if (DataModel.SelectedNetworkProfile == null)
+            {
+                MyMessageBox.ShowMessage("No profile selected!");
+                return;
+            }
             if (MyMessageBox.Ask("Do you want to run the profile " + DataModel.SelectedNetworkProfile.Name + "?"))
             {
                 ViewModel.MainView.backgroundWorker.RunWorkerAsync(DataModel.SelectedNetworkProfile);
             }
         }
 
-        /// <summary>
-        /// Runs autodiscovery algorithm for profile detect.
-        /// </summary>
-        public static void Autorun()
-        {
-            if (MyMessageBox.Ask("Run profile automatic detect?"))
-            {
-                ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
-            }
-        }
     }
 }

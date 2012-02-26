@@ -48,7 +48,7 @@ namespace Argon.Windows.Network
             {
                 List<WindowsNetworkCard> list = GetWindowsNetworkCardList();
 
-                return ConvertListToTable(list);                
+                return ConvertListToTable(list);
             }
         }
 
@@ -59,11 +59,16 @@ namespace Argon.Windows.Network
             {
                 List<WindowsNetworkCard> list = EnabledWindowsNetworkCardList;
 
-                return ConvertListToTable(list);                
+                return ConvertListToTable(list);
             }
         }
 
-        internal static Dictionary<string, WindowsNetworkCard> ConvertListToTable(List<WindowsNetworkCard> list)
+        /// <summary>
+        /// Converts the list to table. The key is the Id field
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <returns></returns>
+        public static Dictionary<string, WindowsNetworkCard> ConvertListToTable(List<WindowsNetworkCard> list)
         {
             Dictionary<string, WindowsNetworkCard> table = new Dictionary<string, WindowsNetworkCard>();
 
@@ -140,7 +145,7 @@ namespace Argon.Windows.Network
                     throw (new Exception("Operating system not supported"));
             }
 
-            foreach(WindowsNetworkCard item in array)
+            foreach (WindowsNetworkCard item in array)
             {
                 // try to determine the card type
                 // wifi
@@ -148,7 +153,7 @@ namespace Argon.Windows.Network
                 if (CheckIfVirtualCard(item)) item.CardType = WindowsNetworkCardType.VIRTUAL;
                 if (CheckIfBluetoothCard(item)) item.CardType = WindowsNetworkCardType.BLUETOOTH;
                 if (CheckIfFireWireCard(item)) item.CardType = WindowsNetworkCardType.FIREWIRE;
-                if (item.CardType==WindowsNetworkCardType.UNKNOWN) item.CardType = WindowsNetworkCardType.ETHERNET;
+                if (item.CardType == WindowsNetworkCardType.UNKNOWN) item.CardType = WindowsNetworkCardType.ETHERNET;
             }
 
 
@@ -183,7 +188,7 @@ namespace Argon.Windows.Network
         /// <returns></returns>
         internal static bool CheckIfWirelessCard(WindowsNetworkCard card)
         {
-            return CheckIfPresentInHardwareName(card,"Wireless","WLAN","Wi-Fi","802.11a", "802.11b", "802.11g", "802.11n");            
+            return CheckIfPresentInHardwareName(card, "Wireless", "WLAN", "Wi-Fi", "802.11a", "802.11b", "802.11g", "802.11n");
         }
 
         /// <summary>
@@ -193,7 +198,7 @@ namespace Argon.Windows.Network
         /// <returns></returns>
         internal static bool CheckIfVirtualCard(WindowsNetworkCard card)
         {
-            return CheckIfPresentInHardwareName(card,"VMWare", "VirtualBox");            
+            return CheckIfPresentInHardwareName(card, "VMWare", "VirtualBox");
         }
 
         /// <summary>
@@ -203,14 +208,14 @@ namespace Argon.Windows.Network
         /// <returns></returns>
         internal static bool CheckIfBluetoothCard(WindowsNetworkCard card)
         {
-            return CheckIfPresentInHardwareName(card,"Bluetooth");            
-        } 
+            return CheckIfPresentInHardwareName(card, "Bluetooth");
+        }
 
         internal static bool CheckIfFireWireCard(WindowsNetworkCard card)
         {
-            return CheckIfPresentInHardwareName(card,"1394","Firewire" );            
-        }  
-         
+            return CheckIfPresentInHardwareName(card, "1394", "Firewire");
+        }
+
 
 
         /// <summary>
@@ -219,13 +224,14 @@ namespace Argon.Windows.Network
         /// <param name="card">The card.</param>
         public static void WriteDataIntoRegistry(IWindowsNetworkCardInfo card)
         {
-            if (OSInfo.Name == "Windows XP")
+            switch (OSInfo.OperatingSystem)
             {
-                WinXPNetworkCardManager.WriteDataIntoRegistry(card);
-            }
-            else
-            {
-                Win7NetworkCardManager.WriteDataIntoRegistry(card);
+                case OperatingSystemType.WINDOWS_XP:
+                    WinXPNetworkCardManager.WriteDataIntoRegistry(card);
+                    break;
+                case OperatingSystemType.WINDOWS_7:
+                    Win7NetworkCardManager.WriteDataIntoRegistry(card);
+                    break;
             }
         }
 
@@ -235,13 +241,14 @@ namespace Argon.Windows.Network
         /// <param name="card">The card.</param>
         public static void Apply(IWindowsNetworkCardInfo card)
         {
-            if (OSInfo.Name == "Windows XP")
+            switch (OSInfo.OperatingSystem)
             {
-                WinXPNetworkCardManager.Apply(card);
-            }
-            else
-            {
-                Win7NetworkCardManager.Apply(card);
+                case OperatingSystemType.WINDOWS_XP:
+                    WinXPNetworkCardManager.Apply(card);
+                    break;
+                case OperatingSystemType.WINDOWS_7:
+                    Win7NetworkCardManager.Apply(card);
+                    break;
             }
         }
     }
