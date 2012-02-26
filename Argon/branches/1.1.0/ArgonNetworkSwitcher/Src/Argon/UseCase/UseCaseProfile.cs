@@ -171,7 +171,7 @@ namespace Argon.UseCase
         /// <returns></returns>
         public static NetworkProfile RunAutodetect()
         {
-            return NetworkProfileHelper.AutodetectNetworkProfile(DataModel.NetworkProfileList);
+            return NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
         }
 
         /// <summary>
