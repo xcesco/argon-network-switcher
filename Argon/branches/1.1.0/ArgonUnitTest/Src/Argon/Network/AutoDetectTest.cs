@@ -72,7 +72,7 @@ namespace Argon.Windows.Network
             // load test profiles
             List<NetworkProfile> networkProfileList = SetupProfiles();
 
-            NetworkProfile current=NetworkProfileHelper.AutodetectNetworkProfile(networkProfileList);
+            NetworkProfile current=NetworkProfileHelper.AutoDetectNetworkProfile(networkProfileList);
 
 
             if (current != null) { Console.WriteLine("Profile name: {0}, Wifi SSID: {1} ", current.Name, current.AssociatedWifiSSID); }

@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Text;
-//using NUnit.Framework;
-//using NUnit.Framework.SyntaxHelpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Argon.Windows;
 
@@ -20,7 +18,7 @@ namespace Argon.OperatingSystem
                 Console.WriteLine(item);
             }
 
-            bool esito = PrinterManager.SetDefaultPrinter(@"\\dc04insiel\TS-PAD-PT-1");
+            bool esito = PrinterManager.SetDefaultPrinter(@"\\host\printer");
             Assert.IsTrue(esito);
         }
     }
