@@ -97,7 +97,7 @@ namespace Argon.Windows.Network
                     Console.WriteLine(nic.Description + " = " + nic.Enabled + " " + nic.Status);
                     Console.WriteLine(nic.Connected);
                     // if nic is connected we insert it in enabled card list
-                    if (nic.Connected)
+                    if (nic.Connected && (nic.CardType==WindowsNetworkCardType.WIRELESS || nic.CardType==WindowsNetworkCardType.ETHERNET))
                     {
                         enabledCardList.Add(nic);
                     }
@@ -198,7 +198,7 @@ namespace Argon.Windows.Network
         /// <returns></returns>
         internal static bool CheckIfVirtualCard(WindowsNetworkCard card)
         {
-            return CheckIfPresentInHardwareName(card, "VMWare", "VirtualBox");
+            return CheckIfPresentInHardwareName(card, "VMWare", "VirtualBox", "VPN");
         }
 
         /// <summary>
