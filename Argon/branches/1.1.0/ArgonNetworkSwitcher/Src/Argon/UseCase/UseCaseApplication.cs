@@ -24,6 +24,10 @@ namespace Argon.UseCase
         /// <param name="formMain">The form main.</param>
         public static void Load(FormMain formMain)
         {
+            Version curVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;
+
+            formMain.Text += " - " + curVersion.Major + "." + curVersion.Minor + "." + curVersion.Build;
+
             // default value
             DataModel.NetworkCardList = new List<WindowsNetworkCard>();
             DataModel.NetworkProfileList = new List<NetworkProfile>();
