@@ -60,13 +60,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap Argon {
-            get {
-                object obj = ResourceManager.GetObject("Argon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap arrow_down_blue {
             get {
                 object obj = ResourceManager.GetObject("arrow_down_blue", resourceCulture);
@@ -483,6 +476,13 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap lightbulb_on_16x16 {
             get {
                 object obj = ResourceManager.GetObject("lightbulb_on_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap logo_1_2_560x256 {
+            get {
+                object obj = ResourceManager.GetObject("logo_1_2_560x256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
