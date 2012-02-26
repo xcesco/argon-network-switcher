@@ -14,7 +14,7 @@ namespace Argon.Windows.Network.Profile
     internal static class AutoDetect
     {
         internal const int WAIT_AFTER_SETUP = NetworkProfileHelper.TIME_WAIT;
-        internal const int WAIT_BEFORE_PING = NetworkProfileHelper.TIME_WAIT * 2;
+        internal const int WAIT_BEFORE_PING = NetworkProfileHelper.TIME_WAIT ;
 
         /// <summary>
         /// Autodetects the network profile. For the moment it works only for wifi connections!
@@ -40,44 +40,20 @@ namespace Argon.Windows.Network.Profile
 
             NetworkProfile selectedProfile = null;
 
+            // one or more card (not only wifi)
+            // wifi connected, 
+            WifiProfile currentWifiProfile = WifiProfileManager.ActiveWifiProfile;
+
             // enable card
             List<WindowsNetworkCard> enabledCardList = WindowsNetworkCardManager.EnabledWindowsNetworkCardList;
-            
-            // wifi connected, initially dont use it
-            WifiProfile currentWifiProfile = null;
 
-            // order list by maxSpeed
-            enabledCardList.Sort(CompareCardBySpeed);
-
-            // if there's no enabled card, it's a problem!
-            if (enabledCardList.Count == 0) { NetworkProfileHelper.FireNotifyEvent("No card enabled, found"); return null; }
-
-            List<NetworkProfile> enabledProfileList = FindValidNetworkProfiles(profiles, enabledCardList, currentWifiProfile);
-
-            // assert: enabledProfile contains the right profiles. Now we have to test it. 
-            // the first with ping ok it's ok!
-            bool pingOk;
-            foreach (NetworkProfile item in enabledProfileList)
+            if (enabledCardList.Count == 1 && enabledCardList[0].CardType == WindowsNetworkCardType.WIRELESS && currentWifiProfile.SSID!=null)
             {
-                NetworkProfileHelper.FireNotifyEvent("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
-                //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, false);
-                NetworkProfileHelper.RunDisableNetworkCardsSetup(item);
-                NetworkProfileHelper.RunNetworkCardSetup(item);
-                
-
-                // wait for a while
-                NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
-                System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
-
-                WindowsNetworkCard card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
-                
-                if (card.CardType == WindowsNetworkCardType.WIRELESS)
+                WindowsNetworkCard card=enabledCardList[0];
+                // only a wifi connection avaible
+                foreach (NetworkProfile item in profiles)
                 {
-                    
-                    // get current wifi profile only for wifi card                    
-                    currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(card);
-
-                    if (currentWifiProfile != null && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) && card.NetConnectionStatus == 2)
+                    if (item.NetworkCardInfo.Id.Equals(card.Id) && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID))
                     {
                         // ok, we found it!!!
                         selectedProfile = item;
@@ -86,36 +62,79 @@ namespace Argon.Windows.Network.Profile
                         break;
                     }
                 }
-                else
-                {                   
-                    pingOk = false;
-
-                    NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are in status " + card.NetConnectionStatus);
-                    // test both static config or dynamic config
-                    pingOk = PingHelper.RunPing(card.GatewayAddress);
-                    pingOk = pingOk || PingHelper.RunPing(card.CurrentGatewayAddress);
-
-                    NetworkProfileHelper.FireNotifyEvent("For card " + card.Name + " and profile " + item.Name + ", ping to gateway are " + pingOk);
-
-                    if (pingOk)
-                    {
-                        selectedProfile = item;
-                        NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + "!!");
-                        break;
-                    }
-                }              
-
-                NetworkProfileHelper.FireNotifyEvent("Stop analizing profile " + item.Name + ", go to next profile");
             }
+            else
+            {               
+                // order list by maxSpeed
+                enabledCardList.Sort(CompareCardBySpeed);
 
-            // restore initial enabled card
-            if (selectedProfile == null)
-            {
-                NetworkProfileHelper.FireNotifyEvent("No profile found, so restore status card");
-                foreach (WindowsNetworkCard item in enabledCardList)
+                // if there's no enabled card, it's a problem!
+                if (enabledCardList.Count == 0) { NetworkProfileHelper.FireNotifyEvent("No card enabled, found"); return null; }
+
+                List<NetworkProfile> enabledProfileList = FindValidNetworkProfiles(profiles, enabledCardList, currentWifiProfile);
+
+                // assert: enabledProfile contains the right profiles. Now we have to test it. 
+                // the first with ping ok it's ok!
+                bool pingOk;
+                foreach (NetworkProfile item in enabledProfileList)
                 {
-                    NetworkProfileHelper.FireNotifyEvent("Enable card " + item.Name);
-                    WindowsNetworkCardHelper.SetDeviceStatus(item, true);
+                    NetworkProfileHelper.FireNotifyEvent("Start analizing profile " + item.Name + " with card " + item.NetworkCardInfo.Name);
+                    //WindowsNetworkCardHelper.SetDeviceStatus(item.NetworkCardInfo, false);
+                    NetworkProfileHelper.RunDisableNetworkCardsSetup(item);
+                    NetworkProfileHelper.RunNetworkCardSetup(item);
+
+                    // wait for a while
+                    NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
+                    System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
+
+                    WindowsNetworkCard card = WindowsNetworkCardManager.RefreshStatus(item.NetworkCardInfo.Id);
+
+                    if (card.CardType == WindowsNetworkCardType.WIRELESS)
+                    {
+
+                        // get current wifi profile only for wifi card                    
+                        currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(card);
+
+                        if (currentWifiProfile != null && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) && card.NetConnectionStatus == 2)
+                        {
+                            // ok, we found it!!!
+                            selectedProfile = item;
+                            NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+                            NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + " without do anything else!!");
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        pingOk = false;
+
+                        NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are in status " + card.NetConnectionStatus);
+                        // test both static config or dynamic config
+                        pingOk = PingHelper.RunPing(card.GatewayAddress);
+                        pingOk = pingOk || PingHelper.RunPing(card.CurrentGatewayAddress);
+
+                        NetworkProfileHelper.FireNotifyEvent("For card " + card.Name + " and profile " + item.Name + ", ping to gateway are " + pingOk);
+
+                        if (pingOk)
+                        {
+                            selectedProfile = item;
+                            NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + "!!");
+                            break;
+                        }
+                    }
+
+                    NetworkProfileHelper.FireNotifyEvent("Stop analizing profile " + item.Name + ", go to next profile");
+                }
+
+                // restore initial enabled card
+                if (selectedProfile == null)
+                {
+                    NetworkProfileHelper.FireNotifyEvent("No profile found, so restore status card");
+                    foreach (WindowsNetworkCard item in enabledCardList)
+                    {
+                        NetworkProfileHelper.FireNotifyEvent("Enable card " + item.Name);
+                        WindowsNetworkCardHelper.SetDeviceStatus(item, true);
+                    }
                 }
             }
 
@@ -123,7 +142,7 @@ namespace Argon.Windows.Network.Profile
             return selectedProfile;
         }
 
-
+ 
         /// <summary>
         /// Setups the network card for autodetect. Gets the nic associated to profiles and
         /// try to enable it. Then, disable every nic that not have a profile associated.
