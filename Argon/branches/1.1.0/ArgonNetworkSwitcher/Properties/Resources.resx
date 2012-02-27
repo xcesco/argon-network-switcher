@@ -499,4 +499,19 @@
   <data name="logo_1_2_560x256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_1_2_560x256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="console_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\console_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="networkcards_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkcards_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="networkcard_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkcard_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profiles_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profiles_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

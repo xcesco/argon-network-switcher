@@ -84,7 +84,7 @@ namespace Argon.Windows.Controls
             };
             colForcedStatus.Renderer = new BaseRenderer();
 
-            LoadServices();
+           LoadServices();
         }
 
         private void mnuForceRun_Click(object sender, EventArgs e)
@@ -311,5 +311,6 @@ namespace Argon.Windows.Controls
         {
             RefreshView();
         }
+
     }
 }

@@ -273,7 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfiles.resx">
       <DependentUpon>FormProfiles.cs</DependentUpon>
@@ -370,6 +369,11 @@
     <None Include="Resources\profile_run_48x48.png" />
     <None Include="Resources\proxy_124x40.png" />
     <None Include="Resources\logo_1_2_560x256.png" />
+    <None Include="Resources\console_ico.ico" />
+    <None Include="Resources\networkcard_ico.ico" />
+    <None Include="Resources\networkcards_ico.ico" />
+    <None Include="Resources\profile_ico.ico" />
+    <None Include="Resources\profiles_ico.ico" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />

@@ -145,15 +145,16 @@ namespace Argon.UseCase
         public static void Show(NetworkProfile profile)
         {
             // set the selected profile in model            
-            SelectProfile(profile);
+            if (SelectProfile(profile))
+            {
+                // selected the current ribbon
+                ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;
+                ViewModel.MainView.rpProfile.Selected = true;
 
-            // selected the current ribbon
-            ViewModel.MainView.ribbon.ActiveTab = ViewModel.MainView.rtOperations;
-            ViewModel.MainView.rpProfile.Selected = true;
-
-            // show
-            Debug.WriteLine("Show profile " + profile.Name);
-            UseCaseView.ShowProfile(profile);
+                // show
+                Debug.WriteLine("Show profile " + profile.Name);
+                UseCaseView.ShowProfile(profile);
+            }
         }
 
         /// <summary>
@@ -213,15 +214,17 @@ namespace Argon.UseCase
         /// Selects the profile.
         /// </summary>
         /// <param name="networkProfile">The network profile.</param>
-        public static void SelectProfile(NetworkProfile networkProfile)
+        public static bool SelectProfile(NetworkProfile networkProfile)
         {
             if (networkProfile == null)
             {
                 MyMessageBox.ShowMessage("No profile selected!");
-                return;
+                return false;
             }
             DataModel.SelectedNetworkProfile = networkProfile;
             Debug.WriteLine("Selected profile " + networkProfile.Name);
+
+            return true;
         }
 
         /// <summary>

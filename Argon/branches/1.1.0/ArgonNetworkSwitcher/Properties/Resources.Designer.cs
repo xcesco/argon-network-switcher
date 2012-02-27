@@ -144,6 +144,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Icon console_ico {
+            get {
+                object obj = ResourceManager.GetObject("console_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap data_disk {
             get {
                 object obj = ResourceManager.GetObject("data_disk", resourceCulture);
@@ -508,6 +515,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Icon networkcard_ico {
+            get {
+                object obj = ResourceManager.GetObject("networkcard_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap networkcard_refresh_48x48 {
             get {
                 object obj = ResourceManager.GetObject("networkcard_refresh_48x48", resourceCulture);
@@ -519,6 +533,13 @@ namespace Argon.Windows.Forms.Properties {
             get {
                 object obj = ResourceManager.GetObject("networkcard_view_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Icon networkcards_ico {
+            get {
+                object obj = ResourceManager.GetObject("networkcards_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -725,6 +746,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Icon profile_ico {
+            get {
+                object obj = ResourceManager.GetObject("profile_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap profile_new_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_new_48x48", resourceCulture);
@@ -792,6 +820,13 @@ namespace Argon.Windows.Forms.Properties {
             get {
                 object obj = ResourceManager.GetObject("profile24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Icon profiles_ico {
+            get {
+                object obj = ResourceManager.GetObject("profiles_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
