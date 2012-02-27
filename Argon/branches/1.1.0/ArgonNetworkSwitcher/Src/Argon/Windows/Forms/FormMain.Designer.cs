@@ -57,6 +57,7 @@ namespace Argon.Windows.Forms
             this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
             this.rtProfiles = new System.Windows.Forms.RibbonTab();
             this.rpProfilesCollection = new System.Windows.Forms.RibbonPanel();
+            this.rpAutoDetect = new System.Windows.Forms.RibbonPanel();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
             this.rpProfile = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
@@ -86,7 +87,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
-            this.rpAutoDetect = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAutoDetectRun = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -274,6 +275,14 @@ namespace Argon.Windows.Forms
             this.rpProfilesCollection.ButtonMoreVisible = false;
             this.rpProfilesCollection.Tag = null;
             this.rpProfilesCollection.Text = "Run";
+            // 
+            // rpAutoDetect
+            // 
+            this.rpAutoDetect.ButtonMoreEnabled = false;
+            this.rpAutoDetect.ButtonMoreVisible = false;
+            this.rpAutoDetect.Items.Add(this.rbtnAutoDetectRun);
+            this.rpAutoDetect.Tag = null;
+            this.rpAutoDetect.Text = "AutoDetect";
             // 
             // rtOperations
             // 
@@ -659,12 +668,19 @@ namespace Argon.Windows.Forms
             this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
             // 
-            // rpAutoDetect
+            // rbtnAutoDetectRun
             // 
-            this.rpAutoDetect.ButtonMoreEnabled = false;
-            this.rpAutoDetect.ButtonMoreVisible = false;
-            this.rpAutoDetect.Tag = null;
-            this.rpAutoDetect.Text = "AutoDetect";
+            this.rbtnAutoDetectRun.AltKey = null;
+            this.rbtnAutoDetectRun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnAutoDetectRun.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnAutoDetectRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_autorun_48x48;
+            this.rbtnAutoDetectRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAutoDetectRun.SmallImage")));
+            this.rbtnAutoDetectRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnAutoDetectRun.Tag = null;
+            this.rbtnAutoDetectRun.Text = "Run";
+            this.rbtnAutoDetectRun.ToolTip = null;
+            this.rbtnAutoDetectRun.ToolTipImage = null;
+            this.rbtnAutoDetectRun.ToolTipTitle = null;
             // 
             // FormMain
             // 
@@ -733,6 +749,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnCardDisable;
         private System.Windows.Forms.RibbonButton rbtnProfileAutorun;
         public System.Windows.Forms.RibbonPanel rpAutoDetect;
+        private System.Windows.Forms.RibbonButton rbtnAutoDetectRun;
         
         public DockPanel Pannello
         {
