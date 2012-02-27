@@ -47,8 +47,8 @@ namespace Argon.Windows.Forms
             WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.ribbon = new System.Windows.Forms.Ribbon();
@@ -86,14 +86,15 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
+            this.rpAutoDetect = new System.Windows.Forms.RibbonPanel();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
-            statusStrip.Items.Add(lblStatus);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus,
             this.progressBar});
             this.statusStrip.Location = new System.Drawing.Point(0, 586);
             this.statusStrip.Name = "statusStrip";
@@ -101,18 +102,16 @@ namespace Argon.Windows.Forms
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
-            // progressBar
-            // 
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 16);
-            // 
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(39, 17);
             this.lblStatus.Text = "Ready";
-
-            
+            // 
+            // progressBar
+            // 
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // dockPanel
             // 
@@ -265,6 +264,7 @@ namespace Argon.Windows.Forms
             // rtProfiles
             // 
             this.rtProfiles.Panels.Add(this.rpProfilesCollection);
+            this.rtProfiles.Panels.Add(this.rpAutoDetect);
             this.rtProfiles.Tag = null;
             this.rtProfiles.Text = "Profiles";
             // 
@@ -659,6 +659,13 @@ namespace Argon.Windows.Forms
             this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
             // 
+            // rpAutoDetect
+            // 
+            this.rpAutoDetect.ButtonMoreEnabled = false;
+            this.rpAutoDetect.ButtonMoreVisible = false;
+            this.rpAutoDetect.Tag = null;
+            this.rpAutoDetect.Text = "AutoDetect";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,6 +732,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnCardEnable;
         private System.Windows.Forms.RibbonButton rbtnCardDisable;
         private System.Windows.Forms.RibbonButton rbtnProfileAutorun;
+        public System.Windows.Forms.RibbonPanel rpAutoDetect;
         
         public DockPanel Pannello
         {
