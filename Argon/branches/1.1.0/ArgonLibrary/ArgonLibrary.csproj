@@ -91,9 +91,7 @@
     <Compile Include="Src\Argon\Windows\WindowsServiceManager.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardManager.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Argon\WindowsXP\Network\Wifi\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
