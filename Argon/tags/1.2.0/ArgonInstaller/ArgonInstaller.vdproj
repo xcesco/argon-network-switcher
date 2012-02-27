@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_03E0A1596DF90395854DB1877F6735AD"
+        "MsmKey" = "8:_05123C36D1631676207B3B12FC5AD9BB"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_96715930F0414DC7AE67B2BFC6E3C767"
+        "MsmKey" = "8:_3FB86C7F03E124D6EBB2EAB7A170913D"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,7 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_96715930F0414DC7AE67B2BFC6E3C767"
+        "OwnerKey" = "8:_05123C36D1631676207B3B12FC5AD9BB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3FB86C7F03E124D6EBB2EAB7A170913D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AE57290B8EFC9AAFE00C7B82D87006D5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_03E0A1596DF90395854DB1877F6735AD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -190,20 +190,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_03E0A1596DF90395854DB1877F6735AD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_05123C36D1631676207B3B12FC5AD9BB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.Windows.Forms.Ribbon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_03E0A1596DF90395854DB1877F6735AD"
+                    "_05123C36D1631676207B3B12FC5AD9BB"
                     {
-                    "Name" = "8:ArgonLibrary.dll"
+                    "Name" = "8:System.Windows.Forms.Ribbon.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ArgonLibrary.dll"
+            "SourcePath" = "8:System.Windows.Forms.Ribbon.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -241,20 +241,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_96715930F0414DC7AE67B2BFC6E3C767"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3FB86C7F03E124D6EBB2EAB7A170913D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Windows.Forms.Ribbon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_96715930F0414DC7AE67B2BFC6E3C767"
+                    "_3FB86C7F03E124D6EBB2EAB7A170913D"
                     {
-                    "Name" = "8:System.Windows.Forms.Ribbon.dll"
+                    "Name" = "8:ArgonLibrary.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Windows.Forms.Ribbon.dll"
+            "SourcePath" = "8:ArgonLibrary.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -422,7 +422,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
         "ProductCode" = "8:{1D6B2CA9-EA31-4E97-A740-AFD248C6D57F}"
-        "PackageCode" = "8:{1A35F023-1CBC-410F-B285-D4B3552E3FF4}"
+        "PackageCode" = "8:{87782DB9-7717-488D-8229-11680C40AAB1}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -971,7 +971,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BD9C536496E54A9DBCACE0D47C7747DA"
             {
-            "SourcePath" = "8:..\\ArgonNetworkSwitcher\\obj\\x86\\Debug\\Argon.exe"
+            "SourcePath" = "8:..\\ArgonNetworkSwitcher\\obj\\x86\\Release\\Argon.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
