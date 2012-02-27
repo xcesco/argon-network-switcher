@@ -136,9 +136,9 @@ namespace Argon.Windows.Forms
             // pictureBox
             // 
             this.pictureBox.ContextMenuStrip = this.contextMenuStrip;
-            this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
+            this.pictureBox.ErrorImage = null;
             this.pictureBox.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
-            this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
+            this.pictureBox.InitialImage = null;
             this.pictureBox.Location = new System.Drawing.Point(12, 9);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(48, 48);
@@ -506,7 +506,7 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
-            //this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
+           // this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
             this.networkCardListView.Size = new System.Drawing.Size(1169, 458);
             this.networkCardListView.TabIndex = 0;
             // 

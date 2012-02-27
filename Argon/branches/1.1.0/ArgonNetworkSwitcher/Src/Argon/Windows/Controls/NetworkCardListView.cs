@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Argon.Windows;
 using BrightIdeasSoftware;
 using Argon.Windows.Network;
+using Argon.Models;
 
 
 namespace Argon.Windows.Controls
@@ -31,7 +32,7 @@ namespace Argon.Windows.Controls
             };
             colName.Renderer = new ImageRenderer();
 
-            List<WindowsNetworkCard> lista = WindowsNetworkCardManager.WindowsNetworkCardList;
+            List<WindowsNetworkCard> lista = DataModel.NetworkCardList;
             listView.ClearObjects();
             listView.AddObjects(lista);
 
