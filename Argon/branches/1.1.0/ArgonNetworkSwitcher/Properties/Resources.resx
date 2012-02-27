@@ -217,9 +217,6 @@
   <data name="bullet_triangle_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet_triangle_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PCI-card_view1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PCI-card_view1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lightbulb_on_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lightbulb_on_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -367,9 +364,6 @@
   <data name="profile_delete24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_delete24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PCI-card_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PCI-card_view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="document_delete24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document_delete24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -378,9 +372,6 @@
   </data>
   <data name="profile_4_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_4_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wifi-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wifi-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="document_view32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document_view32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -444,9 +435,6 @@
   </data>
   <data name="document_check32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document_check32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PCI-card_network1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PCI-card_network1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_donateCC_LG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_donateCC_LG.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -513,5 +501,11 @@
   </data>
   <data name="profile_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="networkcards_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkcards_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profiles_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profiles_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

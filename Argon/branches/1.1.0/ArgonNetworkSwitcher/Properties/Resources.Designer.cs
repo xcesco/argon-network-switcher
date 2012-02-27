@@ -536,6 +536,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap networkcards_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("networkcards_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Icon networkcards_ico {
             get {
                 object obj = ResourceManager.GetObject("networkcards_ico", resourceCulture);
@@ -609,27 +616,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap PCI_card_network {
             get {
                 object obj = ResourceManager.GetObject("PCI_card_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap PCI_card_network1 {
-            get {
-                object obj = ResourceManager.GetObject("PCI-card_network1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap PCI_card_view {
-            get {
-                object obj = ResourceManager.GetObject("PCI-card_view", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap PCI_card_view1 {
-            get {
-                object obj = ResourceManager.GetObject("PCI-card_view1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,6 +809,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap profiles_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("profiles_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Icon profiles_ico {
             get {
                 object obj = ResourceManager.GetObject("profiles_ico", resourceCulture);
@@ -945,13 +938,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap type_wifi_300x400 {
             get {
                 object obj = ResourceManager.GetObject("type_wifi_300x400", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap wifi_icon {
-            get {
-                object obj = ResourceManager.GetObject("wifi-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
