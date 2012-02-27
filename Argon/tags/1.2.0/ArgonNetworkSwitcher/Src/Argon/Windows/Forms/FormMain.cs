@@ -400,7 +400,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnHelpUpdate_Click(object sender, EventArgs e)
         {
-            string url = "http://argon-network-switcher.googlecode.com/files/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
+            string url = "http://argonswitcher.sourceforge.net/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
             CheckForUpdate.Verify(url);
         }
 
