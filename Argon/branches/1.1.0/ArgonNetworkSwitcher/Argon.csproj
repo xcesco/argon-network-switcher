@@ -374,6 +374,8 @@
     <None Include="Resources\networkcards_ico.ico" />
     <None Include="Resources\profile_ico.ico" />
     <None Include="Resources\profiles_ico.ico" />
+    <None Include="Resources\networkcards_48x48.png" />
+    <None Include="Resources\profiles_48x48.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />
