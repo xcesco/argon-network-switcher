@@ -24,9 +24,12 @@ namespace Argon.UseCase
                 form.OldSize = form.Size;
                 form.FormBorderStyle = FormBorderStyle.FixedDialog;
                 form.Height = form.pnlRibbonContainer.Height + SystemInformation.CaptionHeight + 4;
+                form.Width = form.rpAutoDetect.Bounds.Right+120;
                 form.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_on_16x16;
+                form.MaximizeBox = false;
                 // restore form view
                 form.Visible = true;
+                
             }
 
             form.SmartView = !form.SmartView;
@@ -46,6 +49,7 @@ namespace Argon.UseCase
                 form.Size = form.OldSize;
                 form.FormBorderStyle = FormBorderStyle.Sizable;
                 form.rbtnSmartView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.lightbulb_16x16;
+                form.MaximizeBox = true;
                 // restore form view
                 form.Visible = true;
             }

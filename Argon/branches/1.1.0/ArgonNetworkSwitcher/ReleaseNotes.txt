@@ -1,6 +1,29 @@
 ﻿Release Notes
 =============
 
+Version 1.2.0
+-------------
+
+- MAJOR IMPROVEMENT: introduced new algorithm for profile's auto selection 
+- MAJOR IMPROVEMENT: UI restyling. In this release it was used a ribbon control instead of the toolbar. This control contains many things:
+	a button's list to run profiles (tab Profiles, panel Run)
+
+	smart view: capability to reduce the form's size to ribbon dimension. It can be usefull if you don't have to edit profiles, but only to run one of them. To switch on/off smart view press the bulb button.
+	load button: now you can load using default config file or another file.
+	save button: now you can save using default config file or another one.
+	ribbon panel "profile" in tab "Operation" to work with profile (new, edit, remove, copy, etc).
+	ribbon panel "network card" in tab "Operation" to work with card (enable, disable, view).
+	ribbon panel "console" in tab "Operation" refresh log console.
+	ribbon panel "views" in tab "views"
+	ribbon panel "help" in tab "views" for about, donate and check new version
+
+- MINOR IMPROVEMENT: add image selector for profile. To select an image for a profile, you have to right-click on the profile image in profile form.
+- MINOR IMPROVEMENT: revisited splash screen
+- MINOR IMPROVEMENT: add version info on main form caption .
+- MINOR IMPROVEMENT: introduced network card type (i.e. WIRELESS or ETHERNET WIRED).
+- MAJOR IMPROVEMENT: for profile with wireless card, it's now possible attach a wifi SSID.
+- MINOR IMPROVEMENT: add card type based image for network card form.
+
 Version 1.0.2
 -------------
 - BUG FIX: the version check doesn't get the exe version in
