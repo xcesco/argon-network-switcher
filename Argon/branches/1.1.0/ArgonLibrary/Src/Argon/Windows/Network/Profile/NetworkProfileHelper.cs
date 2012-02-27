@@ -17,7 +17,7 @@ namespace Argon.Windows.Network.Profile
     [Serializable]
     public static class NetworkProfileHelper
     {
-        public const int TIME_WAIT = 5000;
+        public const int TIME_WAIT = 3500;
 
         #region Event
         // declare the run status change event

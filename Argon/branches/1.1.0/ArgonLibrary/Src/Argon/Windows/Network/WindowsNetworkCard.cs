@@ -116,6 +116,14 @@ namespace Argon.Windows.Network
         string HardwareName { get; set; }
 
         uint Index { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the card.
+        /// </summary>
+        /// <value>
+        /// The type of the card.
+        /// </value>
+        WindowsNetworkCardType CardType { get; set; }
         
     }
 
@@ -130,200 +138,109 @@ namespace Argon.Windows.Network
         /// </summary>
         public NetworkCardInfoImpl()
         {
-            _name = "";
-            _viewId = "";
-            _id = "";
+            Name = "";
+            ViewId = "";
+            Id = "";
             
-            _dhcp = false;
-            _dns = "";
-            _dns2 = "";
-            _gatewayAddress = "";
-            _ipAddress = "";
-            _subnetMask = "";
-            _macAddress = "";            
-            _hardwareName = "";
-            _enabled = false;
+            Dhcp = false;
+            Dns = "";
+            Dns2 = "";
+            GatewayAddress = "";
+            IpAddress = "";
+            SubnetMask = "";
+            MacAddress = "";            
+            HardwareName = "";
+            Enabled = false;
             
-            _index = 0;
+            Index = 0;
             
         }
 
-
-
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        private String _hardwareName = "";
+              
 
         /// <summary>
         /// Gets or sets the name of the hardware.
         /// </summary>
         /// <value>The name of the hardware.</value>
-        public String HardwareName
-        {
-            get { return _hardwareName; }
-            set { _hardwareName = value; }
-        }
-              
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _macAddress;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _name;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _viewId;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected bool _enabled;
-
-        protected uint _index;
-
-        public uint Index
-        {
-            get { return _index; }
-            set { _index = value; }
-        }
-
-
-
+        public String HardwareName { get; set; }
+      
+        public uint Index { get; set; }
+       
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the view id.
         /// </summary>
         /// <value>The view id.</value>
-        public string ViewId
-        {
-            get { return _viewId; }
-            set { _viewId = value; }
-        }
-
-        private string _id;
+        public string ViewId { get; set; }
 
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
         /// <value>The id.</value>
-        public string Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        private bool _dhcp;
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="IWindowsNetworkCardInfo"/> is DHCP.
         /// </summary>
         /// <value><c>true</c> if DHCP; otherwise, <c>false</c>.</value>
-        public bool Dhcp
-        {
-            get { return _dhcp; }
-            set { _dhcp = value; }
-        }
-
-        private string _ipAddress;
+        public bool Dhcp { get; set; }       
 
         /// <summary>
         /// Gets or sets the ip address.
         /// </summary>
         /// <value>The ip address.</value>
-        public string IpAddress
-        {
-            get { return _ipAddress; }
-            set { _ipAddress = value; }
-        }
-        private string _subnetMask;
+        public string IpAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the subnet mask.
         /// </summary>
         /// <value>The subnet mask.</value>
-        public string SubnetMask
-        {
-            get { return _subnetMask; }
-            set { _subnetMask = value; }
-        }
-        private string _dns;
-
+        public string SubnetMask { get; set; }
+             
         /// <summary>
         /// Gets or sets the DNS.
         /// </summary>
         /// <value>The DNS.</value>
-        public string Dns
-        {
-            get { return _dns; }
-            set { _dns = value; }
-        }
-        private string _dns2;
+        public string Dns { get; set; }    
 
         /// <summary>
         /// Gets or sets the DNS2.
         /// </summary>
         /// <value>The DNS2.</value>
-        public string Dns2
-        {
-            get { return _dns2; }
-            set { _dns2 = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _gatewayAddress;
+        public string Dns2 { get; set; }       
 
         /// <summary>
         /// Gets or sets the mac address.
         /// </summary>
         /// <value>The mac address.</value>
-        public string MacAddress
-        {
-            get { return _macAddress; }
-            set { _macAddress = value; }
-        }
-
-        #region WindowsNetworkCardInfo Members
-
-        private bool _dynamicDNS;
+        public string MacAddress { get; set; }
+        
         /// <summary>
         /// Gets a value indicating whether [enabled dynamic DNS].
         /// </summary>
         /// <value><c>true</c> if [enabled dynamic DNS]; otherwise, <c>false</c>.</value>
-        public bool DynamicDNS
-        {
-            get { return _dynamicDNS; }
-            set { _dynamicDNS = value; }
-        }
+        public bool DynamicDNS { get; set; }       
 
         /// <summary>
         /// Gets or sets the gateway address.
         /// </summary>
         /// <value>The gateway address.</value>
-        public string GatewayAddress
-        {
-            get { return _gatewayAddress; }
-            set { _gatewayAddress = value; }
-        }
+        public string GatewayAddress  { get; set; }       
 
-        #endregion
+        /// <summary>
+        /// Gets or sets the type of the card.
+        /// </summary>
+        /// <value>
+        /// The type of the card.
+        /// </value>
+        public WindowsNetworkCardType CardType { get; set; }
 
+        public bool Enabled { get; set; }
 
         public static IWindowsNetworkCardInfo Copy(IWindowsNetworkCardInfo iWindowsNetworkCardInfo)
         {
