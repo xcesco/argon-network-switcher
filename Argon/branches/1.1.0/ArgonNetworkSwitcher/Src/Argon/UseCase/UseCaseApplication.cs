@@ -45,6 +45,7 @@ namespace Argon.UseCase
 
             // load the profiles
             UseCaseConfig.Load();
+           
         }
 
         /// <summary>

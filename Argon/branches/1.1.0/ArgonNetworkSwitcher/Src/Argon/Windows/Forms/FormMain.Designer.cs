@@ -30,7 +30,6 @@ namespace Argon.Windows.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
             WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
             WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
@@ -48,11 +47,10 @@ namespace Argon.Windows.Forms
             WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
             this.ribbon = new System.Windows.Forms.Ribbon();
             this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
@@ -88,27 +86,33 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
+            this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
+            statusStrip.Items.Add(lblStatus);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.progressBar});
             this.statusStrip.Location = new System.Drawing.Point(0, 586);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1016, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // progressBar
+            // 
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(100, 16);
+            // 
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(39, 17);
             this.lblStatus.Text = "Ready";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 16);
+
+            
             // 
             // dockPanel
             // 
@@ -171,16 +175,6 @@ namespace Argon.Windows.Forms
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
-            // 
-            // imageList16x16
-            // 
-            this.imageList16x16.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList16x16.ImageStream")));
-            this.imageList16x16.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList16x16.Images.SetKeyName(0, "package_delete.png");
-            this.imageList16x16.Images.SetKeyName(1, "package_add.png");
-            this.imageList16x16.Images.SetKeyName(2, "data_up.png");
-            this.imageList16x16.Images.SetKeyName(3, "data_down.png");
-            this.imageList16x16.Images.SetKeyName(4, "Graphite-Smooth-Folder-Applications-icon.png");
             // 
             // ribbon
             // 
@@ -534,7 +528,7 @@ namespace Argon.Windows.Forms
             this.rbtnViewProfiles.AltKey = null;
             this.rbtnViewProfiles.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewProfiles.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnViewProfiles.Image = global::Argon.Windows.Forms.Properties.Resources.profiles_48x48;
+            this.rbtnViewProfiles.Image = ((System.Drawing.Image)(resources.GetObject("rbtnViewProfiles.Image")));
             this.rbtnViewProfiles.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewProfiles.SmallImage")));
             this.rbtnViewProfiles.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewProfiles.Tag = null;
@@ -549,7 +543,7 @@ namespace Argon.Windows.Forms
             this.rbtnViewNetworkCards.AltKey = null;
             this.rbtnViewNetworkCards.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewNetworkCards.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnViewNetworkCards.Image = global::Argon.Windows.Forms.Properties.Resources.networkcards_48x48;
+            this.rbtnViewNetworkCards.Image = ((System.Drawing.Image)(resources.GetObject("rbtnViewNetworkCards.Image")));
             this.rbtnViewNetworkCards.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewNetworkCards.SmallImage")));
             this.rbtnViewNetworkCards.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewNetworkCards.Tag = null;
@@ -681,6 +675,8 @@ namespace Argon.Windows.Forms
             this.Text = "Argon - Network Switcher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.pnlRibbonContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -694,7 +690,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         public System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
-        private System.Windows.Forms.ImageList imageList16x16;
         private System.Windows.Forms.RibbonTab rtProfiles;
         private System.Windows.Forms.RibbonPanel rpViews;
         private System.Windows.Forms.RibbonTab rtViews;
