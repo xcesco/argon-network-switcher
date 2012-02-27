@@ -13,7 +13,7 @@ namespace Argon.Windows.Network.Profile
     /// </summary>
     internal static class AutoDetect
     {
-        internal const int WAIT_AFTER_SETUP = NetworkProfileHelper.TIME_WAIT;
+        internal const int WAIT_AFTER_SETUP = NetworkProfileHelper.TIME_WAIT+1000;
         internal const int WAIT_BEFORE_PING = NetworkProfileHelper.TIME_WAIT ;
 
         /// <summary>
@@ -53,11 +53,16 @@ namespace Argon.Windows.Network.Profile
                 // only a wifi connection avaible
                 foreach (NetworkProfile item in profiles)
                 {
-                    if (item.NetworkCardInfo.Id.Equals(card.Id) && currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID))
+                    // select if card is right and (ssid is right or for that profile there's no ssid)
+                    if (item.NetworkCardInfo.Id.Equals(card.Id) && (currentWifiProfile.SSID.Equals(item.AssociatedWifiSSID) || string.IsNullOrWhiteSpace(item.AssociatedWifiSSID)))
                     {
                         // ok, we found it!!!
                         selectedProfile = item;
-                        NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+
+                        if (!string.IsNullOrWhiteSpace(item.AssociatedWifiSSID))
+                        {
+                            NetworkProfileHelper.FireNotifyEvent("The card " + card.Name + " are connected with right SSID (" + currentWifiProfile.SSID + ")");
+                        }
                         NetworkProfileHelper.FireNotifyEvent("Selected profile " + item.Name + " without do anything else!!");
                         break;
                     }

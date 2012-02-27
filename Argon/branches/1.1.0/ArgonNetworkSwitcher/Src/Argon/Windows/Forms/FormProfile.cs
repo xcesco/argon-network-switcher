@@ -119,10 +119,19 @@ namespace Argon.Windows.Forms
 
             tabControl.ResumeLayout();
         }
-        
-        private void DisplaySelectedNetworkCard(bool found)
+
+        /// <summary>
+        /// Displays the selected network card.
+        /// </summary>
+        /// <param name="found">if set to <c>true</c> [found].</param>
+        private void DisplaySelectedNetworkCard(bool getInfoFromProfile, bool found)
         {            
             string temp;
+
+            IWindowsNetworkCardInfo tempCard;
+
+            if (getInfoFromProfile) tempCard = Profile.NetworkCardInfo; else tempCard = SelectedNetworkCard;
+
             if (SelectedNetworkCard != null)
             {
                 if (!found)
@@ -133,18 +142,18 @@ namespace Argon.Windows.Forms
                 WindowsNetworkCard nic = new WindowsNetworkCard();
 
                 // visualizziamo i dati della configurazione
-                nic.Dhcp = SelectedNetworkCard.Dhcp;
-                nic.IpAddress = SelectedNetworkCard.IpAddress;
-                nic.SubnetMask = SelectedNetworkCard.SubnetMask;
-                nic.GatewayAddress = SelectedNetworkCard.GatewayAddress;
-                nic.DynamicDNS = SelectedNetworkCard.DynamicDNS;
-                nic.Dns = SelectedNetworkCard.Dns;
-                nic.Dns2 = SelectedNetworkCard.Dns2;
-                nic.MacAddress = SelectedNetworkCard.MacAddress;
-                nic.HardwareName = SelectedNetworkCard.HardwareName;
-                nic.Name = SelectedNetworkCard.Name;
-                nic.Id = SelectedNetworkCard.Id;
-                nic.CardType = SelectedNetworkCard.CardType;
+                nic.Dhcp = tempCard.Dhcp;
+                nic.IpAddress = tempCard.IpAddress;
+                nic.SubnetMask = tempCard.SubnetMask;
+                nic.GatewayAddress = tempCard.GatewayAddress;
+                nic.DynamicDNS = tempCard.DynamicDNS;
+                nic.Dns = tempCard.Dns;
+                nic.Dns2 = tempCard.Dns2;
+                nic.MacAddress = tempCard.MacAddress;
+                nic.HardwareName = tempCard.HardwareName;
+                nic.Name = tempCard.Name;
+                nic.Id = tempCard.Id;
+                nic.CardType = tempCard.CardType;
 
                 // assign wifi before config
                 ipControl.WifiProfileSelected = false;
@@ -156,7 +165,6 @@ namespace Argon.Windows.Forms
                 }
 
                 ipControl.Configuration = nic;
-
                 
             }
             else
@@ -230,7 +238,7 @@ namespace Argon.Windows.Forms
                     SelectedNetworkCard = null;
                 }
             }
-            DisplaySelectedNetworkCard(true);
+            DisplaySelectedNetworkCard(false,true);
         }
 
 
@@ -358,7 +366,7 @@ namespace Argon.Windows.Forms
                     i++;
                 }
 
-                DisplaySelectedNetworkCard(bTrovata);                
+                DisplaySelectedNetworkCard(true, bTrovata);                
             }
 
         }
