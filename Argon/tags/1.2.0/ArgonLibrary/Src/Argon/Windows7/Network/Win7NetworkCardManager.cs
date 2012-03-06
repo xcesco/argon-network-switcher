@@ -71,12 +71,6 @@ namespace Argon.Windows7.Network
             {
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(item);
 
-                /*if (String.IsNullOrEmpty(adapter.GUID))
-                {
-                    continue;
-                }*/
-
-
                 if (adapter.Name.ToUpper().Contains("Microsoft Virtual WiFi Miniport Adapter".ToUpper()))
                 {
                     continue;
@@ -101,22 +95,22 @@ namespace Argon.Windows7.Network
 
                 card.Description = adapter.NetConnectionID;
                 card.MacAddress = adapter.MACAddress;
-                //http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
+                //  http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
                 /*
-                 * "Ethernet 802.3"
-"Token Ring 802.5"
-"Fiber Distributed Data Interface (FDDI)"
-"Wide Area Network (WAN)"
-"LocalTalk"
-"Ethernet using DIX header format"
-"ARCNET"
-"ARCNET (878.2)"
-"ATM"
-"Wireless"
-"Infrared Wireless"
-"Bpc"
-"CoWan"
-"1394"
+                    "Ethernet 802.3"
+                    "Token Ring 802.5"
+                    "Fiber Distributed Data Interface (FDDI)"
+                    "Wide Area Network (WAN)"
+                    "LocalTalk"
+                    "Ethernet using DIX header format"
+                    "ARCNET"
+                    "ARCNET (878.2)"
+                    "ATM"
+                    "Wireless"
+                    "Infrared Wireless"
+                    "Bpc"
+                    "CoWan"
+                    "1394"
                  * */
 
                 card.AdapterType = adapter.AdapterType;
@@ -221,7 +215,7 @@ namespace Argon.Windows7.Network
         /// Writes the data into registry.
         /// </summary>
         /// <param name="card">The card.</param>
-        public static void WriteDataIntoRegistry(IWindowsNetworkCardInfo card)
+        public static void WriteDataIntoRegistry(WindowsNetworkCard card)
         {
             RegistryKey regKey = null;
             
@@ -337,7 +331,7 @@ namespace Argon.Windows7.Network
         /// </summary>
         /// <param name="card">The card.</param>
         /// <returns></returns>
-        public static bool Apply(IWindowsNetworkCardInfo card)
+        public static bool Apply(WindowsNetworkCard card)
         {            
             bool ret = true;
             

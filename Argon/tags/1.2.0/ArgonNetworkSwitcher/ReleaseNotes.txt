@@ -1,6 +1,10 @@
 ﻿Release Notes
 =============
 
+Version 1.2.1
+-------------
+- Bug fix: when in smart view, ribbon panel were display
+
 Version 1.2.0
 -------------
 

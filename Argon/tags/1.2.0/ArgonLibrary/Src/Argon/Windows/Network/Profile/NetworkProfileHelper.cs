@@ -71,7 +71,7 @@ namespace Argon.Windows.Network.Profile
                 writer.WriteAttributeString("imageName", item.ImageName);
 
                 {
-                    IWindowsNetworkCardInfo nic = item.NetworkCardInfo;
+                    WindowsNetworkCard nic = item.NetworkCardInfo;
 
                     writer.WriteStartElement("networkcard");
 
@@ -178,7 +178,7 @@ namespace Argon.Windows.Network.Profile
 
                     IList<WindowsNetworkCard> listDisabledNics = item.DisabledNetworkCards;
 
-                    foreach (IWindowsNetworkCardInfo itemNIC in listDisabledNics)
+                    foreach (WindowsNetworkCard itemNIC in listDisabledNics)
                     {
                         writer.WriteStartElement("forcedNic");
                         writer.WriteAttributeString("id", itemNIC.Id);
@@ -247,7 +247,7 @@ namespace Argon.Windows.Network.Profile
                                     profiles.Add(currentProfile);
                                     break;
                                 case "networkcard":
-                                    currentProfile.NetworkCardInfo = new NetworkCardInfoImpl();
+                                    currentProfile.NetworkCardInfo = new WindowsNetworkCard();
                                     currentProfile.NetworkCardInfo.Id = XmlUtility.ReadAttributeIfPresent(reader, "id", "");
 
                                     currentProfile.NetworkCardInfo.ViewId = XmlUtility.ReadAttributeIfPresent(reader, "viewId", "");
@@ -388,7 +388,7 @@ namespace Argon.Windows.Network.Profile
         /// <param name="profile">The profile.</param>
         public static void RunDisableNetworkCardsSetup(NetworkProfile profile)
         {
-            foreach (IWindowsNetworkCardInfo nic in profile.DisabledNetworkCards)
+            foreach (WindowsNetworkCard nic in profile.DisabledNetworkCards)
             {
                 WindowsNetworkCardHelper.SetDeviceStatus(nic, false);
             }

@@ -57,6 +57,9 @@ namespace Argon.Windows.Network
             return null;
         }
 
+        /// <summary>
+        /// Gets the windows network card table.
+        /// </summary>
         public static Dictionary<string, WindowsNetworkCard> WindowsNetworkCardTable
         {
             get
@@ -68,6 +71,9 @@ namespace Argon.Windows.Network
         }
 
 
+        /// <summary>
+        /// Gets the enabled windows network card table.
+        /// </summary>
         public static Dictionary<string, WindowsNetworkCard> EnabledWindowsNetworkCardTable
         {
             get
@@ -226,6 +232,11 @@ namespace Argon.Windows.Network
             return CheckIfPresentInHardwareName(card, "Bluetooth");
         }
 
+        /// <summary>
+        /// Checks if fire wire card.
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns></returns>
         internal static bool CheckIfFireWireCard(WindowsNetworkCard card)
         {
             return CheckIfPresentInHardwareName(card, "1394", "Firewire");
@@ -237,7 +248,7 @@ namespace Argon.Windows.Network
         /// Writes the data into registry.
         /// </summary>
         /// <param name="card">The card.</param>
-        public static void WriteDataIntoRegistry(IWindowsNetworkCardInfo card)
+        public static void WriteDataIntoRegistry(WindowsNetworkCard card)
         {
             switch (OSInfo.OperatingSystem)
             {
@@ -254,7 +265,7 @@ namespace Argon.Windows.Network
         /// Applies the specified card.
         /// </summary>
         /// <param name="card">The card.</param>
-        public static void Apply(IWindowsNetworkCardInfo card)
+        public static void Apply(WindowsNetworkCard card)
         {
             switch (OSInfo.OperatingSystem)
             {

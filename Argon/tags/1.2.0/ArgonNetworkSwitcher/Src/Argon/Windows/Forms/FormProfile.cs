@@ -143,7 +143,7 @@ namespace Argon.Windows.Forms
         {            
             string temp;
 
-            IWindowsNetworkCardInfo tempCard;
+            WindowsNetworkCard tempCard;
 
             if (getInfoFromProfile) tempCard = Profile.NetworkCardInfo; else tempCard = SelectedNetworkCard;
 
@@ -313,7 +313,7 @@ namespace Argon.Windows.Forms
 
             if (ipControl.Configuration == null)
             {
-                profile.NetworkCardInfo = new NetworkCardInfoImpl();
+                profile.NetworkCardInfo = new WindowsNetworkCard();
             }
             else
             {
