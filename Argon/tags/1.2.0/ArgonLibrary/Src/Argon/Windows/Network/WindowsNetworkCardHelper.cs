@@ -34,7 +34,7 @@ namespace Argon.Windows.Network
         /// <param name="card">The card.</param>
         /// <param name="status">if set to <c>true</c> [status].</param>
         /// <returns></returns>
-        public static bool SetDeviceStatus(IWindowsNetworkCardInfo card, bool status)
+        public static bool SetDeviceStatus(WindowsNetworkCard card, bool status)
         {
             bool ret;
             switch (OSInfo.OperatingSystem)

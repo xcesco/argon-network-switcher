@@ -59,6 +59,7 @@ namespace Argon.Windows.Forms
             this.rpProfilesCollection = new System.Windows.Forms.RibbonPanel();
             this.rpAutoDetect = new System.Windows.Forms.RibbonPanel();
             this.rbtnAutoDetectRun = new System.Windows.Forms.RibbonButton();
+            this.rbtnProfilesList = new System.Windows.Forms.RibbonButtonList();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
             this.rpProfile = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
@@ -88,6 +89,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -281,6 +283,7 @@ namespace Argon.Windows.Forms
             this.rpAutoDetect.ButtonMoreEnabled = false;
             this.rpAutoDetect.ButtonMoreVisible = false;
             this.rpAutoDetect.Items.Add(this.rbtnAutoDetectRun);
+            this.rpAutoDetect.Items.Add(this.rbtnProfilesList);
             this.rpAutoDetect.Tag = null;
             this.rpAutoDetect.Text = "AutoDetect";
             // 
@@ -298,6 +301,20 @@ namespace Argon.Windows.Forms
             this.rbtnAutoDetectRun.ToolTipImage = null;
             this.rbtnAutoDetectRun.ToolTipTitle = null;
             this.rbtnAutoDetectRun.Click += new System.EventHandler(this.rbtnProfileAutorun_Click);
+            // 
+            // rbtnProfilesList
+            // 
+            this.rbtnProfilesList.AltKey = null;
+            this.rbtnProfilesList.Buttons.Add(this.ribbonButton1);
+            this.rbtnProfilesList.ButtonsSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbtnProfilesList.FlowToBottom = false;
+            this.rbtnProfilesList.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
+            this.rbtnProfilesList.ItemsSizeInDropwDownMode = new System.Drawing.Size(7, 5);
+            this.rbtnProfilesList.Tag = null;
+            this.rbtnProfilesList.Text = "Profiles";
+            this.rbtnProfilesList.ToolTip = null;
+            this.rbtnProfilesList.ToolTipImage = null;
+            this.rbtnProfilesList.ToolTipTitle = null;
             // 
             // rtOperations
             // 
@@ -683,6 +700,20 @@ namespace Argon.Windows.Forms
             this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
             // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.AltKey = null;
+            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.ribbonButton1.Tag = null;
+            this.ribbonButton1.Text = "gg";
+            this.ribbonButton1.ToolTip = null;
+            this.ribbonButton1.ToolTipImage = null;
+            this.ribbonButton1.ToolTipTitle = null;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,9 +745,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         public System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
-        private System.Windows.Forms.RibbonTab rtProfiles;
         private System.Windows.Forms.RibbonPanel rpViews;
-        private System.Windows.Forms.RibbonTab rtViews;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator;
         public System.Windows.Forms.RibbonButton rbtnProfileNew;
         public System.Windows.Forms.RibbonButton rbtnProfileView;
@@ -751,6 +780,10 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.RibbonButton rbtnProfileAutorun;
         public System.Windows.Forms.RibbonPanel rpAutoDetect;
         private System.Windows.Forms.RibbonButton rbtnAutoDetectRun;
+        public System.Windows.Forms.RibbonTab rtProfiles;
+        public System.Windows.Forms.RibbonTab rtViews;
+        public System.Windows.Forms.RibbonButtonList rbtnProfilesList;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
         
         public DockPanel Pannello
         {

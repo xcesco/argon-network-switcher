@@ -83,12 +83,12 @@ namespace Argon.Windows.Controls
                         item2.Checked = false;
                 }
 
-                IWindowsNetworkCardInfo nic;
-                foreach (IWindowsNetworkCardInfo item in value)
+                WindowsNetworkCard nic;
+                foreach (WindowsNetworkCard item in value)
                 {
                     foreach (OLVListItem item2 in listView.Items)
                     {
-                        nic = (IWindowsNetworkCardInfo)item2.RowObject;
+                        nic = (WindowsNetworkCard)item2.RowObject;
 
                         if (item.Id.Equals(nic.Id))
                         {
@@ -99,9 +99,6 @@ namespace Argon.Windows.Controls
             }
         }
 
-        private void listView_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

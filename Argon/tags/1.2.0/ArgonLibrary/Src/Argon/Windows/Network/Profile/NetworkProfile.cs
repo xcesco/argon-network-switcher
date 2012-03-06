@@ -77,7 +77,7 @@ namespace Argon.Windows.Network.Profile
             set;
         }
 
-        public IWindowsNetworkCardInfo NetworkCardInfo
+        public WindowsNetworkCard NetworkCardInfo
         {
             get;
             set;
@@ -107,7 +107,7 @@ namespace Argon.Windows.Network.Profile
             Id = 0;
             Name = DEFAULT_PROFILE_NAME;
 
-            NetworkCardInfo = new NetworkCardInfoImpl();
+            NetworkCardInfo = new WindowsNetworkCard();
             ProxyConfig = new ProxyConfiguration();
             ServiceList = new List<IWindowsServiceInfo>();
             ExecList = new List<WindowsExecutable>();
@@ -132,7 +132,7 @@ namespace Argon.Windows.Network.Profile
             profile.Name = origin.Name;
             profile.ImageName = origin.ImageName;
 
-            profile.NetworkCardInfo = NetworkCardInfoImpl.Copy(origin.NetworkCardInfo);
+            profile.NetworkCardInfo = WindowsNetworkCard.Copy(origin.NetworkCardInfo);
             profile.ProxyConfig = ProxyConfiguration.Copy(origin.ProxyConfig);
 
             profile.ServiceList = new List<IWindowsServiceInfo>();
@@ -253,7 +253,7 @@ namespace Argon.Windows.Network.Profile
             if (runDeviceConfig)
             {
                 NetworkProfileHelper.RunDisableNetworkCardsSetup(this);
-                foreach (IWindowsNetworkCardInfo nic in DisabledNetworkCards)
+                foreach (WindowsNetworkCard nic in DisabledNetworkCards)
                 {
                     FireRunStatusChangeEvent("Disable network card " + nic.HardwareName + Name, 10);                     
                 }

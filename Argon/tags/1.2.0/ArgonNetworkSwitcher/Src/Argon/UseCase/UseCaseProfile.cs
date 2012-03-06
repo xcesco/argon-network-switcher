@@ -73,6 +73,8 @@ namespace Argon.UseCase
             RibbonButton rButton = null;
             rpc.Clear();
 
+            ViewModel.MainView.rbtnProfilesList.DropDownItems.Clear();
+
             ObjectListView listView = ViewModel.ProfilesView.listView;
             listView.ClearObjects();
 
@@ -96,7 +98,9 @@ namespace Argon.UseCase
                 //rButton.SmallImage = UseCaseApplication.GetImage(item.ImageName);
                 rButton.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
                 // create in ribbon panel
-                rpc.Add(rButton);
+                //rpc.Add(rButton);
+
+                ViewModel.MainView.rbtnProfilesList.DropDownItems.Add(rButton);
             }
 
             // bug on ribbon: if i don't do it, buttons are not display untill change tab

@@ -66,6 +66,7 @@ namespace Argon.WindowsXP.Network
             foreach (ManagementObject item in search.Get())
             {
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(item);
+                
 
                 /*if (String.IsNullOrEmpty(adapter.GUID))
                 {
@@ -240,7 +241,7 @@ namespace Argon.WindowsXP.Network
         /// Writes the data into registry.
         /// </summary>
         /// <param name="card">The card.</param>
-        public static void WriteDataIntoRegistry(IWindowsNetworkCardInfo card)
+        public static void WriteDataIntoRegistry(WindowsNetworkCard card)
         {
             RegistryKey regKey = null;
             
@@ -356,7 +357,7 @@ namespace Argon.WindowsXP.Network
         /// </summary>
         /// <param name="card">The card.</param>
         /// <returns></returns>
-        public static bool Apply(IWindowsNetworkCardInfo card)
+        public static bool Apply(WindowsNetworkCard card)
         {            
             bool ret = true;
             

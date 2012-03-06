@@ -8,6 +8,8 @@ using System.Management;
 using Argon.Windows.Network;
 using Argon.Common;
 using Argon.Windows.Network.Wifi;
+using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace Argon.Windows.Network
 {
@@ -205,6 +207,73 @@ namespace Argon.Windows.Network
             Debug.WriteLine("Executed WifiProfileManager.ActiveWifiProfile in " + time + " ms");
         }
 
+        [TestMethod]
+        public void Test04()
+        {
+            finito = false;
+            NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
+
+            StatisticalData data = ClimbSmallHill;
+            IAsyncResult ar = data.BeginInvoke(null, null);
+            
+            while (!ar.IsCompleted)
+            {
+                Console.WriteLine("Waiting.....");
+                Thread.Sleep(20*IDLE_TIME);
+
+            }
+            Console.WriteLine("Wait is finished...");
+            Console.WriteLine("Time Taken for  climbing ....{0}",
+            data.EndInvoke(ar).ToString() + "..Seconds");
+
+            Console.ReadLine();
+            Console.WriteLine("Esecuzione terminata");
+
+            NetworkChange.NetworkAvailabilityChanged -= NetworkChange_NetworkAvailabilityChanged;
+        }
+
+        public static int numberofFeets = 0;
+        public delegate long StatisticalData();
+
+        public bool finito;
+
+        public int MAX_WAIT = 15000;
+        public int IDLE_TIME = 10;
+
+
+        long ClimbSmallHill()
+        {
+            var sw = Stopwatch.StartNew();
+            for (int i = 0; i < MAX_WAIT / IDLE_TIME; i++)
+            {
+                Thread.Sleep(IDLE_TIME);
+
+                if (finito)
+                {
+                    sw.Stop();
+                    Console.WriteLine("Termino");
+                    return sw.ElapsedMilliseconds;
+                }
+
+            }
+            
+            sw.Stop();
+            return sw.ElapsedMilliseconds;
+        }
+
+
+        void NetworkChange_NetworkAvailabilityChanged(object sender, NetworkAvailabilityEventArgs e)
+        {
+            if (e.IsAvailable)
+            {
+                finito = true;
+                Console.WriteLine("Network is Available");
+            }
+            else
+            {
+                Console.WriteLine("Network is Unavailable");
+            }
+        }
         
 
     }

@@ -47,10 +47,19 @@ namespace Argon.Windows.Network
             string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             byte[] buffer = Encoding.ASCII.GetBytes(data);
             int timeout = 120;
-            PingReply reply = pingSender.Send(ip, timeout, buffer, options);
-            if (reply.Status == IPStatus.Success)
+
+            try
             {
-                ret = true;                
+
+                PingReply reply = pingSender.Send(ip, timeout, buffer, options);
+                if (reply.Status == IPStatus.Success)
+                {
+                    ret = true;
+                }
+            }
+            catch
+            {
+                ret = false;
             }
 
             return ret;
