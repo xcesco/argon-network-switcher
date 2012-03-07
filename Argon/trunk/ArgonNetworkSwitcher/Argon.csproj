@@ -97,23 +97,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Src\Argon\Controllers\BaseActions.cs" />
-    <Compile Include="Src\Argon\Controllers\ConsoleMiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\Controller.cs" />
-    <Compile Include="Src\Argon\Controllers\MiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\NetworkCardActions.cs" />
-    <Compile Include="Src\Argon\Controllers\NetworkProfileActions.cs" />
-    <Compile Include="Src\Argon\Controllers\PersistenceController.cs" />
-    <Compile Include="Src\Argon\Controllers\ProfileMiniController.cs" />
-    <Compile Include="Src\Argon\Controllers\ViewController.cs" />
-    <Compile Include="Src\Argon\Model\NetworkConfiguration.cs" />
-    <Compile Include="Src\Argon\Model\NetworkProfile.cs" />
-    <Compile Include="Src\Argon\Model\NetworkProfileCollection.cs" />
+    <Compile Include="Src\Argon\Models\DataModel.cs" />
+    <Compile Include="Src\Argon\Models\ViewModel.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseApplication.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseConfig.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseLogger.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseNetworkCard.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseProfile.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseSmartView.cs" />
+    <Compile Include="Src\Argon\UseCase\UseCaseView.cs" />
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Src\Argon\Windows\Controls\ApplicationsListView.designer.cs">
       <DependentUpon>ApplicationsListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DoubleBufferObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\DoubleBufferTabControl.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Argon\Windows\Controls\DriveMapListView.cs">
       <SubType>UserControl</SubType>
@@ -133,6 +136,7 @@
     <Compile Include="Src\Argon\Windows\Controls\IpControl.designer.cs">
       <DependentUpon>IpControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\MyMessageBox.cs" />
     <Compile Include="Src\Argon\Windows\Controls\NetworkCardListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,23 +155,26 @@
     <Compile Include="Src\Argon\Windows\Controls\ServiceListView.Designer.cs">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Forms\ArgonDockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormAboutBox.designer.cs">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCards.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormAdapters.designer.cs">
-      <DependentUpon>FormAdapters.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCards.designer.cs">
+      <DependentUpon>FormNetworkCards.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormCardInfo.designer.cs">
-      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormNetworkCard.designer.cs">
+      <DependentUpon>FormNetworkCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormConsole.cs">
       <SubType>Form</SubType>
@@ -213,11 +220,10 @@
     <Compile Include="Src\Argon\Windows\Forms\FormSplashScreen.designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\ToolStripButtonManager.cs" />
-    <Compile Include="Src\Argon\Windows\Forms\ViewRender.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ApplicationsListView.resx">
       <DependentUpon>ApplicationsListView.cs</DependentUpon>
@@ -240,14 +246,17 @@
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ServiceListView.resx">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\ArgonDockContent.resx">
+      <DependentUpon>ArgonDockContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAboutBox.resx">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormAdapters.resx">
-      <DependentUpon>FormAdapters.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormNetworkCards.resx">
+      <DependentUpon>FormNetworkCards.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormCardInfo.resx">
-      <DependentUpon>FormCardInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormNetworkCard.resx">
+      <DependentUpon>FormNetworkCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormConsole.resx">
       <DependentUpon>FormConsole.cs</DependentUpon>
@@ -260,10 +269,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfiles.resx">
       <DependentUpon>FormProfiles.cs</DependentUpon>
@@ -287,6 +296,93 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\profile_add24x24.png" />
+    <None Include="Resources\profile_delete24x24.png" />
+    <None Include="Resources\profile_down24x24.png" />
+    <None Include="Resources\profile_new24x24.png" />
+    <None Include="Resources\profile_preferences24x24.png" />
+    <None Include="Resources\profile_refresh24x24.png" />
+    <None Include="Resources\profile_replace24x24.png" />
+    <None Include="Resources\profile_up24x24.png" />
+    <None Include="Resources\profile_view24x24.png" />
+    <None Include="Resources\profile24x24.png" />
+    <None Include="Resources\document_check24x24.png" />
+    <None Include="Resources\document_check32x32.png" />
+    <None Include="Resources\document_connection32x32.png" />
+    <None Include="Resources\document_delete24x24.png" />
+    <None Include="Resources\document_delete32x32.png" />
+    <None Include="Resources\document_edit24x24.png" />
+    <None Include="Resources\document_edit32x32.png" />
+    <None Include="Resources\document_gear24x24.png" />
+    <None Include="Resources\document_gear32x32.png" />
+    <None Include="Resources\document_new24x24.png" />
+    <None Include="Resources\document_new32x32.png" />
+    <None Include="Resources\document_refresh24x24.png" />
+    <None Include="Resources\document_refresh32x32.png" />
+    <None Include="Resources\document_view24x24.png" />
+    <None Include="Resources\document_view32x32.png" />
+    <None Include="Resources\document24x24.png" />
+    <None Include="Resources\document32x32.png" />
+    <None Include="Resources\lightbulb_on_16x16.png" />
+    <None Include="Resources\lightbulb_16x16.png" />
+    <None Include="Resources\document_add48x48.png" />
+    <None Include="Resources\document_check48x48.png" />
+    <None Include="Resources\document_connection48x48.png" />
+    <None Include="Resources\document_delete48x48.png" />
+    <None Include="Resources\document_edit48x48.png" />
+    <None Include="Resources\document_gear48x48.png" />
+    <None Include="Resources\document_new48x48.png" />
+    <None Include="Resources\document_ok48x48.png" />
+    <None Include="Resources\document_plain_new48x48.png" />
+    <None Include="Resources\document_refresh48x48.png" />
+    <None Include="Resources\document_view48x48.png" />
+    <None Include="Resources\profile_0_48x48.png" />
+    <None Include="Resources\profile_1_48x48.png" />
+    <None Include="Resources\profile_2_48x48.png" />
+    <None Include="Resources\profile_3_48x48.png" />
+    <None Include="Resources\profile_4_48x48.png" />
+    <None Include="Resources\profile_5_48x48.png" />
+    <None Include="Resources\profile_6_48x48.png" />
+    <None Include="Resources\profile_7_48x48.png" />
+    <None Include="Resources\profile_8_48x48.png" />
+    <None Include="Resources\profile_new_48x48.png" />
+    <None Include="Resources\profile_delete_48x48.png" />
+    <None Include="Resources\profile_edit_48x48.png" />
+    <None Include="Resources\profile_new_48x481.png" />
+    <None Include="Resources\profile_save_48x48.png" />
+    <None Include="Resources\type_ethernet_300x400.png" />
+    <None Include="Resources\type_bluetooth_300x400.png" />
+    <None Include="Resources\type_wifi_300x400.png" />
+    <None Include="Resources\type_virtual_300x400.png" />
+    <None Include="Resources\proxy_300x100.png" />
+    <None Include="Resources\profile_9_48x48.png" />
+    <None Include="Resources\networkcard_refresh_48x48.png" />
+    <None Include="Resources\networkcard_view_48x48.png" />
+    <None Include="Resources\console_clear_48x48.png" />
+    <None Include="Resources\console_48x48.png" />
+    <None Include="Resources\donate_48x48.png" />
+    <None Include="Resources\check_update_48x48.png" />
+    <None Include="Resources\networkcard_disable_48x48.png" />
+    <None Include="Resources\networkcard_enable_48x48.png" />
+    <None Include="Resources\help_48x48.png" />
+    <None Include="Resources\profile_autorun_48x48.png" />
+    <None Include="Resources\profile_run_48x48.png" />
+    <None Include="Resources\proxy_124x40.png" />
+    <None Include="Resources\logo_1_2_560x256.png" />
+    <None Include="Resources\console_ico.ico" />
+    <None Include="Resources\networkcard_ico.ico" />
+    <None Include="Resources\networkcards_ico.ico" />
+    <None Include="Resources\profile_ico.ico" />
+    <None Include="Resources\profiles_ico.ico" />
+    <None Include="Resources\networkcards_48x48.png" />
+    <None Include="Resources\profiles_48x48.png" />
+    <Content Include="Resources\wifi-icon.jpg" />
+    <Content Include="Resources\wifi16x16.png" />
+    <None Include="Resources\wifi32x321.png" />
+    <Content Include="todolist.txt" />
+    <None Include="Resources\wifi16x161.png" />
+    <Content Include="Resources\wifi32x32.png" />
+    <Content Include="Resources\wifi64x64.png" />
     <None Include="Resources\Argon.png" />
     <Content Include="icon.ico" />
     <Content Include="References.txt" />
@@ -307,6 +403,8 @@
     <None Include="Resources\data_disk1.png" />
     <None Include="Resources\data_out.png" />
     <Content Include="Resources\delete2.png" />
+    <None Include="Resources\disk_blue.png" />
+    <None Include="Resources\document.png" />
     <Content Include="Resources\empty.png" />
     <Content Include="Resources\gears.png" />
     <Content Include="Resources\gear_forbidden.png" />
@@ -315,7 +413,6 @@
     <None Include="Resources\gear_run1.png" />
     <Content Include="Resources\gear_stop.png" />
     <None Include="Resources\index_add.png" />
-    <None Include="Resources\index_view.png" />
     <None Include="Resources\index_delete.png" />
     <None Include="Resources\index_preferences.png" />
     <Content Include="Resources\media_play_green.png" />
@@ -357,6 +454,10 @@
       <Project>{4396E3DA-AF9D-4240-93F9-8667D3DE05AE}</Project>
       <Name>ArgonLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj">
+      <Project>{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}</Project>
+      <Name>System.Windows.Forms.Ribbon</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -380,6 +481,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

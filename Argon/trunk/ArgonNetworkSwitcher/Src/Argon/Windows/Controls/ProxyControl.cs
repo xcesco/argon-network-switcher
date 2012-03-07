@@ -5,9 +5,24 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using Argon.OperatingSystem;
-using Argon.Network;
+using Argon.Windows;
+using Argon.Windows.Network;
 
+/*
+ * Copyright 2012 Francesco Benincasa
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 namespace Argon.Windows.Controls
 {
     /// <summary>
@@ -28,10 +43,16 @@ namespace Argon.Windows.Controls
         public ProxyControl()
         {
             // impostiamo il modo trasparente prima di inizializzare
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            BackColor = Color.Transparent;
+            //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //BackColor = Color.Transparent;
 
             InitializeComponent();
+
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                       ControlStyles.UserPaint |
+                       ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor, true);
+            // impostiamo il modo trasparente prima di inizializzare
+            BackColor = Color.Transparent;
             
             DisplayConfiguration();
         }
@@ -51,6 +72,12 @@ namespace Argon.Windows.Controls
                 configuration = value;
                 DisplayConfiguration();
             }
+        }
+
+        public Image LogoImage
+        {
+            get { return pictureBox.Image; }
+            set { pictureBox.Image = value; }
         }
 
         /// <summary>

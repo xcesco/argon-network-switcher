@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Argon.OperatingSystem;
+using Argon.Windows;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Argon.Network;
-//using NUnit.Framework;
+using Argon.Windows.Network;
 
-namespace Argon.OperatingSystem
+namespace Argon.Windows
 {
     [TestClass]
     public class ProxyConfiguratorTest
