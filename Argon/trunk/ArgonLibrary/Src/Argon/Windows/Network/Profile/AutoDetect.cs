@@ -108,7 +108,7 @@ namespace Argon.Windows.Network.Profile
                     // wait for a while
                     //NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
                     //System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
-                    WaitUntilNetworkCardIsUp();
+                    WaitUntilNetworkCardIsUp(item.NetworkCardInfo);
 
                     NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
                     System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
@@ -288,10 +288,12 @@ namespace Argon.Windows.Network.Profile
         /// Waits the until network card is up.
         /// </summary>
         /// <returns></returns>
-        private static bool WaitUntilNetworkCardIsUp()
+        private static bool WaitUntilNetworkCardIsUp(WindowsNetworkCard nicValue)
         {
             NetworkCardUp = false;
             finished = false;
+
+            nic = nicValue;
 
             try
             {
@@ -349,6 +351,8 @@ namespace Argon.Windows.Network.Profile
         /// </summary>
         public static int IDLE_TIME = 10;
 
+        public static WindowsNetworkCard nic;
+
         /// <summary>
         /// 
         /// </summary>
@@ -364,6 +368,8 @@ namespace Argon.Windows.Network.Profile
             for (int i = 0; i < MAX_WAIT / IDLE_TIME; i++)
             {
                 Thread.Sleep(IDLE_TIME);
+
+                Console.WriteLine("Device status "+WindowsNetworkCardHelper.GetDeviceStatus(nic));
 
                 if (finished)
                 {

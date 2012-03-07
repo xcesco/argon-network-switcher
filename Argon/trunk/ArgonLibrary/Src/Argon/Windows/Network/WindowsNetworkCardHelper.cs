@@ -5,6 +5,7 @@ using Argon.WindowsXP;
 using Argon.Windows7;
 using Argon.WindowsXP.Network;
 using Argon.Windows7.Network;
+using System.Management;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -59,7 +60,34 @@ namespace Argon.Windows.Network
             }
 
             return ret;
+        }
 
+        /// <summary>
+        /// Sets the state of the device.
+        /// </summary>
+        /// <param name="guid">The GUID.</param>
+        /// <param name="bEnable">if set to <c>true</c> [b enable].</param>
+        /// <returns></returns>
+        public static string GetDeviceStatus(WindowsNetworkCard nic)
+        {
+            String name = nic.Name;
+            SelectQuery query = new SelectQuery("Win32_NetworkAdapter");
+            Console.WriteLine("--> CERCO "+name);
+            ManagementObjectSearcher search = new ManagementObjectSearcher(query);
+            foreach (ManagementObject result in search.Get())
+            {
+                //result.Pu
+                WmiNetworkAdapter adapter = new WmiNetworkAdapter(result);
+
+                //Console.WriteLine("--> ANALISZ " + adapter.Name);
+                if (adapter.Name.Equals(name))
+                {
+                    Console.WriteLine("===> FOUND [" + adapter.NetConnectionStatus + "]");
+                    return adapter.Status;                    
+                }
+            }
+
+            return "";
         }
     }
 }
