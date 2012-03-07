@@ -8,64 +8,48 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
 using System.Threading;
-using Argon.Controllers;
-using Argon.Model;
+using Argon.Windows.Network.Profile;
 using Argon.Common;
 using System.Configuration;
+using Argon.UseCase;
+using Argon.Models;
 
+/*
+ * Copyright 2012 Francesco Benincasa
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 namespace Argon.Windows.Forms
 {
     public partial class FormMain : Form
     {
         public FormMain()
-        {            
+        {
             InitializeComponent();
-            
+
             _DeserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
         }
 
         private DeserializeDockContent _DeserializeDockContent;
 
+        /// <summary>
+        /// Handles the Load event of the FormMain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormMain_Load(object sender, EventArgs e)
         {
-            string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
-
-            /*
-            if (File.Exists(configFile))
-            {
-                dockPanel.LoadFromXml(configFile, _DeserializeDockContent);
-            }
-            else*/
-            {                
-                Controller.Instance.View.ViewAdapters.Show(dockPanel);
-                Controller.Instance.View.ViewAdapters.DockState = DockState.DockBottomAutoHide;
-                //Controller.Instance.View.ViewAdapters.IsHidden = true;
-                Controller.Instance.View.ViewProfiles.Show(dockPanel);
-                Controller.Instance.View.ViewProfiles.DockState = DockState.Document;
-                Controller.Instance.View.ViewConsole.Show(dockPanel);
-                Controller.Instance.View.ViewConsole.DockState = DockState.DockBottomAutoHide;
-
-                mnuViewNetworkAdapters.Checked = true;
-                mnuViewProfiles.Checked = true;
-            }
-
-            
-            Controller.Instance.Init();
-            Controller.Instance.ConsoleController.Info("Startup program");
-            /*
-            if (Controller.Instance.ViewAdapters.DockState != DockState.Hidden && Controller.Instance.ViewAdapters.DockState != DockState.Unknown)
-            {
-                mnuViewNetworkAdapters.Checked = true;
-            }
-
-            if (Controller.Instance.ViewProfiles.DockState != DockState.Hidden && Controller.Instance.ViewProfiles.DockState != DockState.Unknown)
-            {
-                mnuViewProfiles.Checked = true;
-            }*/
-
-            Controller.Instance.PersistenceController.Load();
-            Controller.Instance.ActionRefreshProfiles();
-            
+            UseCaseApplication.Load(this);
         }
 
         /// <summary>
@@ -83,43 +67,29 @@ namespace Argon.Windows.Forms
 
             if (ret == DialogResult.Yes)
             {
-                Controller.Instance.PersistenceController.Save();
+                UseCaseConfig.Save();
                 return;
-            } else {
+            }
+            else
+            {
                 // bug fix: if user says no the windows does not close
                 e.Cancel = true;
             }
-            /*
-            if (!Visible)
-                return;
-
-            DialogResult ret=MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (ret == DialogResult.Yes)
-                return;                
-
-            
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true;
-                this.Hide();
-            }*/
-           
         }
 
 
         private IDockContent GetContentFromPersistString(string persistString)
         {
-            if (persistString == typeof(FormAdapters).ToString())
+            if (persistString == typeof(FormNetworkCards).ToString())
             {
-                Controller.Instance.View.ViewAdapters.Show(dockPanel);
-                return Controller.Instance.View.ViewAdapters;
+                ViewModel.NetworkCardsView.Show(dockPanel);
+                return ViewModel.NetworkCardsView;
             }
 
             if (persistString == typeof(FormProfiles).ToString())
             {
-                Controller.Instance.View.ViewProfiles.Show(dockPanel);
-                return Controller.Instance.View.ViewProfiles;
+                ViewModel.ProfilesView.Show(dockPanel);
+                return ViewModel.ProfilesView;
             }
             /*
             if (persistString == typeof(FormActionBean).ToString())
@@ -155,33 +125,11 @@ namespace Argon.Windows.Forms
         }
 
         private void mnuViewNetworkAdapters_Click(object sender, EventArgs e)
-        {            
-            if (!mnuViewNetworkAdapters.Checked)
-            {
-                Controller.Instance.View.ViewAdapters.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewAdapters.Hide();
-            }
+        {
+            UseCaseView.ToggleDisplay(ViewModel.NetworkCardsView);
         }
 
-        /// <summary>
-        /// Handles the Click event of the profilesToolStripMenuItem control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        public void profilesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!mnuViewProfiles.Checked)
-            {
-                Controller.Instance.View.ViewProfiles.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewProfiles.Hide();
-            }
-        }
+
 
         /// <summary>
         /// Handles the Click event of the saveToolStripMenuItem control.
@@ -190,7 +138,7 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Save();
+            //Controller.Instance.PersistenceController.Save();
         }
 
         /// <summary>
@@ -199,11 +147,22 @@ namespace Argon.Windows.Forms
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.ComponentModel.DoWorkEventArgs"/> instance containing the event data.</param>
         public void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
-        {           
-            NetworkProfileActions.Apply((NetworkProfile)e.Argument, backgroundWorker);
+        {
+            bool runDeviceConfig = true;
+            NetworkProfile profile = (NetworkProfile)e.Argument;
+            if (profile == null)
+            {
+                // autodetect
+                profile = NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
+                runDeviceConfig = false;
+            }
 
-            e.Result = e.Argument;
-            
+            if (profile != null)
+            {
+                UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);
+            }
+
+            e.Result = profile;
         }
 
         /// <summary>
@@ -215,9 +174,16 @@ namespace Argon.Windows.Forms
         {
             NetworkProfile profile = (NetworkProfile)e.Result;
             lblStatus.Text = "Completed";
-            MessageBox.Show("Applied profile " + profile.Name,"Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (profile != null)
+            {
+                MessageBox.Show("Applied profile " + profile.Name, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No profile applyed!!! ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             lblStatus.Text = "Ready";
-            progressBar.Value = 0;            
+            progressBar.Value = 0;
         }
 
         /// <summary>
@@ -235,11 +201,11 @@ namespace Argon.Windows.Forms
         {
             this.ShowInTaskbar = true;
             this.Visible = true;
-           // this.WindowState = FormWindowState.Normal;
-            
+            // this.WindowState = FormWindowState.Normal;
+
             this.WindowState = FormWindowState.Normal;
             this.Width = 400;
-            this.Height = 400;           
+            this.Height = 400;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,121 +216,89 @@ namespace Argon.Windows.Forms
 
         private void btnProfileNew_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.ShowNew(); 
+            UseCaseView.ShowNewProfile();
         }
 
         private void btnProfileSave_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Save();
+            //Controller.Instance.PersistenceController.Save();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.ShowProfile();
+            UseCaseProfile.ShowCurrent();
         }
 
         private void btnAllProfileLoad_Click(object sender, EventArgs e)
         {
-            Controller.Instance.PersistenceController.Load();
-            Controller.Instance.ActionRefreshProfiles();
+            //Controller.Instance.PersistenceController.Load();
+
+            UseCaseProfile.Refresh();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnAllCardsRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnAllCardsRefresh_Click(object sender, EventArgs e)
         {
-            NetworkCardActions.RefreshAll();
+            UseCaseNetworkCard.RefreshNetworkCardListStatus();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnCardView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnCardView_Click(object sender, EventArgs e)
         {
-            NetworkCardActions.ShowNetworkCard();
+            UseCaseNetworkCard.ShowSelectedNetworkCard();
         }
 
-        private void btnProfileRun_Click(object sender, EventArgs e)
-        {
-            NetworkProfileActions.ApplyProfile();
-        }
 
+        /// <summary>
+        /// Handles the Click event of the btnProfileRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileRefresh_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.RefrehProfiles();
+            UseCaseProfile.Refresh();
         }
 
-        private void btnProfileSave_Click_1(object sender, EventArgs e)
-        {
-            NetworkProfileActions.SaveProfile();
-        }
-
+        /// <summary>
+        /// Handles the Click event of the btnProfileDelete control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileDelete_Click(object sender, EventArgs e)
         {
-            NetworkProfileActions.DeleteCurrentProfile();
+            UseCaseProfile.DeleteProfile();
         }
 
         private void applyToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
-            this.ShowInTaskbar = true;            
+        {
+            this.ShowInTaskbar = true;
             // this.WindowState = FormWindowState.Normal;
 
             this.WindowState = FormWindowState.Normal;
             this.Width = 400;
-            this.Height = 400;  
+            this.Height = 400;
 
             this.Visible = true;
         }
 
         private void mnuHelpAbout_Click(object sender, EventArgs e)
-        {        
-            FormAboutBox ab = new FormAboutBox();
-            /*ab.AppTitle = txtTitle.Text;
-            ab.AppDescription = txtDescription.Text;
-            ab.AppVersion = txtVersion.Text;
-            ab.AppCopyright = txtCopyright.Text;
-            ab.AppMoreInfo = txtMoreInfo.Text;
-            ab.AppDetailsButton = chkDetails.Checked;*/
+        {
 
-            string app="";
-            app+="Visit http://argonswitcher.sourceforge.net for updates!"+Environment.NewLine;
-            
-            ab.AppMoreInfo = app;
-
-            ab.ShowDialog(this);       
         }
 
 
         private void mnuViewConsole_Click(object sender, EventArgs e)
         {
-            if (!mnuViewConsole.Checked)
-            {
-                Controller.Instance.View.ViewConsole.Show();
-            }
-            else
-            {
-                Controller.Instance.View.ViewConsole.Hide();
-            }
+            UseCaseView.ToggleDisplay(ViewModel.ConsoleView);
         }
-
-        private void mnuCheckForUpdates_Click(object sender, EventArgs e)
-        {
-            string url = "http://argon-network-switcher.googlecode.com/files/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
-            CheckForUpdate.Verify(url);
-        }
-
-   
-        private void makeADonationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormDonate form = new FormDonate();
-            form.ShowDialog(this);  
-        }
-
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
 
         /// <summary>
         /// 
@@ -381,6 +315,188 @@ namespace Argon.Windows.Forms
                     base.OnSizeChanged(e);
                 });
             }
-        }        
+        }
+
+
+        private void rbtnViewProfiles_Click(object sender, EventArgs e)
+        {
+            UseCaseView.ToggleDisplay(ViewModel.ProfilesView);
+        }
+
+
+
+        /// <summary>
+        /// Handles the Click event of the btnRunProfile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        public void btnRunProfile_Click(object sender, EventArgs e)
+        {
+            DataModel.SelectedNetworkProfile = (NetworkProfile)(((RibbonButton)sender)).Tag;
+            UseCaseProfile.Run();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnSmartView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnSmartView_Click(object sender, EventArgs e)
+        {
+            UseCaseSmartView.ExecuteToggleSmartView();
+        }
+
+        /// <summary>
+        /// Gets or sets the old size.
+        /// </summary>
+        /// <value>
+        /// The old size.
+        /// </value>
+        public Size OldSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [smart view].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [smart view]; otherwise, <c>false</c>.
+        /// </value>
+        public bool SmartView { get; set; }
+
+        /// <summary>
+        /// Handles the Click event of the btnConfigLoad control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void btnConfigLoad_Click(object sender, EventArgs e)
+        {
+            UseCaseConfig.Load(showDialog: true);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnConfigSave control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnConfigSave_Click(object sender, EventArgs e)
+        {
+            UseCaseConfig.Save(showDialog: true);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpDonate control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpDonate_Click(object sender, EventArgs e)
+        {
+            FormDonate form = new FormDonate();
+            form.ShowDialog(this);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpUpdate control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpUpdate_Click(object sender, EventArgs e)
+        {
+            string url = "http://argonswitcher.sourceforge.net/checkLastVersion.xml"; //ConfigurationManager.AppSettings.Get("updateUrl");            
+            CheckForUpdate.Verify(url);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnHelpAbout control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnHelpAbout_Click(object sender, EventArgs e)
+        {
+            FormAboutBox ab = new FormAboutBox();
+            /*ab.AppTitle = txtTitle.Text;
+            ab.AppDescription = txtDescription.Text;
+            ab.AppVersion = txtVersion.Text;
+            ab.AppCopyright = txtCopyright.Text;
+            ab.AppMoreInfo = txtMoreInfo.Text;
+            ab.AppDetailsButton = chkDetails.Checked;*/
+
+            string app = "";
+            app += "Visit http://argonswitcher.sourceforge.net for updates!" + Environment.NewLine;
+
+            ab.AppMoreInfo = app;
+
+            ab.ShowDialog(this);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnProfileRun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnProfileRun_Click(object sender, EventArgs e)
+        {            
+            UseCaseProfile.Run();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnCardsRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnCardsRefresh_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.RefreshNetworkCardListStatus();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnCardView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnCardView_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.ShowSelectedNetworkCard();
+        }
+
+        private void rbtnProfileSave_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.SaveProfile();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnConsoleRefresh control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnConsoleRefresh_Click(object sender, EventArgs e)
+        {
+            UseCaseView.ClearConsole();
+        }
+
+        private void rbtnCardEnable_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.EnableNetworkCard();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnCardDisable control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnCardDisable_Click(object sender, EventArgs e)
+        {
+            UseCaseNetworkCard.DisableNetworkCard();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnProfileAutorun control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnProfileAutorun_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.RunAutoDetect();               
+        }
+
+
     }
 }

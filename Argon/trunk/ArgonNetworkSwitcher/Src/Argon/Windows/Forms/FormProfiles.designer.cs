@@ -44,7 +44,7 @@ namespace Argon.Windows.Forms
             this.mnuDuplicateProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList32x32 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList48x48 = new System.Windows.Forms.ImageList(this.components);
             this.imageList24x24 = new System.Windows.Forms.ImageList(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -76,11 +76,12 @@ namespace Argon.Windows.Forms
             this.listView.ContextMenuStrip = this.contextMenu;
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView.FullRowSelect = true;
+            this.listView.LargeImageList = this.imageList48x48;
             this.listView.Location = new System.Drawing.Point(0, 0);
             this.listView.Name = "listView";
             this.listView.ShowGroups = false;
             this.listView.Size = new System.Drawing.Size(521, 243);
-            this.listView.SmallImageList = this.imageList32x32;
+            this.listView.SmallImageList = this.imageList48x48;
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -90,6 +91,7 @@ namespace Argon.Windows.Forms
             // colName
             // 
             this.colName.AspectName = "Name";
+            this.colName.ImageAspectName = "";
             this.colName.Text = "Name";
             this.colName.Width = 160;
             // 
@@ -111,63 +113,63 @@ namespace Argon.Windows.Forms
             this.toolStripMenuItem2,
             this.mnuDelete});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(163, 132);
+            this.contextMenu.Size = new System.Drawing.Size(162, 154);
             // 
             // mnuNew
             // 
             this.mnuNew.Name = "mnuNew";
-            this.mnuNew.Size = new System.Drawing.Size(162, 22);
+            this.mnuNew.Size = new System.Drawing.Size(161, 22);
             this.mnuNew.Text = "New profile";
             this.mnuNew.Click += new System.EventHandler(this.mnuNew_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuOpen
             // 
             this.mnuOpen.Name = "mnuOpen";
-            this.mnuOpen.Size = new System.Drawing.Size(162, 22);
+            this.mnuOpen.Size = new System.Drawing.Size(161, 22);
             this.mnuOpen.Text = "Open profile";
             this.mnuOpen.Click += new System.EventHandler(this.mnuOpen_Click);
             // 
             // mnuApply
             // 
             this.mnuApply.Name = "mnuApply";
-            this.mnuApply.Size = new System.Drawing.Size(162, 22);
-            this.mnuApply.Text = "Apply profile";
-            this.mnuApply.Click += new System.EventHandler(this.mnuApply_Click);
+            this.mnuApply.Size = new System.Drawing.Size(161, 22);
+            this.mnuApply.Text = "Run profile";
+            this.mnuApply.Click += new System.EventHandler(this.mnuRun_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuDuplicateProfile
             // 
             this.mnuDuplicateProfile.Name = "mnuDuplicateProfile";
-            this.mnuDuplicateProfile.Size = new System.Drawing.Size(162, 22);
+            this.mnuDuplicateProfile.Size = new System.Drawing.Size(161, 22);
             this.mnuDuplicateProfile.Text = "Duplicate profile";
             this.mnuDuplicateProfile.Click += new System.EventHandler(this.mnuDuplicateProfile_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(159, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuDelete
             // 
             this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(162, 22);
+            this.mnuDelete.Size = new System.Drawing.Size(161, 22);
             this.mnuDelete.Text = "Remove profile";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
-            // imageList32x32
+            // imageList48x48
             // 
-            this.imageList32x32.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList32x32.ImageStream")));
-            this.imageList32x32.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList32x32.Images.SetKeyName(0, "index.png");
+            this.imageList48x48.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList48x48.ImageSize = new System.Drawing.Size(48, 46);
+            this.imageList48x48.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // imageList24x24
             // 
@@ -185,12 +187,10 @@ namespace Argon.Windows.Forms
             this.Controls.Add(this.toolStripContainer1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProfiles";
             this.TabText = "Profiles ";
             this.Text = "Profiles ";
-            this.Activated += new System.EventHandler(this.FormProfiles_Activated);
             this.Load += new System.EventHandler(this.FormProfiles_Load);
             this.VisibleChanged += new System.EventHandler(this.FormProfiles_VisibleChanged);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -206,7 +206,6 @@ namespace Argon.Windows.Forms
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ImageList imageList24x24;
-        private OLVColumn colName;
         private OLVColumn colNetwork;
         public ObjectListView listView;
         private System.Windows.Forms.ContextMenuStrip contextMenu;
@@ -218,6 +217,7 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuDuplicateProfile;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ImageList imageList32x32;
+        public System.Windows.Forms.ImageList imageList48x48;
+        public OLVColumn colName;
     }
 }

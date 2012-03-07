@@ -1,5 +1,8 @@
 ﻿namespace Argon.Windows.Forms
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class FormConsole
     {
         /// <summary>

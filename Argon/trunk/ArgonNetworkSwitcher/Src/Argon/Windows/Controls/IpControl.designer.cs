@@ -44,9 +44,13 @@ namespace Argon.Windows.Controls
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMacAddress = new System.Windows.Forms.TextBox();
+            this.gbWifiProfile = new System.Windows.Forms.GroupBox();
+            this.cbWifiProfile = new System.Windows.Forms.ComboBox();
+            this.cbWifi = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbWifiProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -240,10 +244,42 @@ namespace Argon.Windows.Controls
             this.txtMacAddress.TabIndex = 0;
             this.txtMacAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // gbWifiProfile
+            // 
+            this.gbWifiProfile.Controls.Add(this.cbWifiProfile);
+            this.gbWifiProfile.Controls.Add(this.cbWifi);
+            this.gbWifiProfile.Location = new System.Drawing.Point(288, 176);
+            this.gbWifiProfile.Name = "gbWifiProfile";
+            this.gbWifiProfile.Size = new System.Drawing.Size(289, 59);
+            this.gbWifiProfile.TabIndex = 25;
+            this.gbWifiProfile.TabStop = false;
+            this.gbWifiProfile.Text = "Wifi profile";
+            // 
+            // cbWifiProfile
+            // 
+            this.cbWifiProfile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWifiProfile.FormattingEnabled = true;
+            this.cbWifiProfile.Location = new System.Drawing.Point(135, 17);
+            this.cbWifiProfile.Name = "cbWifiProfile";
+            this.cbWifiProfile.Size = new System.Drawing.Size(128, 21);
+            this.cbWifiProfile.TabIndex = 1;
+            // 
+            // cbWifi
+            // 
+            this.cbWifi.AutoSize = true;
+            this.cbWifi.Location = new System.Drawing.Point(15, 21);
+            this.cbWifi.Name = "cbWifi";
+            this.cbWifi.Size = new System.Drawing.Size(83, 17);
+            this.cbWifi.TabIndex = 0;
+            this.cbWifi.Text = "associate to";
+            this.cbWifi.UseVisualStyleBackColor = true;
+            this.cbWifi.CheckedChanged += new System.EventHandler(this.cbWifi_CheckedChanged);
+            // 
             // IpControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbWifiProfile);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -257,6 +293,8 @@ namespace Argon.Windows.Controls
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbWifiProfile.ResumeLayout(false);
+            this.gbWifiProfile.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +317,8 @@ namespace Argon.Windows.Controls
         private System.Windows.Forms.CheckBox cbDynamicDNS;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMacAddress;
+        private System.Windows.Forms.GroupBox gbWifiProfile;
+        private System.Windows.Forms.CheckBox cbWifi;
+        private System.Windows.Forms.ComboBox cbWifiProfile;
     }
 }
