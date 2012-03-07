@@ -44,6 +44,8 @@ namespace Argon.UseCase
                 form.MaximizeBox = false;
                 // restore form view
                 form.Visible = true;
+
+                
             }            
 
             form.SmartView = !form.SmartView;

@@ -30,21 +30,21 @@ namespace Argon.Windows.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -60,6 +60,7 @@ namespace Argon.Windows.Forms
             this.rpAutoDetect = new System.Windows.Forms.RibbonPanel();
             this.rbtnAutoDetectRun = new System.Windows.Forms.RibbonButton();
             this.rbtnProfilesList = new System.Windows.Forms.RibbonButtonList();
+            this.rbtnProfilesRun = new System.Windows.Forms.RibbonButton();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
             this.rpProfile = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfileNew = new System.Windows.Forms.RibbonButton();
@@ -89,7 +90,6 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -124,50 +124,50 @@ namespace Argon.Windows.Forms
             this.dockPanel.Location = new System.Drawing.Point(0, 140);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.Size = new System.Drawing.Size(1016, 446);
-            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
-            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin1.TabGradient = tabGradient1;
-            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
-            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
-            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
-            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
-            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
-            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
-            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
-            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
-            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
-            tabGradient7.EndColor = System.Drawing.Color.Transparent;
-            tabGradient7.StartColor = System.Drawing.Color.Transparent;
-            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
-            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel.Skin = dockPanelSkin1;
+            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
+            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin2.TabGradient = tabGradient8;
+            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
+            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
+            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
+            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
+            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
+            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
+            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
+            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
+            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
+            tabGradient14.EndColor = System.Drawing.Color.Transparent;
+            tabGradient14.StartColor = System.Drawing.Color.Transparent;
+            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
+            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
+            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
+            this.dockPanel.Skin = dockPanelSkin2;
             this.dockPanel.TabIndex = 6;
             this.dockPanel.SizeChanged += new System.EventHandler(this.dockPanel_SizeChanged);
             // 
@@ -305,7 +305,7 @@ namespace Argon.Windows.Forms
             // rbtnProfilesList
             // 
             this.rbtnProfilesList.AltKey = null;
-            this.rbtnProfilesList.Buttons.Add(this.ribbonButton1);
+            this.rbtnProfilesList.Buttons.Add(this.rbtnProfilesRun);
             this.rbtnProfilesList.ButtonsSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
             this.rbtnProfilesList.FlowToBottom = false;
             this.rbtnProfilesList.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
@@ -315,6 +315,20 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesList.ToolTip = null;
             this.rbtnProfilesList.ToolTipImage = null;
             this.rbtnProfilesList.ToolTipTitle = null;
+            // 
+            // rbtnProfilesRun
+            // 
+            this.rbtnProfilesRun.AltKey = null;
+            this.rbtnProfilesRun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnProfilesRun.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnProfilesRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_add24x24;
+            this.rbtnProfilesRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfilesRun.SmallImage")));
+            this.rbtnProfilesRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnProfilesRun.Tag = null;
+            this.rbtnProfilesRun.Text = "Profiles";
+            this.rbtnProfilesRun.ToolTip = null;
+            this.rbtnProfilesRun.ToolTipImage = null;
+            this.rbtnProfilesRun.ToolTipTitle = null;
             // 
             // rtOperations
             // 
@@ -344,7 +358,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileNew.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileNew.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileNew.Image = global::Argon.Windows.Forms.Properties.Resources.profile_new_48x48;
-            this.rbtnProfileNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileNew.SmallImage")));
+            this.rbtnProfileNew.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_new_48x48;
             this.rbtnProfileNew.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileNew.Tag = null;
             this.rbtnProfileNew.Text = "New";
@@ -359,7 +373,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileView.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileView.Image = global::Argon.Windows.Forms.Properties.Resources.profile_edit_48x48;
-            this.rbtnProfileView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileView.SmallImage")));
+            this.rbtnProfileView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_edit_48x48;
             this.rbtnProfileView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileView.Tag = null;
             this.rbtnProfileView.Text = "View";
@@ -374,7 +388,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileDelete.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileDelete.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileDelete.Image = global::Argon.Windows.Forms.Properties.Resources.profile_delete_48x48;
-            this.rbtnProfileDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileDelete.SmallImage")));
+            this.rbtnProfileDelete.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_delete_48x48;
             this.rbtnProfileDelete.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileDelete.Tag = null;
             this.rbtnProfileDelete.Text = "Delete";
@@ -700,20 +714,6 @@ namespace Argon.Windows.Forms
             this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
             // 
-            // ribbonButton1
-            // 
-            this.ribbonButton1.AltKey = null;
-            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton1.Tag = null;
-            this.ribbonButton1.Text = "gg";
-            this.ribbonButton1.ToolTip = null;
-            this.ribbonButton1.ToolTipImage = null;
-            this.ribbonButton1.ToolTipTitle = null;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,7 +760,6 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonButton rbtnCardsRefresh;
         public System.Windows.Forms.RibbonButton rbtnCardView;
         public System.Windows.Forms.RibbonPanel rpProfilesCollection;
-        private System.Windows.Forms.RibbonPanel rpConsole;
         private System.Windows.Forms.RibbonPanel rpHelp;
         private System.Windows.Forms.RibbonButton rbtnHelpAbout;
         private System.Windows.Forms.RibbonButton rbtnHelpUpdate;
@@ -783,7 +782,8 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonTab rtProfiles;
         public System.Windows.Forms.RibbonTab rtViews;
         public System.Windows.Forms.RibbonButtonList rbtnProfilesList;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+        public System.Windows.Forms.RibbonPanel rpConsole;
+        public System.Windows.Forms.RibbonButton rbtnProfilesRun;
         
         public DockPanel Pannello
         {
