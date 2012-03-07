@@ -58,7 +58,7 @@ namespace Argon.Windows7.Network
                     {
                         ret = adapter.Disable();
                     }
-
+                    
                     return true;
                 }
             }
