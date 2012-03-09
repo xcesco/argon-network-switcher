@@ -3,7 +3,13 @@
 
 Version 1.2.1
 -------------
+- Bug fix: introduced minimun size to avoid ribbon problem
+- Improvement: removed firt ribbon panel. Now all operations about profile are in same place
+- Improvement: add profile list button in ribbon panel to display list of profile
 - Bug fix: when in smart view, ribbon panel were display
+- Bug fix: in some case autodetect does not work
+- Bug fix: in some case profile save does not work
+- Minor Improvement: refresh network card status is reflected on current opened profile windows
 
 Version 1.2.0
 -------------

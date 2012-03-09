@@ -66,12 +66,8 @@ namespace Argon.UseCase
         /// </list>
         /// </summary>
         public static void Refresh()
-        {
-
-            RibbonPanel rp = ViewModel.MainView.rpProfilesCollection;
-            RibbonItemCollection rpc = rp.Items;
-            RibbonButton rButton = null;
-            rpc.Clear();
+        {            
+            RibbonButton rButton = null;            
 
             ViewModel.MainView.rbtnProfilesList.DropDownItems.Clear();
 
@@ -85,7 +81,6 @@ namespace Argon.UseCase
 
                 // 2 - refresh the ribbonPanel in mainView            
                 rButton = new RibbonButton();
-
                 
                 rButton.Text = item.Name;
                 rButton.ToolTip = item.Name;
@@ -131,6 +126,19 @@ namespace Argon.UseCase
                 profile.Id = CreateNewProfileId();
                 // if not exist add it
                 DataModel.NetworkProfileList.Add(profile);
+            }
+            else
+            {
+                // save profile
+                for (int i = 0; i < DataModel.NetworkProfileList.Count; i++)
+                {
+                    if (profile.Id == DataModel.NetworkProfileList[i].Id)
+                    {
+                        // found e replace
+                        DataModel.NetworkProfileList[i] = profile;
+                        break;
+                    }
+                }
             }
             // list refresh
             Refresh();

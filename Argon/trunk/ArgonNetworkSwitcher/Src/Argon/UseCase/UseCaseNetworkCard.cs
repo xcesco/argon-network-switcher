@@ -85,7 +85,7 @@ namespace Argon.UseCase
                 MyMessageBox.ShowMessage("No network card selected!");
                 return;
             }
-            if (MyMessageBox.Ask("Do you want to enable network card " + DataModel.SelectedNetworkCard.Name + "?"))
+            if (MyMessageBox.Ask("Do you want to disable network card " + DataModel.SelectedNetworkCard.Name + "?"))
             {
                 SetStatusCard(false);
             }
@@ -109,6 +109,7 @@ namespace Argon.UseCase
             foreach(FormProfile item in ViewModel.ProfileViewList)
             {
                 item.RefreshNetworkAdapter();
+                item.ipControl.RefreshWifiCombo();
             }
         }
 

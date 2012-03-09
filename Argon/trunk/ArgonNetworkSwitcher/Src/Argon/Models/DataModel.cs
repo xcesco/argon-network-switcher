@@ -59,5 +59,20 @@ namespace Argon.Models
         /// The selected network card.
         /// </value>
         public static WindowsNetworkCard SelectedNetworkCard { get; set; }
+
+        /// <summary>
+        /// Finds the network card.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        public static WindowsNetworkCard FindNetworkCard(string id)
+        {
+            foreach (WindowsNetworkCard item in NetworkCardList)
+            {
+                if (item.Id.Equals(id)) return item;
+            }
+
+            return null;
+        }
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="Src\Argon\Windows\Network\Profile\NetworkProfileHelper.cs" />
     <Compile Include="Src\Argon\Windows\Network\Wifi\WifiProfileManager.cs" />
     <Compile Include="Src\Argon\Windows\Network\Wifi\WifiProfile.cs" />
+    <Compile Include="Src\Argon\Windows\Network\WindowsNetworkCardEventHandler.cs" />
     <Compile Include="Src\Argon\Windows\Network\WindowsNetworkCardHelper.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WinXPNetworkCardHelper.cs" />
     <Compile Include="Src\Argon\WindowsXP\Network\WmiNetworkAdapterConfiguration.cs">

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Argon.Windows;
 using Argon.Windows.Network;
 using Argon.Windows.Network.Wifi;
+using Argon.Models;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -123,18 +124,35 @@ namespace Argon.Windows.Controls
 
             txtMacAddress.Text = _configuration.MacAddress;
 
+            RefreshWifiCombo();
+        }
+
+        /// <summary>
+        /// Refreshes the wifi combo.
+        /// </summary>
+        public void RefreshWifiCombo()
+        {
+            // get the correct type from dataModel, cause _configuration.CardType is not affidable
+            WindowsNetworkCardType type = DataModel.FindNetworkCard(_configuration.Id).CardType;
+
             // for wifi card
-            if (_configuration.CardType == WindowsNetworkCardType.WIRELESS)
-            {                
+            if (type == WindowsNetworkCardType.WIRELESS)
+            {
                 WifiProfile currentWifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(_configuration);
 
-                List<WifiProfile> listWifiProfile=WifiProfileManager.GetWifiProfilesForCard(_configuration);
+                List<WifiProfile> listWifiProfile = WifiProfileManager.GetWifiProfilesForCard(_configuration);
 
                 cbWifiProfile.Items.Clear();
                 cbWifiProfile.Items.Add("");
                 foreach (WifiProfile item in listWifiProfile)
                 {
                     cbWifiProfile.Items.Add(item.SSID);
+                }
+
+                // if nic is disable, no wireless profile found. Add the selected profile
+                if (listWifiProfile.Count == 0)
+                {
+                    cbWifiProfile.Items.Add(WifiProfileSSID);
                 }
 
                 cbWifi.Checked = WifiProfileSelected;

@@ -30,7 +30,7 @@ namespace Argon.Windows.Network.Profile
     /// </summary>
     internal static class AutoDetect
     {
-        internal const int WAIT_AFTER_SETUP = 1000;
+        internal const int WAIT_AFTER_SETUP = 1000*8;
         internal const int WAIT_BEFORE_PING = 1000;
 
         /// <summary>
@@ -108,7 +108,10 @@ namespace Argon.Windows.Network.Profile
                     // wait for a while
                     //NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
                     //System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
-                    WaitUntilNetworkCardIsUp(item.NetworkCardInfo);
+                    WindowsNetworkCardEventHandler eventHandler = new WindowsNetworkCardEventHandler(item.NetworkCardInfo);
+
+                    eventHandler.WaitUntilNetworkCardIsUp();
+                    //WaitUntilNetworkCardIsUp(item.NetworkCardInfo);
 
                     NetworkProfileHelper.FireNotifyEvent("Wait " + (WAIT_BEFORE_PING) + " ms.");
                     System.Threading.Thread.Sleep(WAIT_BEFORE_PING);
@@ -281,112 +284,6 @@ namespace Argon.Windows.Network.Profile
         {
             return x.MaxSpeed.CompareTo(y.MaxSpeed);
         }
-
-        #region WaitUntilNetworkCardIsUp
-
-        /// <summary>
-        /// Waits the until network card is up.
-        /// </summary>
-        /// <returns></returns>
-        private static bool WaitUntilNetworkCardIsUp(WindowsNetworkCard nicValue)
-        {
-            NetworkCardUp = false;
-            finished = false;
-
-            nic = nicValue;
-
-            try
-            {
-                NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
-
-                StatisticalData data = ClimbSmallHill;
-                IAsyncResult ar = data.BeginInvoke(null, null);
-
-                while (!ar.IsCompleted)
-                {
-                    Console.WriteLine("Waiting.....");
-                    Thread.Sleep(20 * IDLE_TIME);
-
-                }
-                Console.WriteLine("Wait is finished...");
-                Console.WriteLine("Time Taken for Network card is up ....{0}",
-                data.EndInvoke(ar).ToString() + "..Seconds");
-            }
-            finally
-            {
-                // remove every time
-                NetworkChange.NetworkAvailabilityChanged -= NetworkChange_NetworkAvailabilityChanged;
-            }
-
-            return NetworkCardUp;
-        }
-
-        /// <summary>
-        /// Handles the NetworkAvailabilityChanged event of the NetworkChange control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Net.NetworkInformation.NetworkAvailabilityEventArgs"/> instance containing the event data.</param>
-        private static void NetworkChange_NetworkAvailabilityChanged(object sender, NetworkAvailabilityEventArgs e)
-        {
-            if (e.IsAvailable)
-            {
-                finished = true;
-                NetworkCardUp = true;
-                Console.WriteLine("Network is Available");
-            }
-            else
-            {
-                NetworkCardUp = false;
-                Console.WriteLine("Network is Unavailable");
-            }
-        }
-
-        /// <summary>
-        /// max wait 15 seconds
-        /// </summary>
-        public static int MAX_WAIT = 15000;
-       
-        /// <summary>
-        /// idle time 10 ms
-        /// </summary>
-        public static int IDLE_TIME = 10;
-
-        public static WindowsNetworkCard nic;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool finished;
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool NetworkCardUp;
-
-        private static long ClimbSmallHill()
-        {
-            var sw = Stopwatch.StartNew();
-            for (int i = 0; i < MAX_WAIT / IDLE_TIME; i++)
-            {
-                Thread.Sleep(IDLE_TIME);
-
-                Console.WriteLine("Device status "+WindowsNetworkCardHelper.GetDeviceStatus(nic));
-
-                if (finished)
-                {
-                    sw.Stop();
-                    Console.WriteLine("Termino");
-                    return sw.ElapsedMilliseconds;
-                }
-
-            }
-
-            sw.Stop();
-            return sw.ElapsedMilliseconds;
-        }
-
-        internal delegate long StatisticalData();
-
-        #endregion
 
     }
 }

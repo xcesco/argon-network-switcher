@@ -158,20 +158,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap data_disk1 {
-            get {
-                object obj = ResourceManager.GetObject("data_disk1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap data_out {
-            get {
-                object obj = ResourceManager.GetObject("data_out", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap data_up {
             get {
                 object obj = ResourceManager.GetObject("data_up", resourceCulture);
@@ -200,184 +186,72 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap document_add48x48 {
+        public static System.Drawing.Bitmap document_edit48x481 {
             get {
-                object obj = ResourceManager.GetObject("document_add48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("document_edit48x481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_check24x24 {
+        public static System.Drawing.Bitmap document_gear24x241 {
             get {
-                object obj = ResourceManager.GetObject("document_check24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("document_gear24x241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_check32x32 {
+        public static System.Drawing.Bitmap document_gear32x321 {
             get {
-                object obj = ResourceManager.GetObject("document_check32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("document_gear32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_check48x48 {
+        public static System.Drawing.Bitmap document_gear48x481 {
             get {
-                object obj = ResourceManager.GetObject("document_check48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("document_gear48x481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_connection32x32 {
+        public static System.Drawing.Bitmap document_new24x241 {
             get {
-                object obj = ResourceManager.GetObject("document_connection32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("document_new24x241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_connection48x48 {
+        public static System.Drawing.Bitmap document_new32x321 {
             get {
-                object obj = ResourceManager.GetObject("document_connection48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("document_new32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_delete24x24 {
+        public static System.Drawing.Bitmap document_new48x481 {
             get {
-                object obj = ResourceManager.GetObject("document_delete24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("document_new48x481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_delete32x32 {
+        public static System.Drawing.Bitmap document_ok48x481 {
             get {
-                object obj = ResourceManager.GetObject("document_delete32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("document_ok48x481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_delete48x48 {
+        public static System.Drawing.Bitmap document_plain_new48x481 {
             get {
-                object obj = ResourceManager.GetObject("document_delete48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("document_plain_new48x481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap document_edit24x24 {
+        public static System.Drawing.Bitmap document_refresh24x241 {
             get {
-                object obj = ResourceManager.GetObject("document_edit24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_edit32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document_edit32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_edit48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_edit48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear24x24 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new24x24 {
-            get {
-                object obj = ResourceManager.GetObject("document_new24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document_new32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_new48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_ok48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_ok48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_plain_new48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_plain_new48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_refresh24x24 {
-            get {
-                object obj = ResourceManager.GetObject("document_refresh24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_refresh32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document_refresh32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_refresh48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_refresh48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_view24x24 {
-            get {
-                object obj = ResourceManager.GetObject("document_view24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_view32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document_view32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_view48x48 {
-            get {
-                object obj = ResourceManager.GetObject("document_view48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("document_refresh24x241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -448,27 +322,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap help_48x48 {
             get {
                 object obj = ResourceManager.GetObject("help_48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap index_add {
-            get {
-                object obj = ResourceManager.GetObject("index_add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap index_delete {
-            get {
-                object obj = ResourceManager.GetObject("index_delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap index_preferences {
-            get {
-                object obj = ResourceManager.GetObject("index_preferences", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -620,6 +473,13 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap profile_0_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("profile_0_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap profile_0_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_0_48x48", resourceCulture);
@@ -690,13 +550,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap profile_add24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_add24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap profile_autorun_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_autorun_48x48", resourceCulture);
@@ -707,20 +560,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap profile_delete_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_delete_48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_delete24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_delete24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_down24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_down24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -746,34 +585,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap profile_new24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_new24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_preferences24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_preferences24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_refresh24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_refresh24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_replace24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_replace24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap profile_run_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_run_48x48", resourceCulture);
@@ -784,27 +595,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap profile_save_48x48 {
             get {
                 object obj = ResourceManager.GetObject("profile_save_48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_up24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_up24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile_view24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile_view24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap profile24x24 {
-            get {
-                object obj = ResourceManager.GetObject("profile24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
