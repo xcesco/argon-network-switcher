@@ -232,6 +232,10 @@ namespace Argon.UseCase
 
             FormProfile form = new FormProfile();
             form.Profile = profile;
+
+            // update networkcard for security
+            //profile.NetworkCardInfo = DataModel.FindNetworkCard(profile.NetworkCardInfo.Id);
+
             form.ViewDataOnForm();
 
             ViewModel.ProfileViewList.Add(form);

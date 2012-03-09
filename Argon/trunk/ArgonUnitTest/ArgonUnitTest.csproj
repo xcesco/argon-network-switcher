@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Argon\Network\AutoDetectTest.cs" />
+    <Compile Include="Src\Argon\Network\Wifi\WifiProfileManagerTest.cs" />
     <Compile Include="Src\Argon\Windows\DriverMapperTest.cs" />
     <Compile Include="Src\Argon\FileSystem\FileSearcherTest.cs" />
     <Compile Include="Src\Argon\Windows\OSInfoTest.cs" />
@@ -65,9 +66,7 @@
       <Name>ArgonLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Argon\Network\Wifi\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="TestProfiles.xml" />
   </ItemGroup>

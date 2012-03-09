@@ -43,9 +43,7 @@ namespace Argon.WindowsXP.Network
             
             return array;
         }
-
-       
-
+      
         /// <summary>
         /// Gets the list from WMI.
         /// </summary>
@@ -98,19 +96,19 @@ namespace Argon.WindowsXP.Network
                 //http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx
                 /*
                  * "Ethernet 802.3"
-"Token Ring 802.5"
-"Fiber Distributed Data Interface (FDDI)"
-"Wide Area Network (WAN)"
-"LocalTalk"
-"Ethernet using DIX header format"
-"ARCNET"
-"ARCNET (878.2)"
-"ATM"
-"Wireless"
-"Infrared Wireless"
-"Bpc"
-"CoWan"
-"1394"
+                    "Token Ring 802.5"
+                    "Fiber Distributed Data Interface (FDDI)"
+                    "Wide Area Network (WAN)"
+                    "LocalTalk"
+                    "Ethernet using DIX header format"
+                    "ARCNET"
+                    "ARCNET (878.2)"
+                    "ATM"
+                    "Wireless"
+                    "Infrared Wireless"
+                    "Bpc"
+                    "CoWan"
+                    "1394"
                  * */
                 card.AdapterType=adapter.AdapterType;
 
@@ -173,6 +171,13 @@ namespace Argon.WindowsXP.Network
             return lista;
         }
 
+        /// <summary>
+        /// Determines whether [is network card in registry] [the specified card].
+        /// </summary>
+        /// <param name="card">The card.</param>
+        /// <returns>
+        ///   <c>true</c> if [is network card in registry] [the specified card]; otherwise, <c>false</c>.
+        /// </returns>
         internal static Boolean IsNetworkCardInRegistry(WindowsNetworkCard card)
         {
             if (String.IsNullOrEmpty(card.Id)) return false;

@@ -29,10 +29,6 @@ namespace Argon.Windows.Network
 
             list = NetworkProfileHelper.Load(file,"");
 
-
-            // string relPath = System.IO.Path.Combine(Application.StartupPath, "TestProfiles.xml"); 
-
-
             return list;
         }
 
