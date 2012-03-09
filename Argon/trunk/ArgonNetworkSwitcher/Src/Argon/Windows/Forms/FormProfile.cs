@@ -376,6 +376,10 @@ namespace Argon.Windows.Forms
                         txtSelectedCard.Text = item.ViewId + " " + item.Name;
                         int currentNetworkCardIndex = i;
                         lstNetworkCard.SelectedIndex = i;
+
+                        // set current nic as SelectedNic
+                        DataModel.SelectedNetworkCard = item;
+
                         break;
                     }
                     i++;
