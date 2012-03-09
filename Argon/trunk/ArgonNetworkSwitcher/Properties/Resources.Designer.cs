@@ -179,97 +179,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap document {
-            get {
-                object obj = ResourceManager.GetObject("document", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_edit48x481 {
-            get {
-                object obj = ResourceManager.GetObject("document_edit48x481", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear24x241 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear24x241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear32x321 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_gear48x481 {
-            get {
-                object obj = ResourceManager.GetObject("document_gear48x481", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new24x241 {
-            get {
-                object obj = ResourceManager.GetObject("document_new24x241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new32x321 {
-            get {
-                object obj = ResourceManager.GetObject("document_new32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_new48x481 {
-            get {
-                object obj = ResourceManager.GetObject("document_new48x481", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_ok48x481 {
-            get {
-                object obj = ResourceManager.GetObject("document_ok48x481", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_plain_new48x481 {
-            get {
-                object obj = ResourceManager.GetObject("document_plain_new48x481", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document_refresh24x241 {
-            get {
-                object obj = ResourceManager.GetObject("document_refresh24x241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document24x24 {
-            get {
-                object obj = ResourceManager.GetObject("document24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap document32x32 {
-            get {
-                object obj = ResourceManager.GetObject("document32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap donate_48x48 {
             get {
                 object obj = ResourceManager.GetObject("donate_48x48", resourceCulture);
@@ -294,13 +203,6 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap gear_run {
             get {
                 object obj = ResourceManager.GetObject("gear_run", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap gear_run1 {
-            get {
-                object obj = ResourceManager.GetObject("gear_run1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -410,23 +312,9 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap package_add1 {
-            get {
-                object obj = ResourceManager.GetObject("package_add1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap package_delete {
             get {
                 object obj = ResourceManager.GetObject("package_delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap package_delete1 {
-            get {
-                object obj = ResourceManager.GetObject("package_delete1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -438,23 +326,9 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap package_ok1 {
-            get {
-                object obj = ResourceManager.GetObject("package_ok1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap package_view {
             get {
                 object obj = ResourceManager.GetObject("package_view", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap package_view1 {
-            get {
-                object obj = ResourceManager.GetObject("package_view1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -139,9 +139,6 @@
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="document24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="check_update_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check_update_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,9 +184,6 @@
   <data name="bullet_square_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet_square_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gear_run1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gear_run1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bullet_triangle_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet_triangle_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,9 +217,6 @@
   <data name="gears" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gears.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="package_ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package_ok2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="paypal_donations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paypal_donations.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,9 +234,6 @@
   </data>
   <data name="profile_8_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_8_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="package_delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package_delete2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="networkcard_enable_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\networkcard_enable_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,9 +274,6 @@
   <data name="bullet_square_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet_square_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="package_add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package_add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profile_4_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_4_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,9 +304,6 @@
   <data name="PCI_card_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PCI-card_network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="document" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="table_sql_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table_sql_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -331,9 +313,6 @@
   <data name="package_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\package_add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="package_view1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package_view2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="arrow_up_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_up_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -342,9 +321,6 @@
   </data>
   <data name="gear_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="type_ethernet_300x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\type_ethernet_300x400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -384,36 +360,6 @@
   </data>
   <data name="profiles_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profiles_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_edit48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_edit48x481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_gear24x241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_gear24x241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_gear32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_gear32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_gear48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_gear48x481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_new24x241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_new24x241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_new32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_new32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_new48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_new48x481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_ok48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_ok48x481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_plain_new48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_plain_new48x481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_refresh24x241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_refresh24x241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profile_0_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_0_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
