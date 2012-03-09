@@ -506,7 +506,7 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
-           // this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
+            this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
             this.networkCardListView.Size = new System.Drawing.Size(1169, 458);
             this.networkCardListView.TabIndex = 0;
             // 
@@ -581,7 +581,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.Label lblSelectedCard;
         private System.Windows.Forms.Label txtSelectedCard;
         private System.Windows.Forms.Label label2;
-        private Controls.IpControl ipControl;
         private Controls.ProxyControl proxyPanel;
         private Controls.DriveMapListView driveMapListView;
         private System.Windows.Forms.Label label5;
@@ -613,5 +612,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        public IpControl ipControl;
     }
 }
