@@ -282,8 +282,7 @@ namespace Argon.Windows.Forms
             // 
             this.rpAutoDetect.ButtonMoreEnabled = false;
             this.rpAutoDetect.ButtonMoreVisible = false;
-            this.rpAutoDetect.Items.Add(this.rbtnAutoDetectRun);
-            this.rpAutoDetect.Items.Add(this.rbtnProfilesList);
+            this.rpAutoDetect.Items.Add(this.rbtnAutoDetectRun);            
             this.rpAutoDetect.Tag = null;
             this.rpAutoDetect.Text = "AutoDetect";
             // 
@@ -321,11 +320,11 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesRun.AltKey = null;
             this.rbtnProfilesRun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfilesRun.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbtnProfilesRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_add24x24;
+            this.rbtnProfilesRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_24x24;
             this.rbtnProfilesRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfilesRun.SmallImage")));
             this.rbtnProfilesRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfilesRun.Tag = null;
-            this.rbtnProfilesRun.Text = "Profiles";
+            this.rbtnProfilesRun.Text = "Select to run";
             this.rbtnProfilesRun.ToolTip = null;
             this.rbtnProfilesRun.ToolTipImage = null;
             this.rbtnProfilesRun.ToolTipTitle = null;
@@ -349,6 +348,7 @@ namespace Argon.Windows.Forms
             this.rpProfile.Items.Add(this.rsProfileSeparator);
             this.rpProfile.Items.Add(this.rbtnProfileRun);
             this.rpProfile.Items.Add(this.rbtnProfileAutorun);
+            this.rpProfile.Items.Add(this.rbtnProfilesList);
             this.rpProfile.Tag = null;
             this.rpProfile.Text = "profile";
             // 
