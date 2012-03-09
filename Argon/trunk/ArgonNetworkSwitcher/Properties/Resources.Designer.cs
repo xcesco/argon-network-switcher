@@ -305,44 +305,9 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap package_add {
-            get {
-                object obj = ResourceManager.GetObject("package_add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap package_delete {
-            get {
-                object obj = ResourceManager.GetObject("package_delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap package_ok {
-            get {
-                object obj = ResourceManager.GetObject("package_ok", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap package_view {
-            get {
-                object obj = ResourceManager.GetObject("package_view", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap paypal_donations {
             get {
                 object obj = ResourceManager.GetObject("paypal_donations", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap PCI_card_network {
-            get {
-                object obj = ResourceManager.GetObject("PCI_card_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
