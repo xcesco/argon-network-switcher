@@ -1,15 +1,8 @@
-﻿DONE
+﻿TODO
 ----
-- Introduced Smart View: ability to reduce window size and view only run functionality (run).
-- Introduced first auto detect algorithm for networks. Now it works only for wifi.
-
-TODO
-----
-- Fix UI with ribbon
-
-- Discover network
-
+- block button during complex operation
+- progress 
+- change host
 - change svn config (toirtouse e svn visual studio)
 - change maven config
-
-- change wallpaper
+- add check for firefox for the proxy config

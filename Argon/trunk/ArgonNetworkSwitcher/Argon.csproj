@@ -281,6 +281,7 @@
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Doc\User manual.doc" />
     <None Include="Properties\app.manifest">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
