@@ -20,6 +20,9 @@ using System.IO;
  */
 namespace Argon.Windows
 {
+    /// <summary>
+    /// Rapresents an running program
+    /// </summary>
     [Serializable]
     public class RunningWindowsExecutable : WindowsExecutable
     {

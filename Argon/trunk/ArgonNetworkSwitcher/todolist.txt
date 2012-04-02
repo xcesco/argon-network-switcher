@@ -6,3 +6,11 @@
 - change svn config (toirtouse e svn visual studio)
 - change maven config
 - add check for firefox for the proxy config
+- preference
+	* startup on windows start
+	* start minimized
+	* tray menu (with profile)
+	* check newer version on startup
+- add server wins
+- fix proxy
+-manual
