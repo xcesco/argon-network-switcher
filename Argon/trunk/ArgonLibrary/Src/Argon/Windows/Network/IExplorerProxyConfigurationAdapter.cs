@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Argon.Windows;
+using System.Runtime.InteropServices;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -25,6 +26,14 @@ namespace Argon.Windows.Network
     /// </summary>
     public abstract class IExplorerProxyConfigurationAdapter
     {
+
+        [DllImport("wininet.dll")]
+        public static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int dwBufferLength);
+
+        public const int INTERNET_OPTION_SETTINGS_CHANGED = 39;
+
+        public const int INTERNET_OPTION_REFRESH = 37;        
+
 
         /// <summary>
         /// Reads the config.
@@ -128,6 +137,14 @@ namespace Argon.Windows.Network
             {
                 RegistryUtility.WriteIntValue(RegistryKeyType.CurrentUser, RK_INTERNET_SETTINGS, "ProxyEnable", 0);
             }
+
+            // set Immediate proxy settings changing (Chrome bug)
+            // http://stackoverflow.com/questions/2020363/how-to-change-global-windows-proxy-using-c-sharp-net-with-immediate-effect
+            bool settingsReturn, refreshReturn;
+            // These lines implement the Interface in the beginning of program 
+            // They cause the OS to refresh the settings, causing IP to realy update
+            settingsReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0);
+            refreshReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0);
 
             return true;
         }
