@@ -193,13 +193,6 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap element_delete_24x241 {
-            get {
-                object obj = ResourceManager.GetObject("element_delete_24x241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap element_down_24x24 {
             get {
                 object obj = ResourceManager.GetObject("element_down_24x24", resourceCulture);
