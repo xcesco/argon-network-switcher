@@ -319,9 +319,6 @@
   <data name="table_sql_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table_sql_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="element_delete_24x241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\element_delete_24x241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profile_1_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile_1_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
