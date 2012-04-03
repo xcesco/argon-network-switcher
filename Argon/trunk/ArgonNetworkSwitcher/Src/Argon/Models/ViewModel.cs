@@ -80,7 +80,7 @@ namespace Argon.Models
         /// <value>
         /// The settings view.
         /// </value>
-        public static FormSettings SettingsView { get; set; }
+        public static FormOptions OptionsView { get; set; }
 
         /// <summary>
         /// Gets or sets the adapter view list.

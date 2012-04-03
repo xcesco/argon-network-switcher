@@ -5,6 +5,7 @@ Version 1.4.0
 -------------
 - Improvement: if firefox is running when profile is applyed, it is shutdown and restarted.
 - Bug fix: Immediate proxy settings changing (Chrome bug) (Tnx to anonymous user who suggested solution too!)
+- Improvement: introduced Options windows to modify application configuraiton.
 
 Version 1.3.0
 -------------

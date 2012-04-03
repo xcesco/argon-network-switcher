@@ -79,6 +79,7 @@ namespace Argon.Windows.Forms
             this.rbtnViewConsole = new System.Windows.Forms.RibbonButton();
             this.rbtnViewProfiles = new System.Windows.Forms.RibbonButton();
             this.rbtnViewNetworkCards = new System.Windows.Forms.RibbonButton();
+            this.rbtnViewSettings = new System.Windows.Forms.RibbonButton();
             this.rpHelp = new System.Windows.Forms.RibbonPanel();
             this.rbtnHelpAbout = new System.Windows.Forms.RibbonButton();
             this.rbtnHelpUpdate = new System.Windows.Forms.RibbonButton();
@@ -530,6 +531,7 @@ namespace Argon.Windows.Forms
             this.rpViews.Items.Add(this.rbtnViewConsole);
             this.rpViews.Items.Add(this.rbtnViewProfiles);
             this.rpViews.Items.Add(this.rbtnViewNetworkCards);
+            this.rpViews.Items.Add(this.rbtnViewSettings);
             this.rpViews.Tag = null;
             this.rpViews.Text = "views";
             // 
@@ -577,6 +579,21 @@ namespace Argon.Windows.Forms
             this.rbtnViewNetworkCards.ToolTipImage = null;
             this.rbtnViewNetworkCards.ToolTipTitle = null;
             this.rbtnViewNetworkCards.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
+            // 
+            // rbtnViewSettings
+            // 
+            this.rbtnViewSettings.AltKey = null;
+            this.rbtnViewSettings.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnViewSettings.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnViewSettings.Image = global::Argon.Windows.Forms.Properties.Resources.settings48x48;
+            this.rbtnViewSettings.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewSettings.SmallImage")));
+            this.rbtnViewSettings.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnViewSettings.Tag = null;
+            this.rbtnViewSettings.Text = "Options";
+            this.rbtnViewSettings.ToolTip = null;
+            this.rbtnViewSettings.ToolTipImage = null;
+            this.rbtnViewSettings.ToolTipTitle = null;
+            this.rbtnViewSettings.Click += new System.EventHandler(this.rbtnViewSettings_Click);
             // 
             // rpHelp
             // 
@@ -752,6 +769,7 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonPanel rpConsole;
         public System.Windows.Forms.RibbonButton rbtnProfilesRun;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator2;
+        public System.Windows.Forms.RibbonButton rbtnViewSettings;
         
         public DockPanel Pannello
         {

@@ -56,15 +56,14 @@ namespace Argon.Windows.Network
         /// </summary>
         /// <returns>if firefox is open, returns program's instance</returns>
         public static RunningWindowsExecutable FindFirefoxAndShutdown()
-        {
-            RunningWindowsExecutable app=null;
+        {            
             List<RunningWindowsExecutable> actual;
             actual = WindowsExecutableManager.RunningProcesses;
 
             foreach (RunningWindowsExecutable item in actual)
             {
 
-                if ("firefox.exe".Equals(item.Name))
+                if (FIREFOX_NAME.Equals(item.Name))
                 {
                     item.Kill = true;                    
                     WindowsExecutor.Execute(item);
@@ -80,6 +79,8 @@ namespace Argon.Windows.Network
         /// wait time for restart firefox after settings are changed.
         /// </summary>
         private const int WAIT_FOR_PROXY = 500; 
+
+        private const string FIREFOX_NAME="firefox.exe";
         
 
         /// <summary>
