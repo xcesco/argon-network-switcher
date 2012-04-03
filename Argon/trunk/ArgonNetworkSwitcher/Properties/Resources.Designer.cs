@@ -186,6 +186,48 @@ namespace Argon.Windows.Forms.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap element_delete_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("element_delete_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap element_delete_24x241 {
+            get {
+                object obj = ResourceManager.GetObject("element_delete_24x241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap element_down_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("element_down_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap element_new_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("element_new_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap element_ok_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("element_ok_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap element_up_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("element_up_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap gear_forbidden {
             get {
                 object obj = ResourceManager.GetObject("gear_forbidden", resourceCulture);
@@ -511,6 +553,13 @@ namespace Argon.Windows.Forms.Properties {
         public static System.Drawing.Bitmap server_unknown {
             get {
                 object obj = ResourceManager.GetObject("server_unknown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap settings48x48 {
+            get {
+                object obj = ResourceManager.GetObject("settings48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -101,7 +101,7 @@ namespace Argon.Windows.Forms
 
         public void ShowTab(TabPage tabPage)
         {
-            TabPage[] array = { tp1NIC, tp2Proxy, tp3DriveMap, tp4Printers, tp5Services, tp6Applications, tp7Adapters };
+            TabPage[] array = { tp1TcpIp4, tp3Proxy, tp4DriveMap, tp5Printers, tp6Services, tp7Applications, tp8Adapters };
 
             tabControl.SuspendLayout();
             tabControl.TabPages.Clear();
@@ -119,7 +119,7 @@ namespace Argon.Windows.Forms
 
         public void HideTab(TabPage tabPage)
         {
-            TabPage[] array = { tp1NIC, tp2Proxy, tp3DriveMap, tp4Printers, tp5Services, tp6Applications, tp7Adapters };
+            TabPage[] array = { tp1TcpIp4, tp3Proxy, tp4DriveMap, tp5Printers, tp6Services, tp7Applications, tp8Adapters };
 
             tabControl.SuspendLayout();
             tabControl.TabPages.Clear();

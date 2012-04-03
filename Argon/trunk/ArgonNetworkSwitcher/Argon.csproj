@@ -155,6 +155,12 @@
     <Compile Include="Src\Argon\Windows\Controls\ServiceListView.Designer.cs">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\WinsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Argon\Windows\Controls\WinsControl.Designer.cs">
+      <DependentUpon>WinsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Src\Argon\Windows\Forms\ArgonDockContent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,11 +220,11 @@
     <Compile Include="Src\Argon\Windows\Forms\FormProfiles.designer.cs">
       <DependentUpon>FormProfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormSettings.cs">
+    <Compile Include="Src\Argon\Windows\Forms\FormOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Argon\Windows\Forms\FormSettings.Designer.cs">
-      <DependentUpon>FormSettings.cs</DependentUpon>
+    <Compile Include="Src\Argon\Windows\Forms\FormOptions.Designer.cs">
+      <DependentUpon>FormOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\Argon\Windows\Forms\FormSplashScreen.cs">
       <SubType>Form</SubType>
@@ -252,6 +258,9 @@
     <EmbeddedResource Include="Src\Argon\Windows\Controls\ServiceListView.resx">
       <DependentUpon>ServiceListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Argon\Windows\Controls\WinsControl.resx">
+      <DependentUpon>WinsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\ArgonDockContent.resx">
       <DependentUpon>ArgonDockContent.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,8 +292,8 @@
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormProfiles.resx">
       <DependentUpon>FormProfiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormSettings.resx">
-      <DependentUpon>FormSettings.cs</DependentUpon>
+    <EmbeddedResource Include="Src\Argon\Windows\Forms\FormOptions.resx">
+      <DependentUpon>FormOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Argon\Windows\Forms\FormSplashScreen.resx">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
@@ -362,6 +371,13 @@
     <None Include="Resources\profiles_48x48.png" />
     <None Include="Resources\profile_24x24.png" />
     <None Include="Resources\profile_0_24x24.png" />
+    <None Include="Resources\settings48x48.png" />
+    <None Include="Resources\element_new_24x24.png" />
+    <None Include="Resources\element_ok_24x24.png" />
+    <None Include="Resources\element_up_24x24.png" />
+    <None Include="Resources\element_delete_24x24.png" />
+    <None Include="Resources\element_delete_24x241.png" />
+    <None Include="Resources\element_down_24x24.png" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />

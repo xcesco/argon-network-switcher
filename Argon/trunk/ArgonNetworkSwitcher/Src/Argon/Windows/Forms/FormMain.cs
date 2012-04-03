@@ -318,6 +318,11 @@ namespace Argon.Windows.Forms
         }
 
 
+        /// <summary>
+        /// Handles the Click event of the rbtnViewProfiles control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void rbtnViewProfiles_Click(object sender, EventArgs e)
         {
             UseCaseView.ToggleDisplay(ViewModel.ProfilesView);
@@ -495,6 +500,16 @@ namespace Argon.Windows.Forms
         private void rbtnProfileAutorun_Click(object sender, EventArgs e)
         {
             UseCaseProfile.RunAutoDetect();               
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnViewSettings control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnViewSettings_Click(object sender, EventArgs e)
+        {
+            UseCaseView.ToggleDisplay(ViewModel.OptionsView);
         }
 
 

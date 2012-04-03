@@ -62,7 +62,7 @@ namespace Argon.UseCase
                     dockContent.DockState = dockContent.OldDockState;
                 }
 
-                dockContent.Show();
+                dockContent.Show(ViewModel.MainView.dockPanel);
             }
 
             // check ribbon button
@@ -77,7 +77,11 @@ namespace Argon.UseCase
             else if (dockContent == ViewModel.ConsoleView)
             {
                 CheckRibbonButton(dockContent, ViewModel.MainView.rbtnViewConsole);
-            }                                    
+            }
+            else if (dockContent == ViewModel.OptionsView)
+            {
+                CheckRibbonButton(dockContent, ViewModel.MainView.rbtnViewSettings);
+            }    
 
             return true;
         }
@@ -107,6 +111,10 @@ namespace Argon.UseCase
             {
                 CheckRibbonButton(dockContent, ViewModel.MainView.rbtnViewConsole);
             }
+            else if (dockContent == ViewModel.OptionsView)
+            {
+                CheckRibbonButton(dockContent, ViewModel.MainView.rbtnViewSettings);
+            }  
             
         }
 

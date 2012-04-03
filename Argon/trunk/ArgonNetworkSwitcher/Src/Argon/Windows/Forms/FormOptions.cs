@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Argon.Windows.Forms
 {
-    public partial class FormSettings : ArgonDockContent
+    public partial class FormOptions : ArgonDockContent
     {
-        public FormSettings()
+        public FormOptions()
         {
             InitializeComponent();
         }

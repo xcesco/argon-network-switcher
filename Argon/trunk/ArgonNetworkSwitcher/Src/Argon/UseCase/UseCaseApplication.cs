@@ -71,6 +71,7 @@ namespace Argon.UseCase
             // set the main window
             ViewModel.MainView = formMain;
 
+            ViewModel.OptionsView = new FormOptions();
             ViewModel.ConsoleView = new FormConsole();
 
             ViewModel.ProfilesView = new FormProfiles();
@@ -90,7 +91,7 @@ namespace Argon.UseCase
             // default position for nics form, profiles form and console form
             ViewModel.NetworkCardsView.Show(dockPanel);
             ViewModel.ProfilesView.Show(dockPanel);
-            ViewModel.ConsoleView.Show(dockPanel);
+            ViewModel.ConsoleView.Show(dockPanel);            
 
             UseCaseView.Display(ViewModel.NetworkCardsView, true, DockState.DockBottomAutoHide);            
             UseCaseView.Display(ViewModel.ConsoleView, true, DockState.DockBottomAutoHide);
