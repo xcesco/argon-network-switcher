@@ -178,5 +178,26 @@ namespace Argon.Windows.Forms
             UseCaseProfile.Run();
         }
 
+        /// <summary>
+        /// Handles the ColumnClick event of the listView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.ColumnClickEventArgs"/> instance containing the event data.</param>
+        private void listView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            Console.WriteLine("Item click");
+
+            List<NetworkProfile> listaProfile = new List<NetworkProfile>();
+
+            foreach (OLVListItem item in listView.Items)
+            {
+                Console.WriteLine("Item "+item.RowObject);
+                listaProfile.Add((NetworkProfile)item.RowObject);
+            }
+
+            DataModel.NetworkProfileList = listaProfile;
+            UseCaseProfile.Refresh(false);
+        }
+
     }
 }

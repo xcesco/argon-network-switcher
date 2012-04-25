@@ -74,5 +74,13 @@ namespace Argon.Models
 
             return null;
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [block all operation].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [block all operation]; otherwise, <c>false</c>.
+        /// </value>
+        public static bool BlockAllOperation { get; set; }
     }
 }

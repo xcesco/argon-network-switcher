@@ -70,7 +70,7 @@ namespace Argon.Windows7.Network
             foreach (ManagementObject item in search.Get())
             {
                 WmiNetworkAdapter adapter = new WmiNetworkAdapter(item);
-
+                
                 if (adapter.Name.ToUpper().Contains("Microsoft Virtual WiFi Miniport Adapter".ToUpper()))
                 {
                     continue;

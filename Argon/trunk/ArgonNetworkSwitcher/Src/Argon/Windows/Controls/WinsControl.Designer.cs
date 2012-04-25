@@ -127,7 +127,7 @@ namespace Argon.Windows.Controls
             // button3
             // 
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Image = global::Argon.Windows.Forms.Properties.Resources.element_delete_24x241;
+            this.button3.Image = global::Argon.Windows.Forms.Properties.Resources.element_delete_24x24;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(143, 220);
             this.button3.Name = "button3";

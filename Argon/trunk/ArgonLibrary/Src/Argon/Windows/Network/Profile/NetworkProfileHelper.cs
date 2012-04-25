@@ -45,6 +45,10 @@ namespace Argon.Windows.Network.Profile
             {
                 NotifyEvent("NetworkProfileHelper", e);
             }
+            else
+            {
+                Debug.WriteLine(description);
+            }
         }
         #endregion
 
@@ -89,6 +93,8 @@ namespace Argon.Windows.Network.Profile
                         XmlUtility.WriteAttributeIfPresent(writer, "dynamicDns", nic.DynamicDNS.ToString());
                         XmlUtility.WriteAttributeIfPresent(writer, "dns", nic.Dns);
                         XmlUtility.WriteAttributeIfPresent(writer, "dns2", nic.Dns2);
+                        XmlUtility.WriteAttributeIfPresent(writer, "winsPrimaryServer", nic.WinsPrimaryServer);
+                        XmlUtility.WriteAttributeIfPresent(writer, "winsSecondaryServer", nic.WinsSecondaryServer);
                     }
                     writer.WriteEndElement();
                 }
@@ -264,6 +270,9 @@ namespace Argon.Windows.Network.Profile
                                     currentProfile.NetworkCardInfo.Dns2 = XmlUtility.ReadAttributeIfPresent(reader, "dns2", "");
 
                                     currentProfile.NetworkCardInfo.HardwareName = XmlUtility.ReadAttributeIfPresent(reader, "hardwareName", "");
+
+                                    currentProfile.NetworkCardInfo.WinsPrimaryServer=XmlUtility.ReadAttributeIfPresent(reader, "winsPrimaryServer", "");
+                                    currentProfile.NetworkCardInfo.WinsSecondaryServer=XmlUtility.ReadAttributeIfPresent(reader, "winsSecondaryServer", "");                                                            
 
                                     break;
                                 case "proxy":

@@ -39,8 +39,8 @@ namespace Argon.Windows
             get {
                 string temp="";
 
-                temp += _file;
-                temp += " " + _arguments;
+                temp += File;
+                temp += " " + Arguments;
 
                 return temp;
 

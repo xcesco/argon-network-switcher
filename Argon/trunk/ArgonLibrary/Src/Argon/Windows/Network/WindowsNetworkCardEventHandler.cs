@@ -98,19 +98,17 @@ namespace Argon.Windows.Network
                 Debug.WriteLine("Device gateway " + nic.GatewayAddress);
                 NetworkCardUp = PingHelper.RunPing(nic.GatewayAddress);
 
-                if (nic.Connected && nic.GatewayAddress == "" && !NetworkCardUp)
-                {
-                    pingCounter++;
-                }
+               // if (nic.Connected && nic.GatewayAddress == "" && !NetworkCardUp)               
+               pingCounter++;               
 
-                Debug.WriteLine("Ping on " + nic.GatewayAddress + " " + NetworkCardUp);
+               Debug.WriteLine("Ping on " + nic.GatewayAddress + " " + NetworkCardUp);
 
-                if (pingCounter >= MAX_PING || NetworkCardUp)
-                {
+               if (pingCounter >= MAX_PING || NetworkCardUp || (nic.Connected && !NetworkCardUp))
+               {
                     sw.Stop();
                     Debug.WriteLine("Termino");
                     return sw.ElapsedMilliseconds;
-                }
+               }
 
             }
 

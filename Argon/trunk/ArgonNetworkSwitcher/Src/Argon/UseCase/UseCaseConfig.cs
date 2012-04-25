@@ -92,6 +92,12 @@ namespace Argon.UseCase
             
         }
 
+        public static void RearrangeProfiles(List<NetworkProfile> listProfile)
+        {
+            DataModel.NetworkProfileList = listProfile;
+            UseCaseProfile.Refresh();
+        }
+
 
         /// <summary>
         /// Saves the specified file name.

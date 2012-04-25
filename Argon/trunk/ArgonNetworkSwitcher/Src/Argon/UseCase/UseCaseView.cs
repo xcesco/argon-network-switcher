@@ -258,6 +258,9 @@ namespace Argon.UseCase
         /// </summary>
         public static void ShowNewProfile()
         {
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             NetworkProfile profile = new NetworkProfile();
             profile.Name = UseCaseProfile.NEW_NIC_NAME;
 

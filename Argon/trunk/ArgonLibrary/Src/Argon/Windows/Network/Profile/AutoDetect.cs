@@ -88,12 +88,12 @@ namespace Argon.Windows.Network.Profile
             else
             {
                 // order list by maxSpeed
-                enabledCardList.Sort(CompareCardBySpeed);
+                //enabledCardList.Sort(CompareCardBySpeed);
 
                 // if there's no enabled card, it's a problem!
                 if (enabledCardList.Count == 0) { NetworkProfileHelper.FireNotifyEvent("No card enabled, found"); return null; }
 
-                List<NetworkProfile> enabledProfileList = FindValidNetworkProfiles(profiles, enabledCardList, currentWifiProfile);
+                List<NetworkProfile> enabledProfileList = FindValidOrderedNetworkProfiles(profiles, enabledCardList, currentWifiProfile);
 
                 // assert: enabledProfile contains the right profiles. Now we have to test it. 
                 // the first with ping ok it's ok!
@@ -192,14 +192,14 @@ namespace Argon.Windows.Network.Profile
                     if (item.Id.Equals(itemProfile.NetworkCardInfo.Id) && !validCardSet.Contains(item))
                     {
                         validCardSet.Add(item);
-                        Debug.WriteLine("Add card " + item.Name + " to enabled card set");
+                        NetworkProfileHelper.FireNotifyEvent("Add card " + item.Name + " to enabled card set");
                         break;
                     }
                 }
             }
 
-            Debug.WriteLine("Found " + validCardSet.Count + " valid card!");
-            Debug.WriteLine("Now disable every card not in valid set and enable all the card in valid set are disabled");
+            NetworkProfileHelper.FireNotifyEvent("Found " + validCardSet.Count + " valid card!");
+            NetworkProfileHelper.FireNotifyEvent("Now disable every card not in valid set and enable all the card in valid set are disabled");
 
             // if a nic is used in a profile, we enable it,
             // otherwise disable it
@@ -207,30 +207,32 @@ namespace Argon.Windows.Network.Profile
             {
                 if (item.Enabled && !validCardSet.Contains(item))
                 {
-                    Debug.WriteLine("Disable card " + item.Name, ", it's not in valid set");
+                    NetworkProfileHelper.FireNotifyEvent("Disable card " + item.Name+", it's not in valid set");
                     WindowsNetworkCardHelper.SetDeviceStatus(item, false);
                 }
                 else if (!item.Enabled && validCardSet.Contains(item))
                 {
-                    Debug.WriteLine("Enable card " + item.Name + " it's in valid set but disabled");
+                    NetworkProfileHelper.FireNotifyEvent("Enable card " + item.Name + " it's in valid set but as disabled");
                     WindowsNetworkCardHelper.SetDeviceStatus(item, true);
                 }
             }
             // wait for a while
-            Debug.WriteLine("Wait " + WAIT_AFTER_SETUP + " ms.");
+            NetworkProfileHelper.FireNotifyEvent("Wait " + WAIT_AFTER_SETUP + " ms.");
             System.Threading.Thread.Sleep(WAIT_AFTER_SETUP);
         }
 
 
         /// <summary>
         /// Finds the valid network profiles. Filter the profile with enabled card. If a profile has an SSI associated
-        /// this SSID must be the current SSID
+        /// this SSID must be the current SSID.
+        /// 
+        /// Profiles are ordered by network card speed.
         /// </summary>
         /// <param name="profiles">The profiles.</param>
         /// <param name="enabledCardList">The enabled card list.</param>
         /// <param name="currentWifiProfile">The current wifi profile.</param>
         /// <returns></returns>
-        internal static List<NetworkProfile> FindValidNetworkProfiles(List<NetworkProfile> profiles, List<WindowsNetworkCard> enabledCardList, WifiProfile currentWifiProfile)
+        internal static List<NetworkProfile> FindValidOrderedNetworkProfiles(List<NetworkProfile> profiles, List<WindowsNetworkCard> enabledCardList, WifiProfile currentWifiProfile)
         {
             List<NetworkProfile> enabledProfileList = new List<NetworkProfile>();
             foreach (WindowsNetworkCard itemCard in enabledCardList)
@@ -240,6 +242,9 @@ namespace Argon.Windows.Network.Profile
                     // check if card is right
                     if (itemCard.Id.Equals(itemProfile.NetworkCardInfo.Id))
                     {
+                        // for security
+                        itemProfile.NetworkCardInfo.MaxSpeed = itemCard.MaxSpeed;
+
                         // check if is a wifi connection
                         if (currentWifiProfile != null)
                         {
@@ -248,7 +253,7 @@ namespace Argon.Windows.Network.Profile
                             {
                                 // check if profile ssid and current ssid are equal
                                 if (currentWifiProfile.SSID.Equals(itemProfile.AssociatedWifiSSID))
-                                {
+                                {                                    
                                     enabledProfileList.Add(itemProfile);
                                 }
                                 else
@@ -258,19 +263,22 @@ namespace Argon.Windows.Network.Profile
                             }
                             else
                             {
-                                // no SSID associated, every SSID is ok
+                                // no SSID associated, every SSID is ok                               
                                 enabledProfileList.Add(itemProfile);
                             }
                         }
                         else
                         {
                             // there's no current wifi network connected
-                            // card is enabled, profile is associated this profile
+                            // card is enabled, profile is associated this profile                           
                             enabledProfileList.Add(itemProfile);
                         }
                     }
                 }
             }
+
+            // sort enabled profile by card speed 
+            enabledProfileList.Sort(CompareProfileByCardSpeed);
             return enabledProfileList;
         }
 
@@ -280,9 +288,9 @@ namespace Argon.Windows.Network.Profile
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
         /// <returns></returns>
-        private static int CompareCardBySpeed(WindowsNetworkCard x, WindowsNetworkCard y)
+        private static int CompareProfileByCardSpeed(NetworkProfile x, NetworkProfile y)
         {
-            return x.MaxSpeed.CompareTo(y.MaxSpeed);
+            return -x.NetworkCardInfo.MaxSpeed.CompareTo(y.NetworkCardInfo.MaxSpeed);
         }
 
     }

@@ -257,18 +257,6 @@ namespace Argon.Windows.Forms
         }
 
 
-        /// <summary>
-        /// Handles the Click event of the btnRun control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        public void btnRun_Click(object sender, EventArgs e)
-        {
-            UseCaseProfile.SaveProfile();
-            UseCaseProfile.Run(DataModel.SelectedNetworkProfile);
-        }
-
-
         private void btnSelectPrinter_Click(object sender, EventArgs e)
         {
             lblSelectedPrinter.Text = cbPrinterList.Text;

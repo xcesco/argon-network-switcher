@@ -6,6 +6,7 @@ using Argon.Models;
 using Argon.Windows.Forms;
 using System.Windows.Forms;
 using System.Drawing;
+using Argon.Windows.Controls;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -48,7 +49,7 @@ namespace Argon.UseCase
                 form.MaximizeBox = false;
                 // restore form view
                 form.Visible = true;                
-            }            
+            }          
 
             form.SmartView = !form.SmartView;
             form.rbtnSmartView.Checked = !form.rbtnSmartView.Checked;
@@ -84,6 +85,13 @@ namespace Argon.UseCase
         public static void ExecuteToggleSmartView()
         {
             FormMain form = ViewModel.MainView;
+
+            // if form is not in normal state can not switch
+            if (form.WindowState != FormWindowState.Normal)
+            {
+                MyMessageBox.ShowMessage("Can not switch view in this state");
+                return;
+            }
 
             if (!form.SmartView)
             {
