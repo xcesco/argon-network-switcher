@@ -13,6 +13,8 @@ Version 1.4.0
 		-
 - Bug fix: autodetect algo now order profile by network card speed.
 - Improvement: add more messages during autodetect
+- Improvement: introduced profile reorder for profiles: now it is possibile to define the order in which
+	profiles are displayed.
 
 Version 1.3.0
 -------------

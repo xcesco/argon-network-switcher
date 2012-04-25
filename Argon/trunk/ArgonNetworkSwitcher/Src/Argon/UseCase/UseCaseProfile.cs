@@ -68,6 +68,12 @@ namespace Argon.UseCase
             if (refreshListView)
             {
                 listView.ClearObjects();
+
+                if (listView.LastSortColumn != null)
+                {
+                    listView.LastSortColumn.Sortable = false;
+                    listView.LastSortOrder = SortOrder.None;
+                }
             }
 
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
@@ -325,14 +331,14 @@ namespace Argon.UseCase
         /// </summary>
         public static void Run()
         {
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             if (DataModel.SelectedNetworkProfile == null)
             {
                 MyMessageBox.ShowMessage("No profile selected!");
                 return;
-            }
-
-            // check if it is possibile to do operation
-            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+            }           
 
             if (MyMessageBox.Ask("Do you want to run the profile " + DataModel.SelectedNetworkProfile.Name + "?"))
             {
@@ -340,5 +346,74 @@ namespace Argon.UseCase
             }
         }
 
+
+        /// <summary>
+        /// Moves up. It's possible reorder profiles during autodetect
+        /// </summary>
+        public static void MoveUp()
+        {
+            if (DataModel.SelectedNetworkProfile == null)
+            {
+                MyMessageBox.ShowMessage("No profile selected!");
+                return;
+            }
+            else
+            {
+                int index = DataModel.NetworkProfileList.IndexOf(DataModel.SelectedNetworkProfile);
+
+                if (index < 0)
+                {
+                    MyMessageBox.ShowMessage("Error during profile selection!");
+                }
+                else if (index == 0)
+                {
+                    MyMessageBox.ShowMessage("Profile is already first element!");
+                } else 
+                {
+                    int indexPrev = index - 1;
+
+                    NetworkProfile temp = DataModel.SelectedNetworkProfile;
+                    DataModel.NetworkProfileList[index] = DataModel.NetworkProfileList[indexPrev];
+                    DataModel.NetworkProfileList[indexPrev] = temp;
+
+                    Refresh();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Moves down. It's possible reorder profiles during autodetect
+        /// </summary>
+        public static void MoveDown()
+        {
+            if (DataModel.SelectedNetworkProfile == null)
+            {
+                MyMessageBox.ShowMessage("No profile selected!");
+                return;
+            }
+            else
+            {
+                int index = DataModel.NetworkProfileList.IndexOf(DataModel.SelectedNetworkProfile);
+
+                if (index < 0)
+                {
+                    MyMessageBox.ShowMessage("Error during profile selection!");
+                }
+                else if (index == DataModel.NetworkProfileList.Count-1)
+                {
+                    MyMessageBox.ShowMessage("Profile is already last element!");
+                }
+                else
+                {
+                    int indexPrev = index + 1;
+
+                    NetworkProfile temp = DataModel.SelectedNetworkProfile;
+                    DataModel.NetworkProfileList[index] = DataModel.NetworkProfileList[indexPrev];
+                    DataModel.NetworkProfileList[indexPrev] = temp;
+
+                    Refresh();
+                }
+            }
+        }
     }
 }

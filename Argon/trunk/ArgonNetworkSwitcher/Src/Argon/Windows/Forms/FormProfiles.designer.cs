@@ -43,6 +43,9 @@ namespace Argon.Windows.Forms
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDuplicateProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMoveProfileUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoveProfileDown = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList48x48 = new System.Windows.Forms.ImageList(this.components);
             this.imageList24x24 = new System.Windows.Forms.ImageList(this.components);
@@ -112,9 +115,12 @@ namespace Argon.Windows.Forms
             this.toolStripSeparator1,
             this.mnuDuplicateProfile,
             this.toolStripMenuItem2,
+            this.mnuMoveProfileUp,
+            this.mnuMoveProfileDown,
+            this.toolStripMenuItem3,
             this.mnuDelete});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(162, 154);
+            this.contextMenu.Size = new System.Drawing.Size(162, 204);
             // 
             // mnuNew
             // 
@@ -158,6 +164,25 @@ namespace Argon.Windows.Forms
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 6);
+            // 
+            // mnuMoveProfileUp
+            // 
+            this.mnuMoveProfileUp.Name = "mnuMoveProfileUp";
+            this.mnuMoveProfileUp.Size = new System.Drawing.Size(161, 22);
+            this.mnuMoveProfileUp.Text = "Move up";
+            this.mnuMoveProfileUp.Click += new System.EventHandler(this.mnuMoveProfileUp_Click);
+            // 
+            // mnuMoveProfileDown
+            // 
+            this.mnuMoveProfileDown.Name = "mnuMoveProfileDown";
+            this.mnuMoveProfileDown.Size = new System.Drawing.Size(161, 22);
+            this.mnuMoveProfileDown.Text = "Move down";
+            this.mnuMoveProfileDown.Click += new System.EventHandler(this.mnuMoveProfileDown_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuDelete
             // 
@@ -220,5 +245,8 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         public System.Windows.Forms.ImageList imageList48x48;
         public OLVColumn colName;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoveProfileUp;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoveProfileDown;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     }
 }
