@@ -9,6 +9,7 @@ using Argon.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 using Argon.Windows.Network;
+using Argon.Windows.Controls;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -44,6 +45,7 @@ namespace Argon.UseCase
             formMain.Text += " - " + curVersion.Major + "." + curVersion.Minor + "." + curVersion.Build;
 
             // default value
+            DataModel.BlockAllOperation = false;
             DataModel.NetworkCardList = new List<WindowsNetworkCard>();
             DataModel.NetworkProfileList = new List<NetworkProfile>();
 
@@ -106,6 +108,23 @@ namespace Argon.UseCase
         public static System.Drawing.Image GetImage(string name)
         {
             return (System.Drawing.Image)Argon.Windows.Forms.Properties.Resources.ResourceManager.GetObject(name);  
+        }
+
+
+        /// <summary>
+        /// Checks the is operation not allowed now.
+        /// </summary>
+        /// <returns></returns>
+        public static bool CheckIsOperationNotAllowedNow()
+        {
+            // during profile application this operation is not allowed
+            if (DataModel.BlockAllOperation)
+            {
+                MyMessageBox.ShowMessage("Now, this operation is not allowed!");
+                return true;
+            }
+
+            return false;
         }
 
     }

@@ -262,6 +262,43 @@ namespace Argon.Windows.Network
         }
 
         /// <summary>
+        /// Set's WINS of the local machine
+        /// </summary>
+        /// <param name="NIC">NIC Address</param>
+        /// <param name="priWINS">Primary WINS server address</param>
+        /// <param name="secWINS">Secondary WINS server address</param>
+        /// <remarks>Requires a reference to the System.Management namespace</remarks>
+        public static void WriteWINSbyWMI(string NIC, string priWINS, string secWINS)
+        {
+            ManagementClass objMC = new ManagementClass("Win32_NetworkAdapterConfiguration");
+            ManagementObjectCollection objMOC = objMC.GetInstances();
+
+            foreach (ManagementObject objMO in objMOC)
+            {
+                if ((bool)objMO["IPEnabled"])
+                {
+                    if (objMO["Caption"].Equals(NIC))
+                    {
+                        try
+                        {
+                            ManagementBaseObject setWINS;
+                            ManagementBaseObject wins =
+                            objMO.GetMethodParameters("SetWINSServer");
+                            wins.SetPropertyValue("WINSPrimaryServer", priWINS);
+                            wins.SetPropertyValue("WINSSecondaryServer", secWINS);
+
+                            setWINS = objMO.InvokeMethod("SetWINSServer", wins, null);
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+            }
+        } 
+
+        /// <summary>
         /// Applies the specified card.
         /// </summary>
         /// <param name="card">The card.</param>

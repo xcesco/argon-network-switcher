@@ -50,6 +50,10 @@ namespace Argon.UseCase
                 MyMessageBox.ShowMessage("No network card selected!");
                 return;
             }
+
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             if (MyMessageBox.Ask("Do you want to enable network card " + DataModel.SelectedNetworkCard.Name + "?"))
             {
                 SetStatusCard(true);
@@ -85,6 +89,10 @@ namespace Argon.UseCase
                 MyMessageBox.ShowMessage("No network card selected!");
                 return;
             }
+
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             if (MyMessageBox.Ask("Do you want to disable network card " + DataModel.SelectedNetworkCard.Name + "?"))
             {
                 SetStatusCard(false);

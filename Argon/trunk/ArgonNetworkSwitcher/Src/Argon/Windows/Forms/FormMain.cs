@@ -148,21 +148,30 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.ComponentModel.DoWorkEventArgs"/> instance containing the event data.</param>
         public void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            bool runDeviceConfig = true;
-            NetworkProfile profile = (NetworkProfile)e.Argument;
-            if (profile == null)
-            {
-                // autodetect
-                profile = NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
-                runDeviceConfig = false;
-            }
+            DataModel.BlockAllOperation = true;
 
-            if (profile != null)
+            try
             {
-                UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);
-            }
+                bool runDeviceConfig = true;
+                NetworkProfile profile = (NetworkProfile)e.Argument;
+                if (profile == null)
+                {
+                    // autodetect
+                    profile = NetworkProfileHelper.AutoDetectNetworkProfile(DataModel.NetworkProfileList);
+                    runDeviceConfig = false;
+                }
 
-            e.Result = profile;
+                if (profile != null)
+                {
+                    UseCaseProfile.Run(profile, backgroundWorker, runDeviceConfig);
+                }
+
+                e.Result = profile;
+            }
+            finally
+            {
+                DataModel.BlockAllOperation = false;
+            }
         }
 
         /// <summary>
@@ -214,6 +223,11 @@ namespace Argon.Windows.Forms
             this.Dispose();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnProfileNew control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnProfileNew_Click(object sender, EventArgs e)
         {
             UseCaseView.ShowNewProfile();
@@ -231,8 +245,6 @@ namespace Argon.Windows.Forms
 
         private void btnAllProfileLoad_Click(object sender, EventArgs e)
         {
-            //Controller.Instance.PersistenceController.Load();
-
             UseCaseProfile.Refresh();
         }
 

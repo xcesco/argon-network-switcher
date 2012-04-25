@@ -40,11 +40,6 @@ namespace Argon.UseCase
     {
         public static string NEW_NIC_NAME = "NONE";
 
-        public static void AddProfile(NetworkProfile profile)
-        {
-            DataModel.NetworkProfileList.Add(profile);
-        }
-
         /// <summary>
         /// Existses the specified profile.
         /// </summary>
@@ -59,25 +54,29 @@ namespace Argon.UseCase
         }
 
         /// <summary>
-        /// Refreshes this instance.
-        /// <list type="">
-        ///     <item>refresh the list in profileView</item>
-        ///     <item>refresh the ribbon in mainView</item>
-        /// </list>
+        /// Refreshes the specified refresh list view.
         /// </summary>
-        public static void Refresh()
+        /// <param name="refreshListView">if set to <c>true</c> [refresh list view].</param>
+        public static void Refresh(bool refreshListView=true)
         {            
             RibbonButton rButton = null;            
 
             ViewModel.MainView.rbtnProfilesList.DropDownItems.Clear();
 
             ObjectListView listView = ViewModel.ProfilesView.listView;
-            listView.ClearObjects();
+
+            if (refreshListView)
+            {
+                listView.ClearObjects();
+            }
 
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
-                // 1 - refresh the profileView                
-                listView.AddObject(item);
+                // 1 - refresh the profileView   
+                if (refreshListView)
+                {
+                    listView.AddObject(item);
+                }
 
                 // 2 - refresh the ribbonPanel in mainView            
                 rButton = new RibbonButton();
@@ -117,6 +116,10 @@ namespace Argon.UseCase
                     MyMessageBox.ShowMessage("No profile selected!");
                     return;
                 }
+
+                // check if it is possibile do operation
+                if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return;
+
 
                 viewProfile.StoreFormOnData();
                 profile = viewProfile.Profile;
@@ -190,7 +193,7 @@ namespace Argon.UseCase
         /// <param name="profileSender">The profile sender.</param>
         /// <param name="e">The <see cref="Argon.Common.NotifyEventArgs"/> instance containing the event data.</param>
         public static void OnRunStatusChangedHandler(Object profileSender, NotifyEventArgs e)
-        {
+        {            
             UseCaseLogger.ShowInfo(e.Description);
             ViewModel.MainView.backgroundWorker.ReportProgress(e.Percentage);
         }
@@ -203,7 +206,7 @@ namespace Argon.UseCase
         public static void RunAutoDetect()
         {
             if (MyMessageBox.Ask("Run profile automatic detect?"))
-            {
+            {                
                 ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
             }            
         }
@@ -223,11 +226,13 @@ namespace Argon.UseCase
 
             try
             {
+                DataModel.BlockAllOperation = true;
                 profile.Run(runDeviceConfig);
             }
             finally
             {
                 profile.RunStatusChangeEvent -= OnRunStatusChangedHandler;
+                DataModel.BlockAllOperation = false;
             }
         }
 
@@ -270,8 +275,12 @@ namespace Argon.UseCase
                 }
                 
             }
-            MessageBoxResult res = System.Windows.MessageBox.Show("Do you want to delete profile " + profile.Name + "?", "Delete confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (res == MessageBoxResult.Yes)
+
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return;            
+
+            bool res = MyMessageBox.Ask("Do you want to delete profile " + profile.Name + "?");
+            if (res)
             {
                 UseCaseLogger.ShowInfo("Remove profile [" + profile.Name + "]");
                 DataModel.NetworkProfileList.Remove(profile);
@@ -297,6 +306,9 @@ namespace Argon.UseCase
         /// <param name="profile">The profile.</param>
         public static void DuplicateProfile(NetworkProfile profile)
         {
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             NetworkProfile newProfile = new NetworkProfile();
             newProfile = NetworkProfile.Copy(profile);
 
@@ -318,6 +330,10 @@ namespace Argon.UseCase
                 MyMessageBox.ShowMessage("No profile selected!");
                 return;
             }
+
+            // check if it is possibile to do operation
+            if (UseCaseApplication.CheckIsOperationNotAllowedNow()) return; 
+
             if (MyMessageBox.Ask("Do you want to run the profile " + DataModel.SelectedNetworkProfile.Name + "?"))
             {
                 ViewModel.MainView.backgroundWorker.RunWorkerAsync(DataModel.SelectedNetworkProfile);

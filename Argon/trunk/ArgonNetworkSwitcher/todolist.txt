@@ -1,7 +1,5 @@
 ﻿TODO
 ----
-- block button during complex operation
-- progress 
 - change host
 - change svn config (toirtouse e svn visual studio)
 - change maven config

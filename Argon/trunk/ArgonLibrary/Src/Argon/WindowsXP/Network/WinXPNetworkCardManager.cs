@@ -373,6 +373,7 @@ namespace Argon.WindowsXP.Network
 
             }
             WindowsNetworkCardManager.WriteDataIntoRegistry(card);
+            WindowsNetworkCardManager.WriteWINSbyWMI(card.Id, card.WinsPrimaryServer, card.WinsSecondaryServer);
 
             if (card.HardwareName.Length > 0)
             {

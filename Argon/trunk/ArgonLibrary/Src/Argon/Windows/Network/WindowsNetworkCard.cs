@@ -65,27 +65,27 @@ namespace Argon.Windows.Network
         /// </summary>
         public WindowsNetworkCard()
         {            
-            _currentDns = "";
-            _currentDns2 = "";
-            _currentGatewayAddress = "";
-            _currentIpAddress = "";
-            _currentSubnetMask = "";
+            CurrentDns = "";
+            CurrentDns2 = "";
+            CurrentGatewayAddress = "";
+            CurrentIpAddress = "";
+            CurrentSubnetMask = "";
 
-            _dhcp = false;
-            _dns = "";
-            _dns2="";
-            _gatewayAddress = "";
-            _ipAddress = "";
-            _subnetMask = "";
+            Dhcp = false;
+            Dns = "";
+            Dns2="";
+            GatewayAddress = "";
+            IpAddress = "";
+            SubnetMask = "";
 
-            _id = "";
-            _viewId = "";
-            _hardwareName = "";
-            _name = "";
-            _pnpDeviceId = "";
+            Id = "";
+            ViewId = "";
+            HardwareName = "";
+            Name = "";
+            PnpDeviceId = "";
 
-            _netConnectionStatus = -1;
-            _index = 0;
+            NetConnectionStatus = -1;
+            Index = 0;
 
             CardType = WindowsNetworkCardType.UNKNOWN;
         }
@@ -97,22 +97,10 @@ namespace Argon.Windows.Network
         /// The type of the card.
         /// </value>
         public WindowsNetworkCardType CardType { get; set; }
+        
+        public uint Index { get; set; }        
 
-        protected uint _index;
-
-        public uint Index
-        {
-            get { return _index; }
-            set { _index = value; }
-        }
-
-        protected int _netConnectionStatus;
-
-        public int NetConnectionStatus
-        {
-            get { return _netConnectionStatus; }
-            set { _netConnectionStatus = value; }
-        }
+        public int NetConnectionStatus { get; set; }
 
         /// <summary>
         /// Gets the status.
@@ -121,7 +109,7 @@ namespace Argon.Windows.Network
         {
             get
             {
-                switch (_netConnectionStatus)
+                switch (NetConnectionStatus)
                 {
                     case 0: return "Disconnected";
                     case 1: return "Connecting";
@@ -152,272 +140,102 @@ namespace Argon.Windows.Network
         {
             get
             {
-                if (_netConnectionStatus == 2) return true;
+                if (NetConnectionStatus == 2) return true;
                 return false;
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private String _hardwareName = "";
-
-        public String HardwareName
-        {
-            get { return _hardwareName; }
-            set { _hardwareName = value; }
-        }
-      
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _id;
-
+        public String HardwareName { get; set; }        
+            
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
         /// <value>The id.</value>
-        public string Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
+        public string Id { get; set; }
 
 
         /// <summary>
         /// Gets or sets the DNS.
         /// </summary>
         /// <value>The DNS.</value>
-        public String Dns
-        {
-            get { return _dns; }
-            set { _dns = value; }
-        }
+        public String Dns { get; set; }
 
         /// <summary>
         /// Gets or sets the DNS2.
         /// </summary>
         /// <value>The DNS2.</value>
-        public String Dns2
-        {
-            get { return _dns2; }
-            set { _dns2 = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _viewId;
+        public String Dns2 { get; set; }
 
         /// <summary>
         /// Id della scheda usato per la visura delle informazioni della scheda.
         /// Essendo mutabile nel tempo, <bold>non è consentito usarlo come id univoco della scheda</bold>
         /// </summary>
-        public string ViewId
-        {
-            get { return _viewId; }
-            set { _viewId = value; }
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _macAddress;
+        public string ViewId { get; set; }
 
         /// <summary>
         /// Indirizzo MAC della scheda
         /// </summary>
-        public string MacAddress
-        {
-            get { return _macAddress; }
-            set { _macAddress = value; }
-        }
- 
+        public string MacAddress {get; set;}
 
         /// <summary>
         /// Gets or sets the ip.
         /// </summary>
         /// <value>The ip.</value>
-        public string IpAddress
-        {
-            get { return _ipAddress; }
-            set { _ipAddress = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentIpAddress;
+        public string IpAddress { get; set;}
 
         /// <summary>
         /// Gets or sets the current ip address.
         /// </summary>
         /// <value>The current ip address.</value>
-        public string CurrentIpAddress
-        {
-            get { return _currentIpAddress; }
-            set { _currentIpAddress = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentSubnetMask;
+        public string CurrentIpAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the current subnet mask.
         /// </summary>
         /// <value>The current subnet mask.</value>
-        public string CurrentSubnetMask
-        {
-            get { return _currentSubnetMask; }
-            set { _currentSubnetMask = value; }
-        }
-
- 
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentDns;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentDns2;
-
-        protected bool _dynamicDNS;
+        public string CurrentSubnetMask {get; set;}
 
         /// <summary>
         /// Gets a value indicating whether [enabled dynamic DNS].
         /// </summary>
         /// <value><c>true</c> if [enabled dynamic DNS]; otherwise, <c>false</c>.</value>
-        public bool DynamicDNS
-        {
-            get { return _dynamicDNS; }
-            set { _dynamicDNS = value; }
-        }
+        public bool DynamicDNS { get; set; }
 
         /// <summary>
         /// Gets or sets the DNS.
         /// </summary>
         /// <value>The DNS.</value>
-        public String CurrentDns
-        {
-            get { return _currentDns; }
-            set { _currentDns = value; }
-        }
+        public String CurrentDns { get; set; }
 
         /// <summary>
         /// Gets or sets the DNS2.
         /// </summary>
         /// <value>The DNS2.</value>
-        public String CurrentDns2
-        {
-            get { return _currentDns2; }
-            set { _currentDns2 = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _currentGatewayAddress;
+        public String CurrentDns2 { get; set;}
 
         /// <summary>
         /// Gets or sets the gateway.
         /// </summary>
         /// <value>The gateway.</value>
-        public string CurrentGatewayAddress
-        {
-            get { return _currentGatewayAddress; }
-            set { _currentGatewayAddress = value; }
-        }
-
+        public string CurrentGatewayAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the gateway.
         /// </summary>
         /// <value>The gateway.</value>
-        public string GatewayAddress
-        {
-            get { return _gatewayAddress; }
-            set { _gatewayAddress = value; }
-        }
+        public string GatewayAddress {get; set; }
 
         /// <summary>
         /// Gets or sets the subnet mask.
         /// </summary>
         /// <value>The subnet mask.</value>
-        public string SubnetMask
-        {
-            get { return _subnetMask; }
-            set { _subnetMask = value; }
-        }
-
-        /// <summary>
-        /// Dhcp enabled
-        /// </summary>
-        protected bool _dhcp;
+        public string SubnetMask { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="WindowsNetworkCard"/> is DHCP.
         /// </summary>
         /// <value><c>true</c> if DHCP; otherwise, <c>false</c>.</value>
-        public bool Dhcp
-        {
-            get { return _dhcp; }
-            set { _dhcp = value; }
-        }
-
-        /// <summary>
-        /// Ip address
-        /// </summary>
-        protected string _ipAddress;
-
-        /// <summary>
-        /// Gateway address
-        /// </summary>
-        protected string _gatewayAddress;
-
-        /// <summary>
-        /// Dns
-        /// </summary>
-        protected string _dns;
-
-        /// <summary>
-        /// Dns2
-        /// </summary>
-        protected string _dns2;
-
-        /// <summary>
-        /// Subnetsmak
-        /// </summary>
-        protected string _subnetMask;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected bool _winsEnableLMHostsLookup;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _winsHostLookupFile;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _winsPrimaryServer;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected string _winsSecondaryServer;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private string _pnpDeviceId;
+        public bool Dhcp {get; set;}
 
         /// <summary>
         /// Gets or sets the PNP device id.
@@ -425,11 +243,7 @@ namespace Argon.Windows.Network
         /// <value>
         /// The PNP device id.
         /// </value>
-        public string PnpDeviceId
-        {
-            get { return _pnpDeviceId; }
-            set { _pnpDeviceId = value; }
-        }
+        public string PnpDeviceId { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [wins enable LM hosts lookup].
@@ -437,42 +251,25 @@ namespace Argon.Windows.Network
         /// <value>
         /// 	<c>true</c> if [wins enable LM hosts lookup]; otherwise, <c>false</c>.
         /// </value>
-        public bool WinsEnableLMHostsLookup
-        {
-            get { return _winsEnableLMHostsLookup; }
-            set { _winsEnableLMHostsLookup = value; }
-        }
+        public bool WinsEnableLMHostsLookup { get; set; }        
 
         /// <summary>
         /// Gets or sets the wins host lookup file.
         /// </summary>
         /// <value>The wins host lookup file.</value>
-        public string WinsHostLookupFile
-        {
-            get { return _winsHostLookupFile; }
-            set { _winsHostLookupFile = value; }
-        }
+        public string WinsHostLookupFile { get; set; }
 
         /// <summary>
         /// Gets or sets the wins primary server.
         /// </summary>
         /// <value>The wins primary server.</value>
-        public string WinsPrimaryServer
-        {
-            get { return _winsPrimaryServer; }
-            set { _winsPrimaryServer = value; }
-        }
+        public string WinsPrimaryServer { get; set; }
 
         /// <summary>
         /// Gets or sets the wins secondary server.
         /// </summary>
         /// <value>The wins secondary server.</value>
-        public string WinsSecondaryServer
-        {
-            get { return _winsSecondaryServer; }
-            set { _winsSecondaryServer = value; }
-        }
-
+        public string WinsSecondaryServer { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="WindowsNetworkCard"/> is enabled.
@@ -509,5 +306,6 @@ namespace Argon.Windows.Network
         /// The max speed.
         /// </value>
         public ulong MaxSpeed { get; set; }
+
     }
 }
