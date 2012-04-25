@@ -1,5 +1,6 @@
 ﻿TODO
 ----
+- add icon to context menu of profiles
 - change host
 - change svn config (toirtouse e svn visual studio)
 - change maven config

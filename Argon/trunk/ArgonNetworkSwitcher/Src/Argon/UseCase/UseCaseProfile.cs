@@ -69,10 +69,11 @@ namespace Argon.UseCase
             {
                 listView.ClearObjects();
 
+                // if last order is defined, we reset it
                 if (listView.LastSortColumn != null)
                 {
-                    listView.LastSortColumn.Sortable = false;
                     listView.LastSortOrder = SortOrder.None;
+                    listView.LastSortColumn = null;                                       
                 }
             }
 
