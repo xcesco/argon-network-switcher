@@ -11,6 +11,7 @@ using Argon.Windows.Network.Profile;
 using BrightIdeasSoftware;
 using Argon.UseCase;
 using Argon.Models;
+using Argon.Windows.Controls;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -127,6 +128,11 @@ namespace Argon.Windows.Forms
             UseCaseView.ShowNewProfile(); 
         }
 
+        /// <summary>
+        /// Handles the Click event of the mnuDuplicateProfile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void mnuDuplicateProfile_Click(object sender, EventArgs e)
         {
             if (listView.SelectedObjects.Count > 0)
@@ -197,6 +203,26 @@ namespace Argon.Windows.Forms
 
             DataModel.NetworkProfileList = listaProfile;
             UseCaseProfile.Refresh(false);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the mnuMoveProfileUp control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void mnuMoveProfileUp_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.MoveUp();            
+        }
+
+        /// <summary>
+        /// Handles the Click event of the mnuMoveProfileDown control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void mnuMoveProfileDown_Click(object sender, EventArgs e)
+        {
+            UseCaseProfile.MoveDown();  
         }
 
     }
