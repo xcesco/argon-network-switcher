@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chkStartWithWindows = new System.Windows.Forms.CheckBox();
+            this.cbStartWithAutodetect = new System.Windows.Forms.CheckBox();
+            this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbStartInTrayArea = new System.Windows.Forms.CheckBox();
+            this.cbStartAndCheckForUpdate = new System.Windows.Forms.CheckBox();
+            this.cbStartInSmartView = new System.Windows.Forms.CheckBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -46,8 +46,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.chkStartWithWindows);
+            this.groupBox1.Controls.Add(this.cbStartWithAutodetect);
+            this.groupBox1.Controls.Add(this.cbStartWithWindows);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkCyan;
             this.groupBox1.Location = new System.Drawing.Point(13, 75);
@@ -57,35 +57,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Startup";
             // 
-            // checkBox1
+            // cbStartWithAutodetect
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(7, 46);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(294, 20);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Autodetect profile when application run";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbStartWithAutodetect.AutoSize = true;
+            this.cbStartWithAutodetect.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartWithAutodetect.Location = new System.Drawing.Point(7, 46);
+            this.cbStartWithAutodetect.Name = "cbStartWithAutodetect";
+            this.cbStartWithAutodetect.Size = new System.Drawing.Size(294, 20);
+            this.cbStartWithAutodetect.TabIndex = 1;
+            this.cbStartWithAutodetect.Text = "Autodetect profile when application run";
+            this.cbStartWithAutodetect.UseVisualStyleBackColor = true;
             // 
-            // chkStartWithWindows
+            // cbStartWithWindows
             // 
-            this.chkStartWithWindows.AutoSize = true;
-            this.chkStartWithWindows.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.chkStartWithWindows.Location = new System.Drawing.Point(7, 20);
-            this.chkStartWithWindows.Name = "chkStartWithWindows";
-            this.chkStartWithWindows.Size = new System.Drawing.Size(201, 20);
-            this.chkStartWithWindows.TabIndex = 0;
-            this.chkStartWithWindows.Text = "Run when Windows starts";
-            this.chkStartWithWindows.UseVisualStyleBackColor = true;
+            this.cbStartWithWindows.AutoSize = true;
+            this.cbStartWithWindows.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartWithWindows.Location = new System.Drawing.Point(7, 20);
+            this.cbStartWithWindows.Name = "cbStartWithWindows";
+            this.cbStartWithWindows.Size = new System.Drawing.Size(201, 20);
+            this.cbStartWithWindows.TabIndex = 0;
+            this.cbStartWithWindows.Text = "Run when Windows starts";
+            this.cbStartWithWindows.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox5);
+            this.groupBox2.Controls.Add(this.cbStartInTrayArea);
+            this.groupBox2.Controls.Add(this.cbStartAndCheckForUpdate);
+            this.groupBox2.Controls.Add(this.cbStartInSmartView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkCyan;
             this.groupBox2.Location = new System.Drawing.Point(13, 158);
@@ -95,64 +95,66 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Initial status";
             // 
-            // checkBox2
+            // cbStartInTrayArea
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox2.Location = new System.Drawing.Point(7, 72);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(146, 20);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Show in tray area";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbStartInTrayArea.AutoSize = true;
+            this.cbStartInTrayArea.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartInTrayArea.Location = new System.Drawing.Point(7, 72);
+            this.cbStartInTrayArea.Name = "cbStartInTrayArea";
+            this.cbStartInTrayArea.Size = new System.Drawing.Size(146, 20);
+            this.cbStartInTrayArea.TabIndex = 4;
+            this.cbStartInTrayArea.Text = "Show in tray area";
+            this.cbStartInTrayArea.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cbStartAndCheckForUpdate
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox4.Location = new System.Drawing.Point(7, 46);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(216, 20);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Check for update on startup";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbStartAndCheckForUpdate.AutoSize = true;
+            this.cbStartAndCheckForUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartAndCheckForUpdate.Location = new System.Drawing.Point(7, 46);
+            this.cbStartAndCheckForUpdate.Name = "cbStartAndCheckForUpdate";
+            this.cbStartAndCheckForUpdate.Size = new System.Drawing.Size(216, 20);
+            this.cbStartAndCheckForUpdate.TabIndex = 3;
+            this.cbStartAndCheckForUpdate.Text = "Check for update on startup";
+            this.cbStartAndCheckForUpdate.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cbStartInSmartView
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox5.Location = new System.Drawing.Point(7, 20);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(152, 20);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "Start in smart view";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbStartInSmartView.AutoSize = true;
+            this.cbStartInSmartView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartInSmartView.Location = new System.Drawing.Point(7, 20);
+            this.cbStartInSmartView.Name = "cbStartInSmartView";
+            this.cbStartInSmartView.Size = new System.Drawing.Size(152, 20);
+            this.cbStartInSmartView.TabIndex = 2;
+            this.cbStartInSmartView.Text = "Start in smart view";
+            this.cbStartInSmartView.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(13, 13);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 48);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(115, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 48);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(115, 13);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(96, 48);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 391);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,13 +176,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox chkStartWithWindows;
+        private System.Windows.Forms.CheckBox cbStartWithAutodetect;
+        private System.Windows.Forms.CheckBox cbStartWithWindows;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox cbStartAndCheckForUpdate;
+        private System.Windows.Forms.CheckBox cbStartInSmartView;
+        private System.Windows.Forms.CheckBox cbStartInTrayArea;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
