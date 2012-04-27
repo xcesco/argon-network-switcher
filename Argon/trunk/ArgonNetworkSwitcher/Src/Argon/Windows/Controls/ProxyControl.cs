@@ -147,6 +147,11 @@ namespace Argon.Windows.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the cbEnabledProxy control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void cbEnabledProxy_CheckedChanged(object sender, EventArgs e)
         {
             if (cbEnabledProxy.Checked)
@@ -167,6 +172,11 @@ namespace Argon.Windows.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the cbProxyOverrideEnabled control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void cbProxyOverrideEnabled_CheckedChanged(object sender, EventArgs e)
         {
             if (!cbProxyOverrideEnabled.Checked)

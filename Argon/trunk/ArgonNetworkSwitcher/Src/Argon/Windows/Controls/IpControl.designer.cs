@@ -60,6 +60,7 @@ namespace Argon.Windows.Controls
             this.groupBox4.Controls.Add(this.txtAlternativeDNS);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.txtPrimaryDNS);
+            this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox4.Location = new System.Drawing.Point(288, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(289, 166);
@@ -70,9 +71,11 @@ namespace Argon.Windows.Controls
             // cbDynamicDNS
             // 
             this.cbDynamicDNS.AutoSize = true;
+            this.cbDynamicDNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDynamicDNS.ForeColor = System.Drawing.Color.Black;
             this.cbDynamicDNS.Location = new System.Drawing.Point(15, 26);
             this.cbDynamicDNS.Name = "cbDynamicDNS";
-            this.cbDynamicDNS.Size = new System.Drawing.Size(119, 17);
+            this.cbDynamicDNS.Size = new System.Drawing.Size(135, 17);
             this.cbDynamicDNS.TabIndex = 20;
             this.cbDynamicDNS.Text = "Use DHCP for DNS";
             this.cbDynamicDNS.UseVisualStyleBackColor = true;
@@ -81,6 +84,7 @@ namespace Argon.Windows.Controls
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(12, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
@@ -91,6 +95,7 @@ namespace Argon.Windows.Controls
             // 
             this.txtAlternativeDNS.BackColor = System.Drawing.Color.Transparent;
             this.txtAlternativeDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtAlternativeDNS.ForeColor = System.Drawing.Color.Black;
             this.txtAlternativeDNS.IpAddress = "0.0.0.0";
             this.txtAlternativeDNS.Location = new System.Drawing.Point(135, 79);
             this.txtAlternativeDNS.MinimumSize = new System.Drawing.Size(128, 20);
@@ -105,6 +110,7 @@ namespace Argon.Windows.Controls
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(12, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 13);
@@ -115,6 +121,7 @@ namespace Argon.Windows.Controls
             // 
             this.txtPrimaryDNS.BackColor = System.Drawing.Color.Transparent;
             this.txtPrimaryDNS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtPrimaryDNS.ForeColor = System.Drawing.Color.Black;
             this.txtPrimaryDNS.IpAddress = "0.0.0.0";
             this.txtPrimaryDNS.Location = new System.Drawing.Point(135, 53);
             this.txtPrimaryDNS.MinimumSize = new System.Drawing.Size(128, 20);
@@ -135,6 +142,7 @@ namespace Argon.Windows.Controls
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox2.Location = new System.Drawing.Point(4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(278, 166);
@@ -145,9 +153,11 @@ namespace Argon.Windows.Controls
             // cbDHCPEnabled
             // 
             this.cbDHCPEnabled.AutoSize = true;
+            this.cbDHCPEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDHCPEnabled.ForeColor = System.Drawing.Color.Black;
             this.cbDHCPEnabled.Location = new System.Drawing.Point(19, 26);
             this.cbDHCPEnabled.Name = "cbDHCPEnabled";
-            this.cbDHCPEnabled.Size = new System.Drawing.Size(92, 17);
+            this.cbDHCPEnabled.Size = new System.Drawing.Size(103, 17);
             this.cbDHCPEnabled.TabIndex = 14;
             this.cbDHCPEnabled.Text = "Enable DHCP";
             this.cbDHCPEnabled.UseVisualStyleBackColor = true;
@@ -157,6 +167,7 @@ namespace Argon.Windows.Controls
             // 
             this.txtDefaultGateway.BackColor = System.Drawing.Color.Transparent;
             this.txtDefaultGateway.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtDefaultGateway.ForeColor = System.Drawing.Color.Black;
             this.txtDefaultGateway.IpAddress = "0.0.0.0";
             this.txtDefaultGateway.Location = new System.Drawing.Point(126, 105);
             this.txtDefaultGateway.MinimumSize = new System.Drawing.Size(128, 20);
@@ -172,6 +183,7 @@ namespace Argon.Windows.Controls
             // 
             this.txtSubnetMask.BackColor = System.Drawing.Color.Transparent;
             this.txtSubnetMask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtSubnetMask.ForeColor = System.Drawing.Color.Black;
             this.txtSubnetMask.IpAddress = "0.0.0.0";
             this.txtSubnetMask.Location = new System.Drawing.Point(126, 79);
             this.txtSubnetMask.MinimumSize = new System.Drawing.Size(128, 20);
@@ -187,6 +199,7 @@ namespace Argon.Windows.Controls
             // 
             this.txtIP.BackColor = System.Drawing.Color.Transparent;
             this.txtIP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtIP.ForeColor = System.Drawing.Color.Black;
             this.txtIP.IpAddress = "0.0.0.0";
             this.txtIP.Location = new System.Drawing.Point(126, 53);
             this.txtIP.MinimumSize = new System.Drawing.Size(128, 20);
@@ -201,6 +214,7 @@ namespace Argon.Windows.Controls
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(16, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
@@ -210,6 +224,7 @@ namespace Argon.Windows.Controls
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(16, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
@@ -219,6 +234,7 @@ namespace Argon.Windows.Controls
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(16, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
@@ -228,6 +244,7 @@ namespace Argon.Windows.Controls
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtMacAddress);
+            this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox1.Location = new System.Drawing.Point(4, 176);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(278, 59);
@@ -248,6 +265,7 @@ namespace Argon.Windows.Controls
             // 
             this.gbWifiProfile.Controls.Add(this.cbWifiProfile);
             this.gbWifiProfile.Controls.Add(this.cbWifi);
+            this.gbWifiProfile.ForeColor = System.Drawing.Color.RoyalBlue;
             this.gbWifiProfile.Location = new System.Drawing.Point(288, 176);
             this.gbWifiProfile.Name = "gbWifiProfile";
             this.gbWifiProfile.Size = new System.Drawing.Size(289, 59);
@@ -267,9 +285,11 @@ namespace Argon.Windows.Controls
             // cbWifi
             // 
             this.cbWifi.AutoSize = true;
+            this.cbWifi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWifi.ForeColor = System.Drawing.Color.Black;
             this.cbWifi.Location = new System.Drawing.Point(15, 21);
             this.cbWifi.Name = "cbWifi";
-            this.cbWifi.Size = new System.Drawing.Size(83, 17);
+            this.cbWifi.Size = new System.Drawing.Size(95, 17);
             this.cbWifi.TabIndex = 0;
             this.cbWifi.Text = "associate to";
             this.cbWifi.UseVisualStyleBackColor = true;
@@ -284,6 +304,7 @@ namespace Argon.Windows.Controls
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.RoyalBlue;
             this.MinimumSize = new System.Drawing.Size(584, 240);
             this.Name = "IpControl";
             this.Size = new System.Drawing.Size(584, 240);

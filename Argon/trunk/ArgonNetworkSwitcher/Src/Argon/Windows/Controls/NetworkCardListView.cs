@@ -78,12 +78,15 @@ namespace Argon.Windows.Controls
 
             set
             {
+                if (value == null) return;
+
                 foreach (OLVListItem item2 in listView.Items)
                 {
                         item2.Checked = false;
                 }
 
                 WindowsNetworkCard nic;
+                
                 foreach (WindowsNetworkCard item in value)
                 {
                     foreach (OLVListItem item2 in listView.Items)

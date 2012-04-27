@@ -14,6 +14,7 @@ using Argon.UseCase;
 using Argon.Models;
 using System.Diagnostics;
 using Argon.Windows.Network.Wifi;
+using Argon.Windows.Controls;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -99,6 +100,10 @@ namespace Argon.Windows.Forms
 
         }
 
+        /// <summary>
+        /// Shows the tab.
+        /// </summary>
+        /// <param name="tabPage">The tab page.</param>
         public void ShowTab(TabPage tabPage)
         {
             TabPage[] array = { tp1TcpIp4, tp3Proxy, tp4DriveMap, tp5Printers, tp6Services, tp7Applications, tp8Adapters };
@@ -117,6 +122,10 @@ namespace Argon.Windows.Forms
             tabControl.ResumeLayout();
         }
 
+        /// <summary>
+        /// Hides the tab.
+        /// </summary>
+        /// <param name="tabPage">The tab page.</param>
         public void HideTab(TabPage tabPage)
         {
             TabPage[] array = { tp1TcpIp4, tp3Proxy, tp4DriveMap, tp5Printers, tp6Services, tp7Applications, tp8Adapters };
@@ -190,6 +199,11 @@ namespace Argon.Windows.Forms
         }
 
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtName control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             this.TabText = "Profile: " + txtName.Text;
@@ -257,11 +271,21 @@ namespace Argon.Windows.Forms
         }
 
 
+        /// <summary>
+        /// Handles the Click event of the btnSelectPrinter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnSelectPrinter_Click(object sender, EventArgs e)
         {
             lblSelectedPrinter.Text = cbPrinterList.Text;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnRemovePrinter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void btnRemovePrinter_Click(object sender, EventArgs e)
         {
             lblSelectedPrinter.Text = "";
@@ -310,7 +334,11 @@ namespace Argon.Windows.Forms
 
             profile.AssociatedWifiSSID = "";
             if (ipControl.WifiProfileSelected)
+            {
                 profile.AssociatedWifiSSID = ipControl.WifiProfileSSID;
+            }
+
+            winsControl.StoreConfiguration().CopyIntoProfile(profile);
 
             profile.ProxyConfig = proxyPanel.Configuration;
             profile.DriveMapList = driveMapListView.Items;
@@ -390,18 +418,16 @@ namespace Argon.Windows.Forms
             TabText = "Profile: " + profile.Name;
 
             // load the image profile
-            this.pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);            
+            pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);
+
+            winsControl.DisplayConfiguration(WinsConfiguration.ValueOf(profile));
 
             proxyPanel.Configuration = profile.ProxyConfig;
-
             serviceListView.Items = profile.ServiceList;
-
             applicationsListView.SetItems(profile.ExecList);
-
             driveMapListView.SetItems(profile.DriveMapList);
-
             lblSelectedPrinter.Text = profile.DefaultPrinter;
-
+           
             cbPrinterList.Items.Clear();
             int indexPrinter = 0;
             int i1 = 0;

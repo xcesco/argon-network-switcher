@@ -28,13 +28,9 @@ namespace Argon.Windows.Network
     public enum WindowsNetworkCardType
     {
         /// <summary>
-        /// Wireless card
+        /// Unspecified card
         /// </summary>
-        WIRELESS,
-        /// <summary>
-        /// Wired card
-        /// </summary>
-        ETHERNET,
+        UNKNOWN,
         /// <summary>
         /// virtual type (VMWare)
         /// </summary>
@@ -48,9 +44,13 @@ namespace Argon.Windows.Network
         /// </summary>
         FIREWIRE,
         /// <summary>
-        /// Unspecified card
+        /// Wireless card
         /// </summary>
-        UNKNOWN
+        WIRELESS,
+        /// <summary>
+        /// Wired card
+        /// </summary>
+        ETHERNET
     }
 
 
@@ -244,6 +244,14 @@ namespace Argon.Windows.Network
         /// The PNP device id.
         /// </value>
         public string PnpDeviceId { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [wins enabled].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [wins enabled]; otherwise, <c>false</c>.
+        /// </value>
+        public bool WinsEnabled { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [wins enable LM hosts lookup].

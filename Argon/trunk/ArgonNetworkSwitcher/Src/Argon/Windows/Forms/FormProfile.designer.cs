@@ -56,8 +56,8 @@ namespace Argon.Windows.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl = new Argon.Windows.Controls.DoubleBufferedTabControl();
             this.tp1TcpIp4 = new Argon.Windows.Controls.DoubleBufferedTabPage();
+            this.winsControl = new Argon.Windows.Controls.WinsControl();
             this.ipControl = new Argon.Windows.Controls.IpControl();
-            this.tp2Wins = new System.Windows.Forms.TabPage();
             this.tp3Proxy = new Argon.Windows.Controls.DoubleBufferedTabPage();
             this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
             this.tp4DriveMap = new Argon.Windows.Controls.DoubleBufferedTabPage();
@@ -77,7 +77,6 @@ namespace Argon.Windows.Forms
             this.networkCardListView = new Argon.Windows.Controls.NetworkCardListView();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.winsControl1 = new Argon.Windows.Controls.WinsControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -291,7 +290,6 @@ namespace Argon.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tp1TcpIp4);
-            this.tabControl.Controls.Add(this.tp2Wins);
             this.tabControl.Controls.Add(this.tp3Proxy);
             this.tabControl.Controls.Add(this.tp4DriveMap);
             this.tabControl.Controls.Add(this.tp5Printers);
@@ -306,7 +304,7 @@ namespace Argon.Windows.Forms
             // 
             // tp1TcpIp4
             // 
-            this.tp1TcpIp4.Controls.Add(this.winsControl1);
+            this.tp1TcpIp4.Controls.Add(this.winsControl);
             this.tp1TcpIp4.Controls.Add(this.ipControl);
             this.tp1TcpIp4.ImageIndex = 0;
             this.tp1TcpIp4.Location = new System.Drawing.Point(4, 22);
@@ -314,13 +312,22 @@ namespace Argon.Windows.Forms
             this.tp1TcpIp4.Padding = new System.Windows.Forms.Padding(3);
             this.tp1TcpIp4.Size = new System.Drawing.Size(1169, 461);
             this.tp1TcpIp4.TabIndex = 0;
-            this.tp1TcpIp4.Text = "Network (IP4)";
+            this.tp1TcpIp4.Text = "Network";
             this.tp1TcpIp4.UseVisualStyleBackColor = true;
+            // 
+            // winsControl
+            // 
+            this.winsControl.Location = new System.Drawing.Point(582, 5);
+            this.winsControl.Name = "winsControl";
+            this.winsControl.Size = new System.Drawing.Size(267, 236);
+            this.winsControl.TabIndex = 5;
+            this.winsControl.Visible = false;
             // 
             // ipControl
             // 
             this.ipControl.BackColor = System.Drawing.Color.Transparent;
             this.ipControl.Configuration = null;
+            this.ipControl.ForeColor = System.Drawing.Color.RoyalBlue;
             this.ipControl.Location = new System.Drawing.Point(3, 5);
             this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
             this.ipControl.Name = "ipControl";
@@ -328,15 +335,6 @@ namespace Argon.Windows.Forms
             this.ipControl.TabIndex = 2;
             this.ipControl.WifiProfileSelected = false;
             this.ipControl.WifiProfileSSID = null;
-            // 
-            // tp2Wins
-            // 
-            this.tp2Wins.Location = new System.Drawing.Point(4, 22);
-            this.tp2Wins.Name = "tp2Wins";
-            this.tp2Wins.Size = new System.Drawing.Size(1169, 461);
-            this.tp2Wins.TabIndex = 7;
-            this.tp2Wins.Text = "WINS";
-            this.tp2Wins.UseVisualStyleBackColor = true;
             // 
             // tp3Proxy
             // 
@@ -541,13 +539,6 @@ namespace Argon.Windows.Forms
             this.txtName.TabIndex = 25;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
-            // winsControl1
-            // 
-            this.winsControl1.Location = new System.Drawing.Point(585, 4);
-            this.winsControl1.Name = "winsControl1";
-            this.winsControl1.Size = new System.Drawing.Size(267, 277);
-            this.winsControl1.TabIndex = 3;
-            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +623,6 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         public IpControl ipControl;
-        private System.Windows.Forms.TabPage tp2Wins;
-        private WinsControl winsControl1;
+        private WinsControl winsControl;
     }
 }
