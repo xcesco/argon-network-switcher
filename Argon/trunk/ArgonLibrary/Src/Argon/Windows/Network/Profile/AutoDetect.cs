@@ -242,8 +242,10 @@ namespace Argon.Windows.Network.Profile
                     // check if card is right
                     if (itemCard.Id.Equals(itemProfile.NetworkCardInfo.Id))
                     {
-                        // for security
+                        // copy nic info
                         itemProfile.NetworkCardInfo.MaxSpeed = itemCard.MaxSpeed;
+                        itemProfile.NetworkCardInfo.CardType = itemCard.CardType;
+                        itemProfile.NetworkCardInfo.AdapterType = itemCard.AdapterType;
 
                         // check if is a wifi connection
                         if (currentWifiProfile != null)
@@ -290,6 +292,13 @@ namespace Argon.Windows.Network.Profile
         /// <returns></returns>
         private static int CompareProfileByCardSpeed(NetworkProfile x, NetworkProfile y)
         {
+            // check first of all adatper type
+            if (x.NetworkCardInfo.CardType != y.NetworkCardInfo.CardType)
+            {
+                return -x.NetworkCardInfo.CardType.CompareTo(y.NetworkCardInfo.CardType);
+            }
+            
+            // otherwise max speed
             return -x.NetworkCardInfo.MaxSpeed.CompareTo(y.NetworkCardInfo.MaxSpeed);
         }
 
