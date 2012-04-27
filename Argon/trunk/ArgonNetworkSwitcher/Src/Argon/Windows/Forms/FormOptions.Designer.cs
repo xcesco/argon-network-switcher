@@ -47,6 +47,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.cbStartWithAutodetect);
+            this.groupBox1.Controls.Add(this.cbStartAndCheckForUpdate);
             this.groupBox1.Controls.Add(this.cbStartWithWindows);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkCyan;
@@ -84,13 +85,12 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cbStartInTrayArea);
-            this.groupBox2.Controls.Add(this.cbStartAndCheckForUpdate);
             this.groupBox2.Controls.Add(this.cbStartInSmartView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.groupBox2.Location = new System.Drawing.Point(13, 158);
+            this.groupBox2.Location = new System.Drawing.Point(13, 181);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 119);
+            this.groupBox2.Size = new System.Drawing.Size(696, 50);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Initial status";
@@ -99,7 +99,7 @@
             // 
             this.cbStartInTrayArea.AutoSize = true;
             this.cbStartInTrayArea.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cbStartInTrayArea.Location = new System.Drawing.Point(7, 72);
+            this.cbStartInTrayArea.Location = new System.Drawing.Point(303, 20);
             this.cbStartInTrayArea.Name = "cbStartInTrayArea";
             this.cbStartInTrayArea.Size = new System.Drawing.Size(146, 20);
             this.cbStartInTrayArea.TabIndex = 4;
@@ -110,7 +110,7 @@
             // 
             this.cbStartAndCheckForUpdate.AutoSize = true;
             this.cbStartAndCheckForUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cbStartAndCheckForUpdate.Location = new System.Drawing.Point(7, 46);
+            this.cbStartAndCheckForUpdate.Location = new System.Drawing.Point(303, 20);
             this.cbStartAndCheckForUpdate.Name = "cbStartAndCheckForUpdate";
             this.cbStartAndCheckForUpdate.Size = new System.Drawing.Size(216, 20);
             this.cbStartAndCheckForUpdate.TabIndex = 3;

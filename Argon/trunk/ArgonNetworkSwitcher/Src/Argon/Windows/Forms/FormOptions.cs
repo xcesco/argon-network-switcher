@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Argon.Models;
 using Argon.Windows.Forms.Properties;
 using System.Configuration;
+using Microsoft.Win32;
 
 namespace Argon.Windows.Forms
 {
@@ -65,6 +66,21 @@ namespace Argon.Windows.Forms
             Properties.Settings.Default.StartInTrayArea= cbStartInTrayArea.Checked;
             Properties.Settings.Default.AutodetectOnStart = cbStartWithAutodetect.Checked;
             Properties.Settings.Default.StartWithWindows=cbStartWithWindows.Checked;
+
+            // The path to the key where Windows looks for startup applications
+            RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            if (Properties.Settings.Default.StartWithWindows)
+            {
+                rkApp.SetValue("Argon Network Switcher", "\""+Application.ExecutablePath.ToString()+"\"");
+            }
+            else
+            {
+                // Remove the value from the registry so that the application doesn't start
+                rkApp.DeleteValue("Argon Network Switcher", false);
+            }
+
+            rkApp.Close();
+
 
             Properties.Settings.Default.Save();
 
