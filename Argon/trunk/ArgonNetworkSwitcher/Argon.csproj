@@ -378,6 +378,7 @@
     <None Include="Resources\element_delete_24x24.png" />
     <None Include="Resources\element_delete_24x241.png" />
     <None Include="Resources\element_down_24x24.png" />
+    <Content Include="ReleaseNotes.txt" />
     <Content Include="Resources\wifi-icon.jpg" />
     <Content Include="Resources\wifi16x16.png" />
     <None Include="Resources\wifi32x321.png" />
@@ -388,7 +389,6 @@
     <None Include="Resources\Argon.png" />
     <Content Include="icon.ico" />
     <Content Include="References.txt" />
-    <Content Include="ReleaseNotes-ReadMe.txt" />
     <Content Include="Resources\about.ico" />
     <Content Include="Resources\arrow_down_blue.png" />
     <Content Include="Resources\arrow_down_green.png" />
