@@ -210,10 +210,14 @@ namespace Argon.UseCase
         /// Runs the autodetect.
         /// </summary>
         /// <returns></returns>
-        public static void RunAutoDetect()
+        public static void RunAutoDetect(bool ask=true)
         {
-            if (MyMessageBox.Ask("Run profile automatic detect?"))
+            if (ask && MyMessageBox.Ask("Run profile automatic detect?"))
             {                
+                ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
+            }
+            else if (!ask)
+            {
                 ViewModel.MainView.backgroundWorker.RunWorkerAsync(null);
             }            
         }

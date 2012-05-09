@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbStartWithAutodetect = new System.Windows.Forms.CheckBox();
+            this.cbStartAndCheckForUpdate = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbStartInTrayArea = new System.Windows.Forms.CheckBox();
-            this.cbStartAndCheckForUpdate = new System.Windows.Forms.CheckBox();
-            this.cbStartInSmartView = new System.Windows.Forms.CheckBox();
+            this.rbStartNormal = new System.Windows.Forms.RadioButton();
+            this.rbStartTrayArea = new System.Windows.Forms.RadioButton();
+            this.rbStartSmartView = new System.Windows.Forms.RadioButton();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -69,6 +70,17 @@
             this.cbStartWithAutodetect.Text = "Autodetect profile when application run";
             this.cbStartWithAutodetect.UseVisualStyleBackColor = true;
             // 
+            // cbStartAndCheckForUpdate
+            // 
+            this.cbStartAndCheckForUpdate.AutoSize = true;
+            this.cbStartAndCheckForUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbStartAndCheckForUpdate.Location = new System.Drawing.Point(303, 20);
+            this.cbStartAndCheckForUpdate.Name = "cbStartAndCheckForUpdate";
+            this.cbStartAndCheckForUpdate.Size = new System.Drawing.Size(216, 20);
+            this.cbStartAndCheckForUpdate.TabIndex = 3;
+            this.cbStartAndCheckForUpdate.Text = "Check for update on startup";
+            this.cbStartAndCheckForUpdate.UseVisualStyleBackColor = true;
+            // 
             // cbStartWithWindows
             // 
             this.cbStartWithWindows.AutoSize = true;
@@ -84,8 +96,9 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.cbStartInTrayArea);
-            this.groupBox2.Controls.Add(this.cbStartInSmartView);
+            this.groupBox2.Controls.Add(this.rbStartNormal);
+            this.groupBox2.Controls.Add(this.rbStartTrayArea);
+            this.groupBox2.Controls.Add(this.rbStartSmartView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkCyan;
             this.groupBox2.Location = new System.Drawing.Point(13, 181);
@@ -95,38 +108,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Initial status";
             // 
-            // cbStartInTrayArea
+            // rbStartNormal
             // 
-            this.cbStartInTrayArea.AutoSize = true;
-            this.cbStartInTrayArea.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cbStartInTrayArea.Location = new System.Drawing.Point(303, 20);
-            this.cbStartInTrayArea.Name = "cbStartInTrayArea";
-            this.cbStartInTrayArea.Size = new System.Drawing.Size(146, 20);
-            this.cbStartInTrayArea.TabIndex = 4;
-            this.cbStartInTrayArea.Text = "Show in tray area";
-            this.cbStartInTrayArea.UseVisualStyleBackColor = true;
+            this.rbStartNormal.AutoSize = true;
+            this.rbStartNormal.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbStartNormal.Location = new System.Drawing.Point(335, 21);
+            this.rbStartNormal.Name = "rbStartNormal";
+            this.rbStartNormal.Size = new System.Drawing.Size(114, 20);
+            this.rbStartNormal.TabIndex = 7;
+            this.rbStartNormal.TabStop = true;
+            this.rbStartNormal.Text = "Show normal";
+            this.rbStartNormal.UseVisualStyleBackColor = true;
             // 
-            // cbStartAndCheckForUpdate
+            // rbStartTrayArea
             // 
-            this.cbStartAndCheckForUpdate.AutoSize = true;
-            this.cbStartAndCheckForUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cbStartAndCheckForUpdate.Location = new System.Drawing.Point(303, 20);
-            this.cbStartAndCheckForUpdate.Name = "cbStartAndCheckForUpdate";
-            this.cbStartAndCheckForUpdate.Size = new System.Drawing.Size(216, 20);
-            this.cbStartAndCheckForUpdate.TabIndex = 3;
-            this.cbStartAndCheckForUpdate.Text = "Check for update on startup";
-            this.cbStartAndCheckForUpdate.UseVisualStyleBackColor = true;
+            this.rbStartTrayArea.AutoSize = true;
+            this.rbStartTrayArea.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbStartTrayArea.Location = new System.Drawing.Point(175, 21);
+            this.rbStartTrayArea.Name = "rbStartTrayArea";
+            this.rbStartTrayArea.Size = new System.Drawing.Size(145, 20);
+            this.rbStartTrayArea.TabIndex = 6;
+            this.rbStartTrayArea.TabStop = true;
+            this.rbStartTrayArea.Text = "Show in tray area";
+            this.rbStartTrayArea.UseVisualStyleBackColor = true;
             // 
-            // cbStartInSmartView
+            // rbStartSmartView
             // 
-            this.cbStartInSmartView.AutoSize = true;
-            this.cbStartInSmartView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cbStartInSmartView.Location = new System.Drawing.Point(7, 20);
-            this.cbStartInSmartView.Name = "cbStartInSmartView";
-            this.cbStartInSmartView.Size = new System.Drawing.Size(152, 20);
-            this.cbStartInSmartView.TabIndex = 2;
-            this.cbStartInSmartView.Text = "Start in smart view";
-            this.cbStartInSmartView.UseVisualStyleBackColor = true;
+            this.rbStartSmartView.AutoSize = true;
+            this.rbStartSmartView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbStartSmartView.Location = new System.Drawing.Point(7, 21);
+            this.rbStartSmartView.Name = "rbStartSmartView";
+            this.rbStartSmartView.Size = new System.Drawing.Size(151, 20);
+            this.rbStartSmartView.TabIndex = 5;
+            this.rbStartSmartView.TabStop = true;
+            this.rbStartSmartView.Text = "Start in smart view";
+            this.rbStartSmartView.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -180,9 +196,10 @@
         private System.Windows.Forms.CheckBox cbStartWithWindows;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox cbStartAndCheckForUpdate;
-        private System.Windows.Forms.CheckBox cbStartInSmartView;
-        private System.Windows.Forms.CheckBox cbStartInTrayArea;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.RadioButton rbStartTrayArea;
+        private System.Windows.Forms.RadioButton rbStartSmartView;
+        private System.Windows.Forms.RadioButton rbStartNormal;
     }
 }
