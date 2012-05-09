@@ -104,5 +104,23 @@ namespace Argon.UseCase
 
             form.rbtnSmartView.Checked = !form.rbtnSmartView.Checked;
         }
+
+        /// <summary>
+        /// Executes the display normal.
+        /// </summary>
+        public static void ExecuteDisplayNormal()
+        {            
+            ViewModel.MainView.Visible = true;
+            ViewModel.MainView.notifyIcon.Visible = false;
+        }
+
+        /// <summary>
+        /// Executes the display normal.
+        /// </summary>
+        public static void ExecuteDisplayInTrayArea()
+        {
+            ViewModel.MainView.Visible = false;
+            ViewModel.MainView.notifyIcon.Visible = true;
+        }
     }
 }

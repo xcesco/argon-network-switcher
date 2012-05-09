@@ -51,12 +51,15 @@ namespace Argon.Common
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class CheckForUpdate
     {
 
-        public static void Verify(string url)
+        public static void Verify(string url, bool infoIfVersionUpdated=true)
         {
-            Verify(url, "New version detected.", "Download the new version?");
+            Verify(url, "New version detected.", "Download the new version?", infoIfVersionUpdated);
         }
 
         /// <summary>
@@ -65,7 +68,7 @@ namespace Argon.Common
         /// <param name="url">The URL.</param>
         /// <param name="title">The title.</param>
         /// <param name="question">The question.</param>
-        public static void Verify(string url, string title, string question)
+        public static void Verify(string url, string title, string question, bool infoIfVersionUpdated)
         {
             // get the running version of executable
             Version curVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;                
@@ -94,9 +97,12 @@ namespace Argon.Common
             }
             else
             {
-                MessageBox.Show("The software is updated!","Updated",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Information);
+                if (infoIfVersionUpdated)
+                {
+                    MessageBox.Show("The software is updated!", "Updated",
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Information);
+                }
             }
         }
 
