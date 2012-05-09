@@ -35,7 +35,7 @@ namespace Argon.Windows.Forms
             // 
             // timer
             // 
-            this.timer.Interval = 3000;
+            this.timer.Interval = 5000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // FormSplashScreen
@@ -52,6 +52,7 @@ namespace Argon.Windows.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSplashScreen";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSplashScreen_FormClosed);
             this.Load += new System.EventHandler(this.FormSplashScreen_Load);
             this.ResumeLayout(false);
 

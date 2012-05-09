@@ -206,15 +206,14 @@ namespace Argon.Windows.Forms
             progressBar.Value = e.ProgressPercentage;
         }
 
+        /// <summary>
+        /// Handles the DoubleClick event of the notifyIcon control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
         {
-            this.ShowInTaskbar = true;
-            this.Visible = true;
-            // this.WindowState = FormWindowState.Normal;
-
-            this.WindowState = FormWindowState.Normal;
-            this.Width = 400;
-            this.Height = 400;
+            UseCaseSmartView.ExecuteDisplayNormal();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -521,6 +520,16 @@ namespace Argon.Windows.Forms
         private void rbtnViewSettings_Click(object sender, EventArgs e)
         {
             UseCaseView.ToggleDisplay(ViewModel.OptionsView);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the rbtnShowInTrayArea control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void rbtnShowInTrayArea_Click(object sender, EventArgs e)
+        {
+            UseCaseSmartView.ExecuteDisplayInTrayArea();
         }
 
 

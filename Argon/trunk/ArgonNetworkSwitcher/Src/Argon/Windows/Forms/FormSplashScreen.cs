@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Argon.UseCase;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -105,6 +106,25 @@ namespace Argon.Windows.Forms
         {
             //Call our drawing function
             UpdateFormDisplay(this.BackgroundImage);
+        }
+
+        private void FormSplashScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // check smart view
+            if (Argon.Windows.Forms.Properties.Settings.Default.StartInSmartView)
+            {
+                UseCaseSmartView.ExecuteDisplaySmartView();
+            }
+
+            if (Argon.Windows.Forms.Properties.Settings.Default.StartInTrayArea)
+            {
+                UseCaseSmartView.ExecuteDisplayInTrayArea();
+            }
+
+            if (Argon.Windows.Forms.Properties.Settings.Default.StartNormal)
+            {
+                UseCaseSmartView.ExecuteDisplayNormal();
+            }
         }      
     }
 

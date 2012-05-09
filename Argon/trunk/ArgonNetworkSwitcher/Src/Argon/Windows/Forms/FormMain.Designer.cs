@@ -30,6 +30,7 @@ namespace Argon.Windows.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
             WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
             WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
@@ -55,6 +56,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartView = new System.Windows.Forms.RibbonButton();
             this.rbtnConfigLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnConfigSave = new System.Windows.Forms.RibbonButton();
+            this.rbtnShowInTrayArea = new System.Windows.Forms.RibbonButton();
             this.rtOperations = new System.Windows.Forms.RibbonTab();
             this.rpProfile = new System.Windows.Forms.RibbonPanel();
             this.rbtnProfilesList = new System.Windows.Forms.RibbonButtonList();
@@ -88,6 +90,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnLoad = new System.Windows.Forms.RibbonButton();
             this.rbtnSave = new System.Windows.Forms.RibbonButton();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip.SuspendLayout();
             this.pnlRibbonContainer.SuspendLayout();
             this.SuspendLayout();
@@ -201,6 +204,7 @@ namespace Argon.Windows.Forms
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnSmartView);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigLoad);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigSave);
+            this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnShowInTrayArea);
             this.ribbon.QuickAcessToolbar.Tag = null;
             this.ribbon.QuickAcessToolbar.Text = null;
             this.ribbon.QuickAcessToolbar.ToolTip = null;
@@ -260,6 +264,22 @@ namespace Argon.Windows.Forms
             this.rbtnConfigSave.ToolTipImage = null;
             this.rbtnConfigSave.ToolTipTitle = "Save config";
             this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
+            // 
+            // rbtnShowInTrayArea
+            // 
+            this.rbtnShowInTrayArea.AltKey = null;
+            this.rbtnShowInTrayArea.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnShowInTrayArea.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnShowInTrayArea.Image = ((System.Drawing.Image)(resources.GetObject("rbtnShowInTrayArea.Image")));
+            this.rbtnShowInTrayArea.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnShowInTrayArea.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnShowInTrayArea.SmallImage")));
+            this.rbtnShowInTrayArea.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnShowInTrayArea.Tag = null;
+            this.rbtnShowInTrayArea.Text = "ribbonButton1";
+            this.rbtnShowInTrayArea.ToolTip = null;
+            this.rbtnShowInTrayArea.ToolTipImage = null;
+            this.rbtnShowInTrayArea.ToolTipTitle = null;
+            this.rbtnShowInTrayArea.Click += new System.EventHandler(this.rbtnShowInTrayArea_Click);
             // 
             // rtOperations
             // 
@@ -701,6 +721,13 @@ namespace Argon.Windows.Forms
             this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Argon Network Switcher";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +797,8 @@ namespace Argon.Windows.Forms
         public System.Windows.Forms.RibbonButton rbtnProfilesRun;
         private System.Windows.Forms.RibbonSeparator rsProfileSeparator2;
         public System.Windows.Forms.RibbonButton rbtnViewSettings;
+        public System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.RibbonButton rbtnShowInTrayArea;
         
         public DockPanel Pannello
         {

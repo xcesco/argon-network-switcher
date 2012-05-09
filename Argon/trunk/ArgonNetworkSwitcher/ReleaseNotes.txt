@@ -3,14 +3,20 @@
 
 Version 1.4.0
 -------------
+- Improvement: application can start in different mode:
+		- normal mode
+		- tray area (same logo of application)
+		- smart view
+- Improvement: during initialization of application:
+		- optional check for version
+		- optional autodetectcan be run
 - Improvement: if firefox is running when profile is applyed, it is shutdown and restarted.
 - Bug fix: Immediate proxy settings changing (Chrome bug) (Tnx to anonymous user who suggested solution too!)
 - Improvement: introduced Options windows to modify application configuraiton.
 - Improvement: during execution of profile or autodectect is no possibile anymore:
 		- Enable/disable network card
 		- Save/delete/create/duplicate profile
-		- run profile or autodetect
-		-
+		- run profile or autodetect	
 - Bug fix: autodetect algo now order profile by network card type and speed.
 - Improvement: add more messages during autodetect
 - Improvement: introduced profile reorder for profiles: now it is possibile to define the order in which

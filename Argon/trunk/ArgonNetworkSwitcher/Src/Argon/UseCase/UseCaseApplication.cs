@@ -76,13 +76,7 @@ namespace Argon.UseCase
                 // do not check info box if updated
                 VerifyUpdate(false);
             }
-
-            // check smart view
-            if (Argon.Windows.Forms.Properties.Settings.Default.StartInSmartView)
-            {
-                UseCaseSmartView.ExecuteDisplaySmartView();
-            }
-           
+                       
         }
 
         /// <summary>
