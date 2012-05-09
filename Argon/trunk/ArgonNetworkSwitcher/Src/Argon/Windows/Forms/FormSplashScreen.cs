@@ -108,6 +108,11 @@ namespace Argon.Windows.Forms
             UpdateFormDisplay(this.BackgroundImage);
         }
 
+        /// <summary>
+        /// Handles the FormClosed event of the FormSplashScreen control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.FormClosedEventArgs"/> instance containing the event data.</param>
         private void FormSplashScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
             // check smart view
