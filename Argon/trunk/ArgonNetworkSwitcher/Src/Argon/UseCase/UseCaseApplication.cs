@@ -10,6 +10,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 using Argon.Windows.Network;
 using Argon.Windows.Controls;
+using Argon.Common;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -62,6 +63,25 @@ namespace Argon.UseCase
 
             // load the profiles
             UseCaseConfig.Load();
+
+            // check autodetect
+            if (Argon.Windows.Forms.Properties.Settings.Default.AutodetectOnStart)
+            {
+                UseCaseProfile.RunAutoDetect(false);
+            }
+
+            // check autodetect
+            if (Argon.Windows.Forms.Properties.Settings.Default.CheckForUpdate)
+            {
+                // do not check info box if updated
+                VerifyUpdate(false);
+            }
+
+            // check smart view
+            if (Argon.Windows.Forms.Properties.Settings.Default.StartInSmartView)
+            {
+                UseCaseSmartView.ExecuteDisplaySmartView();
+            }
            
         }
 
@@ -127,5 +147,14 @@ namespace Argon.UseCase
             return false;
         }
 
+
+        /// <summary>
+        /// Verifies the update.
+        /// </summary>
+        public static void VerifyUpdate(Boolean infoIfVersionUpdated=true)
+        {
+            string url = Argon.Windows.Forms.Properties.Settings.Default.CheckLastVersionUrl;
+            CheckForUpdate.Verify(url, infoIfVersionUpdated);
+        }
     }
 }

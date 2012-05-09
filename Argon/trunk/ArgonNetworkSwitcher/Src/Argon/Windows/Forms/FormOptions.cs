@@ -27,12 +27,15 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void FormOptions_Load(object sender, EventArgs e)
         {
-            cbStartAndCheckForUpdate.Checked=Properties.Settings.Default.CheckForUpdate;
-            cbStartInSmartView.Checked=Properties.Settings.Default.SmartViewOnStart;
-            cbStartInTrayArea.Checked=Properties.Settings.Default.StartInTrayArea;
+            cbStartAndCheckForUpdate.Checked=Properties.Settings.Default.CheckForUpdate; 
+                                
+            rbStartSmartView.Checked=Properties.Settings.Default.StartInSmartView;
+            rbStartTrayArea.Checked=Properties.Settings.Default.StartInTrayArea;
+            rbStartNormal.Checked = Properties.Settings.Default.StartNormal;
+
             cbStartWithAutodetect.Checked=Properties.Settings.Default.AutodetectOnStart;
             cbStartWithWindows.Checked =Properties.Settings.Default.StartWithWindows;
-
+            
 
             this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
         }
@@ -62,10 +65,11 @@ namespace Argon.Windows.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.CheckForUpdate = cbStartAndCheckForUpdate.Checked;
-            Properties.Settings.Default.SmartViewOnStart = cbStartInSmartView.Checked;
-            Properties.Settings.Default.StartInTrayArea= cbStartInTrayArea.Checked;
+            Properties.Settings.Default.StartInSmartView = rbStartSmartView.Checked;
+            Properties.Settings.Default.StartInTrayArea= rbStartTrayArea.Checked;
             Properties.Settings.Default.AutodetectOnStart = cbStartWithAutodetect.Checked;
             Properties.Settings.Default.StartWithWindows=cbStartWithWindows.Checked;
+            Properties.Settings.Default.StartNormal=rbStartNormal.Checked;
 
             // The path to the key where Windows looks for startup applications
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
