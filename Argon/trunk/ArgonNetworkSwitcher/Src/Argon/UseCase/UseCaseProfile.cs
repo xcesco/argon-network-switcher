@@ -62,9 +62,8 @@ namespace Argon.UseCase
             RibbonButton rButton = null;            
 
             ViewModel.MainView.rbtnProfilesList.DropDownItems.Clear();
-
             ObjectListView listView = ViewModel.ProfilesView.listView;
-
+             
             if (refreshListView)
             {
                 listView.ClearObjects();
@@ -76,6 +75,15 @@ namespace Argon.UseCase
                     listView.LastSortColumn = null;                                       
                 }
             }
+
+            // can not  use context menu in windows form so we create it programmatically            
+            NotifyIcon ni = ViewModel.MainView.notifyIcon;
+            ContextMenuStrip cms = new ContextMenuStrip();
+            //ToolStripMenuItem tsi = new ToolStripMenuItem("Open window", null, null, "mnuOpenWindow");
+            //cms.Items.Add(tsi);
+            ToolStripMenuItem tsi;
+            ni.ContextMenuStrip = cms;
+            
 
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
             {
@@ -98,16 +106,22 @@ namespace Argon.UseCase
                 rButton.Image = UseCaseApplication.GetImage(item.ImageName);
                 //rButton.SmallImage = UseCaseApplication.GetImage(item.ImageName);
                 rButton.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
-                // create in ribbon panel
-                //rpc.Add(rButton);
 
                 ViewModel.MainView.rbtnProfilesList.DropDownItems.Add(rButton);
+
+                tsi = new ToolStripMenuItem("Run "+item.Name, UseCaseApplication.GetImage(item.ImageName));
+                tsi.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
+                cms.Items.Add(tsi);
             }
+
+            ToolStripSeparator tss = new ToolStripSeparator();
+            cms.Items.Add(tss);
 
             // bug on ribbon: if i don't do it, buttons are not display untill change tab
             ViewModel.MainView.Width += 1;
             ViewModel.MainView.Width -= -1;
         }
+   
 
         /// <summary>
         /// Saves the current profile.
