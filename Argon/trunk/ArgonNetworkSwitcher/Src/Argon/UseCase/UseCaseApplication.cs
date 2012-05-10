@@ -76,7 +76,7 @@ namespace Argon.UseCase
                 // do not check info box if updated
                 VerifyUpdate(false);
             }
-                       
+            
         }
 
         /// <summary>

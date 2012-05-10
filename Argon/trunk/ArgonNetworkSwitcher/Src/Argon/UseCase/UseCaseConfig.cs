@@ -92,6 +92,10 @@ namespace Argon.UseCase
             
         }
 
+        /// <summary>
+        /// Rearranges the profiles.
+        /// </summary>
+        /// <param name="listProfile">The list profile.</param>
         public static void RearrangeProfiles(List<NetworkProfile> listProfile)
         {
             DataModel.NetworkProfileList = listProfile;
