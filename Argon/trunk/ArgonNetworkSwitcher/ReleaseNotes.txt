@@ -5,14 +5,21 @@ Version 1.4.0
 -------------
 - Improvement: application can start in different mode:
 		- normal mode
-		- tray area (same logo of application)
+		- tray area (in the tray area appeare logo of application)
 		- smart view
+- Improvement: add tray area mode in smart button (telescope icon)
+- Improvement: in tray area mode:
+		- double click of icon restore normal view
+		- right click of mouse is associated to a context menu for:
+			- run autodetect
+			- run profile
+			- close application
 - Improvement: during initialization of application:
 		- optional check for version
 		- optional autodetectcan be run
 - Improvement: if firefox is running when profile is applyed, it is shutdown and restarted.
 - Bug fix: Immediate proxy settings changing (Chrome bug) (Tnx to anonymous user who suggested solution too!)
-- Improvement: introduced Options windows to modify application configuraiton.
+- Improvement: introduced Options windows to modify application configuration.
 - Improvement: during execution of profile or autodectect is no possibile anymore:
 		- Enable/disable network card
 		- Save/delete/create/duplicate profile
