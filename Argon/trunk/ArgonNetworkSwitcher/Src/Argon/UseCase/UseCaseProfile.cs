@@ -83,6 +83,17 @@ namespace Argon.UseCase
             //cms.Items.Add(tsi);
             ToolStripMenuItem tsi;
             ni.ContextMenuStrip = cms;
+
+            // if there are no profile define, no separator.
+            if (DataModel.NetworkProfileList.Count > 0)
+            {
+                tsi = new ToolStripMenuItem("Run Autodetect");
+                tsi.Click += new System.EventHandler(ViewModel.MainView.rbtnProfileAutorun_Click);
+                cms.Items.Add(tsi);
+
+                ToolStripSeparator tss = new ToolStripSeparator();
+                cms.Items.Add(tss);
+            }
             
 
             foreach (NetworkProfile item in DataModel.NetworkProfileList)
@@ -112,10 +123,19 @@ namespace Argon.UseCase
                 tsi = new ToolStripMenuItem("Run "+item.Name, UseCaseApplication.GetImage(item.ImageName));
                 tsi.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
                 cms.Items.Add(tsi);
+           }
+
+            // if there are no profile define, no separator.
+            if (DataModel.NetworkProfileList.Count > 0)
+            {
+                ToolStripSeparator tss = new ToolStripSeparator();
+                cms.Items.Add(tss);
             }
 
-            ToolStripSeparator tss = new ToolStripSeparator();
-            cms.Items.Add(tss);
+            tsi = new ToolStripMenuItem("Close program");
+            tsi.Click += new System.EventHandler(ViewModel.MainView.btnClose_Click);
+            cms.Items.Add(tsi);
+            
 
             // bug on ribbon: if i don't do it, buttons are not display untill change tab
             ViewModel.MainView.Width += 1;

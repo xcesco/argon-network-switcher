@@ -507,7 +507,7 @@ namespace Argon.Windows.Forms
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void rbtnProfileAutorun_Click(object sender, EventArgs e)
+        public void rbtnProfileAutorun_Click(object sender, EventArgs e)
         {
             UseCaseProfile.RunAutoDetect();               
         }
@@ -530,6 +530,16 @@ namespace Argon.Windows.Forms
         private void rbtnShowInTrayArea_Click(object sender, EventArgs e)
         {
             UseCaseSmartView.ExecuteDisplayInTrayArea();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        public void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 
