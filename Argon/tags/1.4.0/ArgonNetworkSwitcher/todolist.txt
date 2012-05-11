@@ -1,0 +1,16 @@
+﻿TODO
+----
+- preference
+	* startup on windows start
+	* start minimized
+	* tray menu (with profile)
+	* check newer version on startup
+
+- add icon to context menu of profiles
+- change host
+- change svn config (toirtouse e svn visual studio)
+- change maven config
+
+-manual
+- add server wins
+- wifi
