@@ -348,7 +348,13 @@ namespace Argon.Windows.Forms
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         public void btnRunProfile_Click(object sender, EventArgs e)
         {
-            DataModel.SelectedNetworkProfile = (NetworkProfile)(((RibbonButton)sender)).Tag;
+            if (sender.GetType()==typeof(RibbonButton))
+            {
+                DataModel.SelectedNetworkProfile = (NetworkProfile)(((RibbonButton)sender)).Tag;
+            } else if (sender.GetType()==typeof(ToolStripMenuItem)) {
+                DataModel.SelectedNetworkProfile = (NetworkProfile)(((ToolStripMenuItem)sender)).Tag;
+            }
+            
             UseCaseProfile.Run();
         }
 

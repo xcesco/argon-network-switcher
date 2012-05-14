@@ -121,6 +121,7 @@ namespace Argon.UseCase
                 ViewModel.MainView.rbtnProfilesList.DropDownItems.Add(rButton);
 
                 tsi = new ToolStripMenuItem("Run "+item.Name, UseCaseApplication.GetImage(item.ImageName));
+                tsi.Tag = item;
                 tsi.Click += new System.EventHandler(ViewModel.MainView.btnRunProfile_Click);
                 cms.Items.Add(tsi);
            }
