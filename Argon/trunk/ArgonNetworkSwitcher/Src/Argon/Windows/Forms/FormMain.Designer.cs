@@ -228,9 +228,9 @@ namespace Argon.Windows.Forms
             this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSmartView.Tag = null;
             this.rbtnSmartView.Text = "Smart view";
-            this.rbtnSmartView.ToolTip = null;
+            this.rbtnSmartView.ToolTip = "Smart view";
             this.rbtnSmartView.ToolTipImage = null;
-            this.rbtnSmartView.ToolTipTitle = null;
+            this.rbtnSmartView.ToolTipTitle = "Smart view";
             this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
             // 
             // rbtnConfigLoad
