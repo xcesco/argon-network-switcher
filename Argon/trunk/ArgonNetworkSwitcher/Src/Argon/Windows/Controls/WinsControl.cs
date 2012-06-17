@@ -62,9 +62,13 @@ namespace Argon.Windows.Controls
             WinsConfiguration config = new WinsConfiguration();
             config.Enabled = cbEnabled.Checked;
 
-            config.PrimaryServer = (string)lstWinsServer.Items[0];
-            config.SecondaryServer = (string)lstWinsServer.Items[1];
+            if (lstWinsServer.Items.Count > 0)
+            {
+                config.PrimaryServer = (string)lstWinsServer.Items[0];
+                config.SecondaryServer = (string)lstWinsServer.Items[1];
+            }
 
+            
             return config;
         }
 

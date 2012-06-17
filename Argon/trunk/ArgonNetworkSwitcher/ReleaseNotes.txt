@@ -1,6 +1,11 @@
 ﻿Release Notes
 =============
 
+Version 1.4.2
+-------------
+- Bug fix: during saving of profile, an exception was throws.
+
+
 Version 1.4.1
 -------------
 - Bug fix: run profile from tray area now work without exception
