@@ -48,7 +48,14 @@ namespace Argon.Windows.Network
             dictionary.Add("user_pref(\"network.proxy.ssl\"", "user_pref(\"network.proxy.ssl\", \"" + config.ServerAddress + "\");");
             dictionary.Add("user_pref(\"network.proxy.ssl_port\""   , "user_pref(\"network.proxy.ssl_port\", " + config.Port + ");");
 
-            dictionary.Add("user_pref(\"network.proxy.no_proxies_on\"", "user_pref(\"network.proxy.no_proxies_on\", \"" + (config.ProxyOverrideEnabled ? config.ProxyOverride :"") + "\");");
+            // ANS-1
+            string tempProxyOverride=""; 
+            if (config.ProxyOverrideEnabled && config.ProxyOverride != null)
+            {
+                tempProxyOverride=config.ProxyOverride.Replace(";",",");
+            }
+
+            dictionary.Add("user_pref(\"network.proxy.no_proxies_on\"", "user_pref(\"network.proxy.no_proxies_on\", \"" + (config.ProxyOverrideEnabled ? tempProxyOverride : "") + "\");");
             dictionary.Add("user_pref(\"network.proxy.share_proxy_settings\"", "user_pref(\"network.proxy.share_proxy_settings\", true);");
 
             // see http://kb.mozillazine.org/Network.proxy.type

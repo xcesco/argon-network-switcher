@@ -1,6 +1,12 @@
 ﻿Release Notes
 =============
 
+
+Version 1.4.3
+-------------
+- Bug fix: firefox proxy override now use , instead of ; (like explorer)
+
+
 Version 1.4.2
 -------------
 - Bug fix: during saving of profile, an exception was throws.
