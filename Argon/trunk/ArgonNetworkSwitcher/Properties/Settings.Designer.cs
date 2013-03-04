@@ -103,5 +103,17 @@ namespace Argon.Windows.Forms.Properties {
                 this["StartNormal"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AskConfirmationOnClose {
+            get {
+                return ((bool)(this["AskConfirmationOnClose"]));
+            }
+            set {
+                this["AskConfirmationOnClose"] = value;
+            }
+        }
     }
 }

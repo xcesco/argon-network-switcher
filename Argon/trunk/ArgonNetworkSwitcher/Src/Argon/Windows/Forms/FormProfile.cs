@@ -165,30 +165,33 @@ namespace Argon.Windows.Forms
 
                 WindowsNetworkCard nic = new WindowsNetworkCard();
 
-                // visualizziamo i dati della configurazione
-                nic.Dhcp = tempCard.Dhcp;
+                // visualizziamo i dati della configurazione                
                 nic.IpAddress = tempCard.IpAddress;
                 nic.SubnetMask = tempCard.SubnetMask;
                 nic.GatewayAddress = tempCard.GatewayAddress;
-                nic.DynamicDNS = tempCard.DynamicDNS;
                 nic.Dns = tempCard.Dns;
                 nic.Dns2 = tempCard.Dns2;
+                nic.Dhcp = tempCard.Dhcp;
+                nic.DynamicDNS = tempCard.DynamicDNS;                                
                 nic.MacAddress = tempCard.MacAddress;
                 nic.HardwareName = tempCard.HardwareName;
                 nic.Name = tempCard.Name;
                 nic.Id = tempCard.Id;
                 nic.CardType = tempCard.CardType;
 
-                // assign wifi before config
-                ipControl.WifiProfileSelected = false;
-                ipControl.WifiProfileSSID = "";
+                ipControl.DisplayConfiguration(nic);
+                dnsConfiguration.DisplayConfiguration(nic);
+
+                // assign wifi before config                
+                wifiProfileControl.WifiProfileSelected = false;
+                wifiProfileControl.WifiProfileSSID = "";
                 if (Profile.AssociatedWifiSSID != null && Profile.AssociatedWifiSSID.Length > 0)
                 {
-                    ipControl.WifiProfileSelected = true;
-                    ipControl.WifiProfileSSID = Profile.AssociatedWifiSSID;
+                    wifiProfileControl.WifiProfileSelected = true;
+                    wifiProfileControl.WifiProfileSSID = Profile.AssociatedWifiSSID;
                 }
 
-                ipControl.Configuration = nic;
+                macAddressControl.DisplayConfiguration(nic);
                 
             }
             else
@@ -252,10 +255,18 @@ namespace Argon.Windows.Forms
                                     WifiProfile wifiProfile = WifiProfileManager.GetActiveWifiProfileForCard(item);                                                                        
                                     if (wifiProfile!=null)                                  
                                     {
-                                        ipControl.WifiProfileSelected = true;
                                         Profile.AssociatedWifiSSID = wifiProfile.SSID;
+
+                                        wifiProfileControl.WifiProfileSelected = true;
+                                        wifiProfileControl.WifiProfileSSID = wifiProfile.SSID;
+                                        wifiProfileControl.DisplayConfiguration(Profile);                                                                                
                                     }
                                 }
+
+
+                                ipControl.DisplayConfiguration(item);
+                                dnsConfiguration.DisplayConfiguration(item);
+                                macAddressControl.DisplayConfiguration(item);
                                 break;
                             }
                         }
@@ -321,21 +332,28 @@ namespace Argon.Windows.Forms
         public override void StoreFormOnData()
         {
             NetworkProfile profile = Profile;
-            profile.Name = txtName.Text;            
+            profile.Name = txtName.Text;
 
-            if (ipControl.Configuration == null)
-            {
-                profile.NetworkCardInfo = new WindowsNetworkCard();
-            }
-            else
-            {
-                profile.NetworkCardInfo = ipControl.Configuration;
-            }
+            profile.NetworkCardInfo = new WindowsNetworkCard();
+
+            profile.NetworkCardInfo.Id = SelectedNetworkCard.Id;
+            profile.NetworkCardInfo.Name = SelectedNetworkCard.Name;
+            profile.NetworkCardInfo.HardwareName = SelectedNetworkCard.HardwareName;
+            profile.NetworkCardInfo.ViewId = SelectedNetworkCard.ViewId;
+            profile.NetworkCardInfo.CardType = SelectedNetworkCard.CardType;
+            profile.NetworkCardInfo.Description = SelectedNetworkCard.Description;
+            profile.NetworkCardInfo.MacAddress = SelectedNetworkCard.MacAddress;
+
+            ipControl.SaveConfiguration(profile.NetworkCardInfo);
+            dnsConfiguration.SaveConfiguration(profile.NetworkCardInfo);          
+
+            wifiProfileControl.SaveConfiguration(profile);            
 
             profile.AssociatedWifiSSID = "";
-            if (ipControl.WifiProfileSelected)
+            
+            if (wifiProfileControl.WifiProfileSelected)
             {
-                profile.AssociatedWifiSSID = ipControl.WifiProfileSSID;
+                profile.AssociatedWifiSSID = wifiProfileControl.WifiProfileSSID;
             }
 
             winsControl.StoreConfiguration().CopyIntoProfile(profile);
@@ -420,6 +438,9 @@ namespace Argon.Windows.Forms
             // load the image profile
             pictureBox.Image = UseCaseApplication.GetImage(profile.ImageName);
 
+            ipControl.DisplayConfiguration(profile.NetworkCardInfo);
+            dnsConfiguration.DisplayConfiguration(profile.NetworkCardInfo);
+
             winsControl.DisplayConfiguration(WinsConfiguration.ValueOf(profile));
 
             proxyPanel.Configuration = profile.ProxyConfig;
@@ -459,6 +480,11 @@ namespace Argon.Windows.Forms
         {
             base.ArgonDockContent_Activated(sender, e);
             UseCaseProfile.SelectProfile(Profile);            
+        }
+
+        private void tp5Printers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

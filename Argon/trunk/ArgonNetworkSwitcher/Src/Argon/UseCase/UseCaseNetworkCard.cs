@@ -117,7 +117,8 @@ namespace Argon.UseCase
             foreach(FormProfile item in ViewModel.ProfileViewList)
             {
                 item.RefreshNetworkAdapter();
-                item.ipControl.RefreshWifiCombo();
+                // TODO fix me
+               // item.ipControl.RefreshWifiCombo();
             }
         }
 
