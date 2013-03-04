@@ -4,6 +4,9 @@
 Version 1.4.4
 -------------
 - Improvement: confirmation dialog on close is now optional
+- Bug fix: Proxy settings now works even if firefox not installed
+- Bug fix: problems about layout in form of profile
+- Internal improvement: update of libraries (project System.Windows.Forms.Ribbon is not necessary)
 
 Version 1.4.3
 -------------

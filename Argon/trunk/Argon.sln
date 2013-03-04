@@ -2,9 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argon", "ArgonNetworkSwitcher\Argon.csproj", "{DA5A946D-89DC-48D9-A73B-CA6455BF0A21}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03} = {D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArgonLibrary", "ArgonLibrary\ArgonLibrary.csproj", "{4396E3DA-AF9D-4240-93F9-8667D3DE05AE}"
 EndProject
@@ -18,8 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ArgonInstaller", "ArgonInstaller\ArgonInstaller.vdproj", "{7AE7F0E5-2EC2-45A4-9BDD-F32854545BA6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms.Ribbon", "System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj", "{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -74,16 +69,6 @@ Global
 		{7AE7F0E5-2EC2-45A4-9BDD-F32854545BA6}.Release|Any CPU.ActiveCfg = Release
 		{7AE7F0E5-2EC2-45A4-9BDD-F32854545BA6}.Release|Mixed Platforms.ActiveCfg = Release
 		{7AE7F0E5-2EC2-45A4-9BDD-F32854545BA6}.Release|x86.ActiveCfg = Release
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D8F6CD13-4DA9-4B55-ACD9-6DF434DD3D03}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

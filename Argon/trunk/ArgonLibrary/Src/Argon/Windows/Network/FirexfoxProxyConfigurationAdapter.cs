@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Argon.FileSystem;
+using System.IO;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -31,6 +32,12 @@ namespace Argon.Windows.Network
         /// <param name="config">The config.</param>
         public static void ApplyConfig(ProxyConfiguration config)
         {
+            String path = Environment.GetEnvironmentVariable("APPDATA") + @"\Mozilla\Firefox\";
+
+            // ANS-5
+            // if file not exists exit
+            if (!File.Exists(path + "profiles.ini")) return;
+
             Dictionary<String, String> dictionary=new Dictionary<string,string>();
 
             dictionary.Add("user_pref(\"network.proxy.http\"", "user_pref(\"network.proxy.http\", \"" + config.ServerAddress + "\");");
@@ -61,7 +68,7 @@ namespace Argon.Windows.Network
             // see http://kb.mozillazine.org/Network.proxy.type
             dictionary.Add("user_pref(\"network.proxy.type\"", "user_pref(\"network.proxy.type\", " + (config.Enabled ? "1" : "0") + ");");            
             
-            String path = Environment.GetEnvironmentVariable("APPDATA") + @"\Mozilla\Firefox\";
+            
             IniFile iFile = new IniFile(path + "profiles.ini");
 
             path += iFile.ReadString("Profile0", "Path") + @"\";
