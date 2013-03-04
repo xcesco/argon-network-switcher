@@ -56,8 +56,11 @@ namespace Argon.Windows.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl = new Argon.Windows.Controls.DoubleBufferedTabControl();
             this.tp1TcpIp4 = new Argon.Windows.Controls.DoubleBufferedTabPage();
-            this.winsControl = new Argon.Windows.Controls.WinsControl();
             this.ipControl = new Argon.Windows.Controls.IpControl();
+            this.wifiProfileControl = new Argon.Windows.Controls.WifiProfileControl();
+            this.macAddressControl = new Argon.Windows.Controls.MACAddressControl();
+            this.dnsConfiguration = new Argon.Windows.Controls.DNSConfiguration();
+            this.winsControl = new Argon.Windows.Controls.WinsControl();
             this.tp3Proxy = new Argon.Windows.Controls.DoubleBufferedTabPage();
             this.proxyPanel = new Argon.Windows.Controls.ProxyControl();
             this.tp4DriveMap = new Argon.Windows.Controls.DoubleBufferedTabPage();
@@ -125,9 +128,10 @@ namespace Argon.Windows.Forms
             // 
             this.btnSelect.Image = global::Argon.Windows.Forms.Properties.Resources.arrow_down_green;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(156, 39);
+            this.btnSelect.Location = new System.Drawing.Point(182, 27);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(83, 23);
+            this.btnSelect.Size = new System.Drawing.Size(76, 31);
             this.btnSelect.TabIndex = 7;
             this.btnSelect.Text = "Select";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,7 +144,8 @@ namespace Argon.Windows.Forms
             this.pictureBox.ErrorImage = null;
             this.pictureBox.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox.Location = new System.Drawing.Point(9, 7);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(48, 48);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -250,16 +255,18 @@ namespace Argon.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstNetworkCard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstNetworkCard.FormattingEnabled = true;
-            this.lstNetworkCard.Location = new System.Drawing.Point(255, 41);
+            this.lstNetworkCard.Location = new System.Drawing.Point(280, 33);
+            this.lstNetworkCard.Margin = new System.Windows.Forms.Padding(2);
             this.lstNetworkCard.Name = "lstNetworkCard";
-            this.lstNetworkCard.Size = new System.Drawing.Size(892, 21);
+            this.lstNetworkCard.Size = new System.Drawing.Size(581, 21);
             this.lstNetworkCard.TabIndex = 18;
             // 
             // lblSelectedCard
             // 
             this.lblSelectedCard.AutoSize = true;
             this.lblSelectedCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedCard.Location = new System.Drawing.Point(66, 69);
+            this.lblSelectedCard.Location = new System.Drawing.Point(78, 63);
+            this.lblSelectedCard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectedCard.Name = "lblSelectedCard";
             this.lblSelectedCard.Size = new System.Drawing.Size(87, 13);
             this.lblSelectedCard.TabIndex = 19;
@@ -268,7 +275,8 @@ namespace Argon.Windows.Forms
             // txtSelectedCard
             // 
             this.txtSelectedCard.AutoSize = true;
-            this.txtSelectedCard.Location = new System.Drawing.Point(153, 69);
+            this.txtSelectedCard.Location = new System.Drawing.Point(179, 63);
+            this.txtSelectedCard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtSelectedCard.Name = "txtSelectedCard";
             this.txtSelectedCard.Size = new System.Drawing.Size(63, 13);
             this.txtSelectedCard.TabIndex = 20;
@@ -278,7 +286,8 @@ namespace Argon.Windows.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 44);
+            this.label2.Location = new System.Drawing.Point(78, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 21;
@@ -296,54 +305,86 @@ namespace Argon.Windows.Forms
             this.tabControl.Controls.Add(this.tp6Services);
             this.tabControl.Controls.Add(this.tp7Applications);
             this.tabControl.Controls.Add(this.tp8Adapters);
-            this.tabControl.Location = new System.Drawing.Point(3, 113);
+            this.tabControl.Location = new System.Drawing.Point(2, 86);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1177, 487);
+            this.tabControl.Size = new System.Drawing.Size(883, 383);
             this.tabControl.TabIndex = 22;
             // 
             // tp1TcpIp4
             // 
-            this.tp1TcpIp4.Controls.Add(this.winsControl);
             this.tp1TcpIp4.Controls.Add(this.ipControl);
+            this.tp1TcpIp4.Controls.Add(this.wifiProfileControl);
+            this.tp1TcpIp4.Controls.Add(this.macAddressControl);
+            this.tp1TcpIp4.Controls.Add(this.dnsConfiguration);
+            this.tp1TcpIp4.Controls.Add(this.winsControl);
             this.tp1TcpIp4.ImageIndex = 0;
             this.tp1TcpIp4.Location = new System.Drawing.Point(4, 22);
+            this.tp1TcpIp4.Margin = new System.Windows.Forms.Padding(2);
             this.tp1TcpIp4.Name = "tp1TcpIp4";
-            this.tp1TcpIp4.Padding = new System.Windows.Forms.Padding(3);
-            this.tp1TcpIp4.Size = new System.Drawing.Size(1169, 461);
+            this.tp1TcpIp4.Padding = new System.Windows.Forms.Padding(2);
+            this.tp1TcpIp4.Size = new System.Drawing.Size(875, 357);
             this.tp1TcpIp4.TabIndex = 0;
             this.tp1TcpIp4.Text = "Network";
             this.tp1TcpIp4.UseVisualStyleBackColor = true;
             // 
-            // winsControl
-            // 
-            this.winsControl.Location = new System.Drawing.Point(582, 5);
-            this.winsControl.Name = "winsControl";
-            this.winsControl.Size = new System.Drawing.Size(267, 236);
-            this.winsControl.TabIndex = 5;
-            this.winsControl.Visible = false;
-            // 
             // ipControl
             // 
             this.ipControl.BackColor = System.Drawing.Color.Transparent;
-            this.ipControl.Configuration = null;
             this.ipControl.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.ipControl.Location = new System.Drawing.Point(3, 5);
-            this.ipControl.MinimumSize = new System.Drawing.Size(584, 240);
+            this.ipControl.Location = new System.Drawing.Point(5, 5);
+            this.ipControl.MinimumSize = new System.Drawing.Size(264, 138);
             this.ipControl.Name = "ipControl";
-            this.ipControl.Size = new System.Drawing.Size(589, 263);
-            this.ipControl.TabIndex = 2;
-            this.ipControl.WifiProfileSelected = false;
-            this.ipControl.WifiProfileSSID = null;
+            this.ipControl.Size = new System.Drawing.Size(264, 138);
+            this.ipControl.TabIndex = 10;
+            // 
+            // wifiProfileControl
+            // 
+            this.wifiProfileControl.BackColor = System.Drawing.Color.Transparent;
+            this.wifiProfileControl.Location = new System.Drawing.Point(274, 124);
+            this.wifiProfileControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wifiProfileControl.MinimumSize = new System.Drawing.Size(248, 70);
+            this.wifiProfileControl.Name = "wifiProfileControl";
+            this.wifiProfileControl.Size = new System.Drawing.Size(277, 70);
+            this.wifiProfileControl.TabIndex = 8;
+            this.wifiProfileControl.WifiProfileSelected = false;
+            this.wifiProfileControl.WifiProfileSSID = null;
+            // 
+            // macAddressControl
+            // 
+            this.macAddressControl.Location = new System.Drawing.Point(5, 148);
+            this.macAddressControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.macAddressControl.Name = "macAddressControl";
+            this.macAddressControl.Size = new System.Drawing.Size(265, 46);
+            this.macAddressControl.TabIndex = 9;
+            // 
+            // dnsConfiguration
+            // 
+            this.dnsConfiguration.BackColor = System.Drawing.Color.Transparent;
+            this.dnsConfiguration.Location = new System.Drawing.Point(274, 5);
+            this.dnsConfiguration.Margin = new System.Windows.Forms.Padding(2);
+            this.dnsConfiguration.Name = "dnsConfiguration";
+            this.dnsConfiguration.Size = new System.Drawing.Size(277, 107);
+            this.dnsConfiguration.TabIndex = 6;
+            // 
+            // winsControl
+            // 
+            this.winsControl.Location = new System.Drawing.Point(582, 176);
+            this.winsControl.Name = "winsControl";
+            this.winsControl.Size = new System.Drawing.Size(254, 209);
+            this.winsControl.TabIndex = 5;
+            this.winsControl.Visible = false;
             // 
             // tp3Proxy
             // 
             this.tp3Proxy.Controls.Add(this.proxyPanel);
             this.tp3Proxy.ImageIndex = 1;
             this.tp3Proxy.Location = new System.Drawing.Point(4, 22);
+            this.tp3Proxy.Margin = new System.Windows.Forms.Padding(2);
             this.tp3Proxy.Name = "tp3Proxy";
-            this.tp3Proxy.Padding = new System.Windows.Forms.Padding(3);
-            this.tp3Proxy.Size = new System.Drawing.Size(1169, 461);
+            this.tp3Proxy.Padding = new System.Windows.Forms.Padding(2);
+            this.tp3Proxy.Size = new System.Drawing.Size(875, 357);
             this.tp3Proxy.TabIndex = 1;
             this.tp3Proxy.Text = "Proxy";
             this.tp3Proxy.UseVisualStyleBackColor = true;
@@ -353,11 +394,11 @@ namespace Argon.Windows.Forms
             this.proxyPanel.BackColor = System.Drawing.Color.Transparent;
             this.proxyPanel.Configuration = null;
             this.proxyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.proxyPanel.Location = new System.Drawing.Point(3, 3);
+            this.proxyPanel.Location = new System.Drawing.Point(2, 2);
             this.proxyPanel.LogoImage = global::Argon.Windows.Forms.Properties.Resources.proxy_124x40;
-            this.proxyPanel.MinimumSize = new System.Drawing.Size(384, 148);
+            this.proxyPanel.MinimumSize = new System.Drawing.Size(288, 113);
             this.proxyPanel.Name = "proxyPanel";
-            this.proxyPanel.Size = new System.Drawing.Size(1163, 455);
+            this.proxyPanel.Size = new System.Drawing.Size(871, 353);
             this.proxyPanel.TabIndex = 2;
             // 
             // tp4DriveMap
@@ -365,8 +406,9 @@ namespace Argon.Windows.Forms
             this.tp4DriveMap.Controls.Add(this.driveMapListView);
             this.tp4DriveMap.ImageIndex = 2;
             this.tp4DriveMap.Location = new System.Drawing.Point(4, 22);
+            this.tp4DriveMap.Margin = new System.Windows.Forms.Padding(2);
             this.tp4DriveMap.Name = "tp4DriveMap";
-            this.tp4DriveMap.Size = new System.Drawing.Size(1169, 461);
+            this.tp4DriveMap.Size = new System.Drawing.Size(875, 357);
             this.tp4DriveMap.TabIndex = 2;
             this.tp4DriveMap.Text = "Drive Map";
             this.tp4DriveMap.UseVisualStyleBackColor = true;
@@ -375,9 +417,9 @@ namespace Argon.Windows.Forms
             // 
             this.driveMapListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.driveMapListView.Location = new System.Drawing.Point(0, 0);
-            this.driveMapListView.MinimumSize = new System.Drawing.Size(560, 312);
+            this.driveMapListView.MinimumSize = new System.Drawing.Size(420, 239);
             this.driveMapListView.Name = "driveMapListView";
-            this.driveMapListView.Size = new System.Drawing.Size(1169, 461);
+            this.driveMapListView.Size = new System.Drawing.Size(875, 357);
             this.driveMapListView.TabIndex = 1;
             // 
             // tp5Printers
@@ -390,16 +432,19 @@ namespace Argon.Windows.Forms
             this.tp5Printers.Controls.Add(this.cbPrinterList);
             this.tp5Printers.ImageIndex = 3;
             this.tp5Printers.Location = new System.Drawing.Point(4, 22);
+            this.tp5Printers.Margin = new System.Windows.Forms.Padding(2);
             this.tp5Printers.Name = "tp5Printers";
-            this.tp5Printers.Size = new System.Drawing.Size(1169, 461);
+            this.tp5Printers.Size = new System.Drawing.Size(875, 357);
             this.tp5Printers.TabIndex = 5;
             this.tp5Printers.Text = "Printers";
             this.tp5Printers.UseVisualStyleBackColor = true;
+            this.tp5Printers.Click += new System.EventHandler(this.tp5Printers_Click);
             // 
             // lblSelectedPrinter
             // 
             this.lblSelectedPrinter.AutoSize = true;
-            this.lblSelectedPrinter.Location = new System.Drawing.Point(167, 50);
+            this.lblSelectedPrinter.Location = new System.Drawing.Point(125, 55);
+            this.lblSelectedPrinter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectedPrinter.Name = "lblSelectedPrinter";
             this.lblSelectedPrinter.Size = new System.Drawing.Size(0, 13);
             this.lblSelectedPrinter.TabIndex = 27;
@@ -407,9 +452,11 @@ namespace Argon.Windows.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 17);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 13);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 13);
+            this.label5.Size = new System.Drawing.Size(148, 13);
             this.label5.TabIndex = 26;
             this.label5.Text = "Select the default printer";
             // 
@@ -417,9 +464,10 @@ namespace Argon.Windows.Forms
             // 
             this.btnRemovePrinter.Image = global::Argon.Windows.Forms.Properties.Resources.delete2;
             this.btnRemovePrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemovePrinter.Location = new System.Drawing.Point(501, 45);
+            this.btnRemovePrinter.Location = new System.Drawing.Point(424, 51);
+            this.btnRemovePrinter.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemovePrinter.Name = "btnRemovePrinter";
-            this.btnRemovePrinter.Size = new System.Drawing.Size(83, 23);
+            this.btnRemovePrinter.Size = new System.Drawing.Size(86, 38);
             this.btnRemovePrinter.TabIndex = 25;
             this.btnRemovePrinter.Text = "Remove";
             this.btnRemovePrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -429,9 +477,11 @@ namespace Argon.Windows.Forms
             // lblPrinter2
             // 
             this.lblPrinter2.AutoSize = true;
-            this.lblPrinter2.Location = new System.Drawing.Point(12, 50);
+            this.lblPrinter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrinter2.Location = new System.Drawing.Point(9, 55);
+            this.lblPrinter2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrinter2.Name = "lblPrinter2";
-            this.lblPrinter2.Size = new System.Drawing.Size(82, 13);
+            this.lblPrinter2.Size = new System.Drawing.Size(98, 13);
             this.lblPrinter2.TabIndex = 24;
             this.lblPrinter2.Text = "Selected Printer";
             // 
@@ -439,9 +489,10 @@ namespace Argon.Windows.Forms
             // 
             this.btnSelectPrinter.Image = global::Argon.Windows.Forms.Properties.Resources.arrow_down_green;
             this.btnSelectPrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelectPrinter.Location = new System.Drawing.Point(501, 12);
+            this.btnSelectPrinter.Location = new System.Drawing.Point(424, 11);
+            this.btnSelectPrinter.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectPrinter.Name = "btnSelectPrinter";
-            this.btnSelectPrinter.Size = new System.Drawing.Size(83, 23);
+            this.btnSelectPrinter.Size = new System.Drawing.Size(86, 38);
             this.btnSelectPrinter.TabIndex = 23;
             this.btnSelectPrinter.Text = "Select";
             this.btnSelectPrinter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -452,9 +503,10 @@ namespace Argon.Windows.Forms
             // 
             this.cbPrinterList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPrinterList.FormattingEnabled = true;
-            this.cbPrinterList.Location = new System.Drawing.Point(170, 14);
+            this.cbPrinterList.Location = new System.Drawing.Point(160, 11);
+            this.cbPrinterList.Margin = new System.Windows.Forms.Padding(2);
             this.cbPrinterList.Name = "cbPrinterList";
-            this.cbPrinterList.Size = new System.Drawing.Size(325, 21);
+            this.cbPrinterList.Size = new System.Drawing.Size(245, 21);
             this.cbPrinterList.TabIndex = 22;
             // 
             // tp6Services
@@ -462,8 +514,9 @@ namespace Argon.Windows.Forms
             this.tp6Services.Controls.Add(this.serviceListView);
             this.tp6Services.ImageIndex = 4;
             this.tp6Services.Location = new System.Drawing.Point(4, 22);
+            this.tp6Services.Margin = new System.Windows.Forms.Padding(2);
             this.tp6Services.Name = "tp6Services";
-            this.tp6Services.Size = new System.Drawing.Size(1169, 461);
+            this.tp6Services.Size = new System.Drawing.Size(875, 357);
             this.tp6Services.TabIndex = 3;
             this.tp6Services.Text = "Services";
             this.tp6Services.UseVisualStyleBackColor = true;
@@ -473,9 +526,9 @@ namespace Argon.Windows.Forms
             this.serviceListView.BackColor = System.Drawing.Color.Transparent;
             this.serviceListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.serviceListView.Location = new System.Drawing.Point(0, 0);
-            this.serviceListView.MinimumSize = new System.Drawing.Size(560, 200);
+            this.serviceListView.MinimumSize = new System.Drawing.Size(420, 153);
             this.serviceListView.Name = "serviceListView";
-            this.serviceListView.Size = new System.Drawing.Size(1169, 458);
+            this.serviceListView.Size = new System.Drawing.Size(875, 357);
             this.serviceListView.TabIndex = 2;
             // 
             // tp7Applications
@@ -483,8 +536,9 @@ namespace Argon.Windows.Forms
             this.tp7Applications.Controls.Add(this.applicationsListView);
             this.tp7Applications.ImageIndex = 5;
             this.tp7Applications.Location = new System.Drawing.Point(4, 22);
+            this.tp7Applications.Margin = new System.Windows.Forms.Padding(2);
             this.tp7Applications.Name = "tp7Applications";
-            this.tp7Applications.Size = new System.Drawing.Size(1169, 461);
+            this.tp7Applications.Size = new System.Drawing.Size(875, 357);
             this.tp7Applications.TabIndex = 4;
             this.tp7Applications.Text = "Appplications";
             this.tp7Applications.UseVisualStyleBackColor = true;
@@ -493,9 +547,9 @@ namespace Argon.Windows.Forms
             // 
             this.applicationsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.applicationsListView.Location = new System.Drawing.Point(0, 0);
-            this.applicationsListView.MinimumSize = new System.Drawing.Size(560, 312);
+            this.applicationsListView.MinimumSize = new System.Drawing.Size(420, 239);
             this.applicationsListView.Name = "applicationsListView";
-            this.applicationsListView.Size = new System.Drawing.Size(1169, 458);
+            this.applicationsListView.Size = new System.Drawing.Size(875, 357);
             this.applicationsListView.TabIndex = 2;
             // 
             // tp8Adapters
@@ -503,8 +557,9 @@ namespace Argon.Windows.Forms
             this.tp8Adapters.Controls.Add(this.networkCardListView);
             this.tp8Adapters.ImageIndex = 7;
             this.tp8Adapters.Location = new System.Drawing.Point(4, 22);
+            this.tp8Adapters.Margin = new System.Windows.Forms.Padding(2);
             this.tp8Adapters.Name = "tp8Adapters";
-            this.tp8Adapters.Size = new System.Drawing.Size(1169, 461);
+            this.tp8Adapters.Size = new System.Drawing.Size(875, 357);
             this.tp8Adapters.TabIndex = 6;
             this.tp8Adapters.Text = "Disabled Adapters";
             this.tp8Adapters.UseVisualStyleBackColor = true;
@@ -517,14 +572,15 @@ namespace Argon.Windows.Forms
             this.networkCardListView.Location = new System.Drawing.Point(0, 0);
             this.networkCardListView.Name = "networkCardListView";
             this.networkCardListView.SelectedItems = ((System.Collections.Generic.List<Argon.Windows.Network.WindowsNetworkCard>)(resources.GetObject("networkCardListView.SelectedItems")));
-            this.networkCardListView.Size = new System.Drawing.Size(1169, 458);
+            this.networkCardListView.Size = new System.Drawing.Size(875, 357);
             this.networkCardListView.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 9);
+            this.label3.Location = new System.Drawing.Point(78, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 23;
@@ -533,9 +589,10 @@ namespace Argon.Windows.Forms
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(107, 6);
+            this.txtName.Location = new System.Drawing.Point(142, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(414, 20);
+            this.txtName.Size = new System.Drawing.Size(312, 20);
             this.txtName.TabIndex = 25;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -544,19 +601,20 @@ namespace Argon.Windows.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1182, 612);
-            this.Controls.Add(this.txtName);
+            this.ClientSize = new System.Drawing.Size(886, 479);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSelectedCard);
             this.Controls.Add(this.lblSelectedCard);
             this.Controls.Add(this.lstNetworkCard);
+            this.Controls.Add(this.txtSelectedCard);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnSelect);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormProfile";
             this.TabText = "Profile";
             this.Text = "Profile";
@@ -622,7 +680,10 @@ namespace Argon.Windows.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
-        public IpControl ipControl;
         private WinsControl winsControl;
+        private DNSConfiguration dnsConfiguration;
+        private MACAddressControl macAddressControl;
+        private WifiProfileControl wifiProfileControl;
+        private IpControl ipControl;
     }
 }

@@ -119,7 +119,6 @@ namespace Argon.Windows.Forms
             // 
             // dockPanel
             // 
-            this.dockPanel.ActiveAutoHideContent = null;
             this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel.DockBackColor = System.Drawing.SystemColors.ControlDark;
             this.dockPanel.Location = new System.Drawing.Point(0, 140);
@@ -132,6 +131,7 @@ namespace Argon.Windows.Forms
             tabGradient1.StartColor = System.Drawing.SystemColors.Control;
             tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             autoHideStripSkin1.TabGradient = tabGradient1;
+            autoHideStripSkin1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
             dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
             tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
             tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
@@ -145,6 +145,7 @@ namespace Argon.Windows.Forms
             tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
             dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
             dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
+            dockPaneStripSkin1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
             tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
             tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -191,94 +192,106 @@ namespace Argon.Windows.Forms
             this.ribbon.OrbDropDown.BorderRoundness = 8;
             this.ribbon.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.ribbon.OrbDropDown.Name = "";
+            this.ribbon.OrbDropDown.RecentItemsCaption = null;
             this.ribbon.OrbDropDown.Size = new System.Drawing.Size(527, 72);
             this.ribbon.OrbDropDown.TabIndex = 0;
             this.ribbon.OrbImage = null;
+            this.ribbon.OrbText = null;
             this.ribbon.OrbVisible = false;
-            this.ribbon.QuickAccessVisible = false;
             // 
             // 
             // 
             this.ribbon.QuickAcessToolbar.AltKey = null;
+            this.ribbon.QuickAcessToolbar.CheckedGroup = null;
             this.ribbon.QuickAcessToolbar.Image = null;
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnSmartView);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigLoad);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnConfigSave);
             this.ribbon.QuickAcessToolbar.Items.Add(this.rbtnShowInTrayArea);
+            this.ribbon.QuickAcessToolbar.ShowFlashImage = false;
             this.ribbon.QuickAcessToolbar.Tag = null;
             this.ribbon.QuickAcessToolbar.Text = null;
             this.ribbon.QuickAcessToolbar.ToolTip = null;
-            this.ribbon.QuickAcessToolbar.ToolTipImage = null;
             this.ribbon.QuickAcessToolbar.ToolTipTitle = null;
-            this.ribbon.Size = new System.Drawing.Size(959, 138);
+            this.ribbon.QuickAcessToolbar.Value = null;
+            this.ribbon.Size = new System.Drawing.Size(959, 140);
             this.ribbon.TabIndex = 12;
             this.ribbon.Tabs.Add(this.rtOperations);
             this.ribbon.Tabs.Add(this.rtViews);
+            this.ribbon.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon.TabSpacing = 6;
             this.ribbon.Text = "ribbon";
             // 
             // rbtnSmartView
             // 
             this.rbtnSmartView.AltKey = null;
+            this.rbtnSmartView.CheckedGroup = null;
             this.rbtnSmartView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnSmartView.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnSmartView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.Image")));
             this.rbtnSmartView.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnSmartView.ShowFlashImage = false;
             this.rbtnSmartView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSmartView.SmallImage")));
             this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSmartView.Tag = null;
             this.rbtnSmartView.Text = "Smart view";
             this.rbtnSmartView.ToolTip = "Smart view";
-            this.rbtnSmartView.ToolTipImage = null;
             this.rbtnSmartView.ToolTipTitle = "Smart view";
+            this.rbtnSmartView.Value = null;
             this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
             // 
             // rbtnConfigLoad
             // 
             this.rbtnConfigLoad.AltKey = null;
+            this.rbtnConfigLoad.CheckedGroup = null;
             this.rbtnConfigLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnConfigLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnConfigLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.Image")));
             this.rbtnConfigLoad.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigLoad.ShowFlashImage = false;
             this.rbtnConfigLoad.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConfigLoad.SmallImage")));
             this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConfigLoad.Tag = null;
             this.rbtnConfigLoad.Text = "Load config";
             this.rbtnConfigLoad.ToolTip = null;
-            this.rbtnConfigLoad.ToolTipImage = null;
             this.rbtnConfigLoad.ToolTipTitle = "Load config";
+            this.rbtnConfigLoad.Value = null;
             this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
             // 
             // rbtnConfigSave
             // 
             this.rbtnConfigSave.AltKey = null;
+            this.rbtnConfigSave.CheckedGroup = null;
             this.rbtnConfigSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnConfigSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnConfigSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.Image")));
             this.rbtnConfigSave.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnConfigSave.ShowFlashImage = false;
             this.rbtnConfigSave.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConfigSave.SmallImage")));
             this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConfigSave.Tag = null;
             this.rbtnConfigSave.Text = "Save";
             this.rbtnConfigSave.ToolTip = null;
-            this.rbtnConfigSave.ToolTipImage = null;
             this.rbtnConfigSave.ToolTipTitle = "Save config";
+            this.rbtnConfigSave.Value = null;
             this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
             // 
             // rbtnShowInTrayArea
             // 
             this.rbtnShowInTrayArea.AltKey = null;
+            this.rbtnShowInTrayArea.CheckedGroup = null;
             this.rbtnShowInTrayArea.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnShowInTrayArea.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnShowInTrayArea.Image = ((System.Drawing.Image)(resources.GetObject("rbtnShowInTrayArea.Image")));
             this.rbtnShowInTrayArea.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.rbtnShowInTrayArea.ShowFlashImage = false;
             this.rbtnShowInTrayArea.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnShowInTrayArea.SmallImage")));
             this.rbtnShowInTrayArea.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnShowInTrayArea.Tag = null;
             this.rbtnShowInTrayArea.Text = "ribbonButton1";
             this.rbtnShowInTrayArea.ToolTip = null;
-            this.rbtnShowInTrayArea.ToolTipImage = null;
             this.rbtnShowInTrayArea.ToolTipTitle = null;
+            this.rbtnShowInTrayArea.Value = null;
             this.rbtnShowInTrayArea.Click += new System.EventHandler(this.rbtnShowInTrayArea_Click);
             // 
             // rtOperations
@@ -288,6 +301,11 @@ namespace Argon.Windows.Forms
             this.rtOperations.Panels.Add(this.rpConsole);
             this.rtOperations.Tag = null;
             this.rtOperations.Text = "Operations";
+            this.rtOperations.ToolTip = null;
+            this.rtOperations.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.rtOperations.ToolTipImage = null;
+            this.rtOperations.ToolTipTitle = null;
+            this.rtOperations.Value = null;
             // 
             // rpProfile
             // 
@@ -310,137 +328,157 @@ namespace Argon.Windows.Forms
             this.rbtnProfilesList.AltKey = null;
             this.rbtnProfilesList.Buttons.Add(this.rbtnProfilesRun);
             this.rbtnProfilesList.ButtonsSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbtnProfilesList.CheckedGroup = null;
             this.rbtnProfilesList.FlowToBottom = false;
             this.rbtnProfilesList.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_48x48;
             this.rbtnProfilesList.ItemsSizeInDropwDownMode = new System.Drawing.Size(7, 5);
+            this.rbtnProfilesList.ShowFlashImage = false;
             this.rbtnProfilesList.Tag = null;
             this.rbtnProfilesList.Text = "Profiles";
             this.rbtnProfilesList.ToolTip = null;
-            this.rbtnProfilesList.ToolTipImage = null;
             this.rbtnProfilesList.ToolTipTitle = null;
+            this.rbtnProfilesList.Value = null;
             // 
             // rbtnProfilesRun
             // 
             this.rbtnProfilesRun.AltKey = null;
+            this.rbtnProfilesRun.CheckedGroup = null;
             this.rbtnProfilesRun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfilesRun.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfilesRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_0_24x24;
+            this.rbtnProfilesRun.ShowFlashImage = false;
             this.rbtnProfilesRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfilesRun.SmallImage")));
             this.rbtnProfilesRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfilesRun.Tag = null;
             this.rbtnProfilesRun.Text = "Select to run";
             this.rbtnProfilesRun.ToolTip = null;
-            this.rbtnProfilesRun.ToolTipImage = null;
             this.rbtnProfilesRun.ToolTipTitle = null;
+            this.rbtnProfilesRun.Value = null;
             // 
             // rsProfileSeparator2
             // 
             this.rsProfileSeparator2.AltKey = null;
+            this.rsProfileSeparator2.CheckedGroup = null;
             this.rsProfileSeparator2.Image = null;
+            this.rsProfileSeparator2.ShowFlashImage = false;
             this.rsProfileSeparator2.Tag = null;
             this.rsProfileSeparator2.Text = null;
             this.rsProfileSeparator2.ToolTip = null;
-            this.rsProfileSeparator2.ToolTipImage = null;
             this.rsProfileSeparator2.ToolTipTitle = null;
+            this.rsProfileSeparator2.Value = null;
             // 
             // rbtnProfileNew
             // 
             this.rbtnProfileNew.AltKey = null;
+            this.rbtnProfileNew.CheckedGroup = null;
             this.rbtnProfileNew.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileNew.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileNew.Image = global::Argon.Windows.Forms.Properties.Resources.profile_new_48x48;
+            this.rbtnProfileNew.ShowFlashImage = false;
             this.rbtnProfileNew.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_new_48x48;
             this.rbtnProfileNew.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileNew.Tag = null;
             this.rbtnProfileNew.Text = "New";
             this.rbtnProfileNew.ToolTip = "New profile";
-            this.rbtnProfileNew.ToolTipImage = null;
             this.rbtnProfileNew.ToolTipTitle = "New profile";
+            this.rbtnProfileNew.Value = null;
             this.rbtnProfileNew.Click += new System.EventHandler(this.btnProfileNew_Click);
             // 
             // rbtnProfileView
             // 
             this.rbtnProfileView.AltKey = null;
+            this.rbtnProfileView.CheckedGroup = null;
             this.rbtnProfileView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileView.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileView.Image = global::Argon.Windows.Forms.Properties.Resources.profile_edit_48x48;
+            this.rbtnProfileView.ShowFlashImage = false;
             this.rbtnProfileView.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_edit_48x48;
             this.rbtnProfileView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileView.Tag = null;
             this.rbtnProfileView.Text = "View";
             this.rbtnProfileView.ToolTip = "View selected profile";
-            this.rbtnProfileView.ToolTipImage = null;
             this.rbtnProfileView.ToolTipTitle = null;
+            this.rbtnProfileView.Value = null;
             this.rbtnProfileView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // rbtnProfileDelete
             // 
             this.rbtnProfileDelete.AltKey = null;
+            this.rbtnProfileDelete.CheckedGroup = null;
             this.rbtnProfileDelete.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileDelete.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileDelete.Image = global::Argon.Windows.Forms.Properties.Resources.profile_delete_48x48;
+            this.rbtnProfileDelete.ShowFlashImage = false;
             this.rbtnProfileDelete.SmallImage = global::Argon.Windows.Forms.Properties.Resources.profile_delete_48x48;
             this.rbtnProfileDelete.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileDelete.Tag = null;
             this.rbtnProfileDelete.Text = "Delete";
             this.rbtnProfileDelete.ToolTip = "Delete selected profile";
-            this.rbtnProfileDelete.ToolTipImage = null;
             this.rbtnProfileDelete.ToolTipTitle = null;
+            this.rbtnProfileDelete.Value = null;
             this.rbtnProfileDelete.Click += new System.EventHandler(this.btnProfileDelete_Click);
             // 
             // rbtnProfileSave
             // 
             this.rbtnProfileSave.AltKey = null;
+            this.rbtnProfileSave.CheckedGroup = null;
             this.rbtnProfileSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileSave.Image = global::Argon.Windows.Forms.Properties.Resources.profile_save_48x48;
+            this.rbtnProfileSave.ShowFlashImage = false;
             this.rbtnProfileSave.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileSave.SmallImage")));
             this.rbtnProfileSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileSave.Tag = null;
             this.rbtnProfileSave.Text = "Save";
             this.rbtnProfileSave.ToolTip = null;
-            this.rbtnProfileSave.ToolTipImage = null;
             this.rbtnProfileSave.ToolTipTitle = null;
+            this.rbtnProfileSave.Value = null;
             this.rbtnProfileSave.Click += new System.EventHandler(this.rbtnProfileSave_Click);
             // 
             // rsProfileSeparator
             // 
             this.rsProfileSeparator.AltKey = null;
+            this.rsProfileSeparator.CheckedGroup = null;
             this.rsProfileSeparator.Image = null;
+            this.rsProfileSeparator.ShowFlashImage = false;
             this.rsProfileSeparator.Tag = null;
             this.rsProfileSeparator.Text = null;
             this.rsProfileSeparator.ToolTip = null;
-            this.rsProfileSeparator.ToolTipImage = null;
             this.rsProfileSeparator.ToolTipTitle = null;
+            this.rsProfileSeparator.Value = null;
             // 
             // rbtnProfileRun
             // 
             this.rbtnProfileRun.AltKey = null;
+            this.rbtnProfileRun.CheckedGroup = null;
             this.rbtnProfileRun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileRun.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileRun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_run_48x48;
+            this.rbtnProfileRun.ShowFlashImage = false;
             this.rbtnProfileRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileRun.SmallImage")));
             this.rbtnProfileRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileRun.Tag = null;
             this.rbtnProfileRun.Text = "Run";
             this.rbtnProfileRun.ToolTip = null;
-            this.rbtnProfileRun.ToolTipImage = null;
             this.rbtnProfileRun.ToolTipTitle = null;
+            this.rbtnProfileRun.Value = null;
             this.rbtnProfileRun.Click += new System.EventHandler(this.rbtnProfileRun_Click);
             // 
             // rbtnProfileAutorun
             // 
             this.rbtnProfileAutorun.AltKey = null;
+            this.rbtnProfileAutorun.CheckedGroup = null;
             this.rbtnProfileAutorun.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnProfileAutorun.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnProfileAutorun.Image = global::Argon.Windows.Forms.Properties.Resources.profile_autorun_48x48;
+            this.rbtnProfileAutorun.ShowFlashImage = false;
             this.rbtnProfileAutorun.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfileAutorun.SmallImage")));
             this.rbtnProfileAutorun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileAutorun.Tag = null;
             this.rbtnProfileAutorun.Text = "Autorun";
             this.rbtnProfileAutorun.ToolTip = null;
-            this.rbtnProfileAutorun.ToolTipImage = null;
             this.rbtnProfileAutorun.ToolTipTitle = null;
+            this.rbtnProfileAutorun.Value = null;
             this.rbtnProfileAutorun.Click += new System.EventHandler(this.rbtnProfileAutorun_Click);
             // 
             // rpNetworkCard
@@ -457,61 +495,69 @@ namespace Argon.Windows.Forms
             // rbtnCardsRefresh
             // 
             this.rbtnCardsRefresh.AltKey = null;
+            this.rbtnCardsRefresh.CheckedGroup = null;
             this.rbtnCardsRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardsRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCardsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCardsRefresh.Image")));
+            this.rbtnCardsRefresh.ShowFlashImage = false;
             this.rbtnCardsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardsRefresh.SmallImage")));
             this.rbtnCardsRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardsRefresh.Tag = null;
             this.rbtnCardsRefresh.Text = "Refresh";
             this.rbtnCardsRefresh.ToolTip = null;
-            this.rbtnCardsRefresh.ToolTipImage = null;
             this.rbtnCardsRefresh.ToolTipTitle = null;
+            this.rbtnCardsRefresh.Value = null;
             this.rbtnCardsRefresh.Click += new System.EventHandler(this.rbtnCardsRefresh_Click);
             // 
             // rbtnCardView
             // 
             this.rbtnCardView.AltKey = null;
+            this.rbtnCardView.CheckedGroup = null;
             this.rbtnCardView.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardView.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCardView.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCardView.Image")));
+            this.rbtnCardView.ShowFlashImage = false;
             this.rbtnCardView.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardView.SmallImage")));
             this.rbtnCardView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardView.Tag = null;
             this.rbtnCardView.Text = "View";
             this.rbtnCardView.ToolTip = null;
-            this.rbtnCardView.ToolTipImage = null;
             this.rbtnCardView.ToolTipTitle = null;
+            this.rbtnCardView.Value = null;
             this.rbtnCardView.Click += new System.EventHandler(this.rbtnCardView_Click);
             // 
             // rbtnCardEnable
             // 
             this.rbtnCardEnable.AltKey = null;
+            this.rbtnCardEnable.CheckedGroup = null;
             this.rbtnCardEnable.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardEnable.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCardEnable.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCardEnable.Image")));
+            this.rbtnCardEnable.ShowFlashImage = false;
             this.rbtnCardEnable.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardEnable.SmallImage")));
             this.rbtnCardEnable.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardEnable.Tag = null;
             this.rbtnCardEnable.Text = "Enable";
             this.rbtnCardEnable.ToolTip = null;
-            this.rbtnCardEnable.ToolTipImage = null;
             this.rbtnCardEnable.ToolTipTitle = null;
+            this.rbtnCardEnable.Value = null;
             this.rbtnCardEnable.Click += new System.EventHandler(this.rbtnCardEnable_Click);
             // 
             // rbtnCardDisable
             // 
             this.rbtnCardDisable.AltKey = null;
+            this.rbtnCardDisable.CheckedGroup = null;
             this.rbtnCardDisable.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnCardDisable.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCardDisable.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCardDisable.Image")));
+            this.rbtnCardDisable.ShowFlashImage = false;
             this.rbtnCardDisable.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCardDisable.SmallImage")));
             this.rbtnCardDisable.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardDisable.Tag = null;
             this.rbtnCardDisable.Text = "Disable";
             this.rbtnCardDisable.ToolTip = null;
-            this.rbtnCardDisable.ToolTipImage = null;
             this.rbtnCardDisable.ToolTipTitle = null;
+            this.rbtnCardDisable.Value = null;
             this.rbtnCardDisable.Click += new System.EventHandler(this.rbtnCardDisable_Click);
             // 
             // rpConsole
@@ -525,16 +571,18 @@ namespace Argon.Windows.Forms
             // rbtnConsoleRefresh
             // 
             this.rbtnConsoleRefresh.AltKey = null;
+            this.rbtnConsoleRefresh.CheckedGroup = null;
             this.rbtnConsoleRefresh.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnConsoleRefresh.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnConsoleRefresh.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConsoleRefresh.Image")));
+            this.rbtnConsoleRefresh.ShowFlashImage = false;
             this.rbtnConsoleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConsoleRefresh.SmallImage")));
             this.rbtnConsoleRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConsoleRefresh.Tag = null;
             this.rbtnConsoleRefresh.Text = "Refresh";
             this.rbtnConsoleRefresh.ToolTip = null;
-            this.rbtnConsoleRefresh.ToolTipImage = null;
             this.rbtnConsoleRefresh.ToolTipTitle = null;
+            this.rbtnConsoleRefresh.Value = null;
             this.rbtnConsoleRefresh.Click += new System.EventHandler(this.rbtnConsoleRefresh_Click);
             // 
             // rtViews
@@ -543,6 +591,11 @@ namespace Argon.Windows.Forms
             this.rtViews.Panels.Add(this.rpHelp);
             this.rtViews.Tag = null;
             this.rtViews.Text = "Views";
+            this.rtViews.ToolTip = null;
+            this.rtViews.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.rtViews.ToolTipImage = null;
+            this.rtViews.ToolTipTitle = null;
+            this.rtViews.Value = null;
             // 
             // rpViews
             // 
@@ -558,61 +611,69 @@ namespace Argon.Windows.Forms
             // rbtnViewConsole
             // 
             this.rbtnViewConsole.AltKey = null;
+            this.rbtnViewConsole.CheckedGroup = null;
             this.rbtnViewConsole.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewConsole.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnViewConsole.Image = ((System.Drawing.Image)(resources.GetObject("rbtnViewConsole.Image")));
+            this.rbtnViewConsole.ShowFlashImage = false;
             this.rbtnViewConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewConsole.SmallImage")));
             this.rbtnViewConsole.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewConsole.Tag = null;
             this.rbtnViewConsole.Text = "Console";
             this.rbtnViewConsole.ToolTip = null;
-            this.rbtnViewConsole.ToolTipImage = null;
             this.rbtnViewConsole.ToolTipTitle = null;
+            this.rbtnViewConsole.Value = null;
             this.rbtnViewConsole.Click += new System.EventHandler(this.mnuViewConsole_Click);
             // 
             // rbtnViewProfiles
             // 
             this.rbtnViewProfiles.AltKey = null;
+            this.rbtnViewProfiles.CheckedGroup = null;
             this.rbtnViewProfiles.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewProfiles.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnViewProfiles.Image = ((System.Drawing.Image)(resources.GetObject("rbtnViewProfiles.Image")));
+            this.rbtnViewProfiles.ShowFlashImage = false;
             this.rbtnViewProfiles.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewProfiles.SmallImage")));
             this.rbtnViewProfiles.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewProfiles.Tag = null;
             this.rbtnViewProfiles.Text = "Profiles";
             this.rbtnViewProfiles.ToolTip = null;
-            this.rbtnViewProfiles.ToolTipImage = null;
             this.rbtnViewProfiles.ToolTipTitle = null;
+            this.rbtnViewProfiles.Value = null;
             this.rbtnViewProfiles.Click += new System.EventHandler(this.rbtnViewProfiles_Click);
             // 
             // rbtnViewNetworkCards
             // 
             this.rbtnViewNetworkCards.AltKey = null;
+            this.rbtnViewNetworkCards.CheckedGroup = null;
             this.rbtnViewNetworkCards.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewNetworkCards.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnViewNetworkCards.Image = ((System.Drawing.Image)(resources.GetObject("rbtnViewNetworkCards.Image")));
+            this.rbtnViewNetworkCards.ShowFlashImage = false;
             this.rbtnViewNetworkCards.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewNetworkCards.SmallImage")));
             this.rbtnViewNetworkCards.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewNetworkCards.Tag = null;
             this.rbtnViewNetworkCards.Text = "Networks Card";
             this.rbtnViewNetworkCards.ToolTip = null;
-            this.rbtnViewNetworkCards.ToolTipImage = null;
             this.rbtnViewNetworkCards.ToolTipTitle = null;
+            this.rbtnViewNetworkCards.Value = null;
             this.rbtnViewNetworkCards.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
             // 
             // rbtnViewSettings
             // 
             this.rbtnViewSettings.AltKey = null;
+            this.rbtnViewSettings.CheckedGroup = null;
             this.rbtnViewSettings.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnViewSettings.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnViewSettings.Image = global::Argon.Windows.Forms.Properties.Resources.settings48x48;
+            this.rbtnViewSettings.ShowFlashImage = false;
             this.rbtnViewSettings.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnViewSettings.SmallImage")));
             this.rbtnViewSettings.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewSettings.Tag = null;
             this.rbtnViewSettings.Text = "Options";
             this.rbtnViewSettings.ToolTip = null;
-            this.rbtnViewSettings.ToolTipImage = null;
             this.rbtnViewSettings.ToolTipTitle = null;
+            this.rbtnViewSettings.Value = null;
             this.rbtnViewSettings.Click += new System.EventHandler(this.rbtnViewSettings_Click);
             // 
             // rpHelp
@@ -628,46 +689,52 @@ namespace Argon.Windows.Forms
             // rbtnHelpAbout
             // 
             this.rbtnHelpAbout.AltKey = null;
+            this.rbtnHelpAbout.CheckedGroup = null;
             this.rbtnHelpAbout.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnHelpAbout.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnHelpAbout.Image = ((System.Drawing.Image)(resources.GetObject("rbtnHelpAbout.Image")));
+            this.rbtnHelpAbout.ShowFlashImage = false;
             this.rbtnHelpAbout.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpAbout.SmallImage")));
             this.rbtnHelpAbout.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpAbout.Tag = null;
             this.rbtnHelpAbout.Text = "About";
             this.rbtnHelpAbout.ToolTip = null;
-            this.rbtnHelpAbout.ToolTipImage = null;
             this.rbtnHelpAbout.ToolTipTitle = null;
+            this.rbtnHelpAbout.Value = null;
             this.rbtnHelpAbout.Click += new System.EventHandler(this.rbtnHelpAbout_Click);
             // 
             // rbtnHelpUpdate
             // 
             this.rbtnHelpUpdate.AltKey = null;
+            this.rbtnHelpUpdate.CheckedGroup = null;
             this.rbtnHelpUpdate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnHelpUpdate.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnHelpUpdate.Image = ((System.Drawing.Image)(resources.GetObject("rbtnHelpUpdate.Image")));
+            this.rbtnHelpUpdate.ShowFlashImage = false;
             this.rbtnHelpUpdate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpUpdate.SmallImage")));
             this.rbtnHelpUpdate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpUpdate.Tag = null;
             this.rbtnHelpUpdate.Text = "Update";
             this.rbtnHelpUpdate.ToolTip = null;
-            this.rbtnHelpUpdate.ToolTipImage = null;
             this.rbtnHelpUpdate.ToolTipTitle = null;
+            this.rbtnHelpUpdate.Value = null;
             this.rbtnHelpUpdate.Click += new System.EventHandler(this.rbtnHelpUpdate_Click);
             // 
             // rbtnHelpDonate
             // 
             this.rbtnHelpDonate.AltKey = null;
+            this.rbtnHelpDonate.CheckedGroup = null;
             this.rbtnHelpDonate.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnHelpDonate.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnHelpDonate.Image = ((System.Drawing.Image)(resources.GetObject("rbtnHelpDonate.Image")));
+            this.rbtnHelpDonate.ShowFlashImage = false;
             this.rbtnHelpDonate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHelpDonate.SmallImage")));
             this.rbtnHelpDonate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpDonate.Tag = null;
             this.rbtnHelpDonate.Text = "Donate";
             this.rbtnHelpDonate.ToolTip = null;
-            this.rbtnHelpDonate.ToolTipImage = null;
             this.rbtnHelpDonate.ToolTipTitle = null;
+            this.rbtnHelpDonate.Value = null;
             this.rbtnHelpDonate.Click += new System.EventHandler(this.rbtnHelpDonate_Click);
             // 
             // pnlRibbonContainer
@@ -682,44 +749,50 @@ namespace Argon.Windows.Forms
             // rbtnSmartLoad
             // 
             this.rbtnSmartLoad.AltKey = null;
+            this.rbtnSmartLoad.CheckedGroup = null;
             this.rbtnSmartLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnSmartLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnSmartLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSmartLoad.Image")));
+            this.rbtnSmartLoad.ShowFlashImage = false;
             this.rbtnSmartLoad.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSmartLoad.SmallImage")));
             this.rbtnSmartLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSmartLoad.Tag = null;
             this.rbtnSmartLoad.Text = null;
             this.rbtnSmartLoad.ToolTip = null;
-            this.rbtnSmartLoad.ToolTipImage = null;
             this.rbtnSmartLoad.ToolTipTitle = null;
+            this.rbtnSmartLoad.Value = null;
             // 
             // rbtnLoad
             // 
             this.rbtnLoad.AltKey = null;
+            this.rbtnLoad.CheckedGroup = null;
             this.rbtnLoad.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnLoad.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnLoad.Image = ((System.Drawing.Image)(resources.GetObject("rbtnLoad.Image")));
+            this.rbtnLoad.ShowFlashImage = false;
             this.rbtnLoad.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLoad.SmallImage")));
             this.rbtnLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnLoad.Tag = null;
             this.rbtnLoad.Text = null;
             this.rbtnLoad.ToolTip = null;
-            this.rbtnLoad.ToolTipImage = null;
             this.rbtnLoad.ToolTipTitle = null;
+            this.rbtnLoad.Value = null;
             // 
             // rbtnSave
             // 
             this.rbtnSave.AltKey = null;
+            this.rbtnSave.CheckedGroup = null;
             this.rbtnSave.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
             this.rbtnSave.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSave.Image")));
+            this.rbtnSave.ShowFlashImage = false;
             this.rbtnSave.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSave.SmallImage")));
             this.rbtnSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSave.Tag = null;
             this.rbtnSave.Text = null;
             this.rbtnSave.ToolTip = null;
-            this.rbtnSave.ToolTipImage = null;
             this.rbtnSave.ToolTipTitle = null;
+            this.rbtnSave.Value = null;
             // 
             // notifyIcon
             // 
@@ -739,7 +812,7 @@ namespace Argon.Windows.Forms
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(788, 420);
+            this.MinimumSize = new System.Drawing.Size(786, 413);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Argon - Network Switcher";

@@ -67,6 +67,7 @@ namespace Argon.Models
         /// <returns></returns>
         public static WindowsNetworkCard FindNetworkCard(string id)
         {
+            if (id == null || NetworkCardList==null) return null;
             foreach (WindowsNetworkCard item in NetworkCardList)
             {
                 if (item.Id.Equals(id)) return item;

@@ -1,14 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Argon.Windows;
 using Argon.Windows.Network;
-using Argon.Windows.Network.Wifi;
-using Argon.Models;
 
 /*
  * Copyright 2012 Francesco Benincasa
@@ -32,12 +30,9 @@ namespace Argon.Windows.Controls
     /// </summary>
     [DesignTimeVisible(true), ToolboxItem(true),
   ToolboxBitmap(typeof(Button))]
-    public partial class IpControl : UserControl
+    public partial class DNSConfiguration : UserControl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IpControl"/> class.
-        /// </summary>
-        public IpControl()
+        public DNSConfiguration()
         {
             // impostiamo il modo trasparente prima di inizializzare
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
@@ -49,29 +44,25 @@ namespace Argon.Windows.Controls
             // see http://stackoverflow.com/questions/64272/how-to-eliminate-flicker-in-windows-forms-custom-control-when-scrolling
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                         ControlStyles.UserPaint |
-                        ControlStyles.AllPaintingInWmPaint, true);   
+                        ControlStyles.AllPaintingInWmPaint, true);
+            
         }
-   
 
- 
         /// <summary>
         /// Displays the configuration.
         /// </summary>
         public void DisplayConfiguration(WindowsNetworkCard config)
         {
             if (config == null)
-            {
-                cbDHCPEnabled.Checked = true;                
+            {                
+                cbDynamicDNS.Checked = true;
                 return;
             }
 
-            cbDHCPEnabled.Checked = config.Dhcp;
-            txtIP.IpAddress = config.IpAddress;
-            txtSubnetMask.IpAddress = config.SubnetMask;
-            txtDefaultGateway.IpAddress = config.GatewayAddress;
-
+            cbDynamicDNS.Checked = config.DynamicDNS;
+            txtPrimaryDNS.IpAddress = config.Dns;
+            txtAlternativeDNS.IpAddress = config.Dns2;
         }
-
 
         /// <summary>
         /// Saves the configuration.
@@ -80,26 +71,26 @@ namespace Argon.Windows.Controls
         {
             if (config == null) return;
 
-            config.Dhcp = cbDHCPEnabled.Checked;
-            config.IpAddress = txtIP.IpAddress;
-            config.SubnetMask = txtSubnetMask.IpAddress;
-            config.GatewayAddress = txtDefaultGateway.IpAddress;
+            config.DynamicDNS = cbDynamicDNS.Checked;
+            config.Dns = txtPrimaryDNS.IpAddress;
+            config.Dns2 = txtAlternativeDNS.IpAddress;
         }
 
-        private void cbDHCPEnabled_CheckedChanged(object sender, EventArgs e)
+        private void cbDynamicDNS_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbDHCPEnabled.Checked)
+            if (cbDynamicDNS.Checked)
             {
-                txtIP.Enabled = false;
-                txtSubnetMask.Enabled = false;
-                txtDefaultGateway.Enabled = false;               
+                txtPrimaryDNS.Enabled = false;
+                txtAlternativeDNS.Enabled = false;
             }
             else
             {
-                txtIP.Enabled = true;
-                txtSubnetMask.Enabled = true;
-                txtDefaultGateway.Enabled = true;
+                txtPrimaryDNS.Enabled = true;
+                txtAlternativeDNS.Enabled = true;
             }
         }
     }
+
+    
+       
 }

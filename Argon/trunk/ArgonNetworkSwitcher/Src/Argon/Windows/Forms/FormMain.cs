@@ -63,17 +63,26 @@ namespace Argon.Windows.Forms
 
             dockPanel.SaveAsXml(configFile);
 
-            DialogResult ret = MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (ret == DialogResult.Yes)
+            if (Properties.Settings.Default.AskConfirmationOnClose)
             {
-                UseCaseConfig.Save();
-                return;
+                DialogResult ret = MessageBox.Show(this, "Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (ret == DialogResult.Yes)
+                {
+                    UseCaseConfig.Save();
+                    return;
+                }
+                else
+                {
+                    // bug fix: if user says no the windows does not close
+                    e.Cancel = true;
+                }
             }
             else
             {
-                // bug fix: if user says no the windows does not close
-                e.Cancel = true;
+                // close without confirmation
+                UseCaseConfig.Save();
+                return;
             }
         }
 

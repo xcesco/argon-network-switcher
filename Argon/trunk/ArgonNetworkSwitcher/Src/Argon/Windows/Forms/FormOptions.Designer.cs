@@ -39,8 +39,11 @@
             this.rbStartSmartView = new System.Windows.Forms.RadioButton();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbConfirmOnClose = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -164,11 +167,37 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cbConfirmOnClose);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.groupBox3.Location = new System.Drawing.Point(13, 252);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(696, 51);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Shutdown";
+            // 
+            // cbConfirmOnClose
+            // 
+            this.cbConfirmOnClose.AutoSize = true;
+            this.cbConfirmOnClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbConfirmOnClose.Location = new System.Drawing.Point(7, 20);
+            this.cbConfirmOnClose.Name = "cbConfirmOnClose";
+            this.cbConfirmOnClose.Size = new System.Drawing.Size(313, 20);
+            this.cbConfirmOnClose.TabIndex = 0;
+            this.cbConfirmOnClose.Text = "Ask confirmation before close application";
+            this.cbConfirmOnClose.UseVisualStyleBackColor = true;
+            // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 391);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
@@ -185,6 +214,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +232,7 @@
         private System.Windows.Forms.RadioButton rbStartTrayArea;
         private System.Windows.Forms.RadioButton rbStartSmartView;
         private System.Windows.Forms.RadioButton rbStartNormal;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox cbConfirmOnClose;
     }
 }

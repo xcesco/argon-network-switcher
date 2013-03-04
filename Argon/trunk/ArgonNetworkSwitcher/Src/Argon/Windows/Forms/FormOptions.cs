@@ -35,6 +35,8 @@ namespace Argon.Windows.Forms
 
             cbStartWithAutodetect.Checked=Properties.Settings.Default.AutodetectOnStart;
             cbStartWithWindows.Checked =Properties.Settings.Default.StartWithWindows;
+
+            cbConfirmOnClose.Checked = Properties.Settings.Default.AskConfirmationOnClose;
             
 
             this.Activated += new System.EventHandler(this.ArgonDockContent_Activated);
@@ -70,6 +72,7 @@ namespace Argon.Windows.Forms
             Properties.Settings.Default.AutodetectOnStart = cbStartWithAutodetect.Checked;
             Properties.Settings.Default.StartWithWindows=cbStartWithWindows.Checked;
             Properties.Settings.Default.StartNormal=rbStartNormal.Checked;
+            Properties.Settings.Default.AskConfirmationOnClose = cbConfirmOnClose.Checked;
 
             // The path to the key where Windows looks for startup applications
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
