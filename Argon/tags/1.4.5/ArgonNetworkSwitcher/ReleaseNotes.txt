@@ -1,0 +1,95 @@
+﻿Release Notes
+=============
+
+Version 1.4.5
+-------------
+- Minor fix on startup: fix problem on WMI
+
+Version 1.4.4
+-------------
+- Improvement: confirmation dialog on close is now optional
+- Bug fix: Proxy settings now works even if firefox not installed
+- Bug fix: problems about layout in form of profile
+- Internal improvement: update of libraries (project System.Windows.Forms.Ribbon is not necessary)
+
+Version 1.4.3
+-------------
+- Bug fix: firefox proxy override now use , instead of ; (like explorer)
+
+
+Version 1.4.2
+-------------
+- Bug fix: during saving of profile, an exception was throws.
+
+
+Version 1.4.1
+-------------
+- Bug fix: run profile from tray area now work without exception
+
+Version 1.4.0
+-------------
+- Improvement: application can start in different mode:
+		- normal mode
+		- tray area (in the tray area appeare logo of application)
+		- smart view
+- Improvement: add tray area mode in smart button (telescope icon)
+- Improvement: in tray area mode:
+		- double click of icon restore normal view
+		- right click of mouse is associated to a context menu for:
+			- run autodetect
+			- run profile
+			- close application
+- Improvement: during initialization of application:
+		- optional check for version
+		- optional autodetectcan be run
+- Improvement: if firefox is running when profile is applyed, it is shutdown and restarted.
+- Bug fix: Immediate proxy settings changing (Chrome bug) (Tnx to anonymous user who suggested solution too!)
+- Improvement: introduced Options windows to modify application configuration.
+- Improvement: during execution of profile or autodectect is no possibile anymore:
+		- Enable/disable network card
+		- Save/delete/create/duplicate profile
+		- run profile or autodetect	
+- Bug fix: autodetect algo now order profile by network card type and speed.
+- Improvement: add more messages during autodetect
+- Improvement: introduced profile reorder for profiles: now it is possibile to define the order in which
+	profiles are displayed.
+
+Version 1.3.0
+-------------
+- Bug fix: introduced minimun size to avoid ribbon problem
+- Improvement: removed firt ribbon panel. Now all operations about profile are in same place
+- Improvement: add profile list button in ribbon panel to display list of profile
+- Bug fix: when in smart view, ribbon panel were display
+- Bug fix: in some case autodetect does not work
+- Bug fix: in some case profile save does not work
+- Minor Improvement: refresh network card status is reflected on current opened profile windows
+- Minor improvement: internal refactoring
+
+Version 1.2.0
+-------------
+
+- MAJOR IMPROVEMENT: introduced new algorithm for profile's auto selection 
+- MAJOR IMPROVEMENT: UI restyling. In this release it was used a ribbon control instead of the toolbar. This control contains many things:
+	a button's list to run profiles (tab Profiles, panel Run)
+
+	smart view: capability to reduce the form's size to ribbon dimension. It can be usefull if you don't have to edit profiles, but only to run one of them. To switch on/off smart view press the bulb button.
+	load button: now you can load using default config file or another file.
+	save button: now you can save using default config file or another one.
+	ribbon panel "profile" in tab "Operation" to work with profile (new, edit, remove, copy, etc).
+	ribbon panel "network card" in tab "Operation" to work with card (enable, disable, view).
+	ribbon panel "console" in tab "Operation" refresh log console.
+	ribbon panel "views" in tab "views"
+	ribbon panel "help" in tab "views" for about, donate and check new version
+
+- MINOR IMPROVEMENT: add image selector for profile. To select an image for a profile, you have to right-click on the profile image in profile form.
+- MINOR IMPROVEMENT: revisited splash screen
+- MINOR IMPROVEMENT: add version info on main form caption .
+- MINOR IMPROVEMENT: introduced network card type (i.e. WIRELESS or ETHERNET WIRED).
+- MAJOR IMPROVEMENT: for profile with wireless card, it's now possible attach a wifi SSID.
+- MINOR IMPROVEMENT: add card type based image for network card form.
+
+Version 1.0.2
+-------------
+- BUG FIX: the version check doesn't get the exe version in
+- BUG FIX: in windows 7 there was a flicker problem
+- BUG FIX: if user says no the windows does not close
