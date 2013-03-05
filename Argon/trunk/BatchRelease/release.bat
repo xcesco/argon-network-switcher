@@ -7,3 +7,4 @@ svn export https://argon-network-switcher.googlecode.com/svn/Argon/tags/%1 .\exp
 cd .\export
 ..\7za a -tzip ..\ArgonNetworkSwitcher-%1-src.zip .
 cd ..
+rmdir /S /Q export
