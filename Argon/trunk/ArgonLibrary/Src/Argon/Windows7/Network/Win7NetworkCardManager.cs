@@ -132,15 +132,19 @@ namespace Argon.Windows7.Network
                 WmiNetworkAdapterConfiguration adapterConfigurator = new WmiNetworkAdapterConfiguration(item);
                 id = adapterConfigurator.SettingID;
 
-                card = dictionary[id];
+                // only if card is present
+                if (dictionary.ContainsKey(id))
+                {
+                    card = dictionary[id];
 
-                if (card != null)
-                {                    
-                    card.WinsEnableLMHostsLookup =adapterConfigurator.WINSEnableLMHostsLookup;
-                    card.WinsHostLookupFile =adapterConfigurator.WINSHostLookupFile;
-                    card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
-                    card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
-                    
+                    if (card != null)
+                    {
+                        card.WinsEnableLMHostsLookup = adapterConfigurator.WINSEnableLMHostsLookup;
+                        card.WinsHostLookupFile = adapterConfigurator.WINSHostLookupFile;
+                        card.WinsPrimaryServer = adapterConfigurator.WINSPrimaryServer;
+                        card.WinsSecondaryServer = adapterConfigurator.WINSSecondaryServer;
+
+                    }
                 }
             }
 
