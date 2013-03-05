@@ -1,6 +1,10 @@
 ﻿Release Notes
 =============
 
+Version 1.4.5
+-------------
+- Minor fix on startup: fix problem on WMI
+
 Version 1.4.4
 -------------
 - Improvement: confirmation dialog on close is now optional
