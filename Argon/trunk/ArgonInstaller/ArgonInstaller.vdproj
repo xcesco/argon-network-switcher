@@ -422,7 +422,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
         "ProductCode" = "8:{AF27D393-6D6D-4B08-8E4E-8E11F13BCEB9}"
-        "PackageCode" = "8:{3DC389A1-924C-4CAE-8EF3-3F2192FB8A4B}"
+        "PackageCode" = "8:{B7A93BE3-FCC6-47F9-B3FB-2AF37215D422}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
