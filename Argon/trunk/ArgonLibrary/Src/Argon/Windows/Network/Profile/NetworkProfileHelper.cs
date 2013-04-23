@@ -416,9 +416,10 @@ namespace Argon.Windows.Network.Profile
         /// Runs the setup proxy.
         /// </summary>
         /// <param name="profile">The profile.</param>
-        public static void RunProxySetup(NetworkProfile profile)
+        /// <returns>true if proxy config applied, false if configuration </returns>
+        public static bool RunProxySetup(NetworkProfile profile)
         {
-            ProxyConfigurationManager.Apply(profile.ProxyConfig);
+            return ProxyConfigurationManager.Apply(profile.ProxyConfig);
         }
 
         /// <summary>

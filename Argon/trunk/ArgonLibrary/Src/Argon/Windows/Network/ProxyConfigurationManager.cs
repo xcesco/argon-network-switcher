@@ -42,13 +42,33 @@ namespace Argon.Windows.Network
         /// Applies the specified config.
         /// </summary>
         /// <param name="config">The config.</param>
-        public static void Apply(ProxyConfiguration config)
+        /// <returns>true if configuration is applied, false if it is already done</returns>
+        public static bool Apply(ProxyConfiguration config)
         {
-            IExplorerProxyConfigurationAdapter.ApplyConfig(config);
+            //ANS-8
+            ProxyConfiguration ActualConfig = IExplorerProxyConfigurationAdapter.ReadConfig();
 
-            RunningWindowsExecutable firefox=FindFirefoxAndShutdown();
-            FirexfoxProxyConfigurationAdapter.ApplyConfig(config);
-            RestartFirefox(firefox);
+            if (ActualConfig.Enabled == config.Enabled)
+            {
+                // do nothing, the configuration is the same
+                return false;
+            }
+            else if ((ActualConfig.Enabled == config.Enabled == true) && (ActualConfig.ServerAddress.Equals(config.ServerAddress)))
+            {
+                // do nothing, the proxy server is the same (and i believe with same configuration)
+                return false;
+            }
+            else
+            {
+                // apply new configuration
+                IExplorerProxyConfigurationAdapter.ApplyConfig(config);
+
+                RunningWindowsExecutable firefox = FindFirefoxAndShutdown();
+                FirexfoxProxyConfigurationAdapter.ApplyConfig(config);
+                RestartFirefox(firefox);
+
+                return true;
+            }
         }
 
         /// <summary>

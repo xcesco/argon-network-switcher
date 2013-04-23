@@ -264,9 +264,16 @@ namespace Argon.Windows.Network.Profile
                 FireRunStatusChangeEvent("Wait for " + NetworkProfileHelper.TIME_WAIT * 4 + " ms", 30);
                 System.Threading.Thread.Sleep(NetworkProfileHelper.TIME_WAIT * 4);
             }
+            
+            bool proxySetupDone=NetworkProfileHelper.RunProxySetup(this);
 
-            FireRunStatusChangeEvent("Change proxy configuration", 40);
-            NetworkProfileHelper.RunProxySetup(this);            
+            if (proxySetupDone)
+            {
+                FireRunStatusChangeEvent("Change proxy configuration", 40);
+            } else 
+            {
+                FireRunStatusChangeEvent("Proxy is already configured", 40);
+            }
 
             FireRunStatusChangeEvent("Change network drive configuration", 50);
             NetworkProfileHelper.RunDriveMapping(this);            
