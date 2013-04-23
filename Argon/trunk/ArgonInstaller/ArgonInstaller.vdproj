@@ -27,13 +27,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_622ACC9A7669845703ABB799684AEFAF"
+        "MsmKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
+        "MsmKey" = "8:_A493700F6DCEE9C87F277293A0F8234D"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,6 +64,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A493700F6DCEE9C87F277293A0F8234D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3A78184CBDB77B7A382B0F992156593E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_622ACC9A7669845703ABB799684AEFAF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -241,20 +241,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_622ACC9A7669845703ABB799684AEFAF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B582EE904C9E07D576392763CDEB3C0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_622ACC9A7669845703ABB799684AEFAF"
+                    "_7B582EE904C9E07D576392763CDEB3C0"
                     {
-                    "Name" = "8:ArgonLibrary.dll"
+                    "Name" = "8:WeifenLuo.WinFormsUI.Docking.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ArgonLibrary.dll"
+            "SourcePath" = "8:WeifenLuo.WinFormsUI.Docking.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -272,20 +272,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B582EE904C9E07D576392763CDEB3C0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A493700F6DCEE9C87F277293A0F8234D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7B582EE904C9E07D576392763CDEB3C0"
+                    "_A493700F6DCEE9C87F277293A0F8234D"
                     {
-                    "Name" = "8:WeifenLuo.WinFormsUI.Docking.dll"
+                    "Name" = "8:ArgonLibrary.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:WeifenLuo.WinFormsUI.Docking.dll"
+            "SourcePath" = "8:ArgonLibrary.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -421,24 +421,24 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
-        "ProductCode" = "8:{AF27D393-6D6D-4B08-8E4E-8E11F13BCEB9}"
-        "PackageCode" = "8:{A2F89A20-CF6D-482C-9A91-4CBEE9CC2552}"
+        "ProductCode" = "8:{31DBCE3D-C06C-46BE-8A69-DFB3FD2C799A}"
+        "PackageCode" = "8:{C1CA54B2-7764-4F40-9926-10705ED8E591}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.5"
+        "ProductVersion" = "8:1.4.6"
         "Manufacturer" = "8:Francesco Benincasa"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Argon"
+        "Title" = "8:Argon Network Switcher"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Microsoft"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Network profile manager"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:xcesco@gmail.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -971,7 +971,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BD9C536496E54A9DBCACE0D47C7747DA"
             {
-            "SourcePath" = "8:..\\ArgonNetworkSwitcher\\obj\\x86\\Debug\\Argon.exe"
+            "SourcePath" = "8:..\\ArgonNetworkSwitcher\\obj\\x86\\Release\\Argon.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
