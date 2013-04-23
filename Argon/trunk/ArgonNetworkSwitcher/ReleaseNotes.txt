@@ -1,6 +1,10 @@
 ﻿Release Notes
 =============
 
+Version 1.4.6
+-------------
+- ANS-8 during application of profile, ff proxy is already right configured, do not reapply same configuration
+
 Version 1.4.5
 -------------
 - Minor fix on startup: fix problem on WMI
