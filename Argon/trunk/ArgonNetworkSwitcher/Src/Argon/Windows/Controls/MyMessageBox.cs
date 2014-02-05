@@ -32,7 +32,16 @@ namespace Argon.Windows.Controls
         /// <param name="message">The message.</param>
         public static void ShowMessage(string message)
         {
-            MessageBox.Show(message,"Informartion",MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(message,"Information",MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        
+        /// <summary>
+        /// Shows alert
+        /// </summary>
+        /// <param name="message">The message.</param>
+        public static void ShowAlert(string message)
+        {
+            MessageBox.Show(message,"Alert",MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         /// <summary>
