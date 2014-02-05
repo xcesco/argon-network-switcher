@@ -1,6 +1,13 @@
 ﻿Release Notes
 =============
 
+Version 1.4.7
+-------------
+- ANS-10 Bug: Upon trying to save the profile if no nic is selected an error occurred
+- ANS-11 Improvement: removed button select for selection of network and printer. Selection is made directly selecting 
+	item from list.
+- ANS-12 Fix tooltips for ribbon buttons
+
 Version 1.4.6
 -------------
 - ANS-8 during application of profile, ff proxy is already right configured, do not reapply same configuration

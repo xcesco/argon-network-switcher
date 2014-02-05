@@ -155,7 +155,14 @@ namespace Argon.UseCase
 
                 if (viewProfile == null)
                 {
-                    MyMessageBox.ShowMessage("No profile selected!");
+                    MyMessageBox.ShowAlert("No profile selected!");
+                    return;
+                }
+                
+                // ANS-10: check if any nic is selected
+                if (viewProfile.SelectedNetworkCard==null)
+                {
+                	MyMessageBox.ShowAlert("No network card is selected, profile is not saved!");
                     return;
                 }
 

@@ -235,7 +235,7 @@ namespace Argon.Windows.Forms
             this.rbtnSmartView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnSmartView.Tag = null;
             this.rbtnSmartView.Text = "Smart view";
-            this.rbtnSmartView.ToolTip = "Smart view";
+            this.rbtnSmartView.ToolTip = "Enable/disable smart view";
             this.rbtnSmartView.ToolTipTitle = "Smart view";
             this.rbtnSmartView.Value = null;
             this.rbtnSmartView.Click += new System.EventHandler(this.rbtnSmartView_Click);
@@ -253,7 +253,7 @@ namespace Argon.Windows.Forms
             this.rbtnConfigLoad.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConfigLoad.Tag = null;
             this.rbtnConfigLoad.Text = "Load config";
-            this.rbtnConfigLoad.ToolTip = null;
+            this.rbtnConfigLoad.ToolTip = "Load a config from a file";
             this.rbtnConfigLoad.ToolTipTitle = "Load config";
             this.rbtnConfigLoad.Value = null;
             this.rbtnConfigLoad.Click += new System.EventHandler(this.btnConfigLoad_Click);
@@ -271,7 +271,7 @@ namespace Argon.Windows.Forms
             this.rbtnConfigSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConfigSave.Tag = null;
             this.rbtnConfigSave.Text = "Save";
-            this.rbtnConfigSave.ToolTip = null;
+            this.rbtnConfigSave.ToolTip = "Save current config to a file";
             this.rbtnConfigSave.ToolTipTitle = "Save config";
             this.rbtnConfigSave.Value = null;
             this.rbtnConfigSave.Click += new System.EventHandler(this.rbtnConfigSave_Click);
@@ -289,8 +289,8 @@ namespace Argon.Windows.Forms
             this.rbtnShowInTrayArea.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnShowInTrayArea.Tag = null;
             this.rbtnShowInTrayArea.Text = "ribbonButton1";
-            this.rbtnShowInTrayArea.ToolTip = null;
-            this.rbtnShowInTrayArea.ToolTipTitle = null;
+            this.rbtnShowInTrayArea.ToolTip = "Hide this window and create an icon into tray area";
+            this.rbtnShowInTrayArea.ToolTipTitle = "Display in tray area";
             this.rbtnShowInTrayArea.Value = null;
             this.rbtnShowInTrayArea.Click += new System.EventHandler(this.rbtnShowInTrayArea_Click);
             // 
@@ -379,7 +379,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileNew.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileNew.Tag = null;
             this.rbtnProfileNew.Text = "New";
-            this.rbtnProfileNew.ToolTip = "New profile";
+            this.rbtnProfileNew.ToolTip = "Create a new profile";
             this.rbtnProfileNew.ToolTipTitle = "New profile";
             this.rbtnProfileNew.Value = null;
             this.rbtnProfileNew.Click += new System.EventHandler(this.btnProfileNew_Click);
@@ -396,8 +396,8 @@ namespace Argon.Windows.Forms
             this.rbtnProfileView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileView.Tag = null;
             this.rbtnProfileView.Text = "View";
-            this.rbtnProfileView.ToolTip = "View selected profile";
-            this.rbtnProfileView.ToolTipTitle = null;
+            this.rbtnProfileView.ToolTip = "View details of selected profile";
+            this.rbtnProfileView.ToolTipTitle = "View selected profile";
             this.rbtnProfileView.Value = null;
             this.rbtnProfileView.Click += new System.EventHandler(this.btnView_Click);
             // 
@@ -414,7 +414,7 @@ namespace Argon.Windows.Forms
             this.rbtnProfileDelete.Tag = null;
             this.rbtnProfileDelete.Text = "Delete";
             this.rbtnProfileDelete.ToolTip = "Delete selected profile";
-            this.rbtnProfileDelete.ToolTipTitle = null;
+            this.rbtnProfileDelete.ToolTipTitle = "Delete selected profile";
             this.rbtnProfileDelete.Value = null;
             this.rbtnProfileDelete.Click += new System.EventHandler(this.btnProfileDelete_Click);
             // 
@@ -430,8 +430,8 @@ namespace Argon.Windows.Forms
             this.rbtnProfileSave.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileSave.Tag = null;
             this.rbtnProfileSave.Text = "Save";
-            this.rbtnProfileSave.ToolTip = null;
-            this.rbtnProfileSave.ToolTipTitle = null;
+            this.rbtnProfileSave.ToolTip = "Save changes for current profile";
+            this.rbtnProfileSave.ToolTipTitle = "Save current profile";
             this.rbtnProfileSave.Value = null;
             this.rbtnProfileSave.Click += new System.EventHandler(this.rbtnProfileSave_Click);
             // 
@@ -459,8 +459,8 @@ namespace Argon.Windows.Forms
             this.rbtnProfileRun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileRun.Tag = null;
             this.rbtnProfileRun.Text = "Run";
-            this.rbtnProfileRun.ToolTip = null;
-            this.rbtnProfileRun.ToolTipTitle = null;
+            this.rbtnProfileRun.ToolTip = "Execute selected profile";
+            this.rbtnProfileRun.ToolTipTitle = "Run current profile";
             this.rbtnProfileRun.Value = null;
             this.rbtnProfileRun.Click += new System.EventHandler(this.rbtnProfileRun_Click);
             // 
@@ -476,8 +476,8 @@ namespace Argon.Windows.Forms
             this.rbtnProfileAutorun.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnProfileAutorun.Tag = null;
             this.rbtnProfileAutorun.Text = "Autorun";
-            this.rbtnProfileAutorun.ToolTip = null;
-            this.rbtnProfileAutorun.ToolTipTitle = null;
+            this.rbtnProfileAutorun.ToolTip = "Try to discover which profile is possible to execute and apply it";
+            this.rbtnProfileAutorun.ToolTipTitle = "Run wizard";
             this.rbtnProfileAutorun.Value = null;
             this.rbtnProfileAutorun.Click += new System.EventHandler(this.rbtnProfileAutorun_Click);
             // 
@@ -504,8 +504,8 @@ namespace Argon.Windows.Forms
             this.rbtnCardsRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardsRefresh.Tag = null;
             this.rbtnCardsRefresh.Text = "Refresh";
-            this.rbtnCardsRefresh.ToolTip = null;
-            this.rbtnCardsRefresh.ToolTipTitle = null;
+            this.rbtnCardsRefresh.ToolTip = "Refresh informations about network cards";
+            this.rbtnCardsRefresh.ToolTipTitle = "Refresh network card infos";
             this.rbtnCardsRefresh.Value = null;
             this.rbtnCardsRefresh.Click += new System.EventHandler(this.rbtnCardsRefresh_Click);
             // 
@@ -521,8 +521,8 @@ namespace Argon.Windows.Forms
             this.rbtnCardView.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardView.Tag = null;
             this.rbtnCardView.Text = "View";
-            this.rbtnCardView.ToolTip = null;
-            this.rbtnCardView.ToolTipTitle = null;
+            this.rbtnCardView.ToolTip = "View informations about selected network card";
+            this.rbtnCardView.ToolTipTitle = "View network card";
             this.rbtnCardView.Value = null;
             this.rbtnCardView.Click += new System.EventHandler(this.rbtnCardView_Click);
             // 
@@ -538,8 +538,8 @@ namespace Argon.Windows.Forms
             this.rbtnCardEnable.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardEnable.Tag = null;
             this.rbtnCardEnable.Text = "Enable";
-            this.rbtnCardEnable.ToolTip = null;
-            this.rbtnCardEnable.ToolTipTitle = null;
+            this.rbtnCardEnable.ToolTip = "Enable current network card";
+            this.rbtnCardEnable.ToolTipTitle = "Enable network card";
             this.rbtnCardEnable.Value = null;
             this.rbtnCardEnable.Click += new System.EventHandler(this.rbtnCardEnable_Click);
             // 
@@ -555,8 +555,8 @@ namespace Argon.Windows.Forms
             this.rbtnCardDisable.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnCardDisable.Tag = null;
             this.rbtnCardDisable.Text = "Disable";
-            this.rbtnCardDisable.ToolTip = null;
-            this.rbtnCardDisable.ToolTipTitle = null;
+            this.rbtnCardDisable.ToolTip = "Disable current network card";
+            this.rbtnCardDisable.ToolTipTitle = "Disable network card";
             this.rbtnCardDisable.Value = null;
             this.rbtnCardDisable.Click += new System.EventHandler(this.rbtnCardDisable_Click);
             // 
@@ -580,8 +580,8 @@ namespace Argon.Windows.Forms
             this.rbtnConsoleRefresh.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnConsoleRefresh.Tag = null;
             this.rbtnConsoleRefresh.Text = "Refresh";
-            this.rbtnConsoleRefresh.ToolTip = null;
-            this.rbtnConsoleRefresh.ToolTipTitle = null;
+            this.rbtnConsoleRefresh.ToolTip = "Refresh console view";
+            this.rbtnConsoleRefresh.ToolTipTitle = "Refresh console view";
             this.rbtnConsoleRefresh.Value = null;
             this.rbtnConsoleRefresh.Click += new System.EventHandler(this.rbtnConsoleRefresh_Click);
             // 
@@ -620,8 +620,8 @@ namespace Argon.Windows.Forms
             this.rbtnViewConsole.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewConsole.Tag = null;
             this.rbtnViewConsole.Text = "Console";
-            this.rbtnViewConsole.ToolTip = null;
-            this.rbtnViewConsole.ToolTipTitle = null;
+            this.rbtnViewConsole.ToolTip = "Display/hide console view";
+            this.rbtnViewConsole.ToolTipTitle = "Console view";
             this.rbtnViewConsole.Value = null;
             this.rbtnViewConsole.Click += new System.EventHandler(this.mnuViewConsole_Click);
             // 
@@ -637,8 +637,8 @@ namespace Argon.Windows.Forms
             this.rbtnViewProfiles.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewProfiles.Tag = null;
             this.rbtnViewProfiles.Text = "Profiles";
-            this.rbtnViewProfiles.ToolTip = null;
-            this.rbtnViewProfiles.ToolTipTitle = null;
+            this.rbtnViewProfiles.ToolTip = "Display/hide profiles view";
+            this.rbtnViewProfiles.ToolTipTitle = "Profiles view";
             this.rbtnViewProfiles.Value = null;
             this.rbtnViewProfiles.Click += new System.EventHandler(this.rbtnViewProfiles_Click);
             // 
@@ -654,8 +654,8 @@ namespace Argon.Windows.Forms
             this.rbtnViewNetworkCards.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewNetworkCards.Tag = null;
             this.rbtnViewNetworkCards.Text = "Networks Card";
-            this.rbtnViewNetworkCards.ToolTip = null;
-            this.rbtnViewNetworkCards.ToolTipTitle = null;
+            this.rbtnViewNetworkCards.ToolTip = "Display/hide networks view";
+            this.rbtnViewNetworkCards.ToolTipTitle = "Networks view";
             this.rbtnViewNetworkCards.Value = null;
             this.rbtnViewNetworkCards.Click += new System.EventHandler(this.mnuViewNetworkAdapters_Click);
             // 
@@ -671,8 +671,8 @@ namespace Argon.Windows.Forms
             this.rbtnViewSettings.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnViewSettings.Tag = null;
             this.rbtnViewSettings.Text = "Options";
-            this.rbtnViewSettings.ToolTip = null;
-            this.rbtnViewSettings.ToolTipTitle = null;
+            this.rbtnViewSettings.ToolTip = "Display/hide options view";
+            this.rbtnViewSettings.ToolTipTitle = "Options view";
             this.rbtnViewSettings.Value = null;
             this.rbtnViewSettings.Click += new System.EventHandler(this.rbtnViewSettings_Click);
             // 
@@ -698,8 +698,8 @@ namespace Argon.Windows.Forms
             this.rbtnHelpAbout.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpAbout.Tag = null;
             this.rbtnHelpAbout.Text = "About";
-            this.rbtnHelpAbout.ToolTip = null;
-            this.rbtnHelpAbout.ToolTipTitle = null;
+            this.rbtnHelpAbout.ToolTip = "Display info about me";
+            this.rbtnHelpAbout.ToolTipTitle = "Aboud";
             this.rbtnHelpAbout.Value = null;
             this.rbtnHelpAbout.Click += new System.EventHandler(this.rbtnHelpAbout_Click);
             // 
@@ -715,8 +715,8 @@ namespace Argon.Windows.Forms
             this.rbtnHelpUpdate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpUpdate.Tag = null;
             this.rbtnHelpUpdate.Text = "Update";
-            this.rbtnHelpUpdate.ToolTip = null;
-            this.rbtnHelpUpdate.ToolTipTitle = null;
+            this.rbtnHelpUpdate.ToolTip = "Check for updates";
+            this.rbtnHelpUpdate.ToolTipTitle = "Update";
             this.rbtnHelpUpdate.Value = null;
             this.rbtnHelpUpdate.Click += new System.EventHandler(this.rbtnHelpUpdate_Click);
             // 
@@ -732,8 +732,8 @@ namespace Argon.Windows.Forms
             this.rbtnHelpDonate.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
             this.rbtnHelpDonate.Tag = null;
             this.rbtnHelpDonate.Text = "Donate";
-            this.rbtnHelpDonate.ToolTip = null;
-            this.rbtnHelpDonate.ToolTipTitle = null;
+            this.rbtnHelpDonate.ToolTip = "If you like this application, please donate";
+            this.rbtnHelpDonate.ToolTipTitle = "Donate";
             this.rbtnHelpDonate.Value = null;
             this.rbtnHelpDonate.Click += new System.EventHandler(this.rbtnHelpDonate_Click);
             // 

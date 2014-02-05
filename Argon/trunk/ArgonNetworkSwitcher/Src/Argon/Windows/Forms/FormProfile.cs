@@ -213,11 +213,11 @@ namespace Argon.Windows.Forms
         }
 
         /// <summary>
-        /// Handles the Click event of the btnSelect control.
+        /// Select NIC selected from listview and fill other fields.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void SelectNetworkCard()
         {
             NetworkProfile profile = Profile;
             // cerchiamo viewId
@@ -485,6 +485,26 @@ namespace Argon.Windows.Forms
         private void tp5Printers_Click(object sender, EventArgs e)
         {
 
+        }
+        
+        /// <summary>
+        /// Selected card is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void LstNetworkCardSelectedIndexChanged(object sender, EventArgs e)
+        {
+        	SelectNetworkCard();
+        }
+        
+        /// <summary>
+        /// Select current printer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CbPrinterListSelectedIndexChanged(object sender, EventArgs e)
+        {
+        	 lblSelectedPrinter.Text = cbPrinterList.Text;
         }
     }
 }
