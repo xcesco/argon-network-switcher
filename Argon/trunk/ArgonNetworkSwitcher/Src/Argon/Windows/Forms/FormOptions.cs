@@ -74,8 +74,21 @@ namespace Argon.Windows.Forms
             Properties.Settings.Default.StartNormal=rbStartNormal.Checked;
             Properties.Settings.Default.AskConfirmationOnClose = cbConfirmOnClose.Checked;
 
-            // The path to the key where Windows looks for startup applications
-            RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            RegistryKey rkApp;
+
+            // ANS-14
+            if (System.Environment.Is64BitOperatingSystem)
+            {
+                // The path for 64bit OS
+                rkApp = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            }
+            else
+            {
+                // The path for 32bit OS
+                rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            }
+
+            
             if (Properties.Settings.Default.StartWithWindows)
             {
                 rkApp.SetValue("Argon Network Switcher", "\""+Application.ExecutablePath.ToString()+"\"");

@@ -1425,8 +1425,8 @@ La proprietà Installed è stata dichiarata obsoleta.  Non è disponibile alcun 
         
         public uint Disable() {
             if ((isEmbedded == false)) {
-                System.Management.ManagementBaseObject inParams = null;
-                System.Management.ManagementBaseObject outParams = PrivateLateBoundObject.InvokeMethod("Disable", inParams, null);
+                System.Management.ManagementBaseObject inParams = null;                               
+                System.Management.ManagementBaseObject outParams = PrivateLateBoundObject.InvokeMethod( "Disable", inParams, null);
                 return System.Convert.ToUInt32(outParams.Properties["ReturnValue"].Value);
             }
             else {
