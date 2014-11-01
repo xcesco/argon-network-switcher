@@ -64,6 +64,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0C01BF3EE4A5484F3AA53F0D793FEC08"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_36E9C856252501B52E9CD45A312EFE7B"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D44AE61A239BB8DA71430D5BFE94F81C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0C01BF3EE4A5484F3AA53F0D793FEC08"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -421,15 +421,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
-        "ProductCode" = "8:{31DBCE3D-C06C-46BE-8A69-DFB3FD2C799A}"
-        "PackageCode" = "8:{198CDD11-E59C-4920-9E56-2ABC0C60026A}"
+        "ProductCode" = "8:{5944064C-BA77-456C-BE12-DAE3E52BC133}"
+        "PackageCode" = "8:{5D155428-3086-4634-A8E5-FBFA3804C1E7}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.6"
+        "ProductVersion" = "8:1.4.8"
         "Manufacturer" = "8:Francesco Benincasa"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
