@@ -1,9 +1,15 @@
 ﻿Release Notes
 =============
 
+
+Version 1.4.8
+-------------
+- ANS-14 Bug fix: on OS x64, autorun does not work
+- ANS-16 Bug fix: Argon in autorun mode looks in the system32 folder
+
 Version 1.4.7
 -------------
-- ANS-10 Bug: Upon trying to save the profile if no nic is selected an error occurred
+- ANS-10 Bug fix: Upon trying to save the profile if no nic is selected an error occurred
 - ANS-11 Improvement: removed button select for selection of network and printer. Selection is made directly selecting 
 	item from list.
 - ANS-12 Fix tooltips for ribbon buttons
