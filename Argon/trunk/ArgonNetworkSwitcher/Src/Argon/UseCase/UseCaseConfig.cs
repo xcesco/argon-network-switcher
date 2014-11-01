@@ -73,6 +73,25 @@ namespace Argon.UseCase
                         break;
                 };
             }
+            else
+            {
+                // ASSERT: no dialog to show
+                //To get the location the assembly normally resides on disk or the install directory
+                string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                
+
+                //once you have the path you get the directory with:                
+                if (!Path.IsPathRooted(fileName))
+                {
+                    // ANS-16
+                    fileName = Path.Combine(path, fileName);
+                    Uri uri = new Uri(fileName);
+
+                    fileName = Uri.UnescapeDataString(uri.AbsolutePath);
+                }                
+            }
+
+            
 
             // execute config default
             List<NetworkProfile> list = NetworkProfileHelper.Load(fileName);

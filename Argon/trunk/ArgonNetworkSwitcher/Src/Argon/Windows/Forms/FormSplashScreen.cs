@@ -35,8 +35,10 @@ namespace Argon.Windows.Forms
 
         private void FormSplashScreen_Load(object sender, EventArgs e)
         {
+            Version curVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;            
+
             timer.Start();
-             UpdateFormDisplay(this.BackgroundImage);
+            UpdateFormDisplay(this.BackgroundImage);
             
         }
 
@@ -130,6 +132,11 @@ namespace Argon.Windows.Forms
             {
                 UseCaseSmartView.ExecuteDisplayNormal();
             }
+        }
+
+        private void btnDonate_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CNV5EUWEZE622");       
         }      
     }
 
