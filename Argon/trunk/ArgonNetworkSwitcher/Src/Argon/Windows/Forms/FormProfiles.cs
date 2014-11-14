@@ -155,6 +155,11 @@ namespace Argon.Windows.Forms
             {
                 imageList.Images.Add(item, UseCaseApplication.GetImage(item));
             }
+
+            
+            //SimpleDropSink sink1 = (SimpleDropSink)listView.DropSink;           
+            //sink1.CanDropBetween = true;            
+            
         }
 
         /// <summary>
