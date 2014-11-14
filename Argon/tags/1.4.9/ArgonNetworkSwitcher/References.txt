@@ -1,0 +1,48 @@
+﻿ObjectListView
+--------------
+http://objectlistview.sourceforge.net/cs/index.html
+
+Wifi Manager
+------------
+KB prerequisite for Windows XP SP2
+http://support.microsoft.com/kb/918997
+http://managedwifi.codeplex.com/SourceControl/changeset/view/41381#213980
+
+Custom prerequisites
+--------------------
+http://www.codeproject.com/KB/aspnet/Add_Custom_Prerequisite.aspx?msg=2520811
+http://archive.msdn.microsoft.com/bmg/Release/ProjectReleases.aspx?ReleaseId=1567
+
+Autoupdate
+----------
+http://www.codeproject.com/KB/install/DDayUpdate_Part1.aspx
+
+Alternative installer
+---------------------
+http://www.codeproject.com/KB/install/dotnetfx_innosetup_instal.aspx
+
+DockPanel Suite
+---------------
+https://sourceforge.net/projects/dockpanelsuite/
+
+Wmi Explorer
+------------
+http://thepowershellguy.com/blogs/posh/archive/2007/03/22/powershell-wmi-explorer-part-1.aspx
+
+Ribbon
+------
+http://tayyab.xenoglaux-solutions.com/2010/04/19/using-ribbon-control-with-windows-forms-what-i-learnt-today/comment-page-1/#comment-26137
+http://www.codeproject.com/KB/toolbars/WinFormsRibbon.aspx
+
+Hide tabs
+-----------
+http://thejoyofcode.com/Show_and_Hide_tab_pages_in_Windows_Forms.aspx
+
+
+ImageListPopup
+--------------
+http://www.codeproject.com/Articles/3705/ImageListPopup-a-C-class-which-pops-up-a-window-to
+
+Splash Screen
+-------------
+http://www.vcskicks.com/splash-screen.php
