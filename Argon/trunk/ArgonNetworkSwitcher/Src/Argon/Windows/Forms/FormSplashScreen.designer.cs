@@ -35,7 +35,7 @@ namespace Argon.Windows.Forms
             // 
             // timer
             // 
-            this.timer.Interval = 5000;
+            this.timer.Interval = 3000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // FormSplashScreen

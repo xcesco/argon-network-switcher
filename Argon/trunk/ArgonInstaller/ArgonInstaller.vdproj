@@ -21,19 +21,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0C01BF3EE4A5484F3AA53F0D793FEC08"
+        "MsmKey" = "8:_3A78184CBDB77B7A382B0F992156593E"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_25E678C74C99BE53A3CE121475F7BBEC"
+        "MsmKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_36E9C856252501B52E9CD45A312EFE7B"
+        "MsmKey" = "8:_A493700F6DCEE9C87F277293A0F8234D"
+        "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0A8E7D265375DFD3CF01E4B73EFEB4C"
         "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -41,12 +47,6 @@
         {
         "MsmKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D44AE61A239BB8DA71430D5BFE94F81C"
-        "OwnerKey" = "8:_BD9C536496E54A9DBCACE0D47C7747DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,25 +64,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0C01BF3EE4A5484F3AA53F0D793FEC08"
+        "OwnerKey" = "8:_A493700F6DCEE9C87F277293A0F8234D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_36E9C856252501B52E9CD45A312EFE7B"
+        "OwnerKey" = "8:_7B582EE904C9E07D576392763CDEB3C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_25E678C74C99BE53A3CE121475F7BBEC"
+        "OwnerKey" = "8:_B0A8E7D265375DFD3CF01E4B73EFEB4C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D44AE61A239BB8DA71430D5BFE94F81C"
+        "OwnerKey" = "8:_3A78184CBDB77B7A382B0F992156593E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -210,20 +210,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C01BF3EE4A5484F3AA53F0D793FEC08"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A78184CBDB77B7A382B0F992156593E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ObjectListView, Version=2.8.0.22691, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0C01BF3EE4A5484F3AA53F0D793FEC08"
+                    "_3A78184CBDB77B7A382B0F992156593E"
                     {
-                    "Name" = "8:ArgonLibrary.dll"
+                    "Name" = "8:ObjectListView.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ArgonLibrary.dll"
+            "SourcePath" = "8:ObjectListView.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -241,45 +241,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_25E678C74C99BE53A3CE121475F7BBEC"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Windows.Forms.Ribbon35, Version=3.5.5.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_25E678C74C99BE53A3CE121475F7BBEC"
-                    {
-                    "Name" = "8:System.Windows.Forms.Ribbon35.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Windows.Forms.Ribbon35.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_36E9C856252501B52E9CD45A312EFE7B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B582EE904C9E07D576392763CDEB3C0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_36E9C856252501B52E9CD45A312EFE7B"
+                    "_7B582EE904C9E07D576392763CDEB3C0"
                     {
                     "Name" = "8:WeifenLuo.WinFormsUI.Docking.dll"
                     "Attributes" = "3:512"
@@ -303,20 +272,51 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D44AE61A239BB8DA71430D5BFE94F81C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A493700F6DCEE9C87F277293A0F8234D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ObjectListView, Version=2.5.1.30787, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ArgonLibrary, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D44AE61A239BB8DA71430D5BFE94F81C"
+                    "_A493700F6DCEE9C87F277293A0F8234D"
                     {
-                    "Name" = "8:ObjectListView.dll"
+                    "Name" = "8:ArgonLibrary.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ObjectListView.dll"
+            "SourcePath" = "8:ArgonLibrary.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B0A8E7D265375DFD3CF01E4B73EFEB4C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Windows.Forms.Ribbon35, Version=3.5.5.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_B0A8E7D265375DFD3CF01E4B73EFEB4C"
+                    {
+                    "Name" = "8:System.Windows.Forms.Ribbon35.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Windows.Forms.Ribbon35.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F9178FE56255421FBC46CA1220BF472F"
@@ -421,15 +421,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Argon Network Switcher"
-        "ProductCode" = "8:{5944064C-BA77-456C-BE12-DAE3E52BC133}"
-        "PackageCode" = "8:{5D155428-3086-4634-A8E5-FBFA3804C1E7}"
+        "ProductCode" = "8:{AA47B70E-0593-41F6-94AC-B8842FE45900}"
+        "PackageCode" = "8:{2EC7C53C-804B-4D6F-89D5-DF889167A65B}"
         "UpgradeCode" = "8:{ECF92ECF-E347-4C0C-BEE6-B4E818EFA2E7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.8"
+        "ProductVersion" = "8:1.4.9"
         "Manufacturer" = "8:Francesco Benincasa"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

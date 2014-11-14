@@ -36,6 +36,8 @@ namespace Argon.Windows.Forms
             cbStartWithAutodetect.Checked=Properties.Settings.Default.AutodetectOnStart;
             cbStartWithWindows.Checked =Properties.Settings.Default.StartWithWindows;
 
+            cbDisplaySplahScreen.Checked = Properties.Settings.Default.DisplaySplahScreen;
+
             cbConfirmOnClose.Checked = Properties.Settings.Default.AskConfirmationOnClose;
             
 
@@ -73,6 +75,7 @@ namespace Argon.Windows.Forms
             Properties.Settings.Default.StartWithWindows=cbStartWithWindows.Checked;
             Properties.Settings.Default.StartNormal=rbStartNormal.Checked;
             Properties.Settings.Default.AskConfirmationOnClose = cbConfirmOnClose.Checked;
+            Properties.Settings.Default.DisplaySplahScreen=cbDisplaySplahScreen.Checked;
 
             RegistryKey rkApp;
 

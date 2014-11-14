@@ -33,8 +33,12 @@ namespace Argon.Windows.Forms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            FormSplashScreen form = new FormSplashScreen();
-            form.Show();
+
+            if (Properties.Settings.Default.DisplaySplahScreen)
+            {
+                FormSplashScreen form = new FormSplashScreen();
+                form.Show();
+            }
             
             Application.Run(new FormMain());
         }

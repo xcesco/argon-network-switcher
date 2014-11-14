@@ -41,6 +41,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbConfirmOnClose = new System.Windows.Forms.CheckBox();
+            this.cbDisplaySplahScreen = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cbDisplaySplahScreen);
             this.groupBox1.Controls.Add(this.cbStartWithAutodetect);
             this.groupBox1.Controls.Add(this.cbStartAndCheckForUpdate);
             this.groupBox1.Controls.Add(this.cbStartWithWindows);
@@ -192,6 +194,17 @@
             this.cbConfirmOnClose.Text = "Ask confirmation before close application";
             this.cbConfirmOnClose.UseVisualStyleBackColor = true;
             // 
+            // cbDisplaySplahScreen
+            // 
+            this.cbDisplaySplahScreen.AutoSize = true;
+            this.cbDisplaySplahScreen.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbDisplaySplahScreen.Location = new System.Drawing.Point(303, 46);
+            this.cbDisplaySplahScreen.Name = "cbDisplaySplahScreen";
+            this.cbDisplaySplahScreen.Size = new System.Drawing.Size(249, 20);
+            this.cbDisplaySplahScreen.TabIndex = 5;
+            this.cbDisplaySplahScreen.Text = "Display splash screen at startup";
+            this.cbDisplaySplahScreen.UseVisualStyleBackColor = true;
+            // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,5 +247,6 @@
         private System.Windows.Forms.RadioButton rbStartNormal;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbConfirmOnClose;
+        private System.Windows.Forms.CheckBox cbDisplaySplahScreen;
     }
 }
